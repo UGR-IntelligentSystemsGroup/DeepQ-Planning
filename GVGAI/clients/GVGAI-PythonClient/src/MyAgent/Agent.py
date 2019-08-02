@@ -68,12 +68,16 @@ class Agent(AbstractPlayer):
 
                         if this_itype not in all_elems:
                             all_elems.add(this_itype)
-        """
+        
 
-        """print(all_elems)
+        print(all_elems)
         print("\n")"""
 
-        self.encode_game_state(sso.observationGrid, (1,1))
+        encoded_grid = self.encode_game_state(sso.observationGrid, (0,0))
+
+        print(encoded_grid)
+
+        print("\n\n\n")
 
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
@@ -138,21 +142,44 @@ class Agent(AbstractPlayer):
         @param goal_pos (x, y) position (not as pixels but as grid) of the selected goal  
         """
 
+        # 0, 1, 4, 5, 6, 7, 10, 11
+
+        # Dictionary that maps itype (key) to one-hot array position to write a 1
+        # e.g. 4 : 2 = [0 0 1 0 0 0 0 0 0]
+        # None (empty tiles) objects are assigned an array full of zeroes
+        encode_dict = {
+            0 : 0,
+            1 : 1,
+            4 : 2,
+            5 : 3,
+            6 : 4,
+            7 : 5,
+            10 : 6,
+            11 : 7
+        }
+
         num_cols = len(obs_grid)
         num_rows = len(obs_grid[0])
 
-        one_hot_length = 8
+        one_hot_length = 8 + 1 # 1 extra position to represent the objective (the last 1)
 
         # The image representation is by rows and columns, instead of (x, y) pos of each pixel
+        # Row -> y
+        # Col -> x
         one_hot_grid = np.zeros((num_rows, num_cols, one_hot_length), np.int8)
 
+        # Encode the grid
         for x in range(num_cols):
             for y in range(num_rows):
                 for obs in obs_grid[x][y]:
-                    if obs is not None: # Ignore Empty Tiles
-                        pass
+                    if obs is not None and obs.itype != 3: # Ignore Empty Tiles and pickage images (those that correspond to ACTION_USE)
+                        this_pos = encode_dict[obs.itype]
+                        one_hot_grid[y][x][this_pos] = 1
 
+        # Encode the goal position within that grid
+        one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
 
+        return one_hot_grid
 
     def search_plan(self, sso, goal, description, output):
         """
