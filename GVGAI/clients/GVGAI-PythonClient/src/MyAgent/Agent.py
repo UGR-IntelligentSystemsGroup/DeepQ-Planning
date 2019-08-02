@@ -6,6 +6,8 @@ from utils.Types import LEARNING_SSO_TYPE
 import subprocess
 import random
 
+import numpy as np
+
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
 
@@ -46,6 +48,32 @@ class Agent(AbstractPlayer):
                             Check utils/CompetitionParameters.py for more info.
         @return The action to be performed by the agent.
         """
+
+        """grid  = sso.observationGrid
+
+        print(grid[4][1][0].itype)""" # [x][y][elem_pos]
+
+
+        """
+        all_elems = set() # 6 different itypes, without counting empty tiles, bats and scorpions
+                          # one-hot encoding -> length of 8 (empty tiles are not encoded as such)
+
+        grid = sso.observationGrid
+
+        for a in grid:
+            for b in a:
+                for c in b:
+                    if c is not None:
+                        this_itype = c.itype
+
+                        if this_itype not in all_elems:
+                            all_elems.add(this_itype)
+        """
+
+        """print(all_elems)
+        print("\n")"""
+
+        self.encode_game_state(sso.observationGrid, (1,1))
 
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
@@ -98,6 +126,33 @@ class Agent(AbstractPlayer):
             pos.append((gem_x, gem_y))
 
         return pos
+
+    def encode_game_state(self, obs_grid, goal_pos):
+        """
+        Transforms the game state (sso) from a matrix of observations to a matrix in which each
+        position is one-hot encoded. If there are more than one observations at the same position,
+        both are encoded. If there are no observations at a position, the resulting encoding
+        is an array full of zeroes
+
+        @param obs_grid Matrix of observations
+        @param goal_pos (x, y) position (not as pixels but as grid) of the selected goal  
+        """
+
+        num_cols = len(obs_grid)
+        num_rows = len(obs_grid[0])
+
+        one_hot_length = 8
+
+        # The image representation is by rows and columns, instead of (x, y) pos of each pixel
+        one_hot_grid = np.zeros((num_rows, num_cols, one_hot_length), np.int8)
+
+        for x in range(num_cols):
+            for y in range(num_rows):
+                for obs in obs_grid[x][y]:
+                    if obs is not None: # Ignore Empty Tiles
+                        pass
+
+
 
     def search_plan(self, sso, goal, description, output):
         """
