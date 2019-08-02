@@ -49,10 +49,11 @@ class IOSocket:
         msg = str(messageId) + self.TOKEN_SEP + line + "\n"
         try:
             if CompetitionParameters.OS_WIN:
-                self.socket.send(bytes(msg).encode('utf-8'))
+                self.socket.send(bytes(msg, encoding='utf8'))
+                # self.socket.send(bytes(msg).encode('utf-8')) # Para python 2
             else:
-                #self.socket.send(bytes(msg, encoding='utf8')) Como estaba antes (mal)
-                self.socket.send(bytes(msg).encode('utf-8'))
+                self.socket.send(bytes(msg, encoding='utf8')) # Para python 3
+                # self.socket.send(bytes(msg).encode('utf-8')) # Para python 2
             if log:
                 self.writeToFile(msg.strip('\n'))
         except Exception as e:

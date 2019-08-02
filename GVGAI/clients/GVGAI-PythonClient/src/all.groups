@@ -1,1760 +1,1840 @@
 begin_groups
-341
+361
+group
+1
+1 0 at 2 boulder7 c_7_2 
+group
+1
+53 1 at 2 gem6 c_7_3 
 group
 2
-131 0 got 1 gem26 
-47 0 at 2 gem26 c_6_11 
-group
-1
-1 0 at 2 boulder7 c_6_2 
-group
-1
-47 0 at 2 gem26 c_6_11 
-group
-1
-46 1 at 2 gem6 c_19_3 
+53 0 got 1 gem6 
+53 1 at 2 gem6 c_7_3 
 group
 2
-46 0 got 1 gem6 
-46 1 at 2 gem6 c_19_3 
+203 0 got 1 gem11 
+52 0 at 2 gem11 c_24_5 
+group
+1
+7 0 at 2 gem3 c_22_1 
+group
+1
+52 0 at 2 gem11 c_24_5 
+group
+1
+41 0 at 2 gem18 c_18_9 
+group
+1
+50 0 at 2 boulder25 c_1_8 
+group
+1
+42 0 at 2 boulder26 c_2_8 
+group
+1
+34 0 at 2 boulder31 c_13_10 
+group
+1
+31 0 at 2 boulder29 c_21_9 
 group
 2
-143 0 got 1 gem11 
-45 0 at 2 gem11 c_23_5 
+118 0 got 1 gem5 
+24 0 at 2 gem5 c_6_3 
 group
 1
-7 0 at 2 gem3 c_2_3 
-group
-1
-45 0 at 2 gem11 c_23_5 
-group
-1
-37 0 at 2 gem18 c_2_8 
-group
-1
-36 0 at 2 gem8 c_23_4 
-group
-1
-35 0 at 2 gem17 c_19_7 
+40 0 at 2 gem17 c_16_9 
 group
 2
-250 0 got 1 gem20 
-44 0 at 2 gem20 c_4_8 
+187 0 got 1 gem20 
+51 0 at 2 gem20 c_14_10 
 group
 1
-27 0 at 2 boulder18 c_12_10 
+30 0 at 2 boulder18 c_19_4 
 group
 1
-44 0 at 2 gem20 c_4_8 
+51 0 at 2 gem20 c_14_10 
 group
 1
-24 0 at 2 boulder4 c_10_1 
+34 0 at 2 boulder31 c_13_10 
 group
 1
-30 0 at 2 boulder12 c_11_5 
+31 0 at 2 boulder29 c_21_9 
 group
 1
-31 0 at 2 boulder16 c_3_7 
+26 0 at 2 boulder4 c_4_2 
 group
 1
-32 0 at 2 gem9 c_24_4 
+35 0 at 2 boulder12 c_17_3 
 group
 1
-39 0 at 2 boulder8 c_18_2 
+36 0 at 2 boulder16 c_24_3 
 group
 1
-40 0 at 2 gem2 c_11_2 
+37 0 at 2 gem9 c_18_4 
 group
 1
-19 0 at 2 boulder13 c_12_5 
+44 0 at 2 boulder8 c_8_2 
 group
 1
-33 0 at 2 gem25 c_5_11 
+50 0 at 2 boulder25 c_1_8 
 group
-237
-256 0 exited-level 1 player1 
-0 221 at 2 player1 c_1_1 
-0 235 at 2 player1 c_2_1 
-0 185 at 2 player1 c_3_1 
-0 178 at 2 player1 c_4_1 
-0 163 at 2 player1 c_5_1 
-0 53 at 2 player1 c_6_1 
-0 21 at 2 player1 c_7_1 
-0 41 at 2 player1 c_8_1 
-0 124 at 2 player1 c_9_1 
-0 136 at 2 player1 c_10_1 
-0 91 at 2 player1 c_11_1 
-0 224 at 2 player1 c_12_1 
-0 37 at 2 player1 c_13_1 
-0 43 at 2 player1 c_14_1 
-0 102 at 2 player1 c_15_1 
-0 150 at 2 player1 c_16_1 
-0 171 at 2 player1 c_17_1 
-0 113 at 2 player1 c_18_1 
-0 27 at 2 player1 c_19_1 
-0 187 at 2 player1 c_20_1 
-0 147 at 2 player1 c_21_1 
-0 61 at 2 player1 c_22_1 
-0 42 at 2 player1 c_23_1 
-0 229 at 2 player1 c_24_1 
-0 227 at 2 player1 c_1_2 
-0 97 at 2 player1 c_2_2 
-0 57 at 2 player1 c_3_2 
-0 174 at 2 player1 c_4_2 
-0 58 at 2 player1 c_6_2 
-0 103 at 2 player1 c_8_2 
-0 114 at 2 player1 c_9_2 
-0 23 at 2 player1 c_10_2 
-0 159 at 2 player1 c_11_2 
-0 78 at 2 player1 c_12_2 
-0 90 at 2 player1 c_13_2 
-0 226 at 2 player1 c_14_2 
-0 110 at 2 player1 c_15_2 
-0 142 at 2 player1 c_16_2 
-0 62 at 2 player1 c_17_2 
-0 111 at 2 player1 c_18_2 
-0 145 at 2 player1 c_19_2 
-0 176 at 2 player1 c_20_2 
-0 143 at 2 player1 c_21_2 
-0 122 at 2 player1 c_22_2 
-0 45 at 2 player1 c_1_3 
-0 167 at 2 player1 c_2_3 
-0 116 at 2 player1 c_3_3 
-0 230 at 2 player1 c_4_3 
-0 168 at 2 player1 c_6_3 
-0 49 at 2 player1 c_8_3 
-0 172 at 2 player1 c_9_3 
-0 86 at 2 player1 c_10_3 
+1
+45 1 at 2 gem2 c_21_1 
+group
+1
+22 0 at 2 boulder13 c_19_3 
+group
+246
+142 0 exited-level 1 player1 
+0 95 at 2 player1 c_1_1 
+0 112 at 2 player1 c_2_1 
+0 58 at 2 player1 c_3_1 
+0 51 at 2 player1 c_4_1 
+0 36 at 2 player1 c_5_1 
+0 173 at 2 player1 c_6_1 
+0 137 at 2 player1 c_7_1 
+0 160 at 2 player1 c_8_1 
+0 0 at 2 player1 c_9_1 
+0 10 at 2 player1 c_10_1 
+0 16 at 2 player1 c_11_1 
+0 98 at 2 player1 c_12_1 
+0 156 at 2 player1 c_13_1 
+0 162 at 2 player1 c_14_1 
+0 225 at 2 player1 c_15_1 
+0 25 at 2 player1 c_16_1 
+0 43 at 2 player1 c_17_1 
+0 234 at 2 player1 c_18_1 
+0 146 at 2 player1 c_19_1 
+0 60 at 2 player1 c_20_1 
+0 23 at 2 player1 c_21_1 
+0 184 at 2 player1 c_22_1 
+0 161 at 2 player1 c_23_1 
+0 104 at 2 player1 c_24_1 
+0 102 at 2 player1 c_1_2 
+0 220 at 2 player1 c_2_2 
+0 180 at 2 player1 c_3_2 
+0 46 at 2 player1 c_4_2 
+0 178 at 2 player1 c_5_2 
+0 181 at 2 player1 c_6_2 
+0 196 at 2 player1 c_7_2 
+0 226 at 2 player1 c_8_2 
+0 235 at 2 player1 c_9_2 
+0 140 at 2 player1 c_10_2 
+0 151 at 2 player1 c_11_2 
+0 202 at 2 player1 c_12_2 
+0 214 at 2 player1 c_13_2 
+0 101 at 2 player1 c_14_2 
+0 231 at 2 player1 c_15_2 
+0 97 at 2 player1 c_16_2 
+0 185 at 2 player1 c_17_2 
+0 232 at 2 player1 c_18_2 
+0 22 at 2 player1 c_19_2 
+0 49 at 2 player1 c_20_2 
+0 20 at 2 player1 c_21_2 
+0 243 at 2 player1 c_22_2 
+0 153 at 2 player1 c_23_2 
+0 15 at 2 player1 c_24_2 
+0 164 at 2 player1 c_1_3 
+0 39 at 2 player1 c_2_3 
+0 238 at 2 player1 c_3_3 
+0 107 at 2 player1 c_4_3 
+0 236 at 2 player1 c_5_3 
+0 40 at 2 player1 c_6_3 
+0 199 at 2 player1 c_7_3 
+0 169 at 2 player1 c_8_3 
+0 44 at 2 player1 c_9_3 
+0 210 at 2 player1 c_10_3 
 0 1 at 2 player1 c_11_3 
-0 96 at 2 player1 c_12_3 
-0 94 at 2 player1 c_13_3 
-0 179 at 2 player1 c_14_3 
-0 170 at 2 player1 c_15_3 
-0 16 at 2 player1 c_16_3 
-0 123 at 2 player1 c_17_3 
-0 182 at 2 player1 c_18_3 
-0 74 at 2 player1 c_19_3 
-0 225 at 2 player1 c_20_3 
-0 82 at 2 player1 c_21_3 
-0 93 at 2 player1 c_22_3 
-0 31 at 2 player1 c_23_3 
-0 68 at 2 player1 c_24_3 
-0 65 at 2 player1 c_1_4 
-0 160 at 2 player1 c_2_4 
-0 12 at 2 player1 c_3_4 
-0 84 at 2 player1 c_4_4 
-0 10 at 2 player1 c_6_4 
-0 189 at 2 player1 c_8_4 
-0 184 at 2 player1 c_9_4 
-0 73 at 2 player1 c_10_4 
-0 115 at 2 player1 c_11_4 
-0 157 at 2 player1 c_12_4 
-0 92 at 2 player1 c_13_4 
-0 51 at 2 player1 c_14_4 
-0 195 at 2 player1 c_15_4 
-0 28 at 2 player1 c_22_4 
-0 85 at 2 player1 c_23_4 
-0 75 at 2 player1 c_24_4 
-0 127 at 2 player1 c_1_5 
-0 99 at 2 player1 c_2_5 
-0 64 at 2 player1 c_3_5 
-0 80 at 2 player1 c_4_5 
-0 199 at 2 player1 c_6_5 
-0 132 at 2 player1 c_8_5 
-0 228 at 2 player1 c_9_5 
-0 186 at 2 player1 c_10_5 
-0 233 at 2 player1 c_11_5 
-0 98 at 2 player1 c_12_5 
-0 153 at 2 player1 c_13_5 
-0 232 at 2 player1 c_14_5 
-0 2 at 2 player1 c_15_5 
-0 5 at 2 player1 c_16_5 
-0 55 at 2 player1 c_17_5 
-0 24 at 2 player1 c_18_5 
-0 133 at 2 player1 c_19_5 
-0 39 at 2 player1 c_20_5 
-0 54 at 2 player1 c_21_5 
-0 203 at 2 player1 c_22_5 
-0 33 at 2 player1 c_23_5 
-0 139 at 2 player1 c_24_5 
-0 135 at 2 player1 c_1_6 
-0 105 at 2 player1 c_2_6 
-0 126 at 2 player1 c_3_6 
-0 29 at 2 player1 c_4_6 
-0 166 at 2 player1 c_5_6 
-0 175 at 2 player1 c_6_6 
-0 140 at 2 player1 c_7_6 
-0 6 at 2 player1 c_8_6 
-0 14 at 2 player1 c_9_6 
-0 128 at 2 player1 c_10_6 
-0 88 at 2 player1 c_11_6 
-0 223 at 2 player1 c_12_6 
-0 156 at 2 player1 c_13_6 
-0 134 at 2 player1 c_14_6 
-0 11 at 2 player1 c_15_6 
-0 220 at 2 player1 c_16_6 
-0 112 at 2 player1 c_17_6 
-0 210 at 2 player1 c_18_6 
-0 30 at 2 player1 c_19_6 
-0 69 at 2 player1 c_22_6 
-0 149 at 2 player1 c_23_6 
-0 131 at 2 player1 c_24_6 
-0 194 at 2 player1 c_1_7 
-0 208 at 2 player1 c_2_7 
-0 4 at 2 player1 c_3_7 
-0 95 at 2 player1 c_4_7 
-0 214 at 2 player1 c_5_7 
-0 118 at 2 player1 c_6_7 
-0 196 at 2 player1 c_10_7 
-0 121 at 2 player1 c_11_7 
-0 48 at 2 player1 c_12_7 
-0 204 at 2 player1 c_13_7 
-0 71 at 2 player1 c_14_7 
-0 63 at 2 player1 c_15_7 
-0 206 at 2 player1 c_16_7 
-0 217 at 2 player1 c_17_7 
-0 35 at 2 player1 c_18_7 
-0 83 at 2 player1 c_19_7 
-0 117 at 2 player1 c_20_7 
-0 193 at 2 player1 c_21_7 
-0 130 at 2 player1 c_22_7 
-0 87 at 2 player1 c_23_7 
-0 188 at 2 player1 c_24_7 
-0 36 at 2 player1 c_1_8 
-0 151 at 2 player1 c_2_8 
-0 7 at 2 player1 c_3_8 
-0 177 at 2 player1 c_4_8 
-0 162 at 2 player1 c_5_8 
-0 202 at 2 player1 c_6_8 
-0 201 at 2 player1 c_7_8 
-0 18 at 2 player1 c_8_8 
-0 89 at 2 player1 c_9_8 
-0 155 at 2 player1 c_10_8 
-0 3 at 2 player1 c_11_8 
-0 104 at 2 player1 c_12_8 
-0 9 at 2 player1 c_13_8 
-0 106 at 2 player1 c_16_8 
-0 205 at 2 player1 c_17_8 
-0 209 at 2 player1 c_18_8 
-0 183 at 2 player1 c_19_8 
-0 77 at 2 player1 c_20_8 
-0 234 at 2 player1 c_21_8 
-0 222 at 2 player1 c_22_8 
-0 20 at 2 player1 c_23_8 
-0 197 at 2 player1 c_24_8 
-0 22 at 2 player1 c_1_9 
-0 60 at 2 player1 c_2_9 
-0 158 at 2 player1 c_4_9 
-0 59 at 2 player1 c_5_9 
-0 152 at 2 player1 c_6_9 
-0 50 at 2 player1 c_7_9 
-0 108 at 2 player1 c_8_9 
-0 231 at 2 player1 c_9_9 
-0 212 at 2 player1 c_10_9 
-0 56 at 2 player1 c_11_9 
-0 100 at 2 player1 c_12_9 
-0 190 at 2 player1 c_13_9 
-0 141 at 2 player1 c_14_9 
-0 148 at 2 player1 c_15_9 
-0 52 at 2 player1 c_16_9 
-0 125 at 2 player1 c_17_9 
-0 161 at 2 player1 c_18_9 
-0 219 at 2 player1 c_19_9 
-0 17 at 2 player1 c_20_9 
-0 191 at 2 player1 c_21_9 
-0 165 at 2 player1 c_22_9 
-0 44 at 2 player1 c_23_9 
-0 198 at 2 player1 c_24_9 
-0 154 at 2 player1 c_1_10 
-0 72 at 2 player1 c_2_10 
-0 0 at 2 player1 c_4_10 
-0 25 at 2 player1 c_5_10 
-0 47 at 2 player1 c_6_10 
-0 19 at 2 player1 c_7_10 
-0 70 at 2 player1 c_8_10 
-0 109 at 2 player1 c_12_10 
-0 32 at 2 player1 c_13_10 
-0 181 at 2 player1 c_14_10 
-0 213 at 2 player1 c_15_10 
-0 15 at 2 player1 c_16_10 
-0 120 at 2 player1 c_17_10 
-0 218 at 2 player1 c_18_10 
-0 26 at 2 player1 c_19_10 
-0 216 at 2 player1 c_20_10 
-0 180 at 2 player1 c_21_10 
-0 81 at 2 player1 c_22_10 
-0 8 at 2 player1 c_23_10 
-0 200 at 2 player1 c_24_10 
-0 34 at 2 player1 c_1_11 
-0 38 at 2 player1 c_2_11 
-0 40 at 2 player1 c_3_11 
-0 207 at 2 player1 c_4_11 
-0 146 at 2 player1 c_5_11 
-0 173 at 2 player1 c_6_11 
-0 138 at 2 player1 c_7_11 
-0 211 at 2 player1 c_8_11 
-0 119 at 2 player1 c_9_11 
-0 101 at 2 player1 c_10_11 
-0 76 at 2 player1 c_11_11 
-0 107 at 2 player1 c_12_11 
-0 164 at 2 player1 c_13_11 
-0 46 at 2 player1 c_14_11 
-0 215 at 2 player1 c_15_11 
-0 79 at 2 player1 c_16_11 
-0 13 at 2 player1 c_17_11 
-0 169 at 2 player1 c_18_11 
-0 192 at 2 player1 c_19_11 
-0 129 at 2 player1 c_20_11 
-0 137 at 2 player1 c_21_11 
-0 67 at 2 player1 c_22_11 
-0 144 at 2 player1 c_23_11 
-0 66 at 2 player1 c_24_11 
+0 219 at 2 player1 c_12_3 
+0 217 at 2 player1 c_13_3 
+0 53 at 2 player1 c_14_3 
+0 42 at 2 player1 c_15_3 
+0 14 at 2 player1 c_16_3 
+0 244 at 2 player1 c_17_3 
+0 55 at 2 player1 c_18_3 
+0 195 at 2 player1 c_19_3 
+0 99 at 2 player1 c_20_3 
+0 205 at 2 player1 c_21_3 
+0 131 at 2 player1 c_22_3 
+0 150 at 2 player1 c_23_3 
+0 191 at 2 player1 c_24_3 
+0 187 at 2 player1 c_1_4 
+0 33 at 2 player1 c_2_4 
+0 128 at 2 player1 c_3_4 
+0 207 at 2 player1 c_4_4 
+0 145 at 2 player1 c_5_4 
+0 125 at 2 player1 c_6_4 
+0 197 at 2 player1 c_7_4 
+0 64 at 2 player1 c_8_4 
+0 56 at 2 player1 c_9_4 
+0 194 at 2 player1 c_10_4 
+0 237 at 2 player1 c_11_4 
+0 32 at 2 player1 c_12_4 
+0 216 at 2 player1 c_13_4 
+0 170 at 2 player1 c_14_4 
+0 68 at 2 player1 c_15_4 
+0 179 at 2 player1 c_16_4 
+0 115 at 2 player1 c_17_4 
+0 143 at 2 player1 c_18_4 
+0 136 at 2 player1 c_19_4 
+0 47 at 2 player1 c_20_4 
+0 57 at 2 player1 c_21_4 
+0 147 at 2 player1 c_22_4 
+0 209 at 2 player1 c_23_4 
+0 198 at 2 player1 c_24_4 
+0 59 at 2 player1 c_10_5 
+0 109 at 2 player1 c_11_5 
+0 221 at 2 player1 c_12_5 
+0 27 at 2 player1 c_13_5 
+0 108 at 2 player1 c_14_5 
+0 117 at 2 player1 c_15_5 
+0 120 at 2 player1 c_16_5 
+0 175 at 2 player1 c_17_5 
+0 141 at 2 player1 c_18_5 
+0 6 at 2 player1 c_19_5 
+0 158 at 2 player1 c_20_5 
+0 174 at 2 player1 c_21_5 
+0 152 at 2 player1 c_23_5 
+0 11 at 2 player1 c_24_5 
+0 8 at 2 player1 c_1_6 
+0 227 at 2 player1 c_2_6 
+0 2 at 2 player1 c_3_6 
+0 148 at 2 player1 c_4_6 
+0 37 at 2 player1 c_5_6 
+0 48 at 2 player1 c_6_6 
+0 13 at 2 player1 c_7_6 
+0 121 at 2 player1 c_8_6 
+0 130 at 2 player1 c_9_6 
+0 3 at 2 player1 c_10_6 
+0 29 at 2 player1 c_11_6 
+0 96 at 2 player1 c_12_6 
+0 31 at 2 player1 c_13_6 
+0 7 at 2 player1 c_14_6 
+0 127 at 2 player1 c_15_6 
+0 224 at 2 player1 c_16_6 
+0 233 at 2 player1 c_17_6 
+0 88 at 2 player1 c_18_6 
+0 149 at 2 player1 c_19_6 
+0 182 at 2 player1 c_20_6 
+0 113 at 2 player1 c_21_6 
+0 24 at 2 player1 c_23_6 
+0 4 at 2 player1 c_24_6 
+0 67 at 2 player1 c_1_7 
+0 86 at 2 player1 c_2_7 
+0 119 at 2 player1 c_3_7 
+0 218 at 2 player1 c_4_7 
+0 91 at 2 player1 c_5_7 
+0 240 at 2 player1 c_6_7 
+0 190 at 2 player1 c_7_7 
+0 72 at 2 player1 c_8_7 
+0 189 at 2 player1 c_9_7 
+0 70 at 2 player1 c_10_7 
+0 110 at 2 player1 c_11_7 
+0 167 at 2 player1 c_12_7 
+0 83 at 2 player1 c_13_7 
+0 192 at 2 player1 c_14_7 
+0 186 at 2 player1 c_15_7 
+0 77 at 2 player1 c_16_7 
+0 93 at 2 player1 c_17_7 
+0 154 at 2 player1 c_18_7 
+0 206 at 2 player1 c_19_7 
+0 239 at 2 player1 c_20_7 
+0 66 at 2 player1 c_21_7 
+0 212 at 2 player1 c_23_7 
+0 62 at 2 player1 c_24_7 
+0 155 at 2 player1 c_1_8 
+0 242 at 2 player1 c_2_8 
+0 106 at 2 player1 c_3_8 
+0 172 at 2 player1 c_4_8 
+0 114 at 2 player1 c_5_8 
+0 82 at 2 player1 c_6_8 
+0 200 at 2 player1 c_7_8 
+0 17 at 2 player1 c_8_8 
+0 135 at 2 player1 c_9_8 
+0 75 at 2 player1 c_10_8 
+0 118 at 2 player1 c_11_8 
+0 144 at 2 player1 c_12_8 
+0 124 at 2 player1 c_13_8 
+0 19 at 2 player1 c_14_8 
+0 35 at 2 player1 c_15_8 
+0 228 at 2 player1 c_16_8 
+0 84 at 2 player1 c_17_8 
+0 87 at 2 player1 c_18_8 
+0 78 at 2 player1 c_19_8 
+0 201 at 2 player1 c_20_8 
+0 111 at 2 player1 c_21_8 
+0 222 at 2 player1 c_23_8 
+0 71 at 2 player1 c_24_8 
+0 139 at 2 player1 c_1_9 
+0 183 at 2 player1 c_2_9 
+0 203 at 2 player1 c_3_9 
+0 76 at 2 player1 c_4_9 
+0 211 at 2 player1 c_5_9 
+0 26 at 2 player1 c_6_9 
+0 176 at 2 player1 c_7_9 
+0 92 at 2 player1 c_8_9 
+0 204 at 2 player1 c_9_9 
+0 163 at 2 player1 c_10_9 
+0 177 at 2 player1 c_11_9 
+0 171 at 2 player1 c_16_9 
+0 116 at 2 player1 c_17_9 
+0 34 at 2 player1 c_18_9 
+0 132 at 2 player1 c_19_9 
+0 133 at 2 player1 c_20_9 
+0 65 at 2 player1 c_21_9 
+0 61 at 2 player1 c_23_9 
+0 74 at 2 player1 c_24_9 
+0 28 at 2 player1 c_1_10 
+0 215 at 2 player1 c_2_10 
+0 18 at 2 player1 c_3_10 
+0 69 at 2 player1 c_4_10 
+0 52 at 2 player1 c_5_10 
+0 165 at 2 player1 c_6_10 
+0 134 at 2 player1 c_7_10 
+0 166 at 2 player1 c_8_10 
+0 105 at 2 player1 c_9_10 
+0 213 at 2 player1 c_10_10 
+0 142 at 2 player1 c_11_10 
+0 230 at 2 player1 c_12_10 
+0 100 at 2 player1 c_13_10 
+0 122 at 2 player1 c_14_10 
+0 90 at 2 player1 c_15_10 
+0 12 at 2 player1 c_16_10 
+0 138 at 2 player1 c_17_10 
+0 94 at 2 player1 c_18_10 
+0 129 at 2 player1 c_19_10 
+0 54 at 2 player1 c_20_10 
+0 73 at 2 player1 c_21_10 
+0 123 at 2 player1 c_23_10 
+0 81 at 2 player1 c_24_10 
+0 50 at 2 player1 c_1_11 
+0 157 at 2 player1 c_2_11 
+0 38 at 2 player1 c_3_11 
+0 80 at 2 player1 c_4_11 
+0 159 at 2 player1 c_5_11 
+0 168 at 2 player1 c_6_11 
+0 193 at 2 player1 c_7_11 
+0 79 at 2 player1 c_8_11 
+0 241 at 2 player1 c_9_11 
+0 223 at 2 player1 c_10_11 
+0 5 at 2 player1 c_11_11 
+0 229 at 2 player1 c_12_11 
+0 45 at 2 player1 c_13_11 
+0 208 at 2 player1 c_14_11 
+0 85 at 2 player1 c_15_11 
+0 9 at 2 player1 c_16_11 
+0 63 at 2 player1 c_17_11 
+0 41 at 2 player1 c_18_11 
+0 126 at 2 player1 c_19_11 
+0 30 at 2 player1 c_20_11 
+0 89 at 2 player1 c_21_11 
+0 103 at 2 player1 c_22_11 
+0 21 at 2 player1 c_23_11 
+0 188 at 2 player1 c_24_11 
 group
-236
-0 221 at 2 player1 c_1_1 
-0 235 at 2 player1 c_2_1 
-0 185 at 2 player1 c_3_1 
-0 178 at 2 player1 c_4_1 
-0 163 at 2 player1 c_5_1 
-0 53 at 2 player1 c_6_1 
-0 21 at 2 player1 c_7_1 
-0 41 at 2 player1 c_8_1 
-0 124 at 2 player1 c_9_1 
-0 136 at 2 player1 c_10_1 
-0 91 at 2 player1 c_11_1 
-0 224 at 2 player1 c_12_1 
-0 37 at 2 player1 c_13_1 
-0 43 at 2 player1 c_14_1 
-0 102 at 2 player1 c_15_1 
-0 150 at 2 player1 c_16_1 
-0 171 at 2 player1 c_17_1 
-0 113 at 2 player1 c_18_1 
-0 27 at 2 player1 c_19_1 
-0 187 at 2 player1 c_20_1 
-0 147 at 2 player1 c_21_1 
-0 61 at 2 player1 c_22_1 
-0 42 at 2 player1 c_23_1 
-0 229 at 2 player1 c_24_1 
-0 227 at 2 player1 c_1_2 
-0 97 at 2 player1 c_2_2 
-0 57 at 2 player1 c_3_2 
-0 174 at 2 player1 c_4_2 
-0 58 at 2 player1 c_6_2 
-0 103 at 2 player1 c_8_2 
-0 114 at 2 player1 c_9_2 
-0 23 at 2 player1 c_10_2 
-0 159 at 2 player1 c_11_2 
-0 78 at 2 player1 c_12_2 
-0 90 at 2 player1 c_13_2 
-0 226 at 2 player1 c_14_2 
-0 110 at 2 player1 c_15_2 
-0 142 at 2 player1 c_16_2 
-0 62 at 2 player1 c_17_2 
-0 111 at 2 player1 c_18_2 
-0 145 at 2 player1 c_19_2 
-0 176 at 2 player1 c_20_2 
-0 143 at 2 player1 c_21_2 
-0 122 at 2 player1 c_22_2 
-0 45 at 2 player1 c_1_3 
-0 167 at 2 player1 c_2_3 
-0 116 at 2 player1 c_3_3 
-0 230 at 2 player1 c_4_3 
-0 168 at 2 player1 c_6_3 
-0 49 at 2 player1 c_8_3 
-0 172 at 2 player1 c_9_3 
-0 86 at 2 player1 c_10_3 
+245
+0 95 at 2 player1 c_1_1 
+0 112 at 2 player1 c_2_1 
+0 58 at 2 player1 c_3_1 
+0 51 at 2 player1 c_4_1 
+0 36 at 2 player1 c_5_1 
+0 173 at 2 player1 c_6_1 
+0 137 at 2 player1 c_7_1 
+0 160 at 2 player1 c_8_1 
+0 0 at 2 player1 c_9_1 
+0 10 at 2 player1 c_10_1 
+0 16 at 2 player1 c_11_1 
+0 98 at 2 player1 c_12_1 
+0 156 at 2 player1 c_13_1 
+0 162 at 2 player1 c_14_1 
+0 225 at 2 player1 c_15_1 
+0 25 at 2 player1 c_16_1 
+0 43 at 2 player1 c_17_1 
+0 234 at 2 player1 c_18_1 
+0 146 at 2 player1 c_19_1 
+0 60 at 2 player1 c_20_1 
+0 23 at 2 player1 c_21_1 
+0 184 at 2 player1 c_22_1 
+0 161 at 2 player1 c_23_1 
+0 104 at 2 player1 c_24_1 
+0 102 at 2 player1 c_1_2 
+0 220 at 2 player1 c_2_2 
+0 180 at 2 player1 c_3_2 
+0 46 at 2 player1 c_4_2 
+0 178 at 2 player1 c_5_2 
+0 181 at 2 player1 c_6_2 
+0 196 at 2 player1 c_7_2 
+0 226 at 2 player1 c_8_2 
+0 235 at 2 player1 c_9_2 
+0 140 at 2 player1 c_10_2 
+0 151 at 2 player1 c_11_2 
+0 202 at 2 player1 c_12_2 
+0 214 at 2 player1 c_13_2 
+0 101 at 2 player1 c_14_2 
+0 231 at 2 player1 c_15_2 
+0 97 at 2 player1 c_16_2 
+0 185 at 2 player1 c_17_2 
+0 232 at 2 player1 c_18_2 
+0 22 at 2 player1 c_19_2 
+0 49 at 2 player1 c_20_2 
+0 20 at 2 player1 c_21_2 
+0 243 at 2 player1 c_22_2 
+0 153 at 2 player1 c_23_2 
+0 15 at 2 player1 c_24_2 
+0 164 at 2 player1 c_1_3 
+0 39 at 2 player1 c_2_3 
+0 238 at 2 player1 c_3_3 
+0 107 at 2 player1 c_4_3 
+0 236 at 2 player1 c_5_3 
+0 40 at 2 player1 c_6_3 
+0 199 at 2 player1 c_7_3 
+0 169 at 2 player1 c_8_3 
+0 44 at 2 player1 c_9_3 
+0 210 at 2 player1 c_10_3 
 0 1 at 2 player1 c_11_3 
-0 96 at 2 player1 c_12_3 
-0 94 at 2 player1 c_13_3 
-0 179 at 2 player1 c_14_3 
-0 170 at 2 player1 c_15_3 
-0 16 at 2 player1 c_16_3 
-0 123 at 2 player1 c_17_3 
-0 182 at 2 player1 c_18_3 
-0 74 at 2 player1 c_19_3 
-0 225 at 2 player1 c_20_3 
-0 82 at 2 player1 c_21_3 
-0 93 at 2 player1 c_22_3 
-0 31 at 2 player1 c_23_3 
-0 68 at 2 player1 c_24_3 
-0 65 at 2 player1 c_1_4 
-0 160 at 2 player1 c_2_4 
-0 12 at 2 player1 c_3_4 
-0 84 at 2 player1 c_4_4 
-0 10 at 2 player1 c_6_4 
-0 189 at 2 player1 c_8_4 
-0 184 at 2 player1 c_9_4 
-0 73 at 2 player1 c_10_4 
-0 115 at 2 player1 c_11_4 
-0 157 at 2 player1 c_12_4 
-0 92 at 2 player1 c_13_4 
-0 51 at 2 player1 c_14_4 
-0 195 at 2 player1 c_15_4 
-0 28 at 2 player1 c_22_4 
-0 85 at 2 player1 c_23_4 
-0 75 at 2 player1 c_24_4 
-0 127 at 2 player1 c_1_5 
-0 99 at 2 player1 c_2_5 
-0 64 at 2 player1 c_3_5 
-0 80 at 2 player1 c_4_5 
-0 199 at 2 player1 c_6_5 
-0 132 at 2 player1 c_8_5 
-0 228 at 2 player1 c_9_5 
-0 186 at 2 player1 c_10_5 
-0 233 at 2 player1 c_11_5 
-0 98 at 2 player1 c_12_5 
-0 153 at 2 player1 c_13_5 
-0 232 at 2 player1 c_14_5 
-0 2 at 2 player1 c_15_5 
-0 5 at 2 player1 c_16_5 
-0 55 at 2 player1 c_17_5 
-0 24 at 2 player1 c_18_5 
-0 133 at 2 player1 c_19_5 
-0 39 at 2 player1 c_20_5 
-0 54 at 2 player1 c_21_5 
-0 203 at 2 player1 c_22_5 
-0 33 at 2 player1 c_23_5 
-0 139 at 2 player1 c_24_5 
-0 135 at 2 player1 c_1_6 
-0 105 at 2 player1 c_2_6 
-0 126 at 2 player1 c_3_6 
-0 29 at 2 player1 c_4_6 
-0 166 at 2 player1 c_5_6 
-0 175 at 2 player1 c_6_6 
-0 140 at 2 player1 c_7_6 
-0 6 at 2 player1 c_8_6 
-0 14 at 2 player1 c_9_6 
-0 128 at 2 player1 c_10_6 
-0 88 at 2 player1 c_11_6 
-0 223 at 2 player1 c_12_6 
-0 156 at 2 player1 c_13_6 
-0 134 at 2 player1 c_14_6 
-0 11 at 2 player1 c_15_6 
-0 220 at 2 player1 c_16_6 
-0 112 at 2 player1 c_17_6 
-0 210 at 2 player1 c_18_6 
-0 30 at 2 player1 c_19_6 
-0 69 at 2 player1 c_22_6 
-0 149 at 2 player1 c_23_6 
-0 131 at 2 player1 c_24_6 
-0 194 at 2 player1 c_1_7 
-0 208 at 2 player1 c_2_7 
-0 4 at 2 player1 c_3_7 
-0 95 at 2 player1 c_4_7 
-0 214 at 2 player1 c_5_7 
-0 118 at 2 player1 c_6_7 
-0 196 at 2 player1 c_10_7 
-0 121 at 2 player1 c_11_7 
-0 48 at 2 player1 c_12_7 
-0 204 at 2 player1 c_13_7 
-0 71 at 2 player1 c_14_7 
-0 63 at 2 player1 c_15_7 
-0 206 at 2 player1 c_16_7 
-0 217 at 2 player1 c_17_7 
-0 35 at 2 player1 c_18_7 
-0 83 at 2 player1 c_19_7 
-0 117 at 2 player1 c_20_7 
-0 193 at 2 player1 c_21_7 
-0 130 at 2 player1 c_22_7 
-0 87 at 2 player1 c_23_7 
-0 188 at 2 player1 c_24_7 
-0 36 at 2 player1 c_1_8 
-0 151 at 2 player1 c_2_8 
-0 7 at 2 player1 c_3_8 
-0 177 at 2 player1 c_4_8 
-0 162 at 2 player1 c_5_8 
-0 202 at 2 player1 c_6_8 
-0 201 at 2 player1 c_7_8 
-0 18 at 2 player1 c_8_8 
-0 89 at 2 player1 c_9_8 
-0 155 at 2 player1 c_10_8 
-0 3 at 2 player1 c_11_8 
-0 104 at 2 player1 c_12_8 
-0 9 at 2 player1 c_13_8 
-0 106 at 2 player1 c_16_8 
-0 205 at 2 player1 c_17_8 
-0 209 at 2 player1 c_18_8 
-0 183 at 2 player1 c_19_8 
-0 77 at 2 player1 c_20_8 
-0 234 at 2 player1 c_21_8 
-0 222 at 2 player1 c_22_8 
-0 20 at 2 player1 c_23_8 
-0 197 at 2 player1 c_24_8 
-0 22 at 2 player1 c_1_9 
-0 60 at 2 player1 c_2_9 
-0 158 at 2 player1 c_4_9 
-0 59 at 2 player1 c_5_9 
-0 152 at 2 player1 c_6_9 
-0 50 at 2 player1 c_7_9 
-0 108 at 2 player1 c_8_9 
-0 231 at 2 player1 c_9_9 
-0 212 at 2 player1 c_10_9 
-0 56 at 2 player1 c_11_9 
-0 100 at 2 player1 c_12_9 
-0 190 at 2 player1 c_13_9 
-0 141 at 2 player1 c_14_9 
-0 148 at 2 player1 c_15_9 
-0 52 at 2 player1 c_16_9 
-0 125 at 2 player1 c_17_9 
-0 161 at 2 player1 c_18_9 
-0 219 at 2 player1 c_19_9 
-0 17 at 2 player1 c_20_9 
-0 191 at 2 player1 c_21_9 
-0 165 at 2 player1 c_22_9 
-0 44 at 2 player1 c_23_9 
-0 198 at 2 player1 c_24_9 
-0 154 at 2 player1 c_1_10 
-0 72 at 2 player1 c_2_10 
-0 0 at 2 player1 c_4_10 
-0 25 at 2 player1 c_5_10 
-0 47 at 2 player1 c_6_10 
-0 19 at 2 player1 c_7_10 
-0 70 at 2 player1 c_8_10 
-0 109 at 2 player1 c_12_10 
-0 32 at 2 player1 c_13_10 
-0 181 at 2 player1 c_14_10 
-0 213 at 2 player1 c_15_10 
-0 15 at 2 player1 c_16_10 
-0 120 at 2 player1 c_17_10 
-0 218 at 2 player1 c_18_10 
-0 26 at 2 player1 c_19_10 
-0 216 at 2 player1 c_20_10 
-0 180 at 2 player1 c_21_10 
-0 81 at 2 player1 c_22_10 
-0 8 at 2 player1 c_23_10 
-0 200 at 2 player1 c_24_10 
-0 34 at 2 player1 c_1_11 
-0 38 at 2 player1 c_2_11 
-0 40 at 2 player1 c_3_11 
-0 207 at 2 player1 c_4_11 
-0 146 at 2 player1 c_5_11 
-0 173 at 2 player1 c_6_11 
-0 138 at 2 player1 c_7_11 
-0 211 at 2 player1 c_8_11 
-0 119 at 2 player1 c_9_11 
-0 101 at 2 player1 c_10_11 
-0 76 at 2 player1 c_11_11 
-0 107 at 2 player1 c_12_11 
-0 164 at 2 player1 c_13_11 
-0 46 at 2 player1 c_14_11 
-0 215 at 2 player1 c_15_11 
-0 79 at 2 player1 c_16_11 
-0 13 at 2 player1 c_17_11 
-0 169 at 2 player1 c_18_11 
-0 192 at 2 player1 c_19_11 
-0 129 at 2 player1 c_20_11 
-0 137 at 2 player1 c_21_11 
-0 67 at 2 player1 c_22_11 
-0 144 at 2 player1 c_23_11 
-0 66 at 2 player1 c_24_11 
+0 219 at 2 player1 c_12_3 
+0 217 at 2 player1 c_13_3 
+0 53 at 2 player1 c_14_3 
+0 42 at 2 player1 c_15_3 
+0 14 at 2 player1 c_16_3 
+0 244 at 2 player1 c_17_3 
+0 55 at 2 player1 c_18_3 
+0 195 at 2 player1 c_19_3 
+0 99 at 2 player1 c_20_3 
+0 205 at 2 player1 c_21_3 
+0 131 at 2 player1 c_22_3 
+0 150 at 2 player1 c_23_3 
+0 191 at 2 player1 c_24_3 
+0 187 at 2 player1 c_1_4 
+0 33 at 2 player1 c_2_4 
+0 128 at 2 player1 c_3_4 
+0 207 at 2 player1 c_4_4 
+0 145 at 2 player1 c_5_4 
+0 125 at 2 player1 c_6_4 
+0 197 at 2 player1 c_7_4 
+0 64 at 2 player1 c_8_4 
+0 56 at 2 player1 c_9_4 
+0 194 at 2 player1 c_10_4 
+0 237 at 2 player1 c_11_4 
+0 32 at 2 player1 c_12_4 
+0 216 at 2 player1 c_13_4 
+0 170 at 2 player1 c_14_4 
+0 68 at 2 player1 c_15_4 
+0 179 at 2 player1 c_16_4 
+0 115 at 2 player1 c_17_4 
+0 143 at 2 player1 c_18_4 
+0 136 at 2 player1 c_19_4 
+0 47 at 2 player1 c_20_4 
+0 57 at 2 player1 c_21_4 
+0 147 at 2 player1 c_22_4 
+0 209 at 2 player1 c_23_4 
+0 198 at 2 player1 c_24_4 
+0 59 at 2 player1 c_10_5 
+0 109 at 2 player1 c_11_5 
+0 221 at 2 player1 c_12_5 
+0 27 at 2 player1 c_13_5 
+0 108 at 2 player1 c_14_5 
+0 117 at 2 player1 c_15_5 
+0 120 at 2 player1 c_16_5 
+0 175 at 2 player1 c_17_5 
+0 141 at 2 player1 c_18_5 
+0 6 at 2 player1 c_19_5 
+0 158 at 2 player1 c_20_5 
+0 174 at 2 player1 c_21_5 
+0 152 at 2 player1 c_23_5 
+0 11 at 2 player1 c_24_5 
+0 8 at 2 player1 c_1_6 
+0 227 at 2 player1 c_2_6 
+0 2 at 2 player1 c_3_6 
+0 148 at 2 player1 c_4_6 
+0 37 at 2 player1 c_5_6 
+0 48 at 2 player1 c_6_6 
+0 13 at 2 player1 c_7_6 
+0 121 at 2 player1 c_8_6 
+0 130 at 2 player1 c_9_6 
+0 3 at 2 player1 c_10_6 
+0 29 at 2 player1 c_11_6 
+0 96 at 2 player1 c_12_6 
+0 31 at 2 player1 c_13_6 
+0 7 at 2 player1 c_14_6 
+0 127 at 2 player1 c_15_6 
+0 224 at 2 player1 c_16_6 
+0 233 at 2 player1 c_17_6 
+0 88 at 2 player1 c_18_6 
+0 149 at 2 player1 c_19_6 
+0 182 at 2 player1 c_20_6 
+0 113 at 2 player1 c_21_6 
+0 24 at 2 player1 c_23_6 
+0 4 at 2 player1 c_24_6 
+0 67 at 2 player1 c_1_7 
+0 86 at 2 player1 c_2_7 
+0 119 at 2 player1 c_3_7 
+0 218 at 2 player1 c_4_7 
+0 91 at 2 player1 c_5_7 
+0 240 at 2 player1 c_6_7 
+0 190 at 2 player1 c_7_7 
+0 72 at 2 player1 c_8_7 
+0 189 at 2 player1 c_9_7 
+0 70 at 2 player1 c_10_7 
+0 110 at 2 player1 c_11_7 
+0 167 at 2 player1 c_12_7 
+0 83 at 2 player1 c_13_7 
+0 192 at 2 player1 c_14_7 
+0 186 at 2 player1 c_15_7 
+0 77 at 2 player1 c_16_7 
+0 93 at 2 player1 c_17_7 
+0 154 at 2 player1 c_18_7 
+0 206 at 2 player1 c_19_7 
+0 239 at 2 player1 c_20_7 
+0 66 at 2 player1 c_21_7 
+0 212 at 2 player1 c_23_7 
+0 62 at 2 player1 c_24_7 
+0 155 at 2 player1 c_1_8 
+0 242 at 2 player1 c_2_8 
+0 106 at 2 player1 c_3_8 
+0 172 at 2 player1 c_4_8 
+0 114 at 2 player1 c_5_8 
+0 82 at 2 player1 c_6_8 
+0 200 at 2 player1 c_7_8 
+0 17 at 2 player1 c_8_8 
+0 135 at 2 player1 c_9_8 
+0 75 at 2 player1 c_10_8 
+0 118 at 2 player1 c_11_8 
+0 144 at 2 player1 c_12_8 
+0 124 at 2 player1 c_13_8 
+0 19 at 2 player1 c_14_8 
+0 35 at 2 player1 c_15_8 
+0 228 at 2 player1 c_16_8 
+0 84 at 2 player1 c_17_8 
+0 87 at 2 player1 c_18_8 
+0 78 at 2 player1 c_19_8 
+0 201 at 2 player1 c_20_8 
+0 111 at 2 player1 c_21_8 
+0 222 at 2 player1 c_23_8 
+0 71 at 2 player1 c_24_8 
+0 139 at 2 player1 c_1_9 
+0 183 at 2 player1 c_2_9 
+0 203 at 2 player1 c_3_9 
+0 76 at 2 player1 c_4_9 
+0 211 at 2 player1 c_5_9 
+0 26 at 2 player1 c_6_9 
+0 176 at 2 player1 c_7_9 
+0 92 at 2 player1 c_8_9 
+0 204 at 2 player1 c_9_9 
+0 163 at 2 player1 c_10_9 
+0 177 at 2 player1 c_11_9 
+0 171 at 2 player1 c_16_9 
+0 116 at 2 player1 c_17_9 
+0 34 at 2 player1 c_18_9 
+0 132 at 2 player1 c_19_9 
+0 133 at 2 player1 c_20_9 
+0 65 at 2 player1 c_21_9 
+0 61 at 2 player1 c_23_9 
+0 74 at 2 player1 c_24_9 
+0 28 at 2 player1 c_1_10 
+0 215 at 2 player1 c_2_10 
+0 18 at 2 player1 c_3_10 
+0 69 at 2 player1 c_4_10 
+0 52 at 2 player1 c_5_10 
+0 165 at 2 player1 c_6_10 
+0 134 at 2 player1 c_7_10 
+0 166 at 2 player1 c_8_10 
+0 105 at 2 player1 c_9_10 
+0 213 at 2 player1 c_10_10 
+0 142 at 2 player1 c_11_10 
+0 230 at 2 player1 c_12_10 
+0 100 at 2 player1 c_13_10 
+0 122 at 2 player1 c_14_10 
+0 90 at 2 player1 c_15_10 
+0 12 at 2 player1 c_16_10 
+0 138 at 2 player1 c_17_10 
+0 94 at 2 player1 c_18_10 
+0 129 at 2 player1 c_19_10 
+0 54 at 2 player1 c_20_10 
+0 73 at 2 player1 c_21_10 
+0 123 at 2 player1 c_23_10 
+0 81 at 2 player1 c_24_10 
+0 50 at 2 player1 c_1_11 
+0 157 at 2 player1 c_2_11 
+0 38 at 2 player1 c_3_11 
+0 80 at 2 player1 c_4_11 
+0 159 at 2 player1 c_5_11 
+0 168 at 2 player1 c_6_11 
+0 193 at 2 player1 c_7_11 
+0 79 at 2 player1 c_8_11 
+0 241 at 2 player1 c_9_11 
+0 223 at 2 player1 c_10_11 
+0 5 at 2 player1 c_11_11 
+0 229 at 2 player1 c_12_11 
+0 45 at 2 player1 c_13_11 
+0 208 at 2 player1 c_14_11 
+0 85 at 2 player1 c_15_11 
+0 9 at 2 player1 c_16_11 
+0 63 at 2 player1 c_17_11 
+0 41 at 2 player1 c_18_11 
+0 126 at 2 player1 c_19_11 
+0 30 at 2 player1 c_20_11 
+0 89 at 2 player1 c_21_11 
+0 103 at 2 player1 c_22_11 
+0 21 at 2 player1 c_23_11 
+0 188 at 2 player1 c_24_11 
 group
 1
-23 0 at 2 gem7 c_2_4 
+25 0 at 2 gem7 c_20_3 
 group
 1
-33 0 at 2 gem25 c_5_11 
+32 0 at 2 boulder11 c_21_2 
+group
+1
+29 0 at 2 boulder24 c_17_7 
 group
 2
-53 0 got 1 gem14 
-12 0 at 2 gem14 c_9_6 
+149 0 got 1 gem14 
+14 0 at 2 gem14 c_23_7 
 group
 1
-4 0 at 2 gem16 c_12_6 
+4 0 at 2 gem16 c_7_9 
 group
 1
-34 0 at 2 gem28 c_13_11 
+49 0 at 2 boulder19 c_23_4 
 group
 1
-43 0 at 2 boulder19 c_13_10 
+36 0 at 2 boulder16 c_24_3 
 group
 1
-31 0 at 2 boulder16 c_3_7 
+49 0 at 2 boulder19 c_23_4 
 group
 1
-43 0 at 2 boulder19 c_13_10 
+48 0 at 2 boulder22 c_7_6 
 group
 1
-41 0 at 2 gem13 c_8_6 
+38 0 at 2 boulder30 c_12_10 
 group
 1
-42 0 at 2 boulder5 c_11_1 
+46 0 at 2 gem13 c_24_6 
 group
 1
-37 0 at 2 gem18 c_2_8 
+47 0 at 2 boulder5 c_5_2 
 group
 1
-42 0 at 2 boulder5 c_11_1 
+48 0 at 2 boulder22 c_7_6 
 group
 1
-42 0 at 2 boulder5 c_11_1 
+47 0 at 2 boulder5 c_5_2 
+group
+1
+47 0 at 2 boulder5 c_5_2 
 group
 2
-71 0 got 1 gem13 
-41 0 at 2 gem13 c_8_6 
+183 0 got 1 gem13 
+46 0 at 2 gem13 c_24_6 
 group
 1
-41 0 at 2 gem13 c_8_6 
+50 0 at 2 boulder25 c_1_8 
 group
 1
-43 0 at 2 boulder19 c_13_10 
+46 0 at 2 gem13 c_24_6 
+group
+1
+49 0 at 2 boulder19 c_23_4 
 group
 2
-162 0 got 1 gem16 
-4 0 at 2 gem16 c_12_6 
+94 0 got 1 gem16 
+4 0 at 2 gem16 c_7_9 
 group
 1
-36 0 at 2 gem8 c_23_4 
+39 0 at 2 gem8 c_1_4 
 group
 1
-17 0 at 2 gem1 c_2_2 
+29 0 at 2 boulder24 c_17_7 
 group
 1
-26 0 at 2 boulder14 c_19_6 
+17 0 at 2 gem1 c_19_1 
+group
+1
+28 0 at 2 boulder14 c_21_3 
+group
+1
+2 0 at 2 boulder20 c_24_4 
 group
 2
-102 0 got 1 gem7 
-23 0 at 2 gem7 c_2_4 
+88 0 got 1 gem7 
+25 0 at 2 gem7 c_20_3 
 group
 1
-25 0 at 2 boulder10 c_23_3 
+45 1 at 2 gem2 c_21_1 
 group
 1
-2 0 at 2 gem22 c_14_9 
-group
-1
-40 0 at 2 gem2 c_11_2 
+41 0 at 2 gem18 c_18_9 
 group
 2
-121 0 got 1 gem19 
-22 0 at 2 gem19 c_3_8 
+45 0 got 1 gem2 
+45 1 at 2 gem2 c_21_1 
+group
+1
+44 0 at 2 boulder8 c_8_2 
 group
 2
-40 1 got 1 gem2 
-40 0 at 2 gem2 c_11_2 
+226 0 got 1 gem15 
+43 0 at 2 gem15 c_24_7 
 group
 1
-39 0 at 2 boulder8 c_18_2 
+44 0 at 2 boulder8 c_8_2 
+group
+1
+43 0 at 2 gem15 c_24_7 
+group
+1
+43 0 at 2 gem15 c_24_7 
+group
+1
+11 1 at 2 gem19 c_9_10 
+group
+1
+42 0 at 2 boulder26 c_2_8 
+group
+1
+26 0 at 2 boulder4 c_4_2 
 group
 2
-242 0 got 1 gem15 
-38 0 at 2 gem15 c_11_6 
-group
-1
-39 0 at 2 boulder8 c_18_2 
-group
-1
-38 0 at 2 gem15 c_11_6 
-group
-1
-38 0 at 2 gem15 c_11_6 
-group
-1
-22 0 at 2 gem19 c_3_8 
-group
-1
-24 0 at 2 boulder4 c_10_1 
+263 0 got 1 gem1 
+17 0 at 2 gem1 c_19_1 
 group
 2
-73 0 got 1 gem1 
-17 0 at 2 gem1 c_2_2 
+41 1 got 1 gem18 
+41 0 at 2 gem18 c_18_9 
+group
+1
+16 0 at 2 boulder6 c_6_2 
 group
 2
-37 1 got 1 gem18 
-37 0 at 2 gem18 c_2_8 
+151 0 got 1 gem8 
+39 0 at 2 gem8 c_1_4 
 group
 1
-15 0 at 2 boulder6 c_14_1 
+33 0 at 2 boulder9 c_9_2 
 group
 1
-14 1 at 2 gem27 c_12_11 
+30 0 at 2 boulder18 c_19_4 
 group
 2
-36 1 got 1 gem8 
-36 0 at 2 gem8 c_23_4 
+184 0 got 1 gem17 
+40 0 at 2 gem17 c_16_9 
 group
 1
-29 0 at 2 boulder9 c_19_2 
+13 0 at 2 gem10 c_23_5 
 group
 1
-27 0 at 2 boulder18 c_12_10 
+40 0 at 2 gem17 c_16_9 
+group
+1
+39 0 at 2 gem8 c_1_4 
+group
+1
+38 0 at 2 boulder30 c_12_10 
+group
+1
+38 0 at 2 boulder30 c_12_10 
+group
+1
+9 0 at 2 boulder23 c_12_7 
 group
 2
-139 0 got 1 gem17 
-35 0 at 2 gem17 c_19_7 
+119 0 got 1 gem3 
+7 0 at 2 gem3 c_22_1 
 group
 1
-11 0 at 2 gem10 c_2_5 
+53 1 at 2 gem6 c_7_3 
 group
 1
-35 0 at 2 gem17 c_19_7 
-group
-2
-130 0 got 1 gem5 
-21 0 at 2 gem5 c_18_3 
-group
-2
-217 0 got 1 gem3 
-7 0 at 2 gem3 c_2_3 
-group
-2
-89 0 got 1 gem28 
-34 0 at 2 gem28 c_13_11 
+5 1 at 2 gem21 c_15_10 
 group
 1
-46 1 at 2 gem6 c_19_3 
+14 0 at 2 gem14 c_23_7 
 group
 1
-34 0 at 2 gem28 c_13_11 
+3 1 at 2 gem12 c_23_6 
 group
-1
-5 0 at 2 gem21 c_19_8 
-group
-1
-12 0 at 2 gem14 c_9_6 
-group
-1
-47 0 at 2 gem26 c_6_11 
-group
-2
-33 1 got 1 gem25 
-33 0 at 2 gem25 c_5_11 
-group
-1
-2 0 at 2 gem22 c_14_9 
-group
-1
-3 1 at 2 gem12 c_24_5 
-group
-236
-0 221 at 2 player1 c_1_1 
-0 235 at 2 player1 c_2_1 
-0 185 at 2 player1 c_3_1 
-0 178 at 2 player1 c_4_1 
-0 163 at 2 player1 c_5_1 
-0 53 at 2 player1 c_6_1 
-0 21 at 2 player1 c_7_1 
-0 41 at 2 player1 c_8_1 
-0 124 at 2 player1 c_9_1 
-0 136 at 2 player1 c_10_1 
-0 91 at 2 player1 c_11_1 
-0 224 at 2 player1 c_12_1 
-0 37 at 2 player1 c_13_1 
-0 43 at 2 player1 c_14_1 
-0 102 at 2 player1 c_15_1 
-0 150 at 2 player1 c_16_1 
-0 171 at 2 player1 c_17_1 
-0 113 at 2 player1 c_18_1 
-0 27 at 2 player1 c_19_1 
-0 187 at 2 player1 c_20_1 
-0 147 at 2 player1 c_21_1 
-0 61 at 2 player1 c_22_1 
-0 42 at 2 player1 c_23_1 
-0 229 at 2 player1 c_24_1 
-0 227 at 2 player1 c_1_2 
-0 97 at 2 player1 c_2_2 
-0 57 at 2 player1 c_3_2 
-0 174 at 2 player1 c_4_2 
-0 58 at 2 player1 c_6_2 
-0 103 at 2 player1 c_8_2 
-0 114 at 2 player1 c_9_2 
-0 23 at 2 player1 c_10_2 
-0 159 at 2 player1 c_11_2 
-0 78 at 2 player1 c_12_2 
-0 90 at 2 player1 c_13_2 
-0 226 at 2 player1 c_14_2 
-0 110 at 2 player1 c_15_2 
-0 142 at 2 player1 c_16_2 
-0 62 at 2 player1 c_17_2 
-0 111 at 2 player1 c_18_2 
-0 145 at 2 player1 c_19_2 
-0 176 at 2 player1 c_20_2 
-0 143 at 2 player1 c_21_2 
-0 122 at 2 player1 c_22_2 
-0 45 at 2 player1 c_1_3 
-0 167 at 2 player1 c_2_3 
-0 116 at 2 player1 c_3_3 
-0 230 at 2 player1 c_4_3 
-0 168 at 2 player1 c_6_3 
-0 49 at 2 player1 c_8_3 
-0 172 at 2 player1 c_9_3 
-0 86 at 2 player1 c_10_3 
+245
+0 95 at 2 player1 c_1_1 
+0 112 at 2 player1 c_2_1 
+0 58 at 2 player1 c_3_1 
+0 51 at 2 player1 c_4_1 
+0 36 at 2 player1 c_5_1 
+0 173 at 2 player1 c_6_1 
+0 137 at 2 player1 c_7_1 
+0 160 at 2 player1 c_8_1 
+0 0 at 2 player1 c_9_1 
+0 10 at 2 player1 c_10_1 
+0 16 at 2 player1 c_11_1 
+0 98 at 2 player1 c_12_1 
+0 156 at 2 player1 c_13_1 
+0 162 at 2 player1 c_14_1 
+0 225 at 2 player1 c_15_1 
+0 25 at 2 player1 c_16_1 
+0 43 at 2 player1 c_17_1 
+0 234 at 2 player1 c_18_1 
+0 146 at 2 player1 c_19_1 
+0 60 at 2 player1 c_20_1 
+0 23 at 2 player1 c_21_1 
+0 184 at 2 player1 c_22_1 
+0 161 at 2 player1 c_23_1 
+0 104 at 2 player1 c_24_1 
+0 102 at 2 player1 c_1_2 
+0 220 at 2 player1 c_2_2 
+0 180 at 2 player1 c_3_2 
+0 46 at 2 player1 c_4_2 
+0 178 at 2 player1 c_5_2 
+0 181 at 2 player1 c_6_2 
+0 196 at 2 player1 c_7_2 
+0 226 at 2 player1 c_8_2 
+0 235 at 2 player1 c_9_2 
+0 140 at 2 player1 c_10_2 
+0 151 at 2 player1 c_11_2 
+0 202 at 2 player1 c_12_2 
+0 214 at 2 player1 c_13_2 
+0 101 at 2 player1 c_14_2 
+0 231 at 2 player1 c_15_2 
+0 97 at 2 player1 c_16_2 
+0 185 at 2 player1 c_17_2 
+0 232 at 2 player1 c_18_2 
+0 22 at 2 player1 c_19_2 
+0 49 at 2 player1 c_20_2 
+0 20 at 2 player1 c_21_2 
+0 243 at 2 player1 c_22_2 
+0 153 at 2 player1 c_23_2 
+0 15 at 2 player1 c_24_2 
+0 164 at 2 player1 c_1_3 
+0 39 at 2 player1 c_2_3 
+0 238 at 2 player1 c_3_3 
+0 107 at 2 player1 c_4_3 
+0 236 at 2 player1 c_5_3 
+0 40 at 2 player1 c_6_3 
+0 199 at 2 player1 c_7_3 
+0 169 at 2 player1 c_8_3 
+0 44 at 2 player1 c_9_3 
+0 210 at 2 player1 c_10_3 
 0 1 at 2 player1 c_11_3 
-0 96 at 2 player1 c_12_3 
-0 94 at 2 player1 c_13_3 
-0 179 at 2 player1 c_14_3 
-0 170 at 2 player1 c_15_3 
-0 16 at 2 player1 c_16_3 
-0 123 at 2 player1 c_17_3 
-0 182 at 2 player1 c_18_3 
-0 74 at 2 player1 c_19_3 
-0 225 at 2 player1 c_20_3 
-0 82 at 2 player1 c_21_3 
-0 93 at 2 player1 c_22_3 
-0 31 at 2 player1 c_23_3 
-0 68 at 2 player1 c_24_3 
-0 65 at 2 player1 c_1_4 
-0 160 at 2 player1 c_2_4 
-0 12 at 2 player1 c_3_4 
-0 84 at 2 player1 c_4_4 
-0 10 at 2 player1 c_6_4 
-0 189 at 2 player1 c_8_4 
-0 184 at 2 player1 c_9_4 
-0 73 at 2 player1 c_10_4 
-0 115 at 2 player1 c_11_4 
-0 157 at 2 player1 c_12_4 
-0 92 at 2 player1 c_13_4 
-0 51 at 2 player1 c_14_4 
-0 195 at 2 player1 c_15_4 
-0 28 at 2 player1 c_22_4 
-0 85 at 2 player1 c_23_4 
-0 75 at 2 player1 c_24_4 
-0 127 at 2 player1 c_1_5 
-0 99 at 2 player1 c_2_5 
-0 64 at 2 player1 c_3_5 
-0 80 at 2 player1 c_4_5 
-0 199 at 2 player1 c_6_5 
-0 132 at 2 player1 c_8_5 
-0 228 at 2 player1 c_9_5 
-0 186 at 2 player1 c_10_5 
-0 233 at 2 player1 c_11_5 
-0 98 at 2 player1 c_12_5 
-0 153 at 2 player1 c_13_5 
-0 232 at 2 player1 c_14_5 
-0 2 at 2 player1 c_15_5 
-0 5 at 2 player1 c_16_5 
-0 55 at 2 player1 c_17_5 
-0 24 at 2 player1 c_18_5 
-0 133 at 2 player1 c_19_5 
-0 39 at 2 player1 c_20_5 
-0 54 at 2 player1 c_21_5 
-0 203 at 2 player1 c_22_5 
-0 33 at 2 player1 c_23_5 
-0 139 at 2 player1 c_24_5 
-0 135 at 2 player1 c_1_6 
-0 105 at 2 player1 c_2_6 
-0 126 at 2 player1 c_3_6 
-0 29 at 2 player1 c_4_6 
-0 166 at 2 player1 c_5_6 
-0 175 at 2 player1 c_6_6 
-0 140 at 2 player1 c_7_6 
-0 6 at 2 player1 c_8_6 
-0 14 at 2 player1 c_9_6 
-0 128 at 2 player1 c_10_6 
-0 88 at 2 player1 c_11_6 
-0 223 at 2 player1 c_12_6 
-0 156 at 2 player1 c_13_6 
-0 134 at 2 player1 c_14_6 
-0 11 at 2 player1 c_15_6 
-0 220 at 2 player1 c_16_6 
-0 112 at 2 player1 c_17_6 
-0 210 at 2 player1 c_18_6 
-0 30 at 2 player1 c_19_6 
-0 69 at 2 player1 c_22_6 
-0 149 at 2 player1 c_23_6 
-0 131 at 2 player1 c_24_6 
-0 194 at 2 player1 c_1_7 
-0 208 at 2 player1 c_2_7 
-0 4 at 2 player1 c_3_7 
-0 95 at 2 player1 c_4_7 
-0 214 at 2 player1 c_5_7 
-0 118 at 2 player1 c_6_7 
-0 196 at 2 player1 c_10_7 
-0 121 at 2 player1 c_11_7 
-0 48 at 2 player1 c_12_7 
-0 204 at 2 player1 c_13_7 
-0 71 at 2 player1 c_14_7 
-0 63 at 2 player1 c_15_7 
-0 206 at 2 player1 c_16_7 
-0 217 at 2 player1 c_17_7 
-0 35 at 2 player1 c_18_7 
-0 83 at 2 player1 c_19_7 
-0 117 at 2 player1 c_20_7 
-0 193 at 2 player1 c_21_7 
-0 130 at 2 player1 c_22_7 
-0 87 at 2 player1 c_23_7 
-0 188 at 2 player1 c_24_7 
-0 36 at 2 player1 c_1_8 
-0 151 at 2 player1 c_2_8 
-0 7 at 2 player1 c_3_8 
-0 177 at 2 player1 c_4_8 
-0 162 at 2 player1 c_5_8 
-0 202 at 2 player1 c_6_8 
-0 201 at 2 player1 c_7_8 
-0 18 at 2 player1 c_8_8 
-0 89 at 2 player1 c_9_8 
-0 155 at 2 player1 c_10_8 
-0 3 at 2 player1 c_11_8 
-0 104 at 2 player1 c_12_8 
-0 9 at 2 player1 c_13_8 
-0 106 at 2 player1 c_16_8 
-0 205 at 2 player1 c_17_8 
-0 209 at 2 player1 c_18_8 
-0 183 at 2 player1 c_19_8 
-0 77 at 2 player1 c_20_8 
-0 234 at 2 player1 c_21_8 
-0 222 at 2 player1 c_22_8 
-0 20 at 2 player1 c_23_8 
-0 197 at 2 player1 c_24_8 
-0 22 at 2 player1 c_1_9 
-0 60 at 2 player1 c_2_9 
-0 158 at 2 player1 c_4_9 
-0 59 at 2 player1 c_5_9 
-0 152 at 2 player1 c_6_9 
-0 50 at 2 player1 c_7_9 
-0 108 at 2 player1 c_8_9 
-0 231 at 2 player1 c_9_9 
-0 212 at 2 player1 c_10_9 
-0 56 at 2 player1 c_11_9 
-0 100 at 2 player1 c_12_9 
-0 190 at 2 player1 c_13_9 
-0 141 at 2 player1 c_14_9 
-0 148 at 2 player1 c_15_9 
-0 52 at 2 player1 c_16_9 
-0 125 at 2 player1 c_17_9 
-0 161 at 2 player1 c_18_9 
-0 219 at 2 player1 c_19_9 
-0 17 at 2 player1 c_20_9 
-0 191 at 2 player1 c_21_9 
-0 165 at 2 player1 c_22_9 
-0 44 at 2 player1 c_23_9 
-0 198 at 2 player1 c_24_9 
-0 154 at 2 player1 c_1_10 
-0 72 at 2 player1 c_2_10 
-0 0 at 2 player1 c_4_10 
-0 25 at 2 player1 c_5_10 
-0 47 at 2 player1 c_6_10 
-0 19 at 2 player1 c_7_10 
-0 70 at 2 player1 c_8_10 
-0 109 at 2 player1 c_12_10 
-0 32 at 2 player1 c_13_10 
-0 181 at 2 player1 c_14_10 
-0 213 at 2 player1 c_15_10 
-0 15 at 2 player1 c_16_10 
-0 120 at 2 player1 c_17_10 
-0 218 at 2 player1 c_18_10 
-0 26 at 2 player1 c_19_10 
-0 216 at 2 player1 c_20_10 
-0 180 at 2 player1 c_21_10 
-0 81 at 2 player1 c_22_10 
-0 8 at 2 player1 c_23_10 
-0 200 at 2 player1 c_24_10 
-0 34 at 2 player1 c_1_11 
-0 38 at 2 player1 c_2_11 
-0 40 at 2 player1 c_3_11 
-0 207 at 2 player1 c_4_11 
-0 146 at 2 player1 c_5_11 
-0 173 at 2 player1 c_6_11 
-0 138 at 2 player1 c_7_11 
-0 211 at 2 player1 c_8_11 
-0 119 at 2 player1 c_9_11 
-0 101 at 2 player1 c_10_11 
-0 76 at 2 player1 c_11_11 
-0 107 at 2 player1 c_12_11 
-0 164 at 2 player1 c_13_11 
-0 46 at 2 player1 c_14_11 
-0 215 at 2 player1 c_15_11 
-0 79 at 2 player1 c_16_11 
-0 13 at 2 player1 c_17_11 
-0 169 at 2 player1 c_18_11 
-0 192 at 2 player1 c_19_11 
-0 129 at 2 player1 c_20_11 
-0 137 at 2 player1 c_21_11 
-0 67 at 2 player1 c_22_11 
-0 144 at 2 player1 c_23_11 
-0 66 at 2 player1 c_24_11 
+0 219 at 2 player1 c_12_3 
+0 217 at 2 player1 c_13_3 
+0 53 at 2 player1 c_14_3 
+0 42 at 2 player1 c_15_3 
+0 14 at 2 player1 c_16_3 
+0 244 at 2 player1 c_17_3 
+0 55 at 2 player1 c_18_3 
+0 195 at 2 player1 c_19_3 
+0 99 at 2 player1 c_20_3 
+0 205 at 2 player1 c_21_3 
+0 131 at 2 player1 c_22_3 
+0 150 at 2 player1 c_23_3 
+0 191 at 2 player1 c_24_3 
+0 187 at 2 player1 c_1_4 
+0 33 at 2 player1 c_2_4 
+0 128 at 2 player1 c_3_4 
+0 207 at 2 player1 c_4_4 
+0 145 at 2 player1 c_5_4 
+0 125 at 2 player1 c_6_4 
+0 197 at 2 player1 c_7_4 
+0 64 at 2 player1 c_8_4 
+0 56 at 2 player1 c_9_4 
+0 194 at 2 player1 c_10_4 
+0 237 at 2 player1 c_11_4 
+0 32 at 2 player1 c_12_4 
+0 216 at 2 player1 c_13_4 
+0 170 at 2 player1 c_14_4 
+0 68 at 2 player1 c_15_4 
+0 179 at 2 player1 c_16_4 
+0 115 at 2 player1 c_17_4 
+0 143 at 2 player1 c_18_4 
+0 136 at 2 player1 c_19_4 
+0 47 at 2 player1 c_20_4 
+0 57 at 2 player1 c_21_4 
+0 147 at 2 player1 c_22_4 
+0 209 at 2 player1 c_23_4 
+0 198 at 2 player1 c_24_4 
+0 59 at 2 player1 c_10_5 
+0 109 at 2 player1 c_11_5 
+0 221 at 2 player1 c_12_5 
+0 27 at 2 player1 c_13_5 
+0 108 at 2 player1 c_14_5 
+0 117 at 2 player1 c_15_5 
+0 120 at 2 player1 c_16_5 
+0 175 at 2 player1 c_17_5 
+0 141 at 2 player1 c_18_5 
+0 6 at 2 player1 c_19_5 
+0 158 at 2 player1 c_20_5 
+0 174 at 2 player1 c_21_5 
+0 152 at 2 player1 c_23_5 
+0 11 at 2 player1 c_24_5 
+0 8 at 2 player1 c_1_6 
+0 227 at 2 player1 c_2_6 
+0 2 at 2 player1 c_3_6 
+0 148 at 2 player1 c_4_6 
+0 37 at 2 player1 c_5_6 
+0 48 at 2 player1 c_6_6 
+0 13 at 2 player1 c_7_6 
+0 121 at 2 player1 c_8_6 
+0 130 at 2 player1 c_9_6 
+0 3 at 2 player1 c_10_6 
+0 29 at 2 player1 c_11_6 
+0 96 at 2 player1 c_12_6 
+0 31 at 2 player1 c_13_6 
+0 7 at 2 player1 c_14_6 
+0 127 at 2 player1 c_15_6 
+0 224 at 2 player1 c_16_6 
+0 233 at 2 player1 c_17_6 
+0 88 at 2 player1 c_18_6 
+0 149 at 2 player1 c_19_6 
+0 182 at 2 player1 c_20_6 
+0 113 at 2 player1 c_21_6 
+0 24 at 2 player1 c_23_6 
+0 4 at 2 player1 c_24_6 
+0 67 at 2 player1 c_1_7 
+0 86 at 2 player1 c_2_7 
+0 119 at 2 player1 c_3_7 
+0 218 at 2 player1 c_4_7 
+0 91 at 2 player1 c_5_7 
+0 240 at 2 player1 c_6_7 
+0 190 at 2 player1 c_7_7 
+0 72 at 2 player1 c_8_7 
+0 189 at 2 player1 c_9_7 
+0 70 at 2 player1 c_10_7 
+0 110 at 2 player1 c_11_7 
+0 167 at 2 player1 c_12_7 
+0 83 at 2 player1 c_13_7 
+0 192 at 2 player1 c_14_7 
+0 186 at 2 player1 c_15_7 
+0 77 at 2 player1 c_16_7 
+0 93 at 2 player1 c_17_7 
+0 154 at 2 player1 c_18_7 
+0 206 at 2 player1 c_19_7 
+0 239 at 2 player1 c_20_7 
+0 66 at 2 player1 c_21_7 
+0 212 at 2 player1 c_23_7 
+0 62 at 2 player1 c_24_7 
+0 155 at 2 player1 c_1_8 
+0 242 at 2 player1 c_2_8 
+0 106 at 2 player1 c_3_8 
+0 172 at 2 player1 c_4_8 
+0 114 at 2 player1 c_5_8 
+0 82 at 2 player1 c_6_8 
+0 200 at 2 player1 c_7_8 
+0 17 at 2 player1 c_8_8 
+0 135 at 2 player1 c_9_8 
+0 75 at 2 player1 c_10_8 
+0 118 at 2 player1 c_11_8 
+0 144 at 2 player1 c_12_8 
+0 124 at 2 player1 c_13_8 
+0 19 at 2 player1 c_14_8 
+0 35 at 2 player1 c_15_8 
+0 228 at 2 player1 c_16_8 
+0 84 at 2 player1 c_17_8 
+0 87 at 2 player1 c_18_8 
+0 78 at 2 player1 c_19_8 
+0 201 at 2 player1 c_20_8 
+0 111 at 2 player1 c_21_8 
+0 222 at 2 player1 c_23_8 
+0 71 at 2 player1 c_24_8 
+0 139 at 2 player1 c_1_9 
+0 183 at 2 player1 c_2_9 
+0 203 at 2 player1 c_3_9 
+0 76 at 2 player1 c_4_9 
+0 211 at 2 player1 c_5_9 
+0 26 at 2 player1 c_6_9 
+0 176 at 2 player1 c_7_9 
+0 92 at 2 player1 c_8_9 
+0 204 at 2 player1 c_9_9 
+0 163 at 2 player1 c_10_9 
+0 177 at 2 player1 c_11_9 
+0 171 at 2 player1 c_16_9 
+0 116 at 2 player1 c_17_9 
+0 34 at 2 player1 c_18_9 
+0 132 at 2 player1 c_19_9 
+0 133 at 2 player1 c_20_9 
+0 65 at 2 player1 c_21_9 
+0 61 at 2 player1 c_23_9 
+0 74 at 2 player1 c_24_9 
+0 28 at 2 player1 c_1_10 
+0 215 at 2 player1 c_2_10 
+0 18 at 2 player1 c_3_10 
+0 69 at 2 player1 c_4_10 
+0 52 at 2 player1 c_5_10 
+0 165 at 2 player1 c_6_10 
+0 134 at 2 player1 c_7_10 
+0 166 at 2 player1 c_8_10 
+0 105 at 2 player1 c_9_10 
+0 213 at 2 player1 c_10_10 
+0 142 at 2 player1 c_11_10 
+0 230 at 2 player1 c_12_10 
+0 100 at 2 player1 c_13_10 
+0 122 at 2 player1 c_14_10 
+0 90 at 2 player1 c_15_10 
+0 12 at 2 player1 c_16_10 
+0 138 at 2 player1 c_17_10 
+0 94 at 2 player1 c_18_10 
+0 129 at 2 player1 c_19_10 
+0 54 at 2 player1 c_20_10 
+0 73 at 2 player1 c_21_10 
+0 123 at 2 player1 c_23_10 
+0 81 at 2 player1 c_24_10 
+0 50 at 2 player1 c_1_11 
+0 157 at 2 player1 c_2_11 
+0 38 at 2 player1 c_3_11 
+0 80 at 2 player1 c_4_11 
+0 159 at 2 player1 c_5_11 
+0 168 at 2 player1 c_6_11 
+0 193 at 2 player1 c_7_11 
+0 79 at 2 player1 c_8_11 
+0 241 at 2 player1 c_9_11 
+0 223 at 2 player1 c_10_11 
+0 5 at 2 player1 c_11_11 
+0 229 at 2 player1 c_12_11 
+0 45 at 2 player1 c_13_11 
+0 208 at 2 player1 c_14_11 
+0 85 at 2 player1 c_15_11 
+0 9 at 2 player1 c_16_11 
+0 63 at 2 player1 c_17_11 
+0 41 at 2 player1 c_18_11 
+0 126 at 2 player1 c_19_11 
+0 30 at 2 player1 c_20_11 
+0 89 at 2 player1 c_21_11 
+0 103 at 2 player1 c_22_11 
+0 21 at 2 player1 c_23_11 
+0 188 at 2 player1 c_24_11 
 group
 1
-3 1 at 2 gem12 c_24_5 
+2 0 at 2 boulder20 c_24_4 
+group
+1
+3 1 at 2 gem12 c_23_6 
 group
 2
-90 0 got 1 gem9 
-32 0 at 2 gem9 c_24_4 
+228 0 got 1 gem9 
+37 0 at 2 gem9 c_18_4 
 group
 1
-32 0 at 2 gem9 c_24_4 
+37 0 at 2 gem9 c_18_4 
 group
 1
-31 0 at 2 boulder16 c_3_7 
+36 0 at 2 boulder16 c_24_3 
 group
 1
-30 0 at 2 boulder12 c_11_5 
+35 0 at 2 boulder12 c_17_3 
 group
 1
-30 0 at 2 boulder12 c_11_5 
+35 0 at 2 boulder12 c_17_3 
 group
 1
-9 0 at 2 boulder1 c_2_1 
+8 0 at 2 boulder1 c_4_1 
 group
 1
-10 0 at 2 boulder15 c_2_7 
+12 0 at 2 boulder15 c_22_3 
 group
 1
-29 0 at 2 boulder9 c_19_2 
+34 0 at 2 boulder31 c_13_10 
 group
 1
-44 0 at 2 gem20 c_4_8 
+33 0 at 2 boulder9 c_9_2 
 group
 1
-28 0 at 2 boulder11 c_24_3 
+51 0 at 2 gem20 c_14_10 
 group
 1
-21 0 at 2 gem5 c_18_3 
+32 0 at 2 boulder11 c_21_2 
 group
 1
-28 0 at 2 boulder11 c_24_3 
+24 0 at 2 gem5 c_6_3 
 group
 1
-27 0 at 2 boulder18 c_12_10 
+31 0 at 2 boulder29 c_21_9 
 group
 1
-14 1 at 2 gem27 c_12_11 
+30 0 at 2 boulder18 c_19_4 
 group
 1
-26 0 at 2 boulder14 c_19_6 
+29 0 at 2 boulder24 c_17_7 
 group
 1
-16 1 at 2 gem23 c_15_9 
+28 0 at 2 boulder14 c_21_3 
 group
 1
-25 0 at 2 boulder10 c_23_3 
+27 0 at 2 boulder10 c_18_2 
 group
 1
-24 0 at 2 boulder4 c_10_1 
+42 0 at 2 boulder26 c_2_8 
 group
 1
-23 0 at 2 gem7 c_2_4 
+27 0 at 2 boulder10 c_18_2 
 group
 1
-22 0 at 2 gem19 c_3_8 
+26 0 at 2 boulder4 c_4_2 
 group
 1
-45 0 at 2 gem11 c_23_5 
+25 0 at 2 gem7 c_20_3 
 group
 1
-21 0 at 2 gem5 c_18_3 
+20 0 at 2 boulder21 c_18_5 
 group
 1
-1 0 at 2 boulder7 c_6_2 
+19 0 at 2 boulder32 c_16_10 
 group
 1
-20 0 at 2 boulder17 c_4_7 
+11 1 at 2 gem19 c_9_10 
 group
 1
-20 0 at 2 boulder17 c_4_7 
+21 0 at 2 boulder28 c_20_9 
 group
 1
-19 0 at 2 boulder13 c_12_5 
+52 0 at 2 gem11 c_24_5 
 group
 1
-18 0 at 2 boulder3 c_9_1 
+24 0 at 2 gem5 c_6_3 
 group
 1
-18 0 at 2 boulder3 c_9_1 
+21 0 at 2 boulder28 c_20_9 
 group
 1
-29 0 at 2 boulder9 c_19_2 
+1 0 at 2 boulder7 c_7_2 
 group
 1
-16 1 at 2 gem23 c_15_9 
+23 0 at 2 boulder17 c_17_4 
 group
 1
-17 0 at 2 gem1 c_2_2 
+19 0 at 2 boulder32 c_16_10 
+group
+1
+23 0 at 2 boulder17 c_17_4 
+group
+1
+22 0 at 2 boulder13 c_19_3 
+group
+1
+21 0 at 2 boulder28 c_20_9 
+group
+1
+20 0 at 2 boulder21 c_18_5 
+group
+1
+20 0 at 2 boulder21 c_18_5 
+group
+1
+18 0 at 2 boulder3 c_20_1 
+group
+1
+19 0 at 2 boulder32 c_16_10 
+group
+1
+18 0 at 2 boulder3 c_20_1 
+group
+1
+33 0 at 2 boulder9 c_9_2 
+group
+1
+27 0 at 2 boulder10 c_18_2 
+group
+1
+17 0 at 2 gem1 c_19_1 
+group
+1
+28 0 at 2 boulder14 c_21_3 
+group
+1
+16 0 at 2 boulder6 c_6_2 
+group
+1
+15 0 at 2 boulder2 c_16_1 
+group
+1
+15 0 at 2 boulder2 c_16_1 
+group
+1
+14 0 at 2 gem14 c_23_7 
+group
+1
+5 1 at 2 gem21 c_15_10 
+group
+1
+32 0 at 2 boulder11 c_21_2 
 group
 2
-16 0 got 1 gem23 
-16 1 at 2 gem23 c_15_9 
+13 1 got 1 gem10 
+13 0 at 2 gem10 c_23_5 
 group
 1
-26 0 at 2 boulder14 c_19_6 
+6 0 at 2 gem4 c_5_3 
 group
 1
-15 0 at 2 boulder6 c_14_1 
+9 0 at 2 boulder23 c_12_7 
 group
 1
-13 0 at 2 boulder2 c_3_1 
+12 0 at 2 boulder15 c_22_3 
+group
+1
+10 0 at 2 boulder27 c_3_8 
+group
+1
+12 0 at 2 boulder15 c_22_3 
 group
 2
-14 0 got 1 gem27 
-14 1 at 2 gem27 c_12_11 
+11 0 got 1 gem19 
+11 1 at 2 gem19 c_9_10 
 group
 1
-13 0 at 2 boulder2 c_3_1 
+10 0 at 2 boulder27 c_3_8 
 group
 1
-12 0 at 2 gem14 c_9_6 
+10 0 at 2 boulder27 c_3_8 
 group
 1
-5 0 at 2 gem21 c_19_8 
+8 0 at 2 boulder1 c_4_1 
 group
 1
-28 0 at 2 boulder11 c_24_3 
-group
-2
-11 1 got 1 gem10 
-11 0 at 2 gem10 c_2_5 
+9 0 at 2 boulder23 c_12_7 
 group
 1
-6 0 at 2 gem4 c_6_3 
+8 0 at 2 boulder1 c_4_1 
 group
 1
-8 0 at 2 gem24 c_19_9 
+6 0 at 2 gem4 c_5_3 
 group
 1
-10 0 at 2 boulder15 c_2_7 
-group
-1
-10 0 at 2 boulder15 c_2_7 
-group
-1
-9 0 at 2 boulder1 c_2_1 
-group
-2
-174 0 got 1 gem24 
-8 0 at 2 gem24 c_19_9 
-group
-1
-9 0 at 2 boulder1 c_2_1 
-group
-1
-8 0 at 2 gem24 c_19_9 
-group
-1
-6 0 at 2 gem4 c_6_3 
-group
-1
-7 0 at 2 gem3 c_2_3 
+7 0 at 2 gem3 c_22_1 
 group
 2
 6 1 got 1 gem4 
-6 0 at 2 gem4 c_6_3 
+6 0 at 2 gem4 c_5_3 
 group
 1
-11 0 at 2 gem10 c_2_5 
+13 0 at 2 gem10 c_23_5 
+group
+1
+48 0 at 2 boulder22 c_7_6 
 group
 2
-5 1 got 1 gem21 
-5 0 at 2 gem21 c_19_8 
+5 0 got 1 gem21 
+5 1 at 2 gem21 c_15_10 
 group
 1
-4 0 at 2 gem16 c_12_6 
+4 0 at 2 gem16 c_7_9 
 group
 1
-13 0 at 2 boulder2 c_3_1 
+15 0 at 2 boulder2 c_16_1 
 group
 1
-15 0 at 2 boulder6 c_14_1 
+16 0 at 2 boulder6 c_6_2 
 group
 2
 3 0 got 1 gem12 
-3 1 at 2 gem12 c_24_5 
+3 1 at 2 gem12 c_23_6 
 group
 1
-25 0 at 2 boulder10 c_23_3 
+2 0 at 2 boulder20 c_24_4 
 group
 1
-18 0 at 2 boulder3 c_9_1 
+18 0 at 2 boulder3 c_20_1 
 group
 1
-19 0 at 2 boulder13 c_12_5 
+22 0 at 2 boulder13 c_19_3 
 group
-2
-2 1 got 1 gem22 
-2 0 at 2 gem22 c_14_9 
+1
+23 0 at 2 boulder17 c_17_4 
+group
+1
+1 0 at 2 boulder7 c_7_2 
 group
 1
-20 0 at 2 boulder17 c_4_7 
+54 0 terrain-empty 1 c_5_6 
 group
 1
-1 0 at 2 boulder7 c_6_2 
+55 0 terrain-empty 1 c_1_9 
 group
 1
-49 0 terrain-empty 1 c_16_6 
+67 0 terrain-empty 1 c_24_2 
 group
 1
-50 0 terrain-empty 1 c_21_5 
+56 0 terrain-empty 1 c_5_1 
 group
 1
-224 0 terrain-empty 1 c_13_9 
+57 0 terrain-empty 1 c_13_3 
 group
 1
-54 0 terrain-empty 1 c_24_6 
+58 0 new-axiom@0 1 c_8_2 
 group
 1
-111 0 terrain-empty 1 c_4_3 
+59 0 terrain-empty 1 c_7_10 
 group
 1
-56 0 terrain-empty 1 c_13_1 
+60 0 terrain-empty 1 c_9_9 
 group
 1
-57 0 new-axiom@0 1 c_12_5 
+61 0 new-axiom@0 1 c_12_10 
 group
 1
-58 0 terrain-empty 1 c_5_10 
+62 0 new-axiom@0 1 c_22_3 
 group
 1
-59 0 terrain-empty 1 c_6_8 
+63 0 terrain-empty 1 c_9_7 
 group
 1
-60 0 terrain-empty 1 c_11_4 
+64 0 terrain-empty 1 c_11_10 
 group
 1
-61 0 terrain-empty 1 c_10_5 
+65 0 terrain-empty 1 c_19_7 
 group
 1
-62 0 terrain-empty 1 c_13_2 
+66 0 terrain-empty 1 c_24_8 
 group
 1
-63 0 terrain-empty 1 c_10_2 
+68 0 terrain-empty 1 c_3_4 
 group
 1
-64 0 terrain-empty 1 c_1_6 
+69 0 terrain-empty 1 c_23_9 
 group
 1
-65 0 terrain-empty 1 c_20_1 
+70 0 terrain-empty 1 c_14_8 
 group
 1
-66 0 terrain-empty 1 c_20_9 
+73 0 terrain-empty 1 c_15_3 
 group
 1
-67 0 terrain-empty 1 c_6_4 
+74 0 new-axiom@0 1 c_3_8 
 group
 1
-68 0 terrain-empty 1 c_16_5 
+265 0 terrain-empty 1 c_14_6 
 group
 1
-69 0 terrain-empty 1 c_5_9 
+75 0 terrain-empty 1 c_5_4 
 group
 1
-70 0 terrain-empty 1 c_16_8 
+76 0 new-axiom@0 1 c_13_10 
 group
 1
-72 0 new-axiom@0 1 c_23_3 
+77 0 new-axiom@0 1 c_20_1 
 group
 1
-74 0 terrain-empty 1 c_8_5 
+78 0 oriented-down 1 player1 
 group
 1
-75 0 terrain-empty 1 c_7_1 
+93 0 terrain-empty 1 c_8_11 
 group
 1
-76 0 new-axiom@0 1 c_11_5 
+80 0 terrain-empty 1 c_4_8 
 group
 1
-77 0 new-axiom@0 1 c_10_1 
+81 0 terrain-empty 1 c_11_5 
 group
 1
-78 0 terrain-empty 1 c_8_2 
+82 0 terrain-empty 1 c_23_11 
 group
 1
-80 0 terrain-empty 1 c_9_3 
+83 0 terrain-empty 1 c_9_4 
 group
 1
-153 0 oriented-left 1 player1 
+84 0 terrain-empty 1 c_21_5 
 group
 1
-83 0 terrain-empty 1 c_17_2 
+243 0 terrain-empty 1 c_22_2 
 group
 1
-84 0 terrain-empty 1 c_3_6 
+248 0 terrain-empty 1 c_23_3 
 group
 1
-85 0 terrain-empty 1 c_22_10 
+85 0 terrain-empty 1 c_19_8 
 group
 1
-127 0 terrain-empty 1 c_1_5 
+86 0 terrain-empty 1 c_23_8 
 group
 1
-86 0 terrain-empty 1 c_22_3 
+87 0 terrain-empty 1 c_11_11 
 group
 1
-228 0 terrain-empty 1 c_3_3 
+89 0 terrain-empty 1 c_4_3 
 group
 1
-88 0 terrain-empty 1 c_24_8 
+90 0 new-axiom@0 1 c_6_2 
 group
 1
-259 0 terrain-empty 1 c_12_7 
+91 0 terrain-empty 1 c_5_7 
 group
 1
-91 0 terrain-empty 1 c_15_4 
+79 0 terrain-empty 1 c_13_4 
 group
 1
-92 0 terrain-empty 1 c_17_5 
+95 0 terrain-empty 1 c_16_11 
 group
 1
-232 0 terrain-empty 1 c_18_9 
+96 0 terrain-empty 1 c_24_10 
 group
 1
-93 0 terrain-empty 1 c_18_1 
+97 0 new-axiom@0 1 c_7_6 
 group
 1
-94 0 terrain-empty 1 c_23_9 
+108 0 terrain-empty 1 c_23_2 
 group
 1
-119 0 terrain-empty 1 c_11_9 
+99 0 terrain-empty 1 c_12_5 
 group
 1
-95 0 terrain-empty 1 c_7_6 
+100 0 new-axiom@0 1 c_24_3 
 group
 1
-96 0 terrain-empty 1 c_19_1 
+101 0 terrain-empty 1 c_15_1 
 group
 1
-97 0 terrain-empty 1 c_9_4 
+102 0 terrain-empty 1 c_14_5 
 group
 1
-98 0 terrain-empty 1 c_15_11 
+103 0 new-axiom@0 1 c_2_8 
 group
 1
-99 0 terrain-empty 1 c_20_7 
+104 0 terrain-empty 1 c_1_6 
 group
 1
-176 0 terrain-empty 1 c_4_9 
+107 0 terrain-empty 1 c_6_4 
 group
 1
-186 0 terrain-empty 1 c_3_2 
+225 0 terrain-empty 1 c_12_8 
 group
 1
-179 0 terrain-empty 1 c_4_1 
+109 0 terrain-empty 1 c_11_8 
 group
 1
-100 0 terrain-empty 1 c_3_5 
+160 0 oriented-right 1 player1 
 group
 1
-81 0 terrain-empty 1 c_13_8 
+110 0 terrain-empty 1 c_24_9 
 group
 1
-101 0 terrain-empty 1 c_13_6 
+112 0 terrain-empty 1 c_20_2 
 group
 1
-103 0 terrain-empty 1 c_21_9 
+113 0 new-axiom@0 1 c_4_1 
 group
 1
-104 0 terrain-empty 1 c_4_6 
+181 0 terrain-empty 1 c_9_11 
 group
 1
-106 0 terrain-empty 1 c_5_7 
+115 0 terrain-empty 1 c_19_9 
 group
 1
-107 0 terrain-empty 1 c_15_2 
+116 0 terrain-empty 1 c_21_6 
 group
 1
-108 0 terrain-empty 1 c_6_9 
+117 0 terrain-empty 1 c_19_5 
 group
 1
-109 0 terrain-empty 1 c_18_7 
+120 0 new-axiom@0 1 c_16_10 
 group
 1
-110 0 terrain-empty 1 c_16_7 
+121 0 terrain-empty 1 c_8_10 
 group
 1
-48 0 terrain-empty 1 c_10_8 
+122 0 terrain-empty 1 c_3_6 
 group
 1
-112 0 terrain-empty 1 c_24_11 
+123 0 new-axiom@0 1 c_24_4 
 group
 1
-51 0 new-axiom@0 1 c_24_3 
+124 0 terrain-empty 1 c_12_4 
 group
 1
-113 0 terrain-empty 1 c_15_7 
+125 0 terrain-empty 1 c_8_8 
 group
 1
-114 0 terrain-empty 1 c_15_1 
+126 0 terrain-empty 1 c_7_11 
 group
 1
-261 0 terrain-empty 1 c_4_11 
+127 0 terrain-empty 1 c_18_8 
 group
 1
-116 0 terrain-empty 1 c_1_3 
+128 0 terrain-empty 1 c_21_4 
 group
 1
-117 0 terrain-empty 1 c_1_10 
+129 0 terrain-empty 1 c_6_7 
 group
 1
-254 0 oriented-right 1 player1 
+179 0 terrain-empty 1 c_5_11 
 group
 1
-122 0 terrain-empty 1 c_19_10 
+131 0 new-axiom@0 1 c_12_7 
 group
 1
-123 0 terrain-empty 1 c_1_9 
+132 0 terrain-empty 1 c_17_11 
 group
 1
-124 0 terrain-empty 1 c_18_10 
+133 0 terrain-empty 1 c_7_7 
 group
 1
-125 0 new-axiom@0 1 c_19_2 
+134 0 new-axiom@0 1 c_5_2 
 group
 1
-126 0 terrain-empty 1 c_11_7 
+135 0 terrain-empty 1 c_11_9 
 group
 1
-128 0 terrain-empty 1 c_6_10 
+137 0 terrain-empty 1 c_20_4 
 group
 1
-129 0 terrain-empty 1 c_9_9 
+138 0 terrain-empty 1 c_18_3 
 group
 1
-132 0 terrain-empty 1 c_4_4 
+139 0 terrain-empty 1 c_16_3 
 group
 1
-133 0 terrain-empty 1 c_21_10 
+140 0 terrain-empty 1 c_8_9 
 group
 1
-134 0 terrain-empty 1 c_13_5 
+141 0 terrain-empty 1 c_3_9 
 group
 1
-135 0 terrain-empty 1 c_6_1 
+143 0 new-axiom@0 1 c_23_4 
 group
 1
-136 0 terrain-empty 1 c_17_7 
+218 0 terrain-empty 1 c_10_11 
 group
 1
-137 0 terrain-empty 1 c_16_10 
+145 0 new-axiom@0 1 c_18_2 
 group
 1
-138 0 terrain-empty 1 c_12_2 
+146 0 terrain-empty 1 c_15_11 
 group
 1
-183 0 terrain-empty 1 c_7_11 
+147 0 terrain-empty 1 c_11_2 
 group
 1
-140 0 terrain-empty 1 c_17_11 
+148 0 terrain-empty 1 c_13_6 
 group
 1
-141 0 terrain-empty 1 c_16_2 
+162 0 terrain-empty 1 c_24_1 
 group
 1
-142 0 terrain-empty 1 c_9_2 
+150 0 terrain-empty 1 c_14_3 
 group
 1
-144 0 new-axiom@0 1 c_13_10 
+136 0 terrain-empty 1 c_12_6 
 group
 1
-145 0 terrain-empty 1 c_8_3 
+152 0 new-axiom@0 1 c_16_1 
 group
 1
-201 0 terrain-empty 1 c_16_9 
+153 0 terrain-empty 1 c_15_8 
 group
 1
-146 0 oriented-up 1 player1 
+154 0 terrain-empty 1 c_14_4 
 group
 1
-147 0 terrain-empty 1 c_10_11 
+155 0 new-axiom@0 1 c_21_9 
 group
 1
-206 0 terrain-empty 1 c_9_5 
+156 0 terrain-empty 1 c_6_8 
 group
 1
-148 0 terrain-empty 1 c_23_11 
+250 0 terrain-empty 1 c_14_11 
 group
 1
-149 0 new-axiom@0 1 c_18_2 
+158 0 new-axiom@0 1 c_7_2 
 group
 1
-150 0 terrain-empty 1 c_22_2 
+159 0 new-axiom@0 1 c_9_2 
 group
 1
-151 0 new-axiom@0 1 c_3_7 
+161 0 terrain-empty 1 c_2_3 
 group
 1
-152 0 terrain-empty 1 c_16_1 
+163 0 terrain-empty 1 c_16_5 
 group
 1
-79 0 terrain-empty 1 c_10_6 
+164 0 terrain-empty 1 c_4_11 
 group
 1
-82 0 terrain-empty 1 c_22_5 
+165 0 terrain-empty 1 c_3_7 
 group
 1
-154 0 terrain-empty 1 c_11_11 
+166 0 terrain-empty 1 c_5_8 
 group
 1
-155 0 new-axiom@0 1 c_4_7 
+167 0 terrain-empty 1 c_18_10 
 group
 1
-156 0 terrain-empty 1 c_24_7 
+168 0 terrain-empty 1 c_4_7 
 group
 1
-157 0 terrain-empty 1 c_24_1 
+169 0 new-axiom@0 1 c_17_7 
 group
 1
-158 0 terrain-empty 1 c_21_7 
+170 0 terrain-empty 1 c_13_7 
 group
 1
-159 0 terrain-empty 1 c_8_10 
+219 0 terrain-empty 1 c_19_10 
 group
 1
-160 0 terrain-empty 1 c_22_7 
+92 0 terrain-empty 1 c_6_10 
 group
 1
-249 0 terrain-empty 1 c_2_6 
+172 0 terrain-empty 1 c_19_2 
 group
 1
-161 0 terrain-empty 1 c_23_1 
+204 0 terrain-empty 1 c_14_1 
 group
 1
-163 0 terrain-empty 1 c_17_9 
+173 0 terrain-empty 1 c_4_10 
 group
 1
-164 0 terrain-empty 1 c_1_4 
+174 0 terrain-empty 1 c_8_7 
 group
 1
-165 0 terrain-empty 1 c_24_10 
+175 0 terrain-empty 1 c_21_8 
 group
 1
-166 0 terrain-empty 1 c_23_6 
+111 0 terrain-empty 1 c_12_1 
 group
 1
-167 0 terrain-empty 1 c_2_10 
+114 0 terrain-empty 1 c_9_3 
 group
 1
-168 0 terrain-empty 1 c_2_9 
+176 0 terrain-empty 1 c_17_6 
 group
 1
-169 0 terrain-empty 1 c_10_3 
+178 0 terrain-empty 1 c_17_1 
 group
 1
-170 0 terrain-empty 1 c_11_8 
+130 0 terrain-empty 1 c_17_2 
 group
 1
-171 0 terrain-empty 1 c_6_5 
+180 0 terrain-empty 1 c_1_2 
 group
 1
-255 0 terrain-empty 1 c_5_6 
+144 0 terrain-empty 1 c_6_6 
 group
 1
-173 0 terrain-empty 1 c_5_8 
+182 0 new-axiom@0 1 c_4_2 
 group
 1
-175 0 terrain-empty 1 c_9_11 
+220 0 new-axiom@0 1 c_18_5 
 group
 1
-177 0 terrain-empty 1 c_13_3 
+185 0 terrain-empty 1 c_20_6 
 group
 1
-178 0 terrain-empty 1 c_7_10 
+186 0 terrain-empty 1 c_18_1 
 group
 1
-55 0 terrain-empty 1 c_4_10 
+188 0 terrain-empty 1 c_15_6 
 group
 1
-180 0 terrain-empty 1 c_4_2 
+189 0 terrain-empty 1 c_14_2 
 group
 1
-181 0 terrain-empty 1 c_12_1 
+190 0 terrain-empty 1 c_16_2 
 group
 1
-182 0 terrain-empty 1 c_17_6 
+191 0 new-axiom@0 1 c_21_2 
 group
 1
-184 0 terrain-empty 1 c_17_1 
+254 0 terrain-empty 1 c_15_5 
 group
 1
-185 0 new-axiom@0 1 c_14_1 
+192 0 terrain-empty 1 c_7_8 
 group
 1
-187 0 terrain-empty 1 c_21_11 
+193 0 new-axiom@0 1 c_17_4 
 group
 1
-188 0 terrain-empty 1 c_1_2 
+194 0 terrain-empty 1 c_10_10 
 group
 1
-189 0 terrain-empty 1 c_6_6 
+195 0 oriented-up 1 player1 
 group
 1
-190 0 terrain-empty 1 c_12_4 
+196 0 terrain-empty 1 c_11_3 
 group
 1
-191 0 terrain-empty 1 c_18_8 
+197 0 terrain-empty 1 c_20_7 
 group
 1
-192 0 terrain-empty 1 c_21_2 
+245 0 terrain-empty 1 c_23_10 
 group
 1
-193 0 terrain-empty 1 c_14_11 
+198 0 terrain-empty 1 c_8_6 
 group
 1
-194 0 terrain-empty 1 c_3_4 
+199 0 terrain-empty 1 c_21_10 
 group
 1
-195 0 new-axiom@0 1 c_11_1 
+200 0 terrain-empty 1 c_5_10 
 group
 1
-196 0 terrain-empty 1 c_15_10 
+201 0 terrain-empty 1 c_4_6 
 group
 1
-202 0 terrain-empty 1 c_1_7 
+202 0 terrain-empty 1 c_13_1 
 group
 1
-197 0 terrain-empty 1 c_1_1 
+205 0 terrain-empty 1 c_12_11 
 group
 1
-198 0 terrain-empty 1 c_22_1 
+206 0 terrain-empty 1 c_13_11 
 group
 1
-199 0 terrain-empty 1 c_8_1 
+207 0 terrain-empty 1 c_2_1 
 group
 1
-200 0 terrain-empty 1 c_10_9 
+208 0 terrain-empty 1 c_18_7 
 group
 1
-118 0 terrain-empty 1 c_15_6 
+105 0 terrain-empty 1 c_2_2 
 group
 1
-203 0 terrain-empty 1 c_20_5 
+209 0 terrain-empty 1 c_16_7 
 group
 1
-204 0 new-axiom@0 1 c_9_1 
+210 0 terrain-empty 1 c_24_11 
 group
 1
-205 0 terrain-empty 1 c_16_3 
+211 0 terrain-empty 1 c_15_7 
 group
 1
-207 0 terrain-empty 1 c_11_3 
+212 0 terrain-empty 1 c_1_3 
 group
 1
-208 0 terrain-empty 1 c_23_8 
+214 0 terrain-empty 1 c_11_6 
 group
 1
-209 0 terrain-empty 1 c_18_11 
+215 0 terrain-empty 1 c_5_9 
 group
 1
-210 0 terrain-empty 1 c_20_2 
+216 0 terrain-empty 1 c_1_10 
 group
 1
-211 0 terrain-empty 1 c_20_10 
+217 0 terrain-empty 1 c_20_8 
 group
 1
-212 0 new-axiom@0 1 c_3_1 
+171 0 terrain-empty 1 c_3_2 
 group
 1
-213 0 new-axiom@0 1 c_2_1 
+221 0 terrain-empty 1 c_3_1 
 group
 1
-214 0 terrain-empty 1 c_17_3 
+222 0 terrain-empty 1 c_16_4 
 group
 1
-215 0 terrain-empty 1 c_22_4 
+223 0 terrain-empty 1 c_4_4 
 group
 1
-216 0 terrain-empty 1 c_18_5 
+224 0 terrain-empty 1 c_13_5 
 group
 1
-218 0 new-axiom@0 1 c_6_2 
+227 0 terrain-empty 1 c_12_2 
 group
 1
-219 0 terrain-empty 1 c_15_5 
+229 0 terrain-empty 1 c_15_4 
 group
 1
-220 0 terrain-empty 1 c_13_4 
+230 0 terrain-empty 1 c_17_5 
 group
 1
-221 0 terrain-empty 1 c_16_11 
+231 0 terrain-empty 1 c_1_1 
 group
 1
-222 0 new-axiom@0 1 c_19_6 
+232 0 new-axiom@0 1 c_1_8 
 group
 1
-223 0 terrain-empty 1 c_17_8 
+177 0 terrain-empty 1 c_10_9 
 group
 1
-52 0 terrain-empty 1 c_14_10 
+233 0 terrain-empty 1 c_11_1 
 group
 1
-225 0 terrain-empty 1 c_9_8 
+234 0 terrain-empty 1 c_9_6 
 group
 1
-226 0 terrain-empty 1 c_2_11 
+236 0 terrain-empty 1 c_20_5 
 group
 1
-227 0 terrain-empty 1 c_4_5 
+98 0 terrain-empty 1 c_18_6 
 group
 1
-87 0 terrain-empty 1 c_19_11 
+237 0 terrain-empty 1 c_19_6 
 group
 1
-229 0 terrain-empty 1 c_24_9 
+106 0 terrain-empty 1 c_2_4 
 group
 1
-230 0 terrain-empty 1 c_20_3 
+238 0 terrain-empty 1 c_14_7 
 group
 1
-231 0 terrain-empty 1 c_8_11 
+239 0 terrain-empty 1 c_8_4 
 group
 1
-233 0 terrain-empty 1 c_5_1 
+240 0 terrain-empty 1 c_12_3 
 group
 1
-120 0 terrain-empty 1 c_13_7 
+241 0 terrain-empty 1 c_8_3 
 group
 1
-234 0 terrain-empty 1 c_19_5 
+242 0 new-axiom@0 1 c_19_3 
 group
 1
-235 0 terrain-empty 1 c_1_11 
+244 0 terrain-empty 1 c_16_6 
 group
 1
-236 0 terrain-empty 1 c_17_10 
+246 0 terrain-empty 1 c_7_4 
 group
 1
-237 0 new-axiom@0 1 c_12_10 
+247 0 terrain-empty 1 c_4_9 
 group
 1
-238 0 terrain-empty 1 c_21_8 
+249 0 oriented-left 1 player1 
 group
 1
-239 0 terrain-empty 1 c_22_11 
+157 0 terrain-empty 1 c_13_8 
 group
 1
-240 0 terrain-empty 1 c_3_11 
+251 0 terrain-empty 1 c_20_10 
 group
 1
-241 0 terrain-empty 1 c_23_10 
+71 0 terrain-empty 1 c_22_4 
 group
 1
-243 0 terrain-empty 1 c_1_8 
+252 0 terrain-empty 1 c_21_7 
 group
 1
-172 0 terrain-empty 1 c_22_6 
+235 0 new-axiom@0 1 c_19_4 
 group
 1
-244 0 terrain-empty 1 c_22_9 
+253 0 terrain-empty 1 c_23_1 
 group
 1
-245 0 terrain-empty 1 c_8_8 
+72 0 new-axiom@0 1 c_17_3 
 group
 1
-246 0 new-axiom@0 1 c_2_7 
+255 0 terrain-empty 1 c_15_2 
 group
 1
-247 0 terrain-empty 1 c_6_7 
+256 0 terrain-empty 1 c_6_9 
 group
 1
-248 0 terrain-empty 1 c_21_3 
+257 0 terrain-empty 1 c_11_4 
 group
 1
-251 0 terrain-empty 1 c_10_7 
+258 0 terrain-empty 1 c_10_8 
 group
 1
-252 0 terrain-empty 1 c_23_7 
+259 0 new-axiom@0 1 c_20_9 
 group
 1
-253 0 terrain-empty 1 c_15_3 
+260 0 terrain-empty 1 c_13_2 
 group
 1
-257 0 terrain-empty 1 c_12_8 
+261 0 terrain-empty 1 c_2_9 
 group
 1
-258 0 terrain-empty 1 c_18_6 
+262 0 terrain-empty 1 c_9_8 
 group
 1
-115 0 terrain-empty 1 c_12_9 
+266 0 new-axiom@0 1 c_21_3 
 group
 1
-260 0 terrain-empty 1 c_12_3 
+213 0 terrain-empty 1 c_3_3 
 group
 1
-105 0 oriented-down 1 player1 
+264 0 terrain-empty 1 c_16_8 
 end_groups

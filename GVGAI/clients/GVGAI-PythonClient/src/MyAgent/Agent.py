@@ -89,7 +89,9 @@ class Agent(AbstractPlayer):
             keys = sso.avatarResources.keys()
 
             if len(keys) > 0: # He has at least one gem
-                gem_key = keys[0]
+                # gem_key = keys[0] # Python 2
+                gem_key = list(sso.avatarResources)[0] # Python 3
+
                 num_gems = sso.avatarResources[gem_key]
 
                 print(num_gems)
