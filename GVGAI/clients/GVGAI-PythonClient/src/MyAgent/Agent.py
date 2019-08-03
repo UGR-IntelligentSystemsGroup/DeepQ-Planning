@@ -19,6 +19,13 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
+        # Attributes to save data for training
+        self.X = [] # Shape = (-1, 13, 26, 9)
+        self.Y = [] # Shape = (-1)
+
+        # Variable to check if the dataset has already been saved
+        self.already_saved = False
+
 
     def init(self, sso, elapsedTimer):
         """
@@ -73,11 +80,19 @@ class Agent(AbstractPlayer):
         print(all_elems)
         print("\n")"""
 
-        encoded_grid = self.encode_game_state(sso.observationGrid, (0,0))
+        """encoded_grid = self.encode_game_state(sso.observationGrid, (0,0))
 
-        print(encoded_grid)
+        print(encoded_grid.shape)
 
-        print("\n\n\n")
+        print("\n\n\n")"""
+
+        print("X\n")
+        print(len(self.X))
+
+        print("Y\n")
+        print(self.Y)
+
+        print("\n\n")
 
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
@@ -100,9 +115,18 @@ class Agent(AbstractPlayer):
                     # Plan to exit the level
                     print("YA PUEDO SALIR DEL NIVEL")
                     exit = sso.portalsPositions[0][0]
-                    exit_pos = (exit.position.x // sso.blockSize, exit.position.y // sso.blockSize)
+                    exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+
+                    # Save current observation for dataset
+                    one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
                     self.search_plan(sso, exit_pos, out_description, output_file)
+
+                    # Save plan length as current metric
+                    plan_metric = len(self.action_list)
+
+                    self.X.append(one_hot_grid.tolist()) # tolist() to transform from numpy array to normal python array
+                    self.Y.append(plan_metric)
 
 
             # Obtain gems positions
@@ -110,8 +134,22 @@ class Agent(AbstractPlayer):
             
             chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
 
+            while (chosen_gem[0] == int(sso.avatarPosition[0] // sso.blockSize) and
+               chosen_gem[1] == int(sso.avatarPosition[1] // sso.blockSize)):
+                chosen_gem = gems[random.randint(0, len(gems) - 1)]
+                print("SIII")
+
+            # Save current observation for dataset
+            one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
+
             # Search for a plan
             self.search_plan(sso, chosen_gem, out_description, output_file)
+
+            # Save plan length as current metric
+            plan_metric = len(self.action_list)
+            
+            self.X.append(one_hot_grid.tolist())
+            self.Y.append(plan_metric)
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -284,5 +322,21 @@ class Agent(AbstractPlayer):
                 desc.write(line)
 
         pass
+
+    def result(self, sso, elapsedTimer):
+        print("Nivel terminado")
+
+        # Guardo el dataset si tiene al menos 100 elementos
+        min_elem = 100
+        file_name = 'dataset.npz'
+
+        if not self.already_saved and len(self.Y) >= min_elem:
+            print("\n\n<<<GUARDANDO DATASET>>>\n\n")
+
+            np.savez(file_name, X=self.X, Y=self.Y)
+
+            self.already_saved = True # Don't save again
+
+        return random.randint(0, 2)
 
 
