@@ -42,6 +42,9 @@ class Agent(AbstractPlayer):
         # This action list corresponds to the plan found by the planner
         self.action_list = []
 
+        # It is true when the agent has the minimum required number of gems
+        self.can_exit = False
+
     
     def act(self, sso, elapsedTimer):
         """
@@ -114,13 +117,15 @@ class Agent(AbstractPlayer):
                 if num_gems >= self.NUM_GEMS_FOR_EXIT:
                     # Plan to exit the level
                     print("YA PUEDO SALIR DEL NIVEL")
+                    self.can_exit = True
+
                     exit = sso.portalsPositions[0][0]
                     exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
 
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
-                    self.search_plan(sso, exit_pos, out_description, output_file)
+                    self.action_list = self.search_plan(sso, exit_pos, out_description, output_file)
 
                     # Save plan length as current metric
                     plan_metric = len(self.action_list)
@@ -128,28 +133,48 @@ class Agent(AbstractPlayer):
                     self.X.append(one_hot_grid.tolist()) # tolist() to transform from numpy array to normal python array
                     self.Y.append(plan_metric)
 
+            # Only plan for next gem if it is needed
+            if not self.can_exit:
+                # Obtain gems positions
+                gems = self.get_gems_positions(sso)
+                
+                chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
 
-            # Obtain gems positions
-            gems = self.get_gems_positions(sso)
-            
-            chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
+                # Avoid error of picking a gem which is at the agent's position
+                while (chosen_gem[0] == int(sso.avatarPosition[0] // sso.blockSize) and
+                       chosen_gem[1] == int(sso.avatarPosition[1] // sso.blockSize)):
+                    chosen_gem = gems[random.randint(0, len(gems) - 1)]
 
-            while (chosen_gem[0] == int(sso.avatarPosition[0] // sso.blockSize) and
-               chosen_gem[1] == int(sso.avatarPosition[1] // sso.blockSize)):
-                chosen_gem = gems[random.randint(0, len(gems) - 1)]
-                print("SIII")
+                # Save current observation for dataset
+                one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
 
-            # Save current observation for dataset
-            one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
+                # Search for a plan to chosen_gem
+                self.action_list = self.search_plan(sso, chosen_gem, out_description, output_file)
 
-            # Search for a plan
-            self.search_plan(sso, chosen_gem, out_description, output_file)
+                # Save plan length as current metric
+                plan_metric = len(self.action_list)
+                
+                self.X.append(one_hot_grid.tolist())
+                self.Y.append(plan_metric)
 
-            # Save plan length as current metric
-            plan_metric = len(self.action_list)
-            
-            self.X.append(one_hot_grid.tolist())
-            self.Y.append(plan_metric)
+                # Obtain a plan to every possible gem to collect data for training the model
+                for gem in gems:
+                    if ((gem[0] != int(sso.avatarPosition[0] // sso.blockSize) or
+                       gem[1] != int(sso.avatarPosition[1] // sso.blockSize)) and 
+                       gem != chosen_gem):
+                        
+                        # Save current observation for dataset
+                        one_hot_grid = self.encode_game_state(sso.observationGrid, gem)
+
+                        # Search for a plan
+                        this_plan = self.search_plan(sso, gem, out_description, output_file)
+
+                        # Save plan length as current metric
+                        plan_metric = len(this_plan)
+                        
+                        self.X.append(one_hot_grid.tolist())
+                        self.Y.append(plan_metric)
+                        
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -226,12 +251,17 @@ class Agent(AbstractPlayer):
         Method used to search for a plan given a description. Writes the resulting
         plan in the output file.
 
+        Change: now returns the plan instead of assigning it to self.action_list
+
         @param sso State observation.
         @param goal Goal position to be reached. It's given as a (x, y) tuple.        
         @param description Name of the file containing the description of the current
                            game state.
         @param output Name of the file which will contain the output plan
         """
+
+        action_list = []
+
         # Parse the current game state
         self.parse_game_state(sso, goal, description)
 
@@ -242,7 +272,9 @@ class Agent(AbstractPlayer):
         with open(output) as plan:
             for action in plan:
                 # Remove the \n character at the end and add actions to list
-                self.action_list.append(action.replace('\n', ''))
+                action_list.append(action.replace('\n', ''))
+
+        return action_list
 
 
     def parse_game_state(self, sso, goal, description):
@@ -326,8 +358,8 @@ class Agent(AbstractPlayer):
     def result(self, sso, elapsedTimer):
         print("Nivel terminado")
 
-        # Guardo el dataset si tiene al menos 100 elementos
-        min_elem = 100
+        # Guardo el dataset si tiene al menos min_elem elementos
+        min_elem = 1000
         file_name = 'dataset.npz'
 
         if not self.already_saved and len(self.Y) >= min_elem:

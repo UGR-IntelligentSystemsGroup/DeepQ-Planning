@@ -1,20 +1,12 @@
 [GAME] Game idx:11 game name boulderdash
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:93
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:106
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:105
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:115
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:100
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:88
 [PHASE] Starting Second Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:74
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:76
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:102
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:108
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:73
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:112
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:116
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:73
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:89
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:126
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:65
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:78
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:139
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:119
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:102
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:104
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:70
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:110
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:142
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:87
