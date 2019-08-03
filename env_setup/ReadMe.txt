@@ -19,4 +19,13 @@ Para importar este archivo y crear el entorno de conda, hay que seguir los sigui
 
 	    Nota: si se cambia de sistema operativo, es posible que surjan problemas con las dependencias.
 	    Yo he realizado todos estos pasos en Ubuntu 18.04 LTS.
+	    
+	4. Una vez añadido el entorno, es necesario activarlo. Para ello hay que ejecutar "conda activate nombre_entorno"
+	   en Linux y "activate nombre_entorno" en Windows. Tras ser activado, nos debería aparecer a la izquierda
+	   de nuestro nombre en el terminal "(nombre_entorno)". Si ahora ejecutamos "python", no se ejecutará la versión
+	   del sistema sino la del entorno, de forma que tendremos acceso a todos los módulos instalados en el entorno.
+	   
+	5. Si queremos desactivar el entorno, hay que ejecutar la orden "conda deactivate nombre_entorno" o
+	   "deactivate nombre_entorno", según nuestro SO. Tras haberlo hecho, si ejecutamos "python" de nuevo, volveremos
+	   a tener acceso a la versión de python del sistema, no la del entorno.
 
