@@ -26,6 +26,8 @@ class Agent(AbstractPlayer):
         # Variable to check if the dataset has already been saved
         self.already_saved = False
 
+        self.current_level = 0 # Level playing right now
+
 
     def init(self, sso, elapsedTimer):
         """
@@ -157,6 +159,7 @@ class Agent(AbstractPlayer):
                 self.X.append(one_hot_grid.tolist())
                 self.Y.append(plan_metric)
 
+                
                 # Obtain a plan to every possible gem to collect data for training the model
                 for gem in gems:
                     if ((gem[0] != int(sso.avatarPosition[0] // sso.blockSize) or
@@ -359,16 +362,23 @@ class Agent(AbstractPlayer):
         print("Nivel terminado")
 
         # Guardo el dataset si tiene al menos min_elem elementos
-        min_elem = 1000
-        file_name = 'dataset.npz'
+        min_elem = 5000
+        file_name = 'dataset_train_3.npz'
+
+        dataset_X = np.array(self.X, dtype=np.bool)
+        dataset_Y = np.array(self.Y, dtype=np.int32)
 
         if not self.already_saved and len(self.Y) >= min_elem:
             print("\n\n<<<GUARDANDO DATASET>>>\n\n")
 
-            np.savez(file_name, X=self.X, Y=self.Y)
+            np.savez(file_name, X=dataset_X, Y=dataset_Y)
 
             self.already_saved = True # Don't save again
 
-        return random.randint(0, 2)
+        #return random.randint(0, 2)
+
+        self.current_level = (self.current_level + 1) % 3
+
+        return self.current_level
 
 

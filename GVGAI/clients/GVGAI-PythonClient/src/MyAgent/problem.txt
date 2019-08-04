@@ -1,5 +1,5 @@
-ORIENTATION:right
-GET-GEM:24,7
+ORIENTATION:down
+GET-GEM:3,6
 wwwwwwwwwwwwwwwwwwwwwwwwww
 w..--.-.....o......oooxoow
 w..----.........e...x...xw
@@ -9,7 +9,7 @@ w.--.--..xxxx........oo..w
 w..xx................xxoow
 w......o...............xxw
 w.....xxx.....o---...o...w
-w..A..........x-.-....o..w
-w...oo...oo....---.......w
-w...xx...xx..........xx..w
+w..-------------------o..w
+w...oo...oo....---...-...w
+w...xx...xx..........Ax..w
 wwwwwwwwwwwwwwwwwwwwwwwwww
