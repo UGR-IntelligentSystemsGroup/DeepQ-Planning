@@ -9,7 +9,8 @@ Este entorno es el que estoy usando para ejecutar el código. Usa python 3.5 e i
 Para importar este archivo y crear el entorno de conda, hay que seguir los siguientes pasos:
 
 1. Instalar Anaconda (preferiblemente la última versión): hay que descargar el
-script bash (en el caso de Linux) de la siguiente página y ejecutarlo
+script bash (en el caso de Linux) de la 
+[siguiente página](https://www.anaconda.com/distribution/#linux) y ejecutarlo
 **NO COMO ROOT** sino como el usuario con el que queremos usar anaconda.
 
 2. Elegir el nombre que queramos para el entorno (`planning_with_subgoals` por defecto).
@@ -32,5 +33,5 @@ instalados en el entorno.
 o `deactivate nombre_entorno`, según nuestro SO. Tras haberlo hecho, si ejecutamos `python`
 de nuevo, volveremos a tener acceso a la versión de Python del sistema, no la del entorno.
 
-[siguiente página]: https://www.anaconda.com/distribution/#linux
+
 
