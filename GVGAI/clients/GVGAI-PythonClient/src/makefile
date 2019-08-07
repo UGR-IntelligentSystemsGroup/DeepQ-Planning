@@ -1,5 +1,9 @@
 .PHONY: clean
 
 clean:
-	@echo "Removing extra files created by LAMA..."
-	rm -f test.groups all.groups output output.sas sas_plan.1 MyAgent/parser/problem.pddl
+	@echo "Removing .pyc files..."
+	find . -name "*.pyc" -type f -delete
+	@echo "Removing __pycache__ directories..."
+	find . -name "*__pycache__" -type d -delete
+	@echo "Removing extra files created by parser..."
+	rm -f planning/plan.txt planning/problem.pddl planning/problem.txt

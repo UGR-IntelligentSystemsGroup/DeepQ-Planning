@@ -10,7 +10,7 @@ Google group - https://groups.google.com/forum/#!forum/the-general-video-game-co
 
 ## FAQs / Troubleshooting
 
-**3. Where are the Test methods? Due to the explosion of GVGAI competition tracks, we have distributed the main methods in different classes across the code hierarchy:
+**1. Where are the Test methods?** Due to the explosion of GVGAI competition tracks, we have distributed the main methods in different classes across the code hierarchy:
 
  - Single Player Planning track: tracks.singlePlayer.Test.java
  - 2-Player Planning track: tracks.multiPlayer.TestMultiPlayer.java
@@ -18,7 +18,7 @@ Google group - https://groups.google.com/forum/#!forum/the-general-video-game-co
  - Rule Generation track: tracks.ruleGeneration.TestRuleGeneration.java
 
 
-**2. How do I upload my controller? What files or folder structure do I need? 
+**2. How do I upload my controller?** What files or folder structure do I need? 
 First of all, your controller ```Agent.java``` and any auxiliary files you create should be in a single package folder with your username. For example, if your username is "abc", you should have a package folder named "abc" in the project. Your entire project layout should look something like this:
 
 ```groovy

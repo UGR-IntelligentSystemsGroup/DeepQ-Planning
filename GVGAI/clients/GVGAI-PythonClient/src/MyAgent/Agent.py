@@ -2,6 +2,7 @@ from AbstractPlayer import AbstractPlayer
 from Types import *
 
 from utils.Types import LEARNING_SSO_TYPE
+from planning.parser import Parser
 
 import subprocess
 import random
@@ -10,6 +11,8 @@ import numpy as np
 
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
+    DESC_FILE = 'planning/problem.txt'
+    OUT_FILE = 'planning/plan.txt'
 
     def __init__(self):
         """
@@ -27,6 +30,10 @@ class Agent(AbstractPlayer):
         self.already_saved = False
 
         self.current_level = 0 # Level playing right now
+
+        # Set parser
+        self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
+                self.DESC_FILE, self.OUT_FILE)
 
 
     def init(self, sso, elapsedTimer):
@@ -127,7 +134,7 @@ class Agent(AbstractPlayer):
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
-                    self.action_list = self.search_plan(sso, exit_pos, out_description, output_file)
+                    self.action_list = self.search_plan(sso, exit_pos)
 
                     # Save plan length as current metric
                     plan_metric = len(self.action_list)
@@ -151,7 +158,7 @@ class Agent(AbstractPlayer):
                 one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
 
                 # Search for a plan to chosen_gem
-                self.action_list = self.search_plan(sso, chosen_gem, out_description, output_file)
+                self.action_list = self.search_plan(sso, chosen_gem)
 
                 # Save plan length as current metric
                 plan_metric = len(self.action_list)
@@ -170,7 +177,7 @@ class Agent(AbstractPlayer):
                         one_hot_grid = self.encode_game_state(sso.observationGrid, gem)
 
                         # Search for a plan
-                        this_plan = self.search_plan(sso, gem, out_description, output_file)
+                        this_plan = self.search_plan(sso, gem)
 
                         # Save plan length as current metric
                         plan_metric = len(this_plan)
@@ -249,7 +256,7 @@ class Agent(AbstractPlayer):
 
         return one_hot_grid
 
-    def search_plan(self, sso, goal, description, output):
+    def search_plan(self, sso, goal):
         """
         Method used to search for a plan given a description. Writes the resulting
         plan in the output file.
@@ -258,21 +265,18 @@ class Agent(AbstractPlayer):
 
         @param sso State observation.
         @param goal Goal position to be reached. It's given as a (x, y) tuple.        
-        @param description Name of the file containing the description of the current
-                           game state.
-        @param output Name of the file which will contain the output plan
         """
 
         action_list = []
 
         # Parse the current game state
-        self.parse_game_state(sso, goal, description)
+        self.parse_game_state(sso, goal)
 
-        # Call the subprocess that searchs for a plan
-        subprocess.call(['python3', 'MyAgent/parser/parser.py', description, output])
+        # Call the parser/planner
+        self.parser.plan_and_parse()
 
         # Process the output file to get the plan
-        with open(output) as plan:
+        with open(self.OUT_FILE) as plan:
             for action in plan:
                 # Remove the \n character at the end and add actions to list
                 action_list.append(action.replace('\n', ''))
@@ -280,14 +284,13 @@ class Agent(AbstractPlayer):
         return action_list
 
 
-    def parse_game_state(self, sso, goal, description):
+    def parse_game_state(self, sso, goal):
         """
         Method used to parse a game state. Writes the output in a file to be later
         processed.
 
         @param sso State observation.
         @param goal Goal position to be reached. It's given as a (x, y) tuple.
-        @param description Name of the file where the output will be written.
         """
         # Get player orientation and parse it
         orientation = sso.avatarOrientation
@@ -349,7 +352,7 @@ class Agent(AbstractPlayer):
 
 
         # Write output in the file
-        with open(description, 'w') as desc:
+        with open(self.DESC_FILE, 'w') as desc:
             desc.write(orientation_str)
             desc.write(goal_str)
             
