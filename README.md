@@ -13,7 +13,7 @@ Los datasets usados están dentro de la carpeta [Datasets](../datasets/). Para o
 
 Para implementar los modelos he usado **_TensorFlow_**. Primero hice unas pruebas con una red neuronal feed-forward y después pasé a usar una CNN, que me dio mejores resultados. El código de ambos modelos se encuentra en el repositorio, en la forma de un **_Jupyter Notebook_**:
 
-- [Feed-Forward NN](../Models/ModeloPlanificacion.ipynb)
+- [Feed-Forward NN](../tree/master/Models/ModeloPlanificacion.ipynb)
 - [CNN](../Models/ModeloCNN.ipynb)
 
 Para visualizar los resultados he usado una herramienta que viene por defecto con _TensorFlow_: _**TensorBoard**_. Esta herramienta permite guardar la arquitectura y las métricas del modelo y visualizarlas en forma de gráficos. Los logs de las diversas pruebas con los modelos están guardados en las carpetas [ModeloCNN_log](../Models/ModeloCNN_log/) y [ModeloPlanificacion_log](../Models/ModeloCNN_log/).
