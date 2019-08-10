@@ -1,0 +1,38 @@
+## CNN best architectures (according to loss in validation set)
+
+-                 NAME                              -  Test Loss - Notes
+
+- L1_out=32_filt=2_win=[4, 4]_str=[2, 2]_pad=VALID -  20.50  - Really Stable (worse average than out=64)
+
+>>> L1_out=64_filt=2_win=[4, 4]_str=[2, 2]_pad=SAME   -  24.10  - Really Stable (>specially with dropout<)
+
+- L1_out=128_filt=2_win=[4, 4]_str=[2, 2]_pad=VALID -  25.37  - Stable
+
+
+Dropout=0.5 ayuda un poco -> hace que no haya ninguna run en la que haga mucho overfitting
+Dropout después de conv. empeora
+out=64 es mejor que out=32
+
+batch=64 -> a pesar del dropout, en algunas run hace overfitting
+batch=32 -> hace todavía más overfitting
+batch=256 -> parecido a 128
+
+
+--------- Architectures after Max Pooling use
+
+- max_pool=[2,2], str=[2, 2] (non-overlapping) -> really bad results
+- overlapping pool with Zero Padding ("SAME") -> really good results - BUT UNSTABLE!!
+
+>>> max_pool=[[2, 2],str=[1, 1]]_out=64_filt=2_win=[4, 4]_str=[2, 2]_pad=SAME - UNSTABLE!
+
+>>> mmax_pool=[[2, 2],str=[1, 1]]_out=64_filt=1_win=[3, 3]_str=[2, 2]_pad=SAME - 16.74 - Curva mala, tarda en descender
+
+> max_pool=[[2, 2],str=[1, 1]]_out=64_filt=1_win=[4, 4]_str=[2, 2]_pad=SAME - 17.3 - Decrece rápido, hace overfitting al final
+
+>>> max_pool=[[2, 2],str=[1, 1]]_out=64_filt=2_win=[4, 4]_str=[2, 2]_pad=SAME - 18.59 - Decrece rápido, muy buena curva!
+
+>>>>> max_pool=[[2, 2],str=[1, 1]]_out=64_filt=4_win=[4, 4]_str=[2, 2]_pad=SAME - 12.17 - Decrece rápido y muy buena curva!!
+
+>>> max_pool=[[2, 2],str=[1, 1]]_out=64_filt=4_win=[5, 5]_str=[2, 2]_pad=SAME - 19.41 - Decrece super rápido!
+
+>>>>> max_pool=[[2, 2],str=[1, 1]]_out=128_filt=4_win=[5, 5]_str=[2, 2]_pad=SAME - 14.17 - Curva muy buena y decrece super rápido!
