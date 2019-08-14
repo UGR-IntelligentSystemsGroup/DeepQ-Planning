@@ -15,7 +15,7 @@ class CompetitionParameters:
         OS_WIN = False
 
     USE_SOCKETS = True
-    START_TIME = 1000
+    START_TIME = 1000000
     INITIALIZATION_TIME = 1000000
     ACTION_TIME = 500000
     ACTION_TIME_DISQ = 510000

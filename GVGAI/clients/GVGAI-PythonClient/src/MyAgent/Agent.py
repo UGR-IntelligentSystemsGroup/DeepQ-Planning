@@ -6,8 +6,9 @@ from planning.parser import Parser
 
 import subprocess
 import random
-
 import numpy as np
+
+from LearningModel import CNN
 
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
@@ -35,6 +36,8 @@ class Agent(AbstractPlayer):
         self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
                 self.DESC_FILE, self.OUT_FILE)
 
+        # Create Learning Model
+        self.model = CNN()
 
     def init(self, sso, elapsedTimer):
         """
@@ -163,10 +166,11 @@ class Agent(AbstractPlayer):
                 # Save plan length as current metric
                 plan_metric = len(self.action_list)
                 
+                # <Append sample to dataset>
                 self.X.append(one_hot_grid.tolist())
                 self.Y.append(plan_metric)
 
-                
+                """
                 # Obtain a plan to every possible gem to collect data for training the model
                 for gem in gems:
                     if ((gem[0] != int(sso.avatarPosition[0] // sso.blockSize) or
@@ -184,7 +188,7 @@ class Agent(AbstractPlayer):
                         
                         self.X.append(one_hot_grid.tolist())
                         self.Y.append(plan_metric)
-                        
+                """        
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -364,7 +368,9 @@ class Agent(AbstractPlayer):
     def result(self, sso, elapsedTimer):
         print("Nivel terminado")
 
-        # Guardo el dataset si tiene al menos min_elem elementos
+        # Save dataset if it contains at least min_elem elements
+
+        """
         min_elem = 5000
         file_name = 'dataset_train_3.npz'
 
@@ -377,9 +383,11 @@ class Agent(AbstractPlayer):
             np.savez(file_name, X=dataset_X, Y=dataset_Y)
 
             self.already_saved = True # Don't save again
-
+        """
+        
         #return random.randint(0, 2)
 
+        # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
 
         return self.current_level
