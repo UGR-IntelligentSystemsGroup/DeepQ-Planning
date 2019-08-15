@@ -23,7 +23,10 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-        # Attributes to save data for training
+        # Attributes that store agents experience:
+        # - X -> inputs of the learning model
+        # - Y -> correct output values (plans lengths)
+
         self.X = [] # Shape = (-1, 13, 26, 9)
         self.Y = [] # Shape = (-1)
 
@@ -38,6 +41,17 @@ class Agent(AbstractPlayer):
 
         # Create Learning Model
         self.model = CNN()
+
+        # Iteration of current scalar summary. Needed to store the logs and plot the losses
+        self.log_it = 0
+
+        # Load Validation Dataset in order to see validation loss change with tensorboard
+        # as training progresses
+        test_dataset = np.load("../../../../datasets/dataset_test.npz") 
+        self.test_dataset_x = test_dataset['X']
+        test_dataset_y = test_dataset['Y']
+        self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
+
 
     def init(self, sso, elapsedTimer):
         """
@@ -56,6 +70,17 @@ class Agent(AbstractPlayer):
 
         # It is true when the agent has the minimum required number of gems
         self.can_exit = False
+
+
+        """
+        gems = self.get_gems_positions(sso)
+        chosen_gem = gems[random.randint(0, len(gems) - 1)]
+        one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
+
+        prediction = self.model.predict(one_hot_grid) # Shape = (1,1)
+
+        print("PREDICTION\n\n", prediction)
+        """
 
     
     def act(self, sso, elapsedTimer):
@@ -101,14 +126,6 @@ class Agent(AbstractPlayer):
 
         print("\n\n\n")"""
 
-        print("X\n")
-        print(len(self.X))
-
-        print("Y\n")
-        print(self.Y)
-
-        print("\n\n")
-
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
             # Set level description and output file names
@@ -124,11 +141,8 @@ class Agent(AbstractPlayer):
 
                 num_gems = sso.avatarResources[gem_key]
 
-                print(num_gems)
-
                 if num_gems >= self.NUM_GEMS_FOR_EXIT:
                     # Plan to exit the level
-                    print("YA PUEDO SALIR DEL NIVEL")
                     self.can_exit = True
 
                     exit = sso.portalsPositions[0][0]
@@ -189,6 +203,29 @@ class Agent(AbstractPlayer):
                         self.X.append(one_hot_grid.tolist())
                         self.Y.append(plan_metric)
                 """        
+
+            # --- Train the model ---
+
+            num_samples = len(self.X)
+
+            # CAMBIAR BATCH SIZE DE 4 A 16!!
+
+            if num_samples >= 4:
+                # Randomly choose sample
+                bottom_ind = random.randint(0, num_samples - 4 + 1)
+                top_ind = bottom_ind + 4
+
+                batch_x = np.array(self.X[bottom_ind:top_ind])
+                batch_y = self.Y[bottom_ind:top_ind]
+                batch_y = np.reshape(batch_y, (-1, 1))
+
+                # Execute one training step
+                self.model.train(batch_x, batch_y)
+
+                # Save Logs
+                self.model.save_logs(batch_x, batch_y, self.test_dataset_x, self.test_dataset_y_resh, self.log_it)
+                self.log_it += 1
+
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:

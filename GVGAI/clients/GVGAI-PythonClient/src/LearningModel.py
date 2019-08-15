@@ -8,7 +8,6 @@ import numpy as np
 class CNN:
 
 	# Create CNN architecture
-
     def __init__(self, name="CNN", writer_name="CNN",
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
@@ -17,6 +16,10 @@ class CNN:
                  fc_num_units = 16, dropout_prob = 0.5):
 
         with tf.variable_scope(name):
+
+            # --- Constants, Variables and Placeholders ---
+
+
             # Batch of inputs (game states, one-hot encoded)
             self.X = tf.placeholder(tf.float32, [None, 13, 26, 9], name="X") # type tf.float32 is needed for the rest of operations
 
@@ -26,7 +29,17 @@ class CNN:
             # Placeholder for batch normalization
             # During training (big batches) -> true, during test (small batches) -> false
             self.is_training = tf.placeholder(tf.bool, name="is_training")
+
+            # Learning Rate
+            self.alfa = tf.constant(0.005)
+
+            # Dropout Probability (probability of deactivation)
+            self.dropout_prob = tf.constant(dropout_prob)
             
+
+            # --- Architecture ---
+
+
             """
             Batch Normalization of inputs
             """
@@ -98,7 +111,7 @@ class CNN:
             
             # Dropout
             
-            self.fc = tf.layers.dropout(self.fc, rate=dropout_prob)
+            self.fc = tf.layers.dropout(self.fc, rate=self.dropout_prob)
             
             # Output Layer
             
@@ -111,8 +124,6 @@ class CNN:
             
             self.loss = tf.reduce_mean(tf.square(self.output - self.Y_corr), name="loss") # Quadratic loss
             
-            self.alfa = tf.placeholder(tf.float32)
-            
             self.optimizer = tf.train.AdamOptimizer(learning_rate=self.alfa, name="optimizer")
             
             # Mean and Variance Shift Operations needed for Batch Normalization
@@ -122,11 +133,60 @@ class CNN:
             with tf.control_dependencies(self.update_ops):
                 self.train_op = self.optimizer.minimize(self.loss, name="train_op")
             
-            # Summaries
-            """
+
+            # --- Summaries ---
+
+            
             self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
             self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
             
-            self.writer = tf.summary.FileWriter("Log/" + writer_name)
+            self.writer = tf.summary.FileWriter("ModelLogs/" + writer_name)
             self.writer.add_graph(tf.get_default_graph())
-            """
+            
+
+
+        # --- Initialization ---
+
+
+        # Create Session
+        self.sess = tf.Session()
+
+        # Initialize variables
+        self.sess.run(tf.global_variables_initializer())
+
+
+    # Closes the current tensorflow session and frees the resources.
+    # Should be called at the end of the program
+    def close_session(self):
+        self.sess.close()
+
+    # Predicts the associated y-value (plan length) for x (a (subgoal, game state) pair one-hot encoded)
+    def predict(self, x):
+        # Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
+        x_resh = np.reshape(x, (1, 13, 26, 9))
+        data_dict = {self.X : x_resh, self.is_training : False}
+
+        prediction = self.sess.run(self.output, feed_dict=data_dict)
+
+        return prediction
+
+    # Execute num_it training steps using X, Y as the current batches. They must have the same number of elements
+    def train(self, X, Y, num_it = 1):
+        data_dict = {self.X : X, self.Y_corr : Y, self.is_training : True}
+
+        for it in range(num_it):
+            self.sess.run(self.train_op, feed_dict=data_dict)
+
+    # Calculate Losses and store them as logs
+    def save_logs(self, X_train, Y_train, X_test, Y_test, it):
+        # Training Loss
+        data_dict_train = {self.X : X_train, self.Y_corr : Y_train, self.is_training : True}
+
+        train_loss_log = self.sess.run(self.train_loss_sum, feed_dict=data_dict_train)
+        self.writer.add_summary(train_loss_log, it)
+
+        # Validation Loss (uses validation dataset)
+        data_dict_test = {self.X : X_test, self.Y_corr : Y_test, self.is_training : False}
+
+        test_loss_log = self.sess.run(self.test_loss_sum, feed_dict=data_dict_test)
+        self.writer.add_summary(test_loss_log, it)
