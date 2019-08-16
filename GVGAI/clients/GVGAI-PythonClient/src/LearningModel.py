@@ -13,7 +13,8 @@ class CNN:
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = 16, dropout_prob = 0.5):
+                 fc_num_units = 16, dropout_prob = 0.5,
+                 learning_rate = 0.005):
 
         with tf.variable_scope(name):
 
@@ -31,7 +32,7 @@ class CNN:
             self.is_training = tf.placeholder(tf.bool, name="is_training")
 
             # Learning Rate
-            self.alfa = tf.constant(0.005)
+            self.alfa = tf.constant(learning_rate)
 
             # Dropout Probability (probability of deactivation)
             self.dropout_prob = tf.constant(dropout_prob)

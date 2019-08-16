@@ -40,7 +40,7 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = CNN()
+        self.model = CNN(writer_name="start_size=0, alfa=0.002, num_rep=4", learning_rate = 0.002)
 
         # Iteration of current scalar summary. Needed to store the logs and plot the losses
         self.log_it = 0
@@ -51,6 +51,12 @@ class Agent(AbstractPlayer):
         self.test_dataset_x = test_dataset['X']
         test_dataset_y = test_dataset['Y']
         self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
+
+        # Variable that stores if the agent is exploring or exploiting:
+        # True -> subgoals are chosen randomly to gather experience (exploration)
+        # False -> subgoals are chosen using the model to achieve the best
+        #          possible results (exploitation)
+        self.is_training = True
 
 
     def init(self, sso, elapsedTimer):
@@ -150,7 +156,7 @@ class Agent(AbstractPlayer):
 
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
-
+ 
                     self.action_list = self.search_plan(sso, exit_pos)
 
                     # Save plan length as current metric
@@ -164,7 +170,12 @@ class Agent(AbstractPlayer):
                 # Obtain gems positions
                 gems = self.get_gems_positions(sso)
                 
-                chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
+                # <Choose next subgoal>
+
+                if self.is_training: # Choose a random gem if the agent is training
+                    chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
+                else: # Choose best gem if the agent is on validation time
+                    chosen_gem = self.choose_next_subgoal(sso.observationGrid, gems)
 
                 # Avoid error of picking a gem which is at the agent's position
                 while (chosen_gem[0] == int(sso.avatarPosition[0] // sso.blockSize) and
@@ -208,23 +219,29 @@ class Agent(AbstractPlayer):
 
             num_samples = len(self.X)
 
-            # CAMBIAR BATCH SIZE DE 4 A 16!!
+            batch_size = 16
+            start_size = 16 # Min number of samples to start training the model
+            num_rep = 4
 
-            if num_samples >= 4:
-                # Randomly choose sample
-                bottom_ind = random.randint(0, num_samples - 4 + 1)
-                top_ind = bottom_ind + 4
+            if num_samples >= start_size:
+                # Execute num_rep iterations of learning. Each one with a different batch
+                for _ in range(num_rep):
+                    # Randomly choose sample
+                    bottom_ind = random.randint(0, num_samples - batch_size + 1)
+                    top_ind = bottom_ind + batch_size
 
-                batch_x = np.array(self.X[bottom_ind:top_ind])
-                batch_y = self.Y[bottom_ind:top_ind]
-                batch_y = np.reshape(batch_y, (-1, 1))
+                    batch_x = np.array(self.X[bottom_ind:top_ind])
+                    batch_y = self.Y[bottom_ind:top_ind]
+                    batch_y = np.reshape(batch_y, (-1, 1))
 
-                # Execute one training step
-                self.model.train(batch_x, batch_y)
+                    # Execute one training step
+                    self.model.train(batch_x, batch_y)
 
                 # Save Logs
                 self.model.save_logs(batch_x, batch_y, self.test_dataset_x, self.test_dataset_y_resh, self.log_it)
                 self.log_it += 1
+
+                print("\n\nDATASET SIZE = {}\n\n".format(len(self.X)))
 
 
         # If a plan has been found, return the first action
@@ -296,6 +313,36 @@ class Agent(AbstractPlayer):
         one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
 
         return one_hot_grid
+
+    def choose_next_subgoal(self, obs_grid, possible_subgoals):
+        """
+        Uses the learnt model to choose the best subgoal to plan for among all the
+        possible subgoals, from the current state of the game.
+        The chosen subgoal is the subgoal in "possible_subgoals" which has the smallest
+        predicted value by the network.
+
+        @param obs_grid Matrix of observations representing the current state of the game
+        @param possible_subgoals List of possible subgoals to choose from. Each element
+                                 corresponds to a (pos_x, pos_y) pair.
+        """
+
+        best_plan_length = 1000000.0
+        best_subgoal = (-1, -1)
+
+        for curr_subgoal in possible_subgoals:
+            # Encode input for the network using current state and curr_subgoal
+            one_hot_matrix = self.encode_game_state(obs_grid, curr_subgoal)
+
+            # Use the model to predict plan length for curr_subgoal
+            plan_length = self.model.predict(one_hot_matrix)
+
+            # See if this is the best plan up to this point
+            if plan_length < best_plan_length:
+                best_plan_length = plan_length
+                best_subgoal = curr_subgoal
+
+        return best_subgoal
+
 
     def search_plan(self, sso, goal):
         """
