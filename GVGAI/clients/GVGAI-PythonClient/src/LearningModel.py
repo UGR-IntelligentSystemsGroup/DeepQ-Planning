@@ -191,3 +191,13 @@ class CNN:
 
         test_loss_log = self.sess.run(self.test_loss_sum, feed_dict=data_dict_test)
         self.writer.add_summary(test_loss_log, it)
+
+    # Saves the model variables in the file given by 'path', so that it can be loaded next time
+    def save_model(self, path = "./SavedModels/model.ckpt"):
+        saver = tf.train.Saver()
+        saver.save(self.sess, path)
+
+    # Loads a model previously saved with 'save_model'
+    def load_model(self, path = "./SavedModels/model.ckpt"):
+        saver = tf.train.Saver()
+        saver.restore(self.sess, path)
