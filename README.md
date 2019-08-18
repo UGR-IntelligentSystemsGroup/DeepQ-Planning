@@ -33,6 +33,35 @@ Para ejecutar el código de los modelos lo primero es instalar los paquetes nece
 6. Abrimos el navegador y abrimos la dirección _localhost:6006_.
 7. La pestaña _Graph_ muestra una visualización del modelo. La pestaña _Scalars_ muestra las gráficas de la función de pérdida en el entrenamiento y validación. Para más información sobre el uso de _TensorBoard_, recomiendo echarle un vistazo a este [vídeo](https://www.youtube.com/watch?v=eBbEDRsCmv4&list=PLPl9hCpYCVfPI3GG99vALTZlK0AaaFmls) de Youtube del canal oficial de Google.
 	
+### Modelo Greedy (Nuevo)
+
+Ahora describiré la arquitectura del agente con el modelo greedy (que solo planifica para el siguiente subobjetivo).
+#### Arquitectura del modelo
+La arquitectura de la red neuronal es, a grandes rasgos la siguiente:
+1. Un input viene dado por una matriz one-hot de observaciones. Los inputs son normalizados usando **_batch normalization_**, tanto en la fase de entrenamiento como en la de validación. Esta técnica es la que ha permitido aumentar drásticamente el rendimiento del modelo.
+2. Después, se aplica una capa **_convolucional_**, con solo dos filtros.
+3. A continuación, se aplica **_max pooling_**.
+4. Tras eso, se usa una capa **_fully connected_**, con solo 16 unidades.
+5. A la salida de esa capa, se le aplica **_dropout_** para combatir el _overfitting_.
+6. Por último, la capa de salida consta de una sola neurona, que devuelve un número real. Esta es la predicción del número de acciones del plan.
+
+La función de **pérdida** usada es simplemente la suma de **errores al cuadrado**. El optimizador usado para minimizar esta función (con descenso de gradientes) es **_Adam_**.
+
+Todo el código relativo al modelo se encuentra implementado en el archivo [**_LearningModel.py_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/LearningModel.py). Los **_logs_** de las distintas pruebas realizadas se encuentran en la carpeta [ModelLogs](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/ModelLogs).
+
+#### Tutorial de Ejecución
+Al estar el modelo ya integrado en la arquitectura del agente, solo es necesario (a diferencia de en la fase anterior) ejecutar el agente a través del archivo **_oneclickRunFromPythonClient_**. 
+El comportamiento del agente es el siguiente:
+
+- En la fase de entrenamiento, elige los subobjetivos al azar, planifica para conseguirlos y guarda estos planes como experiencia para entrenar el modelo.
+- Una vez en la fase de validación, usa el modelo entrenado para elegir los subobjetivos. Concretamente, cuando es necesario elegir el siguiente subobjetivo a conseguir, el agente escoge la gema para la cual el modelo predice el menor número de acciones para llegar hasta ella.
+
+A pesar de que este sería el comportamiento "natural", la fase de entrenamiento lleva cierto tiempo (unos 20 minutos de media) para conseguir buenos resultados en los niveles de validación. Por este motivo, ya he ejecutado la fase de entrenamiento, entrenado el modelo y guardado dicho modelo dentro de la carpeta [**_SavedModels_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/SavedModels).
+ De esta forma, el comportamiento del agente que se encuentra actualmente implementado es el siguiente:
+
+1. Al iniciar la ejecución carga el modelo pre-entrenado.
+2. Se salta la fase de entrenamiento (he cambiado el fichero [**_CompetitionParameters_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/utils/CompetitionParameters.py) para que sea así).
+3. Ejecuta la fase de validación (niveles 3 y 4). Usa el modelo cargado (ya entrenado) para elegir los subobjetivos. Para que sea más sencillo medir su rendimiento, he hecho que imprima por el terminal el número de acciones que necesita para completar cada nivel.
 
 ## Vladis
 
