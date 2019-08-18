@@ -57,6 +57,7 @@ class Agent(AbstractPlayer):
         # False -> subgoals are chosen using the model to achieve the best
         #          possible results (exploitation)
         # self.is_training = True
+        # It has the same value as sso.isValidation in init method
         self.is_training = False # Already in validation phase
 
         # <Load the already-trained model in order to test performance>
@@ -81,6 +82,13 @@ class Agent(AbstractPlayer):
         # It is true when the agent has the minimum required number of gems
         self.can_exit = False
 
+        # See if it's training or validation time
+        self.is_training = not sso.isValidation
+
+        # If it's validation phase, count the number of actions used
+        # to beat the current level
+        if not self.is_training:
+            self.num_actions_lv = 0
 
         """
         gems = self.get_gems_positions(sso)
@@ -92,7 +100,7 @@ class Agent(AbstractPlayer):
         print("PREDICTION\n\n", prediction)
         """
 
-    
+
     def act(self, sso, elapsedTimer):
         """
         Method used to determine the next move to be performed by the agent.
@@ -105,36 +113,6 @@ class Agent(AbstractPlayer):
                             Check utils/CompetitionParameters.py for more info.
         @return The action to be performed by the agent.
         """
-
-        """grid  = sso.observationGrid
-
-        print(grid[4][1][0].itype)""" # [x][y][elem_pos]
-
-
-        """
-        all_elems = set() # 6 different itypes, without counting empty tiles, bats and scorpions
-                          # one-hot encoding -> length of 8 (empty tiles are not encoded as such)
-
-        grid = sso.observationGrid
-
-        for a in grid:
-            for b in a:
-                for c in b:
-                    if c is not None:
-                        this_itype = c.itype
-
-                        if this_itype not in all_elems:
-                            all_elems.add(this_itype)
-        
-
-        print(all_elems)
-        print("\n")"""
-
-        """encoded_grid = self.encode_game_state(sso.observationGrid, (0,0))
-
-        print(encoded_grid.shape)
-
-        print("\n\n\n")"""
 
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
@@ -264,6 +242,9 @@ class Agent(AbstractPlayer):
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
+            if not self.is_training: # Count the number of actions used to complete the level
+                self.num_actions_lv += 1
+
             return self.action_list.pop(0)
         else:
             return 'ACTION_NIL'
@@ -471,6 +452,9 @@ class Agent(AbstractPlayer):
 
     def result(self, sso, elapsedTimer):
         print("Nivel terminado")
+
+        if not self.is_training:
+            print("\n\nNúmero de acciones para completar el nivel: ", self.num_actions_lv, "\n\n")
 
         # Save dataset if it contains at least min_elem elements
 
