@@ -38,7 +38,7 @@ Para ejecutar el código de los modelos lo primero es instalar los paquetes nece
 Ahora describiré la arquitectura del agente con el modelo greedy (que solo planifica para el siguiente subobjetivo).
 #### Arquitectura del modelo
 La arquitectura de la red neuronal es, a grandes rasgos la siguiente:
-1. Un input viene dado por una matriz one-hot de observaciones. Los inputs son normalizados usando **_batch normalization_**, tanto en la fase de entrenamiento como en la de validación. Esta técnica es la que ha permitido aumentar drásticamente el rendimiento del modelo.
+1. Un input viene dado por una matriz one-hot de observaciones. Los inputs son normalizados usando **_batch normalization_**, tanto en la fase de entrenamiento como en la de validación. Esta técnica es la que ha permitido aumentar drásticamente el rendimiento del modelo. Esto es debido a que esta técnica permite conseguir que los inputs estén centrados en cero y con una desviación típica de uno (estén normalizados), a pesar de que no tenemos todo el dataset al comienzo del entrenamiento (es por esta razón que no se pueden normalizar los inputs de la forma clásica) sino que el dataset se va creando progresivamente con el conocimiento adquirido por el agente.
 2. Después, se aplica una capa **_convolucional_**, con solo dos filtros.
 3. A continuación, se aplica **_max pooling_**.
 4. Tras eso, se usa una capa **_fully connected_**, con solo 16 unidades.
