@@ -1,14 +1,15 @@
 import tensorflow as tf
 import numpy as np
 
-# Model used to choose next subgoal
+# Model used to choose next subgoal using Deep Q-Learning
 # Given a pair (observation, subgoal) encoded as a one-hot observation matrix
-# the model predicts the length of the plan asociated to that subgoal
+# the model predicts the length of the plan that gets that subgoal and, then,
+# completes the level
 
-class CNN:
+class DQNetwork:
 
 	# Create CNN architecture
-    def __init__(self, name="CNN", writer_name="CNN",
+    def __init__(self, name="DQNetwork", writer_name="DQNetwork",
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -21,11 +22,14 @@ class CNN:
             # --- Constants, Variables and Placeholders ---
 
 
-            # Batch of inputs (game states, one-hot encoded)
+            # Batch of inputs (game states + goals, one-hot encoded)
             self.X = tf.placeholder(tf.float32, [None, 13, 26, 9], name="X") # type tf.float32 is needed for the rest of operations
 
             # Batch of outputs (correct predictions of number of actions)
-            self.Y_corr = tf.placeholder(tf.float32, [None, 1], name="Y")
+            ## self.Y_corr = tf.placeholder(tf.float32, [None, 1], name="Y")
+
+            # Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s, R(s,a) : plan length from state s to subgoal a)
+            self.Q_target = tf.placeholder(tf.float32, [None, 1], name="Q_target")
             
             # Placeholder for batch normalization
             # During training (big batches) -> true, during test (small batches) -> false
@@ -112,18 +116,21 @@ class CNN:
             
             # Dropout
             
-            self.fc = tf.layers.dropout(self.fc, rate=self.dropout_prob)
+            self.fc = tf.layers.dropout(self.fc, rate=self.dropout_prob, name="Dropout")
             
-            # Output Layer
+            # Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
             
-            self.output = tf.layers.dense(inputs = self.fc, 
+            self.Q_val = tf.layers.dense(inputs = self.fc, 
                                           kernel_initializer=tf.contrib.layers.xavier_initializer(),
                                           units = 1, 
-                                          activation=None)
+                                          activation=None,
+                                          name="Q_value")
             
             # Train
             
-            self.loss = tf.reduce_mean(tf.square(self.output - self.Y_corr), name="loss") # Quadratic loss
+            # The loss is the difference between our predicted Q_values and the Q_targets
+            # Sum(Qtarget - Q)^2
+            self.loss = tf.reduce_mean(tf.square(self.Q_target - self.Q_val), name="loss")
             
             self.optimizer = tf.train.AdamOptimizer(learning_rate=self.alfa, name="optimizer")
             
@@ -139,12 +146,11 @@ class CNN:
 
             
             self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
-            self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
+            # self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
             
-            self.writer = tf.summary.FileWriter("ModelLogs/" + writer_name)
+            self.writer = tf.summary.FileWriter("DQNetworkLogs/" + writer_name)
             self.writer.add_graph(tf.get_default_graph())
             
-
 
         # --- Initialization ---
 
@@ -167,37 +173,31 @@ class CNN:
         x_resh = np.reshape(x, (1, 13, 26, 9))
         data_dict = {self.X : x_resh, self.is_training : False}
 
-        prediction = self.sess.run(self.output, feed_dict=data_dict)
+        prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
 
         return prediction
 
-    # Execute num_it training steps using X, Y as the current batches. They must have the same number of elements
+    # Execute num_it training steps using X, Y (Q_targets) as the current batches. They must have the same number of elements
     def train(self, X, Y, num_it = 1):
-        data_dict = {self.X : X, self.Y_corr : Y, self.is_training : True}
+        data_dict = {self.X : X, self.Q_target : Y, self.is_training : True}
 
         for it in range(num_it):
             self.sess.run(self.train_op, feed_dict=data_dict)
 
-    # Calculate Losses and store them as logs
-    def save_logs(self, X_train, Y_train, X_test, Y_test, it):
+    # Calculate Training Loss and store it as a log
+    def save_logs(self, X, Y, it):
         # Training Loss
-        data_dict_train = {self.X : X_train, self.Y_corr : Y_train, self.is_training : True}
+        data_dict_train = {self.X : X, self.Q_target : Y, self.is_training : True}
 
         train_loss_log = self.sess.run(self.train_loss_sum, feed_dict=data_dict_train)
         self.writer.add_summary(train_loss_log, it)
 
-        # Validation Loss (uses validation dataset)
-        data_dict_test = {self.X : X_test, self.Y_corr : Y_test, self.is_training : False}
-
-        test_loss_log = self.sess.run(self.test_loss_sum, feed_dict=data_dict_test)
-        self.writer.add_summary(test_loss_log, it)
-
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
-    def save_model(self, path = "./SavedModels/model.ckpt"):
+    def save_model(self, path = "./SavedModels/DQmodel.ckpt"):
         saver = tf.train.Saver()
         saver.save(self.sess, path)
 
     # Loads a model previously saved with 'save_model'
-    def load_model(self, path = "./SavedModels/model.ckpt"):
+    def load_model(self, path = "./SavedModels/DQmodel.ckpt"):
         saver = tf.train.Saver()
         saver.restore(self.sess, path)

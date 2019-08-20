@@ -8,7 +8,7 @@ import subprocess
 import random
 import numpy as np
 
-from LearningModel import CNN
+from LearningModel import DQNetwork
 
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
@@ -23,12 +23,15 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-        # Attributes that store agents experience:
-        # - X -> inputs of the learning model
-        # - Y -> correct output values (plans lengths)
 
-        self.X = [] # Shape = (-1, 13, 26, 9)
-        self.Y = [] # Shape = (-1)
+        # Attribute that stores agent's experience to implement experience replay (for training)
+        # Each element is a tuple (s, r, s') corresponding to:
+        # - s -> start_state and chosen subgoal ((game state, chosen subgoal) one-hot encoded). Shape = (-1, 13, 26, 9).
+        # - r -> length of the plan from the start_state to the chosen subgoal.
+        # - s' -> state of the game just after the agent has achieved the chosen subgoal.
+        #         It's an instance of the SerializableStateObservation (sso) class.
+
+        self.memory = []
 
         # Variable to check if the dataset has already been saved
         self.already_saved = False
@@ -40,28 +43,30 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = CNN(writer_name="4_start_size=0, alfa=0.002, num_rep=4", learning_rate = 0.002)
+        #self.model = CNN(writer_name="4_start_size=0, alfa=0.002, num_rep=4", learning_rate = 0.002)
+        self.model = DQNetwork(writer_name="Test", learning_rate = 0.002)
+
+        self.gamma = 0.9 # Discount rate for Deep Q-Learning
 
         # Iteration of current scalar summary. Needed to store the logs and plot the losses
         self.log_it = 0
 
         # Load Validation Dataset in order to see validation loss change with tensorboard
         # as training progresses
-        test_dataset = np.load("../../../../datasets/dataset_test.npz") 
-        self.test_dataset_x = test_dataset['X']
-        test_dataset_y = test_dataset['Y']
-        self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
+        #test_dataset = np.load("../../../../datasets/dataset_test.npz") 
+        #self.test_dataset_x = test_dataset['X']
+        #test_dataset_y = test_dataset['Y']
+        #self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
 
         # Variable that stores if the agent is exploring or exploiting:
         # True -> subgoals are chosen randomly to gather experience (exploration)
         # False -> subgoals are chosen using the model to achieve the best
         #          possible results (exploitation)
-        # self.is_training = True
+        self.is_training = True
         # It has the same value as sso.isValidation in init method
-        self.is_training = False # Already in validation phase
 
         # <Load the already-trained model in order to test performance>
-        self.model.load_model()
+        #self.model.load_model()
 
 
     def init(self, sso, elapsedTimer):
@@ -90,16 +95,6 @@ class Agent(AbstractPlayer):
         if not self.is_training:
             self.num_actions_lv = 0
 
-        """
-        gems = self.get_gems_positions(sso)
-        chosen_gem = gems[random.randint(0, len(gems) - 1)]
-        one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
-
-        prediction = self.model.predict(one_hot_grid) # Shape = (1,1)
-
-        print("PREDICTION\n\n", prediction)
-        """
-
 
     def act(self, sso, elapsedTimer):
         """
@@ -114,11 +109,12 @@ class Agent(AbstractPlayer):
         @return The action to be performed by the agent.
         """
 
-        # If the plan is emtpy, get a new one
+        # <If the plan is emtpy, get a new one>
+
         if len(self.action_list) == 0:
             # Set level description and output file names
-            out_description = 'MyAgent/problem.txt'
-            output_file = 'MyAgent/out.txt'
+            # out_description = 'MyAgent/problem.txt'
+            # output_file = 'MyAgent/out.txt'
 
             # If the agent already has 11 gems, he plans to exit the level
             keys = sso.avatarResources.keys()
@@ -129,8 +125,8 @@ class Agent(AbstractPlayer):
 
                 num_gems = sso.avatarResources[gem_key]
 
+                # Plan to exit the level
                 if num_gems >= self.NUM_GEMS_FOR_EXIT:
-                    # Plan to exit the level
                     self.can_exit = True
 
                     exit = sso.portalsPositions[0][0]
@@ -146,10 +142,18 @@ class Agent(AbstractPlayer):
                         # Save plan length as current metric
                         plan_metric = len(self.action_list)
 
-                        self.X.append(one_hot_grid.tolist()) # tolist() to transform from numpy array to normal python array
-                        self.Y.append(plan_metric)
+                        # Add the current state s' to self.mem_sample, 
+                        # create a new self.mem_sample and add to it s, r and s' (None state, corresponding to finished level)
+                        self.mem_sample[2] = sso
 
-            # Only plan for next gem if it is needed
+                        # Add old mem_sample to memory
+                        self.memory.append(self.mem_sample)
+
+                        # Create new mem_sample and append it to memory
+                        self.mem_sample = [one_hot_grid, plan_metric, None]
+                        self.memory.append(self.mem_sample)
+
+            # Only plan for next gem if agent can't exit the level yet
             if not self.can_exit:
                 # Obtain gems positions
                 gems = self.get_gems_positions(sso)
@@ -171,7 +175,7 @@ class Agent(AbstractPlayer):
                 # Search for a plan to chosen_gem
                 self.action_list = self.search_plan(sso, chosen_gem)
 
-                # Add sample to dataset
+                # Add sample to memory
                 if self.is_training:
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
@@ -180,33 +184,27 @@ class Agent(AbstractPlayer):
                     plan_metric = len(self.action_list)
                     
                     # <Append sample to dataset>
-                    self.X.append(one_hot_grid.tolist())
-                    self.Y.append(plan_metric)
 
-                """
-                # Obtain a plan to every possible gem to collect data for training the model
-                for gem in gems:
-                    if ((gem[0] != int(sso.avatarPosition[0] // sso.blockSize) or
-                       gem[1] != int(sso.avatarPosition[1] // sso.blockSize)) and 
-                       gem != chosen_gem):
-                        
-                        # Save current observation for dataset
-                        one_hot_grid = self.encode_game_state(sso.observationGrid, gem)
+                    # First turn of the level -> only save s and r
+                    if self.first_turn: 
+                        self.first_turn = False
+                        self.mem_sample = [one_hot_grid, plan_metric, None]
+                    # Not the first turn -> add the current state s' to self.mem_sample, 
+                    # create a new self.mem_sample and add to it s and r
+                    else:
+                        self.mem_sample[2] = sso
+                        # Add old mem_sample to memory
+                        self.memory.append(self.mem_sample)
 
-                        # Search for a plan
-                        this_plan = self.search_plan(sso, gem)
+                        # Create new mem_sample
+                        self.mem_sample = [one_hot_grid, plan_metric, None]
 
-                        # Save plan length as current metric
-                        plan_metric = len(this_plan)
-                        
-                        self.X.append(one_hot_grid.tolist())
-                        self.Y.append(plan_metric)
-                """        
 
             # --- Train the model ---
 
+            
             if self.is_training:
-                num_samples = len(self.X)
+                num_samples = len(self.memory)
 
                 batch_size = 16
                 start_size = 16 # Min number of samples to start training the model
@@ -215,30 +213,40 @@ class Agent(AbstractPlayer):
                 if num_samples >= start_size:
                     # Execute num_rep iterations of learning. Each one with a different batch
                     for _ in range(num_rep):
-                        # Randomly choose sample
+                        # Randomly choose batch
                         bottom_ind = random.randint(0, num_samples - batch_size + 1)
                         top_ind = bottom_ind + batch_size
 
-                        batch_x = np.array(self.X[bottom_ind:top_ind])
-                        batch_y = self.Y[bottom_ind:top_ind]
-                        batch_y = np.reshape(batch_y, (-1, 1))
+                        batch = self.memory[bottom_ind:top_ind]
+
+                        batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
+                        batch_R = [each[1] for each in batch] # r values (plan lenghts)
+                        batch_S = [each[2] for each in batch] # s' values (sso instances)
+
+                        Q_targets = []
+                        # Calculate Q_targets
+                        for r, s in zip(batch_R, batch_S):
+                            Q_target = r + self.gamma*self.get_min_Q_value(s)
+                            Q_targets.append(Q_target)
+
+                        Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
                         # Execute one training step
-                        self.model.train(batch_x, batch_y)
+                        self.model.train(batch_X, Q_targets)
 
                     # Save Logs
-                    self.model.save_logs(batch_x, batch_y, self.test_dataset_x, self.test_dataset_y_resh, self.log_it)
+                    self.model.save_logs(batch_X, Q_targets, self.log_it)
                     self.log_it += 1
 
-                    print("\n\nDATASET SIZE = {}\n\n".format(len(self.X)))
+                    print("\n\nDATASET SIZE = {}\n\n".format(len(self.memory)))
 
                 # Save the model after training
 
-                its_for_save = 1500
+                its_for_save = 3000
 
                 if self.log_it == its_for_save:
                     self.model.save_model()
-
+            
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -247,6 +255,7 @@ class Agent(AbstractPlayer):
 
             return self.action_list.pop(0)
         else:
+            print("\n\nPLAN VACIO\n\n")
             return 'ACTION_NIL'
 
 
@@ -344,6 +353,36 @@ class Agent(AbstractPlayer):
 
         return best_subgoal
 
+    def get_min_Q_value(self, sso):
+        """
+        Uses the DQNetwork (<with the current weights>) to obtain the Q-value associated with the state:
+        the minimum Q-value among all possible gems present at that state.
+        If sso is 'None' (corresponds to an end state), the Q-value is 0.
+
+        @param sso Game state for which to calculate the Q-value.
+        """
+
+        # Check if sso is a terminal state (end of level)
+        if sso is None:
+            return 0
+
+        observationGrid = sso.observationGrid
+        min_Q_val = 1000000
+
+        # Retrieve gems list (list of gems positions)
+        gems = self.get_gems_positions(sso)
+
+        for gem in gems:
+            # Obtain one-hot encoding using the state (sso) and the current gem
+            one_hot_grid = self.encode_game_state(observationGrid, gem)
+
+            # Obtain the Q-value associated to that gem
+            Q_val = self.model.predict(one_hot_grid)
+
+            if Q_val < min_Q_val:
+                min_Q_val = Q_val
+
+        return min_Q_val
 
     def search_plan(self, sso, goal):
         """
