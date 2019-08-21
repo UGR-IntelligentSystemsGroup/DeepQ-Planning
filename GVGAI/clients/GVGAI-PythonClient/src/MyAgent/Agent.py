@@ -43,8 +43,13 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        #self.model = CNN(writer_name="4_start_size=0, alfa=0.002, num_rep=4", learning_rate = 0.002)
-        self.model = DQNetwork(writer_name="Test", learning_rate = 0.002)
+        self.model = DQNetwork(writer_name="1, 4_filters, 64_units, alfa=0.005, 8_repeticiones",
+                 l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                 padding_type = "SAME",
+                 max_pool_size = [2, 2],
+                 max_pool_str = [1, 1],
+                 fc_num_units = 64, dropout_prob = 0.5,
+                 learning_rate = 0.005)
 
         self.gamma = 0.9 # Discount rate for Deep Q-Learning
 
@@ -208,11 +213,12 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16 # Min number of samples to start training the model
-                num_rep = 4
+                num_rep = 8
 
                 if num_samples >= start_size:
                     # Execute num_rep iterations of learning. Each one with a different batch
-                    for _ in range(num_rep):
+                    for this_rep in range(num_rep):
+
                         # Randomly choose batch
                         bottom_ind = random.randint(0, num_samples - batch_size + 1)
                         top_ind = bottom_ind + batch_size
@@ -231,12 +237,14 @@ class Agent(AbstractPlayer):
 
                         Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
+                        # Save Logs for only the first repetition
+                        if this_rep == 0:
+                            self.model.save_logs(batch_X, Q_targets, self.log_it)
+                            self.log_it += 1
+
                         # Execute one training step
                         self.model.train(batch_X, Q_targets)
-
-                    # Save Logs
-                    self.model.save_logs(batch_X, Q_targets, self.log_it)
-                    self.log_it += 1
+                         
 
                     print("\n\nDATASET SIZE = {}\n\n".format(len(self.memory)))
 
