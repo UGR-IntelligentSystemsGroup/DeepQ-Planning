@@ -43,12 +43,12 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="1, 4_filters, 64_units, alfa=0.005, 8_repeticiones",
+        self.model = DQNetwork(writer_name="2, 4_filters, units=[64, 32], alfa=0.005, 4_repeticiones",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = 64, dropout_prob = 0.5,
+                 fc_num_units = [64, 32], dropout_prob = 0.5,
                  learning_rate = 0.005)
 
         self.gamma = 0.9 # Discount rate for Deep Q-Learning
@@ -213,7 +213,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16 # Min number of samples to start training the model
-                num_rep = 8
+                num_rep = 4
 
                 if num_samples >= start_size:
                     # Execute num_rep iterations of learning. Each one with a different batch

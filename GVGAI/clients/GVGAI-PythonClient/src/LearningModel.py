@@ -14,7 +14,7 @@ class DQNetwork:
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = 16, dropout_prob = 0.5,
+                 fc_num_units = [16, 1], dropout_prob = 0.5,
                  learning_rate = 0.005):
 
         with tf.variable_scope(name):
@@ -105,22 +105,33 @@ class DQNetwork:
             
             self.flatten = tf.contrib.layers.flatten(self.conv1)
             
-            
-            # Fully connected layer
-            
-            self.fc = tf.layers.dense(inputs = self.flatten,
-                                  units = fc_num_units,
+            # Fully connected layer 1
+
+            self.fc_1 = tf.layers.dense(inputs = self.flatten,
+                                  units = fc_num_units[0],
                                   activation = tf.nn.relu,
                                   kernel_initializer=tf.contrib.layers.xavier_initializer(),
-                                  name="fc")
+                                  name="fc_1")
+
+            # Dropout 1
+            
+            self.fc_1 = tf.layers.dropout(self.fc_1, rate=self.dropout_prob, name="Dropout_1")
+
+            # Fully connected layer 2
+            
+            self.fc_2 = tf.layers.dense(inputs = self.fc_1,
+                                  units = fc_num_units[1],
+                                  activation = tf.nn.relu,
+                                  kernel_initializer=tf.contrib.layers.xavier_initializer(),
+                                  name="fc_2")
             
             # Dropout
             
-            self.fc = tf.layers.dropout(self.fc, rate=self.dropout_prob, name="Dropout")
+            self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_prob, name="Dropout_2")
             
             # Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
             
-            self.Q_val = tf.layers.dense(inputs = self.fc, 
+            self.Q_val = tf.layers.dense(inputs = self.fc_2, 
                                           kernel_initializer=tf.contrib.layers.xavier_initializer(),
                                           units = 1, 
                                           activation=None,
