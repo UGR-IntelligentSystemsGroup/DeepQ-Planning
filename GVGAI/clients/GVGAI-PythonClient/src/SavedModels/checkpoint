@@ -1,2 +1,2 @@
-model_checkpoint_path: "model.ckpt"
-all_model_checkpoint_paths: "model.ckpt"
+model_checkpoint_path: "DQmodel_save_step=575_2.ckpt"
+all_model_checkpoint_paths: "DQmodel_save_step=575_2.ckpt"

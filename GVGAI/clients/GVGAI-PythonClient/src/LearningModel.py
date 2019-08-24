@@ -95,9 +95,9 @@ class DQNetwork:
             # Max pooling
             
             self.conv2 = tf.layers.max_pooling2d(inputs = self.conv2,
-                                                pool_size = [2, 2]
-                                                strides = [2, 2]
-                                                padding = "VALID",
+                                                pool_size = max_pool_size,
+                                                strides = max_pool_str,
+                                                padding = "VALID"
                                                 )
             """
             
