@@ -39,7 +39,8 @@ class DQNetwork:
             self.alfa = tf.constant(learning_rate)
 
             # Dropout Probability (probability of deactivation)
-            self.dropout_prob = tf.constant(dropout_prob)
+            self.dropout_placeholder = tf.placeholder(tf.float32)
+            self.dropout_prob = dropout_prob
             
 
             # --- Architecture ---
@@ -115,7 +116,7 @@ class DQNetwork:
 
             # Dropout 1
             
-            self.fc_1 = tf.layers.dropout(self.fc_1, rate=self.dropout_prob, name="Dropout_1")
+            self.fc_1 = tf.layers.dropout(self.fc_1, rate=self.dropout_placeholder, name="Dropout_1")
 
             # Fully connected layer 2
             
@@ -127,7 +128,7 @@ class DQNetwork:
             
             # Dropout
             
-            self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_prob, name="Dropout_2")
+            self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_placeholder, name="Dropout_2")
             
             # Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
             
@@ -179,26 +180,29 @@ class DQNetwork:
         self.sess.close()
 
     # Predicts the associated y-value (plan length) for x (a (subgoal, game state) pair one-hot encoded)
+    # Dropout is not activated
     def predict(self, x):
         # Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
         x_resh = np.reshape(x, (1, 13, 26, 9))
-        data_dict = {self.X : x_resh, self.is_training : False}
+        data_dict = {self.X : x_resh, self.is_training : False, self.dropout_placeholder : 0.0}
 
         prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
 
         return prediction
 
     # Execute num_it training steps using X, Y (Q_targets) as the current batches. They must have the same number of elements
+    # Dropout is activated
     def train(self, X, Y, num_it = 1):
-        data_dict = {self.X : X, self.Q_target : Y, self.is_training : True}
+        data_dict = {self.X : X, self.Q_target : Y, self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
         for it in range(num_it):
             self.sess.run(self.train_op, feed_dict=data_dict)
 
     # Calculate Training Loss and store it as a log
+    # Dropout is not activated
     def save_logs(self, X, Y, it):
         # Training Loss
-        data_dict_train = {self.X : X, self.Q_target : Y, self.is_training : True}
+        data_dict_train = {self.X : X, self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
         train_loss_log = self.sess.run(self.train_loss_sum, feed_dict=data_dict_train)
         self.writer.add_summary(train_loss_log, it)

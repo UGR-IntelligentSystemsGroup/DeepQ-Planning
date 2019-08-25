@@ -1,27 +1,8 @@
 [GAME] Game idx:11 game name boulderdash
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:117
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:107
 [PHASE] Starting Validation in 2 levels.
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:64
-[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:68
-[PHASE] End Validation in 2 levels.
-
- 	 --> Real execution time: 1 minutes, 18 seconds of wall time.
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:18.0, timesteps:74
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:76
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:18.0, timesteps:74
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:18.0, timesteps:76

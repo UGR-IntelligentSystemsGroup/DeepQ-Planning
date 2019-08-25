@@ -43,13 +43,21 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="S2, 4_filtros, units=[64, 16], num_rep=4, alfa=0.005, save_step=575",
+        self.model = DQNetwork(writer_name="S2-drop-sol, 4_filtros, units=[64, 8], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.5,
+                 fc_num_units = [64, 8], dropout_prob = 0.4,
                  learning_rate = 0.005)
+
+        # Name of the saved model file
+        self.save_path = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_575_1.ckpt"
+
+        self.save_path_2 = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_1.ckpt"
+
+        # True if the model will be saved to disk
+        self.save_model = True
 
         self.gamma = 0.9 # Discount rate for Deep Q-Learning
 
@@ -71,8 +79,7 @@ class Agent(AbstractPlayer):
         # It has the same value as sso.isValidation in init method
 
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/DQmodel_save_step=575_1.ckpt")
-
+        self.model.load_model(path = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_575_1.ckpt")
 
     def init(self, sso, elapsedTimer):
         """
@@ -251,9 +258,13 @@ class Agent(AbstractPlayer):
                 # Save the model after training
 
                 its_for_save = 575
+                its_for_save_2 = 1500
 
-                if self.log_it == its_for_save:
-                    self.model.save_model(path = "./SavedModels/DQmodel_save_step=575_3.ckpt")
+                if self.save_model and self.log_it == its_for_save:
+                    self.model.save_model(path = self.save_path)
+
+                if self.save_model and self.log_it == its_for_save_2:
+                    self.model.save_model(path = self.save_path_2)
             
 
         # If a plan has been found, return the first action
