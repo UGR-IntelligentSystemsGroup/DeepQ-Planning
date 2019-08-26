@@ -33,7 +33,7 @@ Para ejecutar el código de los modelos lo primero es instalar los paquetes nece
 6. Abrimos el navegador y abrimos la dirección _localhost:6006_.
 7. La pestaña _Graph_ muestra una visualización del modelo. La pestaña _Scalars_ muestra las gráficas de la función de pérdida en el entrenamiento y validación. Para más información sobre el uso de _TensorBoard_, recomiendo echarle un vistazo a este [vídeo](https://www.youtube.com/watch?v=eBbEDRsCmv4&list=PLPl9hCpYCVfPI3GG99vALTZlK0AaaFmls) de Youtube del canal oficial de Google.
 	
-### Modelo Greedy (Nuevo)
+### Modelo Greedy
 
 Ahora describiré la arquitectura del agente con el modelo greedy (que solo planifica para el siguiente subobjetivo).
 #### Arquitectura del modelo
@@ -63,7 +63,7 @@ A pesar de que este sería el comportamiento "natural", la fase de entrenamiento
 2. Se salta la fase de entrenamiento (he cambiado el fichero [**_CompetitionParameters_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/utils/CompetitionParameters.py) para que sea así).
 3. Ejecuta la fase de validación (niveles 3 y 4). Usa el modelo cargado (ya entrenado) para elegir los subobjetivos. Para que sea más sencillo medir su rendimiento, he hecho que imprima por el terminal el número de acciones que necesita para completar cada nivel.
 
-### Modelo Deep Q Learning
+### Modelo Deep Q Learning (Nuevo)
 Este modelo supone una mejora respecto a la arquitectura greedy ya que, a diferencia de esta, elige el siguiente subobjetivo teniendo en cuenta no solo el plan desde el estado actual hasta ese subobjetivo, sino también el resto del plan desde el subobjetivo hasta completar el nivel. Esto quiere decir que la arquitectura ya no es greedy. Para conseguir esto, he usado _**Deep Q-Learning**_.
 #### Arquitectura del modelo
 La arquitectura de la red neuronal es muy parecida a la del modelo greedy:
