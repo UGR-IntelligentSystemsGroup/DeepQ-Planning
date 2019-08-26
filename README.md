@@ -63,6 +63,33 @@ A pesar de que este sería el comportamiento "natural", la fase de entrenamiento
 2. Se salta la fase de entrenamiento (he cambiado el fichero [**_CompetitionParameters_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/utils/CompetitionParameters.py) para que sea así).
 3. Ejecuta la fase de validación (niveles 3 y 4). Usa el modelo cargado (ya entrenado) para elegir los subobjetivos. Para que sea más sencillo medir su rendimiento, he hecho que imprima por el terminal el número de acciones que necesita para completar cada nivel.
 
+### Modelo Deep Q Learning
+Este modelo supone una mejora respecto a la arquitectura greedy ya que, a diferencia de esta, elige el siguiente subobjetivo teniendo en cuenta no solo el plan desde el estado actual hasta ese subobjetivo, sino también el resto del plan desde el subobjetivo hasta completar el nivel. Esto quiere decir que la arquitectura ya no es greedy. Para conseguir esto, he usado _**Deep Q-Learning**_.
+#### Arquitectura del modelo
+La arquitectura de la red neuronal es muy parecida a la del modelo greedy:
+1. Inputs normalizados con **_batch normalization_**.
+2. Capa **_convolucional_**, con **_max pooling_**.
+3. Capa **_fully connected_**, con 64 unidades. _**Dropout**_ tras esta capa.
+4. Otra capa **_fully connected_**, con 16 unidades. _**Dropout**_ también tras esta capa.
+5. Capa de salida, formada por una única neurona. Devuelve la predicción sobre el número de acciones del plan, teniendo en cuenta el _**factor de descuento**_ (_gamma_): _output = num acciones subplan 1 + gamma\*num acciones subplan 2 + gamma^2\*num acciones subplan 3 ..._, donde _num acciones subplan i_ hace referencia al número de acciones del plan desde un subobjetivo al siguiente.
+
+La función de **pérdida** usada es simplemente la suma de **errores al cuadrado**. El optimizador usado para minimizar esta función (con descenso de gradientes) es **_Adam_**.
+
+Todo el código relativo al modelo se encuentra implementado en el archivo [**_LearningModel.py_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/LearningModel.py). Los **_logs_** de las distintas pruebas realizadas se encuentran en la carpeta [DQNetworkLogs](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/DQNetworkLogs).
+
+#### Tutorial de Ejecución
+Para ejecutar este modelo, solo hay que seguir los mismos pasos que para el modelo greedy. Solo es necesario hacer algunas aclaraciones:
+
+- Los distintos modelos usados en las pruebas se encuentran guardados en la carpeta  [**_SavedModels_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/SavedModels), excepto por el mejor modelo de todos (el que se corresponde con la arquitectura final). Este modelo se encuentra dentro de esta carpeta, en la subcarpeta [**_FinalArchitecture_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/SavedModels/FinalArchitecture).
+- El código tal y como se ha subido a github en la última versión, se salta la fase de entrenamiento, carga el modelo pre-entrenado (el que se corresponde con _FinalArchitecture_) y ejecuta la fase de validación. 
+Si se quiere ejecutar la fase de entrenamiento, solo hay que seguir estos pasos:
+	1. Comentar en _**Agent.py**_ la línea al final del método _**\_\_init\_\_**_ que carga el modelo pre-entrenado (_**self.model.load_model( ... )**_).
+	2. Cambiar el tiempo de entrenamiento en el fichero [**_CompetitionParameters_**](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/utils/CompetitionParameters.py). Para ello, se puede simplemente descomentar la línea _TOTAL_LEARNING_TIME = 180*MILLIS_IN_MIN_, que establece el tiempo de entrenamiento en 3 horas (_y comentar la línea que se encuentra actualmente descomentada_).
+	3. Es recomendable ejecutar  la simulación sin la visualización. Para ello, solo hace falta editar el fichero **_oneclickRunFromPythonClient_** y quitar el argumento **_-visuals_**.
+
+	De esta forma, el código ejecutará la fase de entrenamiento. Por defecto, tras llegar a 575 y 1500 iteraciones del entrenamiento, el modelo se guardará con el nombre dado por _self.save_path_ y _self.save_path_2_ (atributos que se encuentran en el fichero _Agent.py_ en el método _\_\_init\_\__. El tiempo medio que tarda en llegar a las 575 iteraciones es de 45 minutos y se corresponde con unos 600 elementos del dataset.
+	Mientras se está ejecutando, el modelo va guardando _logs_ acerca de la pérdida en el dataset de entrenamiento (experiencia que va recolectando mientras va entrenando). El nombre del _log_ viene dado por el parámetro _writer_name_, que se le pasa al constructor del DeepQModel, también en el método \_\_init\_\_ en Agent.py. Estos _logs_ se guardan en la carpeta [DQNetworkLogs](../../tree/master/GVGAI/clients/GVGAI-PythonClient/src/DQNetworkLogs) y se pueden visualizar usando _**TensorBoard**_, tal y como ya expliqué en el apartado del modelo greedy.
+
 ## Vladis
 
 Planificador utilizado: [LAMA](https://github.com/rock-planning/planning-lama)
