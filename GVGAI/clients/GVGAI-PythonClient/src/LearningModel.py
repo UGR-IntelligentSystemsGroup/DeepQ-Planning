@@ -130,6 +130,7 @@ class DQNetwork:
             
             self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_placeholder, name="Dropout_2")
             
+
             # Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
             
             self.Q_val = tf.layers.dense(inputs = self.fc_2, 

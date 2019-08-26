@@ -43,18 +43,17 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="S2-drop-sol, 4_filtros, units=[64, 8], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500",
+        self.model = DQNetwork(writer_name="S5-drop-sol, 4_filtros, units=[64, 16], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 8], dropout_prob = 0.4,
+                 fc_num_units = [64, 16], dropout_prob = 0.4,
                  learning_rate = 0.005)
 
-        # Name of the saved model file
-        self.save_path = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_575_1.ckpt"
-
-        self.save_path_2 = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_1.ckpt"
+        # Name of the saved model file(s)
+        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_5.ckpt"
+        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_5.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -64,22 +63,15 @@ class Agent(AbstractPlayer):
         # Iteration of current scalar summary. Needed to store the logs and plot the losses
         self.log_it = 0
 
-        # Load Validation Dataset in order to see validation loss change with tensorboard
-        # as training progresses
-        #test_dataset = np.load("../../../../datasets/dataset_test.npz") 
-        #self.test_dataset_x = test_dataset['X']
-        #test_dataset_y = test_dataset['Y']
-        #self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
-
         # Variable that stores if the agent is exploring or exploiting:
         # True -> subgoals are chosen randomly to gather experience (exploration)
         # False -> subgoals are chosen using the model to achieve the best
         #          possible results (exploitation)
+        # It has the opposite value of sso.isValidation at the init method
         self.is_training = True
-        # It has the same value as sso.isValidation in init method
-
+        
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/DQmodel_units_64-8_num_rep_4_alfa_0.005_drop_0.4_save_step_575_1.ckpt")
+        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_3.ckpt")
 
     def init(self, sso, elapsedTimer):
         """
