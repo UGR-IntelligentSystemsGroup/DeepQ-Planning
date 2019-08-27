@@ -43,7 +43,7 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="S5-drop-sol, 4_filtros, units=[64, 16], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500",
+        self.model = DQNetwork(writer_name="F2, 4_filtros, units=[64, 16], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500, 3000",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -52,8 +52,8 @@ class Agent(AbstractPlayer):
                  learning_rate = 0.005)
 
         # Name of the saved model file(s)
-        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_5.ckpt"
-        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_5.ckpt"
+        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_f2.ckpt"
+        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_f2.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -71,7 +71,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_3.ckpt")
+        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_3000_f2.ckpt")
 
     def init(self, sso, elapsedTimer):
         """
