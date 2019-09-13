@@ -10,6 +10,9 @@ import numpy as np
 
 from LearningModel import DQNetwork
 
+# QWOEUROQWEUEWQORWQPORWPRUPERU
+
+
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
     DESC_FILE = 'planning/problem.txt'
