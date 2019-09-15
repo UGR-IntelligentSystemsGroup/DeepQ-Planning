@@ -10,9 +10,6 @@ import numpy as np
 
 from LearningModel import DQNetwork
 
-# QWOEUROQWEUEWQORWQPORWPRUPERU
-
-
 class Agent(AbstractPlayer):
     NUM_GEMS_FOR_EXIT = 9
     DESC_FILE = 'planning/problem.txt'
@@ -46,7 +43,7 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="F2, 4_filtros, units=[64, 16], num_rep=4, alfa=0.005, dropout=0.4, save_step=575, 1500, 3000",
+        self.model = DQNetwork(writer_name="Prueba-overfit_tam-mem=1000_start-size=16_2",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -74,7 +71,12 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_3000_f2.ckpt")
+        # self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_3000_f2.ckpt")
+
+        # NEW
+
+        # Number of samples of the replay buffer to have before trying to overfit
+        self.max_samples_memory = 1000
 
     def init(self, sso, elapsedTimer):
         """
@@ -142,7 +144,7 @@ class Agent(AbstractPlayer):
                     self.action_list = self.search_plan(sso, exit_pos)
 
                     # Add sample to dataset
-                    if self.is_training:
+                    if self.is_training and len(self.memory) < self.max_samples_memory:
                         # Save current observation for dataset
                         one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
@@ -195,16 +197,19 @@ class Agent(AbstractPlayer):
                     # First turn of the level -> only save s and r
                     if self.first_turn: 
                         self.first_turn = False
-                        self.mem_sample = [one_hot_grid, plan_metric, None]
+
+                        if len(self.memory) < self.max_samples_memory:
+                            self.mem_sample = [one_hot_grid, plan_metric, None]
                     # Not the first turn -> add the current state s' to self.mem_sample, 
                     # create a new self.mem_sample and add to it s and r
                     else:
-                        self.mem_sample[2] = sso
-                        # Add old mem_sample to memory
-                        self.memory.append(self.mem_sample)
+                        if len(self.memory) < self.max_samples_memory:
+                            self.mem_sample[2] = sso
+                            # Add old mem_sample to memory
+                            self.memory.append(self.mem_sample)
 
-                        # Create new mem_sample
-                        self.mem_sample = [one_hot_grid, plan_metric, None]
+                            # Create new mem_sample
+                            self.mem_sample = [one_hot_grid, plan_metric, None]
 
 
             # --- Train the model ---
@@ -214,10 +219,14 @@ class Agent(AbstractPlayer):
                 num_samples = len(self.memory)
 
                 batch_size = 16
-                start_size = 16 # Min number of samples to start training the model
+                #start_size = self.max_samples_memory # Min number of samples to start training the model
+                start_size = 16
                 num_rep = 4
 
+                # num_it_per_act = 50
+
                 if num_samples >= start_size:
+
                     # Execute num_rep iterations of learning. Each one with a different batch
                     for this_rep in range(num_rep):
 
@@ -252,8 +261,8 @@ class Agent(AbstractPlayer):
 
                 # Save the model after training
 
-                its_for_save = 575
-                its_for_save_2 = 1500
+                its_for_save = 10000000
+                its_for_save_2 = 1000000
 
                 if self.save_model and self.log_it == its_for_save:
                     self.model.save_model(path = self.save_path)
@@ -261,6 +270,8 @@ class Agent(AbstractPlayer):
                 if self.save_model and self.log_it == its_for_save_2:
                     self.model.save_model(path = self.save_path_2)
             
+
+        print("Num samples memory: ", len(self.memory))
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
