@@ -7,6 +7,7 @@ from planning.parser import Parser
 import subprocess
 import random
 import numpy as np
+import tensorflow as tf
 
 from LearningModel import DQNetwork
 
@@ -43,13 +44,32 @@ class Agent(AbstractPlayer):
                 self.DESC_FILE, self.OUT_FILE)
 
         # Create Learning Model
-        self.model = DQNetwork(writer_name="Prueba-overfit_tam-mem=1000_start-size=16_2",
+
+        # DQNetwork
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=500_1",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
                  fc_num_units = [64, 16], dropout_prob = 0.4,
                  learning_rate = 0.005)
+
+        # Target Network
+        # Used to predict the Q targets. It is upgraded every max_tau updates.
+        self.target_network = DQNetwork(name="TargetNetwork",
+                 create_writer = False,
+                 l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                 padding_type = "SAME",
+                 max_pool_size = [2, 2],
+                 max_pool_str = [1, 1],
+                 fc_num_units = [64, 16], dropout_prob = 0.4,
+                 learning_rate = 0.005)
+
+        self.max_tau = 200
+        self.tau = 0 # Counter that resets to 0 when the target network is updated
+
+        # Initialize target network's weights with those of the DQNetwork
+        self.update_target_network()
 
         # Name of the saved model file(s)
         self.save_path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_f2.ckpt"
@@ -255,8 +275,16 @@ class Agent(AbstractPlayer):
 
                         # Execute one training step
                         self.model.train(batch_X, Q_targets)
-                         
+                        self.tau += 1
 
+                        # Update target network every tau training steps
+                        if self.tau >= self.max_tau:
+                            update_ops = self.update_target_network()
+                            self.target_network.update_weights(update_ops)
+
+                            self.tau = 0
+
+                            
                     print("\n\nDATASET SIZE = {}\n\n".format(len(self.memory)))
 
                 # Save the model after training
@@ -380,7 +408,7 @@ class Agent(AbstractPlayer):
 
     def get_min_Q_value(self, sso):
         """
-        Uses the DQNetwork (<with the current weights>) to obtain the Q-value associated with the state:
+        Uses the Target Network (<with the current weights>) to obtain the Q-value associated with the state:
         the minimum Q-value among all possible gems present at that state.
         If sso is 'None' (corresponds to an end state), the Q-value is 0.
 
@@ -401,13 +429,33 @@ class Agent(AbstractPlayer):
             # Obtain one-hot encoding using the state (sso) and the current gem
             one_hot_grid = self.encode_game_state(observationGrid, gem)
 
-            # Obtain the Q-value associated to that gem
-            Q_val = self.model.predict(one_hot_grid)
+            # Obtain the Q-value associated to that gem using the target network
+            Q_val = self.target_network.predict(one_hot_grid)
 
             if Q_val < min_Q_val:
                 min_Q_val = Q_val
 
         return min_Q_val
+
+    def update_target_network(self):
+        """
+        Method used every tau steps to update the target network. It changes the target network's weights
+        to those of the DQNetwork.
+        """
+
+        # Get the parameters of the DQNNetwork
+        from_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "DQNetwork")
+        
+        # Get the parameters of the Target_network
+        to_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "TargetNetwork")
+
+        op_holder = []
+        
+        # Update our target_network parameters with DQNNetwork parameters
+        for from_var,to_var in zip(from_vars,to_vars):
+            op_holder.append(to_var.assign(from_var))
+
+        return op_holder
 
     def search_plan(self, sso, goal):
         """

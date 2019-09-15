@@ -9,7 +9,7 @@ import numpy as np
 class DQNetwork:
 
 	# Create CNN architecture
-    def __init__(self, name="DQNetwork", writer_name="DQNetwork",
+    def __init__(self, name="DQNetwork", writer_name="DQNetwork", create_writer = True,
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -157,12 +157,12 @@ class DQNetwork:
 
             # --- Summaries ---
 
-            
-            self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
-            # self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
-            
-            self.writer = tf.summary.FileWriter("DQNetworkLogs/" + writer_name)
-            self.writer.add_graph(tf.get_default_graph())
+            if create_writer:
+              self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
+              # self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
+              
+              self.writer = tf.summary.FileWriter("DQNetworkLogs/" + writer_name)
+              self.writer.add_graph(tf.get_default_graph())
             
 
         # --- Initialization ---
@@ -217,3 +217,8 @@ class DQNetwork:
     def load_model(self, path = "./SavedModels/DQmodel.ckpt"):
         saver = tf.train.Saver()
         saver.restore(self.sess, path)
+
+    # Runs update_ops to update the current weights. This method is used to update the target network's weights
+    # every tau steps
+    def update_weights(self, update_ops):
+        self.sess.run(update_ops)
