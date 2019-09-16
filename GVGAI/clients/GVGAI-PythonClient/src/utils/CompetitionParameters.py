@@ -20,8 +20,8 @@ class CompetitionParameters:
     ACTION_TIME = 500000
     ACTION_TIME_DISQ = 510000
     MILLIS_IN_MIN = 60*1000
-    TOTAL_LEARNING_TIME = 3*60*MILLIS_IN_MIN # 3 horas de entrenamiento  # Uncomment this if the model has yet to be trained
-    # TOTAL_LEARNING_TIME = 0.1*MILLIS_IN_MIN # Uncomment this if the model is already trained -> skips training phase (except for the first level)
+    # TOTAL_LEARNING_TIME = 3*60*MILLIS_IN_MIN # 3 horas de entrenamiento  # Uncomment this if the model has yet to be trained
+    TOTAL_LEARNING_TIME = 0.1*MILLIS_IN_MIN # Uncomment this if the model is already trained -> skips training phase (except for the first level)
     EXTRA_LEARNING_TIME = 1000
     SOCKET_PORT = 8080
     SCREENSHOT_FILENAME = "gameStateByBytes.png"

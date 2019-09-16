@@ -46,7 +46,7 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=500_1",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=200_5",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -72,8 +72,8 @@ class Agent(AbstractPlayer):
         self.update_target_network()
 
         # Name of the saved model file(s)
-        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_575_f2.ckpt"
-        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_1500_f2.ckpt"
+        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-500_5.ckpt"
+        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -91,12 +91,12 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        # self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_units_64-16_num_rep_4_alfa_0.005_drop_0.4_save_step_3000_f2.ckpt")
+        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt")
 
         # NEW
 
         # Number of samples of the replay buffer to have before trying to overfit
-        self.max_samples_memory = 1000
+        # self.max_samples_memory = 1000
 
     def init(self, sso, elapsedTimer):
         """
@@ -164,7 +164,8 @@ class Agent(AbstractPlayer):
                     self.action_list = self.search_plan(sso, exit_pos)
 
                     # Add sample to dataset
-                    if self.is_training and len(self.memory) < self.max_samples_memory:
+                    #if self.is_training and len(self.memory) < self.max_samples_memory:
+                    if self.is_training:
                         # Save current observation for dataset
                         one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
@@ -218,18 +219,18 @@ class Agent(AbstractPlayer):
                     if self.first_turn: 
                         self.first_turn = False
 
-                        if len(self.memory) < self.max_samples_memory:
-                            self.mem_sample = [one_hot_grid, plan_metric, None]
+                        #if len(self.memory) < self.max_samples_memory:
+                        self.mem_sample = [one_hot_grid, plan_metric, None]
                     # Not the first turn -> add the current state s' to self.mem_sample, 
                     # create a new self.mem_sample and add to it s and r
                     else:
-                        if len(self.memory) < self.max_samples_memory:
-                            self.mem_sample[2] = sso
-                            # Add old mem_sample to memory
-                            self.memory.append(self.mem_sample)
+                        #if len(self.memory) < self.max_samples_memory:
+                        self.mem_sample[2] = sso
+                        # Add old mem_sample to memory
+                        self.memory.append(self.mem_sample)
 
-                            # Create new mem_sample
-                            self.mem_sample = [one_hot_grid, plan_metric, None]
+                        # Create new mem_sample
+                        self.mem_sample = [one_hot_grid, plan_metric, None]
 
 
             # --- Train the model ---
@@ -239,7 +240,6 @@ class Agent(AbstractPlayer):
                 num_samples = len(self.memory)
 
                 batch_size = 16
-                #start_size = self.max_samples_memory # Min number of samples to start training the model
                 start_size = 16
                 num_rep = 4
 
@@ -289,8 +289,9 @@ class Agent(AbstractPlayer):
 
                 # Save the model after training
 
-                its_for_save = 10000000
-                its_for_save_2 = 1000000
+                # Its_for_save account for log_it, not for actual training iterations
+                its_for_save = 500
+                its_for_save_2 = 1000
 
                 if self.save_model and self.log_it == its_for_save:
                     self.model.save_model(path = self.save_path)

@@ -17,7 +17,9 @@ class DQNetwork:
                  fc_num_units = [16, 1], dropout_prob = 0.5,
                  learning_rate = 0.005):
 
-        with tf.variable_scope(name):
+        self.variable_scope = name
+
+        with tf.variable_scope(self.variable_scope):
 
             # --- Constants, Variables and Placeholders ---
 
@@ -210,12 +212,14 @@ class DQNetwork:
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
     def save_model(self, path = "./SavedModels/DQmodel.ckpt"):
-        saver = tf.train.Saver()
+        saver = tf.train.Saver(
+          tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
         saver.save(self.sess, path)
 
     # Loads a model previously saved with 'save_model'
     def load_model(self, path = "./SavedModels/DQmodel.ckpt"):
-        saver = tf.train.Saver()
+        saver = tf.train.Saver(
+          tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only load the variables within this variable scope
         saver.restore(self.sess, path)
 
     # Runs update_ops to update the current weights. This method is used to update the target network's weights

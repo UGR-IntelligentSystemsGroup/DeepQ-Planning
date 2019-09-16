@@ -1,2 +1,0 @@
-model_checkpoint_path: "DQmodel_units_100_num_rep_4_alfa_0.005_drop_0.4_save_step_575_2.ckpt"
-all_model_checkpoint_paths: "DQmodel_units_100_num_rep_4_alfa_0.005_drop_0.4_save_step_575_2.ckpt"
