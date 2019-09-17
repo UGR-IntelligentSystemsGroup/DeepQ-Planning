@@ -46,13 +46,13 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=200_5",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.01_1",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
                  fc_num_units = [64, 16], dropout_prob = 0.4,
-                 learning_rate = 0.005)
+                 learning_rate = 0.01)
 
         # Target Network
         # Used to predict the Q targets. It is upgraded every max_tau updates.
@@ -62,18 +62,18 @@ class Agent(AbstractPlayer):
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.4,
-                 learning_rate = 0.005)
+                 fc_num_units = [64, 16], dropout_prob = 0.0,
+                 learning_rate = 0.01)
 
-        self.max_tau = 200
+        self.max_tau = 250
         self.tau = 0 # Counter that resets to 0 when the target network is updated
 
         # Initialize target network's weights with those of the DQNetwork
         self.update_target_network()
 
         # Name of the saved model file(s)
-        self.save_path = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-500_5.ckpt"
-        self.save_path_2 = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt"
+        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_500_1.ckpt"
+        self.save_path_2 = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_1000_1.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -91,7 +91,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/FinalArchitecture/DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt")
+        # self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_1000_1.ckpt")
 
         # NEW
 
