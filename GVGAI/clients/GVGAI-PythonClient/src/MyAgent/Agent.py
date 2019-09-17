@@ -46,13 +46,13 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.01_1",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.005_num_rep=2_2",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
                  fc_num_units = [64, 16], dropout_prob = 0.4,
-                 learning_rate = 0.01)
+                 learning_rate = 0.005)
 
         # Target Network
         # Used to predict the Q targets. It is upgraded every max_tau updates.
@@ -63,7 +63,7 @@ class Agent(AbstractPlayer):
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
                  fc_num_units = [64, 16], dropout_prob = 0.0,
-                 learning_rate = 0.01)
+                 learning_rate = 0.005)
 
         self.max_tau = 250
         self.tau = 0 # Counter that resets to 0 when the target network is updated
@@ -72,8 +72,8 @@ class Agent(AbstractPlayer):
         self.update_target_network()
 
         # Name of the saved model file(s)
-        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_500_1.ckpt"
-        self.save_path_2 = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_1000_1.ckpt"
+        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_500_2.ckpt"
+        self.save_path_2 = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_1000_2.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -91,7 +91,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        # self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.01_1000_1.ckpt")
+        self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_1000_2.ckpt")
 
         # NEW
 
@@ -241,7 +241,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16
-                num_rep = 4
+                num_rep = 2
 
                 # num_it_per_act = 50
 
@@ -290,8 +290,8 @@ class Agent(AbstractPlayer):
                 # Save the model after training
 
                 # Its_for_save account for log_it, not for actual training iterations
-                its_for_save = 500
-                its_for_save_2 = 1000
+                its_for_save = 500 * 2
+                its_for_save_2 = 1000 * 2
 
                 if self.save_model and self.log_it == its_for_save:
                     self.model.save_model(path = self.save_path)
