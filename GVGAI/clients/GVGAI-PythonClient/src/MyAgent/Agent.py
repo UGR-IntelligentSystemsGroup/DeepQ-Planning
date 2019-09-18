@@ -46,7 +46,7 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.005_num_rep=2_2",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.005_num_rep=1_2",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -71,9 +71,8 @@ class Agent(AbstractPlayer):
         # Initialize target network's weights with those of the DQNetwork
         self.update_target_network()
 
-        # Name of the saved model file(s)
-        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_500_2.ckpt"
-        self.save_path_2 = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_1000_2.ckpt"
+        # Name of the saved model file (without the number of training steps part)
+        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -91,7 +90,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-2_1000_2.ckpt")
+        self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt", num_it = 10000)
 
         # NEW
 
@@ -241,7 +240,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16
-                num_rep = 2
+                num_rep = 1
 
                 # num_it_per_act = 50
 
@@ -290,14 +289,13 @@ class Agent(AbstractPlayer):
                 # Save the model after training
 
                 # Its_for_save account for log_it, not for actual training iterations
-                its_for_save = 500 * 2
-                its_for_save_2 = 1000 * 2
+                # The number of log_it corresponds more or less to the dataset current size
 
-                if self.save_model and self.log_it == its_for_save:
-                    self.model.save_model(path = self.save_path)
+                its_for_save = [100, 250, 500, 1000, 2000, 3000, 4000, 5000,
+                                6000, 7000, 8000, 9000, 10000]
 
-                if self.save_model and self.log_it == its_for_save_2:
-                    self.model.save_model(path = self.save_path_2)
+                if self.save_model and self.log_it in its_for_save:
+                    self.model.save_model(path = self.save_path, num_it = self.log_it)
             
 
         print("Num samples memory: ", len(self.memory))

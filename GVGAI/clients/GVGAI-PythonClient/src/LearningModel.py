@@ -211,16 +211,24 @@ class DQNetwork:
         self.writer.add_summary(train_loss_log, it)
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
-    def save_model(self, path = "./SavedModels/DQmodel.ckpt"):
+    def save_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
         saver = tf.train.Saver(
           tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
-        saver.save(self.sess, path)
+        
+        if num_it is None:
+          saver.save(self.sess, path)
+        else:
+          saver.save(self.sess, path, global_step = num_it)
 
     # Loads a model previously saved with 'save_model'
-    def load_model(self, path = "./SavedModels/DQmodel.ckpt"):
+    def load_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
         saver = tf.train.Saver(
           tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only load the variables within this variable scope
-        saver.restore(self.sess, path)
+        
+        if num_it is None:
+          saver.restore(self.sess, path)
+        else:
+          saver.restore(self.sess, path + '-' + str(num_it))
 
     # Runs update_ops to update the current weights. This method is used to update the target network's weights
     # every tau steps
