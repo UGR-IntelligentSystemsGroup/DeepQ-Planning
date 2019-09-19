@@ -1,0 +1,2 @@
+model_checkpoint_path: "DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt-10000"
+all_model_checkpoint_paths: "DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt-10000"
