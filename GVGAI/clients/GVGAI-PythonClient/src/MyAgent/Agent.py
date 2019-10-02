@@ -46,12 +46,13 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_tau=250_alfa=0.005_num_rep=1_2",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.4,
+                 fc_num_units = [64, 16], dropout_prob = 0.0,
+                 l2_regularization=0.01,
                  learning_rate = 0.005)
 
         # Target Network
@@ -72,7 +73,7 @@ class Agent(AbstractPlayer):
         self.update_target_network()
 
         # Name of the saved model file (without the number of training steps part)
-        self.save_path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt"
+        self.save_path = "./SavedModels/Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -90,7 +91,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/DQmodel_fixed_q_targets_tau-250_alfa-0.005_num-rep-1_2.ckpt", num_it = 10000)
+        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1.ckpt", num_it = 8000)
 
         # NEW
 
@@ -240,7 +241,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16
-                num_rep = 1
+                num_rep = 4
 
                 # num_it_per_act = 50
 

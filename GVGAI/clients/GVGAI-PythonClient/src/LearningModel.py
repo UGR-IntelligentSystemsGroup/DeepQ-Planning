@@ -15,6 +15,7 @@ class DQNetwork:
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
                  fc_num_units = [16, 1], dropout_prob = 0.5,
+                 l2_regularization=0.0,
                  learning_rate = 0.005):
 
         self.variable_scope = name
@@ -114,6 +115,7 @@ class DQNetwork:
                                   units = fc_num_units[0],
                                   activation = tf.nn.relu,
                                   kernel_initializer=tf.contrib.layers.xavier_initializer(),
+                                  kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
                                   name="fc_1")
 
             # Dropout 1
@@ -126,6 +128,7 @@ class DQNetwork:
                                   units = fc_num_units[1],
                                   activation = tf.nn.relu,
                                   kernel_initializer=tf.contrib.layers.xavier_initializer(),
+                                  kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
                                   name="fc_2")
             
             # Dropout
