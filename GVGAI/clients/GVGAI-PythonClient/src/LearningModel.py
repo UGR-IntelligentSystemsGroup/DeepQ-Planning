@@ -174,7 +174,16 @@ class DQNetwork:
 
 
         # Create Session
-        self.sess = tf.Session()
+
+        # Run on GPU
+        """
+        # Needed for running on GPU
+        gpu_options = tf.GPUOptions(allow_growth=True)
+        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+        """
+
+        # Run on CPU (it's faster if model and batch_size is small)
+        self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
 
         # Initialize variables
         self.sess.run(tf.global_variables_initializer())

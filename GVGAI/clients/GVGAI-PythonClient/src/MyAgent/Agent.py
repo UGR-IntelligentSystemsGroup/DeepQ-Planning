@@ -46,13 +46,12 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.0,
-                 l2_regularization=0.01,
+                 fc_num_units = [64, 16], dropout_prob = 0.4,
                  learning_rate = 0.005)
 
         # Target Network
@@ -73,7 +72,7 @@ class Agent(AbstractPlayer):
         self.update_target_network()
 
         # Name of the saved model file (without the number of training steps part)
-        self.save_path = "./SavedModels/Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1.ckpt"
+        self.save_path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -91,7 +90,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_l2-regularization-0.001_num_rep=4_1.ckpt", num_it = 8000)
+        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3.ckpt", num_it = 13000)
 
         # NEW
 
@@ -241,7 +240,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16
-                num_rep = 4
+                num_rep = 2
 
                 # num_it_per_act = 50
 
@@ -293,7 +292,8 @@ class Agent(AbstractPlayer):
                 # The number of log_it corresponds more or less to the dataset current size
 
                 its_for_save = [100, 250, 500, 1000, 2000, 3000, 4000, 5000,
-                                6000, 7000, 8000, 9000, 10000]
+                                6000, 7000, 8000, 9000, 10000, 11000, 12000,
+                                13000, 14000, 15000]
 
                 if self.save_model and self.log_it in its_for_save:
                     self.model.save_model(path = self.save_path, num_it = self.log_it)
