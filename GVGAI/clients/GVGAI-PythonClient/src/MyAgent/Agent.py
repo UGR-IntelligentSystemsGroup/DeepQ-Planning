@@ -46,12 +46,12 @@ class Agent(AbstractPlayer):
         # Create Learning Model
 
         # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3",
+        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1",
                  l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
                  max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.4,
+                 fc_num_units = [64, 16], dropout_prob = 0.6,
                  learning_rate = 0.005)
 
         # Target Network
@@ -72,7 +72,7 @@ class Agent(AbstractPlayer):
         self.update_target_network()
 
         # Name of the saved model file (without the number of training steps part)
-        self.save_path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3.ckpt"
+        self.save_path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1.ckpt"
 
         # True if the model will be saved to disk
         self.save_model = True
@@ -90,7 +90,7 @@ class Agent(AbstractPlayer):
         self.is_training = True
         
         # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.4_num_rep=2_3.ckpt", num_it = 13000)
+        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1.ckpt", num_it = 13000)
 
         # NEW
 
@@ -240,7 +240,7 @@ class Agent(AbstractPlayer):
 
                 batch_size = 16
                 start_size = 16
-                num_rep = 2
+                num_rep = 1
 
                 # num_it_per_act = 50
 
