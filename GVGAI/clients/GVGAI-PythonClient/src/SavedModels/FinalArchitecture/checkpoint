@@ -1,2 +1,0 @@
-model_checkpoint_path: "DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt"
-all_model_checkpoint_paths: "DQmodel_fixed_q_targets_tau-200_step-1000_5.ckpt"

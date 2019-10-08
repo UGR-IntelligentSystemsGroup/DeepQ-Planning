@@ -8,6 +8,8 @@ import subprocess
 import random
 import numpy as np
 import tensorflow as tf
+import pickle
+import sys
 
 from LearningModel import DQNetwork
 
@@ -24,78 +26,121 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-
-        # Attribute that stores agent's experience to implement experience replay (for training)
-        # Each element is a tuple (s, r, s') corresponding to:
-        # - s -> start_state and chosen subgoal ((game state, chosen subgoal) one-hot encoded). Shape = (-1, 13, 26, 9).
-        # - r -> length of the plan from the start_state to the chosen subgoal.
-        # - s' -> state of the game just after the agent has achieved the chosen subgoal.
-        #         It's an instance of the SerializableStateObservation (sso) class.
-
-        self.memory = []
-
-        # Variable to check if the dataset has already been saved
-        self.already_saved = False
-
         self.current_level = 0 # Level playing right now
 
         # Set parser
         self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
                 self.DESC_FILE, self.OUT_FILE)
 
-        # Create Learning Model
 
-        # DQNetwork
-        self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1",
-                 l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                 padding_type = "SAME",
-                 max_pool_size = [2, 2],
-                 max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.6,
-                 learning_rate = 0.005)
+        # << Choose execution mode >>
+        # - 'create_dataset' -> It doesn't train any model. Just creates the dataset (experience replay) and saves it
+        # - 'train' -> It loads the saved dataset, trains the model with it, and saves the trained model. 
+        #              It doesn't add any sample to the experience replay
+        # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
-        # Target Network
-        # Used to predict the Q targets. It is upgraded every max_tau updates.
-        self.target_network = DQNetwork(name="TargetNetwork",
-                 create_writer = False,
-                 l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                 padding_type = "SAME",
-                 max_pool_size = [2, 2],
-                 max_pool_str = [1, 1],
-                 fc_num_units = [64, 16], dropout_prob = 0.0,
-                 learning_rate = 0.005)
 
-        self.max_tau = 250
-        self.tau = 0 # Counter that resets to 0 when the target network is updated
+        self.EXECUTION_MODE = 'create_dataset'
 
-        # Initialize target network's weights with those of the DQNetwork
-        self.update_target_network()
+        # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
+        network_name = "Prueba_load_dataset"
 
-        # Name of the saved model file (without the number of training steps part)
-        self.save_path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1.ckpt"
 
-        # True if the model will be saved to disk
-        self.save_model = True
+        if self.EXECUTION_MODE == 'create_dataset':
 
-        self.gamma = 0.9 # Discount rate for Deep Q-Learning
+            # Attribute that stores agent's experience to implement experience replay (for training)
+            # Each element is a tuple (s, r, s') corresponding to:
+            # - s -> start_state and chosen subgoal ((game state, chosen subgoal) one-hot encoded). Shape = (-1, 13, 26, 9).
+            # - r -> length of the plan from the start_state to the chosen subgoal.
+            # - s' -> state of the game just after the agent has achieved the chosen subgoal.
+            #         It's an instance of the SerializableStateObservation (sso) class.
+            self.memory = []
 
-        # Iteration of current scalar summary. Needed to store the logs and plot the losses
-        self.log_it = 0
+            # Path of the file to save the experience replay to
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1.dat'
 
-        # Variable that stores if the agent is exploring or exploiting:
-        # True -> subgoals are chosen randomly to gather experience (exploration)
-        # False -> subgoals are chosen using the model to achieve the best
-        #          possible results (exploitation)
-        # It has the opposite value of sso.isValidation at the init method
-        self.is_training = True
-        
-        # <Load the already-trained model in order to test performance>
-        self.model.load_model(path = "./SavedModels/Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1.ckpt", num_it = 13000)
+            # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
+            # is saved and the program exits
+            self.num_samples_for_saving_dataset = 10000
 
-        # NEW
+        elif self.EXECUTION_MODE == 'train':
+            # Parameters of the Learning Model
+            learning_rate = 0.005
+            dropout_prob = 0.4
 
-        # Number of samples of the replay buffer to have before trying to overfit
-        # self.max_samples_memory = 1000
+            self.num_train_its = 110 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.batch_size = 16
+            
+            self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
+            self.tau = 0 # Counter that resets to 0 when the target network is updated
+            self.gamma = 0.9 # Discount rate for Deep Q-Learning
+
+            #network_name = "Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1"
+
+            # Create Learning Model
+
+            # DQNetwork
+            self.model = DQNetwork(writer_name=network_name,
+                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                     padding_type = "SAME",
+                     max_pool_size = [2, 2],
+                     max_pool_str = [1, 1],
+                     fc_num_units = [64, 16], dropout_prob = dropout_prob,
+                     learning_rate = learning_rate)
+
+            # Target Network
+            # Used to predict the Q targets. It is upgraded every max_tau updates.
+            self.target_network = DQNetwork(name="TargetNetwork",
+                     create_writer = False,
+                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                     padding_type = "SAME",
+                     max_pool_size = [2, 2],
+                     max_pool_str = [1, 1],
+                     fc_num_units = [64, 16], dropout_prob = 0.0,
+                     learning_rate = learning_rate)
+
+            # Initialize target network's weights with those of the DQNetwork
+            self.update_target_network()
+
+            # Name of the saved model file (without the number of training steps part)
+            self.model_save_path = "./SavedModels/" + network_name + ".ckpt"
+
+
+            # Its_for_save account for log_it, not for actual training iterations ??
+            # The number of log_it corresponds more or less to the dataset current size
+            self.its_for_model_save =   [100, 250, 500, 1000, 2000, 3000, 4000, 5000,
+                                        6000, 7000, 8000, 9000, 10000, 11000, 12000,
+                                        13000, 14000, 15000]
+
+            # Load the Experience Replay
+
+            dataset_load_path = 'SavedDatasets/' + 'dataset_prueba.dat'
+
+            self.load_dataset(dataset_load_path)
+
+        else: # Test
+            # Create Learning Model
+
+            # DQNetwork
+            self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1",
+                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                     padding_type = "SAME",
+                     max_pool_size = [2, 2],
+                     max_pool_str = [1, 1],
+                     fc_num_units = [64, 16], dropout_prob = 0.6,
+                     learning_rate = 0.005)
+
+
+            # Name of the saved model file to load (without the number of training steps part)
+            model_load_path = "./SavedModels/" + network_name + ".ckpt"
+
+            # Number of iterations of the model to load
+            num_it_model = 100
+
+
+            # <Load the already-trained model in order to test performance>
+            self.model.load_model(path = model_load_path, num_it = num_it_model)
+
 
     def init(self, sso, elapsedTimer):
         """
@@ -105,6 +150,7 @@ class Agent(AbstractPlayer):
         * @param elapsedTimer Timer, which is 1s by default. Modified to 1000s.
                               Check utils/CompetitionParameters.py for more info.
         """
+
         # Set first turn as True
         self.first_turn = True
 
@@ -116,11 +162,11 @@ class Agent(AbstractPlayer):
         self.can_exit = False
 
         # See if it's training or validation time
-        self.is_training = not sso.isValidation
+        self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
 
         # If it's validation phase, count the number of actions used
         # to beat the current level
-        if not self.is_training:
+        if self.EXECUTION_MODE == 'test' and not self.is_training:
             self.num_actions_lv = 0
 
 
@@ -137,13 +183,63 @@ class Agent(AbstractPlayer):
         @return The action to be performed by the agent.
         """
 
-        # <If the plan is emtpy, get a new one>
+        # <Train the model without playing the game (EXECUTION_MODE == 'train')>
 
+        if self.EXECUTION_MODE == 'train':
+            num_samples = len(self.memory)
+
+            # Execute the training iterations
+            for curr_it in range(self.num_train_its):
+
+                # Choose Random batch from Experience Replay
+                bottom_ind = random.randint(0, num_samples - self.batch_size + 1)
+                top_ind = bottom_ind + self.batch_size
+
+                batch = self.memory[bottom_ind:top_ind]
+
+                batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
+                batch_R = [each[1] for each in batch] # r values (plan lenghts)
+                batch_S = [each[2] for each in batch] # s' values (sso instances)
+
+                # Calculate Q_targets
+                Q_targets = []
+                
+                for r, s in zip(batch_R, batch_S):
+                    Q_target = r + self.gamma*self.get_min_Q_value(s)
+                    Q_targets.append(Q_target)
+
+                Q_targets = np.reshape(Q_targets, (-1, 1)) 
+
+                # Execute one training step
+                self.model.train(batch_X, Q_targets)
+                self.tau += 1
+
+                # Update target network every tau training steps
+                if self.tau >= self.max_tau:
+                    update_ops = self.update_target_network()
+                    self.target_network.update_weights(update_ops)
+
+                    self.tau = 0
+
+                # Save Logs
+                self.model.save_logs(batch_X, Q_targets, curr_it)
+
+                # Save the model at certain steps of training
+                if curr_it in self.its_for_model_save:
+                    self.model.save_model(path = self.model_save_path, num_it = curr_it)
+                    print("\n> Model saved at {} its\n".format(curr_it))
+
+            # Exit the program after finishing training
+            print("Training finished!")
+            sys.exit()
+  
+
+        # <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
+
+        print("\nExperience Replay size: {}\n".format(len(self.memory)))
+
+        # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
-            # Set level description and output file names
-            # out_description = 'MyAgent/problem.txt'
-            # output_file = 'MyAgent/out.txt'
-
             # If the agent already has 11 gems, he plans to exit the level
             keys = sso.avatarResources.keys()
 
@@ -162,9 +258,8 @@ class Agent(AbstractPlayer):
  
                     self.action_list = self.search_plan(sso, exit_pos)
 
-                    # Add sample to dataset
-                    #if self.is_training and len(self.memory) < self.max_samples_memory:
-                    if self.is_training:
+                    # Add sample to memory
+                    if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
                         # Save current observation for dataset
                         one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
@@ -182,12 +277,14 @@ class Agent(AbstractPlayer):
                         self.mem_sample = [one_hot_grid, plan_metric, None]
                         self.memory.append(self.mem_sample)
 
-            # Only plan for next gem if agent can't exit the level yet
+
+            # Only plan for next gem if the agent can't exit the level yet
             if not self.can_exit:
                 # Obtain gems positions
                 gems = self.get_gems_positions(sso)
                 
                 # <Choose next subgoal>
+
                 avatar_position = (int(sso.avatarPosition[0] // sso.blockSize),
                                  int(sso.avatarPosition[1] // sso.blockSize))
 
@@ -205,7 +302,7 @@ class Agent(AbstractPlayer):
                 self.action_list = self.search_plan(sso, chosen_gem)
 
                 # Add sample to memory
-                if self.is_training:
+                if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
 
@@ -217,13 +314,11 @@ class Agent(AbstractPlayer):
                     # First turn of the level -> only save s and r
                     if self.first_turn: 
                         self.first_turn = False
-
-                        #if len(self.memory) < self.max_samples_memory:
                         self.mem_sample = [one_hot_grid, plan_metric, None]
+
                     # Not the first turn -> add the current state s' to self.mem_sample, 
                     # create a new self.mem_sample and add to it s and r
                     else:
-                        #if len(self.memory) < self.max_samples_memory:
                         self.mem_sample[2] = sso
                         # Add old mem_sample to memory
                         self.memory.append(self.mem_sample)
@@ -232,74 +327,15 @@ class Agent(AbstractPlayer):
                         self.mem_sample = [one_hot_grid, plan_metric, None]
 
 
-            # --- Train the model ---
+        # Save dataset and exit the program if the experience replay is the right size
 
-            
-            if self.is_training:
-                num_samples = len(self.memory)
+        if self.EXECUTION_MODE == 'create_dataset' and len(self.memory) >= self.num_samples_for_saving_dataset:
+            self.save_dataset(self.dataset_save_path)
 
-                batch_size = 16
-                start_size = 16
-                num_rep = 1
+            # Exit the program with success code
+            sys.exit()
 
-                # num_it_per_act = 50
-
-                if num_samples >= start_size:
-
-                    # Execute num_rep iterations of learning. Each one with a different batch
-                    for this_rep in range(num_rep):
-
-                        # Randomly choose batch
-                        bottom_ind = random.randint(0, num_samples - batch_size + 1)
-                        top_ind = bottom_ind + batch_size
-
-                        batch = self.memory[bottom_ind:top_ind]
-
-                        batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-                        batch_R = [each[1] for each in batch] # r values (plan lenghts)
-                        batch_S = [each[2] for each in batch] # s' values (sso instances)
-
-                        Q_targets = []
-                        # Calculate Q_targets
-                        for r, s in zip(batch_R, batch_S):
-                            Q_target = r + self.gamma*self.get_min_Q_value(s)
-                            Q_targets.append(Q_target)
-
-                        Q_targets = np.reshape(Q_targets, (-1, 1)) 
-
-                        # Save Logs for only the first repetition
-                        if this_rep == 0:
-                            self.model.save_logs(batch_X, Q_targets, self.log_it)
-                            self.log_it += 1
-
-                        # Execute one training step
-                        self.model.train(batch_X, Q_targets)
-                        self.tau += 1
-
-                        # Update target network every tau training steps
-                        if self.tau >= self.max_tau:
-                            update_ops = self.update_target_network()
-                            self.target_network.update_weights(update_ops)
-
-                            self.tau = 0
-
-                            
-                    print("\n\nDATASET SIZE = {}\n\n".format(len(self.memory)))
-
-                # Save the model after training
-
-                # Its_for_save account for log_it, not for actual training iterations
-                # The number of log_it corresponds more or less to the dataset current size
-
-                its_for_save = [100, 250, 500, 1000, 2000, 3000, 4000, 5000,
-                                6000, 7000, 8000, 9000, 10000, 11000, 12000,
-                                13000, 14000, 15000]
-
-                if self.save_model and self.log_it in its_for_save:
-                    self.model.save_model(path = self.save_path, num_it = self.log_it)
-            
-
-        print("Num samples memory: ", len(self.memory))
+        # Execute Plan
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -562,30 +598,41 @@ class Agent(AbstractPlayer):
 
         pass
 
+    def save_dataset(self, path):
+        """
+        Uses the pickle module to save the experience replay to a file.
+
+        @path Path of the file
+        """
+
+        print("\nSaving experience replay...")
+
+        with open(path, 'wb') as file:
+            pickle.dump(self.memory, file)
+
+        print("Saving finished!")
+
+
+    def load_dataset(self, path):
+        """
+        Uses the picle module to load the previously saved experience replay.
+
+        @path Path of the file
+        """
+
+        print("\nLoading experience replay...")
+
+        with open(path, 'rb') as file:
+            self.memory = pickle.load(file)
+
+        print("Loading finished!")
+        
+
     def result(self, sso, elapsedTimer):
         print("Nivel terminado")
 
-        if not self.is_training:
+        if self.EXECUTION_MODE == 'test' and not self.is_training:
             print("\n\nNúmero de acciones para completar el nivel: ", self.num_actions_lv, "\n\n")
-
-        # Save dataset if it contains at least min_elem elements
-
-        """
-        min_elem = 5000
-        file_name = 'dataset_train_3.npz'
-
-        dataset_X = np.array(self.X, dtype=np.bool)
-        dataset_Y = np.array(self.Y, dtype=np.int32)
-
-        if not self.already_saved and len(self.Y) >= min_elem:
-            print("\n\n<<<GUARDANDO DATASET>>>\n\n")
-
-            np.savez(file_name, X=dataset_X, Y=dataset_Y)
-
-            self.already_saved = True # Don't save again
-        """
-        
-        #return random.randint(0, 2)
 
         # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
