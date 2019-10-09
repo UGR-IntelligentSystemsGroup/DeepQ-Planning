@@ -43,7 +43,7 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE = 'create_dataset'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        network_name = "Prueba_load_dataset"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-6000_1"
 
 
         if self.EXECUTION_MODE == 'create_dataset':
@@ -57,66 +57,36 @@ class Agent(AbstractPlayer):
             self.memory = []
 
             # Path of the file to save the experience replay to
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1.dat'
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_10.dat'
 
             # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
             # is saved and the program exits
-            self.num_samples_for_saving_dataset = 10000
+            self.num_samples_for_saving_dataset = 1000
 
         elif self.EXECUTION_MODE == 'train':
             # Parameters of the Learning Model
-            learning_rate = 0.005
-            dropout_prob = 0.4
+            self.learning_rate = 0.005
+            self.dropout_prob = 0.4
 
-            self.num_train_its = 110 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.num_train_its = 6000 # Number of training iterations. Each iteration chooses a different batch for the gradient
             self.batch_size = 16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
             self.tau = 0 # Counter that resets to 0 when the target network is updated
             self.gamma = 0.9 # Discount rate for Deep Q-Learning
 
-            #network_name = "Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1"
+            # Name of the saved model file (without the number of dataset size part)
+            self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
 
-            # Create Learning Model
+            # Sizes of datasets to train the model on. For each size, a different model is created and trained.
+            self.datasets_sizes_for_training =   [100, 500, 1000, 2000, 3000, 4000, 5000]
+                                        #6000, 7000, 8000, 9000, 9999]
 
-            # DQNetwork
-            self.model = DQNetwork(writer_name=network_name,
-                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                     padding_type = "SAME",
-                     max_pool_size = [2, 2],
-                     max_pool_str = [1, 1],
-                     fc_num_units = [64, 16], dropout_prob = dropout_prob,
-                     learning_rate = learning_rate)
+            # Experience Replay
+            self.memory = [] # Attribute to save the dataset
 
-            # Target Network
-            # Used to predict the Q targets. It is upgraded every max_tau updates.
-            self.target_network = DQNetwork(name="TargetNetwork",
-                     create_writer = False,
-                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                     padding_type = "SAME",
-                     max_pool_size = [2, 2],
-                     max_pool_str = [1, 1],
-                     fc_num_units = [64, 16], dropout_prob = 0.0,
-                     learning_rate = learning_rate)
-
-            # Initialize target network's weights with those of the DQNetwork
-            self.update_target_network()
-
-            # Name of the saved model file (without the number of training steps part)
-            self.model_save_path = "./SavedModels/" + network_name + ".ckpt"
-
-
-            # Its_for_save account for log_it, not for actual training iterations ??
-            # The number of log_it corresponds more or less to the dataset current size
-            self.its_for_model_save =   [100, 250, 500, 1000, 2000, 3000, 4000, 5000,
-                                        6000, 7000, 8000, 9000, 10000, 11000, 12000,
-                                        13000, 14000, 15000]
-
-            # Load the Experience Replay
-
-            dataset_load_path = 'SavedDatasets/' + 'dataset_prueba.dat'
-
-            self.load_dataset(dataset_load_path)
+            # Path of the dataset to load
+            self.dataset_load_path = 'SavedDatasets/' + 'dataset_1000_1.dat'
 
         else: # Test
             # Create Learning Model
@@ -132,10 +102,10 @@ class Agent(AbstractPlayer):
 
 
             # Name of the saved model file to load (without the number of training steps part)
-            model_load_path = "./SavedModels/" + network_name + ".ckpt"
+            model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Number of iterations of the model to load
-            num_it_model = 100
+            num_it_model = 500
 
 
             # <Load the already-trained model in order to test performance>
@@ -186,51 +156,89 @@ class Agent(AbstractPlayer):
         # <Train the model without playing the game (EXECUTION_MODE == 'train')>
 
         if self.EXECUTION_MODE == 'train':
-            num_samples = len(self.memory)
 
-            # Execute the training iterations
-            for curr_it in range(self.num_train_its):
+            # Train a different model for each different dataset size
+            for dataset_size in self.datasets_sizes_for_training:
+                # Load dataset of current size
+                self.load_dataset(self.dataset_load_path, dataset_size)
 
-                # Choose Random batch from Experience Replay
-                bottom_ind = random.randint(0, num_samples - self.batch_size + 1)
-                top_ind = bottom_ind + self.batch_size
+                # Create Learning model
 
-                batch = self.memory[bottom_ind:top_ind]
+                curr_name = self.network_name + "_{}".format(dataset_size) # Append dataset size to the name of the network
+                tf.reset_default_graph() # Clear Tensorflow Graph and Variables
 
-                batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-                batch_R = [each[1] for each in batch] # r values (plan lenghts)
-                batch_S = [each[2] for each in batch] # s' values (sso instances)
+                # DQNetwork
+                self.model = DQNetwork(writer_name=curr_name,
+                         l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                         padding_type = "SAME",
+                         max_pool_size = [2, 2],
+                         max_pool_str = [1, 1],
+                         fc_num_units = [64, 16], dropout_prob = self.dropout_prob,
+                         learning_rate = self.learning_rate)
 
-                # Calculate Q_targets
-                Q_targets = []
-                
-                for r, s in zip(batch_R, batch_S):
-                    Q_target = r + self.gamma*self.get_min_Q_value(s)
-                    Q_targets.append(Q_target)
+                # Target Network
+                # Used to predict the Q targets. It is upgraded every max_tau updates.
+                self.target_network = DQNetwork(name="TargetNetwork",
+                         create_writer = False,
+                         l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
+                         padding_type = "SAME",
+                         max_pool_size = [2, 2],
+                         max_pool_str = [1, 1],
+                         fc_num_units = [64, 16], dropout_prob = 0.0,
+                         learning_rate = self.learning_rate)
 
-                Q_targets = np.reshape(Q_targets, (-1, 1)) 
+                # Initialize target network's weights with those of the DQNetwork
+                self.update_target_network()
+                self.tau = 0
 
-                # Execute one training step
-                self.model.train(batch_X, Q_targets)
-                self.tau += 1
+                num_samples = len(self.memory)
 
-                # Update target network every tau training steps
-                if self.tau >= self.max_tau:
-                    update_ops = self.update_target_network()
-                    self.target_network.update_weights(update_ops)
+                print("\n> Started training of model with dataset size={}\n".format(dataset_size))
 
-                    self.tau = 0
+                # Execute the training of the current model
+                for curr_it in range(self.num_train_its):
 
-                # Save Logs
-                self.model.save_logs(batch_X, Q_targets, curr_it)
+                    # Choose Random batch from Experience Replay
+                    bottom_ind = random.randint(0, num_samples - self.batch_size + 1)
+                    top_ind = bottom_ind + self.batch_size
 
-                # Save the model at certain steps of training
-                if curr_it in self.its_for_model_save:
-                    self.model.save_model(path = self.model_save_path, num_it = curr_it)
-                    print("\n> Model saved at {} its\n".format(curr_it))
+                    batch = self.memory[bottom_ind:top_ind]
+
+                    batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
+                    batch_R = [each[1] for each in batch] # r values (plan lenghts)
+                    batch_S = [each[2] for each in batch] # s' values (sso instances)
+
+                    # Calculate Q_targets
+                    Q_targets = []
+                    
+                    for r, s in zip(batch_R, batch_S):
+                        Q_target = r + self.gamma*self.get_min_Q_value(s)
+                        Q_targets.append(Q_target)
+
+                    Q_targets = np.reshape(Q_targets, (-1, 1)) 
+
+                    # Execute one training step
+                    self.model.train(batch_X, Q_targets)
+                    self.tau += 1
+
+                    # Update target network every tau training steps
+                    if self.tau >= self.max_tau:
+                        update_ops = self.update_target_network()
+                        self.target_network.update_weights(update_ops)
+
+                        self.tau = 0
+
+                    # Save Logs
+                    self.model.save_logs(batch_X, Q_targets, curr_it)
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                # Save the current trained model
+                self.model.save_model(path = self.model_save_path, num_it = dataset_size)
+                print("\n> Current model saved! Dataset size={}\n".format(dataset_size))
+
 
             # Exit the program after finishing training
-            print("Training finished!")
+            print("\nTraining finished!")
             sys.exit()
   
 
@@ -613,17 +621,24 @@ class Agent(AbstractPlayer):
         print("Saving finished!")
 
 
-    def load_dataset(self, path):
+    def load_dataset(self, path, num_elements=-1):
         """
         Uses the picle module to load the previously saved experience replay.
 
         @path Path of the file
+        @num_elements The number of elements to load. If it's 1, it loads the whole dataset.
         """
 
         print("\nLoading experience replay...")
 
         with open(path, 'rb') as file:
-            self.memory = pickle.load(file)
+            del self.memory[:] # Delete current array
+
+            if num_elements == -1:
+                self.memory = pickle.load(file)
+            else:
+                self.memory = pickle.load(file)
+                self.memory = self.memory[0:num_elements]
 
         print("Loading finished!")
         

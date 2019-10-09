@@ -182,7 +182,7 @@ class DQNetwork:
         self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
         """
 
-        # Run on CPU (it's faster if model and batch_size is small)
+        # Run on CPU (it's faster if model and batch_size is small)               
         self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
 
         # Initialize variables
@@ -223,7 +223,7 @@ class DQNetwork:
         self.writer.add_summary(train_loss_log, it)
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
-    def save_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
+    def save_model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              (self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
         saver = tf.train.Saver(
           tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
         
