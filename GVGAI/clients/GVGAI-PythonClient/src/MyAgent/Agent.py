@@ -40,10 +40,10 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE = 'create_dataset'
+        self.EXECUTION_MODE = 'test'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-6000_1"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_1"
 
 
         if self.EXECUTION_MODE == 'create_dataset':
@@ -57,7 +57,7 @@ class Agent(AbstractPlayer):
             self.memory = []
 
             # Path of the file to save the experience replay to
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_10.dat'
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_11.dat'
 
             # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
             # is saved and the program exits
@@ -68,7 +68,7 @@ class Agent(AbstractPlayer):
             self.learning_rate = 0.005
             self.dropout_prob = 0.4
 
-            self.num_train_its = 6000 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.num_train_its = 5000 # Number of training iterations. Each iteration chooses a different batch for the gradient
             self.batch_size = 16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
@@ -79,20 +79,19 @@ class Agent(AbstractPlayer):
             self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Sizes of datasets to train the model on. For each size, a different model is created and trained.
-            self.datasets_sizes_for_training =   [100, 500, 1000, 2000, 3000, 4000, 5000]
-                                        #6000, 7000, 8000, 9000, 9999]
+            self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
 
             # Experience Replay
             self.memory = [] # Attribute to save the dataset
 
             # Path of the dataset to load
-            self.dataset_load_path = 'SavedDatasets/' + 'dataset_1000_1.dat'
+            self.dataset_load_path = 'SavedDatasets/' + 'dataset_1000' # Without the '_1.dat' part
 
         else: # Test
             # Create Learning Model
 
             # DQNetwork
-            self.model = DQNetwork(writer_name="Prueba_fixed_q_targets_dropout-0.6_num_rep=1_1",
+            self.model = DQNetwork(writer_name=self.network_name,
                      l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                      padding_type = "SAME",
                      max_pool_size = [2, 2],
@@ -105,7 +104,7 @@ class Agent(AbstractPlayer):
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Number of iterations of the model to load
-            num_it_model = 500
+            num_it_model = 10000
 
 
             # <Load the already-trained model in order to test performance>
@@ -160,7 +159,7 @@ class Agent(AbstractPlayer):
             # Train a different model for each different dataset size
             for dataset_size in self.datasets_sizes_for_training:
                 # Load dataset of current size
-                self.load_dataset(self.dataset_load_path, dataset_size)
+                self.load_dataset(self.dataset_load_path, num_elements=dataset_size)
 
                 # Create Learning model
 
@@ -231,6 +230,10 @@ class Agent(AbstractPlayer):
                     # Save Logs
                     self.model.save_logs(batch_X, Q_targets, curr_it)
 
+                    # Periodically print the progress of the training
+                    if curr_it % 500 == 0 and curr_it != 0:
+                        print("- {} its completed".format(curr_it))
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                 # Save the current trained model
                 self.model.save_model(path = self.model_save_path, num_it = dataset_size)
@@ -244,7 +247,8 @@ class Agent(AbstractPlayer):
 
         # <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
 
-        print("\nExperience Replay size: {}\n".format(len(self.memory)))
+        if self.EXECUTION_MODE == 'create_dataset':
+            print("\nExperience Replay size: {}\n".format(len(self.memory)))
 
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
@@ -621,26 +625,39 @@ class Agent(AbstractPlayer):
         print("Saving finished!")
 
 
-    def load_dataset(self, path, num_elements=-1):
+    def load_dataset(self, path, num_elements=5000):
         """
         Uses the picle module to load the previously saved experience replay.
 
-        @path Path of the file
-        @num_elements The number of elements to load. If it's 1, it loads the whole dataset.
+        @path Path of the file (without the '_<num_dataset>.dat' part)
+        @num_elements The number of elements to load in total.
         """
+        tam_each_dataset = 1000
+        total_num_samples = 0
+        curr_id = 1
 
         print("\nLoading experience replay...")
 
-        with open(path, 'rb') as file:
-            del self.memory[:] # Delete current array
+        del self.memory[:] # Delete current array
 
-            if num_elements == -1:
-                self.memory = pickle.load(file)
-            else:
-                self.memory = pickle.load(file)
-                self.memory = self.memory[0:num_elements]
+        # Load datasets until num_elements elements are loaded
+        while total_num_samples < num_elements:
+            curr_path = path + "_{}.dat".format(curr_id) # Next dataset to load
 
-        print("Loading finished!")
+            with open(curr_path, 'rb') as file:
+                curr_dataset = pickle.load(file)
+
+                self.memory.extend(curr_dataset) # Append to memory
+
+            print("{} loaded.".format(curr_path))
+
+            curr_id += 1
+            total_num_samples += tam_each_dataset
+
+        if len(self.memory) > num_elements:
+            del self.memory[num_elements:] # Delete exceding elements
+
+        print("Loading finished!\n")
         
 
     def result(self, sso, elapsedTimer):
