@@ -43,8 +43,10 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE = 'test'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_1"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_3"
 
+        # <TODO>
+        # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -161,6 +163,9 @@ class Agent(AbstractPlayer):
                 # Load dataset of current size
                 self.load_dataset(self.dataset_load_path, num_elements=dataset_size)
 
+                # Shuffle dataset
+                random.shuffle(self.memory)
+
                 # Create Learning model
 
                 curr_name = self.network_name + "_{}".format(dataset_size) # Append dataset size to the name of the network
@@ -194,14 +199,23 @@ class Agent(AbstractPlayer):
 
                 print("\n> Started training of model with dataset size={}\n".format(dataset_size))
 
+                ind_batch = 0 # Index for selecting the next minibatch
+
                 # Execute the training of the current model
-                for curr_it in range(self.num_train_its):
+                for curr_it in range(self.num_train_its):   
+                    # Choose next batch from Experience Replay
 
-                    # Choose Random batch from Experience Replay
-                    bottom_ind = random.randint(0, num_samples - self.batch_size + 1)
-                    top_ind = bottom_ind + self.batch_size
+                    if ind_batch+self.batch_size < num_samples:
+                        batch = self.memory[ind_batch:ind_batch+self.batch_size]
+                        ind_batch = (ind_batch + self.batch_size)
+                    else: # Got to the end of the experience replay -> shuffle it and start again
+                        batch = self.memory[ind_batch:]
+                        ind_batch = 0
 
-                    batch = self.memory[bottom_ind:top_ind]
+                        random.shuffle(self.memory)
+
+                    print("ind_batch=", ind_batch)
+                    print("batch_size=", len(batch))
 
                     batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
                     batch_R = [each[1] for each in batch] # r values (plan lenghts)
