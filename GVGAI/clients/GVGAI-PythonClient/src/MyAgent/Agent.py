@@ -40,10 +40,10 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE = 'test'
+        self.EXECUTION_MODE = 'train'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_3"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_6"
 
         # <TODO>
         # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
@@ -678,7 +678,7 @@ class Agent(AbstractPlayer):
         print("Nivel terminado")
 
         if self.EXECUTION_MODE == 'test' and not self.is_training:
-            print("\n\nNúmero de acciones para completar el nivel: ", self.num_actions_lv, "\n\n")
+            print("\n\nNúmero de acciones para completar el nivel: {} \n\n".format(self.num_actions_lv))
 
         # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
