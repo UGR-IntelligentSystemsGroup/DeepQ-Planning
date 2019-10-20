@@ -43,7 +43,7 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE = 'test'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_7"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_12"
 
         # <TODO>
         # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
@@ -59,7 +59,7 @@ class Agent(AbstractPlayer):
             self.memory = []
 
             # Path of the file to save the experience replay to
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_14.dat'
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_15.dat'
 
             # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
             # is saved and the program exits
@@ -70,7 +70,7 @@ class Agent(AbstractPlayer):
             self.learning_rate = 0.005
             self.dropout_prob = 0.4
 
-            self.num_train_its = 5000 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.num_train_its = 2000 # Number of training iterations. Each iteration chooses a different batch for the gradient
             self.batch_size = 16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
@@ -106,7 +106,7 @@ class Agent(AbstractPlayer):
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Number of iterations of the model to load
-            num_it_model = 7500
+            num_it_model = 10000
 
 
             # <Load the already-trained model in order to test performance>
@@ -163,6 +163,9 @@ class Agent(AbstractPlayer):
                 # Load dataset of current size
                 self.load_dataset(self.dataset_load_path, num_elements=dataset_size)
 
+                # Shuffle dataset
+                random.shuffle(self.memory)
+
                 # Create Learning model
 
                 curr_name = self.network_name + "_{}".format(dataset_size) # Append dataset size to the name of the network
@@ -196,13 +199,20 @@ class Agent(AbstractPlayer):
 
                 print("\n> Started training of model with dataset size={}\n".format(dataset_size))
 
+                ind_batch = 0 # Index for selecting the next minibatch
+
                 # Execute the training of the current model
                 for curr_it in range(self.num_train_its):   
-                    # Choose Random batch from Experience Replay
-                    bottom_ind = random.randint(0, num_samples - self.batch_size + 1)
-                    top_ind = bottom_ind + self.batch_size
+                    # Choose next batch from Experience Replay
 
-                    batch = self.memory[bottom_ind:top_ind]
+                    if ind_batch+self.batch_size < num_samples:
+                        batch = self.memory[ind_batch:ind_batch+self.batch_size]
+                        ind_batch = (ind_batch + self.batch_size)
+                    else: # Got to the end of the experience replay -> shuffle it and start again
+                        batch = self.memory[ind_batch:]
+                        ind_batch = 0
+
+                        random.shuffle(self.memory)
 
                     batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
                     batch_R = [each[1] for each in batch] # r values (plan lenghts)
@@ -633,9 +643,11 @@ class Agent(AbstractPlayer):
         @path Path of the file (without the '_<num_dataset>.dat' part)
         @num_elements The number of elements to load in total.
         """
+
+        arr_indexes = [1,2,3,4,5,6,7,8,9,10]
+        
         tam_each_dataset = 1000
         total_num_samples = 0
-        curr_id = 1
 
         print("\nLoading experience replay...")
 
@@ -643,7 +655,15 @@ class Agent(AbstractPlayer):
 
         # Load datasets until num_elements elements are loaded
         while total_num_samples < num_elements:
-            curr_path = path + "_{}.dat".format(curr_id) # Next dataset to load
+            # Choose random dataset
+            next_index = random.randint(0, len(arr_indexes)-1)
+            next_dataset = arr_indexes[next_index]
+
+            arr_indexes.remove(next_dataset) # Remove dataset from arr_indexes list (don't pick it again)
+
+            print("Next dataset:", next_dataset)
+
+            curr_path = path + "_{}.dat".format(next_dataset) # Next dataset to load
 
             with open(curr_path, 'rb') as file:
                 curr_dataset = pickle.load(file)
@@ -652,7 +672,6 @@ class Agent(AbstractPlayer):
 
             print("{} loaded.".format(curr_path))
 
-            curr_id += 1
             total_num_samples += tam_each_dataset
 
         if len(self.memory) > num_elements:
