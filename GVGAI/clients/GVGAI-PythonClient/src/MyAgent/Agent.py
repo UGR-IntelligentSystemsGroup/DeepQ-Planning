@@ -40,10 +40,10 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE = 'test'
+        self.EXECUTION_MODE = 'train'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_12"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_14"
 
         # <TODO>
         # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
@@ -70,7 +70,7 @@ class Agent(AbstractPlayer):
             self.learning_rate = 0.005
             self.dropout_prob = 0.4
 
-            self.num_train_its = 2000 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.num_train_its = 5000 # Number of training iterations. Each iteration chooses a different batch for the gradient
             self.batch_size = 16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
@@ -106,7 +106,7 @@ class Agent(AbstractPlayer):
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Number of iterations of the model to load
-            num_it_model = 10000
+            num_it_model = 500
 
 
             # <Load the already-trained model in order to test performance>
