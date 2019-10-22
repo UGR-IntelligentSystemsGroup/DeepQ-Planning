@@ -43,7 +43,7 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE = 'train'
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_14"
+        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-7500_1"
 
         # <TODO>
         # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
@@ -70,7 +70,7 @@ class Agent(AbstractPlayer):
             self.learning_rate = 0.005
             self.dropout_prob = 0.4
 
-            self.num_train_its = 5000 # Number of training iterations. Each iteration chooses a different batch for the gradient
+            self.num_train_its = 7500 # Number of training iterations. Each iteration chooses a different batch for the gradient
             self.batch_size = 16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network

@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_14.ckpt-10000"
-all_model_checkpoint_paths: "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_14.ckpt-10000"
+model_checkpoint_path: "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_15.ckpt-10000"
+all_model_checkpoint_paths: "DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_15.ckpt-10000"
