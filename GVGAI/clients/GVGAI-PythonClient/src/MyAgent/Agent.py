@@ -40,10 +40,13 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE = 'train'
+        self.EXECUTION_MODE="test" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name = "DQN_alfa-0.005_dropout-0.4_batch-16_its-7500_1"
+        self.network_name="DQN_alfa-0.005_dropout-0.4_batch-16_its-100_1" # Automatically changed by ejecutar_pruebas.py!
+
+        # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
+        self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
 
         # <TODO>
         # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
@@ -67,11 +70,11 @@ class Agent(AbstractPlayer):
 
         elif self.EXECUTION_MODE == 'train':
             # Parameters of the Learning Model
-            self.learning_rate = 0.005
-            self.dropout_prob = 0.4
-
-            self.num_train_its = 7500 # Number of training iterations. Each iteration chooses a different batch for the gradient
-            self.batch_size = 16
+            # Automatically changed by ejecutar_pruebas.py!
+            self.learning_rate=0.005
+            self.dropout_prob=0.4
+            self.num_train_its=100
+            self.batch_size=16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
             self.tau = 0 # Counter that resets to 0 when the target network is updated
@@ -79,9 +82,6 @@ class Agent(AbstractPlayer):
 
             # Name of the saved model file (without the number of dataset size part)
             self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
-
-            # Sizes of datasets to train the model on. For each size, a different model is created and trained.
-            self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
 
             # Experience Replay
             self.memory = [] # Attribute to save the dataset
@@ -106,11 +106,14 @@ class Agent(AbstractPlayer):
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Number of iterations of the model to load
-            num_it_model = 500
+            # Automatically changed by ejecutar_pruebas.py!
+            self.num_it_model=10000
 
+            # Array to save the number of actions used to complete each level to save it to the output file
+            self.num_actions_each_lv = []
 
             # <Load the already-trained model in order to test performance>
-            self.model.load_model(path = model_load_path, num_it = num_it_model)
+            self.model.load_model(path = model_load_path, num_it = self.num_it_model)
 
 
     def init(self, sso, elapsedTimer):
@@ -685,6 +688,29 @@ class Agent(AbstractPlayer):
 
         if self.EXECUTION_MODE == 'test' and not self.is_training:
             print("\n\nNúmero de acciones para completar el nivel: {} \n\n".format(self.num_actions_lv))
+
+            # Guardo la suma del número de acciones para completar los dos niveles de validación
+            test_output_file = "test_output.txt"
+
+            # No se ha guardado el número de acciones de los dos niveles todavía
+            if len(self.num_actions_each_lv) < 2:
+                self.num_actions_each_lv.append(self.num_actions_lv) # Guardo el número de acciones del nivel actual
+
+            # Si ya se han completado ambos niveles, guardo las acciones en el fichero y termino la ejecución
+            if len(self.num_actions_each_lv) == 2:
+                total_num_actions = self.num_actions_each_lv[0] + self.num_actions_each_lv[1]
+
+                with open(test_output_file, "a") as file:
+
+                    # Imprimo la separación y el nombre del modelo si estamos ejecutando la validación con el primer (el menor) tamaño de dataset
+                    if self.num_it_model == self.datasets_sizes_for_training[0]:
+                        file.write("\n\n--------------------------\n\n")
+                        file.write("Model Name: {}\n\n".format(self.network_name))
+
+                    file.write("{} - {}\n".format(self.num_it_model, total_num_actions))
+
+                sys.exit()
+
 
         # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
