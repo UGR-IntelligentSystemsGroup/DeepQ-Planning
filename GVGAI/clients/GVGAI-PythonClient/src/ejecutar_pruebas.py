@@ -7,7 +7,7 @@ import os
 
 try: # Capture any exception to make sure the computer always shuts down
 
-	num_rep = 5 # Number of times the model is trained and tested
+	num_rep = 7 # Number of times the model is trained and tested
 
 	for curr_rep in range(num_rep):
 
@@ -22,13 +22,12 @@ try: # Capture any exception to make sure the computer always shuts down
 
 		# Ej name: DQN_alfa-0.005_dropout-0.4_batch-16_its-7500_1
 
-		model_id = curr_rep+4 # To differentiate different tests with the same model hyperparameters
+		model_id = curr_rep+20 # To differentiate different tests with the same model hyperparameters
 
 		num_its = 5000 # Number of iterations for training
 		alfa = 0.005 # Learning rate
 		dropout = 0.4 # Dropout value
-		# batch_size = 16 # Batch size
-		batch_size = 32 # Pruebo con 32 de batch size
+		batch_size = 16 # Batch size
 
 
 
