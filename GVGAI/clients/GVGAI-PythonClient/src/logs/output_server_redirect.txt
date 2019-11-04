@@ -1,2 +1,0 @@
-[GAME] Game idx:11 game name boulderdash
-[PHASE] Starting First Phase of Training in 3 levels.
