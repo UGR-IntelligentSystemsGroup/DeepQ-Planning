@@ -7,6 +7,9 @@ from planning.parser import Parser
 import subprocess
 import random
 import numpy as np
+import tensorflow as tf
+import pickle
+import sys
 
 from LearningModel import CNN
 
@@ -23,45 +26,79 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-        # Attributes that store agents experience:
-        # - X -> inputs of the learning model
-        # - Y -> correct output values (plans lengths)
-
-        self.X = [] # Shape = (-1, 13, 26, 9)
-        self.Y = [] # Shape = (-1)
-
-        # Variable to check if the dataset has already been saved
-        self.already_saved = False
-
         self.current_level = 0 # Level playing right now
 
         # Set parser
         self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
                 self.DESC_FILE, self.OUT_FILE)
 
-        # Create Learning Model
-        self.model = CNN(writer_name="4_start_size=0, alfa=0.002, num_rep=4", learning_rate = 0.002)
 
-        # Iteration of current scalar summary. Needed to store the logs and plot the losses
-        self.log_it = 0
+        # << Choose execution mode >>
+        # - 'create_dataset' -> It doesn't train any model. Just creates the dataset (experience replay) and saves it
+        # - 'train' -> It loads the saved dataset, trains the model with it, and saves the trained model. 
+        #              It doesn't add any sample to the experience replay
+        # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
-        # Load Validation Dataset in order to see validation loss change with tensorboard
-        # as training progresses
-        test_dataset = np.load("../../../../datasets/dataset_test.npz") 
-        self.test_dataset_x = test_dataset['X']
-        test_dataset_y = test_dataset['Y']
-        self.test_dataset_y_resh = np.reshape(test_dataset_y, (-1, 1)) 
 
-        # Variable that stores if the agent is exploring or exploiting:
-        # True -> subgoals are chosen randomly to gather experience (exploration)
-        # False -> subgoals are chosen using the model to achieve the best
-        #          possible results (exploitation)
-        # self.is_training = True
-        # It has the same value as sso.isValidation in init method
-        self.is_training = False # Already in validation phase
+        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
 
-        # <Load the already-trained model in order to test performance>
-        self.model.load_model()
+        # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
+        self.network_name="Greedy_prueba_1" # Automatically changed by ejecutar_pruebas.py!
+
+        # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
+        self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
+
+        if self.EXECUTION_MODE == 'create_dataset':
+
+            # Attribute that stores agent's experience to implement experience replay (for training)
+            # Each element is a tuple (s, r) corresponding to:
+            # - s -> start_state and chosen subgoal ((game state, chosen subgoal) one-hot encoded). Shape = (-1, 13, 26, 9).
+            # - r -> length of the plan from s to the chosen gem.
+            self.memory = []
+
+            # Path of the file to save the experience replay to
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_1.dat'
+
+            # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
+            # is saved and the program exits
+            self.num_samples_for_saving_dataset = 1000
+
+        elif self.EXECUTION_MODE == 'train':
+            # Parameters of the Learning Model
+            # Automatically changed by ejecutar_pruebas.py!
+            self.learning_rate=0.002
+            self.dropout_prob=0.5
+            self.num_train_its=5000
+            self.batch_size=16
+
+            # Name of the saved model file (without the number of dataset size part)
+            self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
+
+            # Experience Replay
+            self.memory = [] # Attribute to save the dataset
+
+            # Path of the dataset to load
+            self.dataset_load_path = 'SavedDatasets/' + 'dataset_1000' # Without the '_1.dat' part
+
+        else: # Test
+            # Create Learning Model
+
+            # CNN
+            self.model = CNN(writer_name=self.network_name, learning_rate = self.learning_rate,
+                            dropout_prob=self.dropout_prob)
+
+            # Name of the saved model file to load (without the number of training steps part)
+            model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
+
+            # Number of iterations of the model to load
+            # Automatically changed by ejecutar_pruebas.py!
+            self.num_it_model=500
+
+            # Array to save the number of actions used to complete each level to save it to the output file
+            self.num_actions_each_lv = []
+
+            # <Load the already-trained model in order to test performance>
+            self.model.load_model(path = model_load_path, num_it = self.num_it_model)
 
 
     def init(self, sso, elapsedTimer):
@@ -72,8 +109,6 @@ class Agent(AbstractPlayer):
         * @param elapsedTimer Timer, which is 1s by default. Modified to 1000s.
                               Check utils/CompetitionParameters.py for more info.
         """
-        # Set first turn as True
-        self.first_turn = True
 
         # Create new empty action list
         # This action list corresponds to the plan found by the planner
@@ -83,22 +118,12 @@ class Agent(AbstractPlayer):
         self.can_exit = False
 
         # See if it's training or validation time
-        self.is_training = not sso.isValidation
+        self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
 
         # If it's validation phase, count the number of actions used
         # to beat the current level
-        if not self.is_training:
+        if self.EXECUTION_MODE == 'test' and not self.is_training:
             self.num_actions_lv = 0
-
-        """
-        gems = self.get_gems_positions(sso)
-        chosen_gem = gems[random.randint(0, len(gems) - 1)]
-        one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
-
-        prediction = self.model.predict(one_hot_grid) # Shape = (1,1)
-
-        print("PREDICTION\n\n", prediction)
-        """
 
 
     def act(self, sso, elapsedTimer):
@@ -114,12 +139,77 @@ class Agent(AbstractPlayer):
         @return The action to be performed by the agent.
         """
 
+        # <Train the model without playing the game (EXECUTION_MODE == 'train')>
+
+        if self.EXECUTION_MODE == 'train':
+
+            # Train a different model for each different dataset size
+            for dataset_size in self.datasets_sizes_for_training:
+                # Load dataset of current size
+                self.load_dataset(self.dataset_load_path, num_elements=dataset_size)
+
+                # Shuffle dataset
+                random.shuffle(self.memory)
+
+                # Create Learning model
+
+                curr_name = self.network_name + "_{}".format(dataset_size) # Append dataset size to the name of the network
+                tf.reset_default_graph() # Clear Tensorflow Graph and Variables
+
+                # CNN
+                self.model = CNN(writer_name=curr_name, learning_rate = self.learning_rate,
+                            dropout_prob=self.dropout_prob)
+
+                num_samples = len(self.memory)
+
+                print("\n> Started training of model with dataset size={}\n".format(dataset_size))
+
+                ind_batch = 0 # Index for selecting the next minibatch
+
+                # Execute the training of the current model
+                for curr_it in range(self.num_train_its):   
+                    # Choose next batch from Experience Replay
+
+                    if ind_batch+self.batch_size < num_samples:
+                        batch = self.memory[ind_batch:ind_batch+self.batch_size]
+                        ind_batch = (ind_batch + self.batch_size)
+                    else: # Got to the end of the experience replay -> shuffle it and start again
+                        batch = self.memory[ind_batch:]
+                        ind_batch = 0
+
+                        random.shuffle(self.memory)
+
+                    batch_S = [each[0] for each in batch] # States
+                    batch_R = [each[1] for each in batch] # Plan lengths
+
+                    # Execute one training step
+                    self.model.train(batch_S, batch_R)
+
+                    # Save Logs
+                    self.model.save_logs(batch_S, batch_R, curr_it)
+
+                    # Periodically print the progress of the training
+                    if curr_it % 500 == 0 and curr_it != 0:
+                        print("- {} its completed".format(curr_it))
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                # Save the current trained model
+                self.model.save_model(path = self.model_save_path, num_it = dataset_size)
+                print("\n> Current model saved! Dataset size={}\n".format(dataset_size))
+
+
+            # Exit the program after finishing training
+            print("\nTraining finished!")
+            sys.exit()
+  
+
+        # <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
+
+        if self.EXECUTION_MODE == 'create_dataset':
+            print("\nExperience Replay size: {}\n".format(len(self.memory)))
+
         # If the plan is emtpy, get a new one
         if len(self.action_list) == 0:
-            # Set level description and output file names
-            out_description = 'MyAgent/problem.txt'
-            output_file = 'MyAgent/out.txt'
-
             # If the agent already has 11 gems, he plans to exit the level
             keys = sso.avatarResources.keys()
 
@@ -129,8 +219,8 @@ class Agent(AbstractPlayer):
 
                 num_gems = sso.avatarResources[gem_key]
 
+                # Plan to exit the level
                 if num_gems >= self.NUM_GEMS_FOR_EXIT:
-                    # Plan to exit the level
                     self.can_exit = True
 
                     exit = sso.portalsPositions[0][0]
@@ -138,23 +228,25 @@ class Agent(AbstractPlayer):
  
                     self.action_list = self.search_plan(sso, exit_pos)
 
-                    # Add sample to dataset
-                    if self.is_training:
+                    # Add sample to memory
+                    if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
                         # Save current observation for dataset
                         one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
 
                         # Save plan length as current metric
                         plan_metric = len(self.action_list)
 
-                        self.X.append(one_hot_grid.tolist()) # tolist() to transform from numpy array to normal python array
-                        self.Y.append(plan_metric)
+                        # Append sample to memory
+                        self.memory.append([one_hot_grid, plan_metric])
 
-            # Only plan for next gem if it is needed
+
+            # Only plan for next gem if the agent can't exit the level yet
             if not self.can_exit:
                 # Obtain gems positions
                 gems = self.get_gems_positions(sso)
                 
                 # <Choose next subgoal>
+
                 avatar_position = (int(sso.avatarPosition[0] // sso.blockSize),
                                  int(sso.avatarPosition[1] // sso.blockSize))
 
@@ -171,74 +263,26 @@ class Agent(AbstractPlayer):
                 # Search for a plan to chosen_gem
                 self.action_list = self.search_plan(sso, chosen_gem)
 
-                # Add sample to dataset
-                if self.is_training:
+                # Add sample to memory
+                if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
                     # Save current observation for dataset
                     one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
 
                     # Save plan length as current metric
                     plan_metric = len(self.action_list)
                     
-                    # <Append sample to dataset>
-                    self.X.append(one_hot_grid.tolist())
-                    self.Y.append(plan_metric)
+                    # Append sample to memory
+                    self.memory.append([one_hot_grid, plan_metric])
 
-                """
-                # Obtain a plan to every possible gem to collect data for training the model
-                for gem in gems:
-                    if ((gem[0] != int(sso.avatarPosition[0] // sso.blockSize) or
-                       gem[1] != int(sso.avatarPosition[1] // sso.blockSize)) and 
-                       gem != chosen_gem):
-                        
-                        # Save current observation for dataset
-                        one_hot_grid = self.encode_game_state(sso.observationGrid, gem)
+        # Save dataset and exit the program if the experience replay is the right size
 
-                        # Search for a plan
-                        this_plan = self.search_plan(sso, gem)
+        if self.EXECUTION_MODE == 'create_dataset' and len(self.memory) >= self.num_samples_for_saving_dataset:
+            self.save_dataset(self.dataset_save_path)
 
-                        # Save plan length as current metric
-                        plan_metric = len(this_plan)
-                        
-                        self.X.append(one_hot_grid.tolist())
-                        self.Y.append(plan_metric)
-                """        
+            # Exit the program with success code
+            sys.exit()
 
-            # --- Train the model ---
-
-            if self.is_training:
-                num_samples = len(self.X)
-
-                batch_size = 16
-                start_size = 16 # Min number of samples to start training the model
-                num_rep = 4
-
-                if num_samples >= start_size:
-                    # Execute num_rep iterations of learning. Each one with a different batch
-                    for _ in range(num_rep):
-                        # Randomly choose sample
-                        bottom_ind = random.randint(0, num_samples - batch_size + 1)
-                        top_ind = bottom_ind + batch_size
-
-                        batch_x = np.array(self.X[bottom_ind:top_ind])
-                        batch_y = self.Y[bottom_ind:top_ind]
-                        batch_y = np.reshape(batch_y, (-1, 1))
-
-                        # Execute one training step
-                        self.model.train(batch_x, batch_y)
-
-                    # Save Logs
-                    self.model.save_logs(batch_x, batch_y, self.test_dataset_x, self.test_dataset_y_resh, self.log_it)
-                    self.log_it += 1
-
-                    print("\n\nDATASET SIZE = {}\n\n".format(len(self.X)))
-
-                # Save the model after training
-
-                its_for_save = 1500
-
-                if self.log_it == its_for_save:
-                    self.model.save_model()
-
+        # Execute Plan
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
@@ -247,6 +291,7 @@ class Agent(AbstractPlayer):
 
             return self.action_list.pop(0)
         else:
+            print("\n\nPLAN VACIO\n\n")
             return 'ACTION_NIL'
 
 
@@ -450,34 +495,96 @@ class Agent(AbstractPlayer):
 
         pass
 
+    def save_dataset(self, path):
+        """
+        Uses the pickle module to save the experience replay to a file.
+
+        @path Path of the file
+        """
+
+        print("\nSaving experience replay...")
+
+        with open(path, 'wb') as file:
+            pickle.dump(self.memory, file)
+
+        print("Saving finished!")
+
+
+    def load_dataset(self, path, num_elements=5000):
+        """
+        Uses the picle module to load the previously saved experience replay.
+
+        @path Path of the file (without the '_<num_dataset>.dat' part)
+        @num_elements The number of elements to load in total.
+        """
+
+        arr_indexes = [1,2,3,4,5,6,7,8,9,10]
+        
+        tam_each_dataset = 1000
+        total_num_samples = 0
+
+        print("\nLoading experience replay...")
+
+        del self.memory[:] # Delete current array
+
+        # Load datasets until num_elements elements are loaded
+        while total_num_samples < num_elements:
+            # Choose random dataset
+            next_index = random.randint(0, len(arr_indexes)-1)
+            next_dataset = arr_indexes[next_index]
+
+            arr_indexes.remove(next_dataset) # Remove dataset from arr_indexes list (don't pick it again)
+
+            print("Next dataset:", next_dataset)
+
+            curr_path = path + "_{}.dat".format(next_dataset) # Next dataset to load
+
+            with open(curr_path, 'rb') as file:
+                curr_dataset = pickle.load(file)
+
+                self.memory.extend(curr_dataset) # Append to memory
+
+            print("{} loaded.".format(curr_path))
+
+            total_num_samples += tam_each_dataset
+
+        if len(self.memory) > num_elements:
+            del self.memory[num_elements:] # Delete exceding elements
+
+        print("Loading finished!\n")
+        
+
     def result(self, sso, elapsedTimer):
         print("Nivel terminado")
 
-        if not self.is_training:
-            print("\n\nNúmero de acciones para completar el nivel: ", self.num_actions_lv, "\n\n")
+        if self.EXECUTION_MODE == 'test' and not self.is_training:
+            print("\n\nNúmero de acciones para completar el nivel: {} \n\n".format(self.num_actions_lv))
 
-        # Save dataset if it contains at least min_elem elements
+            # Guardo la suma del número de acciones para completar los dos niveles de validación
+            test_output_file = "test_output.txt"
 
-        """
-        min_elem = 5000
-        file_name = 'dataset_train_3.npz'
+            # No se ha guardado el número de acciones de los dos niveles todavía
+            if len(self.num_actions_each_lv) < 2:
+                self.num_actions_each_lv.append(self.num_actions_lv) # Guardo el número de acciones del nivel actual
 
-        dataset_X = np.array(self.X, dtype=np.bool)
-        dataset_Y = np.array(self.Y, dtype=np.int32)
+            # Si ya se han completado ambos niveles, guardo las acciones en el fichero y termino la ejecución
+            if len(self.num_actions_each_lv) == 2:
+                # total_num_actions = self.num_actions_each_lv[0] + self.num_actions_each_lv[1]
 
-        if not self.already_saved and len(self.Y) >= min_elem:
-            print("\n\n<<<GUARDANDO DATASET>>>\n\n")
+                with open(test_output_file, "a") as file:
 
-            np.savez(file_name, X=dataset_X, Y=dataset_Y)
+                    # Imprimo la separación y el nombre del modelo si estamos ejecutando la validación con el primer (el menor) tamaño de dataset
+                    if self.num_it_model == self.datasets_sizes_for_training[0]:
+                        file.write("\n\n--------------------------\n\n")
+                        file.write("Model Name: {}\n\n".format(self.network_name))
 
-            self.already_saved = True # Don't save again
-        """
-        
-        #return random.randint(0, 2)
+                    file.write("{} - level 0 - {}, level 1 - {}\n".format(self.num_it_model, self.num_actions_each_lv[0],
+                        self.num_actions_each_lv[1]))
+
+                sys.exit()
+
 
         # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
 
         return self.current_level
-
-

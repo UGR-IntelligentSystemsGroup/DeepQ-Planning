@@ -139,7 +139,7 @@ class CNN:
 
             
             self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
-            self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
+            # self.test_loss_sum = tf.summary.scalar('test_loss', self.loss) # Validation loss
             
             self.writer = tf.summary.FileWriter("ModelLogs/" + writer_name)
             self.writer.add_graph(tf.get_default_graph())
@@ -179,25 +179,29 @@ class CNN:
             self.sess.run(self.train_op, feed_dict=data_dict)
 
     # Calculate Losses and store them as logs
-    def save_logs(self, X_train, Y_train, X_test, Y_test, it):
+    def save_logs(self, X_train, Y_train, it):
         # Training Loss
         data_dict_train = {self.X : X_train, self.Y_corr : Y_train, self.is_training : True}
 
         train_loss_log = self.sess.run(self.train_loss_sum, feed_dict=data_dict_train)
         self.writer.add_summary(train_loss_log, it)
 
-        # Validation Loss (uses validation dataset)
-        data_dict_test = {self.X : X_test, self.Y_corr : Y_test, self.is_training : False}
-
-        test_loss_log = self.sess.run(self.test_loss_sum, feed_dict=data_dict_test)
-        self.writer.add_summary(test_loss_log, it)
-
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
-    def save_model(self, path = "./SavedModels/model.ckpt"):
-        saver = tf.train.Saver()
-        saver.save(self.sess, path)
+    def save_model(self, path = "./SavedModels/CNNmodel.ckpt", num_it = None):                                                                                                                                                                                                              
+        saver = tf.train.Saver(
+          tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
+        
+        if num_it is None:
+          saver.save(self.sess, path)
+        else:
+          saver.save(self.sess, path, global_step = num_it)
 
     # Loads a model previously saved with 'save_model'
-    def load_model(self, path = "./SavedModels/model.ckpt"):
-        saver = tf.train.Saver()
+    def load_model(self, path = "./SavedModels/CNNmodel.ckpt", num_it = None):
+      saver = tf.train.Saver(
+        tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only load the variables within this variable scope
+      
+      if num_it is None:
         saver.restore(self.sess, path)
+      else:
+        saver.restore(self.sess, path + '-' + str(num_it))
