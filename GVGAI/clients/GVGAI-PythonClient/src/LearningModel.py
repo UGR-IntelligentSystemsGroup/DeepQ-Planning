@@ -150,7 +150,8 @@ class CNN:
 
 
         # Create Session
-        self.sess = tf.Session()
+        # Run on CPU (it's faster if model and batch_size is small)               
+        self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
 
         # Initialize variables
         self.sess.run(tf.global_variables_initializer())
@@ -188,8 +189,7 @@ class CNN:
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
     def save_model(self, path = "./SavedModels/CNNmodel.ckpt", num_it = None):                                                                                                                                                                                                              
-        saver = tf.train.Saver(
-          tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
+        saver = tf.train.Saver() # Only save the variables within this variable scope
         
         if num_it is None:
           saver.save(self.sess, path)
@@ -198,8 +198,7 @@ class CNN:
 
     # Loads a model previously saved with 'save_model'
     def load_model(self, path = "./SavedModels/CNNmodel.ckpt", num_it = None):
-      saver = tf.train.Saver(
-        tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only load the variables within this variable scope
+      saver = tf.train.Saver() # Only load the variables within this variable scope
       
       if num_it is None:
         saver.restore(self.sess, path)

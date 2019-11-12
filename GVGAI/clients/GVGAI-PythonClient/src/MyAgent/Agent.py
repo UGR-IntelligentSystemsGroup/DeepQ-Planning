@@ -40,13 +40,13 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE="create_dataset" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         self.network_name="Greedy_prueba_1" # Automatically changed by ejecutar_pruebas.py!
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
-        self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
+        self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000] 
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -57,7 +57,8 @@ class Agent(AbstractPlayer):
             self.memory = []
 
             # Path of the file to save the experience replay to
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_1.dat'
+            id_dataset=10
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_{}.dat'.format(id_dataset)
 
             # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
             # is saved and the program exits
@@ -84,8 +85,7 @@ class Agent(AbstractPlayer):
             # Create Learning Model
 
             # CNN
-            self.model = CNN(writer_name=self.network_name, learning_rate = self.learning_rate,
-                            dropout_prob=self.dropout_prob)
+            self.model = CNN(writer_name=self.network_name)
 
             # Name of the saved model file to load (without the number of training steps part)
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
@@ -181,6 +181,7 @@ class Agent(AbstractPlayer):
 
                     batch_S = [each[0] for each in batch] # States
                     batch_R = [each[1] for each in batch] # Plan lengths
+                    batch_R = np.reshape(batch_R, (-1, 1)) # Reshape it to have shape (tam_batch, 1)
 
                     # Execute one training step
                     self.model.train(batch_S, batch_R)
@@ -214,7 +215,6 @@ class Agent(AbstractPlayer):
             keys = sso.avatarResources.keys()
 
             if len(keys) > 0: # He has at least one gem
-                # gem_key = keys[0] # Python 2
                 gem_key = list(sso.avatarResources)[0] # Python 3
 
                 num_gems = sso.avatarResources[gem_key]
@@ -550,6 +550,7 @@ class Agent(AbstractPlayer):
 
         if len(self.memory) > num_elements:
             del self.memory[num_elements:] # Delete exceding elements
+        
 
         print("Loading finished!\n")
         
