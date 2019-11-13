@@ -1,0 +1,2 @@
+model_checkpoint_path: "Greedy_alfa-0.002_dropout-0.5_batch-16_its-2500_1.ckpt-500"
+all_model_checkpoint_paths: "Greedy_alfa-0.002_dropout-0.5_batch-16_its-2500_1.ckpt-500"
