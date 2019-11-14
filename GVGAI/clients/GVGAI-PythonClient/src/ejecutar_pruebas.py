@@ -9,8 +9,6 @@ try: # Capture any exception to make sure the computer always shuts down
 
 	num_rep = 5 # Number of times the model is trained and tested
 
-	arr_num_its = [500, 1000, 2000, 3000, 4000, 5000, 6000, 7000] # num_its values to test
-
 	for num_its in arr_num_its:
 		for curr_rep in range(num_rep):
 
@@ -27,7 +25,7 @@ try: # Capture any exception to make sure the computer always shuts down
 
 			model_id = curr_rep+1 # To differentiate different tests with the same model hyperparameters
 
-			# num_its = 5000 # Number of iterations for training
+			num_its = 5000 # Number of iterations for training
 			alfa = 0.002 # Learning rate
 			dropout = 0.5 # Dropout value
 			batch_size = 16 # Batch size

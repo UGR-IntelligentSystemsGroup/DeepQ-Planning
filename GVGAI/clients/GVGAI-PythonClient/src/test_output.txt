@@ -1,0 +1,480 @@
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-500_1
+
+500 - level 0 - 100, level 1 - 87
+1000 - level 0 - 124, level 1 - 63
+2500 - level 0 - 72, level 1 - 67
+5000 - level 0 - 127, level 1 - 102
+7500 - level 0 - 92, level 1 - 84
+10000 - level 0 - 90, level 1 - 84
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-500_2
+
+500 - level 0 - 147, level 1 - 101
+1000 - level 0 - 128, level 1 - 126
+2500 - level 0 - 95, level 1 - 100
+5000 - level 0 - 82, level 1 - 90
+7500 - level 0 - 146, level 1 - 62
+10000 - level 0 - 69, level 1 - 72
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-500_3
+
+500 - level 0 - 82, level 1 - 68
+1000 - level 0 - 110, level 1 - 87
+2500 - level 0 - 101, level 1 - 79
+5000 - level 0 - 105, level 1 - 82
+7500 - level 0 - 81, level 1 - 86
+10000 - level 0 - 121, level 1 - 84
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-500_4
+
+500 - level 0 - 71, level 1 - 61
+1000 - level 0 - 96, level 1 - 84
+2500 - level 0 - 80, level 1 - 64
+5000 - level 0 - 103, level 1 - 101
+7500 - level 0 - 85, level 1 - 92
+10000 - level 0 - 103, level 1 - 50
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-500_5
+
+500 - level 0 - 99, level 1 - 91
+1000 - level 0 - 81, level 1 - 77
+2500 - level 0 - 111, level 1 - 109
+5000 - level 0 - 103, level 1 - 82
+7500 - level 0 - 104, level 1 - 107
+10000 - level 0 - 71, level 1 - 85
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-1000_1
+
+500 - level 0 - 111, level 1 - 70
+1000 - level 0 - 67, level 1 - 80
+2500 - level 0 - 84, level 1 - 60
+5000 - level 0 - 92, level 1 - 65
+7500 - level 0 - 79, level 1 - 84
+10000 - level 0 - 81, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-1000_2
+
+500 - level 0 - 113, level 1 - 48
+1000 - level 0 - 92, level 1 - 74
+2500 - level 0 - 94, level 1 - 55
+5000 - level 0 - 108, level 1 - 61
+7500 - level 0 - 85, level 1 - 59
+10000 - level 0 - 79, level 1 - 60
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-1000_3
+
+500 - level 0 - 71, level 1 - 64
+1000 - level 0 - 93, level 1 - 62
+2500 - level 0 - 85, level 1 - 90
+5000 - level 0 - 85, level 1 - 41
+7500 - level 0 - 82, level 1 - 74
+10000 - level 0 - 81, level 1 - 43
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-1000_4
+
+500 - level 0 - 102, level 1 - 67
+1000 - level 0 - 95, level 1 - 81
+2500 - level 0 - 91, level 1 - 70
+5000 - level 0 - 85, level 1 - 51
+7500 - level 0 - 83, level 1 - 50
+10000 - level 0 - 85, level 1 - 51
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-1000_5
+
+500 - level 0 - 86, level 1 - 65
+1000 - level 0 - 101, level 1 - 52
+2500 - level 0 - 82, level 1 - 83
+5000 - level 0 - 97, level 1 - 57
+7500 - level 0 - 60, level 1 - 71
+10000 - level 0 - 86, level 1 - 56
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-2000_1
+
+500 - level 0 - 89, level 1 - 50
+1000 - level 0 - 84, level 1 - 72
+2500 - level 0 - 99, level 1 - 68
+5000 - level 0 - 86, level 1 - 80
+7500 - level 0 - 81, level 1 - 56
+10000 - level 0 - 100, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-2000_2
+
+500 - level 0 - 90, level 1 - 80
+1000 - level 0 - 74, level 1 - 63
+2500 - level 0 - 82, level 1 - 43
+5000 - level 0 - 80, level 1 - 53
+7500 - level 0 - 82, level 1 - 68
+10000 - level 0 - 69, level 1 - 63
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-2000_3
+
+500 - level 0 - 65, level 1 - 57
+1000 - level 0 - 71, level 1 - 86
+2500 - level 0 - 68, level 1 - 43
+5000 - level 0 - 80, level 1 - 74
+7500 - level 0 - 74, level 1 - 43
+10000 - level 0 - 80, level 1 - 71
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-2000_4
+
+500 - level 0 - 66, level 1 - 59
+1000 - level 0 - 64, level 1 - 52
+2500 - level 0 - 70, level 1 - 60
+5000 - level 0 - 65, level 1 - 56
+7500 - level 0 - 60, level 1 - 51
+10000 - level 0 - 81, level 1 - 57
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-2000_5
+
+500 - level 0 - 66, level 1 - 57
+1000 - level 0 - 91, level 1 - 62
+2500 - level 0 - 63, level 1 - 52
+5000 - level 0 - 89, level 1 - 70
+7500 - level 0 - 92, level 1 - 75
+10000 - level 0 - 101, level 1 - 51
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-3000_1
+
+500 - level 0 - 70, level 1 - 81
+1000 - level 0 - 85, level 1 - 73
+2500 - level 0 - 63, level 1 - 49
+5000 - level 0 - 66, level 1 - 49
+7500 - level 0 - 80, level 1 - 62
+10000 - level 0 - 69, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-3000_2
+
+500 - level 0 - 87, level 1 - 81
+1000 - level 0 - 75, level 1 - 72
+2500 - level 0 - 82, level 1 - 67
+5000 - level 0 - 73, level 1 - 59
+7500 - level 0 - 88, level 1 - 43
+10000 - level 0 - 85, level 1 - 61
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-3000_3
+
+500 - level 0 - 97, level 1 - 94
+1000 - level 0 - 98, level 1 - 52
+2500 - level 0 - 85, level 1 - 53
+5000 - level 0 - 104, level 1 - 59
+7500 - level 0 - 87, level 1 - 60
+10000 - level 0 - 59, level 1 - 62
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-3000_4
+
+500 - level 0 - 85, level 1 - 80
+1000 - level 0 - 69, level 1 - 70
+2500 - level 0 - 80, level 1 - 51
+5000 - level 0 - 84, level 1 - 59
+7500 - level 0 - 79, level 1 - 57
+10000 - level 0 - 71, level 1 - 42
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-3000_5
+
+500 - level 0 - 90, level 1 - 70
+1000 - level 0 - 78, level 1 - 59
+2500 - level 0 - 82, level 1 - 57
+5000 - level 0 - 79, level 1 - 78
+7500 - level 0 - 89, level 1 - 43
+10000 - level 0 - 66, level 1 - 40
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-4000_1
+
+500 - level 0 - 68, level 1 - 63
+1000 - level 0 - 94, level 1 - 68
+2500 - level 0 - 87, level 1 - 77
+5000 - level 0 - 72, level 1 - 56
+7500 - level 0 - 65, level 1 - 79
+10000 - level 0 - 63, level 1 - 72
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-4000_2
+
+500 - level 0 - 97, level 1 - 75
+1000 - level 0 - 65, level 1 - 63
+2500 - level 0 - 62, level 1 - 35
+5000 - level 0 - 81, level 1 - 40
+7500 - level 0 - 93, level 1 - 57
+10000 - level 0 - 63, level 1 - 100
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-4000_3
+
+500 - level 0 - 81, level 1 - 79
+1000 - level 0 - 75, level 1 - 59
+2500 - level 0 - 83, level 1 - 52
+5000 - level 0 - 82, level 1 - 45
+7500 - level 0 - 82, level 1 - 71
+10000 - level 0 - 81, level 1 - 60
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-4000_4
+
+500 - level 0 - 82, level 1 - 65
+1000 - level 0 - 90, level 1 - 69
+2500 - level 0 - 68, level 1 - 55
+5000 - level 0 - 63, level 1 - 76
+7500 - level 0 - 85, level 1 - 71
+10000 - level 0 - 71, level 1 - 65
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-4000_5
+
+500 - level 0 - 86, level 1 - 79
+1000 - level 0 - 79, level 1 - 64
+2500 - level 0 - 81, level 1 - 62
+5000 - level 0 - 62, level 1 - 73
+7500 - level 0 - 70, level 1 - 75
+10000 - level 0 - 81, level 1 - 52
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_1
+
+500 - level 0 - 87, level 1 - 79
+1000 - level 0 - 96, level 1 - 66
+2500 - level 0 - 82, level 1 - 75
+5000 - level 0 - 74, level 1 - 63
+7500 - level 0 - 79, level 1 - 62
+10000 - level 0 - 65, level 1 - 45
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_2
+
+500 - level 0 - 70, level 1 - 51
+1000 - level 0 - 77, level 1 - 43
+2500 - level 0 - 67, level 1 - 74
+5000 - level 0 - 89, level 1 - 58
+7500 - level 0 - 92, level 1 - 45
+10000 - level 0 - 69, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_3
+
+500 - level 0 - 107, level 1 - 67
+1000 - level 0 - 74, level 1 - 73
+2500 - level 0 - 90, level 1 - 90
+5000 - level 0 - 62, level 1 - 70
+7500 - level 0 - 84, level 1 - 56
+10000 - level 0 - 66, level 1 - 76
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_4
+
+500 - level 0 - 77, level 1 - 57
+1000 - level 0 - 81, level 1 - 67
+2500 - level 0 - 74, level 1 - 48
+5000 - level 0 - 69, level 1 - 64
+7500 - level 0 - 76, level 1 - 39
+10000 - level 0 - 78, level 1 - 60
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_5
+
+500 - level 0 - 74, level 1 - 84
+1000 - level 0 - 70, level 1 - 66
+2500 - level 0 - 60, level 1 - 47
+5000 - level 0 - 82, level 1 - 56
+7500 - level 0 - 65, level 1 - 83
+10000 - level 0 - 81, level 1 - 62
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-6000_1
+
+500 - level 0 - 67, level 1 - 57
+1000 - level 0 - 91, level 1 - 54
+2500 - level 0 - 81, level 1 - 42
+5000 - level 0 - 77, level 1 - 68
+7500 - level 0 - 70, level 1 - 39
+10000 - level 0 - 68, level 1 - 69
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-6000_2
+
+500 - level 0 - 76, level 1 - 68
+1000 - level 0 - 71, level 1 - 72
+2500 - level 0 - 68, level 1 - 55
+5000 - level 0 - 74, level 1 - 55
+7500 - level 0 - 73, level 1 - 73
+10000 - level 0 - 63, level 1 - 44
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-6000_3
+
+500 - level 0 - 74, level 1 - 74
+1000 - level 0 - 86, level 1 - 70
+2500 - level 0 - 88, level 1 - 67
+5000 - level 0 - 72, level 1 - 86
+7500 - level 0 - 81, level 1 - 71
+10000 - level 0 - 82, level 1 - 67
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-6000_4
+
+500 - level 0 - 64, level 1 - 62
+1000 - level 0 - 72, level 1 - 42
+2500 - level 0 - 81, level 1 - 56
+5000 - level 0 - 66, level 1 - 53
+7500 - level 0 - 72, level 1 - 54
+10000 - level 0 - 69, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-6000_5
+
+500 - level 0 - 78, level 1 - 75
+1000 - level 0 - 85, level 1 - 61
+2500 - level 0 - 68, level 1 - 64
+5000 - level 0 - 69, level 1 - 50
+7500 - level 0 - 73, level 1 - 74
+10000 - level 0 - 69, level 1 - 57
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-7000_1
+
+500 - level 0 - 73, level 1 - 99
+1000 - level 0 - 69, level 1 - 64
+2500 - level 0 - 62, level 1 - 69
+5000 - level 0 - 70, level 1 - 77
+7500 - level 0 - 59, level 1 - 86
+10000 - level 0 - 90, level 1 - 51
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-7000_2
+
+500 - level 0 - 87, level 1 - 87
+1000 - level 0 - 71, level 1 - 67
+2500 - level 0 - 73, level 1 - 65
+5000 - level 0 - 77, level 1 - 59
+7500 - level 0 - 80, level 1 - 38
+10000 - level 0 - 81, level 1 - 54
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-7000_3
+
+500 - level 0 - 100, level 1 - 55
+1000 - level 0 - 75, level 1 - 71
+2500 - level 0 - 73, level 1 - 69
+5000 - level 0 - 86, level 1 - 55
+7500 - level 0 - 85, level 1 - 69
+10000 - level 0 - 79, level 1 - 78
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-7000_4
+
+500 - level 0 - 103, level 1 - 111
+1000 - level 0 - 56, level 1 - 74
+2500 - level 0 - 67, level 1 - 78
+5000 - level 0 - 89, level 1 - 47
+7500 - level 0 - 60, level 1 - 57
+10000 - level 0 - 73, level 1 - 64
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-7000_5
+
+500 - level 0 - 111, level 1 - 70
+1000 - level 0 - 67, level 1 - 63
+2500 - level 0 - 96, level 1 - 48
+5000 - level 0 - 80, level 1 - 59
+7500 - level 0 - 69, level 1 - 48
+10000 - level 0 - 85, level 1 - 57
