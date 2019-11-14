@@ -598,3 +598,63 @@ Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_10
 5000 - level 0 - 82, level 1 - 35
 7500 - level 0 - 81, level 1 - 50
 10000 - level 0 - 66, level 1 - 62
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_11
+
+500 - level 0 - 89, level 1 - 72
+1000 - level 0 - 72, level 1 - 89
+2500 - level 0 - 80, level 1 - 69
+5000 - level 0 - 60, level 1 - 46
+7500 - level 0 - 84, level 1 - 72
+10000 - level 0 - 63, level 1 - 70
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_12
+
+500 - level 0 - 75, level 1 - 60
+1000 - level 0 - 81, level 1 - 60
+2500 - level 0 - 84, level 1 - 44
+5000 - level 0 - 60, level 1 - 73
+7500 - level 0 - 83, level 1 - 54
+10000 - level 0 - 81, level 1 - 49
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_13
+
+500 - level 0 - 82, level 1 - 91
+1000 - level 0 - 82, level 1 - 52
+2500 - level 0 - 60, level 1 - 60
+5000 - level 0 - 59, level 1 - 69
+7500 - level 0 - 72, level 1 - 53
+10000 - level 0 - 80, level 1 - 57
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_14
+
+500 - level 0 - 82, level 1 - 94
+1000 - level 0 - 88, level 1 - 74
+2500 - level 0 - 76, level 1 - 59
+5000 - level 0 - 76, level 1 - 67
+7500 - level 0 - 90, level 1 - 59
+10000 - level 0 - 77, level 1 - 60
+
+
+--------------------------
+
+Model Name: Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_15
+
+500 - level 0 - 92, level 1 - 50
+1000 - level 0 - 90, level 1 - 82
+2500 - level 0 - 74, level 1 - 60
+5000 - level 0 - 88, level 1 - 51
+7500 - level 0 - 73, level 1 - 67
+10000 - level 0 - 73, level 1 - 45

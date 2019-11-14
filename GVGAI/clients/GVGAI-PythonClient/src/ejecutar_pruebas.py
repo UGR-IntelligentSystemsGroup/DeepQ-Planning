@@ -4,10 +4,11 @@ import re
 import subprocess
 import os
 
+shutdown_after_training = False # If 'True', shutdown the computer after training finishes
 
 try: # Capture any exception to make sure the computer always shuts down
 
-	num_rep = 10 # Number of times the model is trained and tested
+	num_rep = 4 # Number of times the model is trained and tested
 
 	for curr_rep in range(num_rep):
 
@@ -21,7 +22,7 @@ try: # Capture any exception to make sure the computer always shuts down
 
 		# Ej name: Greedy_alfa-0.005_dropout-0.4_batch-16_its-7500_1
 
-		model_id = curr_rep+1 # To differentiate different tests with the same model hyperparameters
+		model_id = curr_rep+12 # To differentiate different tests with the same model hyperparameters
 
 		num_its = 5000 # Number of iterations for training (It's the optimum number of its)
 		alfa = 0.002 # Learning rate
@@ -144,5 +145,6 @@ except:
 
 	subprocess.call("touch SE_HA_PRODUCIDO_UNA_EXCEPCION", shell=True)
 finally:
-	# Shutdown Computer regardless of exceptions - NEEDS ROOT PRIVILEGES!!
-	os.system("shutdown -h +1") # Shutdown in 1 minute to make it possible to halt it
+	if shutdown_after_training:
+		# Shutdown Computer regardless of exceptions
+		os.system("shutdown -h +1") # Shutdown in 1 minute to make it possible to halt it
