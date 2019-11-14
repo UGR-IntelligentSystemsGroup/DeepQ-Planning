@@ -8,4 +8,4 @@ Aug: 0.5348
 
 ---- Nuevo modelo ----
 
-Aug: 0.5156
+Aug: 0.5156 (tras quitar la capa full connected que sobraba al final)
