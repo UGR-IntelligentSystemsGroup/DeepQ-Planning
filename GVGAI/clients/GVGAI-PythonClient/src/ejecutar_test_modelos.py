@@ -35,10 +35,10 @@ try:
 			file.write("-   Nivel {} y nivel {}   -\n".format(id_nivel_act, id_nivel_act+1))
 			file.write("--------------------------------\n\n\n")
 
-		nombre_modelos = "Greedy_alfa-0.005_dropout-0.4_batch-16_its-5000_" # Hay que añadir al final la id del modelo
+		nombre_modelos = "Greedy_alfa-0.002_dropout-0.5_batch-16_its-5000_" # Hay que añadir al final la id del modelo
 
 		id_ini = 1 # Id del primer modelo a testear
-		id_fin = 10 # Id del último modelo a testear
+		id_fin = 15 # Id del último modelo a testear
 
 		# Prueba todos los modelos entrenados
 		for id_act in range(id_ini, id_fin+1):
