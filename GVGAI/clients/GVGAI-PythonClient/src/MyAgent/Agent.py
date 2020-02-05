@@ -44,10 +44,7 @@ class Agent(AbstractPlayer):
 		# This action list corresponds to the plan found by the planner
 
 		# Plan hasta la bota
-		self.action_list = ['ACTION_UP', 'ACTION_UP', 'ACTION_UP',
-		 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT' ,'ACTION_RIGHT',
-		 'ACTION_DOWN', 'ACTION_DOWN', 'ACTION_DOWN',
-		 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT', 'ACTION_RIGHT']
+		self.action_list = []
 
 		# It is true when the agent has the minimum required number of gems
 		# self.can_exit = False
@@ -61,15 +58,11 @@ class Agent(AbstractPlayer):
 			self.num_actions_lv = 0"""
 			
 	def act(self, sso, elapsedTimer):
+
 		# Get one_hot_grid
-		one_hot_grid = self.encode_game_state(sso.observationGrid, (0,0))
+		one_hot_grid = self.encode_game_state(sso.observationGrid, (1,1), 'RIGHT')
 
-		#print(one_hot_grid[1][3])
-
-		# print("Recursos:", sso.avatarResources) # Diccionario donde cada clave es un string con el itype del recurso (8: bota nieve, 6: bota fuego)
-												# y el valor es el número de recursos que tiene el jugador de ese tipo (si tiene 0, la clave no está en el diccionario!)
-		#print("Recursos:", self.has_ice_boots(sso), self.has_fire_boots(sso))
-
+		#print(one_hot_grid[1][1])
 
 		# <OBTENER PLAN>
 		# plan = self.search_plan(one_hot_grid, (0,0), has_ice_boots=self.has_ice_boots(sso), has_fire_boots=self.has_fire_boots(sso))
@@ -78,33 +71,7 @@ class Agent(AbstractPlayer):
 			return self.action_list.pop(0)
 		else:
 			return 'ACTION_NIL'
-
-	def has_ice_boots(self, sso):
-		"""
-		Returns True if the player has ice boots and False otherwise.
-		"""
-		resources = sso.avatarResources
-		ice_boot_itype = '8'
-
-		if ice_boot_itype in resources:
-			if resources[ice_boot_itype] > 0:
-				return True
-
-		return False
-
-	def has_fire_boots(self, sso):
-		"""
-		Returns True if the player has fire boots and False otherwise.
-		"""
-		resources = sso.avatarResources
-		fire_boot_itype = '9'
-
-		if fire_boot_itype in resources:
-			if resources[fire_boot_itype] > 0:
-				return True
-
-		return False
-
+	
 
 	def get_gems_positions(self, sso):
 		# Retrieve gems from current state observation
@@ -120,51 +87,40 @@ class Agent(AbstractPlayer):
 
 		return pos"""
 
-	def encode_game_state(self, obs_grid, goal_pos):
+	def encode_game_state(self, obs_grid, goal_pos, direction):
 		"""
 		Transforms the game state (sso) from a matrix of observations to a matrix in which each
-		position is one-hot encoded. If there are more than one observations at the same position,
-		both are encoded. If there are no observations at a position, the resulting encoding
+		position is one-hot encoded. If there are no observations at a position, the resulting encoding
 		is an array full of zeroes
 
 		@param obs_grid Matrix of observations
-		@param goal_pos (x, y) position (not as pixels but as grid) of the selected goal  
+		@param goal_pos (x, y) position (not as pixels but as grid) of the selected goal 
+		@param direction Direction to push the block towards: 'UP', 'DOWN', 'RIGHT' or 'LEFT'
 		"""
 
-		# 0, 1, 4, 5, 6, 7, 10, 11
-
 		# Dictionary that maps itype (key) to one-hot array position to write a 1
-		# e.g. 4 : 2 = [0 0 1 0 0 0 0 0 0]
+		# e.g. 3 : 2 = [0 0 1 0 0 0 0 0 0]
 		# None (empty tiles) objects are assigned an array full of zeroes
 
 		""" <Itypes>
-		0 -> Árbol
-		3 -> Salida
-		10 -> Moneda
-		9 -> Bota Fuego
-		6 -> Fuego
-		4 -> Pinchos
-		5 -> Nieve
+		0 -> Pared
 		1 -> Jugador
-		8 -> Bota Nieve
+		2 -> Casilla vacía
+		3 -> Salida (agujero a donde empujar los bloques)
+		4 -> Bloque
 		"""
 
 		encode_dict = {
 			0 : 0,
-			3 : 1,
-			10 : 2,
-			9 : 3,
-			6 : 4,
-			4 : 5,
-			5 : 6,
-			1 : 7,
-			8 : 8
+			1 : 1,
+			3 : 2,
+			4 : 3
 		}
 
 		num_cols = len(obs_grid)
 		num_rows = len(obs_grid[0])
 
-		one_hot_length = 9 + 1 # 1 extra position to represent the objective (the last 1)
+		one_hot_length = 4 + 4 # 4 extra positions to represent the goal
 
 		# The image representation is by rows and columns, instead of (x, y) pos of each pixel
 		# Row -> y
@@ -174,30 +130,37 @@ class Agent(AbstractPlayer):
 		# Encode the grid
 		for x in range(num_cols):
 			for y in range(num_rows):
+				# <Each obs_grid[x][y] has two observations>
 				for obs in obs_grid[x][y]:
-					if obs is not None: # Ignore Empty Tiles
-						this_pos = encode_dict[obs.itype]
-						one_hot_grid[y][x][this_pos] = 1
+					if obs is not None and obs.itype != 2:
+						pos = encode_dict[obs.itype]
+						one_hot_grid[y][x][pos] = 1
 
-		# Encode the goal position within that grid
-		one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
+		# Encode the goal within that grid
+
+		dir_dict = {
+			'UP' : 4,
+			'DOWN' : 5,
+			'RIGHT' : 6,
+			'LEFT' : 7,
+		}
+
+		one_hot_grid[goal_pos[1]][goal_pos[0]][dir_dict[direction]] = 1
 
 		return one_hot_grid
 
 
-	def search_plan(self, one_hot_grid, goal, has_ice_boots, has_fire_boots):
+	def search_plan(self, one_hot_grid, goal_position, direction):
 		"""<TODO>"""
 		"""
 		@one_hot_grid : matriz con las observaciones (one-hot encoded) -> obtener de aquí las posiciones de los distintos objetos
-						(hay objetos como las monedas o las botas que se ignoran). Puedes usar directament sso en vez del one_hot_grid
+						(hay objetos como las salidas que se ignoran). Puedes usar directamente sso en vez del one_hot_grid
 						si lo prefieres.
-		@goal : posición (x, y) del objetivo -> posición del objeto de tipo casilla_objetivo
-		@has_ice_boots : tiene botas de hielo -> si vale true, añadir predicado (tiene_botas_hielo jugador) al :init
-		@has_fire_boots : tiene botas de fuego -> si vale true, añadir predicado (tiene_botas_fuego jugador) al :init
+		@goal_position : posición (x, y) del bloque a empujar
+		@direction : dirección hacia la cual empujar el bloque ('UP', 'DOWN', 'RIGHT', 'LEFT')
+
+		Tanto goal_position como direction codifican el subobjetivo (predicado (empujado jugador bloquex direccionx) del :goal)
 		"""
-
-
-
 
 
 

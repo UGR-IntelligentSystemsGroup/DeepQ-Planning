@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #game_id=11 # Boulder Dash
-game_id=43 # IceAndFire
+#game_id=43 # IceAndFire
+game_id=75 # Sokoban
 server_dir=../../..
 agent_name=MyAgent.Agent
 sh_dir=utils

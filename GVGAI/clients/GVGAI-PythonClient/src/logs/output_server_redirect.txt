@@ -1,2 +1,2 @@
-[GAME] Game idx:43 game name iceandfire
+[GAME] Game idx:75 game name sokoban
 [PHASE] Starting First Phase of Training in 3 levels.
