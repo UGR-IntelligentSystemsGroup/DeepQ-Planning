@@ -1,5 +1,33 @@
 [GAME] Game idx:11 game name boulderdash
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:117
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:138
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:138
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:120
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:152
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:127
+[PHASE] Starting Second Phase of Training in 3 levels.
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:100
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:158
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:144
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:123
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:123
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:171
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:118
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:176
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:166
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:104
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:94
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:164
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:104
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:110
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:154
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:149
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:119
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:186
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:142
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:99
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:107
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:18.0, timesteps:133
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:96
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:18.0, timesteps:146
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:124
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:135
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:178
