@@ -27,6 +27,13 @@ class Agent(AbstractPlayer):
         self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
                 self.DESC_FILE, self.OUT_FILE)
 
+        # Matrix to save the number of actions used to complete each level
+        # num_actions_levels[i] -> actions of level 1
+        # num_actions_levels[i][j] -> actions used on iteration j of level i
+        self.num_actions_levels = [[],[],[]]
+
+        # Number of iterations (repetitions) for each training level
+        self.repetitions = 3
 
     def init(self, sso, elapsedTimer):
         """
@@ -46,6 +53,9 @@ class Agent(AbstractPlayer):
 
         # It is true when the agent has the minimum required number of gems
         self.can_exit = False
+
+        # Attribute to save the number of actions used to complete the current level
+        self.curr_num_actions = 0
 
 
     def act(self, sso, elapsedTimer):
@@ -80,6 +90,9 @@ class Agent(AbstractPlayer):
  
                     self.action_list = self.search_plan(sso, exit_pos)
 
+                    # Add length of current plan to number of actions used in this level
+                    self.curr_num_actions += len(self.action_list)
+
             # Only plan for next gem if the agent can't exit the level yet
             if not self.can_exit:
                 # Obtain gems positions
@@ -100,6 +113,9 @@ class Agent(AbstractPlayer):
 
                 # Search for a plan to chosen_gem
                 self.action_list = self.search_plan(sso, chosen_gem)
+
+                # Add length of current plan to number of actions used in this level
+                self.curr_num_actions += len(self.action_list)
 
 
         # Execute Plan
@@ -294,6 +310,30 @@ class Agent(AbstractPlayer):
 
                 sys.exit()
         """
+
+        # Save number of actions used to complete this level
+        self.num_actions_levels[self.current_level].append(self.curr_num_actions)
+
+        print("\n\n", self.current_level, self.curr_num_actions, "\n\n")
+
+        # After self.repetitions of each level, exit the game
+        if len(self.num_actions_levels[2]) >= self.repetitions:
+
+        	print("\n\n-------Number of actions used for each level--------")
+        	print("Level 0: ", self.num_actions_levels[0])
+        	print("Level 1: ", self.num_actions_levels[1])
+        	print("Level 2: ", self.num_actions_levels[2])
+        	print("---------------\n\n")
+
+        	# File to save the actions used for each level
+        	test_output_file = "num_actions_levels.txt"
+
+        	with open(test_output_file, 'a') as file:
+        		file.write("Level 0: {}\n".format(self.num_actions_levels[0]))
+        		file.write("Level 1: {}\n".format(self.num_actions_levels[1]))
+        		file.write("Level 2: {}\n".format(self.num_actions_levels[2]))
+
+        	sys.exit()
 
 
         # Play levels 0-2 in order
