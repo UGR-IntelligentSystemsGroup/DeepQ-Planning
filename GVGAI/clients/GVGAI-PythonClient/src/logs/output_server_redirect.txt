@@ -1,12 +1,5 @@
 [GAME] Game idx:11 game name boulderdash
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:123
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:89
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:99
-[PHASE] Starting Second Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:110
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:89
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:79
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:94
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:113
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:102
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:117
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:18.0, timesteps:138
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:138

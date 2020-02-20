@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
         self.num_actions_levels = [[],[],[]]
 
         # Number of iterations (repetitions) for each training level
-        self.repetitions = 3
+        self.repetitions = 1
 
     def init(self, sso, elapsedTimer):
         """
