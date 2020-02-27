@@ -11,6 +11,8 @@ import tensorflow as tf
 import pickle
 import sys
 
+import time
+
 from LearningModel import CNN
 
 class Agent(AbstractPlayer):
@@ -94,8 +96,9 @@ class Agent(AbstractPlayer):
             # Automatically changed by ejecutar_pruebas.py!
             self.num_it_model=10000
 
-            # Array to save the number of actions used to complete each level to save it to the output file
-            self.num_actions_each_lv = []
+            # Arrays to save the planning times used for each test level
+            self.mean_plan_times = []
+            self.total_plan_times = []
 
             # <Load the already-trained model in order to test performance>
             self.model.load_model(path = model_load_path, num_it = self.num_it_model)
@@ -120,10 +123,8 @@ class Agent(AbstractPlayer):
         # See if it's training or validation time
         self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
 
-        # If it's validation phase, count the number of actions used
-        # to beat the current level
-        if self.EXECUTION_MODE == 'test' and not self.is_training:
-            self.num_actions_lv = 0
+        # Count the time used to plan to each gem
+        self.plan_times = []
 
 
     def act(self, sso, elapsedTimer):
@@ -226,7 +227,13 @@ class Agent(AbstractPlayer):
                     exit = sso.portalsPositions[0][0]
                     exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
  
+                    # Measure the time used to find a new plan
+                    start = time.time()
+
                     self.action_list = self.search_plan(sso, exit_pos)
+
+                    end = time.time()
+                    self.plan_times.append(end-start)
 
                     # Add sample to memory
                     if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
@@ -261,7 +268,14 @@ class Agent(AbstractPlayer):
                     chosen_gem = gems[random.randint(0, len(gems) - 1)]
 
                 # Search for a plan to chosen_gem
+
+                # Measure the time used to find a new plan
+                start = time.time()
+
                 self.action_list = self.search_plan(sso, chosen_gem)
+
+                end = time.time()
+                self.plan_times.append(end-start)
 
                 # Add sample to memory
                 if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
@@ -286,8 +300,6 @@ class Agent(AbstractPlayer):
 
         # If a plan has been found, return the first action
         if len(self.action_list) > 0:
-            if not self.is_training: # Count the number of actions used to complete the level
-                self.num_actions_lv += 1
 
             return self.action_list.pop(0)
         else:
@@ -559,31 +571,30 @@ class Agent(AbstractPlayer):
         print("Nivel terminado")
 
         if self.EXECUTION_MODE == 'test' and not self.is_training:
-            print("\n\nNúmero de acciones para completar el nivel: {} \n\n".format(self.num_actions_lv))
+            # Calculo el tiempo medio por plan y el tiempo para completar el nivel (la suma de todos los tiempos de los planes)
+            plan_times = np.array(self.plan_times)
+            total_time = np.sum(plan_times)
+            mean_time = total_time / plan_times.size
 
-            # Guardo la suma del número de acciones para completar los dos niveles de validación
-            test_output_file = "test_output.txt"
+            print("\n\nTiempos de los planes: media - {} total - {} \n\n".format(mean_time, total_time))
 
-            # No se ha guardado el número de acciones de los dos niveles todavía
-            if len(self.num_actions_each_lv) < 2:
-                self.num_actions_each_lv.append(self.num_actions_lv) # Guardo el número de acciones del nivel actual
+            # Guardo los resultados en un fichero
+            test_output_file = "plan_times_test.txt"
 
-            # Si ya se han completado ambos niveles, guardo las acciones en el fichero y termino la ejecución
-            if len(self.num_actions_each_lv) == 2:
-                # total_num_actions = self.num_actions_each_lv[0] + self.num_actions_each_lv[1]
+            # No se ha guardado los tiempos de los dos niveles todavía
+            if len(self.mean_plan_times) < 2:
+                self.mean_plan_times.append(mean_time)
+                self.total_plan_times.append(total_time)
+
+            # Si ya se han completado ambos niveles, guardo los tiempos en el fichero y termino la ejecución
+            if len(self.mean_plan_times) == 2:
 
                 with open(test_output_file, "a") as file:
 
-                    # Imprimo la separación y el nombre del modelo si estamos ejecutando la validación con el primer (el menor) tamaño de dataset
-                    if self.num_it_model == self.datasets_sizes_for_training[0]:
-                        file.write("\n\n--------------------------\n\n")
-                        file.write("Model Name: {}\n\n".format(self.network_name))
-
-                    file.write("{} - level 0 - {}, level 1 - {}\n".format(self.num_it_model, self.num_actions_each_lv[0],
-                        self.num_actions_each_lv[1]))
+                	file.write("\n{:.2} {:.2} {:.2} {:.2}".format(self.mean_plan_times[0], self.total_plan_times[0], 
+                		self.mean_plan_times[1], self.total_plan_times[1]))
 
                 sys.exit()
-
 
         # Play levels 0-2 in order
         self.current_level = (self.current_level + 1) % 3
