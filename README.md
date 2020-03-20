@@ -1,7 +1,6 @@
 # PlanningWithSubgoals
 
-Repositorio que contiene el código y la documentación asociada al proyecto de
-aprendizaje de objetivos utilizando planificación.
+This research is being developed and partially funded by the Spanish MINECO R\&D Project  TIN2015-71618-R and RTI2018-098460-B-I00.
 
 ## Carlos
 
