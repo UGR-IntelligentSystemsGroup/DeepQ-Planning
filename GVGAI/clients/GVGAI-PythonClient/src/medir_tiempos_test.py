@@ -1,18 +1,16 @@
-# Este script va ejecutando el modelo DQP entrenado sobre los nuevos niveles (como niveles de test) y va guardando
-# el número de acciones que tardan en completarse
+# Este script mide el tiempo (medio y total) que tarda el planificador del modelo DQP entrenado en encontrar los planes necesarios
+# para completar los niveles de test
 
 import re
 import subprocess
 import os 
-
-# SUPONGO QUE COMPETITIONPARAMETERS.PY YA ESTÁN PREPARADOS PARA TRAINING!
 
 path_niveles_juego = '../../../examples/gridphysics/' # Carpeta de donde se cargan los niveles del juego
 path_niveles_nuevos = 'NivelesNuevos/' # Carpeta que contiene los 10 nuevos niveles
 
 archivo_output = "plan_times_test.txt" # Archivo donde se escriben los tiempos
 
-# ME HE QUEDADO SOLO CON 6 NIVELES!!!
+# Solo uso los 6 niveles de test (de los 10) con los que me he quedado al final
 id_primer_nivel_nuevo = 5 # Id del primer nivel de test nuevo a probar
 id_ultimo_nivel_nuevo = 10 # Id del último nivel de test nuevo a probar
 
