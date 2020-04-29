@@ -3,14 +3,17 @@ channels:
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
-  - _tflow_select=2.3.0=mkl
+  - _tflow_select=2.1.0=gpu
   - absl-py=0.4.1=py35_0
   - astor=0.7.1=py35_0
   - backcall=0.1.0=py35_0
   - blas=1.0=mkl
   - bleach=2.1.4=py35_0
-  - ca-certificates=2019.5.15=0
+  - ca-certificates=2019.8.28=0
   - certifi=2018.8.24=py35_1
+  - cudatoolkit=9.2=0
+  - cudnn=7.6.0=cuda9.2_0
+  - cupti=9.2.148=0
   - dbus=1.13.6=h746ee38_0
   - decorator=4.4.0=py_0
   - defusedxml=0.6.0=py_0
@@ -64,7 +67,7 @@ dependencies:
   - numpy=1.15.2=py35h1d66e8a_0
   - numpy-base=1.15.2=py35h81de0dd_0
   - olefile=0.46=py35_0
-  - openssl=1.0.2s=h7b6447c_0
+  - openssl=1.0.2t=h7b6447c_1
   - pandoc=2.2.3.2=0
   - pandocfilters=1.4.2=py35_1
   - parso=0.5.0=py_0
@@ -94,8 +97,9 @@ dependencies:
   - six=1.11.0=py35_1
   - sqlite=3.29.0=h7b6447c_0
   - tensorboard=1.10.0=py35hf484d3e_0
-  - tensorflow=1.10.0=mkl_py35heddcb22_0
-  - tensorflow-base=1.10.0=mkl_py35h3c3e929_0
+  - tensorflow=1.10.0=gpu_py35hd9c640d_0
+  - tensorflow-base=1.10.0=gpu_py35had579c0_0
+  - tensorflow-gpu=1.10.0=hf154084_0
   - termcolor=1.1.0=py35_1
   - terminado=0.8.1=py35_1
   - testpath=0.3.1=py35had42eaf_0
