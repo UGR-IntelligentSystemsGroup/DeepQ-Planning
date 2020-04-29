@@ -1,4 +1,4 @@
-name: trabajo
+name: PlanningWithSubgoals
 channels:
   - defaults
 dependencies:
