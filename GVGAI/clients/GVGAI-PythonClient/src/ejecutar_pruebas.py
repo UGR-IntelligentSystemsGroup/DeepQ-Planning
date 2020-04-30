@@ -7,7 +7,7 @@ import os
 
 try: # Capture any exception to make sure the computer always shuts down
 
-	num_rep = 1 # Number of times the model is trained and tested
+	num_rep = 7 # Number of times the model is trained and tested
 
 	for curr_rep in range(num_rep):
 
@@ -24,9 +24,9 @@ try: # Capture any exception to make sure the computer always shuts down
 
 		model_id = curr_rep # To differentiate different tests with the same model hyperparameters
 
-		num_its = 500 # Number of iterations for training
+		num_its = 5000 # Number of iterations for training
 		alfa = 0.005 # Learning rate
-		dropout = 0.2 # Dropout value
+		dropout = 0.4 # Dropout value
 		batch_size = 16 # Batch size
 
 
