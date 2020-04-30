@@ -40,7 +40,7 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="create_dataset" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         self.network_name="DQN_alfa-0.005_dropout-0.2_batch-16_its-500_0" # Automatically changed by ejecutar_pruebas.py!
