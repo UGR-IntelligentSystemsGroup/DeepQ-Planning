@@ -7,7 +7,7 @@ import os
 
 try: # Capture any exception to make sure the computer always shuts down
 
-	num_rep = 7 # Number of times the model is trained and tested
+	num_rep = 1 # Number of times the model is trained and tested
 
 	for curr_rep in range(num_rep):
 
@@ -22,11 +22,11 @@ try: # Capture any exception to make sure the computer always shuts down
 
 		# Ej name: DQN_alfa-0.005_dropout-0.4_batch-16_its-7500_1
 
-		model_id = curr_rep+24 # To differentiate different tests with the same model hyperparameters
+		model_id = curr_rep # To differentiate different tests with the same model hyperparameters
 
-		num_its = 5000 # Number of iterations for training
+		num_its = 500 # Number of iterations for training
 		alfa = 0.005 # Learning rate
-		dropout = 0.4 # Dropout value
+		dropout = 0.2 # Dropout value
 		batch_size = 16 # Batch size
 
 
@@ -146,4 +146,4 @@ except:
 	subprocess.call("touch SE_HA_PRODUCIDO_UNA_EXCEPCION", shell=True)
 finally:
 	# Shutdown Computer regardless of exceptions - NEEDS ROOT PRIVILEGES!!
-	os.system("shutdown -h +1") # Shutdown in 1 minute to make it possible to halt it
+	# os.system("shutdown -h +1") # Shutdown in 1 minute to make it possible to halt it

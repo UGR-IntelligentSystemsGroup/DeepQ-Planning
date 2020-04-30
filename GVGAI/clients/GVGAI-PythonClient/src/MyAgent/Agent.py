@@ -43,7 +43,7 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE="test" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name="DQN_alfa-0.005_dropout-0.4_batch-16_its-5000_27" # Automatically changed by ejecutar_pruebas.py!
+        self.network_name="DQN_alfa-0.005_dropout-0.2_batch-16_its-500_0" # Automatically changed by ejecutar_pruebas.py!
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
         self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
@@ -72,8 +72,8 @@ class Agent(AbstractPlayer):
             # Parameters of the Learning Model
             # Automatically changed by ejecutar_pruebas.py!
             self.learning_rate=0.005
-            self.dropout_prob=0.4
-            self.num_train_its=5000
+            self.dropout_prob=0.2
+            self.num_train_its=500
             self.batch_size=16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
