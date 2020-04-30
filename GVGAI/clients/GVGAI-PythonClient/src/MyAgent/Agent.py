@@ -40,7 +40,7 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE="create_dataset" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         self.network_name="DQN_alfa-0.005_dropout-0.2_batch-16_its-500_0" # Automatically changed by ejecutar_pruebas.py!
@@ -62,11 +62,12 @@ class Agent(AbstractPlayer):
             self.memory = []
 
             # Path of the file to save the experience replay to
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_15.dat'
+            id_dataset=10
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_{}.dat'.format(id_dataset)
 
             # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
             # is saved and the program exits
-            self.num_samples_for_saving_dataset = 1000
+            self.num_samples_for_saving_dataset = 1000 
 
         elif self.EXECUTION_MODE == 'train':
             # Parameters of the Learning Model
