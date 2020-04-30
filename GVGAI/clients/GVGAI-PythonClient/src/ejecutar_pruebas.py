@@ -145,5 +145,6 @@ except:
 
 	subprocess.call("touch SE_HA_PRODUCIDO_UNA_EXCEPCION", shell=True)
 finally:
+	pass
 	# Shutdown Computer regardless of exceptions - NEEDS ROOT PRIVILEGES!!
 	# os.system("shutdown -h +1") # Shutdown in 1 minute to make it possible to halt it
