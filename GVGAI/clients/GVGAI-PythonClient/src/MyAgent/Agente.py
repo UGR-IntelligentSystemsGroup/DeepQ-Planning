@@ -2,6 +2,7 @@ from AbstractPlayer import AbstractPlayer
 from Types import *
 
 from planning.Translator import Translator
+from planning.Planning import Planning
 
 from utils.Types import LEARNING_SSO_TYPE
 from planning.parser import Parser
@@ -23,6 +24,7 @@ class Agent(AbstractPlayer):
         """
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
+        self.config_file = "config/ice-and-fire.yaml"
 
 
     def init(self, sso, elapsedTimer):
@@ -33,7 +35,8 @@ class Agent(AbstractPlayer):
         * @param elapsedTimer Timer, which is 1s by default. Modified to 1000s.
                               Check utils/CompetitionParameters.py for more info.
         """
-        self.translator = Translator(sso, "config/ice-and-fire.yaml")
+        self.translator = Translator(sso, self.config_file)
+        self.planning = Planning(self.config_file)
 
         # Set first turn as True
         self.first_turn = True
@@ -71,6 +74,8 @@ class Agent(AbstractPlayer):
         #print(sso.observationGrid[0][0][0].obsID)
         #print(sso.observationGrid[0][0][0].reference)
         pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, [])
+        self.planning.generate_problem_file(pddl_predicates, pddl_objects, "")
+        self.planning.call_planner()
         input()
         
         return 'ACTION_NIL'

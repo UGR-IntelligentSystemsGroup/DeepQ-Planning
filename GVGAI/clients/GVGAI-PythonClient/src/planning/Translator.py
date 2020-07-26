@@ -19,7 +19,6 @@ class Translator:
                 self.game_information = yaml.safe_load(stream)
             except yaml.YAMLError as exc:
                 print(exc)
-        print(self.game_information)
 
         # Generate connectivity predicates and variables for each game element
         self.game_elements_vars = self._extract_variables_from_predicates()
