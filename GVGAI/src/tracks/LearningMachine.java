@@ -12,9 +12,15 @@ import core.vgdl.VGDLRegistry;
 import ontology.Types;
 import tools.ElapsedCpuTimer;
 import tools.StatSummary;
+import tools.com.google.gson.Gson;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+
 
 /**
  * Created by Daniel on 07.03.2017.
@@ -136,6 +142,25 @@ public class LearningMachine {
         }
 
         Game toPlay = new VGDLParser().parseGame(game_file);
+
+        // Keys and values must be swapped
+        try {
+            Map<Integer, String> typeToNameMap = new HashMap<>();
+            Map<String, Integer> spriteMapping = VGDLRegistry.GetInstance().getSpriteMapping();
+
+            for (Map.Entry<String, Integer> entry: spriteMapping.entrySet()) {
+                typeToNameMap.put(entry.getValue(), entry.getKey());
+            }
+
+            Writer writer = new FileWriter("logs/typeToName.json");
+
+            new Gson().toJson(typeToNameMap, writer);
+
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         int levelIdx = 0;
 
         StatSummary[] victories = new StatSummary[toPlay.getNoPlayers()];

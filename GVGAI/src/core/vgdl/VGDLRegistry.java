@@ -130,4 +130,8 @@ public class VGDLRegistry
         return sprite_mapping.size();
     }
 
+    public TreeMap<String, Integer> getSpriteMapping() {
+        return this.sprite_mapping;
+    }
+
 }
