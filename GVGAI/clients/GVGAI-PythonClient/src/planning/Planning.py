@@ -3,6 +3,11 @@ import subprocess
 
 class Planning:
     def __init__(self, config_path):
+        """
+        Planning constructor. Creates a new instance.
+
+        @param config_path Path to the YAML configuration file.
+        """
         # Load game information
         with open(config_path, "r") as stream:
             try:
@@ -17,6 +22,13 @@ class Planning:
 
 
     def generate_problem_file(self, pddl_predicates, pddl_objects, goal):
+        """
+        Method that generates a PDDL problem file.
+
+        @param pddl_predicates List of predicates that make up the initial state.
+        @param pddl_objects List of objects that can be found in the initial state.
+        @param goal Goal predicate to be reached.
+        """
         with open(self.game_information["problemFile"], "w") as problem_file:
             # Write initial lines
             problem_file.write(f'(define (problem {self.game_information["domainName"]}Problem)\n')
@@ -43,11 +55,15 @@ class Planning:
             problem_file.write(f"\t{goal}\n".expandtabs(12))
             problem_file.write("\t)\n".expandtabs(8))
             problem_file.write("\t)\n".expandtabs(4))
-
-
             problem_file.write(")\n")
 
+
     def call_planner(self):
+        """
+        Method that calls the planner and gets its output.
+
+        @return Planner's output.
+        """
         process = subprocess.Popen(self.planner_command, stdout=subprocess.PIPE)
         out = process.communicate()
 

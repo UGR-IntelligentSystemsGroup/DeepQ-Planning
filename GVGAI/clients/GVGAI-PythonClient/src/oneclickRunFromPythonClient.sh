@@ -2,7 +2,7 @@
 
 game_id=43
 server_dir=../../..
-agent_name=MyAgent.Agente
+agent_name=MyAgent.ExampleAgent
 sh_dir=utils
 
 
