@@ -28,7 +28,7 @@ class Translator:
 
         # Generate connectivity predicates and variables for each game element
         self.game_elements_vars = self._extract_variables_from_predicates()
-        self.connection_predicates = self._generate_cell_conectivity_predicates()
+        self.connection_predicates, self.cell_objects = self._generate_cell_conectivity_predicates()
 
 
     def translate_game_state_to_PDDL(self, sso, other_predicates):
@@ -44,6 +44,7 @@ class Translator:
         """
         pddl_predicates = []
         pddl_vars_instances = {var: set() for var in self.game_information["variablesTypes"].keys()}
+        pddl_vars_instances[self.game_information["cellVariable"]] = self.cell_objects
 
         game_map = self._translate_state_observation(sso)
 
@@ -145,19 +146,22 @@ class Translator:
 
     def _generate_cell_conectivity_predicates(self):
         """
-        Method used to generate the cell connectivity predicates.
+        Method used to generate the cell connectivity predicates and cell objects.
 
-        @return List containing the cell connectivity predicates.
+        @return List containing the cell connectivity predicates and set containing
+                the cell objects.
         """
         def generate_connectivity_predicate(game_info, current_cell, connection, var, x, y):
             return game_info["connections"][connection].replace("?c", current_cell).replace(var, f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", ""))
 
         game_info = self.game_information
         connection_predicates = []
+        cell_objects = set()
 
         for y in range(self.Y_MAX):
             for x in range(self.X_MAX):
                 current_cell = f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", "")
+                cell_objects.add(current_cell)
 
                 if y - 1 >= 0:
                     connection_predicates.append(generate_connectivity_predicate(game_info, current_cell, "UP", "?u", x, y - 1))
@@ -171,7 +175,7 @@ class Translator:
                 if x + 1 < self.X_MAX:
                     connection_predicates.append(generate_connectivity_predicate(game_info, current_cell, "RIGHT", "?r", x + 1, y))
 
-        return connection_predicates
+        return connection_predicates, cell_objects
 
 
     def _translate_state_observation(self, sso):

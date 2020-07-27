@@ -1,4 +1,4 @@
-domainFile: domains/ice-and-fire-domain.pddl
+domainFile: domains/IceAndFireDomain.pddl
 problemFile: problem.pddl
 domainName: IceAndFire
 gameElementsCorrespondence:
@@ -57,4 +57,3 @@ actionsCorrespondence:
   MOVE-DOWN-FIRE: ACTION_DOWN
   MOVE-LEFT-FIRE: ACTION_LEFT
   MOVE-RIGHT-FIRE: ACTION_RIGHT
-  PICK-BOOTS: null

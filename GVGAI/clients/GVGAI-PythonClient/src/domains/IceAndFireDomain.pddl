@@ -17,9 +17,9 @@
     (connected-down ?c1 ?c2 - Cell)
     (connected-left ?c1 ?c2 - Cell)
     (connected-right ?c1 ?c2 - Cell)
-    (exited-level ?a - Avatar)
   )
-  
+ 
+  ;; Normal movement
   (:action move-up
     :parameters (?a - Avatar ?c1 ?c2 - Cell)
     :precondition (and
@@ -76,8 +76,7 @@
     )
   )
   
-  ;; Movimientos con botas de hielo
-  
+  ;; Movements using ice boots
   (:action move-up-ice
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?i - Ice)
     :precondition (and
@@ -138,8 +137,7 @@
     )
   )
   
-  ;; Movimientos con botas de fuego
-  
+  ;; Movements using fire boots
   (:action move-up-fire
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?f - Fire)
     :precondition (and
@@ -197,19 +195,6 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
-    )
-  )
-  
-  ;; Salir del nivel
-  (:action exit-level
-    :parameters (?a - Avatar ?c - Cell ?e - Exit)
-    :precondition (and
-      (at ?a ?c)
-      (at ?e ?c)
-    )
-    :effect (and
-      (not (at ?a ?c))
-      (exited-level ?a)
     )
   )
 )
