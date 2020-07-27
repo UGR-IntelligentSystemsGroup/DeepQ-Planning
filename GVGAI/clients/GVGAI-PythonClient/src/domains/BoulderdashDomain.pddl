@@ -3,7 +3,7 @@
 
   (:types
     Bat Scorpion - Enemy
-    Gem Player Boulder Enemy Exit - Locatable
+    Gem Player Boulder Enemy Exit Wall - Locatable
     Cell
   )
 
@@ -17,11 +17,6 @@
     (connected-down ?c1 ?c2 - Cell)
     (connected-left ?c1 ?c2 - Cell)
     (connected-right ?c1 ?c2 - Cell)
-    (terrain-ground ?c - Cell)
-    (terrain-wall ?c - Cell)
-    (terrain-empty ?c - Cell)
-    (got ?g - Gem)
-    (exited-level ?p - Player)
   )
 
   (:action turn-up
@@ -119,13 +114,9 @@
       (oriented-up ?p)
       (connected-up ?c1 ?c2)
       (not (exists (?b - Boulder) (at ?b ?c2)))
-      (not (terrain-wall ?c2))
+      (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
-      (when
-        (not (terrain-empty ?c2))
-        (terrain-empty ?c2)
-      )
       (not (at ?p ?c1))
       (at ?p ?c2)
     )
@@ -138,13 +129,9 @@
       (oriented-down ?p)
       (connected-down ?c1 ?c2)
       (not (exists (?b - Boulder) (at ?b ?c2)))
-      (not (terrain-wall ?c2))
+      (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
-      (when
-        (not (terrain-empty ?c2))
-        (terrain-empty ?c2)
-      )
       (not (at ?p ?c1))
       (at ?p ?c2)
     )
@@ -157,13 +144,9 @@
       (oriented-left ?p)
       (connected-left ?c1 ?c2)
       (not (exists (?b - Boulder) (at ?b ?c2)))
-      (not (terrain-wall ?c2))
+      (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
-      (when
-        (not (terrain-empty ?c2))
-        (terrain-empty ?c2)
-      )
       (not (at ?p ?c1))
       (at ?p ?c2)
     )
@@ -176,28 +159,11 @@
       (oriented-right ?p)
       (connected-right ?c1 ?c2)
       (not (exists (?b - Boulder) (at ?b ?c2)))
-      (not (terrain-wall ?c2))
+      (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
-      (when
-        (not (terrain-empty ?c2))
-        (terrain-empty ?c2)
-      )
       (not (at ?p ?c1))
       (at ?p ?c2)
-    )
-  )
-
-  (:action get-gem
-    :parameters (?p - Player ?c - Cell ?g - Gem)
-    :precondition (and
-      (at ?p ?c)
-      (at ?g ?c)
-      (not (got ?g))
-    )
-    :effect (and
-      (not (at ?g ?c))
-      (got ?g)
     )
   )
 
@@ -250,18 +216,6 @@
     )
     :effect (and
       (not (at ?b ?c2))
-    )
-  )
-
-  (:action exit-level
-    :parameters (?p - Player ?c - Cell ?e - Exit)
-    :precondition (and
-      (at ?p ?c)
-      (at ?e ?c)
-    )
-    :effect (and
-      (not (at ?p ?c))
-      (exited-level ?p)
     )
   )
 )
