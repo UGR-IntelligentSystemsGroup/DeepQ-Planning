@@ -15,6 +15,7 @@ class Planning:
                 '-f', self.game_information["problemFile"], '-O', '-g', '1', '-h', '1'
         ]
 
+
     def generate_problem_file(self, pddl_predicates, pddl_objects, goal):
         with open(self.game_information["problemFile"], "w") as problem_file:
             # Write initial lines

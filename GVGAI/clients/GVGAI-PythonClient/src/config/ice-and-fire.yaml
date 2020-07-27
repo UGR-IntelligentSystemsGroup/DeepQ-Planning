@@ -18,11 +18,9 @@ gameElementsCorrespondence:
   - (at ?f ?c)
   - (has-hazard ?c)
   iceshoes:
-  - (at ?ib ?c)
-  - (ice-boots ?ib)
+  - (at ?b ?c)
   fireboots:
-  - (at ?fb ?c)
-  - (fire-boots ?fb)
+  - (at ?b ?c)
   chip:
   - (at ?m ?c)
   wall:
@@ -34,13 +32,13 @@ variablesTypes:
   ?t: Trap
   ?i: Ice
   ?f: Fire
-  ?ib: Boots
-  ?fb: Boots
+  ?b: Boots
   ?m: Coin
   ?w: Tree
   ?c: Cell
 cellVariable: ?c
 avatarVariable: ?a
+goalPredicate: (at ?a ?c)
 connections:
   UP: (connected-up ?c ?u)
   DOWN: (connected-down ?c ?d)

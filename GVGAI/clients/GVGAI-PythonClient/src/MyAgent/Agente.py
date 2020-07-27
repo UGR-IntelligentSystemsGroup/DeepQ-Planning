@@ -49,8 +49,6 @@ class Agent(AbstractPlayer):
         self.can_exit = False
 
 
-
-
     def act(self, sso, elapsedTimer):
         """
         Method used to determine the next move to be performed by the agent.
@@ -63,20 +61,16 @@ class Agent(AbstractPlayer):
                             Check utils/CompetitionParameters.py for more info.
         @return The action to be performed by the agent.
         """
-        print(dir(sso))
-        print(sso.avatarOrientation)
-        #print(len(sso.observationGrid))
-        #print(dir(sso.observationGrid[0][0]))
-        #print(dir(sso.observationGrid[0][0][0]))
-        #print(sso.observationGrid[0][0][0].category)
-        #print(sso.observationGrid[0][0][0].itype)
+        pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, ["(has-ice-boots)", "(has-fire-boots)"])
+        goal_predicate = self.translator.generate_goal_predicate(14, 1)
 
-        #print(sso.observationGrid[0][0][0].obsID)
-        #print(sso.observationGrid[0][0][0].reference)
-        pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, [])
-        self.planning.generate_problem_file(pddl_predicates, pddl_objects, "")
-        self.planning.call_planner()
-        input()
+        self.planning.generate_problem_file(pddl_predicates, pddl_objects, goal_predicate)
+        planner_output = self.planning.call_planner()
+
+        plan = self.translator.translate_planner_output(planner_output)
+
+        #print(plan)
+        #input()
         
         return 'ACTION_NIL'
 

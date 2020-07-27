@@ -76,6 +76,27 @@ class Translator:
 
         return pddl_predicates, pddl_objects
 
+    
+    def generate_goal_predicate(self, x, y):
+        goal_predicate = self.game_information["goalPredicate"]
+
+        avatar_instance = self.game_information["avatarVariable"].replace("?", "")
+        cell_instance = f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", "")
+
+        goal_predicate = goal_predicate.replace(self.game_information["avatarVariable"], avatar_instance)
+        goal_predicate = goal_predicate.replace(self.game_information["cellVariable"], cell_instance)
+
+        return goal_predicate
+
+
+    def translate_planner_output(self, planner_output):
+        return [
+                    self.game_information["actionsCorrespondence"][pddl_action]
+                    for line in planner_output.split('\n')
+                    for pddl_action in self.game_information["actionsCorrespondence"]
+                    if pddl_action in line
+        ]
+
 
     def _extract_variables_from_predicates(self):
         return {
