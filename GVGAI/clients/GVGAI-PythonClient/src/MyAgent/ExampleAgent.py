@@ -50,15 +50,34 @@ class Agent(AbstractPlayer):
                             Check utils/CompetitionParameters.py for more info.
         @return The action to be performed by the agent.
         """
-        pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, ["(has-ice-boots)", "(has-fire-boots)"])
-        goal_predicate = self.translator.generate_goal_predicate(14, 1)
+
+        plan = self.search_plan(sso, 14, 1, ["(has-ice-boots)", "(has-fire-boots)"])
+        
+        return 'ACTION_NIL'
+
+
+    def search_plan(self, sso, x_goal, y_goal, other_predicates):
+        """
+        Method used to search a plan to a goal.
+
+        @param sso State observation.
+        @param x_goal X-axis coordinate of the goal to be reached.
+        @param y_goal Y-axis coordinate of the goal to be reached.
+        @param other_predicates List of predicates to be appended to the ones
+                                of the current state.
+        @return Returns a plan to the current goal.
+        """
+        pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, other_predicates)
+        goal_predicate = self.translator.generate_goal_predicate(x_goal, y_goal)
 
         self.planning.generate_problem_file(pddl_predicates, pddl_objects, goal_predicate)
         planner_output = self.planning.call_planner()
 
         plan = self.translator.translate_planner_output(planner_output)
-        
-        return 'ACTION_NIL'
+
+        return plan
+
+
 
 
 
