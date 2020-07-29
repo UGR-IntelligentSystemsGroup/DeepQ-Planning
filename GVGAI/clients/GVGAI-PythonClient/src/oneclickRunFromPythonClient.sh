@@ -5,7 +5,7 @@
 # 43 -> IceAndFire
 # 16 -> Catapults
 
-game_id=43
+game_id=16
 server_dir=../../..
 agent_name=MyAgent.ExampleAgent
 sh_dir=utils

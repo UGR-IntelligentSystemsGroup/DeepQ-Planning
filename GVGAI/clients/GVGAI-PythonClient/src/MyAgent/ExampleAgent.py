@@ -24,11 +24,11 @@ class Agent(AbstractPlayer):
 		AbstractPlayer.__init__(self)
 		self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-		self.config_file = "config/ice-and-fire.yaml"
+		self.config_file = "config/catapults.yaml"
 		self.planning = Planning(self.config_file)
 
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing = 'IceAndFire'
+		self.game_playing = 'Catapults'
 
 	def init(self, sso, elapsedTimer):
 		"""
@@ -40,13 +40,7 @@ class Agent(AbstractPlayer):
 		"""
 		self.translator = Translator(sso, self.config_file)
 
-		self.plan = self.search_plan(sso, 14, 12, [])
-
-		# QUITAR!!!!!
-		self.var = True
-
-		# Keys de los recursos de IceAndFire (sso.avatarResources)
-		# '8' -> Bota de nieve
+		self.plan = []
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -60,26 +54,17 @@ class Agent(AbstractPlayer):
 							Check utils/CompetitionParameters.py for more info.
 		@return The action to be performed by the agent.
 		"""
-
-		# ["(has-ice-boots)", "(has-fire-boots)"]
-	
-		self.get_boots_resources(sso)
-
-		if len(self.plan) == 0 and self.var:
-			"""subgoals = self.get_subgoals_positions(sso)
+		
+		if len(self.plan) == 0:
+			subgoals = self.get_subgoals_positions(sso)
 			chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
 
-			self.plan = self.search_plan(sso, chosen_subgoal[0], chosen_subgoal[1], [])"""
+			if self.game_playing == 'IceAndFire': # If the game is IceAndFire, check how many types of boots the agent has
+				boots_resources = self.get_boots_resources(sso)
+			else:
+				boots_resources = []
 
-			self.plan = self.search_plan(sso, 4, 3, ["(has-ice-boots)"]) # Posición de la bota de fuego
-
-			print(self.plan)
-
-			self.var = False
-
-
-			pass
-
+			self.plan = self.search_plan(sso, chosen_subgoal[0], chosen_subgoal[1], boots_resources)
 
 		if len(self.plan) > 0:
 			return self.plan.pop(0)
@@ -146,11 +131,9 @@ class Agent(AbstractPlayer):
 		elif self.game_playing == 'IceAndFire':
 			# Itypes of observations corresponding to subgoals
 			subgoals_itypes = (10,9,8) # Itypes of coins, fire boots and ice boots
-			coin_itype = 10
 
-			# Get positions of subgoals and number of coins on the map
+			# Get positions of subgoals
 			subgoal_pos = []
-			n_coins = 0
 
 			obs = sso.observationGrid
 			X_MAX = sso.observationGridNum
@@ -167,34 +150,62 @@ class Agent(AbstractPlayer):
 
 							subgoal_pos.append((pos_x, pos_y))
 
-							# If the subgoal is a coin, count it
-							if observation.itype == coin_itype:
-								n_coins += 1
+			# Add the exit position as an elegible subgoal
+			exit = sso.portalsPositions[0][0]
+			exit_pos_x = int(exit.position.x // sso.blockSize)
+			exit_pos_y = int(exit.position.y // sso.blockSize)
 
-			# If there are no coins on the map, the subgoal corresponds to the exit
-			if n_coins == 0:
-				# self.can_exit = True
-				exit = sso.portalsPositions[0][0]
-				exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+			subgoal_pos.append((exit_pos_x, exit_pos_y))
 
-				return [exit_pos]
-
-			else:
-				return subgoal_pos
+			return subgoal_pos
 
 		elif self.game_playing == 'Catapults':
-			pass
+			# Itypes of observations corresponding to subgoals
+			subgoals_itypes = (5,6,7,8) # Itypes of the four different types of catapults
+
+			# Get positions of subgoals
+			subgoal_pos = []
+
+			obs = sso.observationGrid
+			X_MAX = sso.observationGridNum
+			Y_MAX = sso.observationGridMaxRow
+
+			for y in range(Y_MAX):
+				for x in range(X_MAX):
+					observation = sso.observationGrid[x][y][0]
+
+					if observation is not None:
+						if observation.itype in subgoals_itypes:
+							pos_x = int(observation.position.x // sso.blockSize) # Convert from pixel to grid positions
+							pos_y = int(observation.position.y // sso.blockSize) 
+
+							subgoal_pos.append((pos_x, pos_y))
+
+			# Add the exit position as an elegible subgoal
+			exit = sso.portalsPositions[0][0]
+			exit_pos_x = int(exit.position.x // sso.blockSize)
+			exit_pos_y = int(exit.position.y // sso.blockSize)
+
+			subgoal_pos.append((exit_pos_x, exit_pos_y))
+
+			return subgoal_pos
 
 	# In the IceAndFire game, returns a list with the types of boots the agent has
 	def get_boots_resources(self, sso):
-		keys = sso.avatarResources.keys()
+		boots_resources = []
 
-		# Check if the agent has at least one boot
+		keys = sso.avatarResources.keys()
+		ice_boot_key = '8'	# Keys of each boot in the avatarResources dictionary
+		fire_boot_key = '9'						
+
+		# Check if the agent has at least one boot	
 		if len(keys) > 0:
-			gem_key = list(sso.avatarResources)[0]
-			print(sso.avatarResources)
-		else:
-			print("No tiene botas")
+			if ice_boot_key in keys: # The agent has ice boots
+				boots_resources.append("(has-ice-boots)")
+			if fire_boot_key in keys: # The agent has fire boots
+				boots_resources.append("(has-fire-boots)")
+
+		return boots_resources
 
 
 
