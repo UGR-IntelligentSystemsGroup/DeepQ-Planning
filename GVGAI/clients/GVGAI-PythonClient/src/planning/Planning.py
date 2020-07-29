@@ -31,28 +31,28 @@ class Planning:
         """
         with open(self.game_information["problemFile"], "w") as problem_file:
             # Write initial lines
-            problem_file.write(f'(define (problem {self.game_information["domainName"]}Problem)\n')
-            problem_file.write(f'\t(:domain {self.game_information["domainName"]})\n'.expandtabs(4))
+            problem_file.write('(define (problem {}Problem)\n'.format(self.game_information["domainName"]))
+            problem_file.write('\t(:domain {})\n'.format(self.game_information["domainName"]).expandtabs(4))
 
             # Write objects
             problem_file.write("\t(:objects\n".expandtabs(4))
 
             for pddl_type, objects in pddl_objects.items():
                 if len(objects) > 0:
-                    problem_file.write(f"\t{' '.join(sorted(objects))} - {pddl_type}\n".expandtabs(8))
+                    problem_file.write("\t{} - {}\n".format(' '.join(sorted(objects)), pddl_type).expandtabs(8))
 
             problem_file.write("\t)\n".expandtabs(4))
 
             # Write init state
             problem_file.write("\t(:init\n".expandtabs(4))
             pattern = "\n\t"
-            problem_file.write(f"\t{pattern.join(pddl_predicates)}\n".expandtabs(8))
+            problem_file.write("\t{}\n".format(pattern.join(pddl_predicates)).expandtabs(8))
             problem_file.write("\t)\n".expandtabs(4))
 
             # Write goal
             problem_file.write("\t(:goal\n".expandtabs(4))
             problem_file.write("\t(AND\n".expandtabs(8))
-            problem_file.write(f"\t{goal}\n".expandtabs(12))
+            problem_file.write("\t{}\n".format(goal).expandtabs(12))
             problem_file.write("\t)\n".expandtabs(8))
             problem_file.write("\t)\n".expandtabs(4))
             problem_file.write(")\n")

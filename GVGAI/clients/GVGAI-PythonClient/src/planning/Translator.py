@@ -73,7 +73,7 @@ class Translator:
 
                                             pddl_predicates.append(self.game_information["orientationCorrespondence"][orientation].replace(var, var_instance))
                                     else:
-                                        var_instance = f"{var}_{x}_{y}".replace("?", "")
+                                        var_instance = "{}_{}_{}".format(var,x,y).replace("?", "")
 
                                     predicate_instance = predicate_instance.replace(var, var_instance)
                                     pddl_vars_instances[var].add(var_instance)
@@ -103,7 +103,7 @@ class Translator:
         goal_predicate = self.game_information["goalPredicate"]
 
         avatar_instance = self.game_information["avatarVariable"].replace("?", "")
-        cell_instance = f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", "")
+        cell_instance = '{}_{}_{}'.format(self.game_information["cellVariable"], x, y).replace("?", "")
 
         goal_predicate = goal_predicate.replace(self.game_information["avatarVariable"], avatar_instance)
         goal_predicate = goal_predicate.replace(self.game_information["cellVariable"], cell_instance)
@@ -151,8 +151,8 @@ class Translator:
         @return List containing the cell connectivity predicates and set containing
                 the cell objects.
         """
-        def generate_connectivity_predicate(game_info, current_cell, connection, var, x, y):
-            return game_info["connections"][connection].replace("?c", current_cell).replace(var, f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", ""))
+        def generate_connectivity_predicate(game_info, current_cell, connection, var, x, y): 
+            return game_info["connections"][connection].replace("?c", current_cell).replace(var, '{}_{}_{}'.format(self.game_information["cellVariable"], x, y).replace("?", ""))
 
         game_info = self.game_information
         connection_predicates = []
@@ -160,7 +160,7 @@ class Translator:
 
         for y in range(self.Y_MAX):
             for x in range(self.X_MAX):
-                current_cell = f'{self.game_information["cellVariable"]}_{x}_{y}'.replace("?", "")
+                current_cell = '{}_{}_{}'.format(self.game_information["cellVariable"], x, y).replace("?", "")
                 cell_objects.add(current_cell)
 
                 if y - 1 >= 0:
