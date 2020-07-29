@@ -1,4 +1,14 @@
-[GAME] Game idx:43 game name iceandfire
+[GAME] Game idx:16 game name catapults
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:0.0, timesteps:57
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:2.0, timesteps:62
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:5.0, timesteps:98
 [PHASE] Starting Validation in 2 levels.
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:0, Player0-Score:1.0, timesteps:11
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:4.0, timesteps:102
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:4.0, timesteps:84
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:0, Player0-Score:3.0, timesteps:40
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:0, Player0-Score:3.0, timesteps:42
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:0, Player0-Score:3.0, timesteps:32
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:0, Player0-Score:4.0, timesteps:61
+[VALIDATION] Result (1->win; 0->lose): level:4, Player0:1, Player0-Score:4.0, timesteps:82
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:0, Player0-Score:1.0, timesteps:17
