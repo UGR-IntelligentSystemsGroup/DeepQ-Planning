@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Games:
+# 11 -> BoulderDash
+# 43 -> IceAndFire
+# 16 -> Catapults
+
 game_id=43
 server_dir=../../..
 agent_name=MyAgent.ExampleAgent
