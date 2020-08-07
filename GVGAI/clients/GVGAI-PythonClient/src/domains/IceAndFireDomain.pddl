@@ -17,6 +17,7 @@
     (connected-down ?c1 ?c2 - Cell)
     (connected-left ?c1 ?c2 - Cell)
     (connected-right ?c1 ?c2 - Cell)
+    (cannot-move ?a - Avatar)
   )
  
   ;; Normal movement
@@ -24,6 +25,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-up ?c1 ?c2)
       (not (has-hazard ?c2))
       (not (non-traversable ?c2))
@@ -31,6 +33,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -38,6 +44,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-down ?c1 ?c2)
       (not (has-hazard ?c2))
       (not (non-traversable ?c2))
@@ -45,6 +52,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -52,6 +63,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-left ?c1 ?c2)
       (not (has-hazard ?c2))
       (not (non-traversable ?c2))
@@ -59,6 +71,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -66,6 +82,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-right ?c1 ?c2)
       (not (has-hazard ?c2))
       (not (non-traversable ?c2))
@@ -73,6 +90,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -81,6 +102,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?i - Ice)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-up ?c1 ?c2)
       (has-ice-boots)
       (has-hazard ?c2)
@@ -89,6 +111,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -96,6 +122,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?i - Ice)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-down ?c1 ?c2)
       (has-ice-boots)
       (has-hazard ?c2)
@@ -104,6 +131,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -111,6 +142,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?i - Ice)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-left ?c1 ?c2)
       (has-ice-boots)
       (has-hazard ?c2)
@@ -119,6 +151,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -126,6 +162,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?i - Ice)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-right ?c1 ?c2)
       (has-ice-boots)
       (has-hazard ?c2)
@@ -134,6 +171,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -142,6 +183,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?f - Fire)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-up ?c1 ?c2)
       (has-fire-boots)
       (has-hazard ?c2)
@@ -150,6 +192,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -157,6 +203,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?f - Fire)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-down ?c1 ?c2)
       (has-fire-boots)
       (has-hazard ?c2)
@@ -165,6 +212,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -172,6 +223,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?f - Fire)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-left ?c1 ?c2)
       (has-fire-boots)
       (has-hazard ?c2)
@@ -180,6 +232,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
   
@@ -187,6 +243,7 @@
     :parameters (?a - Avatar ?c1 ?c2 - Cell ?f - Fire)
     :precondition (and
       (at ?a ?c1)
+      (not (cannot-move ?a))
       (connected-right ?c1 ?c2)
       (has-fire-boots)
       (has-hazard ?c2)
@@ -195,6 +252,10 @@
     :effect (and
       (not (at ?a ?c1))
       (at ?a ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?a)
+      )
     )
   )
 )
