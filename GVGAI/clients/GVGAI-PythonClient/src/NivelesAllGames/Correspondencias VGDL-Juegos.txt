@@ -1,0 +1,31 @@
+--- Boulder Dash ---
+w > Wall
+. > Ground (filled tile)
+- > Empty tile
+o > Boulder
+x > Gem
+e > Exit
+A > Agent (Player)
+
+--- IceAndFire ---
+w > Wall (tree)
+. > Empty Tile
+x > Fire
+_ > Ice
+t > Spikes (the player dies if it walks on them)
+c > Coin
+i > Ice Boots
+f > Fire Boots
+e > Exit
+A > Agent (Player)
+
+--- Catapults ---
+_ > Empty Tile
+A > Agent (Player)
+w > Wall (tree)
+g > Exit
+. > Water (the player dies if it falls in water)
+0 > Right Catapult
+1 > Down Catapult
+2 > Up Catapult
+3 > Left Catapult
