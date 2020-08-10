@@ -14,7 +14,7 @@ import sys
 
 
 class Agent(AbstractPlayer):
-	NUM_GEMS_FOR_EXIT = 9
+	NUM_GEMS_FOR_EXIT = 9	# For BoulderDash
 
 	def __init__(self):
 		"""
@@ -83,57 +83,112 @@ class Agent(AbstractPlayer):
 								of the current state.
 		@return Returns a plan to the current goal.
 		"""
-		pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, other_predicates)
-		goal_predicate = self.translator.generate_goal_predicate(x_goal, y_goal)
+		
+		# Check if the goal passed as an argument corresponds to the final goal (the exit).
+		# In that case, check if its attainable from the current state sso. If not,
+		# return an empty plan.
 
-		self.planning.generate_problem_file(pddl_predicates, pddl_objects, goal_predicate)
-		planner_output = self.planning.call_planner()
+		# Check if the goal corresponds to the exit
 
-		plan = self.translator.translate_planner_output(planner_output)
+		exit = sso.portalsPositions[0][0]
+		exit_pos_x = int(exit.position.x // sso.blockSize)
+		exit_pos_y = int(exit.position.y // sso.blockSize)
+
+		subgoal_is_final = (exit_pos_x == x_goal and exit_pos_y == y_goal)
+
+		if subgoal_is_final:
+			# Check if the final goal is eligible
+
+			if self.game_playing == 'BoulderDash': # The agent needs to have 9 gems 
+				keys = sso.avatarResources.keys()
+
+				if len(keys) > 0:
+					gem_key = list(sso.avatarResources)[0]
+					num_gems = sso.avatarResources[gem_key]
+				else:
+					num_gems = 0
+
+				if num_gems < self.NUM_GEMS_FOR_EXIT:
+					find_plan = False
+					plan = []
+				else:
+					find_plan = True
+
+			elif self.game_playing == 'IceAndFire': # The agent needs to have 10 coins -> there can be no coins on the map
+				coin_itype = 10 # Itype of coins
+
+				# Get the number of coins left on the map
+				coins_on_the_map = 0
+
+				obs = sso.observationGrid
+				X_MAX = sso.observationGridNum
+				Y_MAX = sso.observationGridMaxRow
+
+				for y in range(Y_MAX):
+					for x in range(X_MAX):
+						observation = sso.observationGrid[x][y][0]
+
+						if observation is not None:
+							if observation.itype == coin_itype:
+								coins_on_the_map += 1
+
+				if coins_on_the_map == 0:
+					find_plan = True
+				else:
+					find_plan = False
+					plan = []
+
+			else: # Catapults -> the final goal is always eligible
+				find_plan = True
+		else:
+			find_plan = True # If the goal isn't final, then find a plan
+
+		if find_plan:
+			# Find the plan normally
+			pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, other_predicates)
+			goal_predicate = self.translator.generate_goal_predicate(x_goal, y_goal)
+
+			self.planning.generate_problem_file(pddl_predicates, pddl_objects, goal_predicate)
+			planner_output = self.planning.call_planner()
+
+			plan = self.translator.translate_planner_output(planner_output)
 
 		return plan
 
 	def get_subgoals_positions(self, sso):
+		# Note: the final subgoal is always returned, even if it's not eligible!
 
 		if self.game_playing == 'BoulderDash':
-			# Check if the agent has already got 9 gems
-			keys = sso.avatarResources.keys()
+			subgoal_pos = [] # Positions of subgoals
 
-			# Check if the agent has at least one gem
-			if len(keys) > 0:
-				gem_key = list(sso.avatarResources)[0]
-				num_gems = sso.avatarResources[gem_key]
-			else:
-				num_gems = 0
-
-			# Return the final goal (the position of the exit)
-			if num_gems >= self.NUM_GEMS_FOR_EXIT:
-				# self.can_exit = True
-
-				exit = sso.portalsPositions[0][0]
-				exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
-
-				return [exit_pos]
+			# Final goal
+			exit = sso.portalsPositions[0][0]
+			exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+			subgoal_pos.append(exit_pos)
 			
-			else: # Return gems positions
-				# Retrieve gems from current state observation
-				gems = sso.resourcesPositions[0] 
-				pos = []
+			# Gems subgoals
+			gems = sso.resourcesPositions[0] 
 
-				for gem in gems:
-					gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
-					gem_y = int(gem.position.y // sso.blockSize)
+			for gem in gems:
+				gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
+				gem_y = int(gem.position.y // sso.blockSize)
 
-					pos.append((gem_x, gem_y))
+				subgoal_pos.append((gem_x, gem_y))
 
-				return pos
+			return subgoal_pos
 
 		elif self.game_playing == 'IceAndFire':
+			subgoal_pos = [] # Positions of subgoals
+
+			# Final goal
+			exit = sso.portalsPositions[0][0]
+			exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+			subgoal_pos.append(exit_pos)
+
+			# Rest of subgoals
+
 			# Itypes of observations corresponding to subgoals
 			subgoals_itypes = (10,9,8) # Itypes of coins, fire boots and ice boots
-
-			# Get positions of subgoals
-			subgoal_pos = []
 
 			obs = sso.observationGrid
 			X_MAX = sso.observationGridNum
@@ -149,13 +204,6 @@ class Agent(AbstractPlayer):
 							pos_y = int(observation.position.y // sso.blockSize) 
 
 							subgoal_pos.append((pos_x, pos_y))
-
-			# Add the exit position as an elegible subgoal
-			exit = sso.portalsPositions[0][0]
-			exit_pos_x = int(exit.position.x // sso.blockSize)
-			exit_pos_y = int(exit.position.y // sso.blockSize)
-
-			subgoal_pos.append((exit_pos_x, exit_pos_y))
 
 			return subgoal_pos
 
