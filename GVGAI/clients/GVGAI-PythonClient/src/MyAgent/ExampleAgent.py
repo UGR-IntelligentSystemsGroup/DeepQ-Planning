@@ -30,6 +30,12 @@ class Agent(AbstractPlayer):
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
 		self.game_playing = 'Catapults'
 
+
+
+		# <DELETE>
+		self.total_num_samples = 0
+		self.num_times_agent_won = 0
+
 	def init(self, sso, elapsedTimer):
 		"""
 		* Public method to be called at the start of every level of a game.
@@ -54,17 +60,46 @@ class Agent(AbstractPlayer):
 							Check utils/CompetitionParameters.py for more info.
 		@return The action to be performed by the agent.
 		"""
-		
+
+		# Check if the agent can act at the current game state, i.e., execute an action.
+		# If it can't, the agent returns 'ACTION_NIL'
+		if not self.can_act(sso):
+			return 'ACTION_NIL'
+
+		# Empty plan. A new one must be found.
 		if len(self.plan) == 0:
 			subgoals = self.get_subgoals_positions(sso)
-			chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
 
-			if self.game_playing == 'IceAndFire': # If the game is IceAndFire, check how many types of boots the agent has
-				boots_resources = self.get_boots_resources(sso)
-			else:
-				boots_resources = []
+			# Choose a random subgoal until one is attainable (search_plan returns a non-empty plan)
+			while len(subgoals) > 0 and len(self.plan) == 0: 
+				ind_subgoal = random.randint(0, len(subgoals) - 1)
 
-			self.plan = self.search_plan(sso, chosen_subgoal[0], chosen_subgoal[1], boots_resources)
+				chosen_subgoal = subgoals[ind_subgoal]
+				del subgoals[ind_subgoal] # Delete the chosen subgoal from the list
+
+				if self.game_playing == 'IceAndFire': # If the game is IceAndFire, check how many types of boots the agent has
+					boots_resources = self.get_boots_resources(sso)
+				else:
+					boots_resources = []
+
+				self.plan = self.search_plan(sso, chosen_subgoal[0], chosen_subgoal[1], boots_resources)
+
+			# If there is no plan, it means that at the current game state no subgoal is attainable ->
+			# the agent escapes the level (it loses)
+			if len(self.plan) == 0:
+				return 'ACTION_ESCAPE'
+
+
+			# <DELETE>
+			if len(self.plan) > 0:
+				self.total_num_samples += 1
+
+
+		# <DELETE>
+		if self.total_num_samples == 500:
+			print("> 500 samples recogidos\n> {} victorias".format(self.num_times_agent_won))
+			sys.exit()
+
 
 		if len(self.plan) > 0:
 			return self.plan.pop(0)
@@ -255,6 +290,56 @@ class Agent(AbstractPlayer):
 
 		return boots_resources
 
+
+	def can_act(self, sso):
+		"""
+		This method returns True if the agent can act, i.e., can execute an action different than 'ACTION_NIL'
+		at the current state of the game.
+		If the game played is Catapults and the agent is on a water tile (it's mid air), it cannot act. 
+		Otherwise, it can act.
+		"""
+
+		if self.game_playing == 'Catapults':
+			bat_avatar_types = (11,12,13,14) # If the avatar type is one of these, the agent is a bat and cannot act
+											 # (since it's in mid air)
+
+			if sso.avatarType in bat_avatar_types:
+				return False
+			else:
+				return True
+
+		else:
+			return True 
+
+
+	def result(self, sso, timer):
+		"""
+		* Method used to perform actions in case of a game end.
+		* This is the last thing called when a level is played (the game is already in a terminal state).
+		* Use this for actions such as teardown or process data.
+		*
+		* @param sso The current state observation of the game.
+		* @param elapsedTimer Timer (up to CompetitionParameters.TOTAL_LEARNING_TIME
+		* or CompetitionParameters.EXTRA_LEARNING_TIME if current global time is beyond TOTAL_LEARNING_TIME)
+		* @return The next level of the current game to be played.
+		* The level is bound in the range of [0,2]. If the input is any different, then the level
+		* chosen will be ignored, and the game will play a random one instead.
+		"""
+		
+		# <DELETE>
+
+		
+		if sso.gameWinner == 'PLAYER_WINS':
+			print("El jugador gana!!")
+			
+			self.num_times_agent_won += 1
+			print("Número de victorias:", self.num_times_agent_won)
+		else:
+			print("El jugador pierde!!")
+
+
+
+		return -1 # Plan a random level
 
 
 
