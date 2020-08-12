@@ -331,7 +331,7 @@ class Agent(AbstractPlayer):
 		
 		if sso.gameWinner == 'PLAYER_WINS':
 			print("El jugador gana!!")
-			
+
 			self.num_times_agent_won += 1
 			print("Número de victorias:", self.num_times_agent_won)
 		else:
@@ -339,7 +339,7 @@ class Agent(AbstractPlayer):
 
 
 
-		return -1 # Plan a random level
+		return 0 # Plan a random level
 
 
 

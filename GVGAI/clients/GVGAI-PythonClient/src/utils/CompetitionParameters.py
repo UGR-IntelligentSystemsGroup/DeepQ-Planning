@@ -23,7 +23,7 @@ class CompetitionParameters:
 
     # Automatically changed by ejecutar_pruebas.py!
     # Tiempo de entrenamiento -> poner a un valor muy pequeño para test
-    TOTAL_LEARNING_TIME=0.1*MILLIS_IN_MIN
+    TOTAL_LEARNING_TIME=1000000*MILLIS_IN_MIN
     
     EXTRA_LEARNING_TIME = 1000000
     SOCKET_PORT = 8080
