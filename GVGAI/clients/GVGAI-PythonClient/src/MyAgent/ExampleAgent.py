@@ -30,11 +30,10 @@ class Agent(AbstractPlayer):
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
 		self.game_playing = 'Catapults'
 
-
-
 		# <DELETE>
+
 		self.total_num_samples = 0
-		self.num_times_agent_won = 0
+		self.sample_hashes = set()
 
 	def init(self, sso, elapsedTimer):
 		"""
@@ -66,6 +65,7 @@ class Agent(AbstractPlayer):
 		if not self.can_act(sso):
 			return 'ACTION_NIL'
 
+
 		# Empty plan. A new one must be found.
 		if len(self.plan) == 0:
 			subgoals = self.get_subgoals_positions(sso)
@@ -84,21 +84,37 @@ class Agent(AbstractPlayer):
 
 				self.plan = self.search_plan(sso, chosen_subgoal[0], chosen_subgoal[1], boots_resources)
 
+				# <TODO>
+				# Add samples
+
+				# <DELETE>
+
+				self.total_num_samples += 1
+
+				curr_hash = self.get_sso_subgoal_hash(sso, chosen_subgoal)
+
+				if curr_hash not in self.sample_hashes: # If the sample is new, add it
+					self.sample_hashes.add(curr_hash)
+
+				if self.total_num_samples % 10 == 0: # Periodically show the progress
+					print("n_total_samples:", self.total_num_samples)
+					print("n_unique_samples:", len(self.sample_hashes))
+
+
+
+
 			# If there is no plan, it means that at the current game state no subgoal is attainable ->
 			# the agent escapes the level (it loses)
 			if len(self.plan) == 0:
 				return 'ACTION_ESCAPE'
 
 
-			# <DELETE>
-			if len(self.plan) > 0:
-				self.total_num_samples += 1
-
-
 		# <DELETE>
-		if self.total_num_samples == 500:
-			print("> 500 samples recogidos\n> {} victorias".format(self.num_times_agent_won))
+		if len(self.sample_hashes) == 500 or self.total_num_samples >= 1000:
+			print("> Num samples únicos:", len(self.sample_hashes))
+			print("> Num samples recogidos:", self.total_num_samples)
 			sys.exit()
+
 
 
 		if len(self.plan) > 0:
@@ -311,6 +327,29 @@ class Agent(AbstractPlayer):
 		else:
 			return True 
 
+	def get_sso_subgoal_hash(self, sso, chosen_subgoal):
+		"""
+		Given the current state of the game and the chosen subgoal, it returns a hash. Two different sso's will have the same hash if
+		their observation matrices contain the same observations in their first position of each cell.
+		"""
+		obs_matrix = []
+		obs = sso.observationGrid
+		X_MAX = sso.observationGridNum
+		Y_MAX = sso.observationGridMaxRow
+
+		for y in range(Y_MAX):
+			for x in range(X_MAX):
+				observation = obs[x][y][0]
+
+				if observation is None:
+					obs_matrix.append(-1)
+				else:
+					obs_matrix.append(observation.itype)
+
+		# Append the chosen subgoal to the matrix
+		obs_matrix.append(chosen_subgoal)			
+
+		return hash(tuple(obs_matrix))
 
 	def result(self, sso, timer):
 		"""
@@ -325,21 +364,8 @@ class Agent(AbstractPlayer):
 		* The level is bound in the range of [0,2]. If the input is any different, then the level
 		* chosen will be ignored, and the game will play a random one instead.
 		"""
-		
-		# <DELETE>
 
-		
-		if sso.gameWinner == 'PLAYER_WINS':
-			print("El jugador gana!!")
-
-			self.num_times_agent_won += 1
-			print("Número de victorias:", self.num_times_agent_won)
-		else:
-			print("El jugador pierde!!")
-
-
-
-		return 0 # Plan a random level
+		return 0
 
 
 

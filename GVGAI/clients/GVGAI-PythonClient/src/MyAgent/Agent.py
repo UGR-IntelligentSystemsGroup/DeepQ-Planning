@@ -715,6 +715,7 @@ class Agent(AbstractPlayer):
 
 
         # Play levels 0-2 in order
+        # Note: in training, the agent must play levels 0-2 before choosing
         self.current_level = (self.current_level + 1) % 3
 
         return self.current_level
