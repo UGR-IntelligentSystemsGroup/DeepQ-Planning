@@ -1,6 +1,9 @@
 from AbstractPlayer import AbstractPlayer
 from Types import *
 
+from planning.Translator import Translator
+from planning.Planning import Planning
+
 from utils.Types import LEARNING_SSO_TYPE
 from planning.parser import Parser
 
@@ -26,12 +29,14 @@ class Agent(AbstractPlayer):
         AbstractPlayer.__init__(self)
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
-        self.current_level = 0 # Level playing right now
+        # Attributes different for every game
+        self.config_file="config/catapults.yaml" # Yaml file used to parse the sso into a pddl representation
+        self.game_playing='Catapults' # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
+        self.planning = Planning(self.config_file)
 
-        # Set parser
-        self.parser = Parser('planning/domain.pddl', 'planning/problem.pddl',
-                self.DESC_FILE, self.OUT_FILE)
-
+        # The number of actions an invalid plan is associated, i.e., when
+        # there is no plan for the selected subgoal
+        self.num_actions_invalid_plan = 1000
 
         # << Choose execution mode >>
         # - 'create_dataset' -> It doesn't train any model. Just creates the dataset (experience replay) and saves it
@@ -40,7 +45,7 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="test" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE="create_dataset" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         self.network_name="DQN_alfa-0.005_dropout-0.2_batch-16_its-500_0" # Automatically changed by ejecutar_pruebas.py!
@@ -48,8 +53,6 @@ class Agent(AbstractPlayer):
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
         self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
 
-        # <TODO>
-        # Cambiar de random sampling del experience replay a secuencial (tras aleatorizar el vector con np.shuffle)
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -61,13 +64,18 @@ class Agent(AbstractPlayer):
             #         It's an instance of the SerializableStateObservation (sso) class.
             self.memory = []
 
-            # Path of the file to save the experience replay to
-            id_dataset=10
-            self.dataset_save_path = 'SavedDatasets/' + 'dataset_1000_{}.dat'.format(id_dataset)
+            self.total_num_samples = 0 # Total number of sample collected, even if they were not unique (thus not added to the datasets)
+            self.sample_hashes = set() # Hashes of unique samples already collected
 
-            # Size of the experience replay to save. When the number of samples reaches this number, the experience replay (self.memory)
-            # is saved and the program exits
-            self.num_samples_for_saving_dataset = 1000 
+            # Path of the file to save the experience replay to
+            id_dataset=0
+            self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
+
+            # Size of the experience replay to save. It is saved when the total number of samples collected reaches
+            # 'self.num_total_samples_for_saving_dataset' or when the unique number of samples (len(self.memory)) reaches
+            # 'self.num_unique_samples_for_saving_dataset'
+            self.num_total_samples_for_saving_dataset = 1000
+            self.num_unique_samples_for_saving_dataset = 500
 
         elif self.EXECUTION_MODE == 'train':
             # Parameters of the Learning Model
@@ -125,16 +133,15 @@ class Agent(AbstractPlayer):
         * @param elapsedTimer Timer, which is 1s by default. Modified to 1000s.
                               Check utils/CompetitionParameters.py for more info.
         """
+        self.translator = Translator(sso, self.config_file)
 
-        # Set first turn as True
-        self.first_turn = True
+        # Create empty mem_sample
+        if self.EXECUTION_MODE == 'create_dataset':
+            self.mem_sample = []
 
         # Create new empty action list
         # This action list corresponds to the plan found by the planner
         self.action_list = []
-
-        # It is true when the agent has the minimum required number of gems
-        self.can_exit = False
 
         # See if it's training or validation time
         self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
@@ -160,12 +167,14 @@ class Agent(AbstractPlayer):
 
         # <Train the model without playing the game (EXECUTION_MODE == 'train')>
 
+        # <TODO>
+        # Repasar todo el código que se ejecuta cuando el modo es 'train' (solo he adaptado el de create_dataset)
         if self.EXECUTION_MODE == 'train':
 
             # Train a different model for each different dataset size
             for dataset_size in self.datasets_sizes_for_training:
                 # Load dataset of current size
-                self.load_dataset(self.dataset_load_path, num_elements=dataset_size)
+                self.load_dataset(self.dataset_load_path, num_elements=dataset_size, header=True)
 
                 # Shuffle dataset
                 random.shuffle(self.memory)
@@ -262,105 +271,84 @@ class Agent(AbstractPlayer):
 
         # <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
 
-        if self.EXECUTION_MODE == 'create_dataset':
-            print("\nExperience Replay size: {}\n".format(len(self.memory)))
+        # Check if the agent can act at the current game state, i.e., execute an action.
+        # If it can't, the agent returns 'ACTION_NIL'
+        if not self.can_act(sso):
+            return 'ACTION_NIL'
 
-        # If the plan is emtpy, get a new one
+        # If the plan is empty, get a new one
         if len(self.action_list) == 0:
-            # If the agent already has 11 gems, he plans to exit the level
-            keys = sso.avatarResources.keys()
+            # Get eligible subgoals at the current state
+            subgoals = self.get_subgoals_positions(sso)
 
-            if len(keys) > 0: # He has at least one gem
-                # gem_key = keys[0] # Python 2
-                gem_key = list(sso.avatarResources)[0] # Python 3
-
-                num_gems = sso.avatarResources[gem_key]
-
-                # Plan to exit the level
-                if num_gems >= self.NUM_GEMS_FOR_EXIT:
-                    self.can_exit = True
-
-                    exit = sso.portalsPositions[0][0]
-                    exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
- 
-                    self.action_list = self.search_plan(sso, exit_pos)
-
-                    # Add sample to memory
-                    if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
-                        # Save current observation for dataset
-                        one_hot_grid = self.encode_game_state(sso.observationGrid, exit_pos)
-
-                        # Save plan length as current metric
-                        plan_metric = len(self.action_list)
-
-                        # Add the current state s' to self.mem_sample, 
-                        # create a new self.mem_sample and add to it s, r and s' (None state, corresponding to finished level)
-                        self.mem_sample[2] = sso
-
-                        # Add old mem_sample to memory
-                        self.memory.append(self.mem_sample)
-
-                        # Create new mem_sample and append it to memory
-                        self.mem_sample = [one_hot_grid, plan_metric, None]
-                        self.memory.append(self.mem_sample)
-
-
-            # Only plan for next gem if the agent can't exit the level yet
-            if not self.can_exit:
-                # Obtain gems positions
-                gems = self.get_gems_positions(sso)
-                
-                # <Choose next subgoal>
-
-                avatar_position = (int(sso.avatarPosition[0] // sso.blockSize),
+            # Make sure no subgoal is at the agent's position
+            avatar_position = (int(sso.avatarPosition[0] // sso.blockSize),
                                  int(sso.avatarPosition[1] // sso.blockSize))
+            
+            if avatar_position in subgoals:
+                subgoals.remove(avatar_position)
 
-                if self.is_training: # Choose a random gem if the agent is training
-                    chosen_gem = gems[random.randint(0, len(gems) - 1)] # Choose a random gem as next objective
-                else: # Choose best gem if the agent is on validation time
-                    chosen_gem = self.choose_next_subgoal(sso.observationGrid, gems, avatar_position)
+            # Choose a random subgoal if the agent is randomly exploring
+            if self.EXECUTION_MODE=="create_dataset":
+                # Choose a random subgoal until one is attainable (search_plan returns a non-empty plan)
+                while len(subgoals) > 0 and len(self.action_list) == 0: 
+                    ind_subgoal = random.randint(0, len(subgoals) - 1)
 
-                # Avoid error of picking a gem which is at the agent's position
-                while (chosen_gem[0] == avatar_position[0] and
-                       chosen_gem[1] == avatar_position[1]):
-                    chosen_gem = gems[random.randint(0, len(gems) - 1)]
+                    chosen_subgoal = subgoals[ind_subgoal]
+                    del subgoals[ind_subgoal] # Delete the chosen subgoal from the list
 
-                # Search for a plan to chosen_gem
-                self.action_list = self.search_plan(sso, chosen_gem)
-
-                # Add sample to memory
-                if self.EXECUTION_MODE == 'create_dataset' and self.is_training:
-                    # Save current observation for dataset
-                    one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_gem)
-
-                    # Save plan length as current metric
-                    plan_metric = len(self.action_list)
-                    
-                    # <Append sample to dataset>
-
-                    # First turn of the level -> only save s and r
-                    if self.first_turn: 
-                        self.first_turn = False
-                        self.mem_sample = [one_hot_grid, plan_metric, None]
-
-                    # Not the first turn -> add the current state s' to self.mem_sample, 
-                    # create a new self.mem_sample and add to it s and r
+                    # If the game is IceAndFire, check how many types of boots the agent has
+                    if self.game_playing == 'IceAndFire': 
+                        boots_resources = self.get_boots_resources(sso)
                     else:
-                        self.mem_sample[2] = sso
-                        # Add old mem_sample to memory
-                        self.memory.append(self.mem_sample)
+                        boots_resources = []
 
-                        # Create new mem_sample
-                        self.mem_sample = [one_hot_grid, plan_metric, None]
+                    # Obtain the plan
+                    self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
+                    
+                    # Collect samples for the experience replay
+                    self.add_samples_to_memory(sso, chosen_subgoal, len(self.action_list))
+                    self.total_num_samples += 1
+
+                    # Show the number of samples collected periodically
+                    if self.total_num_samples % 10 == 0:
+                        print("n_total_samples:", self.total_num_samples)
+                        print("n_unique_samples:", len(self.memory))
+
+                # If there is no plan, it means that at the current game state no subgoal is attainable ->
+                # the agent escapes the level (loses the game)
+                if len(self.action_list) == 0:
+                    return 'ACTION_ESCAPE'
+
+            # Use the Learning model to select a subgoal if the agent is in test/validation phase
+            else:
+                chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
+
+                # If the game is IceAndFire, check how many types of boots the agent has
+                if self.game_playing == 'IceAndFire': 
+                    boots_resources = self.get_boots_resources(sso)
+                else:
+                    boots_resources = []
+
+                # Obtain the plan
+                self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
+
+                # If there is no valid plan to the chosen_subgoal, the agent loses the game
+                if len(self.action_list) == 0:
+                    # <TODO>
+                    # Exit the level and annotate the agent has lost the game
+                    pass
 
 
         # Save dataset and exit the program if the experience replay is the right size
+        if self.EXECUTION_MODE == 'create_dataset':
+            if self.total_num_samples >= num_total_samples_for_saving_dataset or \
+               len(self.memory) >= self.num_unique_samples_for_saving_dataset:
+            
+                self.save_dataset(self.dataset_save_path, header=True)
 
-        if self.EXECUTION_MODE == 'create_dataset' and len(self.memory) >= self.num_samples_for_saving_dataset:
-            self.save_dataset(self.dataset_save_path)
-
-            # Exit the program with success code
-            sys.exit()
+                # Exit the program with success code
+                sys.exit()
 
         # Execute Plan
 
@@ -375,20 +363,242 @@ class Agent(AbstractPlayer):
             return 'ACTION_NIL'
 
 
-    def get_gems_positions(self, sso):
-        # Retrieve gems from current state observation
-        gems = sso.resourcesPositions[0] 
-        pos = []
+    def add_samples_to_memory(self, sso, chosen_subgoal, plan_length):
+        """
+        Method called at the 'create_dataset' phase, when a new plan (empty or not)
+        has been obtained for a given (sso, chosen_subgoal) pair.
+        Firstly, it completes the old mem_sample (if needed) and adds it to the experience replay.
+        Secondly, it creates a new mem_sample and adds the one_hot_matrix and plan_length to it.
+        If the chosen_subgoal corresponds to the final goal or the plan is invalid,
+        the new mem_sample is already added to the experience replay. If not, it will be added
+        the next time this method is called.
+        
+        @param sso The current state of the game
+        @param chosen_subgoal The selected subgoal for the current state of the game
+        @param plan_length The number of actions of the plan obtained for the (sso, chosen_subgoal) pair.
+                           If it's 0, the plan is invalid.
+        """
 
-        for gem in gems:
-            gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
-            gem_y = int(gem.position.y // sso.blockSize)
+        # If the old mem_sample lacks the new state of the game, complete it
+        # and add it to the experience replay
+        if len(self.mem_sample) == 2:
+            self.mem_sample.append(sso) # Add the end state (the current state of the game)
+            self.memory.append(self.mem_sample) # Add old mem_sample to memory
 
-            pos.append((gem_x, gem_y))
+        # <Check if the new sample is unique>
 
-        return pos
+        # Obtain the hash for the (sso, chosen_subgoal) pair
+        new_hash = self.get_sso_subgoal_hash(sso, chosen_subgoal)
+
+        # If the hash is new, create a new sample
+        if new_hash not in self.sample_hashes:
+            # Add the hash
+            self.sample_hashes.add(new_hash) 
+
+            # Encode (sso, chosen_subgoal) as a one_hot matrix
+            one_hot_grid = self.encode_game_state(sso.observationGrid, chosen_subgoal)
+
+            # Invalid plan (there is no plan for the chosen_subgoal)
+            if plan_length == 0:
+                # If the plan is invalid, its length will be saved as self.num_actions_invalid_plan
+                plan_length = self.num_actions_invalid_plan  
+
+                # Save it already to the experience replay (since there is no end state)
+                self.mem_sample = [one_hot_grid, plan_length, None]
+                self.memory.append(self.mem_sample)
+            
+            # Valid plan
+            else:
+                # Check if the subgoal corresponds to the final goal (exit)
+                exit = sso.portalsPositions[0][0]
+                exit_pos_x = int(exit.position.x // sso.blockSize)
+                exit_pos_y = int(exit.position.y // sso.blockSize)
+
+                subgoal_is_final = (exit_pos_x == chosen_subgoal[0] and
+                                 exit_pos_y == chosen_subgoal[1])
+
+                if subgoal_is_final:
+                    # Save the new sample already to the experience replay (since there is no end state)
+                    self.mem_sample = [one_hot_grid, plan_length, None]
+                    self.memory.append(self.mem_sample)
+                else:
+                    # Create the new, incomplete mem_sample
+                    self.mem_sample = [one_hot_grid, plan_length]
+
+
+    def get_subgoals_positions(self, sso):
+        """
+        Method that returns all the eligible subgoals by the agent at the current state of 
+        the game.
+        Note: the final subgoal is always returned, even if it's not attainable.
+        
+        @param sso Observation of the current state of the game.
+        @return The grid positions of the eligible subgoals, as a list of the (x,y) coordinates
+                of each subgoal.
+        """
+
+        if self.game_playing == 'BoulderDash':
+            subgoal_pos = [] # Positions of subgoals
+
+            # Final goal
+            exit = sso.portalsPositions[0][0]
+            exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+            subgoal_pos.append(exit_pos)
+            
+            # Gems subgoals
+            gems = sso.resourcesPositions[0] 
+
+            for gem in gems:
+                gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
+                gem_y = int(gem.position.y // sso.blockSize)
+
+                subgoal_pos.append((gem_x, gem_y))
+
+            return subgoal_pos
+
+        elif self.game_playing == 'IceAndFire':
+            subgoal_pos = [] # Positions of subgoals
+
+            # Final goal
+            exit = sso.portalsPositions[0][0]
+            exit_pos = (int(exit.position.x // sso.blockSize), int(exit.position.y // sso.blockSize))
+            subgoal_pos.append(exit_pos)
+
+            # Rest of subgoals
+
+            # Itypes of observations corresponding to subgoals
+            subgoals_itypes = (10,9,8) # Itypes of coins, fire boots and ice boots
+
+            obs = sso.observationGrid
+            X_MAX = sso.observationGridNum
+            Y_MAX = sso.observationGridMaxRow
+
+            for y in range(Y_MAX):
+                for x in range(X_MAX):
+                    observation = sso.observationGrid[x][y][0]
+
+                    if observation is not None:
+                        if observation.itype in subgoals_itypes:
+                            pos_x = int(observation.position.x // sso.blockSize) # Convert from pixel to grid positions
+                            pos_y = int(observation.position.y // sso.blockSize) 
+
+                            subgoal_pos.append((pos_x, pos_y))
+
+            return subgoal_pos
+
+        elif self.game_playing == 'Catapults':
+            # Itypes of observations corresponding to subgoals
+            subgoals_itypes = (5,6,7,8) # Itypes of the four different types of catapults
+
+            # Get positions of subgoals
+            subgoal_pos = []
+
+            obs = sso.observationGrid
+            X_MAX = sso.observationGridNum
+            Y_MAX = sso.observationGridMaxRow
+
+            for y in range(Y_MAX):
+                for x in range(X_MAX):
+                    observation = sso.observationGrid[x][y][0]
+
+                    if observation is not None:
+                        if observation.itype in subgoals_itypes:
+                            pos_x = int(observation.position.x // sso.blockSize) # Convert from pixel to grid positions
+                            pos_y = int(observation.position.y // sso.blockSize) 
+
+                            subgoal_pos.append((pos_x, pos_y))
+
+            # Add the exit position as an elegible subgoal
+            exit = sso.portalsPositions[0][0]
+            exit_pos_x = int(exit.position.x // sso.blockSize)
+            exit_pos_y = int(exit.position.y // sso.blockSize)
+
+            subgoal_pos.append((exit_pos_x, exit_pos_y))
+
+            return subgoal_pos
+
+    def get_boots_resources(self, sso):
+        """
+        Method used only if self.game_playing=='IceAndFire'. It returns a list with
+        the types of boots (ice, fire, none or both) the agent currently has.
+        
+        @param sso Observation of the current state of the game.
+        @return A list containing the types of boots the agent has. This list
+                will be passed as the 'other_predicates' parameters to self.search_plan().
+        """
+
+        boots_resources = []
+
+        keys = sso.avatarResources.keys()
+        ice_boot_key = '8'  # Keys of each boot in the avatarResources dictionary
+        fire_boot_key = '9'                     
+
+        # Check if the agent has at least one boot  
+        if len(keys) > 0:
+            if ice_boot_key in keys: # The agent has ice boots
+                boots_resources.append("(has-ice-boots)")
+            if fire_boot_key in keys: # The agent has fire boots
+                boots_resources.append("(has-fire-boots)")
+
+        return boots_resources
+
+
+    def can_act(self, sso):
+        """
+        This method returns True if the agent can act, i.e., can execute an action different than 'ACTION_NIL'
+        at the current state of the game.
+        If the game played is Catapults and the agent is on a water tile (it's mid air), it cannot act. 
+        Otherwise, it can act.
+
+        @param sso Observation of the current state of the game.
+        @return True if the player can act, False otherwise.
+        """
+
+        if self.game_playing == 'Catapults':
+            bat_avatar_types = (11,12,13,14) # If the avatar type is one of these, the agent is a bat and cannot act
+                                             # (since it's in mid air)
+
+            if sso.avatarType in bat_avatar_types:
+                return False
+            else:
+                return True
+
+        else:
+            return True 
+
+
+    def get_sso_subgoal_hash(self, sso, chosen_subgoal):
+        """
+        Given the current state of the game and the chosen subgoal, it returns a hash. 
+        Two different sso's will have the same hash if their observation matrices contain 
+        the same observations in their first position of each cell.
+
+        @param sso Observation of the current state of the game.
+        @param chosen_subgoal Selected subgoal in the form of (x, y) coordinates.
+        @return The hash of the (sso, chosen_subgoal) pair.
+        """
+        obs_matrix = []
+        obs = sso.observationGrid
+        X_MAX = sso.observationGridNum
+        Y_MAX = sso.observationGridMaxRow
+
+        for y in range(Y_MAX):
+            for x in range(X_MAX):
+                observation = obs[x][y][0]
+
+                if observation is None:
+                    obs_matrix.append(-1)
+                else:
+                    obs_matrix.append(observation.itype)
+
+        # Append the chosen subgoal to the matrix
+        obs_matrix.append(chosen_subgoal)           
+
+        return hash(tuple(obs_matrix))
+
 
     def encode_game_state(self, obs_grid, goal_pos):
+        # <TODO>
         """
         Transforms the game state (sso) from a matrix of observations to a matrix in which each
         position is one-hot encoded. If there are more than one observations at the same position,
@@ -404,7 +614,7 @@ class Agent(AbstractPlayer):
         # Dictionary that maps itype (key) to one-hot array position to write a 1
         # e.g. 4 : 2 = [0 0 1 0 0 0 0 0 0]
         # None (empty tiles) objects are assigned an array full of zeroes
-        encode_dict = {
+        encode_dict_boulderdash = {
             0 : 0,
             1 : 1,
             4 : 2,
@@ -438,7 +648,8 @@ class Agent(AbstractPlayer):
 
         return one_hot_grid
 
-    def choose_next_subgoal(self, obs_grid, possible_subgoals, avatar_position):
+
+    def choose_next_subgoal(self, obs_grid, possible_subgoals):
         """
         Uses the learnt model to choose the best subgoal to plan for among all the
         possible subgoals, from the current state of the game.
@@ -455,19 +666,19 @@ class Agent(AbstractPlayer):
         best_subgoal = (-1, -1)
 
         for curr_subgoal in possible_subgoals:
-            if curr_subgoal[0] != avatar_position[0] or curr_subgoal[1] != avatar_position[1]:
-                # Encode input for the network using current state and curr_subgoal
-                one_hot_matrix = self.encode_game_state(obs_grid, curr_subgoal)
+            # Encode input for the network using current state and curr_subgoal
+            one_hot_matrix = self.encode_game_state(obs_grid, curr_subgoal)
 
-                # Use the model to predict plan length for curr_subgoal
-                plan_length = self.model.predict(one_hot_matrix)
+            # Use the model to predict plan length for curr_subgoal
+            plan_length = self.model.predict(one_hot_matrix)
 
-                # See if this is the best plan up to this point
-                if plan_length < best_plan_length:
-                    best_plan_length = plan_length
-                    best_subgoal = curr_subgoal
+            # See if this is the best plan up to this point
+            if plan_length < best_plan_length:
+                best_plan_length = plan_length
+                best_subgoal = curr_subgoal
 
         return best_subgoal
+
 
     def get_min_Q_value(self, sso):
         """
@@ -486,7 +697,7 @@ class Agent(AbstractPlayer):
         min_Q_val = 1000000
 
         # Retrieve gems list (list of gems positions)
-        gems = self.get_gems_positions(sso)
+        gems = self.get_subgoals_positions(sso)
 
         for gem in gems:
             # Obtain one-hot encoding using the state (sso) and the current gem
@@ -499,6 +710,7 @@ class Agent(AbstractPlayer):
                 min_Q_val = Q_val
 
         return min_Q_val
+
 
     def update_target_network(self):
         """
@@ -520,127 +732,115 @@ class Agent(AbstractPlayer):
 
         return op_holder
 
-    def search_plan(self, sso, goal):
-        """
-        Method used to search for a plan given a description. Writes the resulting
-        plan in the output file.
 
-        Change: now returns the plan instead of assigning it to self.action_list
+    def search_plan(self, sso, goal, other_predicates):
+        """
+        Method used to search a plan to a goal.
 
         @param sso State observation.
-        @param goal Goal position to be reached. It's given as a (x, y) tuple.        
+        @param goal (x, y) coordinates of the goal to be reached.
+        @param other_predicates List of predicates to be appended to the ones
+                                of the current state. If the game is not
+                                IceAndFire, it will be an empty list [].
+        @return Returns a plan to the current goal.
         """
 
-        action_list = []
+        x_goal, y_goal = goal # Separate the goal into its x,y coordinates
 
-        # Parse the current game state
-        self.parse_game_state(sso, goal)
+        # Check if the goal passed as an argument corresponds to the final goal (the exit).
+        # In that case, check if its attainable from the current state sso. If not,
+        # return an empty plan.
 
-        # Call the parser/planner
-        self.parser.plan_and_parse()
+        # Check if the goal corresponds to the exit
 
-        # Process the output file to get the plan
-        with open(self.OUT_FILE) as plan:
-            for action in plan:
-                # Remove the \n character at the end and add actions to list
-                action_list.append(action.replace('\n', ''))
+        exit = sso.portalsPositions[0][0]
+        exit_pos_x = int(exit.position.x // sso.blockSize)
+        exit_pos_y = int(exit.position.y // sso.blockSize)
 
-        return action_list
+        subgoal_is_final = (exit_pos_x == x_goal and exit_pos_y == y_goal)
 
+        if subgoal_is_final:
+            # Check if the final goal is eligible
 
-    def parse_game_state(self, sso, goal):
-        """
-        Method used to parse a game state. Writes the output in a file to be later
-        processed.
+            if self.game_playing == 'BoulderDash': # The agent needs to have 9 gems 
+                keys = sso.avatarResources.keys()
 
-        @param sso State observation.
-        @param goal Goal position to be reached. It's given as a (x, y) tuple.
-        """
-        # Get player orientation and parse it
-        orientation = sso.avatarOrientation
+                if len(keys) > 0:
+                    gem_key = list(sso.avatarResources)[0]
+                    num_gems = sso.avatarResources[gem_key]
+                else:
+                    num_gems = 0
 
-        if orientation[0] == 1.0:
-            orientation_str = 'ORIENTATION:right\n'
-        elif orientation[0] == -1.0:
-            orientation_str = 'ORIENTATION:left\n'
-        elif orientation[1] == 1.0:
-            orientation_str = 'ORIENTATION:down\n'
-        elif orientation[1] == -1.0:
-            orientation_str = 'ORIENTATION:up\n'
+                if num_gems < self.NUM_GEMS_FOR_EXIT:
+                    find_plan = False
+                    plan = []
+                else:
+                    find_plan = True
 
-        # Get maximum number of rows and columns
-        X_MAX = sso.observationGridNum
-        Y_MAX = sso.observationGridMaxRow
+            elif self.game_playing == 'IceAndFire': # The agent needs to have 10 coins -> there can be no coins on the map
+                coin_itype = 10 # Itype of coins
 
-        # Create a new empty game map
-        game_map = []
+                # Get the number of coins left on the map
+                coins_on_the_map = 0
 
-        # Parse the State observation
-        for y in range(Y_MAX):
-            # Create new empty row to be written
-            row = ''
+                obs = sso.observationGrid
+                X_MAX = sso.observationGridNum
+                Y_MAX = sso.observationGridMaxRow
 
-            for x in range(X_MAX):
-                # Get observation
-                obs = sso.observationGrid[x][y][0]
+                for y in range(Y_MAX):
+                    for x in range(X_MAX):
+                        observation = sso.observationGrid[x][y][0]
 
-                # Process the observation and append it to the row
-                if obs == None:
-                    row += '-'
-                elif obs.itype == 0:
-                    row += 'w'
-                elif obs.itype == 1:
-                    row += 'A'
-                elif obs.itype == 4:
-                    row += '.'
-                elif obs.itype == 5:
-                    row += 'e'
-                    
-                    if (x, y) == goal:
-                        goal_str = 'EXIT-LEVEL\n'
-                elif obs.itype == 6:
-                    row += 'x'
-                    
-                    if (x, y) == goal:
-                        goal_str = 'GET-GEM:{},{}\n'.format(x, y)
-                elif obs.itype == 7:
-                    row += 'o'
-                elif obs.itype == 10:
-                    row += 'c'
-                elif obs.itype == 11:
-                    row += 'b'
+                        if observation is not None:
+                            if observation.itype == coin_itype:
+                                coins_on_the_map += 1
 
-            # Add a new line character and add the row to the map
-            row += '\n'
-            game_map.append(row)
+                if coins_on_the_map == 0:
+                    find_plan = True
+                else:
+                    find_plan = False
+                    plan = []
+
+            else: # Catapults -> the final goal is always eligible
+                find_plan = True
+        else:
+            find_plan = True # If the goal isn't final, then find a plan
+
+        if find_plan:
+            # Find the plan normally
+            pddl_predicates, pddl_objects = self.translator.translate_game_state_to_PDDL(sso, other_predicates)
+            goal_predicate = self.translator.generate_goal_predicate(x_goal, y_goal)
+
+            self.planning.generate_problem_file(pddl_predicates, pddl_objects, goal_predicate)
+            planner_output = self.planning.call_planner()
+
+            plan = self.translator.translate_planner_output(planner_output)
+
+        return plan
 
 
-        # Write output in the file
-        with open(self.DESC_FILE, 'w') as desc:
-            desc.write(orientation_str)
-            desc.write(goal_str)
-            
-            for line in game_map:
-                desc.write(line)
-
-        pass
-
-    def save_dataset(self, path):
+    def save_dataset(self, path, header=False):
         """
         Uses the pickle module to save the experience replay to a file.
 
-        @path Path of the file
+        @param path Path of the file
+        @param header If True, the first line of the file contains the number
+               of samples of the dataset.
         """
 
         print("\nSaving experience replay...")
 
         with open(path, 'wb') as file:
+            if header:
+                file.write("> Num samples dataset: {}\n".format(len(self.memory)))
+
             pickle.dump(self.memory, file)
 
         print("Saving finished!")
 
 
-    def load_dataset(self, path, num_elements=5000):
+    def load_dataset(self, path, num_elements=5000, header=False):
+        # <TODO>
         """
         Uses the picle module to load the previously saved experience replay.
 
@@ -670,6 +870,9 @@ class Agent(AbstractPlayer):
             curr_path = path + "_{}.dat".format(next_dataset) # Next dataset to load
 
             with open(curr_path, 'rb') as file:
+                if header: # Ignore the first line of the file
+                    file_header = file.readline()
+
                 curr_dataset = pickle.load(file)
 
                 self.memory.extend(curr_dataset) # Append to memory
@@ -714,10 +917,8 @@ class Agent(AbstractPlayer):
                 sys.exit()
 
 
-        # Play levels 0-2 in order
-        # Note: in training, the agent must play levels 0-2 before choosing
-        self.current_level = (self.current_level + 1) % 3
-
-        return self.current_level
+        # Play a random level
+        # Note: if mode is 'create_dataset', all three training levels should be the same!
+        return -1
 
 
