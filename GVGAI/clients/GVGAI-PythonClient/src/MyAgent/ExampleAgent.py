@@ -46,6 +46,7 @@ class Agent(AbstractPlayer):
 		self.translator = Translator(sso, self.config_file)
 
 		self.plan = []
+		
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -59,6 +60,7 @@ class Agent(AbstractPlayer):
 							Check utils/CompetitionParameters.py for more info.
 		@return The action to be performed by the agent.
 		"""
+
 
 		# Check if the agent can act at the current game state, i.e., execute an action.
 		# If it can't, the agent returns 'ACTION_NIL'

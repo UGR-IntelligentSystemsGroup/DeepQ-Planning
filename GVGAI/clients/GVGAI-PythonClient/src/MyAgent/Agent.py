@@ -30,8 +30,8 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        self.config_file="config/catapults.yaml" # Yaml file used to parse the sso into a pddl representation
-        self.game_playing='Catapults' # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
+        self.config_file="config/boulderdash.yaml" # Yaml file used to parse the sso into a pddl representation
+        self.game_playing='BoulderDash' # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -70,6 +70,8 @@ class Agent(AbstractPlayer):
             # Path of the file to save the experience replay to
             id_dataset=0
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
+            # Path of the file which contains the number of samples of each saved dataset
+            self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
 
             # Size of the experience replay to save. It is saved when the total number of samples collected reaches
             # 'self.num_total_samples_for_saving_dataset' or when the unique number of samples (len(self.memory)) reaches
@@ -78,6 +80,7 @@ class Agent(AbstractPlayer):
             self.num_unique_samples_for_saving_dataset = 500
 
         elif self.EXECUTION_MODE == 'train':
+            # <TODO>
             # Parameters of the Learning Model
             # Automatically changed by ejecutar_pruebas.py!
             self.learning_rate=0.005
@@ -342,10 +345,10 @@ class Agent(AbstractPlayer):
 
         # Save dataset and exit the program if the experience replay is the right size
         if self.EXECUTION_MODE == 'create_dataset':
-            if self.total_num_samples >= num_total_samples_for_saving_dataset or \
+            if self.total_num_samples >= self.num_total_samples_for_saving_dataset or \
                len(self.memory) >= self.num_unique_samples_for_saving_dataset:
             
-                self.save_dataset(self.dataset_save_path, header=True)
+                self.save_dataset(self.dataset_save_path, self.datasets_sizes_file_path)
 
                 # Exit the program with success code
                 sys.exit()
@@ -598,7 +601,6 @@ class Agent(AbstractPlayer):
 
 
     def encode_game_state(self, obs_grid, goal_pos):
-        # <TODO>
         """
         Transforms the game state (sso) from a matrix of observations to a matrix in which each
         position is one-hot encoded. If there are more than one observations at the same position,
@@ -609,11 +611,12 @@ class Agent(AbstractPlayer):
         @param goal_pos (x, y) position (not as pixels but as grid) of the selected goal  
         """
 
-        # 0, 1, 4, 5, 6, 7, 10, 11
-
-        # Dictionary that maps itype (key) to one-hot array position to write a 1
+        # Dictionaries that maps itype (key) to one-hot array position to write a 1
         # e.g. 4 : 2 = [0 0 1 0 0 0 0 0 0]
         # None (empty tiles) objects are assigned an array full of zeroes
+
+        # Boulder Dash
+        # Itypes: 0, 1, 4, 5, 6, 7
         encode_dict_boulderdash = {
             0 : 0,
             1 : 1,
@@ -625,10 +628,44 @@ class Agent(AbstractPlayer):
             11 : 7
         }
 
+        # Catapults
+        # Itypes: 0, 3, 5, 6, 7, 8, 9, 15
+        encode_dict_catapults = {
+            0 : 0,
+            3 : 1,
+            5 : 2,
+            6 : 3,
+            7 : 4,
+            8 : 5,
+            9 : 6,
+            15 : 7
+        }
+
+        # IceAndFire
+        # Itypes: 0, 1, 3, 4, 5, 6, 8, 9, 10
+        encode_dict_iceandfire = {
+            0 : 0,
+            1 : 1,
+            3 : 2,
+            4 : 3,
+            5 : 4,
+            6 : 5,
+            8 : 6,
+            9 : 7,
+            10 : 8
+        }
+
+        if self.game_playing=='BoulderDash':
+            encode_dict = encode_dict_boulderdash
+        elif self.game_playing=='IceAndFire':
+            encode_dict = encode_dict_iceandfire
+        else:
+            encode_dict = encode_dict_catapults
+
+        one_hot_length = len(encode_dict.keys())+1 # 1 extra position to represent the subgoal
+
         num_cols = len(obs_grid)
         num_rows = len(obs_grid[0])
-
-        one_hot_length = 8 + 1 # 1 extra position to represent the objective (the last 1)
 
         # The image representation is by rows and columns, instead of (x, y) pos of each pixel
         # Row -> y
@@ -819,11 +856,15 @@ class Agent(AbstractPlayer):
         return plan
 
 
-    def save_dataset(self, path, header=False):
+    def save_dataset(self, path, size_path=None):
         """
         Uses the pickle module to save the experience replay to a file.
+        It also stores the size of the dataset in the file given by
+        size_path.
 
         @param path Path of the file
+        @param size_path Path of the file containing the datasets sizes. If
+                         it's None, then the size isn't saved.
         @param header If True, the first line of the file contains the number
                of samples of the dataset.
         """
@@ -831,15 +872,15 @@ class Agent(AbstractPlayer):
         print("\nSaving experience replay...")
 
         with open(path, 'wb') as file:
-            if header:
-                file.write("> Num samples dataset: {}\n".format(len(self.memory)))
-
             pickle.dump(self.memory, file)
+
+        with open(size_path, 'a') as file:
+            file.write("{}: {}".format(path, len(self.memory)))
 
         print("Saving finished!")
 
 
-    def load_dataset(self, path, num_elements=5000, header=False):
+    def load_dataset(self, path, num_elements=5000):
         # <TODO>
         """
         Uses the picle module to load the previously saved experience replay.
@@ -870,9 +911,6 @@ class Agent(AbstractPlayer):
             curr_path = path + "_{}.dat".format(next_dataset) # Next dataset to load
 
             with open(curr_path, 'rb') as file:
-                if header: # Ignore the first line of the file
-                    file_header = file.readline()
-
                 curr_dataset = pickle.load(file)
 
                 self.memory.extend(curr_dataset) # Append to memory

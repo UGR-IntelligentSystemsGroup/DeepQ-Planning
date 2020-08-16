@@ -1,2 +1,46 @@
-[GAME] Game idx:16 game name catapults
+[GAME] Game idx:43 game name iceandfire
 [PHASE] Starting First Phase of Training in 3 levels.
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:105
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:132
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:116
+[PHASE] Starting Second Phase of Training in 3 levels.
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:138
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:108
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:110
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:152
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:142
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:104
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:86
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:130
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:159
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:98
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:118
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:146
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:128
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:110
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:183
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:171
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:155
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:132
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:86
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:108
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:117
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:96
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:95
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:82
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:86
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:113
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:116
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:83
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:134
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:125
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:116
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:155
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:116
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:134
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:113
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:104
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:171
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:17.0, timesteps:108
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:17.0, timesteps:132
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:17.0, timesteps:131
