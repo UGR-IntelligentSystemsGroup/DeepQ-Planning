@@ -1,19 +1,2 @@
-[GAME] Game idx:11 game name boulderdash
+[GAME] Game idx:43 game name iceandfire
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:76
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:180
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:209
-[PHASE] Starting Second Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:324
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:192
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:282
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:257
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:666
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:410
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:690
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:785
-[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:20.0, timesteps:376
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:296
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:180
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:20.0, timesteps:89
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:20.0, timesteps:116

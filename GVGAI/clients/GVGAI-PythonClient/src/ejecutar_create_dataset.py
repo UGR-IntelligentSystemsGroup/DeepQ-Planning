@@ -30,7 +30,8 @@ game_id_catapults = "16"
 training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults_lvl2.txt')
 
 # Other variables
-games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
+# games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
+games_to_play = ('IceAndFire', 'Catapults')
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
@@ -121,7 +122,8 @@ try:
 			# Execute Agent.py (create current dataset)
 			subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
-			exit() # QUITAR
+			# Kill java process so that the memory doesn't fill
+			subprocess.call("killall java 2> /dev/null", shell=True)
 
 except Exception as e:
 	print(">> Exception!!") # Ignore exceptions

@@ -30,8 +30,8 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        self.config_file='config/boulderdash.yaml'
-        self.game_playing='BoulderDash'
+        self.config_file='config/ice-and-fire.yaml'
+        self.game_playing='IceAndFire'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -68,7 +68,7 @@ class Agent(AbstractPlayer):
             self.sample_hashes = set() # Hashes of unique samples already collected
 
             # Path of the file to save the experience replay to
-            id_dataset=0
+            id_dataset=2
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
             # Path of the file which contains the number of samples of each saved dataset
             self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -875,7 +875,7 @@ class Agent(AbstractPlayer):
             pickle.dump(self.memory, file)
 
         with open(size_path, 'a') as file:
-            file.write("{}: {}".format(path, len(self.memory)))
+            file.write("{}: {}\n".format(path, len(self.memory)))
 
         print("Saving finished!")
 
