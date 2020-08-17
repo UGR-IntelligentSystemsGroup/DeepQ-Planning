@@ -30,8 +30,8 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        self.config_file="config/boulderdash.yaml" # Yaml file used to parse the sso into a pddl representation
-        self.game_playing='BoulderDash' # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
+        self.config_file='config/boulderdash.yaml'
+        self.game_playing='BoulderDash'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
