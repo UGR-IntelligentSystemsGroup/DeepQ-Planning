@@ -10,6 +10,7 @@ class DQNetwork:
 
 	# Create CNN architecture
     def __init__(self, name="DQNetwork", writer_name="DQNetwork", create_writer = True,
+                 sample_size=[13, 26, 9],
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
                  max_pool_size = [2, 2],
@@ -24,9 +25,15 @@ class DQNetwork:
 
             # --- Constants, Variables and Placeholders ---
 
+            # Size of a sample, as rows x cols x (number of observations + 1)
+            # It depends on the game being played
+            self.sample_size = sample_size
 
             # Batch of inputs (game states + goals, one-hot encoded)
-            self.X = tf.placeholder(tf.float32, [None, 13, 26, 9], name="X") # type tf.float32 is needed for the rest of operations
+            X_shape = [None]
+            X_shape.extend(self.sample_size) # e.g.: [None, 13, 26, 9]
+
+            self.X = tf.placeholder(tf.float32, X_shape, name="X") # type tf.float32 is needed for the rest of operations
 
             # Batch of outputs (correct predictions of number of actions)
             ## self.Y_corr = tf.placeholder(tf.float32, [None, 1], name="Y")
@@ -197,8 +204,12 @@ class DQNetwork:
     # Predicts the associated y-value (plan length) for x (a (subgoal, game state) pair one-hot encoded)
     # Dropout is not activated
     def predict(self, x):
+        # Shape of a one-element batch
+        x_shape = [1]
+        x_shape.extend(self.sample_size) # e.g.: [1, 13, 26, 9]
+
         # Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
-        x_resh = np.reshape(x, (1, 13, 26, 9))
+        x_resh = np.reshape(x, x_shape)
         data_dict = {self.X : x_resh, self.is_training : False, self.dropout_placeholder : 0.0}
 
         prediction = self.sess.run(self.Q_val, feed_dict=data_dict)

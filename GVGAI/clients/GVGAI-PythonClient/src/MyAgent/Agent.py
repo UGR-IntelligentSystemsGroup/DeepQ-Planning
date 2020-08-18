@@ -13,6 +13,7 @@ import numpy as np
 import tensorflow as tf
 import pickle
 import sys
+import glob
 
 from LearningModel import DQNetwork
 
@@ -30,8 +31,9 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        self.config_file='config/ice-and-fire.yaml'
-        self.game_playing='IceAndFire'
+        self.config_file='config/catapults.yaml'
+        # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
+        self.game_playing='Catapults'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -45,13 +47,14 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="create_dataset" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name="DQN_alfa-0.005_dropout-0.2_batch-16_its-500_0" # Automatically changed by ejecutar_pruebas.py!
+        self.network_name="DQN_prueba_Catapults" # Add the name of the game being played!!!
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
-        self.datasets_sizes_for_training = [500, 1000, 2500, 5000, 7500, 10000]
+        # Each size corresponds to a number of levels.
+        self.datasets_sizes_for_training = [5, 10, 20]
 
 
         if self.EXECUTION_MODE == 'create_dataset':
@@ -68,7 +71,7 @@ class Agent(AbstractPlayer):
             self.sample_hashes = set() # Hashes of unique samples already collected
 
             # Path of the file to save the experience replay to
-            id_dataset=2
+            id_dataset=24
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
             # Path of the file which contains the number of samples of each saved dataset
             self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -80,7 +83,6 @@ class Agent(AbstractPlayer):
             self.num_unique_samples_for_saving_dataset = 500
 
         elif self.EXECUTION_MODE == 'train':
-            # <TODO>
             # Parameters of the Learning Model
             # Automatically changed by ejecutar_pruebas.py!
             self.learning_rate=0.005
@@ -96,16 +98,27 @@ class Agent(AbstractPlayer):
             self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
 
             # Experience Replay
-            self.memory = [] # Attribute to save the dataset
+            self.memory = []
 
-            # Path of the dataset to load
-            self.dataset_load_path = 'SavedDatasets/' + 'dataset_1000' # Without the '_1.dat' part
+            # Folder where the datasets are stored
+            self.datasets_folder = 'SavedDatasets'
+
+            # Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
+            # Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
+            if self.game_playing == 'BoulderDash':
+                self.sample_size=[13, 26, 9]
+            elif self.game_playing == 'IceAndFire':
+                self.sample_size=[14, 16, 10]
+            else: # Catapults
+                self.sample_size=[16, 16, 9]
 
         else: # Test
+            # <TODO>
             # Create Learning Model
 
             # DQNetwork
             self.model = DQNetwork(writer_name=self.network_name,
+                     sample_size=self.sample_size,
                      l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                      padding_type = "SAME",
                      max_pool_size = [2, 2],
@@ -170,25 +183,25 @@ class Agent(AbstractPlayer):
 
         # <Train the model without playing the game (EXECUTION_MODE == 'train')>
 
-        # <TODO>
         # Repasar todo el código que se ejecuta cuando el modo es 'train' (solo he adaptado el de create_dataset)
         if self.EXECUTION_MODE == 'train':
 
             # Train a different model for each different dataset size
             for dataset_size in self.datasets_sizes_for_training:
                 # Load dataset of current size
-                self.load_dataset(self.dataset_load_path, num_elements=dataset_size, header=True)
+                self.load_dataset(self.datasets_folder, self.game_playing, num_levels=dataset_size)
 
                 # Shuffle dataset
                 random.shuffle(self.memory)
 
                 # Create Learning model
 
-                curr_name = self.network_name + "_{}".format(dataset_size) # Append dataset size to the name of the network
+                curr_name = self.network_name + "_lvs={}".format(dataset_size) # Append dataset size to the name of the network
                 tf.reset_default_graph() # Clear Tensorflow Graph and Variables
 
                 # DQNetwork
                 self.model = DQNetwork(writer_name=curr_name,
+                         sample_size=self.sample_size,
                          l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                          padding_type = "SAME",
                          max_pool_size = [2, 2],
@@ -200,6 +213,7 @@ class Agent(AbstractPlayer):
                 # Used to predict the Q targets. It is upgraded every max_tau updates.
                 self.target_network = DQNetwork(name="TargetNetwork",
                          create_writer = False,
+                         sample_size=self.sample_size,
                          l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
                          padding_type = "SAME",
                          max_pool_size = [2, 2],
@@ -213,7 +227,7 @@ class Agent(AbstractPlayer):
 
                 num_samples = len(self.memory)
 
-                print("\n> Started training of model with dataset size={}\n".format(dataset_size))
+                print("\n> Started training of model on {} levels\n".format(dataset_size))
 
                 ind_batch = 0 # Index for selecting the next minibatch
 
@@ -264,7 +278,7 @@ class Agent(AbstractPlayer):
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                 # Save the current trained model
                 self.model.save_model(path = self.model_save_path, num_it = dataset_size)
-                print("\n> Current model saved! Dataset size={}\n".format(dataset_size))
+                print("\n> Current model saved! Dataset size={} levels\n".format(dataset_size))
 
 
             # Exit the program after finishing training
@@ -616,7 +630,7 @@ class Agent(AbstractPlayer):
         # None (empty tiles) objects are assigned an array full of zeroes
 
         # Boulder Dash
-        # Itypes: 0, 1, 4, 5, 6, 7
+        # Itypes: 0, 1, 4, 5, 6, 7 (10 and 11 correspond to enemies)
         encode_dict_boulderdash = {
             0 : 0,
             1 : 1,
@@ -880,15 +894,47 @@ class Agent(AbstractPlayer):
         print("Saving finished!")
 
 
-    def load_dataset(self, path, num_elements=5000):
-        # <TODO>
+    def load_dataset(self, folder, game, num_levels=20):
         """
         Uses the picle module to load the previously saved experience replay.
 
-        @path Path of the file (without the '_<num_dataset>.dat' part)
-        @num_elements The number of elements to load in total.
+        @folder Folder where the datasets are located (without '/')
+        @game Game whose datasets to load
+        @num_levels The number of levels whose datasets to load
         """
 
+        # Delete current experience replay
+        del self.memory[:]
+
+        # Use glob to get all the different existing datasets in the folder
+        datasets = glob.glob('{}/dataset_{}*'.format(folder, game))
+
+        # Choose "num_levels" levels randomly
+        selected_datasets = random.sample(datasets, k=num_levels)
+
+        # Load each dataset
+        total_num_samples = 0
+
+        for dataset_path in selected_datasets:
+            # Load the dataset and append the samples to memory
+            with open(dataset_path, 'rb') as file:
+                curr_dataset = pickle.load(file)
+
+                total_num_samples += len(curr_dataset) # Store the number of samples
+                self.memory.extend(curr_dataset)
+
+            print("> {} loaded.".format(dataset_path))
+
+        print(">> Loading finished!\n>> Number of samples loaded:", total_num_samples)
+
+
+
+
+
+
+
+
+        """
         arr_indexes = [1,2,3,4,5,6,7,8,9,10]
         
         tam_each_dataset = 1000
@@ -922,7 +968,7 @@ class Agent(AbstractPlayer):
         if len(self.memory) > num_elements:
             del self.memory[num_elements:] # Delete exceding elements
 
-        print("Loading finished!\n")
+        print("Loading finished!\n")"""
         
 
     def result(self, sso, elapsedTimer):
