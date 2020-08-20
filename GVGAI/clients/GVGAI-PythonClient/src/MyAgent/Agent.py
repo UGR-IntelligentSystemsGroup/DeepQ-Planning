@@ -31,9 +31,10 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        self.config_file='config/catapults.yaml'
+        # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
+        self.config_file='config/ice-and-fire.yaml'
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-        self.game_playing='Catapults'
+        self.game_playing='IceAndFire'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -50,12 +51,12 @@ class Agent(AbstractPlayer):
         self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-        self.network_name="DQN_prueba_Catapults" # Add the name of the game being played!!!
+        # Add the name of the game being played!!!
+        self.network_name="DQN_debug_IceAndFire_1_(alfa=0.005)" 
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
         # Each size corresponds to a number of levels.
         self.datasets_sizes_for_training = [5, 10, 20]
-
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -86,8 +87,9 @@ class Agent(AbstractPlayer):
             # Parameters of the Learning Model
             # Automatically changed by ejecutar_pruebas.py!
             self.learning_rate=0.005
-            self.dropout_prob=0.2
-            self.num_train_its=500
+            # Don't use dropout?
+            self.dropout_prob=0.0
+            self.num_train_its=5000
             self.batch_size=16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
@@ -123,7 +125,7 @@ class Agent(AbstractPlayer):
                      padding_type = "SAME",
                      max_pool_size = [2, 2],
                      max_pool_str = [1, 1],
-                     fc_num_units = [64, 16], dropout_prob = 0.6,
+                     fc_num_units = [64, 16], dropout_prob = 0.0,
                      learning_rate = 0.005)
 
 
@@ -637,9 +639,7 @@ class Agent(AbstractPlayer):
             4 : 2,
             5 : 3,
             6 : 4,
-            7 : 5,
-            10 : 6,
-            11 : 7
+            7 : 5
         }
 
         # Catapults
@@ -690,9 +690,10 @@ class Agent(AbstractPlayer):
         for x in range(num_cols):
             for y in range(num_rows):
                 for obs in obs_grid[x][y]:
-                    if obs is not None and obs.itype != 3: # Ignore Empty Tiles and pickage images (those that correspond to ACTION_USE)
-                        this_pos = encode_dict[obs.itype]
-                        one_hot_grid[y][x][this_pos] = 1
+                    if obs is not None: # Ignore Empty tiles
+                        if not (self.game_playing == 'BoulderDash' and obs.itype == 3): # Ignore pickage images (those that correspond to ACTION_USE) in BoulderDash
+                            this_pos = encode_dict[obs.itype]
+                            one_hot_grid[y][x][this_pos] = 1
 
         # Encode the goal position within that grid
         one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
@@ -734,7 +735,7 @@ class Agent(AbstractPlayer):
     def get_min_Q_value(self, sso):
         """
         Uses the Target Network (<with the current weights>) to obtain the Q-value associated with the state:
-        the minimum Q-value among all possible gems present at that state.
+        the minimum Q-value among all possible subgoals present at that state.
         If sso is 'None' (corresponds to an end state), the Q-value is 0.
 
         @param sso Game state for which to calculate the Q-value.
@@ -745,16 +746,16 @@ class Agent(AbstractPlayer):
             return 0
 
         observationGrid = sso.observationGrid
-        min_Q_val = 1000000
+        min_Q_val = 1000000000000
 
-        # Retrieve gems list (list of gems positions)
-        gems = self.get_subgoals_positions(sso)
+        # Retrieve subgoals list (list of subgoals positions)
+        subgoals = self.get_subgoals_positions(sso)
 
-        for gem in gems:
-            # Obtain one-hot encoding using the state (sso) and the current gem
-            one_hot_grid = self.encode_game_state(observationGrid, gem)
+        for subgoal in subgoals:
+            # Obtain one-hot encoding using the state (sso) and the current subgoal
+            one_hot_grid = self.encode_game_state(observationGrid, subgoal)
 
-            # Obtain the Q-value associated to that gem using the target network
+            # Obtain the Q-value associated to that subgoal using the target network
             Q_val = self.target_network.predict(one_hot_grid)
 
             if Q_val < min_Q_val:
