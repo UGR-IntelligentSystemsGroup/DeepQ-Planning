@@ -32,9 +32,9 @@ class Agent(AbstractPlayer):
 
         # Attributes different for every game
         # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
-        self.config_file='config/ice-and-fire.yaml'
+        self.config_file='config/catapults.yaml'
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-        self.game_playing='IceAndFire'
+        self.game_playing='Catapults'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -48,15 +48,16 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="train" # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE='train' # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
-        self.network_name="DQN_debug_IceAndFire_1_(alfa=0.005)" 
+        self.network_name="DQN_after-bug_Catapults_2" 
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
         # Each size corresponds to a number of levels.
-        self.datasets_sizes_for_training = [5, 10, 20]
+        # self.datasets_sizes_for_training = [5, 10, 20]
+        self.datasets_sizes_for_training = [5]
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -89,7 +90,7 @@ class Agent(AbstractPlayer):
             self.learning_rate=0.005
             # Don't use dropout?
             self.dropout_prob=0.0
-            self.num_train_its=5000
+            self.num_train_its=7500 #5000
             self.batch_size=16
             
             self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
@@ -108,7 +109,7 @@ class Agent(AbstractPlayer):
             # Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
             # Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
             if self.game_playing == 'BoulderDash':
-                self.sample_size=[13, 26, 9]
+                self.sample_size=[13, 26, 7]
             elif self.game_playing == 'IceAndFire':
                 self.sample_size=[14, 16, 10]
             else: # Catapults

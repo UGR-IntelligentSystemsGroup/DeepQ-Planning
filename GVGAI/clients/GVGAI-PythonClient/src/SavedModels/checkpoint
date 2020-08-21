@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_debug_IceAndFire_1_(alfa=0.005).ckpt-5"
-all_model_checkpoint_paths: "DQN_debug_IceAndFire_1_(alfa=0.005).ckpt-5"
+model_checkpoint_path: "DQN_after-bug_Catapults_2.ckpt-5"
+all_model_checkpoint_paths: "DQN_after-bug_Catapults_2.ckpt-5"

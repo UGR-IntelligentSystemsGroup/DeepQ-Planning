@@ -123,4 +123,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-problem.pddl
+# Ignore datasets (so that I don't use git lfs)
+*.dat
