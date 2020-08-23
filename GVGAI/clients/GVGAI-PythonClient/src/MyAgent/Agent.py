@@ -48,16 +48,26 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE='train' # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE='create_dataset' # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
-        self.network_name="DQN_after-bug_Catapults_2" 
+        self.network_name="DQN_after-bug_Catapults_1" 
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
         # Each size corresponds to a number of levels.
         # self.datasets_sizes_for_training = [5, 10, 20]
         self.datasets_sizes_for_training = [5]
+
+        # Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
+        # Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
+        if self.game_playing == 'BoulderDash':
+            self.sample_size=[13, 26, 7]
+        elif self.game_playing == 'IceAndFire':
+            self.sample_size=[14, 16, 10]
+        else: # Catapults
+            self.sample_size=[16, 16, 9]
+
 
         if self.EXECUTION_MODE == 'create_dataset':
 
@@ -106,17 +116,7 @@ class Agent(AbstractPlayer):
             # Folder where the datasets are stored
             self.datasets_folder = 'SavedDatasets'
 
-            # Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
-            # Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
-            if self.game_playing == 'BoulderDash':
-                self.sample_size=[13, 26, 7]
-            elif self.game_playing == 'IceAndFire':
-                self.sample_size=[14, 16, 10]
-            else: # Catapults
-                self.sample_size=[16, 16, 9]
-
         else: # Test
-            # <TODO>
             # Create Learning Model
 
             # DQNetwork
@@ -133,15 +133,19 @@ class Agent(AbstractPlayer):
             # Name of the saved model file to load (without the number of training steps part)
             model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
-            # Number of iterations of the model to load
+            # Number of levels the model to load has been trained on
             # Automatically changed by ejecutar_pruebas.py!
-            self.num_it_model=10000
+            self.dataset_size_model=5
 
-            # Array to save the number of actions used to complete each level to save it to the output file
-            self.num_actions_each_lv = []
+            # Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
+            # Automatically changed by ejecutar_pruebas.py!
+            self.num_test_levels=2
+
+            # If True, the agent has already finished the first test level and is playing the second one
+            self.playing_second_test_level = False
 
             # <Load the already-trained model in order to test performance>
-            self.model.load_model(path = model_load_path, num_it = self.num_it_model)
+            self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 
     def init(self, sso, elapsedTimer):
@@ -289,6 +293,11 @@ class Agent(AbstractPlayer):
             sys.exit()
   
 
+        # If the agent is in test mode but is currently at a training level, it escapes the level
+        if self.EXECUTION_MODE=="test" and self.is_training:
+            return 'ACTION_ESCAPE'
+
+
         # <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
 
         # Check if the agent can act at the current game state, i.e., execute an action.
@@ -355,10 +364,12 @@ class Agent(AbstractPlayer):
 
                 # If there is no valid plan to the chosen_subgoal, the agent loses the game
                 if len(self.action_list) == 0:
-                    # <TODO>
                     # Exit the level and annotate the agent has lost the game
-                    pass
+                    print("SUBOBJETIVO INVÁLIDO!!!")
 
+                    self.num_actions_lv = -1
+                    return 'ACTION_ESCAPE'
+                    
 
         # Save dataset and exit the program if the experience replay is the right size
         if self.EXECUTION_MODE == 'create_dataset':
@@ -379,7 +390,7 @@ class Agent(AbstractPlayer):
 
             return self.action_list.pop(0)
         else:
-            print("\n\nPLAN VACIO\n\n")
+            print("\n\nEMPTY PLAN\n\n")
             return 'ACTION_NIL'
 
 
@@ -567,8 +578,6 @@ class Agent(AbstractPlayer):
         """
         This method returns True if the agent can act, i.e., can execute an action different than 'ACTION_NIL'
         at the current state of the game.
-        If the game played is Catapults and the agent is on a water tile (it's mid air), it cannot act. 
-        Otherwise, it can act.
 
         @param sso Observation of the current state of the game.
         @return True if the player can act, False otherwise.
@@ -715,7 +724,7 @@ class Agent(AbstractPlayer):
                                  corresponds to a (pos_x, pos_y) pair.
         """
 
-        best_plan_length = 1000000.0
+        best_plan_length = 1000000000.0
         best_subgoal = (-1, -1)
 
         for curr_subgoal in possible_subgoals:
@@ -896,13 +905,15 @@ class Agent(AbstractPlayer):
         print("Saving finished!")
 
 
-    def load_dataset(self, folder, game, num_levels=20):
+    def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True):
         """
         Uses the picle module to load the previously saved experience replay.
 
         @folder Folder where the datasets are located (without '/')
         @game Game whose datasets to load
         @num_levels The number of levels whose datasets to load
+        @write_loaded_datasets If True, the names of the loaded datasets are
+                               written in the 'loaded_datasets.txt' file
         """
 
         # Delete current experience replay
@@ -927,80 +938,54 @@ class Agent(AbstractPlayer):
 
             print("> {} loaded.".format(dataset_path))
 
+        # Write the loaded datasets in a file
+        if write_loaded_datasets:
+            with open('loaded_datasets.txt', 'w') as file:
+                for dataset_path in selected_datasets:
+                    file.write(dataset_path + '\n') 
+
         print(">> Loading finished!\n>> Number of samples loaded:", total_num_samples)
-
-
-
-
-
-
-
-
-        """
-        arr_indexes = [1,2,3,4,5,6,7,8,9,10]
-        
-        tam_each_dataset = 1000
-        total_num_samples = 0
-
-        print("\nLoading experience replay...")
-
-        del self.memory[:] # Delete current array
-
-        # Load datasets until num_elements elements are loaded
-        while total_num_samples < num_elements:
-            # Choose random dataset
-            next_index = random.randint(0, len(arr_indexes)-1)
-            next_dataset = arr_indexes[next_index]
-
-            arr_indexes.remove(next_dataset) # Remove dataset from arr_indexes list (don't pick it again)
-
-            print("Next dataset:", next_dataset)
-
-            curr_path = path + "_{}.dat".format(next_dataset) # Next dataset to load
-
-            with open(curr_path, 'rb') as file:
-                curr_dataset = pickle.load(file)
-
-                self.memory.extend(curr_dataset) # Append to memory
-
-            print("{} loaded.".format(curr_path))
-
-            total_num_samples += tam_each_dataset
-
-        if len(self.memory) > num_elements:
-            del self.memory[num_elements:] # Delete exceding elements
-
-        print("Loading finished!\n")"""
         
 
     def result(self, sso, elapsedTimer):
-        print("Nivel terminado")
+        print("> Level Finished")
+
+        if self.EXECUTION_MODE == 'create_dataset':
+            # Check if the current mem_sample is incomplete
+            if len(self.mem_sample) == 2: 
+                print("Incomplete mem_sample in result method")
+
+                # If the player has lost the game, the plan of the mem_sample is invalid
+                if sso.gameWinner == "PLAYER_LOSES":
+                    final_mem_sample = [self.mem_sample[0], self.num_actions_invalid_plan, None]
+                
+                # If the player has won, the plan is valid (the mem_sample is associated with a plan that completes the level)
+                else:
+                    final_mem_sample = [self.mem_sample[0], self.mem_sample[1], None]
+
+                # Add the final mem_sample of the level to the experience replay
+                self.memory.append(final_mem_sample)
 
         if self.EXECUTION_MODE == 'test' and not self.is_training:
-            print("\n\nNúmero de acciones para completar el nivel: {} \n\n".format(self.num_actions_lv))
 
-            # Guardo la suma del número de acciones para completar los dos niveles de validación
+            # Check if the player hasn't been able to complete the level (timeout) or has died
+            if sso.gameWinner == "PLAYER_LOSES":
+                print("\n\nThe player has lost\n\n")
+                self.num_actions_lv = -1
+            else:
+                print("\n\nNum actions used to complete the level: {} \n\n".format(self.num_actions_lv))
+
+            # Save the number of actions used to complete the current level to the output file
             test_output_file = "test_output.txt"
 
-            # No se ha guardado el número de acciones de los dos niveles todavía
-            if len(self.num_actions_each_lv) < 2:
-                self.num_actions_each_lv.append(self.num_actions_lv) # Guardo el número de acciones del nivel actual
+            with open(test_output_file, "a") as file:
+                file.write("{}-{} | {} | {}\n".format(self.network_name, self.dataset_size_model, self.game_playing, self.num_actions_lv))
 
-            # Si ya se han completado ambos niveles, guardo las acciones en el fichero y termino la ejecución
-            if len(self.num_actions_each_lv) == 2:
-                # total_num_actions = self.num_actions_each_lv[0] + self.num_actions_each_lv[1]
-
-                with open(test_output_file, "a") as file:
-
-                    # Imprimo la separación y el nombre del modelo si estamos ejecutando la validación con el primer (el menor) tamaño de dataset
-                    if self.num_it_model == self.datasets_sizes_for_training[0]:
-                        file.write("\n\n--------------------------\n\n")
-                        file.write("Model Name: {}\n\n".format(self.network_name))
-
-                    file.write("{} - level 0 - {}, level 1 - {}\n".format(self.num_it_model, self.num_actions_each_lv[0],
-                        self.num_actions_each_lv[1]))
-
+            # If the agent only needs to play one test level or has played the two test levels, then finish the execution
+            if self.num_test_levels == 1 or self.playing_second_test_level:
                 sys.exit()
+
+            self.playing_second_test_level = True
 
 
         # Play a random level

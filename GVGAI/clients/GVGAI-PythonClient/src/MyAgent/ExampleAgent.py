@@ -13,6 +13,9 @@ import pickle
 import sys
 
 
+import glob
+
+
 class Agent(AbstractPlayer):
 	NUM_GEMS_FOR_EXIT = 9	# For BoulderDash
 
@@ -46,6 +49,10 @@ class Agent(AbstractPlayer):
 		self.translator = Translator(sso, self.config_file)
 
 		self.plan = []
+
+
+
+		self.memory = []
 		
 
 	def act(self, sso, elapsedTimer):
@@ -61,7 +68,21 @@ class Agent(AbstractPlayer):
 		@return The action to be performed by the agent.
 		"""
 
+		self.load_dataset('SavedDatasets', 'Catapults', num_levels=25, write_loaded_datasets=False)
 
+		for i in self.memory:
+			if len(i) == 2:
+				print("SI") # NINGÚN SAMPLE DE CATAPULTS TIENE SOLO LONGITUD 2!!!
+
+		sys.exit()
+
+
+
+
+
+
+
+		"""
 		# Check if the agent can act at the current game state, i.e., execute an action.
 		# If it can't, the agent returns 'ACTION_NIL'
 		if not self.can_act(sso):
@@ -122,7 +143,7 @@ class Agent(AbstractPlayer):
 		if len(self.plan) > 0:
 			return self.plan.pop(0)
 		else:
-			return 'ACTION_NIL'
+			return 'ACTION_NIL'"""
 
 
 	def search_plan(self, sso, x_goal, y_goal, other_predicates):
@@ -352,6 +373,47 @@ class Agent(AbstractPlayer):
 		obs_matrix.append(chosen_subgoal)			
 
 		return hash(tuple(obs_matrix))
+
+	def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True):
+		"""
+		Uses the picle module to load the previously saved experience replay.
+
+		@folder Folder where the datasets are located (without '/')
+		@game Game whose datasets to load
+		@num_levels The number of levels whose datasets to load
+		@write_loaded_datasets If True, the names of the loaded datasets are
+							   written in the 'loaded_datasets.txt' file
+		"""
+
+		# Delete current experience replay
+		del self.memory[:]
+
+		# Use glob to get all the different existing datasets in the folder
+		datasets = glob.glob('{}/dataset_{}*'.format(folder, game))
+
+		# Choose "num_levels" levels randomly
+		selected_datasets = random.sample(datasets, k=num_levels)
+
+		# Load each dataset
+		total_num_samples = 0
+
+		for dataset_path in selected_datasets:
+			# Load the dataset and append the samples to memory
+			with open(dataset_path, 'rb') as file:
+				curr_dataset = pickle.load(file)
+
+				total_num_samples += len(curr_dataset) # Store the number of samples
+				self.memory.extend(curr_dataset)
+
+			print("> {} loaded.".format(dataset_path))
+
+		# Write the loaded datasets in a file
+		if write_loaded_datasets:
+			with open('loaded_datasets.txt', 'w') as file:
+				for dataset_path in selected_datasets:
+					file.write(dataset_path + '\n') 
+
+		print(">> Loading finished!\n>> Number of samples loaded:", total_num_samples)
 
 	def result(self, sso, timer):
 		"""

@@ -1,11 +1,11 @@
 (define (problem CatapultProblem)
     (:domain Catapult)
     (:objects
-        t_0_0 t_0_1 t_0_10 t_0_11 t_0_12 t_0_13 t_0_14 t_0_15 t_0_2 t_0_3 t_0_4 t_0_5 t_0_6 t_0_7 t_0_8 t_0_9 t_10_0 t_10_10 t_10_15 t_10_9 t_11_0 t_11_10 t_11_15 t_11_8 t_11_9 t_12_0 t_12_15 t_13_0 t_13_12 t_13_15 t_14_0 t_14_15 t_15_0 t_15_1 t_15_10 t_15_11 t_15_12 t_15_13 t_15_14 t_15_15 t_15_2 t_15_3 t_15_4 t_15_5 t_15_6 t_15_7 t_15_8 t_15_9 t_1_0 t_1_15 t_2_0 t_2_10 t_2_11 t_2_12 t_2_13 t_2_14 t_2_15 t_2_6 t_2_8 t_2_9 t_3_0 t_3_15 t_3_6 t_3_8 t_4_0 t_4_15 t_4_6 t_5_0 t_5_15 t_5_6 t_6_0 t_6_15 t_6_4 t_6_5 t_6_6 t_7_0 t_7_15 t_7_4 t_7_5 t_8_0 t_8_1 t_8_15 t_8_3 t_8_4 t_8_5 t_9_0 t_9_15 - Tree
-        catapult_10_1 catapult_10_2 catapult_10_6 catapult_12_3 catapult_13_3 catapult_1_5 catapult_3_3 catapult_4_11 catapult_4_12 catapult_4_13 catapult_4_14 catapult_4_2 catapult_5_2 catapult_5_4 catapult_7_10 catapult_7_6 catapult_7_9 - Catapult
         e_1_14 - Exit
-        cell_0_0 cell_0_1 cell_0_10 cell_0_11 cell_0_12 cell_0_13 cell_0_14 cell_0_15 cell_0_2 cell_0_3 cell_0_4 cell_0_5 cell_0_6 cell_0_7 cell_0_8 cell_0_9 cell_10_0 cell_10_1 cell_10_10 cell_10_11 cell_10_12 cell_10_13 cell_10_14 cell_10_15 cell_10_2 cell_10_3 cell_10_4 cell_10_5 cell_10_6 cell_10_7 cell_10_8 cell_10_9 cell_11_0 cell_11_1 cell_11_10 cell_11_11 cell_11_12 cell_11_13 cell_11_14 cell_11_15 cell_11_2 cell_11_3 cell_11_4 cell_11_5 cell_11_6 cell_11_7 cell_11_8 cell_11_9 cell_12_0 cell_12_1 cell_12_10 cell_12_11 cell_12_12 cell_12_13 cell_12_14 cell_12_15 cell_12_2 cell_12_3 cell_12_4 cell_12_5 cell_12_6 cell_12_7 cell_12_8 cell_12_9 cell_13_0 cell_13_1 cell_13_10 cell_13_11 cell_13_12 cell_13_13 cell_13_14 cell_13_15 cell_13_2 cell_13_3 cell_13_4 cell_13_5 cell_13_6 cell_13_7 cell_13_8 cell_13_9 cell_14_0 cell_14_1 cell_14_10 cell_14_11 cell_14_12 cell_14_13 cell_14_14 cell_14_15 cell_14_2 cell_14_3 cell_14_4 cell_14_5 cell_14_6 cell_14_7 cell_14_8 cell_14_9 cell_15_0 cell_15_1 cell_15_10 cell_15_11 cell_15_12 cell_15_13 cell_15_14 cell_15_15 cell_15_2 cell_15_3 cell_15_4 cell_15_5 cell_15_6 cell_15_7 cell_15_8 cell_15_9 cell_1_0 cell_1_1 cell_1_10 cell_1_11 cell_1_12 cell_1_13 cell_1_14 cell_1_15 cell_1_2 cell_1_3 cell_1_4 cell_1_5 cell_1_6 cell_1_7 cell_1_8 cell_1_9 cell_2_0 cell_2_1 cell_2_10 cell_2_11 cell_2_12 cell_2_13 cell_2_14 cell_2_15 cell_2_2 cell_2_3 cell_2_4 cell_2_5 cell_2_6 cell_2_7 cell_2_8 cell_2_9 cell_3_0 cell_3_1 cell_3_10 cell_3_11 cell_3_12 cell_3_13 cell_3_14 cell_3_15 cell_3_2 cell_3_3 cell_3_4 cell_3_5 cell_3_6 cell_3_7 cell_3_8 cell_3_9 cell_4_0 cell_4_1 cell_4_10 cell_4_11 cell_4_12 cell_4_13 cell_4_14 cell_4_15 cell_4_2 cell_4_3 cell_4_4 cell_4_5 cell_4_6 cell_4_7 cell_4_8 cell_4_9 cell_5_0 cell_5_1 cell_5_10 cell_5_11 cell_5_12 cell_5_13 cell_5_14 cell_5_15 cell_5_2 cell_5_3 cell_5_4 cell_5_5 cell_5_6 cell_5_7 cell_5_8 cell_5_9 cell_6_0 cell_6_1 cell_6_10 cell_6_11 cell_6_12 cell_6_13 cell_6_14 cell_6_15 cell_6_2 cell_6_3 cell_6_4 cell_6_5 cell_6_6 cell_6_7 cell_6_8 cell_6_9 cell_7_0 cell_7_1 cell_7_10 cell_7_11 cell_7_12 cell_7_13 cell_7_14 cell_7_15 cell_7_2 cell_7_3 cell_7_4 cell_7_5 cell_7_6 cell_7_7 cell_7_8 cell_7_9 cell_8_0 cell_8_1 cell_8_10 cell_8_11 cell_8_12 cell_8_13 cell_8_14 cell_8_15 cell_8_2 cell_8_3 cell_8_4 cell_8_5 cell_8_6 cell_8_7 cell_8_8 cell_8_9 cell_9_0 cell_9_1 cell_9_10 cell_9_11 cell_9_12 cell_9_13 cell_9_14 cell_9_15 cell_9_2 cell_9_3 cell_9_4 cell_9_5 cell_9_6 cell_9_7 cell_9_8 cell_9_9 - Cell
         w_10_11 w_10_14 w_10_3 w_10_4 w_10_7 w_10_8 w_11_11 w_11_13 w_11_14 w_11_3 w_11_4 w_12_13 w_12_14 w_12_4 w_12_5 w_13_10 w_13_11 w_13_13 w_13_14 w_13_4 w_13_5 w_13_6 w_13_7 w_13_8 w_13_9 w_14_14 w_1_10 w_1_11 w_1_12 w_1_6 w_1_7 w_1_8 w_1_9 w_2_5 w_2_7 w_3_5 w_3_7 w_4_3 w_4_4 w_4_5 w_4_7 w_4_8 w_5_11 w_5_12 w_5_13 w_5_14 w_5_3 w_5_5 w_5_7 w_5_8 w_6_11 w_6_14 w_6_3 w_6_7 w_6_8 w_7_1 w_7_11 w_7_14 w_7_2 w_7_3 w_7_7 w_7_8 w_8_11 w_8_14 w_8_2 w_8_6 w_8_7 w_8_8 w_9_1 w_9_11 w_9_14 w_9_2 w_9_3 w_9_4 w_9_5 w_9_6 w_9_7 w_9_8 - Water
+        t_0_0 t_0_1 t_0_10 t_0_11 t_0_12 t_0_13 t_0_14 t_0_15 t_0_2 t_0_3 t_0_4 t_0_5 t_0_6 t_0_7 t_0_8 t_0_9 t_10_0 t_10_10 t_10_15 t_10_9 t_11_0 t_11_10 t_11_15 t_11_8 t_11_9 t_12_0 t_12_15 t_13_0 t_13_12 t_13_15 t_14_0 t_14_15 t_15_0 t_15_1 t_15_10 t_15_11 t_15_12 t_15_13 t_15_14 t_15_15 t_15_2 t_15_3 t_15_4 t_15_5 t_15_6 t_15_7 t_15_8 t_15_9 t_1_0 t_1_15 t_2_0 t_2_10 t_2_11 t_2_12 t_2_13 t_2_14 t_2_15 t_2_6 t_2_8 t_2_9 t_3_0 t_3_15 t_3_6 t_3_8 t_4_0 t_4_15 t_4_6 t_5_0 t_5_15 t_5_6 t_6_0 t_6_15 t_6_4 t_6_5 t_6_6 t_7_0 t_7_15 t_7_4 t_7_5 t_8_0 t_8_1 t_8_15 t_8_3 t_8_4 t_8_5 t_9_0 t_9_15 - Tree
+        cell_0_0 cell_0_1 cell_0_10 cell_0_11 cell_0_12 cell_0_13 cell_0_14 cell_0_15 cell_0_2 cell_0_3 cell_0_4 cell_0_5 cell_0_6 cell_0_7 cell_0_8 cell_0_9 cell_10_0 cell_10_1 cell_10_10 cell_10_11 cell_10_12 cell_10_13 cell_10_14 cell_10_15 cell_10_2 cell_10_3 cell_10_4 cell_10_5 cell_10_6 cell_10_7 cell_10_8 cell_10_9 cell_11_0 cell_11_1 cell_11_10 cell_11_11 cell_11_12 cell_11_13 cell_11_14 cell_11_15 cell_11_2 cell_11_3 cell_11_4 cell_11_5 cell_11_6 cell_11_7 cell_11_8 cell_11_9 cell_12_0 cell_12_1 cell_12_10 cell_12_11 cell_12_12 cell_12_13 cell_12_14 cell_12_15 cell_12_2 cell_12_3 cell_12_4 cell_12_5 cell_12_6 cell_12_7 cell_12_8 cell_12_9 cell_13_0 cell_13_1 cell_13_10 cell_13_11 cell_13_12 cell_13_13 cell_13_14 cell_13_15 cell_13_2 cell_13_3 cell_13_4 cell_13_5 cell_13_6 cell_13_7 cell_13_8 cell_13_9 cell_14_0 cell_14_1 cell_14_10 cell_14_11 cell_14_12 cell_14_13 cell_14_14 cell_14_15 cell_14_2 cell_14_3 cell_14_4 cell_14_5 cell_14_6 cell_14_7 cell_14_8 cell_14_9 cell_15_0 cell_15_1 cell_15_10 cell_15_11 cell_15_12 cell_15_13 cell_15_14 cell_15_15 cell_15_2 cell_15_3 cell_15_4 cell_15_5 cell_15_6 cell_15_7 cell_15_8 cell_15_9 cell_1_0 cell_1_1 cell_1_10 cell_1_11 cell_1_12 cell_1_13 cell_1_14 cell_1_15 cell_1_2 cell_1_3 cell_1_4 cell_1_5 cell_1_6 cell_1_7 cell_1_8 cell_1_9 cell_2_0 cell_2_1 cell_2_10 cell_2_11 cell_2_12 cell_2_13 cell_2_14 cell_2_15 cell_2_2 cell_2_3 cell_2_4 cell_2_5 cell_2_6 cell_2_7 cell_2_8 cell_2_9 cell_3_0 cell_3_1 cell_3_10 cell_3_11 cell_3_12 cell_3_13 cell_3_14 cell_3_15 cell_3_2 cell_3_3 cell_3_4 cell_3_5 cell_3_6 cell_3_7 cell_3_8 cell_3_9 cell_4_0 cell_4_1 cell_4_10 cell_4_11 cell_4_12 cell_4_13 cell_4_14 cell_4_15 cell_4_2 cell_4_3 cell_4_4 cell_4_5 cell_4_6 cell_4_7 cell_4_8 cell_4_9 cell_5_0 cell_5_1 cell_5_10 cell_5_11 cell_5_12 cell_5_13 cell_5_14 cell_5_15 cell_5_2 cell_5_3 cell_5_4 cell_5_5 cell_5_6 cell_5_7 cell_5_8 cell_5_9 cell_6_0 cell_6_1 cell_6_10 cell_6_11 cell_6_12 cell_6_13 cell_6_14 cell_6_15 cell_6_2 cell_6_3 cell_6_4 cell_6_5 cell_6_6 cell_6_7 cell_6_8 cell_6_9 cell_7_0 cell_7_1 cell_7_10 cell_7_11 cell_7_12 cell_7_13 cell_7_14 cell_7_15 cell_7_2 cell_7_3 cell_7_4 cell_7_5 cell_7_6 cell_7_7 cell_7_8 cell_7_9 cell_8_0 cell_8_1 cell_8_10 cell_8_11 cell_8_12 cell_8_13 cell_8_14 cell_8_15 cell_8_2 cell_8_3 cell_8_4 cell_8_5 cell_8_6 cell_8_7 cell_8_8 cell_8_9 cell_9_0 cell_9_1 cell_9_10 cell_9_11 cell_9_12 cell_9_13 cell_9_14 cell_9_15 cell_9_2 cell_9_3 cell_9_4 cell_9_5 cell_9_6 cell_9_7 cell_9_8 cell_9_9 - Cell
+        catapult_10_1 catapult_10_2 catapult_12_3 catapult_13_3 catapult_1_5 catapult_3_3 catapult_4_11 catapult_4_12 catapult_4_13 catapult_4_14 catapult_4_2 catapult_5_2 catapult_5_4 catapult_7_10 - Catapult
         p - Player
     )
     (:init
@@ -84,10 +84,8 @@
         (at t_4_6 cell_4_6)
         (at t_5_6 cell_5_6)
         (at t_6_6 cell_6_6)
-        (at catapult_7_6 cell_7_6)
         (at w_8_6 cell_8_6)
         (at w_9_6 cell_9_6)
-        (at catapult_10_6 cell_10_6)
         (at w_13_6 cell_13_6)
         (at t_15_6 cell_15_6)
         (at t_0_7 cell_0_7)
@@ -120,7 +118,7 @@
         (at t_0_9 cell_0_9)
         (at w_1_9 cell_1_9)
         (at t_2_9 cell_2_9)
-        (at catapult_7_9 cell_7_9)
+        (at p cell_3_9)
         (at t_10_9 cell_10_9)
         (at t_11_9 cell_11_9)
         (at w_13_9 cell_13_9)
@@ -157,7 +155,6 @@
         (at t_2_13 cell_2_13)
         (at catapult_4_13 cell_4_13)
         (at w_5_13 cell_5_13)
-        (at p cell_8_13)
         (at w_11_13 cell_11_13)
         (at w_12_13 cell_12_13)
         (at w_13_13 cell_13_13)
@@ -1156,7 +1153,7 @@
     )
     (:goal
         (AND
-            (at p cell_10_6)
+            (at p cell_4_12)
         )
     )
 )

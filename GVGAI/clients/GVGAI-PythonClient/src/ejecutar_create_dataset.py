@@ -6,6 +6,7 @@ import re
 import subprocess
 import os
 import glob
+import sys
 
 # BoulderDash
 lvs_path_boulderdash = "NivelesAllGames/Niveles_BoulderDash/Train_Val/" # Folder where the levels to extract the datasets from are saved
@@ -30,7 +31,8 @@ game_id_catapults = "16"
 training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults_lvl2.txt')
 
 # Other variables
-games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
+# games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
+games_to_play = ['Catapults']
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
@@ -95,6 +97,8 @@ try:
 		curr_dataset_id = id_dataset_ini
 
 		for curr_game_lv_file in game_lv_files:
+			print("\n\n>> Level playing: {}\n".format(curr_game_lv_file))
+
 			# Get the paths of the training levels (0-2) of the current game
 			training_lvs_paths = [training_lvs_directory + level_name for level_name in training_lvs]
 
@@ -125,11 +129,11 @@ try:
 			subprocess.call("killall java 2> /dev/null", shell=True)
 
 except Exception as e:
-	print(">> Exception!!") # Ignore exceptions
+	print(">> Exception!!")
 	print(e)
 finally:
 	print(">> All datasets have been created")
 
 	# Shutdown the computer
-	subprocess.call("poweroff", shell=True)
+	# subprocess.call("poweroff", shell=True)
 

@@ -1,1 +1,6 @@
-
+DQN_after-bug_BoulderDash_1-5 | -1
+DQN_after-bug_BoulderDash_1-5 | -1
+DQN_after-bug_IceAndFire_1-5 | IceAndFire | -1
+DQN_after-bug_IceAndFire_1-5 | IceAndFire | -1
+DQN_after-bug_Catapults_1-5 | Catapults | -1
+DQN_after-bug_Catapults_1-5 | Catapults | -1

@@ -22,7 +22,7 @@ class CompetitionParameters:
     ACTION_TIME_DISQ = 100*60*MILLIS_IN_MIN
 
     # Automatically changed by ejecutar_pruebas.py!
-    # Tiempo de entrenamiento -> poner a un valor muy pequeño para test
+    # Tiempo de entrenamiento -> poner a un valor muy pequeño para test (1 millisecond)
     TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN
     
     EXTRA_LEARNING_TIME = 1000000
