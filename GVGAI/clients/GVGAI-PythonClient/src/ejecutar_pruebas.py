@@ -11,7 +11,7 @@ import random
 # these hyperparameters
 
 # Architecture
-l1_num_filt = [2, 3, 4]
+l1_num_filt = [2]
 l1_window = [[4,4]]
 l1_strides = [[2,2]]
 padding_type = ["SAME"]
@@ -139,10 +139,12 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_conv1=({},{},{},{},{},{})_fc={}_its={}_alfa={}_dropout={}_batch={}_{}_{}". \
-							format(curr_l1_num_filt, curr_l1_window, curr_l1_strides, curr_padding_type, \
-							curr_max_pool_size, curr_max_pool_str, curr_fc_num_unis, curr_num_its, curr_alfa, \
-							curr_dropout, curr_batch_size, curr_game, curr_rep)
+			curr_model_name = "DQN_conv1-{},{},{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+							format(curr_l1_num_filt, curr_l1_window[0], curr_l1_strides[0], curr_padding_type, \
+							curr_max_pool_size[0], curr_max_pool_str[0], curr_fc_num_unis[0], curr_fc_num_unis[1], \
+							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+
+			# curr_model_name = "DQN_bug_nombre"				
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
@@ -257,10 +259,10 @@ try:
 
 				# Select 5 validation levels among all the possible levels
 				val_levels = random.sample(all_levels, k=5)
-				print("Validation levels:", val_levels)
+				print("\n> Validation levels:", val_levels)
 
 				# <Validate the model on a different pair of val levels each time>
-				for curr_val_levels in [(0,1),(2,3),(4)]:
+				for curr_val_levels in [(0,1),(2,3),(4,)]:
 
 					# <Remove the test levels (3-4) of the corresponding game>
 					test_levels_current_game = [test_lvs_directory + level_name for level_name in curr_test_lvs]
@@ -303,7 +305,16 @@ try:
 						# Save file
 						with open('MyAgent/Agent.py', 'w') as file:
 							file.write(agent_file)
-							
+
+
+					# <Execute the validation on the current validation levels>
+
+					print("\n> Validating the model on level(s):", curr_val_levels)
+					subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
+
+					# <Kill java process so that the memory doesn't fill>
+					subprocess.call("killall java 2> /dev/null", shell=True)
+
 except Exception as e:
 	print(">> Exception!!")
 	print(e)

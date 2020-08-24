@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_after-bug_Catapults_2.ckpt-5"
-all_model_checkpoint_paths: "DQN_after-bug_Catapults_2.ckpt-5"
+model_checkpoint_path: "DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-10"
+all_model_checkpoint_paths: "DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-10"

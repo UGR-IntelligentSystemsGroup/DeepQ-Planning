@@ -1,6 +1,6 @@
-DQN_after-bug_BoulderDash_1-5 | -1
-DQN_after-bug_BoulderDash_1-5 | -1
-DQN_after-bug_IceAndFire_1-5 | IceAndFire | -1
-DQN_after-bug_IceAndFire_1-5 | IceAndFire | -1
-DQN_after-bug_Catapults_1-5 | Catapults | -1
-DQN_after-bug_Catapults_1-5 | Catapults | -1
+
+DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0-10 | Catapults | -1
+DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0-10 | Catapults | -1
+DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0-10 | Catapults | -1
+DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0-10 | Catapults | -1
+DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0-10 | Catapults | -1
