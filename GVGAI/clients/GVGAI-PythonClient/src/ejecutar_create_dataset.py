@@ -10,7 +10,6 @@ import sys
 
 # BoulderDash
 lvs_path_boulderdash = "NivelesAllGames/Niveles_BoulderDash/Train_Val/" # Folder where the levels to extract the datasets from are saved
-config_file_boulderdash = "config/boulderdash.yaml" # Value of the self.config_file attribute in Agent.py
 game_playing_boulderdash = "BoulderDash" # Value of the self.game_playing attribute in Agent.py
 game_id_boulderdash = "11" # Value of the game_id variable in the oneClickRunFromPythonClient.sh script
 # Names of the training levels files (lvs 0-2)
@@ -18,21 +17,18 @@ training_lvs_boulderdash = ('boulderdash_lvl0.txt', 'boulderdash_lvl1.txt', 'bou
 
 # IceAndFire
 lvs_path_iceandfire = "NivelesAllGames/Niveles_IceAndFire/Train_Val/"
-config_file_iceandfire = "config/ice-and-fire.yaml"
 game_playing_iceandfire = "IceAndFire"
 game_id_iceandfire = "43"
 training_lvs_iceandfire = ('iceandfire_lvl0.txt', 'iceandfire_lvl1.txt', 'iceandfire_lvl2.txt')
 
 # Catapults
 lvs_path_catapults = "NivelesAllGames/Niveles_Catapults/Train_Val/"
-config_file_catapults = "config/catapults.yaml"
 game_playing_catapults = "Catapults"
 game_id_catapults = "16"
 training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults_lvl2.txt')
 
 # Other variables
-# games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
-games_to_play = ['Catapults']
+games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
@@ -44,19 +40,16 @@ try:
 		# <Set the variables that depend on the game being played>
 		if current_game == 'BoulderDash':
 			lvs_path = lvs_path_boulderdash
-			config_file = config_file_boulderdash
 			game_playing = game_playing_boulderdash
 			game_id = game_id_boulderdash
 			training_lvs = training_lvs_boulderdash
 		elif current_game == 'IceAndFire':
 			lvs_path = lvs_path_iceandfire
-			config_file = config_file_iceandfire
 			game_playing = game_playing_iceandfire
 			game_id = game_id_iceandfire
 			training_lvs = training_lvs_iceandfire
 		else: # Catapults
 			lvs_path = lvs_path_catapults
-			config_file = config_file_catapults
 			game_playing = game_playing_catapults
 			game_id = game_id_catapults
 			training_lvs = training_lvs_catapults
@@ -66,9 +59,6 @@ try:
 		# Load Agent.py
 		with open('MyAgent/Agent.py', 'r') as file:
 			agent_file = file.read()
-
-		# Set config_file
-		agent_file = re.sub(r'self.config_file=.+', "self.config_file='{}'".format(config_file), agent_file, count=1)
 
 		# Set game_playing
 		agent_file = re.sub(r'self.game_playing=.+', "self.game_playing='{}'".format(game_playing), agent_file, count=1)

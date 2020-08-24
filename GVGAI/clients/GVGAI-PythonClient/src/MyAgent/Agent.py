@@ -31,10 +31,16 @@ class Agent(AbstractPlayer):
         self.lastSsoType = LEARNING_SSO_TYPE.JSON
 
         # Attributes different for every game
-        # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
-        self.config_file='config/catapults.yaml'
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
         self.game_playing='Catapults'
+
+        # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
+        if self.game_playing == 'BoulderDash':
+            self.config_file='config/boulderdash.yaml'
+        elif self.game_playing == 'IceAndFire':
+            self.config_file='config/ice-and-fire.yaml'
+        else: # Catapults
+            self.config_file='config/catapults.yaml'
         self.planning = Planning(self.config_file)
 
         # The number of actions an invalid plan is associated, i.e., when
@@ -48,16 +54,40 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE='create_dataset' # Automatically changed by ejecutar_pruebas.py!
+        self.EXECUTION_MODE='test' # Automatically changed by ejecutar_pruebas.py!
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
         self.network_name="DQN_after-bug_Catapults_1" 
 
-        # Sizes of datasets to train the model on. For each size, a different model is created and trained in the training phase.
+        # Sizes of datasets to train the model on. For each size, a different model is created and trained on the training phase.
         # Each size corresponds to a number of levels.
-        # self.datasets_sizes_for_training = [5, 10, 20]
-        self.datasets_sizes_for_training = [5]
+        self.datasets_sizes_for_training=[5, 10, 20]
+
+        # <Model Hyperparameters>
+        # Automatically changed by ejecutar_pruebas.py!
+
+        # Architecture
+        self.l1_num_filt=2
+        self.l1_window=[4,4]
+        self.l1_strides=[2,2]
+        self.padding_type="SAME"
+        self.max_pool_size=[2, 2]
+        self.max_pool_str=[1, 1]
+        # Number of units of the first and second fully-connected layers
+        self.fc_num_unis=[16,1] 
+
+        # Training params
+        self.learning_rate=0.005
+        # Don't use dropout?
+        self.dropout_prob=0.0
+        self.num_train_its=5000
+        self.batch_size=16
+        
+        # Extra params
+        self.max_tau=250 # Number of training its before copying the DQNetwork's weights to the target network
+        self.tau=0 # Counter that resets to 0 when the target network is updated
+        self.gamma=0.9 # Discount rate for Deep Q-Learning
 
         # Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
         # Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -95,18 +125,6 @@ class Agent(AbstractPlayer):
             self.num_unique_samples_for_saving_dataset = 500
 
         elif self.EXECUTION_MODE == 'train':
-            # Parameters of the Learning Model
-            # Automatically changed by ejecutar_pruebas.py!
-            self.learning_rate=0.005
-            # Don't use dropout?
-            self.dropout_prob=0.0
-            self.num_train_its=7500 #5000
-            self.batch_size=16
-            
-            self.max_tau = 250 # Number of training its before copying the DQNetwork's weights to the target network
-            self.tau = 0 # Counter that resets to 0 when the target network is updated
-            self.gamma = 0.9 # Discount rate for Deep Q-Learning
-
             # Name of the saved model file (without the number of dataset size part)
             self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
 
@@ -121,13 +139,13 @@ class Agent(AbstractPlayer):
 
             # DQNetwork
             self.model = DQNetwork(writer_name=self.network_name,
-                     sample_size=self.sample_size,
-                     l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                     padding_type = "SAME",
-                     max_pool_size = [2, 2],
-                     max_pool_str = [1, 1],
-                     fc_num_units = [64, 16], dropout_prob = 0.0,
-                     learning_rate = 0.005)
+                     sample_size = self.sample_size,
+                     l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
+                     padding_type = self.padding_type,
+                     max_pool_size = self.max_pool_size,
+                     max_pool_str = self.max_pool_str,
+                     fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
+                     learning_rate = self.learning_rate)
 
 
             # Name of the saved model file to load (without the number of training steps part)
@@ -208,24 +226,24 @@ class Agent(AbstractPlayer):
 
                 # DQNetwork
                 self.model = DQNetwork(writer_name=curr_name,
-                         sample_size=self.sample_size,
-                         l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                         padding_type = "SAME",
-                         max_pool_size = [2, 2],
-                         max_pool_str = [1, 1],
-                         fc_num_units = [64, 16], dropout_prob = self.dropout_prob,
+                         sample_size = self.sample_size,
+                         l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
+                         padding_type = self.padding_type,
+                         max_pool_size = self.max_pool_size,
+                         max_pool_str = self.max_pool_str,
+                         fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
                          learning_rate = self.learning_rate)
 
                 # Target Network
                 # Used to predict the Q targets. It is upgraded every max_tau updates.
                 self.target_network = DQNetwork(name="TargetNetwork",
                          create_writer = False,
-                         sample_size=self.sample_size,
-                         l1_num_filt = 4, l1_window = [4,4], l1_strides = [2,2],
-                         padding_type = "SAME",
-                         max_pool_size = [2, 2],
-                         max_pool_str = [1, 1],
-                         fc_num_units = [64, 16], dropout_prob = 0.0,
+                         sample_size = self.sample_size,
+                         l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
+                         padding_type = self.padding_type,
+                         max_pool_size = self.max_pool_size,
+                         max_pool_str = self.max_pool_str,
+                         fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
                          learning_rate = self.learning_rate)
 
                 # Initialize target network's weights with those of the DQNetwork
