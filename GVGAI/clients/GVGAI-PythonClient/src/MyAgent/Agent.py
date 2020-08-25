@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
         # Attributes different for every game
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-        self.game_playing="Catapults"
+        self.game_playing='Catapults'
 
         # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
         if self.game_playing == 'BoulderDash':
@@ -54,7 +54,7 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="test"
+        self.EXECUTION_MODE="create_dataset"
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
@@ -113,7 +113,7 @@ class Agent(AbstractPlayer):
             self.sample_hashes = set() # Hashes of unique samples already collected
 
             # Path of the file to save the experience replay to
-            id_dataset=24
+            id_dataset=22
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
             # Path of the file which contains the number of samples of each saved dataset
             self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -971,14 +971,15 @@ class Agent(AbstractPlayer):
         if self.EXECUTION_MODE == 'create_dataset':
             # Check if the current mem_sample is incomplete
             if len(self.mem_sample) == 2: 
-                print("Incomplete mem_sample in result method")
 
                 # If the player has lost the game, the plan of the mem_sample is invalid
                 if sso.gameWinner == "PLAYER_LOSES":
+                    print("Incomplete mem_sample in result method - Player Loses")
                     final_mem_sample = [self.mem_sample[0], self.num_actions_invalid_plan, None]
                 
                 # If the player has won, the plan is valid (the mem_sample is associated with a plan that completes the level)
                 else:
+                    print("Incomplete mem_sample in result method - Player Wins")
                     final_mem_sample = [self.mem_sample[0], self.mem_sample[1], None]
 
                 # Add the final mem_sample of the level to the experience replay

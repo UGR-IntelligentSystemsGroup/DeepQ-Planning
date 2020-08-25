@@ -1,5 +1,29 @@
 [GAME] Game idx:16 game name catapults
 [PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:0.0, timesteps:0
-[PHASE] Starting Validation in 2 levels.
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:-1, Player0-Score:0.0, timesteps:0
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:1, Player0-Score:11.0, timesteps:70
+[PHASE] Starting Second Phase of Training in 3 levels.
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:10.0, timesteps:59
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:11.0, timesteps:70
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:10.0, timesteps:59
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:-1, Player0-Score:10.0, timesteps:59
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:11.0, timesteps:70
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:10.0, timesteps:59
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:11.0, timesteps:70
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:1, Player0:0, Player0-Score:2.0, timesteps:11
+[TRAINING] Result (1->win; 0->lose): level:0, Player0:0, Player0-Score:8.0, timesteps:48
+[TRAINING] Result (1->win; 0->lose): level:2, Player0:0, Player0-Score:2.0, timesteps:11

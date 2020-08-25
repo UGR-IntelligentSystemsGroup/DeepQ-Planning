@@ -28,7 +28,8 @@ game_id_catapults = "16"
 training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults_lvl2.txt')
 
 # Other variables
-games_to_play = ('BoulderDash', 'IceAndFire', 'Catapults')
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['Catapults']
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
@@ -84,8 +85,6 @@ try:
 		game_lv_files = glob.glob(lvs_path + "*")
 		
 		# Iterate over each level of the current game
-		curr_dataset_id = id_dataset_ini
-
 		for curr_game_lv_file in game_lv_files:
 			print("\n\n>> Level playing: {}\n".format(curr_game_lv_file))
 
@@ -104,9 +103,13 @@ try:
 			with open('MyAgent/Agent.py', 'r') as file:
 				agent_file = file.read()
 
+			# Get the id of the current level. That will be the dataset id.
+			curr_dataset_id = int(re.search(r'lvl[0-9]+', curr_game_lv_file).group(0).lstrip('lvl'))
+
+			print("\n\nCurr_dataset_id =", curr_dataset_id)
+
 			# Change dataset id
 			agent_file = re.sub(r'id_dataset=.+', "id_dataset={}".format(curr_dataset_id), agent_file, count=1)
-			curr_dataset_id+=1
 
 			# Save Agent.py
 			with open('MyAgent/Agent.py', 'w') as file:

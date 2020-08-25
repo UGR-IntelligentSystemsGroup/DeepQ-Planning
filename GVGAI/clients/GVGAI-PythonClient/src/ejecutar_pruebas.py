@@ -11,13 +11,13 @@ import random
 # these hyperparameters
 
 # Architecture
-l1_num_filt = [2]
+l1_num_filt = [4]
 l1_window = [[4,4]]
 l1_strides = [[2,2]]
 padding_type = ["SAME"]
 max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
-fc_num_unis = [[16,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,16]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
@@ -248,14 +248,27 @@ try:
 				# Get all the training/validation levels
 				all_levels = glob.glob(curr_lvs_path + "*")
 
-				# Get the levels used to train the model
+				# Get the datasets used to train the model
 				with open('loaded_datasets.txt', 'r') as file:
-					train_levels = file.read().splitlines()
+					train_datasets = file.read().splitlines()
+
+				# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
+				# Ids of the train datasets (e.g.: [5, 7, 21])
+				train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
 
 				# Remove the levels used for training
-				for lv in train_levels:
-					if lv in all_levels:
-						all_levels.remove(lv)
+				levels_to_remove = []
+
+				for lv in all_levels:
+					# Get lv id
+					lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
+
+					# If the lv id is in train_datasets_ids, that means that level was used for training:
+					# then don't use it for validation
+					if lv_id in train_datasets_ids:
+						levels_to_remove.append(lv)
+
+				all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
 
 				# Select 5 validation levels among all the possible levels
 				val_levels = random.sample(all_levels, k=5)
