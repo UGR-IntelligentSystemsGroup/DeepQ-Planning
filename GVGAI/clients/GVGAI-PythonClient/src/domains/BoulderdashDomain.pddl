@@ -17,6 +17,7 @@
     (connected-down ?c1 ?c2 - Cell)
     (connected-left ?c1 ?c2 - Cell)
     (connected-right ?c1 ?c2 - Cell)
+    (cannot-move ?p - Player)
   )
 
   (:action turn-up
@@ -113,12 +114,17 @@
       (at ?p ?c1)
       (oriented-up ?p)
       (connected-up ?c1 ?c2)
+      (not (cannot-move ?p))
       (not (exists (?b - Boulder) (at ?b ?c2)))
       (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
       (not (at ?p ?c1))
       (at ?p ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?p)
+      )
     )
   )
 
@@ -128,12 +134,17 @@
       (at ?p ?c1)
       (oriented-down ?p)
       (connected-down ?c1 ?c2)
+      (not (cannot-move ?p))
       (not (exists (?b - Boulder) (at ?b ?c2)))
       (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
       (not (at ?p ?c1))
       (at ?p ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?p)
+      )
     )
   )
 
@@ -143,12 +154,17 @@
       (at ?p ?c1)
       (oriented-left ?p)
       (connected-left ?c1 ?c2)
+      (not (cannot-move ?p))
       (not (exists (?b - Boulder) (at ?b ?c2)))
       (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
       (not (at ?p ?c1))
       (at ?p ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?p)
+      )
     )
   )
 
@@ -158,12 +174,17 @@
       (at ?p ?c1)
       (oriented-right ?p)
       (connected-right ?c1 ?c2)
+      (not (cannot-move ?p))
       (not (exists (?b - Boulder) (at ?b ?c2)))
       (not (exists (?w - Wall) (at ?w ?c2)))
     )
     :effect (and
       (not (at ?p ?c1))
       (at ?p ?c2)
+      (when
+        (exists (?e - Exit) (at ?e ?c2))
+        (cannot-move ?p)
+      )
     )
   )
 
