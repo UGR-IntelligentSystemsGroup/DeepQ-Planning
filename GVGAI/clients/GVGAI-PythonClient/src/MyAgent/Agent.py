@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
         # Attributes different for every game
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-        self.game_playing='Catapults'
+        self.game_playing='BoulderDash'
 
         # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
         if self.game_playing == 'BoulderDash':
@@ -896,7 +896,19 @@ class Agent(AbstractPlayer):
 
             plan = self.translator.translate_planner_output(planner_output)
 
-        return plan
+
+        # Add <ACTION_NIL> after each <ACTION_USE>
+
+        new_plan = []
+
+        for action in plan:
+            if action == 'ACTION_USE':
+                new_plan.append('ACTION_USE')
+                new_plan.append('ACTION_NIL')
+            else:
+                new_plan.append(action)
+
+        return new_plan
 
 
     def save_dataset(self, path, size_path=None):
