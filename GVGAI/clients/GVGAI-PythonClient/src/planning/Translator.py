@@ -119,8 +119,10 @@ class Translator:
         @return List of GVGAI actions to the current goal.
         """
         plan = []
+        formated_out = planner_output.split('\n')
+        formated_out = formated_out[formated_out.index("ff: found legal plan as follows"):]
 
-        for line in planner_output.split('\n'):
+        for line in formated_out:
             for pddl_action in self.game_information["actionsCorrespondence"]:
                 if pddl_action in line:
                     plan.append(self.game_information["actionsCorrespondence"][pddl_action])
