@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-10"
-all_model_checkpoint_paths: "DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-10"
+model_checkpoint_path: "DQN_overfitting-1lv_BoulderDash_6.ckpt-1"
+all_model_checkpoint_paths: "DQN_overfitting-1lv_BoulderDash_6.ckpt-1"

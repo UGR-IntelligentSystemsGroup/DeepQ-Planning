@@ -54,34 +54,34 @@ class Agent(AbstractPlayer):
         # - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-        self.EXECUTION_MODE="create_dataset"
+        self.EXECUTION_MODE="test"
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
-        self.network_name="DQN_conv1-2,4,2,SAME,2,1_fc-16_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0"
+        self.network_name="DQN_overfitting-1lv_BoulderDash_6"
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained on the training phase.
         # Each size corresponds to a number of levels.
-        self.datasets_sizes_for_training=[10]
+        self.datasets_sizes_for_training=[1] # CAMBIAR!!
 
         # <Model Hyperparameters>
         # Automatically changed by ejecutar_pruebas.py!
 
         # Architecture
-        self.l1_num_filt=2
+        self.l1_num_filt=32
         self.l1_window=[4, 4]
         self.l1_strides=[2, 2]
         self.padding_type="SAME"
         self.max_pool_size=[2, 2]
         self.max_pool_str=[1, 1]
         # Number of units of the first and second fully-connected layers
-        self.fc_num_unis=[16, 1]
+        self.fc_num_unis=[512, 64]
 
         # Training params
         self.learning_rate=0.005
         # Don't use dropout?
         self.dropout_prob=0.0
-        self.num_train_its=2500
+        self.num_train_its=4000
         self.batch_size=16
         
         # Extra params
@@ -113,7 +113,7 @@ class Agent(AbstractPlayer):
             self.sample_hashes = set() # Hashes of unique samples already collected
 
             # Path of the file to save the experience replay to
-            id_dataset=22
+            id_dataset=9
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
             # Path of the file which contains the number of samples of each saved dataset
             self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -153,7 +153,7 @@ class Agent(AbstractPlayer):
 
             # Number of levels the model to load has been trained on
             # Automatically changed by ejecutar_pruebas.py!
-            self.dataset_size_model=10
+            self.dataset_size_model=1
 
             # Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
             # Automatically changed by ejecutar_pruebas.py!
