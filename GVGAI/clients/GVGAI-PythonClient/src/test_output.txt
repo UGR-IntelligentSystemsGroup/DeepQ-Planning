@@ -8,3 +8,5 @@ DQN_overfitting-1lv_IceAndFire_5-1 | IceAndFire | 99
 DQN_overfitting-1lv_IceAndFire_5-1 | IceAndFire | 99
 DQN_overfitting-1lv_Catapults_5-1 | Catapults | 20
 DQN_overfitting-1lv_Catapults_5-1 | Catapults | 20
+DQN_overfitting-1lv_BoulderDash_7-1 | BoulderDash | 107
+DQN_overfitting-1lv_BoulderDash_7-1 | BoulderDash | 107

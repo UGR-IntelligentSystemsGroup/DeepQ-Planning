@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_overfitting-1lv_BoulderDash_6.ckpt-1"
-all_model_checkpoint_paths: "DQN_overfitting-1lv_BoulderDash_6.ckpt-1"
+model_checkpoint_path: "DQN_overfitting-1lv_BoulderDash_7.ckpt-1"
+all_model_checkpoint_paths: "DQN_overfitting-1lv_BoulderDash_7.ckpt-1"

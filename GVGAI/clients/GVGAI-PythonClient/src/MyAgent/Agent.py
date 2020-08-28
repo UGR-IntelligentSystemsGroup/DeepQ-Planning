@@ -58,11 +58,11 @@ class Agent(AbstractPlayer):
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
-        self.network_name="DQN_overfitting-1lv_BoulderDash_6"
+        self.network_name="DQN_overfitting-1lv_BoulderDash_7"
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained on the training phase.
         # Each size corresponds to a number of levels.
-        self.datasets_sizes_for_training=[1] # CAMBIAR!!
+        self.datasets_sizes_for_training=[1]
 
         # <Model Hyperparameters>
         # Automatically changed by ejecutar_pruebas.py!
@@ -113,7 +113,7 @@ class Agent(AbstractPlayer):
             self.sample_hashes = set() # Hashes of unique samples already collected
 
             # Path of the file to save the experience replay to
-            id_dataset=9
+            id_dataset=5
             self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
             # Path of the file which contains the number of samples of each saved dataset
             self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -495,13 +495,16 @@ class Agent(AbstractPlayer):
             subgoal_pos.append(exit_pos)
             
             # Gems subgoals
-            gems = sso.resourcesPositions[0] 
 
-            for gem in gems:
-                gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
-                gem_y = int(gem.position.y // sso.blockSize)
+            # Check if there is at least one gem in the level
+            if len(sso.resourcesPositions) > 0:
+                gems = sso.resourcesPositions[0] 
 
-                subgoal_pos.append((gem_x, gem_y))
+                for gem in gems:
+                    gem_x = int(gem.position.x // sso.blockSize) # Convert from pixel to grid positions
+                    gem_y = int(gem.position.y // sso.blockSize)
+
+                    subgoal_pos.append((gem_x, gem_y))
 
             return subgoal_pos
 

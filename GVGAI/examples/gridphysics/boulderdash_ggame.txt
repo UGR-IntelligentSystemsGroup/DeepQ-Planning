@@ -6,7 +6,7 @@ BasicGame
             crab > RandomNPC  img=oryx/scorpion2 color=RED cons=1
             butterfly > RandomNPC  img=oryx/bat2 color=PINK cons=1
         sword > Flicker  singleton=True img=oryx/pickaxe color=LIGHTGRAY limit=1
-        diamond > Resource  img=oryx/diamond3 shrinkfactor=0.75 color=YELLOW limit=10
+        diamond > Resource  img=oryx/diamond3 shrinkfactor=0.75 color=YELLOW limit=30
         background > Immovable  img=oryx/backBlack hidden=True
         dirt > Immovable  img=oryx/backLBrown color=BROWN
         avatar > ShootAvatar  frameRate=8 img=oryx/spelunky stype=sword

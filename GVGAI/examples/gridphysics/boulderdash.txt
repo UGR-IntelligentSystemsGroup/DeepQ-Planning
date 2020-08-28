@@ -5,7 +5,7 @@ BasicGame
 		sword > Flicker color=LIGHTGRAY limit=1 singleton=True img=oryx/pickaxe
 		dirt > Immovable color=BROWN img=oryx/backLBrown
 		exitdoor > Door color=GREEN img=oryx/door2
-		diamond > Resource color=YELLOW limit=10 shrinkfactor=0.75 img=oryx/diamond3
+		diamond > Resource color=YELLOW limit=30 shrinkfactor=0.75 img=oryx/diamond3
 		boulder > Immovable color=GRAY img=oryx/mineral1
 		moving >
 			avatar  > ShootAvatar   stype=sword frameRate=8 img=oryx/spelunky
