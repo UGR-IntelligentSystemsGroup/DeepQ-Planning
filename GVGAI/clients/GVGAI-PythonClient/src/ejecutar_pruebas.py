@@ -11,13 +11,13 @@ import random
 # these hyperparameters
 
 # Architecture
-l1_num_filt = [4]
+l1_num_filt = [8, 16, 32]
 l1_window = [[4,4]]
 l1_strides = [[2,2]]
 padding_type = ["SAME"]
 max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
-fc_num_unis = [[64,16]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,16], [128,32]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
@@ -27,7 +27,7 @@ batch_size = [16] # Batch size
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-datasets_sizes_for_training = [5, 10, 20] # For each size, a different model is trained and tested on this number of levels
+datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
 repetitions_per_model = 1 # Each model is trained this number of times
 
 

@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
         # Attributes different for every game
         # Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-        self.game_playing='BoulderDash'
+        self.game_playing="BoulderDash"
 
         # Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
         if self.game_playing == 'BoulderDash':
@@ -58,30 +58,30 @@ class Agent(AbstractPlayer):
 
         # Name of the DQNetwork. Also used for creating the name of file to save and load the model from
         # Add the name of the game being played!!!
-        self.network_name="DQN_overfitting-1lv_BoulderDash_7"
+        self.network_name="DQN_conv1-4,4,2,SAME,2,1_fc-64_16_its-2000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0"
 
         # Sizes of datasets to train the model on. For each size, a different model is created and trained on the training phase.
         # Each size corresponds to a number of levels.
-        self.datasets_sizes_for_training=[1]
+        self.datasets_sizes_for_training=[20]
 
         # <Model Hyperparameters>
         # Automatically changed by ejecutar_pruebas.py!
 
         # Architecture
-        self.l1_num_filt=32
+        self.l1_num_filt=4
         self.l1_window=[4, 4]
         self.l1_strides=[2, 2]
         self.padding_type="SAME"
         self.max_pool_size=[2, 2]
         self.max_pool_str=[1, 1]
         # Number of units of the first and second fully-connected layers
-        self.fc_num_unis=[512, 64]
+        self.fc_num_unis=[64, 16]
 
         # Training params
         self.learning_rate=0.005
         # Don't use dropout?
         self.dropout_prob=0.0
-        self.num_train_its=4000
+        self.num_train_its=2000
         self.batch_size=16
         
         # Extra params
@@ -153,7 +153,7 @@ class Agent(AbstractPlayer):
 
             # Number of levels the model to load has been trained on
             # Automatically changed by ejecutar_pruebas.py!
-            self.dataset_size_model=1
+            self.dataset_size_model=20
 
             # Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
             # Automatically changed by ejecutar_pruebas.py!
@@ -1014,6 +1014,9 @@ class Agent(AbstractPlayer):
 
             with open(test_output_file, "a") as file:
                 file.write("{}-{} | {} | {}\n".format(self.network_name, self.dataset_size_model, self.game_playing, self.num_actions_lv))
+
+                if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebrak
+                    file.write("\n--------------------------------------------\n")
 
             # If the agent only needs to play one test level or has played the two test levels, then finish the execution
             if self.num_test_levels == 1 or self.playing_second_test_level:
