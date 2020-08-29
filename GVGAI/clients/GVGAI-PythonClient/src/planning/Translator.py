@@ -120,13 +120,20 @@ class Translator:
         """
         plan = []
         formated_out = planner_output.split('\n')
-        formated_out = formated_out[formated_out.index("ff: found legal plan as follows"):]
 
-        for line in formated_out:
-            for pddl_action in self.game_information["actionsCorrespondence"]:
-                if pddl_action in line:
-                    plan.append(self.game_information["actionsCorrespondence"][pddl_action])
-                    break
+        try:
+            plan_idx = formated_out.index("ff: found legal plan as follows")
+        except ValueError:
+            # Do nothing if no plan has been found
+            pass
+        else:
+            formated_out = formated_out[plan_idx:]
+
+            for line in formated_out:
+                for pddl_action in self.game_information["actionsCorrespondence"]:
+                    if pddl_action in line:
+                        plan.append(self.game_information["actionsCorrespondence"][pddl_action])
+                        break
         
         return plan
 
