@@ -11,25 +11,29 @@ import random
 # these hyperparameters
 
 # Architecture
-l1_num_filt = [8, 16, 32]
+# l1_num_filt = [8, 16, 32]
+l1_num_filt = [16]
 l1_window = [[4,4]]
 l1_strides = [[2,2]]
 padding_type = ["SAME"]
 max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
-fc_num_unis = [[64,16], [128,32]] # Number of units of the first and second fully-connected layers
+# fc_num_unis = [[64,16], [128,32]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,16]]
 
 # Training params
-num_its = [5000] # Number of iterations for training
+# num_its = [5000] # Number of iterations for training
+num_its = [1000]
 alfa = [0.005] # Learning rate
 dropout = [0.0] # Dropout value
 batch_size = [16] # Batch size
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 1 # Each model is trained this number of times
-
+# datasets_sizes_for_training = [10, 20] # For each size, a different model is trained and tested on this number of levels
+datasets_sizes_for_training = [7, 11]
+# repetitions_per_model = 1 # Each model is trained this number of times
+repetitions_per_model = 2
 
 # <Script variables>
 
@@ -57,10 +61,10 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l)
+models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m)
 					for a in l1_num_filt for b in l1_window for c in l1_strides for d in padding_type for e in max_pool_size \
  					for f in max_pool_str for g in fc_num_unis for h in num_its for i in alfa for j in dropout for k in batch_size \
- 					for l in games_to_play]
+ 					for l in games_to_play for m in datasets_sizes_for_training]
 
 try:
 	# Iterate over the different models
@@ -78,6 +82,7 @@ try:
 		curr_dropout = curr_model_params[9]
 		curr_batch_size = curr_model_params[10]
 		curr_game = curr_model_params[11]
+		dataset_size_for_training = curr_model_params[12]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -114,7 +119,7 @@ try:
 		
 		# Change other variables
 		agent_file = re.sub(r'self.game_playing=.*', 'self.game_playing="{}"'.format(curr_game), agent_file, count=1)
-		agent_file = re.sub(r'self.datasets_sizes_for_training=.*', 'self.datasets_sizes_for_training={}'.format(datasets_sizes_for_training), agent_file, count=1)
+		agent_file = re.sub(r'self.dataset_size_for_training=.*', 'self.dataset_size_for_training={}'.format(dataset_size_for_training), agent_file, count=1)
 
 		# Save file
 		with open('MyAgent/Agent.py', 'w') as file:
@@ -134,7 +139,7 @@ try:
 			file.write(oneclickrun_file)
 
 
-		# <Repeat each execution the number of times given by "repetitions_per_model">
+		# <Repeat each execution (train + val) the number of times given by "repetitions_per_model">
 		for curr_rep in range(repetitions_per_model):
 
 			# <Create the model name using the hyperparameters values>
@@ -208,6 +213,8 @@ try:
 
 			# Change execution mode
 			agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="test"', agent_file, count=1)
+			# Change dataset size
+			agent_file = re.sub(r'self.dataset_size_model=.*', 'self.dataset_size_model={}'.format(dataset_size_for_training), agent_file, count=1)
 
 			# Save file
 			with open('MyAgent/Agent.py', 'w') as file:
@@ -226,107 +233,90 @@ try:
 			with open('utils/CompetitionParameters.py', 'w') as file:
 				file.write(comp_param_file)
 
-			# <Test the trained model for each different dataset size>
-			for curr_dataset_size in datasets_sizes_for_training:
-				print("\n> Starting the validation of the current model on {} levels".format(curr_dataset_size))
+			# <Select the five validation levels to use>
 
-				# <Change Agent.py>
+			# Get all the training/validation levels
+			all_levels = glob.glob(curr_lvs_path + "*")
 
-				# Load file in memory
-				with open('MyAgent/Agent.py', 'r') as file:
-					agent_file = file.read()
+			# Get the datasets used to train the model
+			with open('loaded_datasets.txt', 'r') as file:
+				train_datasets = file.read().splitlines()
 
-				# Change dataset size
-				agent_file = re.sub(r'self.dataset_size_model=.*', 'self.dataset_size_model={}'.format(curr_dataset_size), agent_file, count=1)
+			# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
+			# Ids of the train datasets (e.g.: [5, 7, 21])
+			train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
 
-				# Save file
-				with open('MyAgent/Agent.py', 'w') as file:
-					file.write(agent_file)
+			# Remove the levels used for training
+			levels_to_remove = []
 
-				# <Select the five validation levels to use>
+			for lv in all_levels:
+				# Get lv id
+				lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
 
-				# Get all the training/validation levels
-				all_levels = glob.glob(curr_lvs_path + "*")
+				# If the lv id is in train_datasets_ids, that means that level was used for training:
+				# then don't use it for validation
+				if lv_id in train_datasets_ids:
+					levels_to_remove.append(lv)
 
-				# Get the datasets used to train the model
-				with open('loaded_datasets.txt', 'r') as file:
-					train_datasets = file.read().splitlines()
+			all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
 
-				# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
-				# Ids of the train datasets (e.g.: [5, 7, 21])
-				train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
+			# Select 5 validation levels among all the possible levels
+			val_levels = random.sample(all_levels, k=5)
+			print("\n> Validation levels:", val_levels)
 
-				# Remove the levels used for training
-				levels_to_remove = []
+			# <Validate the model on a different pair of val levels each time>
+			for curr_val_levels in [(0,1),(2,3),(4,)]:
 
-				for lv in all_levels:
-					# Get lv id
-					lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
+				# <Remove the test levels (3-4) of the corresponding game>
+				test_levels_current_game = [test_lvs_directory + level_name for level_name in curr_test_lvs]
+				
+				for level in test_levels_current_game:
+					subprocess.call("rm {} 2> /dev/null".format(level), shell=True)
 
-					# If the lv id is in train_datasets_ids, that means that level was used for training:
-					# then don't use it for validation
-					if lv_id in train_datasets_ids:
-						levels_to_remove.append(lv)
+				if len(curr_val_levels) == 1: # Only one validation level to test
+					# <Copy the new validation level as the levels 3-4>
+					subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[0]), shell=True) 
+					subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[1]), shell=True) 
 
-				all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
+					# <Change Agent.py>
 
-				# Select 5 validation levels among all the possible levels
-				val_levels = random.sample(all_levels, k=5)
-				print("\n> Validation levels:", val_levels)
+					# Load file in memory
+					with open('MyAgent/Agent.py', 'r') as file:
+						agent_file = file.read()
 
-				# <Validate the model on a different pair of val levels each time>
-				for curr_val_levels in [(0,1),(2,3),(4,)]:
+					# Change num_test_levels
+					agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=1', agent_file, count=1)
 
-					# <Remove the test levels (3-4) of the corresponding game>
-					test_levels_current_game = [test_lvs_directory + level_name for level_name in curr_test_lvs]
-					
-					for level in test_levels_current_game:
-						subprocess.call("rm {} 2> /dev/null".format(level), shell=True)
+					# Save file
+					with open('MyAgent/Agent.py', 'w') as file:
+						file.write(agent_file)
 
-					if len(curr_val_levels) == 1: # Only one validation level to test
-						# <Copy the new validation level as the levels 3-4>
-						subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[0]), shell=True) 
-						subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[1]), shell=True) 
+				else: # Two validation levels to test
+					# <Copy the new validation levels as the levels 3-4>
+					subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[0]), shell=True) 
+					subprocess.call("cp {} {}".format(val_levels[curr_val_levels[1]], test_levels_current_game[1]), shell=True) 
 
-						# <Change Agent.py>
+					# <Change Agent.py>
 
-						# Load file in memory
-						with open('MyAgent/Agent.py', 'r') as file:
-							agent_file = file.read()
+					# Load file in memory
+					with open('MyAgent/Agent.py', 'r') as file:
+						agent_file = file.read()
 
-						# Change num_test_levels
-						agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=1', agent_file, count=1)
+					# Change num_test_levels
+					agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=2', agent_file, count=1)
 
-						# Save file
-						with open('MyAgent/Agent.py', 'w') as file:
-							file.write(agent_file)
-
-					else: # Two validation levels to test
-						# <Copy the new validation levels as the levels 3-4>
-						subprocess.call("cp {} {}".format(val_levels[curr_val_levels[0]], test_levels_current_game[0]), shell=True) 
-						subprocess.call("cp {} {}".format(val_levels[curr_val_levels[1]], test_levels_current_game[1]), shell=True) 
-
-						# <Change Agent.py>
-
-						# Load file in memory
-						with open('MyAgent/Agent.py', 'r') as file:
-							agent_file = file.read()
-
-						# Change num_test_levels
-						agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=2', agent_file, count=1)
-
-						# Save file
-						with open('MyAgent/Agent.py', 'w') as file:
-							file.write(agent_file)
+					# Save file
+					with open('MyAgent/Agent.py', 'w') as file:
+						file.write(agent_file)
 
 
-					# <Execute the validation on the current validation levels>
+				# <Execute the validation on the current validation levels>
 
-					print("\n> Validating the model on level(s):", curr_val_levels)
-					subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
+				print("\n> Validating the model on level(s):", curr_val_levels)
+				subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
-					# <Kill java process so that the memory doesn't fill>
-					subprocess.call("killall java 2> /dev/null", shell=True)
+				# <Kill java process so that the memory doesn't fill>
+				subprocess.call("killall java 2> /dev/null", shell=True)
 
 except Exception as e:
 	print(">> Exception!!")
