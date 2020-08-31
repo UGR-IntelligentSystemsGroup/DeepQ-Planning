@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="IceAndFire"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,16 +58,16 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_conv1-16,4,2,SAME,2,1_fc-64_16_its-1000_alfa-0.005_dropout-0.0_batch-16_IceAndFire_1"
+		self.network_name="DQN_conv1-32,4,2,SAME,2,1_fc-64_16_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_1"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=11
+		self.dataset_size_for_training=20
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
 
 		# Architecture
-		self.l1_num_filt=16
+		self.l1_num_filt=32
 		self.l1_window=[4, 4]
 		self.l1_strides=[2, 2]
 		self.padding_type="SAME"
@@ -80,7 +80,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.005
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=1000
+		self.num_train_its=5000
 		self.batch_size=16
 		
 		# Extra params
@@ -112,7 +112,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=5
+			id_dataset=9
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -152,7 +152,7 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=11
+			self.dataset_size_model=20
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!

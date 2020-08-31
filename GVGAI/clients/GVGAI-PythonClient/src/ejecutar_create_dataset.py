@@ -1,5 +1,5 @@
 # Executes Agent.py sucesively in "create_dataset" mode to create the datasets for all three games.
-# Preconditions: Agent.py must already be in "create_dataset" mode and the training time set in CompetitionParameters.py must
+# Preconditions: Agent.py must be already in "create_dataset" mode and the training time set in CompetitionParameters.py must
 # be correct.
 
 import re
@@ -29,7 +29,7 @@ training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults
 
 # Other variables
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash']
+games_to_play = ['IceAndFire', 'Catapults']
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
