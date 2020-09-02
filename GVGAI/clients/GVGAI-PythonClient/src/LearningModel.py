@@ -13,8 +13,6 @@ class DQNetwork:
                  sample_size=[13, 26, 9],
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
                  padding_type = "SAME",
-                 max_pool_size = [2, 2],
-                 max_pool_str = [1, 1],
                  fc_num_units = [16, 1], dropout_prob = 0.5,
                  l2_regularization=0.0,
                  learning_rate = 0.005):
@@ -81,12 +79,14 @@ class DQNetwork:
                         
             # Max pooling
             
+            # Don't use max pooling!
+
+            """
             self.conv1 = tf.layers.max_pooling2d(inputs = self.conv1,
                                                 pool_size = max_pool_size,
                                                 strides = max_pool_str,
                                                 padding = "VALID"
-                                                )
-            
+                                                )"""
              
             """
             Second convnet:
