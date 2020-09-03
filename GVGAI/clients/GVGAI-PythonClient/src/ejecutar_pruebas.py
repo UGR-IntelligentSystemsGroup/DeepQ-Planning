@@ -11,10 +11,14 @@ import random
 # these hyperparameters
 
 # Architecture
-l1_num_filt = [512] # CAMBIAR!!!
-l1_window = [[4,4]]
-l1_strides = [[2,2]]
-padding_type = ["SAME"]
+# First conv layer
+l1_num_filt = [32]
+l1_filter_structure = [ [[4,4],[2,2],"SAME"],]
+
+# Second conv layer
+l2_num_filt = [64, 128]
+l2_filter_structure = [ [[4,4],[2,2],"SAME"], [[3,3],[1,1],"VALID"] ]
+
 
 # Don't use max pooling
 """
@@ -22,7 +26,7 @@ max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
 """
 
-fc_num_unis = [[1024,256]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,16], [128,32]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
@@ -62,7 +66,7 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 
 # Save the hyperparameters for each different model in a list
 models_params = [ (a,b,c,d,e,f,g,h,i,j,k)
-					for a in l1_num_filt for b in l1_window for c in l1_strides for d in padding_type \
+					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in fc_num_unis for f in num_its for g in alfa for h in dropout for i in batch_size \
  					for j in games_to_play for k in datasets_sizes_for_training]
 
@@ -71,9 +75,9 @@ try:
 	for curr_model_params in models_params:
 		# <Current model hyperparameters>
 		curr_l1_num_filt = curr_model_params[0]
-		curr_l1_window = curr_model_params[1]
-		curr_l1_strides = curr_model_params[2]
-		curr_padding_type = curr_model_params[3]
+		curr_l1_filter_structure = curr_model_params[1]
+		curr_l2_num_filt = curr_model_params[2]
+		curr_l2_filter_structure = curr_model_params[3]
 		curr_fc_num_unis = curr_model_params[4]
 		curr_num_its = curr_model_params[5]
 		curr_alfa = curr_model_params[6]
@@ -104,11 +108,15 @@ try:
 
 		# Change model params
 		agent_file = re.sub(r'self.l1_num_filt=.*', 'self.l1_num_filt={}'.format(curr_l1_num_filt), agent_file, count=1)
-		agent_file = re.sub(r'self.l1_window=.*', 'self.l1_window={}'.format(curr_l1_window), agent_file, count=1)
-		agent_file = re.sub(r'self.l1_strides=.*', 'self.l1_strides={}'.format(curr_l1_strides), agent_file, count=1)
-		agent_file = re.sub(r'self.padding_type=.*', 'self.padding_type="{}"'.format(curr_padding_type), agent_file, count=1)
-		#agent_file = re.sub(r'self.max_pool_size=.*', 'self.max_pool_size={}'.format(curr_max_pool_size), agent_file, count=1)
-		#agent_file = re.sub(r'self.max_pool_str=.*', 'self.max_pool_str={}'.format(curr_max_pool_str), agent_file, count=1)
+		agent_file = re.sub(r'self.l1_window=.*', 'self.l1_window={}'.format(curr_l1_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.l1_strides=.*', 'self.l1_strides={}'.format(curr_l1_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.l1_padding_type=.*', 'self.l1_padding_type="{}"'.format(curr_l1_filter_structure[2]), agent_file, count=1)
+
+		agent_file = re.sub(r'self.l2_num_filt=.*', 'self.l2_num_filt={}'.format(curr_l2_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.l2_window=.*', 'self.l2_window={}'.format(curr_l2_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.l2_strides=.*', 'self.l2_strides={}'.format(curr_l2_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.l2_padding_type=.*', 'self.l2_padding_type="{}"'.format(curr_l2_filter_structure[2]), agent_file, count=1)
+
 		agent_file = re.sub(r'self.fc_num_unis=.*', 'self.fc_num_unis={}'.format(curr_fc_num_unis), agent_file, count=1)
 		agent_file = re.sub(r'self.learning_rate=.*', 'self.learning_rate={}'.format(curr_alfa), agent_file, count=1)
 		agent_file = re.sub(r'self.dropout_prob=.*', 'self.dropout_prob={}'.format(curr_dropout), agent_file, count=1)
@@ -142,8 +150,9 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_conv1-{},{},{},{},no-max-pooling_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
-							format(curr_l1_num_filt, curr_l1_window[0], curr_l1_strides[0], curr_padding_type, \
+			curr_model_name = "DQN_conv1-{},{},{},{}_conv2-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
+							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 							curr_fc_num_unis[0], curr_fc_num_unis[1], \
 							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
 
@@ -321,7 +330,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer
-	# subprocess.call("poweroff", shell=True)
+	subprocess.call("poweroff", shell=True)
 
 
 					

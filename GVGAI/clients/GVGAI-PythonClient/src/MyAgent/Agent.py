@@ -54,23 +54,30 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_conv1-512,4,2,SAME,no-max-pooling_fc-1024_256_its-5000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0"
+		self.network_name="DQN_conv1-32,4,2,SAME_conv2-64,4,2,SAME_fc-64_16_its-5000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=20
+		self.dataset_size_for_training=7
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
 
 		# Architecture
-		self.l1_num_filt=512
+		# First conv layer
+		self.l1_num_filt=32
 		self.l1_window=[4, 4]
 		self.l1_strides=[2, 2]
-		self.padding_type="SAME"
+		self.l1_padding_type="SAME"
+
+		# Second conv layer
+		self.l2_num_filt=64
+		self.l2_window=[4, 4]
+		self.l2_strides=[2, 2]
+		self.l2_padding_type="SAME"
 
 		# Don't use max pooling
 		"""
@@ -80,7 +87,7 @@ class Agent(AbstractPlayer):
 
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[1024, 256]
+		self.fc_num_unis=[64, 16]
 
 		# Training params
 		self.learning_rate=0.005
@@ -146,7 +153,9 @@ class Agent(AbstractPlayer):
 			self.model = DQNetwork(writer_name=self.network_name,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 padding_type = self.padding_type,
+					 l1_padding_type = self.l1_padding_type,
+					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
+					 l2_padding_type = self.l2_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate)
 
@@ -156,7 +165,7 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=5
+			self.dataset_size_model=7
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -227,7 +236,9 @@ class Agent(AbstractPlayer):
 			self.model = DQNetwork(writer_name=curr_name,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 padding_type = self.padding_type,
+					 l1_padding_type = self.l1_padding_type,
+					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
+					 l2_padding_type = self.l2_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
 					 learning_rate = self.learning_rate)
 
@@ -237,7 +248,9 @@ class Agent(AbstractPlayer):
 					 create_writer = False,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 padding_type = self.padding_type,
+					 l1_padding_type = self.l1_padding_type,
+					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
+					 l2_padding_type = self.l2_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate)
 

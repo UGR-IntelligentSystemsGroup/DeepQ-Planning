@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_prueba2-overfit-5-niveles_Catapults.ckpt-5"
-all_model_checkpoint_paths: "DQN_prueba2-overfit-5-niveles_Catapults.ckpt-5"
+model_checkpoint_path: "DQN_conv1-32,4,2,SAME_conv2-64,4,2,SAME_fc-64_16_its-5000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0.ckpt-7"
+all_model_checkpoint_paths: "DQN_conv1-32,4,2,SAME_conv2-64,4,2,SAME_fc-64_16_its-5000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0.ckpt-7"

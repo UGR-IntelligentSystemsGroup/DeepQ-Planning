@@ -12,7 +12,9 @@ class DQNetwork:
     def __init__(self, name="DQNetwork", writer_name="DQNetwork", create_writer = True,
                  sample_size=[13, 26, 9],
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
-                 padding_type = "SAME",
+                 l1_padding_type = "SAME",
+                 l2_num_filt = 2, l2_window = [4,4], l2_strides = [2,2],
+                 l2_padding_type = "SAME",
                  fc_num_units = [16, 1], dropout_prob = 0.5,
                  l2_regularization=0.0,
                  learning_rate = 0.005):
@@ -71,7 +73,7 @@ class DQNetwork:
                                          filters = l1_num_filt,
                                          kernel_size = l1_window,
                                          strides = l1_strides,
-                                         padding = padding_type,
+                                         padding = l1_padding_type,
                                          activation = tf.nn.relu,
                                          use_bias = True,
                                          kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
@@ -92,29 +94,21 @@ class DQNetwork:
             Second convnet:
             """
             
-            """
             self.conv2 = tf.layers.conv2d(inputs = self.conv1,
                                          filters = l2_num_filt,
                                          kernel_size = l2_window,
                                          strides = l2_strides,
-                                         padding = padding_type,
+                                         padding = l2_padding_type,
                                          activation = tf.nn.relu,
                                          use_bias = True,
                                          kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
                                          name = "conv2")
             
-            # Max pooling
             
-            self.conv2 = tf.layers.max_pooling2d(inputs = self.conv2,
-                                                pool_size = max_pool_size,
-                                                strides = max_pool_str,
-                                                padding = "VALID"
-                                                )
-            """
             
             # Flatten output of conv layers
             
-            self.flatten = tf.contrib.layers.flatten(self.conv1)
+            self.flatten = tf.contrib.layers.flatten(self.conv2)
             
             # Fully connected layer 1
 
