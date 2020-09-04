@@ -13,11 +13,11 @@ import random
 # Architecture
 # First conv layer
 l1_num_filt = [32]
-l1_filter_structure = [ [[4,4],[2,2],"SAME"],]
+l1_filter_structure = [ [[4,4],[2,2],"SAME"], [[5,5],[2,2],"SAME"]]
 
 # Second conv layer
-l2_num_filt = [64, 128]
-l2_filter_structure = [ [[4,4],[2,2],"SAME"], [[3,3],[1,1],"VALID"] ]
+l2_num_filt = [64]
+l2_filter_structure = [ [[4,4],[2,2],"SAME"]]
 
 
 # Don't use max pooling
@@ -26,7 +26,8 @@ max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
 """
 
-fc_num_unis = [[64,16], [128,32]] # Number of units of the first and second fully-connected layers
+# fc_num_unis = [[64,16]]
+fc_num_unis = [[64,128,256]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
