@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_conv1-32,5,2,SAME_conv2-64,3,1,VALID_fc-128_32_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-20"
-all_model_checkpoint_paths: "DQN_conv1-32,5,2,SAME_conv2-64,3,1,VALID_fc-128_32_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-20"
+model_checkpoint_path: "DQN_conv1-32,5,2,SAME_conv2-64,4,2,SAME_fc-256_1_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-20"
+all_model_checkpoint_paths: "DQN_conv1-32,5,2,SAME_conv2-64,4,2,SAME_fc-256_1_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0.ckpt-20"

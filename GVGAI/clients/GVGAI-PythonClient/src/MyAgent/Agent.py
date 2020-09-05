@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_conv1-32,5,2,SAME_conv2-64,3,1,VALID_fc-128_32_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0"
+		self.network_name="DQN_conv1-32,5,2,SAME_conv2-64,4,2,SAME_fc-256_1_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -75,9 +75,9 @@ class Agent(AbstractPlayer):
 
 		# Second conv layer
 		self.l2_num_filt=64
-		self.l2_window=[3, 3]
-		self.l2_strides=[1, 1]
-		self.l2_padding_type="VALID"
+		self.l2_window=[4, 4]
+		self.l2_strides=[2, 2]
+		self.l2_padding_type="SAME"
 
 		# Don't use max pooling
 		"""
@@ -87,7 +87,7 @@ class Agent(AbstractPlayer):
 
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[128, 32]
+		self.fc_num_unis=[256, 1]
 
 		# Training params
 		self.learning_rate=0.005
@@ -99,7 +99,9 @@ class Agent(AbstractPlayer):
 		# Extra params
 		self.max_tau=250 # Number of training its before copying the DQNetwork's weights to the target network
 		self.tau=0 # Counter that resets to 0 when the target network is updated
-		self.gamma=0.9 # Discount rate for Deep Q-Learning
+		# Discount rate for Deep Q-Learning
+		# Gamma changed from 0.9 to 0.99!!!
+		self.gamma=0.99 
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]

@@ -119,24 +119,21 @@ class DQNetwork:
                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
                                   name="fc_1")
 
-            # Dropout 1
-            
-            self.fc_1 = tf.layers.dropout(self.fc_1, rate=self.dropout_placeholder, name="Dropout_1")
-
             # Fully connected layer 2
             # <Only if fc_num_units[1] != 1>
 
             if fc_num_units[1] != 1:
+              # Dropout 1
+              # If there is a single fc layer, don't use droput after it since it is right before
+              # the output layer
+              self.fc_1 = tf.layers.dropout(self.fc_1, rate=self.dropout_placeholder, name="Dropout_1")
+
               self.fc_2 = tf.layers.dense(inputs = self.fc_1,
                                     units = fc_num_units[1],
                                     activation = tf.nn.relu,
                                     kernel_initializer=tf.contrib.layers.xavier_initializer(),
                                     kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
                                     name="fc_2")
-              
-              # Dropout
-              
-              self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_placeholder, name="Dropout_2")
 
             else:
               self.fc_2 = self.fc_1

@@ -26,8 +26,8 @@ max_pool_size = [[2, 2]]
 max_pool_str = [[1, 1]]
 """
 
-# fc_num_unis = [[64,16]]
-fc_num_unis = [[64,128,256]] # Number of units of the first and second fully-connected layers
+# A single fc layer works better!
+fc_num_unis = [[64,1], [128,1], [256,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
