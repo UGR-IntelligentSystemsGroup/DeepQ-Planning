@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,11 +54,11 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_conv1-32,5,2,SAME_conv2-64,4,2,SAME_fc-256_1_its-5000_alfa-0.005_dropout-0.0_batch-16_Catapults_0"
+		self.network_name="DQN_BN_conv1-32,4,2,SAME_conv2-64,4,2,SAME_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-16_BoulderDash_0"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -69,7 +69,7 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[5, 5]
+		self.l1_window=[4, 4]
 		self.l1_strides=[2, 2]
 		self.l1_padding_type="SAME"
 
@@ -87,7 +87,7 @@ class Agent(AbstractPlayer):
 
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[256, 1]
+		self.fc_num_unis=[64, 1]
 
 		# Training params
 		self.learning_rate=0.005
@@ -100,8 +100,8 @@ class Agent(AbstractPlayer):
 		self.max_tau=250 # Number of training its before copying the DQNetwork's weights to the target network
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
-		# Gamma changed from 0.9 to 0.99!!!
-		self.gamma=0.99 
+		# Gamma changed from 0.9 to 1!!!
+		self.gamma=1 
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]

@@ -89,6 +89,10 @@ class DQNetwork:
                                                 strides = max_pool_str,
                                                 padding = "VALID"
                                                 )"""
+
+            # Batch Normalization
+
+            self.conv1 = tf.layers.batch_normalization(self.conv1, axis = 3, momentum=0.99, training=self.is_training)
              
             """
             Second convnet:
@@ -104,7 +108,9 @@ class DQNetwork:
                                          kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
                                          name = "conv2")
             
-            
+            # Batch Normalization
+
+            self.conv2 = tf.layers.batch_normalization(self.conv2, axis = 3, momentum=0.99, training=self.is_training)
             
             # Flatten output of conv layers
             

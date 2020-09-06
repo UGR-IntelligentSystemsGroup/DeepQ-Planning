@@ -151,7 +151,7 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_conv1-{},{},{},{}_conv2-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+			curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
 							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 							curr_fc_num_unis[0], curr_fc_num_unis[1], \
@@ -331,7 +331,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer
-	subprocess.call("poweroff", shell=True)
+	# subprocess.call("poweroff", shell=True)
 
 
 					
