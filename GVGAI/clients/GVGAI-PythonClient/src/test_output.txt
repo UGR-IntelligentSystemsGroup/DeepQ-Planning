@@ -1,2 +1,8 @@
+DQN_prueba_3_capas_convolucionales-20 | BoulderDash | 94
+DQN_prueba_3_capas_convolucionales-20 | BoulderDash | 128
+DQN_prueba_3_capas_convolucionales-20 | BoulderDash | 93
+DQN_prueba_3_capas_convolucionales-20 | BoulderDash | -1
+DQN_prueba_3_capas_convolucionales-20 | BoulderDash | 86
 
+-----------------------------------------------------------------------------------
 

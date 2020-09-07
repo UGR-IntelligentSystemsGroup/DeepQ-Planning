@@ -13,11 +13,16 @@ import random
 # Architecture
 # First conv layer
 l1_num_filt = [32]
-l1_filter_structure = [ [[4,4],[2,2],"SAME"], [[5,5],[2,2],"SAME"]]
+# l1_filter_structure = [ [[4,4],[2,2],"SAME"], [[5,5],[2,2],"SAME"]]
+l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
 
 # Second conv layer
 l2_num_filt = [64]
-l2_filter_structure = [ [[4,4],[2,2],"SAME"]]
+l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+
+# Third conv layer
+l3_num_filt = [128]
+l3_filter_structure = [ [[3,3],[1,1],"VALID"]]
 
 
 # Don't use max pooling
@@ -27,7 +32,8 @@ max_pool_str = [[1, 1]]
 """
 
 # A single fc layer works better!
-fc_num_unis = [[64,1], [128,1], [256,1]] # Number of units of the first and second fully-connected layers
+# fc_num_unis = [[64,1], [128,1], [256,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,1]] 
 
 # Training params
 num_its = [5000] # Number of iterations for training
@@ -36,7 +42,8 @@ dropout = [0.0] # Dropout value
 batch_size = [16] # Batch size
 
 # Extra params
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['BoulderDash']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
 repetitions_per_model = 1 # Each model is trained this number of times
 
@@ -66,10 +73,11 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k)
+models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m)
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
- 					for e in fc_num_unis for f in num_its for g in alfa for h in dropout for i in batch_size \
- 					for j in games_to_play for k in datasets_sizes_for_training]
+ 					for e in l3_num_filt for f in l3_filter_structure \
+ 					for g in fc_num_unis for h in num_its for i in alfa for j in dropout for k in batch_size \
+ 					for l in games_to_play for m in datasets_sizes_for_training]
 
 try:
 	# Iterate over the different models
@@ -79,13 +87,15 @@ try:
 		curr_l1_filter_structure = curr_model_params[1]
 		curr_l2_num_filt = curr_model_params[2]
 		curr_l2_filter_structure = curr_model_params[3]
-		curr_fc_num_unis = curr_model_params[4]
-		curr_num_its = curr_model_params[5]
-		curr_alfa = curr_model_params[6]
-		curr_dropout = curr_model_params[7]
-		curr_batch_size = curr_model_params[8]
-		curr_game = curr_model_params[9]
-		dataset_size_for_training = curr_model_params[10]
+		curr_l3_num_filt = curr_model_params[4]
+		curr_l3_filter_structure = curr_model_params[5]
+		curr_fc_num_unis = curr_model_params[6]
+		curr_num_its = curr_model_params[7]
+		curr_alfa = curr_model_params[8]
+		curr_dropout = curr_model_params[9]
+		curr_batch_size = curr_model_params[10]
+		curr_game = curr_model_params[11]
+		dataset_size_for_training = curr_model_params[12]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -117,6 +127,11 @@ try:
 		agent_file = re.sub(r'self.l2_window=.*', 'self.l2_window={}'.format(curr_l2_filter_structure[0]), agent_file, count=1)
 		agent_file = re.sub(r'self.l2_strides=.*', 'self.l2_strides={}'.format(curr_l2_filter_structure[1]), agent_file, count=1)
 		agent_file = re.sub(r'self.l2_padding_type=.*', 'self.l2_padding_type="{}"'.format(curr_l2_filter_structure[2]), agent_file, count=1)
+
+		agent_file = re.sub(r'self.l3_num_filt=.*', 'self.l3_num_filt={}'.format(curr_l3_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.l3_window=.*', 'self.l3_window={}'.format(curr_l3_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.l3_strides=.*', 'self.l3_strides={}'.format(curr_l3_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.l3_padding_type=.*', 'self.l3_padding_type="{}"'.format(curr_l3_filter_structure[2]), agent_file, count=1)
 
 		agent_file = re.sub(r'self.fc_num_unis=.*', 'self.fc_num_unis={}'.format(curr_fc_num_unis), agent_file, count=1)
 		agent_file = re.sub(r'self.learning_rate=.*', 'self.learning_rate={}'.format(curr_alfa), agent_file, count=1)
@@ -151,11 +166,13 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+			"""curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
 							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 							curr_fc_num_unis[0], curr_fc_num_unis[1], \
-							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)"""
+
+			curr_model_name = "DQN_prueba_3_capas_convolucionales"
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
