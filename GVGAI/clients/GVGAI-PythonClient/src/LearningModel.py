@@ -17,6 +17,8 @@ class DQNetwork:
                  l2_padding_type = "SAME",
                  l3_num_filt = 2, l3_window = [4,4], l3_strides = [2,2],
                  l3_padding_type = "SAME",
+                 l4_num_filt = 2, l4_window = [4,4], l4_strides = [2,2],
+                 l4_padding_type = "SAME",
                  fc_num_units = [16, 1], dropout_prob = 0.5,
                  l2_regularization=0.0,
                  learning_rate = 0.005):
@@ -132,10 +134,28 @@ class DQNetwork:
 
             self.conv3 = tf.layers.batch_normalization(self.conv3, axis = 3, momentum=0.99, training=self.is_training)
 
+            """
+            Fourth convnet:
+            """
+
+            self.conv4 = tf.layers.conv2d(inputs = self.conv3,
+                             filters = l4_num_filt,
+                             kernel_size = l4_window,
+                             strides = l4_strides,
+                             padding = l4_padding_type,
+                             activation = tf.nn.relu,
+                             use_bias = True,
+                             kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+                             name = "conv4")
+            
+            # Batch Normalization
+
+            self.conv4 = tf.layers.batch_normalization(self.conv4, axis = 3, momentum=0.99, training=self.is_training)
+
 
             # Flatten output of conv layers
             
-            self.flatten = tf.contrib.layers.flatten(self.conv3)
+            self.flatten = tf.contrib.layers.flatten(self.conv4)
             
             # Fully connected layer 1
 
