@@ -20,7 +20,7 @@ l2_num_filt = [64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"],  [[3,3],[1,1],"VALID"]]
 
 # Third conv layer
-l3_num_filt = [64] # Test more filters
+l3_num_filt = [128] 
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -40,7 +40,7 @@ fc_num_unis = [[64,1], [128,1]] # Number of units of the first and second fully-
 num_its = [7500] # Number of iterations for training
 alfa = [0.005] # Learning rate
 dropout = [0.0] # Dropout value
-batch_size = [16] # Batch size
+batch_size = [32] # Batch size
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
@@ -174,13 +174,15 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+			"""curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
 							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 							curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
 							curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
 							curr_fc_num_unis[0], curr_fc_num_unis[1], \
-							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)"""
+
+			curr_model_name = "DQN_prueba_convergencia_training_{}_{}_{}_{}".format(curr_num_its, curr_alfa, curr_batch_size, curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
@@ -356,7 +358,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer
-	subprocess.call("poweroff", shell=True)
+	# subprocess.call("poweroff", shell=True)
 
 
 					
