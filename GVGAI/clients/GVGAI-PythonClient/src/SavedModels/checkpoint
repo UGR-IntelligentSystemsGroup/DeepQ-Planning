@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_BN_conv1-32,5,1,VALID_conv2-64,3,1,VALID_conv3-128,3,1,VALID_conv4-128,3,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_IceAndFire_0.ckpt-20"
-all_model_checkpoint_paths: "DQN_BN_conv1-32,5,1,VALID_conv2-64,3,1,VALID_conv3-128,3,1,VALID_conv4-128,3,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_IceAndFire_0.ckpt-20"
+model_checkpoint_path: "DQN_prueba_convergencia_training_10000_0.005_16_BoulderDash.ckpt-20"
+all_model_checkpoint_paths: "DQN_prueba_convergencia_training_10000_0.005_16_BoulderDash.ckpt-20"

@@ -13,11 +13,13 @@ import random
 # Architecture
 # First conv layer
 l1_num_filt = [32]
-l1_filter_structure = [ [[5,5],[1,1],"VALID"],  [[4,4],[1,1],"VALID"]]
+# l1_filter_structure = [ [[5,5],[1,1],"VALID"],  [[4,4],[1,1],"VALID"]]
+l1_filter_structure = [ [[5,5],[1,1],"VALID"]]
 
 # Second conv layer
 l2_num_filt = [64]
-l2_filter_structure = [ [[4,4],[1,1],"VALID"],  [[3,3],[1,1],"VALID"]]
+# l2_filter_structure = [ [[4,4],[1,1],"VALID"],  [[3,3],[1,1],"VALID"]]
+l2_filter_structure = [ [[4,4],[1,1],"VALID"]]
 
 # Third conv layer
 l3_num_filt = [128] 
@@ -34,16 +36,18 @@ max_pool_str = [[1, 1]]
 """
 
 # A single fc layer works better!
-fc_num_unis = [[64,1], [128,1]] # Number of units of the first and second fully-connected layers
+# fc_num_unis = [[64,1], [128,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[128,1]]
 
 # Training params
 num_its = [7500] # Number of iterations for training
-alfa = [0.005] # Learning rate
+alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
-batch_size = [32] # Batch size
+batch_size = [32] # Batch size (16 is too small)
 
 # Extra params
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['BoulderDash']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
 repetitions_per_model = 1 # Each model is trained this number of times
 
