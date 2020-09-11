@@ -226,14 +226,13 @@ class DQNetwork:
         # Create Session
 
         # Run on GPU
-        """
+        
         # Needed for running on GPU
         gpu_options = tf.GPUOptions(allow_growth=True)
         self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-        """
-
+        
         # Run on CPU (it's faster if model and batch_size is small)               
-        self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
+        # self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
 
         # Initialize variables
         self.sess.run(tf.global_variables_initializer())
@@ -259,6 +258,15 @@ class DQNetwork:
 
         return prediction
 
+    # Predicts the associated y-value (plan length) for a batch of x ((subgoal, game state) pairs one-hot encoded)
+    # Dropout is not activated
+    def predict_batch(self, x):
+        data_dict = {self.X : x, self.is_training : False, self.dropout_placeholder : 0.0}
+
+        prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
+
+        return prediction
+
     # Execute num_it training steps using X, Y (Q_targets) as the current batches. They must have the same number of elements
     # Dropout is activated
     def train(self, X, Y, num_it = 1):
@@ -277,7 +285,7 @@ class DQNetwork:
         self.writer.add_summary(train_loss_log, it)
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
-    def save_model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              (self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
+    def save_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
         saver = tf.train.Saver(
           tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, self.variable_scope)) # Only save the variables within this variable scope
         

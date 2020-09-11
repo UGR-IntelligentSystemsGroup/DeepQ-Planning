@@ -31,15 +31,16 @@ l4_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 fc_num_unis = [[64,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [7500] # Number of iterations for training
+num_its = [10000] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
-batch_size = [32] # Batch size (16 is too small)
+# batch_size = [32] # Batch size (16 is too small)
+batch_size = [64] # Batch size (16 is too small)
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 1 # Each model is trained this number of times
+repetitions_per_model = 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -350,7 +351,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					

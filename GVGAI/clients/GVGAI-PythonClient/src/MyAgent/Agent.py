@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_BN_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,4,1,VALID_conv4-128,4,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_Catapults_0"
+		self.network_name="DQN_prueba_eficiencia_Q_targets_7500_Catapults"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -81,13 +81,13 @@ class Agent(AbstractPlayer):
 
 		# Third conv layer
 		self.l3_num_filt=128
-		self.l3_window=[4, 4]
+		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
 		self.l4_num_filt=128
-		self.l4_window=[4, 4]
+		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
 
@@ -764,6 +764,94 @@ class Agent(AbstractPlayer):
 
 		return one_hot_grid
 
+	def encode_game_state_all_subgoals(self, obs_grid, goal_pos_list):
+		"""
+		This method works the same as encode_game_state but returns a different one-hot
+		matrix for each goal in goal_pos_list.
+
+		@param obs_grid Matrix of observations
+		@param goal_pos_list List in which every element corresponds to the (x, y) position 
+							 (not as pixels but as grid) of a goal  
+		"""
+
+		# Dictionaries that maps itype (key) to one-hot array position to write a 1
+		# e.g. 4 : 2 = [0 0 1 0 0 0 0 0 0]
+		# None (empty tiles) objects are assigned an array full of zeroes
+
+		# Boulder Dash
+		# Itypes: 0, 1, 4, 5, 6, 7 (10 and 11 correspond to enemies)
+		encode_dict_boulderdash = {
+			0 : 0,
+			1 : 1,
+			4 : 2,
+			5 : 3,
+			6 : 4,
+			7 : 5
+		}
+
+		# Catapults
+		# Itypes: 0, 3, 5, 6, 7, 8, 9, 15
+		encode_dict_catapults = {
+			0 : 0,
+			3 : 1,
+			5 : 2,
+			6 : 3,
+			7 : 4,
+			8 : 5,
+			9 : 6,
+			15 : 7
+		}
+
+		# IceAndFire
+		# Itypes: 0, 1, 3, 4, 5, 6, 8, 9, 10
+		encode_dict_iceandfire = {
+			0 : 0,
+			1 : 1,
+			3 : 2,
+			4 : 3,
+			5 : 4,
+			6 : 5,
+			8 : 6,
+			9 : 7,
+			10 : 8
+		}
+
+		if self.game_playing=='BoulderDash':
+			encode_dict = encode_dict_boulderdash
+		elif self.game_playing=='IceAndFire':
+			encode_dict = encode_dict_iceandfire
+		else:
+			encode_dict = encode_dict_catapults
+
+		one_hot_length = len(encode_dict.keys())+1 # 1 extra position to represent the subgoal
+
+		num_cols = len(obs_grid)
+		num_rows = len(obs_grid[0])
+
+		# The image representation is by rows and columns, instead of (x, y) pos of each pixel
+		# Row -> y
+		# Col -> x
+		one_hot_grid = np.zeros((num_rows, num_cols, one_hot_length), np.int8)
+
+		# Encode the grid
+		for x in range(num_cols):
+			for y in range(num_rows):
+				for obs in obs_grid[x][y]:
+					if obs is not None: # Ignore Empty tiles
+						if not (self.game_playing == 'BoulderDash' and obs.itype == 3): # Ignore pickage images (those that correspond to ACTION_USE) in BoulderDash
+							this_pos = encode_dict[obs.itype]
+							one_hot_grid[y][x][this_pos] = 1
+
+		# Repeat that one_hot_grid along a first, new numpy axis, so that there is a different
+		# one_hot_grid for each subgoal
+		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(goal_pos_list), axis=0)
+
+		# Encode a goal position in each grid
+		for ind, goal_pos in enumerate(goal_pos_list):
+			one_hot_grid_array[ind][goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
+
+		return one_hot_grid_array
+
 
 	def choose_next_subgoal(self, obs_grid, possible_subgoals):
 		"""
@@ -810,20 +898,18 @@ class Agent(AbstractPlayer):
 			return 0
 
 		observationGrid = sso.observationGrid
-		min_Q_val = 1000000000000
 
 		# Retrieve subgoals list (list of subgoals positions)
 		subgoals = self.get_subgoals_positions(sso)
 
-		for subgoal in subgoals:
-			# Obtain one-hot encoding using the state (sso) and the current subgoal
-			one_hot_grid = self.encode_game_state(observationGrid, subgoal)
+		# Encode every subgoal as its corresponding one_hot_grid
+		one_hot_grid_array = self.encode_game_state_all_subgoals(observationGrid, subgoals)
 
-			# Obtain the Q-value associated to that subgoal using the target network
-			Q_val = self.target_network.predict(one_hot_grid)
+		# Predict the Q_values for all the subgoals
+		Q_values = self.target_network.predict_batch(one_hot_grid_array)
 
-			if Q_val < min_Q_val:
-				min_Q_val = Q_val
+		# Get the min Q_value
+		min_Q_val = np.min(Q_values)
 
 		return min_Q_val
 
