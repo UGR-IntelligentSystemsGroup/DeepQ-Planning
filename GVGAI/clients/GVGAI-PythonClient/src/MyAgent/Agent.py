@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_convergencia_training_10000_0.005_16_BoulderDash"
+		self.network_name="DQN_BN_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,4,1,VALID_conv4-128,4,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_Catapults_0"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -69,7 +69,7 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[5, 5]
+		self.l1_window=[4, 4]
 		self.l1_strides=[1, 1]
 		self.l1_padding_type="VALID"
 
@@ -81,13 +81,13 @@ class Agent(AbstractPlayer):
 
 		# Third conv layer
 		self.l3_num_filt=128
-		self.l3_window=[3, 3]
+		self.l3_window=[4, 4]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
 		self.l4_num_filt=128
-		self.l4_window=[3, 3]
+		self.l4_window=[4, 4]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
 
@@ -99,14 +99,14 @@ class Agent(AbstractPlayer):
 
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[128, 1]
+		self.fc_num_unis=[64, 1]
 
 		# Training params
 		self.learning_rate=0.005
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=10000
-		self.batch_size=16
+		self.num_train_its=7500
+		self.batch_size=32
 		
 		# Extra params
 		self.max_tau=250 # Number of training its before copying the DQNetwork's weights to the target network
