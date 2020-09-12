@@ -20,27 +20,26 @@ l2_num_filt = [64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [128] 
+l3_num_filt = [64, 128] 
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [128]
+l4_num_filt = [128, 256]
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[64,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[32,1], [64,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [10000] # Number of iterations for training
+num_its = [7500] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
-# batch_size = [32] # Batch size (16 is too small)
-batch_size = [64] # Batch size (16 is too small)
+batch_size = [32] # Batch size (16 is too small and 64 too big (I tested both sizes))
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 4 # Each model is trained this number of times
+repetitions_per_model = 2 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -70,7 +69,7 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # Save the hyperparameters for each different model in a list
 models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o)
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
- 					for e in l3_num_filt for f in l3_filter_structure for g in l3_num_filt for h in l3_filter_structure \
+ 					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
  					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
  					for n in games_to_play for o in datasets_sizes_for_training]
 
@@ -351,7 +350,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	# subprocess.call("shutdown -t 60", shell=True)
+	subprocess.call("shutdown -t 60", shell=True)
 
 
 					
