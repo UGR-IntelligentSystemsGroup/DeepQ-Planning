@@ -20,18 +20,18 @@ l2_num_filt = [64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64, 128] 
-l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l3_num_filt = [64] 
+l3_filter_structure = [ [[3,3],[1,1],"VALID"], [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [128, 256]
-l4_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l4_num_filt = [64]
+l4_filter_structure = [ [[3,3],[1,1],"VALID"], [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32,1], [64,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[64,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [7500] # Number of iterations for training
+num_its = [5000] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
 batch_size = [32] # Batch size (16 is too small and 64 too big (I tested both sizes))
@@ -39,7 +39,7 @@ batch_size = [32] # Batch size (16 is too small and 64 too big (I tested both si
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 2 # Each model is trained this number of times
+repetitions_per_model = 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -168,7 +168,7 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_BN_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+			curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
 							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 							curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \

@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_BN_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,3,1,VALID_conv4-128,3,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_Catapults_1"
+		self.network_name="DQN_Pruebas_num_its_para_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,3,1,VALID_conv4-64,3,1,VALID_fc-64_1_its-7500_alfa-0.005_dropout-0.0_batch-32_Catapults_4"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -80,13 +80,13 @@ class Agent(AbstractPlayer):
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
-		self.l3_num_filt=128
+		self.l3_num_filt=64
 		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=128
+		self.l4_num_filt=64
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
