@@ -6,6 +6,10 @@ import os
 import glob
 import random
 
+
+# VER QUÉ PRUEBAS REALIZAR A CONTINUACIÓN!!!
+
+
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
@@ -21,11 +25,11 @@ l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
 l3_num_filt = [64] 
-l3_filter_structure = [ [[3,3],[1,1],"VALID"], [[4,4],[1,1],"VALID"] ]
+l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
 l4_num_filt = [64]
-l4_filter_structure = [ [[3,3],[1,1],"VALID"], [[4,4],[1,1],"VALID"] ]
+l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
 fc_num_unis = [[64,1]] # Number of units of the first and second fully-connected layers
@@ -39,7 +43,7 @@ batch_size = [32] # Batch size (16 is too small and 64 too big (I tested both si
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 4 # Each model is trained this number of times
+repetitions_per_model = 5 # Each model is trained this number of times
 
 # <Script variables>
 
