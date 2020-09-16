@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_3.ckpt-20"
-all_model_checkpoint_paths: "DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_3.ckpt-20"
+model_checkpoint_path: "DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_1.ckpt-20"
+all_model_checkpoint_paths: "DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_1.ckpt-20"
