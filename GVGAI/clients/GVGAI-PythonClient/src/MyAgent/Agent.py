@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-64_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_1"
+		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-64,4,1,VALID_fc-32_1_its-5000_alfa-0.005_dropout-0.0_batch-32_Catapults_1"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=20
@@ -99,7 +99,7 @@ class Agent(AbstractPlayer):
 
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[64, 1]
+		self.fc_num_unis=[32, 1]
 
 		# Training params
 		self.learning_rate=0.005

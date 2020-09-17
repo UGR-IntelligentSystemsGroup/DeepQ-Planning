@@ -6,10 +6,6 @@ import os
 import glob
 import random
 
-
-# VER QUÉ PRUEBAS REALIZAR A CONTINUACIÓN!!!
-
-
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
@@ -24,7 +20,7 @@ l2_num_filt = [32, 64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64] 
+l3_num_filt = [32] 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -32,7 +28,7 @@ l4_num_filt = [64]
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[16,1], [32,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[32,1], [64,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
