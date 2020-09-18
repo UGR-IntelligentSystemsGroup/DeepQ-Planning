@@ -20,7 +20,7 @@ l2_num_filt = [32, 64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [32] 
+l3_num_filt = [64] # 32 works worse 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
