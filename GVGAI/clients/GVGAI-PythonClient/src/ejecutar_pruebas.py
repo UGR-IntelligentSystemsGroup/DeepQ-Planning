@@ -12,15 +12,15 @@ import random
 
 # Architecture
 # First conv layer
-l1_num_filt = [16, 32]
+l1_num_filt = [16]
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32, 64]
+l2_num_filt = [64]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64] # 32 works worse 
+l3_num_filt = [64] # 32 does worse 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -28,18 +28,18 @@ l4_num_filt = [64]
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32,1], [64,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[32,1]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [5000] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
-batch_size = [32] # Batch size (16 is too small and 64 too big (I tested both sizes))
+batch_size = [16, 32] # Batch size (16 is too small and 64 too big (I tested both sizes))
 
 # Extra params
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 2 # Each model is trained this number of times
+repetitions_per_model = 10 # Each model is trained this number of times
 
 # <Script variables>
 
