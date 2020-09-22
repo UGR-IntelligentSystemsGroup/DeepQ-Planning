@@ -127,6 +127,6 @@ except Exception as e:
 finally:
 	print(">> All datasets have been created")
 
-	# Shutdown the computer
-	# subprocess.call("poweroff", shell=True)
+	# Shutdown the computer in a minute
+	subprocess.call("shutdown -t 60", shell=True)
 

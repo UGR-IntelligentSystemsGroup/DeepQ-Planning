@@ -5,6 +5,7 @@ import subprocess
 import os
 import glob
 import random
+import sys
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -37,9 +38,13 @@ dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-datasets_sizes_for_training = [20] # For each size, a different model is trained and tested on this number of levels
-repetitions_per_model = 6 # Each model is trained this number of times
+games_to_play = ['IceAndFire', 'Catapults']
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+# For each size, a different model is trained and tested on this number of levels
+datasets_sizes_for_training_BoulderDash = [20] 
+datasets_sizes_for_training_IceAndFire = [45]
+datasets_sizes_for_training_Catapults = [45] 
+repetitions_per_model = 20 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -67,11 +72,15 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o)
+models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_b) if n == 'BoulderDash' else 
+				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_i) if n == 'IceAndFire' else
+				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_c)
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
  					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
- 					for n in games_to_play for o in datasets_sizes_for_training]
+ 					for n in games_to_play 
+ 					for o_b in datasets_sizes_for_training_BoulderDash for o_i in datasets_sizes_for_training_IceAndFire
+ 					for o_c in datasets_sizes_for_training_Catapults]
 
 try:
 	# Iterate over the different models
