@@ -29,7 +29,7 @@ l4_num_filt = [64, 128]
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32,1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[16,8]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [7500] # Number of iterations for training
