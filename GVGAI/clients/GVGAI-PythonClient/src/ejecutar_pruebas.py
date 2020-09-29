@@ -13,11 +13,11 @@ import sys
 
 # Architecture
 # First conv layer
-l1_num_filt = [16, 32]
+l1_num_filt = [32]
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32, 64]
+l2_num_filt = [32]
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -29,7 +29,7 @@ l4_num_filt = [64, 128]
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[16,8]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
 num_its = [7500] # Number of iterations for training
@@ -44,7 +44,7 @@ games_to_play = ['IceAndFire']
 datasets_sizes_for_training_BoulderDash = [20] 
 datasets_sizes_for_training_IceAndFire = [45]
 datasets_sizes_for_training_Catapults = [45] 
-repetitions_per_model = 10 # Each model is trained this number of times
+repetitions_per_model = 40 # Each model is trained this number of times
 
 # <Script variables>
 
