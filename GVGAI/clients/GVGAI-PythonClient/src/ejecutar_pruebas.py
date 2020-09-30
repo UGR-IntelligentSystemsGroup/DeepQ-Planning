@@ -25,7 +25,7 @@ l3_num_filt = [64] # 32 does worse
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [64, 128]
+l4_num_filt = [128]
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
@@ -38,7 +38,7 @@ dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
-games_to_play = ['IceAndFire']
+games_to_play = ['BoulderDash']
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [20] 
