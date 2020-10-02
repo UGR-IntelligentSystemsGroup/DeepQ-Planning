@@ -1,5 +1,5 @@
-[GAME] Game idx:11 game name boulderdash
+[GAME] Game idx:16 game name catapults
 [PHASE] Starting First Phase of Training in 3 levels.
 [TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:0.0, timesteps:0
 [PHASE] Starting Validation in 2 levels.
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:44.0, timesteps:188
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:0, Player0-Score:2.0, timesteps:22
