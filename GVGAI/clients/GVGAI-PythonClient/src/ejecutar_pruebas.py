@@ -7,6 +7,11 @@ import glob
 import random
 import sys
 
+# <Execution mode of the script>
+# "validation" -> trains and validates on 5 levels not used for training
+# "test" -> trains and tests on the 5 test levels
+script_execution_mode = "test"
+
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
@@ -43,25 +48,28 @@ games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training_BoulderDash = [20] 
 datasets_sizes_for_training_IceAndFire = [45]
 datasets_sizes_for_training_Catapults = [45] 
-repetitions_per_model = 40 # Each model is trained this number of times
+repetitions_per_model = 20 # Each model is trained this number of times
 
 # <Script variables>
 
 # > Variables for each game
 
 # BoulderDash
-lvs_path_boulderdash = "NivelesAllGames/Niveles_BoulderDash/Train_Val/" # Folder where the levels to extract the datasets from are saved
+lvs_path_boulderdash_train_val = "NivelesAllGames/Niveles_BoulderDash/Train_Val/" # Folder where the training and validation levels are saved
+lvs_path_boulderdash_test = "NivelesAllGames/Niveles_BoulderDash/Test/" # Folder where the test levels are saved
 game_id_boulderdash = "11" # Value of the game_id variable in the oneClickRunFromPythonClient.sh script
 # Names of the test levels files (lvs 3-4)
 test_lvs_boulderdash = ('boulderdash_lvl3.txt', 'boulderdash_lvl4.txt')
 
 # IceAndFire
-lvs_path_iceandfire = "NivelesAllGames/Niveles_IceAndFire/Train_Val/"
+lvs_path_iceandfire_train_val = "NivelesAllGames/Niveles_IceAndFire/Train_Val/"
+lvs_path_iceandfire_test = "NivelesAllGames/Niveles_IceAndFire/Test/"
 game_id_iceandfire = "43"
 test_lvs_iceandfire = ('iceandfire_lvl3.txt', 'iceandfire_lvl4.txt')
 
 # Catapults
-lvs_path_catapults = "NivelesAllGames/Niveles_Catapults/Train_Val/"
+lvs_path_catapults_train_val = "NivelesAllGames/Niveles_Catapults/Train_Val/"
+lvs_path_catapults_test = "NivelesAllGames/Niveles_Catapults/Test/"
 game_id_catapults = "16"
 test_lvs_catapults = ('catapults_lvl3.txt', 'catapults_lvl4.txt')
 
@@ -103,15 +111,18 @@ try:
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
-			curr_lvs_path = lvs_path_boulderdash
+			curr_lvs_path_train_val = lvs_path_boulderdash_train_val
+			curr_lvs_path_test = lvs_path_boulderdash_test
 			curr_game_id = game_id_boulderdash
 			curr_test_lvs = test_lvs_boulderdash
 		elif curr_game == 'IceAndFire':
-			curr_lvs_path = lvs_path_iceandfire
+			curr_lvs_path_train_val = lvs_path_iceandfire_train_val
+			curr_lvs_path_test = lvs_path_iceandfire_test
 			curr_game_id = game_id_iceandfire
 			curr_test_lvs = test_lvs_iceandfire
 		else: # Catapults
-			curr_lvs_path = lvs_path_catapults
+			curr_lvs_path_train_val = lvs_path_catapults_train_val
+			curr_lvs_path_test = lvs_path_catapults_test
 			curr_game_id = game_id_catapults
 			curr_test_lvs = test_lvs_catapults
 
@@ -266,38 +277,47 @@ try:
 			with open('utils/CompetitionParameters.py', 'w') as file:
 				file.write(comp_param_file)
 
-			# <Select the five validation levels to use>
+			# <Select the five validation or test levels to use, depending on the
+			# script_execution_mode>
 
-			# Get all the training/validation levels
-			all_levels = glob.glob(curr_lvs_path + "*")
+			# Select five validation levels
+			if script_execution_mode == "validation":
+				# Get all the training/validation levels
+				all_levels = glob.glob(curr_lvs_path_train_val + "*")
 
-			# Get the datasets used to train the model
-			with open('loaded_datasets.txt', 'r') as file:
-				train_datasets = file.read().splitlines()
+				# Get the datasets used to train the model
+				with open('loaded_datasets.txt', 'r') as file:
+					train_datasets = file.read().splitlines()
 
-			# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
-			# Ids of the train datasets (e.g.: [5, 7, 21])
-			train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
+				# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
+				# Ids of the train datasets (e.g.: [5, 7, 21])
+				train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
 
-			# Remove the levels used for training
-			levels_to_remove = []
+				# Remove the levels used for training
+				levels_to_remove = []
 
-			for lv in all_levels:
-				# Get lv id
-				lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
+				for lv in all_levels:
+					# Get lv id
+					lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
 
-				# If the lv id is in train_datasets_ids, that means that level was used for training:
-				# then don't use it for validation
-				if lv_id in train_datasets_ids:
-					levels_to_remove.append(lv)
+					# If the lv id is in train_datasets_ids, that means that level was used for training:
+					# then don't use it for validation
+					if lv_id in train_datasets_ids:
+						levels_to_remove.append(lv)
 
-			all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
+				all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
 
-			# Select 5 validation levels among all the possible levels
-			val_levels = random.sample(all_levels, k=5)
-			print("\n> Validation levels:", val_levels)
+				# Select 5 validation levels among all the possible levels
+				val_levels = random.sample(all_levels, k=5)
+				print("\n> Validation levels:", val_levels)
 
-			# <Validate the model on a different pair of val levels each time>
+			# Use the five test levels
+			else:
+				# Get all the test levels
+				val_levels = glob.glob(curr_lvs_path_test + "*")
+				print("\n> Test levels:", val_levels)
+
+			# <Validate the model on a different pair of val/test levels each time>
 			for curr_val_levels in [(0,1),(2,3),(4,)]:
 
 				# <Remove the test levels (3-4) of the corresponding game>
@@ -345,7 +365,7 @@ try:
 
 				# <Execute the validation on the current validation levels>
 
-				print("\n> Validating the model on level(s):", curr_val_levels)
+				print("\n> Validating/Testing the model on level(s):", curr_val_levels)
 				subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
 				# <Kill java process so that the memory doesn't fill>
