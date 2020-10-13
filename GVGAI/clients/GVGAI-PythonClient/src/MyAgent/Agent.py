@@ -58,10 +58,10 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.005_dropout-0.0_batch-16_Catapults_0"
+		self.network_name="DQN_prueba_test-1_its-7500_Catapults_19"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=45
+		self.dataset_size_for_training=50
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -105,7 +105,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.005
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=2500
+		self.num_train_its=7500
 		self.batch_size=16
 		
 		# Extra params
@@ -183,7 +183,7 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=45
+			self.dataset_size_model=50
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!

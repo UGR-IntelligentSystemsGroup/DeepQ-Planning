@@ -43,12 +43,13 @@ dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['BoulderDash']
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [20] 
-datasets_sizes_for_training_IceAndFire = [45]
-datasets_sizes_for_training_Catapults = [45] 
-repetitions_per_model = 20 # Each model is trained this number of times
+datasets_sizes_for_training_BoulderDash = [25] # 20
+datasets_sizes_for_training_IceAndFire = [50] # 45
+datasets_sizes_for_training_Catapults = [50] # 45 
+repetitions_per_model = 60 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -187,13 +188,16 @@ try:
 
 			# <Create the model name using the hyperparameters values>
 
-			curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
-							format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
-							curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
-							curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
-							curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
-							curr_fc_num_unis[0], curr_fc_num_unis[1], \
-							curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+			if script_execution_mode == "validation":
+				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
+								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
+								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
+								curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
+								curr_fc_num_unis[0], curr_fc_num_unis[1], \
+								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+			else:
+				curr_model_name = "DQN_prueba_test-1_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
