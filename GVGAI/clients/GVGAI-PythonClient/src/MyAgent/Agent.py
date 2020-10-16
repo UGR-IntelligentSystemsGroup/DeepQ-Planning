@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="IceAndFire"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-1_its-7500_Catapults_19"
+		self.network_name="DQN_prueba_test-2_its-7500_IceAndFire_59"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=50
