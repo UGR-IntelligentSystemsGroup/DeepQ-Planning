@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="IceAndFire"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,10 +58,10 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-2_its-7500_IceAndFire_59"
+		self.network_name="DQN_prueba_test-3_its-7500_Catapults_59"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=50
+		self.dataset_size_for_training=100
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -139,7 +139,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=29
+			id_dataset=58
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -183,7 +183,7 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=50
+			self.dataset_size_model=100
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
