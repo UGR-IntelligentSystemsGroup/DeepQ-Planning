@@ -37,19 +37,19 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [7500] # Number of iterations for training
+num_its = [2500, 5000, 7500] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['Catapults']
+games_to_play = ['IceAndFire']
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [25] # 20
 datasets_sizes_for_training_IceAndFire = [50] # 45
 datasets_sizes_for_training_Catapults = [100] # 45 
-repetitions_per_model = 60 # Each model is trained this number of times
+repetitions_per_model = 20 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -197,7 +197,7 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_prueba_test-3_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_prueba_test-4_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
