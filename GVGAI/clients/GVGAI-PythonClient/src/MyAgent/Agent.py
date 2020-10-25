@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,10 +58,10 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-4_its-7500_BoulderDash_59"
+		self.network_name="DQN_prueba_test-4_its-2000_Catapults_4"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=25
+		self.dataset_size_for_training=50
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -105,7 +105,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.005
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=7500
+		self.num_train_its=2000
 		self.batch_size=16
 		
 		# Extra params
@@ -183,7 +183,7 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=25
+			self.dataset_size_model=50
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -217,10 +217,12 @@ class Agent(AbstractPlayer):
 		# See if it's training or validation time
 		self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
 
-		# If it's validation phase, count the number of actions used
-		# to beat the current level
+		# If it's validation/test phase, count the number of actions used
+		# to beat the current level and the number of incorrect subgoals
+		# (not eligible) the agent selects
 		if self.EXECUTION_MODE == 'test' and not self.is_training:
 			self.num_actions_lv = 0
+			self.num_incorrect_subgoals = 0
 
 
 	def act(self, sso, elapsedTimer):
@@ -403,24 +405,33 @@ class Agent(AbstractPlayer):
 
 			# Use the Learning model to select a subgoal if the agent is in test/validation phase
 			else:
-				chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
+				# Keep selecting subgoal until one is attainable from the current state of the game
+				while len(subgoals) > 0 and len(self.action_list) == 0:
+					# Select the subgoal using the learning model
+					chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
 
-				# If the game is IceAndFire, check how many types of boots the agent has
-				if self.game_playing == 'IceAndFire': 
-					boots_resources = self.get_boots_resources(sso)
-				else:
-					boots_resources = []
+					# Remove the selected subgoal from the list of eligible subgoals
+					subgoals.remove(chosen_subgoal)
 
-				# Obtain the plan
-				self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
+					# If the game is IceAndFire, check how many types of boots the agent has
+					if self.game_playing == 'IceAndFire': 
+						boots_resources = self.get_boots_resources(sso)
+					else:
+						boots_resources = []
 
-				# If there is no valid plan to the chosen_subgoal, the agent loses the game
+					# Obtain the plan
+					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
+
+					# If there is no valid plan to the chosen subgoal, the agent selects a new
+					# subgoal
+					if len(self.action_list) == 0:
+						self.num_incorrect_subgoals += 1 
+
+				# If none of the subgoals is attainable, the agent is at a dead end ->
+				# the agent loses the game and escapes the level
 				if len(self.action_list) == 0:
-					# Exit the level and annotate the agent has lost the game
-
-					self.num_actions_lv = -1
+					self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 					return 'ACTION_ESCAPE'
-					
 
 		# Save dataset and exit the program if the experience replay is the right size
 		if self.EXECUTION_MODE == 'create_dataset':
@@ -1124,15 +1135,15 @@ class Agent(AbstractPlayer):
 			# Check if the player hasn't been able to complete the level (timeout) or has died
 			if sso.gameWinner == "PLAYER_LOSES":
 				print("\n\nThe player has lost\n\n")
-				self.num_actions_lv = -1
-			else:
-				print("\n\nNum actions used to complete the level: {} \n\n".format(self.num_actions_lv))
+				self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 
-			# Save the number of actions used to complete the current level to the output file
+			# Save the number of actions and the number of incorrect subgoals used to complete the 
+			# current level to the output file
 			test_output_file = "test_output.txt"
 
 			with open(test_output_file, "a") as file:
-				file.write("{}-{} | {} | {}\n".format(self.network_name, self.dataset_size_model, self.game_playing, self.num_actions_lv))
+				file.write("{}-{} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
+				 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")
