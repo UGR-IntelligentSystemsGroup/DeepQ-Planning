@@ -12,6 +12,11 @@ import sys
 # "test" -> trains and tests on the 5 test levels
 script_execution_mode = "test"
 
+# <Goal Selection Mode>
+# "best" -> use the trained model to select the best subgoal at each state
+# "random" -> select subgoals randomly. This corresponds to the Random Model
+goal_selection_mode = "random"
+
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
@@ -37,20 +42,18 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-# num_its = [7500] # Number of iterations for training
-num_its = [2500, 5000, 7500]
+num_its = [7500] # Number of iterations for training
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
-# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash']
+games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [25] # 20
 datasets_sizes_for_training_IceAndFire = [50] # 45
 datasets_sizes_for_training_Catapults = [100] # 45
-repetitions_per_model = 20 # Each model is trained this number of times
+repetitions_per_model = 100 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -166,6 +169,9 @@ try:
 		agent_file = re.sub(r'self.game_playing=.*', 'self.game_playing="{}"'.format(curr_game), agent_file, count=1)
 		agent_file = re.sub(r'self.dataset_size_for_training=.*', 'self.dataset_size_for_training={}'.format(dataset_size_for_training), agent_file, count=1)
 
+		# Change goal_selection_mode
+		agent_file = re.sub(r'self.goal_selection_mode=.*', 'self.goal_selection_mode="{}"'.format(goal_selection_mode), agent_file, count=1)
+
 		# Save file
 		with open('MyAgent/Agent.py', 'w') as file:
 			file.write(agent_file)
@@ -185,6 +191,7 @@ try:
 
 
 		# <Repeat each execution (train + val) the number of times given by "repetitions_per_model">
+		# If the goal selection mode is random, skip the training part
 		for curr_rep in range(repetitions_per_model):
 
 			# <Create the model name using the hyperparameters values>
@@ -198,7 +205,8 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_prueba_test-5_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
+				# curr_model_name = "DQN_prueba_test-6_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
+				curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
@@ -218,40 +226,41 @@ try:
 
 			# ------ TRAINING ------
 
+			# Skip training if we are testing the random model
+			if goal_selection_mode == "best":
+				# <Change Agent.py>
 
-			# <Change Agent.py>
+				# Load file in memory
+				with open('MyAgent/Agent.py', 'r') as file:
+					agent_file = file.read()
 
-			# Load file in memory
-			with open('MyAgent/Agent.py', 'r') as file:
-				agent_file = file.read()
+				# Change execution mode
+				agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="train"', agent_file, count=1)
 
-			# Change execution mode
-			agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="train"', agent_file, count=1)
+				# Save file
+				with open('MyAgent/Agent.py', 'w') as file:
+					file.write(agent_file)
 
-			# Save file
-			with open('MyAgent/Agent.py', 'w') as file:
-				file.write(agent_file)
+				# <Change CompetitionParameters.py>
 
-			# <Change CompetitionParameters.py>
+				# Load file in memory
+				with open('utils/CompetitionParameters.py', 'r') as file:
+					comp_param_file = file.read()
 
-			# Load file in memory
-			with open('utils/CompetitionParameters.py', 'r') as file:
-				comp_param_file = file.read()
+				# Change learning time to training time
+				comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN", comp_param_file, count=1)
 
-			# Change learning time to training time
-			comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN", comp_param_file, count=1)
+				# Save file
+				with open('utils/CompetitionParameters.py', 'w') as file:
+					file.write(comp_param_file)
 
-			# Save file
-			with open('utils/CompetitionParameters.py', 'w') as file:
-				file.write(comp_param_file)
+				# <Execute the training with the current hyperparameters and wait until it finishes>
 
-			# <Execute the training with the current hyperparameters and wait until it finishes>
-
-			print("\n> Starting the training of the current model")
-			subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
+				print("\n> Starting the training of the current model")
+				subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
 
-			# ------ VALIDATION ------
+			# ------ VALIDATION / TEST ------
 
 
 			# <Change Agent.py>

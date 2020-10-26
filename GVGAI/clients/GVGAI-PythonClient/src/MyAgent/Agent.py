@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="IceAndFire"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,10 +58,10 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-5_its-7500_Catapults_19"
+		self.network_name="DQN_prueba_test-6_its-1000_IceAndFire_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=10
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -105,7 +105,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.005
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=7500
+		self.num_train_its=1000
 		self.batch_size=16
 		
 		# Extra params
@@ -161,29 +161,38 @@ class Agent(AbstractPlayer):
 			self.datasets_folder = 'SavedDatasets'
 
 		else: # Test
-			# Create Learning Model
 
-			# DQNetwork
-			self.model = DQNetwork(writer_name=self.network_name,
-					 sample_size = self.sample_size,
-					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 l1_padding_type = self.l1_padding_type,
-					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
-					 l2_padding_type = self.l2_padding_type,
-					 l3_num_filt = self.l3_num_filt, l3_window = self.l3_window, l3_strides = self.l3_strides,
-					 l3_padding_type = self.l3_padding_type,
-					 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
-					 l4_padding_type = self.l4_padding_type,
-					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
-					 learning_rate = self.learning_rate)
+			# Goal Selection Mode: "best" -> select the best one using the trained model,
+			# "random" -> select a random one (corresponds with the random model)
+			# Automatically changed by the scripts!
+			self.goal_selection_mode="random"
 
+			# Create Learning Model unles goal selection model is random
 
-			# Name of the saved model file to load (without the number of training steps part)
-			model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
+			if self.goal_selection_mode == "best":
+				# DQNetwork
+				self.model = DQNetwork(writer_name=self.network_name,
+						 sample_size = self.sample_size,
+						 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
+						 l1_padding_type = self.l1_padding_type,
+						 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
+						 l2_padding_type = self.l2_padding_type,
+						 l3_num_filt = self.l3_num_filt, l3_window = self.l3_window, l3_strides = self.l3_strides,
+						 l3_padding_type = self.l3_padding_type,
+						 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
+						 l4_padding_type = self.l4_padding_type,
+						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
+						 learning_rate = self.learning_rate)
 
-			# Number of levels the model to load has been trained on
-			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=100
+				# Name of the saved model file to load (without the number of training steps part)
+				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
+
+				# Number of levels the model to load has been trained on
+				# Automatically changed by ejecutar_pruebas.py!
+				self.dataset_size_model=10
+
+				# <Load the already-trained model in order to test performance>
+				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -191,9 +200,6 @@ class Agent(AbstractPlayer):
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
-
-			# <Load the already-trained model in order to test performance>
-			self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 
 	def init(self, sso, elapsedTimer):
@@ -407,8 +413,12 @@ class Agent(AbstractPlayer):
 			else:
 				# Keep selecting subgoal until one is attainable from the current state of the game
 				while len(subgoals) > 0 and len(self.action_list) == 0:
-					# Select the subgoal using the learning model
-					chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
+
+					# Select the subgoal using either the learning model or randomly (random model)
+					if self.goal_selection_mode == "best": # Use the model to select the best subgoal
+						chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
+					else: # Select subgoals randomly
+						chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
 
 					# Remove the selected subgoal from the list of eligible subgoals
 					subgoals.remove(chosen_subgoal)
@@ -422,8 +432,8 @@ class Agent(AbstractPlayer):
 					# Obtain the plan
 					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
 
-					# If there is no valid plan to the chosen subgoal, the agent selects a new
-					# subgoal
+					# If there is no valid plan to the chosen subgoal, increment the number of
+					# non-eligible subgoals selected
 					if len(self.action_list) == 0:
 						self.num_incorrect_subgoals += 1 
 
@@ -1142,8 +1152,12 @@ class Agent(AbstractPlayer):
 			test_output_file = "test_output.txt"
 
 			with open(test_output_file, "a") as file:
-				file.write("{}-{} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
-				 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
+				if self.goal_selection_mode == "best":
+					file.write("{}-{} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
+					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
+				else:
+					file.write("{} | {} | {} | {}\n".format(self.network_name,
+					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")

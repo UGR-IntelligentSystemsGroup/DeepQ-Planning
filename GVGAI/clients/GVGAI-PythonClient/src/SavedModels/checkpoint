@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_prueba_test-5_its-7500_Catapults_19.ckpt-100"
-all_model_checkpoint_paths: "DQN_prueba_test-5_its-7500_Catapults_19.ckpt-100"
+model_checkpoint_path: "DQN_prueba_test-6_its-1000_IceAndFire_0.ckpt-10"
+all_model_checkpoint_paths: "DQN_prueba_test-6_its-1000_IceAndFire_0.ckpt-10"
