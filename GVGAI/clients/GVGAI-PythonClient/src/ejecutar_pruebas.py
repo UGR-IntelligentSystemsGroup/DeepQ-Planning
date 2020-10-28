@@ -53,7 +53,7 @@ games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training_BoulderDash = [25] # 20
 datasets_sizes_for_training_IceAndFire = [50] # 45
 datasets_sizes_for_training_Catapults = [100] # 45
-repetitions_per_model = 25 # Each model is trained this number of times
+repetitions_per_model = 30 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -205,8 +205,8 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
 			else:
-				# curr_model_name = "DQN_prueba_test-6_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
-				curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
+				curr_model_name = "DQN_prueba_test-7_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
+				# curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 

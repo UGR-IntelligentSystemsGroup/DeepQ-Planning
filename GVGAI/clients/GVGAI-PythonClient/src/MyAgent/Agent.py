@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="Random_Model-Catapults_99"
+		self.network_name="DQN_prueba_test-7_its-7500_Catapults_29"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
@@ -165,7 +165,7 @@ class Agent(AbstractPlayer):
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
 			# "random" -> select a random one (corresponds with the random model)
 			# Automatically changed by the scripts!
-			self.goal_selection_mode="random"
+			self.goal_selection_mode="best"
 
 			# Create Learning Model unles goal selection model is random
 
