@@ -1,0 +1,720 @@
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 233
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 89
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_0-25 | BoulderDash | 3 | 286
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 160
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 175
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 163
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_1-25 | BoulderDash | 7 | 79
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 146
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_1-25 | BoulderDash | 2 | 167
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 190
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 125
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_2-25 | BoulderDash | 9 | 131
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 145
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 222
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_3-25 | BoulderDash | 1 | 125
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_3-25 | BoulderDash | 1 | 56
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_3-25 | BoulderDash | 1 | 68
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_3-25 | BoulderDash | 2 | 94
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_3-25 | BoulderDash | 0 | 275
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_4-25 | BoulderDash | 5 | 124
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_4-25 | BoulderDash | 7 | 90
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 74
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 198
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 129
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_5-25 | BoulderDash | 6 | 89
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_5-25 | BoulderDash | 3 | 93
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_5-25 | BoulderDash | 0 | 55
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_5-25 | BoulderDash | 4 | 83
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_5-25 | BoulderDash | 1 | 92
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_6-25 | BoulderDash | 2 | 159
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_6-25 | BoulderDash | 0 | 109
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_6-25 | BoulderDash | 7 | 128
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_6-25 | BoulderDash | 0 | 117
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_6-25 | BoulderDash | 1 | 139
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_7-25 | BoulderDash | 0 | 149
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_7-25 | BoulderDash | 0 | 65
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_7-25 | BoulderDash | 5 | 72
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_7-25 | BoulderDash | 0 | 86
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_7-25 | BoulderDash | 1 | 86
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_8-25 | BoulderDash | 0 | 93
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_8-25 | BoulderDash | 3 | 151
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_8-25 | BoulderDash | 0 | 108
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_8-25 | BoulderDash | 0 | 143
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_8-25 | BoulderDash | 0 | 93
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_9-25 | BoulderDash | 6 | 166
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_9-25 | BoulderDash | 4 | 74
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_9-25 | BoulderDash | 2 | 115
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_9-25 | BoulderDash | 0 | 240
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_9-25 | BoulderDash | 0 | 122
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_10-25 | BoulderDash | 4 | 165
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_10-25 | BoulderDash | 0 | 145
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_10-25 | BoulderDash | 2 | 67
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_10-25 | BoulderDash | 0 | 99
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_10-25 | BoulderDash | 0 | 215
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_11-25 | BoulderDash | 5 | 109
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_11-25 | BoulderDash | 4 | 112
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_11-25 | BoulderDash | 1 | 75
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_11-25 | BoulderDash | 0 | 137
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_11-25 | BoulderDash | 1 | 97
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_12-25 | BoulderDash | 3 | 113
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_12-25 | BoulderDash | 8 | 97
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_12-25 | BoulderDash | 6 | 106
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_12-25 | BoulderDash | 3 | 120
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_12-25 | BoulderDash | 3 | 95
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_13-25 | BoulderDash | 0 | 83
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_13-25 | BoulderDash | 0 | 134
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_13-25 | BoulderDash | 3 | 70
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_13-25 | BoulderDash | 0 | 94
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_13-25 | BoulderDash | 0 | 108
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_14-25 | BoulderDash | 0 | 250
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_14-25 | BoulderDash | 0 | 80
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_14-25 | BoulderDash | 0 | 137
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_14-25 | BoulderDash | 3 | 136
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_14-25 | BoulderDash | 0 | 98
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_15-25 | BoulderDash | 2 | 133
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_15-25 | BoulderDash | 2 | 72
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_15-25 | BoulderDash | 4 | 97
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_15-25 | BoulderDash | 1 | 84
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_15-25 | BoulderDash | 0 | 154
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_16-25 | BoulderDash | 1 | 140
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_16-25 | BoulderDash | 4 | 86
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_16-25 | BoulderDash | 0 | 127
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_16-25 | BoulderDash | 0 | 275
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_16-25 | BoulderDash | 0 | 233
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_17-25 | BoulderDash | 0 | 146
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_17-25 | BoulderDash | 0 | 319
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_17-25 | BoulderDash | 8 | 106
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_17-25 | BoulderDash | 0 | 267
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_17-25 | BoulderDash | 0 | 226
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_18-25 | BoulderDash | 4 | 123
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_18-25 | BoulderDash | 0 | 64
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_18-25 | BoulderDash | 0 | 132
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_18-25 | BoulderDash | 3 | 117
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_18-25 | BoulderDash | 0 | 213
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_19-25 | BoulderDash | 1 | 110
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_19-25 | BoulderDash | 0 | 104
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_19-25 | BoulderDash | 8 | 85
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_19-25 | BoulderDash | 0 | 138
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_19-25 | BoulderDash | 0 | 215
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_20-25 | BoulderDash | 4 | 105
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_20-25 | BoulderDash | 7 | 110
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_20-25 | BoulderDash | 0 | 187
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_20-25 | BoulderDash | 0 | 140
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_20-25 | BoulderDash | 0 | 197
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_21-25 | BoulderDash | 5 | 133
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_21-25 | BoulderDash | 5 | 95
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_21-25 | BoulderDash | 2 | 86
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_21-25 | BoulderDash | 0 | 149
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_21-25 | BoulderDash | 0 | 114
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_22-25 | BoulderDash | 0 | 199
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_22-25 | BoulderDash | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_22-25 | BoulderDash | 4 | 95
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_22-25 | BoulderDash | 0 | 184
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_22-25 | BoulderDash | 1 | 86
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_23-25 | BoulderDash | 0 | 202
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_23-25 | BoulderDash | 0 | 197
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_23-25 | BoulderDash | 7 | 90
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_23-25 | BoulderDash | 0 | 150
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_23-25 | BoulderDash | 0 | 217
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_24-25 | BoulderDash | 0 | 202
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_24-25 | BoulderDash | 5 | 76
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_24-25 | BoulderDash | 8 | 85
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_24-25 | BoulderDash | 0 | 214
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_24-25 | BoulderDash | 0 | 124
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_25-25 | BoulderDash | 3 | 195
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_25-25 | BoulderDash | 4 | 329
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_25-25 | BoulderDash | 7 | 90
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_25-25 | BoulderDash | 0 | 123
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_25-25 | BoulderDash | 1 | 134
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_26-25 | BoulderDash | 2 | 180
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_26-25 | BoulderDash | 7 | 97
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_26-25 | BoulderDash | 5 | 69
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_26-25 | BoulderDash | 0 | 82
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_26-25 | BoulderDash | 2 | 85
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_27-25 | BoulderDash | 3 | 156
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_27-25 | BoulderDash | 6 | 120
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_27-25 | BoulderDash | 0 | 78
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_27-25 | BoulderDash | 0 | 135
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_27-25 | BoulderDash | 0 | 215
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_28-25 | BoulderDash | 0 | 110
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_28-25 | BoulderDash | 0 | 130
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_28-25 | BoulderDash | 5 | 71
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_28-25 | BoulderDash | 0 | 140
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_28-25 | BoulderDash | 1 | 253
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_29-25 | BoulderDash | 0 | 121
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_29-25 | BoulderDash | 0 | 255
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_29-25 | BoulderDash | 0 | 100
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_29-25 | BoulderDash | 0 | 115
+DQN_prueba_test-9_its-7500_tau-500_BoulderDash_29-25 | BoulderDash | 0 | 98
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_0-50 | IceAndFire | 3 | 125
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_0-50 | IceAndFire | 0 | 101
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_0-50 | IceAndFire | 20 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_0-50 | IceAndFire | 0 | 160
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_0-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_1-50 | IceAndFire | 1 | 143
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_1-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_1-50 | IceAndFire | 1 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_1-50 | IceAndFire | 5 | 120
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_1-50 | IceAndFire | 3 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_2-50 | IceAndFire | 0 | 119
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_2-50 | IceAndFire | 0 | 121
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_2-50 | IceAndFire | 1 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_2-50 | IceAndFire | 6 | 88
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_2-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 117
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 109
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 142
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_3-50 | IceAndFire | 1 | 138
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_4-50 | IceAndFire | 2 | 155
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_4-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_4-50 | IceAndFire | 18 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_4-50 | IceAndFire | 0 | 138
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_4-50 | IceAndFire | 0 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_5-50 | IceAndFire | 0 | 121
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_5-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_5-50 | IceAndFire | 4 | 93
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_5-50 | IceAndFire | 0 | 162
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_5-50 | IceAndFire | 0 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_6-50 | IceAndFire | 0 | 133
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_6-50 | IceAndFire | 0 | 105
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_6-50 | IceAndFire | 13 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_6-50 | IceAndFire | 1 | 116
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_6-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_7-50 | IceAndFire | 0 | 105
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_7-50 | IceAndFire | 0 | 101
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_7-50 | IceAndFire | 17 | 89
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_7-50 | IceAndFire | 0 | 160
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_7-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_8-50 | IceAndFire | 0 | 105
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_8-50 | IceAndFire | 1 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_8-50 | IceAndFire | 1 | 83
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_8-50 | IceAndFire | 2 | 122
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_8-50 | IceAndFire | 5 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_9-50 | IceAndFire | 3 | 145
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_9-50 | IceAndFire | 0 | 101
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_9-50 | IceAndFire | 3 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_9-50 | IceAndFire | 0 | 146
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_9-50 | IceAndFire | 1 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_10-50 | IceAndFire | 2 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_10-50 | IceAndFire | 1 | 103
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_10-50 | IceAndFire | 6 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_10-50 | IceAndFire | 0 | 96
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_10-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_11-50 | IceAndFire | 0 | 109
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_11-50 | IceAndFire | 0 | 99
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_11-50 | IceAndFire | 13 | 93
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_11-50 | IceAndFire | 4 | 154
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_11-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_12-50 | IceAndFire | 0 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_12-50 | IceAndFire | 0 | 105
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_12-50 | IceAndFire | 0 | 83
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_12-50 | IceAndFire | 1 | 168
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_12-50 | IceAndFire | 0 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_13-50 | IceAndFire | 0 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_13-50 | IceAndFire | 0 | 117
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_13-50 | IceAndFire | 1 | 93
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_13-50 | IceAndFire | 3 | 132
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_13-50 | IceAndFire | 0 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_14-50 | IceAndFire | 0 | 111
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_14-50 | IceAndFire | 2 | 101
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_14-50 | IceAndFire | 0 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_14-50 | IceAndFire | 2 | 158
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_14-50 | IceAndFire | 1 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_15-50 | IceAndFire | 0 | 141
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_15-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_15-50 | IceAndFire | 18 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_15-50 | IceAndFire | 1 | 130
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_15-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_16-50 | IceAndFire | 2 | 159
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_16-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_16-50 | IceAndFire | 16 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_16-50 | IceAndFire | 0 | 154
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_16-50 | IceAndFire | 1 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_17-50 | IceAndFire | 0 | 115
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_17-50 | IceAndFire | 2 | 109
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_17-50 | IceAndFire | 2 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_17-50 | IceAndFire | 1 | 154
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_17-50 | IceAndFire | 1 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_18-50 | IceAndFire | 0 | 121
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_18-50 | IceAndFire | 0 | 123
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_18-50 | IceAndFire | 7 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_18-50 | IceAndFire | 3 | 162
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_18-50 | IceAndFire | 2 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_19-50 | IceAndFire | 0 | 167
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_19-50 | IceAndFire | 5 | 113
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_19-50 | IceAndFire | 8 | 99
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_19-50 | IceAndFire | 0 | 158
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_19-50 | IceAndFire | 2 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_20-50 | IceAndFire | 0 | 133
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_20-50 | IceAndFire | 0 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_20-50 | IceAndFire | 10 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_20-50 | IceAndFire | 0 | 138
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_20-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_21-50 | IceAndFire | 0 | 125
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_21-50 | IceAndFire | 0 | 101
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_21-50 | IceAndFire | 19 | 133
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_21-50 | IceAndFire | 0 | 172
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_21-50 | IceAndFire | 1 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_22-50 | IceAndFire | 0 | 133
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_22-50 | IceAndFire | 0 | 99
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_22-50 | IceAndFire | 12 | 133
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_22-50 | IceAndFire | 4 | 108
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_22-50 | IceAndFire | 3 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_23-50 | IceAndFire | 0 | 103
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_23-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_23-50 | IceAndFire | 0 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_23-50 | IceAndFire | 1 | 122
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_23-50 | IceAndFire | 3 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_24-50 | IceAndFire | 0 | 139
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_24-50 | IceAndFire | 1 | 103
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_24-50 | IceAndFire | 6 | 127
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_24-50 | IceAndFire | 2 | 154
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_24-50 | IceAndFire | 3 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_25-50 | IceAndFire | 1 | 141
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_25-50 | IceAndFire | 1 | 117
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_25-50 | IceAndFire | 1 | 83
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_25-50 | IceAndFire | 5 | 118
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_25-50 | IceAndFire | 1 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_26-50 | IceAndFire | 0 | 147
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_26-50 | IceAndFire | 0 | 105
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_26-50 | IceAndFire | 6 | 129
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_26-50 | IceAndFire | 0 | 108
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_26-50 | IceAndFire | 1 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_27-50 | IceAndFire | 0 | 137
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_27-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_27-50 | IceAndFire | 6 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_27-50 | IceAndFire | 0 | 116
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_27-50 | IceAndFire | 1 | 150
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_28-50 | IceAndFire | 0 | 113
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_28-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_28-50 | IceAndFire | 12 | 135
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_28-50 | IceAndFire | 0 | 142
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_28-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_29-50 | IceAndFire | 6 | 131
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_29-50 | IceAndFire | 0 | 97
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_29-50 | IceAndFire | 8 | 89
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_29-50 | IceAndFire | 0 | 158
+DQN_prueba_test-9_its-7500_tau-500_IceAndFire_29-50 | IceAndFire | 6 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_0-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_0-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_0-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_0-100 | Catapults | 6 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_0-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_1-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_1-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_1-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_1-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_1-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_2-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_2-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_2-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_2-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_2-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_3-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_3-100 | Catapults | -1 | 12
+DQN_prueba_test-9_its-7500_tau-500_Catapults_3-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_3-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_4-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_4-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_4-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_4-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_4-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_5-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_5-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_5-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_5-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_5-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_6-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_6-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_6-100 | Catapults | 2 | 27
+DQN_prueba_test-9_its-7500_tau-500_Catapults_6-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_6-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_7-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_7-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_7-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_7-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_7-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_8-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_8-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_8-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_8-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_8-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_9-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_9-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_9-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_9-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_9-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_10-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_10-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_10-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_10-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_10-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_11-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_11-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_11-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_11-100 | Catapults | -1 | 9
+DQN_prueba_test-9_its-7500_tau-500_Catapults_11-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_12-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_12-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_12-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_12-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_12-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_13-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_13-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_13-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_13-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_13-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_14-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_14-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_14-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_14-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_14-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_15-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_15-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_15-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_15-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_15-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_16-100 | Catapults | 13 | 21
+DQN_prueba_test-9_its-7500_tau-500_Catapults_16-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_16-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_16-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_16-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_17-100 | Catapults | 1 | 21
+DQN_prueba_test-9_its-7500_tau-500_Catapults_17-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_17-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_17-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_17-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_18-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_18-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_18-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_18-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_18-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_19-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_19-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_19-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_19-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_19-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_20-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_20-100 | Catapults | -1 | 12
+DQN_prueba_test-9_its-7500_tau-500_Catapults_20-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_20-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_20-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_21-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_21-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_21-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_21-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_21-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_22-100 | Catapults | 4 | 21
+DQN_prueba_test-9_its-7500_tau-500_Catapults_22-100 | Catapults | -1 | 5
+DQN_prueba_test-9_its-7500_tau-500_Catapults_22-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_22-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_22-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_23-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_23-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_23-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_23-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_23-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_24-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_24-100 | Catapults | -1 | 5
+DQN_prueba_test-9_its-7500_tau-500_Catapults_24-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_24-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_24-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_25-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_25-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_25-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_25-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_25-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_26-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_26-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_26-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_26-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_26-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_27-100 | Catapults | -1 | 13
+DQN_prueba_test-9_its-7500_tau-500_Catapults_27-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_27-100 | Catapults | -1 | 25
+DQN_prueba_test-9_its-7500_tau-500_Catapults_27-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_27-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_28-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_28-100 | Catapults | -1 | 11
+DQN_prueba_test-9_its-7500_tau-500_Catapults_28-100 | Catapults | -1 | 22
+DQN_prueba_test-9_its-7500_tau-500_Catapults_28-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_28-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_test-9_its-7500_tau-500_Catapults_29-100 | Catapults | -1 | 16
+DQN_prueba_test-9_its-7500_tau-500_Catapults_29-100 | Catapults | -1 | 12
+DQN_prueba_test-9_its-7500_tau-500_Catapults_29-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_29-100 | Catapults | -1 | 7
+DQN_prueba_test-9_its-7500_tau-500_Catapults_29-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+

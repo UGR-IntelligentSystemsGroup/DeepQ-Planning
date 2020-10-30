@@ -45,7 +45,7 @@ class Agent(AbstractPlayer):
 
 		# The number of actions an invalid plan is associated, i.e., when
 		# there is no plan for the selected subgoal
-		self.num_actions_invalid_plan = 1000
+		self.num_actions_invalid_plan = 500 # 1000
 
 		# << Choose execution mode >>
 		# - 'create_dataset' -> It doesn't train any model. Just creates the dataset (experience replay) and saves it
@@ -58,7 +58,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-7_its-7500_Catapults_29"
+		self.network_name="DQN_prueba_test-9_its-7500_tau-500_Catapults_29"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
@@ -109,7 +109,9 @@ class Agent(AbstractPlayer):
 		self.batch_size=16
 		
 		# Extra params
-		self.max_tau=250 # Number of training its before copying the DQNetwork's weights to the target network
+		# Number of training its before copying the DQNetwork's weights to the target network
+		# default max_tau was 250
+		self.max_tau=500
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		# Gamma changed from 0.9 to 1!!!

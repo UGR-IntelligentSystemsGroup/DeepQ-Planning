@@ -42,7 +42,8 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [7500] # Number of iterations for training
+num_its = [10000] # Number of iterations for training
+tau=[500] # Update period of the target network
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
@@ -84,15 +85,15 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_b) if n == 'BoulderDash' else 
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_i) if n == 'IceAndFire' else
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o_c)
+models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_b) if o == 'BoulderDash' else 
+				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_i) if o == 'IceAndFire' else
+				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_c)
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
  					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
- 					for n in games_to_play 
- 					for o_b in datasets_sizes_for_training_BoulderDash for o_i in datasets_sizes_for_training_IceAndFire
- 					for o_c in datasets_sizes_for_training_Catapults]
+					for n in tau for o in games_to_play 
+ 					for p_b in datasets_sizes_for_training_BoulderDash for p_i in datasets_sizes_for_training_IceAndFire
+ 					for p_c in datasets_sizes_for_training_Catapults]
 
 try:
 	# Iterate over the different models
@@ -111,8 +112,9 @@ try:
 		curr_alfa = curr_model_params[10]
 		curr_dropout = curr_model_params[11]
 		curr_batch_size = curr_model_params[12]
-		curr_game = curr_model_params[13]
-		dataset_size_for_training = curr_model_params[14]
+		curr_tau = curr_model_params[13]
+		curr_game = curr_model_params[14]
+		dataset_size_for_training = curr_model_params[15]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -164,7 +166,8 @@ try:
 		agent_file = re.sub(r'self.dropout_prob=.*', 'self.dropout_prob={}'.format(curr_dropout), agent_file, count=1)
 		agent_file = re.sub(r'self.num_train_its=.*', 'self.num_train_its={}'.format(curr_num_its), agent_file, count=1)
 		agent_file = re.sub(r'self.batch_size=.*', 'self.batch_size={}'.format(curr_batch_size), agent_file, count=1)
-		
+		agent_file = re.sub(r'self.max_tau=.*', 'self.max_tau={}'.format(curr_tau), agent_file, count=1)
+
 		# Change other variables
 		agent_file = re.sub(r'self.game_playing=.*', 'self.game_playing="{}"'.format(curr_game), agent_file, count=1)
 		agent_file = re.sub(r'self.dataset_size_for_training=.*', 'self.dataset_size_for_training={}'.format(dataset_size_for_training), agent_file, count=1)
@@ -197,15 +200,15 @@ try:
 			# <Create the model name using the hyperparameters values>
 
 			if script_execution_mode == "validation":
-				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
 								curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
-								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_game, curr_rep)
+								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_prueba_test-7_its-{}_{}_{}".format(curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_prueba_test-9_its-{}_tau-{}_{}_{}".format(curr_num_its, curr_tau, curr_game, curr_rep)
 				# curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
