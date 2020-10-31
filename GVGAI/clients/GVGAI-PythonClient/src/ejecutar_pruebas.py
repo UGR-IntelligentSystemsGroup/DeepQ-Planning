@@ -42,8 +42,8 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [10000] # Number of iterations for training
-tau=[500] # Update period of the target network
+num_its = [7500] # Number of iterations for training
+tau=[100] # Update period of the target network #250
 alfa = [0.005] # Learning rate # 0.01 is too much
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
