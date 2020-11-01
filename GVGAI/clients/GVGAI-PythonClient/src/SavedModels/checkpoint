@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQN_prueba_test-9_its-10000_tau-500_Catapults_29.ckpt-100"
-all_model_checkpoint_paths: "DQN_prueba_test-9_its-10000_tau-500_Catapults_29.ckpt-100"
+model_checkpoint_path: "DQN_prueba_test-9_its-7500_tau-100_Catapults_29.ckpt-100"
+all_model_checkpoint_paths: "DQN_prueba_test-9_its-7500_tau-100_Catapults_29.ckpt-100"
