@@ -15,7 +15,7 @@ import pickle
 import sys
 import glob
 
-from LearningModel import DQNetwork
+from LearningModelValidSubgoals import DQNetworkValidSubgoals
 
 class Agent(AbstractPlayer):
 	NUM_GEMS_FOR_EXIT = 9
@@ -54,68 +54,58 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-10_its-5000_tau-250_BoulderDash_0"
+		self.vs_network_name="DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=25
+		self.dataset_size_for_training=5
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
 
 		# Architecture
 		# First conv layer
-		self.l1_num_filt=32
-		self.l1_window=[4, 4]
-		self.l1_strides=[1, 1]
-		self.l1_padding_type="VALID"
+		self.vs_l1_num_filt=32
+		self.vs_l1_window=[4, 4]
+		self.vs_l1_strides=[1, 1]
+		self.vs_l1_padding_type="VALID"
 
 		# Second conv layer
-		self.l2_num_filt=32
-		self.l2_window=[4, 4]
-		self.l2_strides=[1, 1]
-		self.l2_padding_type="VALID"
+		self.vs_l2_num_filt=32
+		self.vs_l2_window=[4, 4]
+		self.vs_l2_strides=[1, 1]
+		self.vs_l2_padding_type="VALID"
 
 		# Third conv layer
-		self.l3_num_filt=64
-		self.l3_window=[4, 4]
-		self.l3_strides=[1, 1]
-		self.l3_padding_type="VALID"
+		self.vs_l3_num_filt=64
+		self.vs_l3_window=[4, 4]
+		self.vs_l3_strides=[1, 1]
+		self.vs_l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=128
-		self.l4_window=[4, 4]
-		self.l4_strides=[1, 1]
-		self.l4_padding_type="VALID"
-
-		# Don't use max pooling
-		"""
-		self.max_pool_size=[2, 2]
-		self.max_pool_str=[1, 1]
-		"""
-
+		self.vs_l4_num_filt=64
+		self.vs_l4_window=[4, 4]
+		self.vs_l4_strides=[1, 1]
+		self.vs_l4_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[32, 1]
+		self.vs_fc_num_unis=[32, 1]
 
 		# Training params
-		self.learning_rate=0.005
-		# Don't use dropout?
-		self.dropout_prob=0.0
-		self.num_train_its=5000
-		self.batch_size=16
+		self.vs_learning_rate=0.005
+		self.vs_num_train_its=1000
+		self.vs_batch_size=16
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=250
-		self.tau=0 # Counter that resets to 0 when the target network is updated
+		self.vs_max_tau=250
+		self.vs_tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
-		# Gamma changed from 0.9 to 1!!!
-		self.gamma=1 
+		self.vs_gamma=1 
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -154,7 +144,7 @@ class Agent(AbstractPlayer):
 
 		elif self.EXECUTION_MODE == 'train':
 			# Name of the saved model file (without the number of dataset size part)
-			self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
+			self.vs_model_save_path = "./SavedModels/" + self.vs_network_name + ".ckpt"
 
 			# Experience Replay
 			self.memory = []
@@ -164,37 +154,31 @@ class Agent(AbstractPlayer):
 
 		else: # Test
 
-			# Goal Selection Mode: "best" -> select the best one using the trained model,
-			# "random" -> select a random one (corresponds with the random model)
-			# Automatically changed by the scripts!
-			self.goal_selection_mode="best"
-
 			# Create Learning Model unles goal selection model is random
 
-			if self.goal_selection_mode == "best":
-				# DQNetwork
-				self.model = DQNetwork(writer_name=self.network_name,
-						 sample_size = self.sample_size,
-						 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-						 l1_padding_type = self.l1_padding_type,
-						 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
-						 l2_padding_type = self.l2_padding_type,
-						 l3_num_filt = self.l3_num_filt, l3_window = self.l3_window, l3_strides = self.l3_strides,
-						 l3_padding_type = self.l3_padding_type,
-						 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
-						 l4_padding_type = self.l4_padding_type,
-						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
-						 learning_rate = self.learning_rate)
+			# DQNetwork
+			self.vs_model = DQNetworkValidSubgoals(writer_name=self.vs_network_name,
+					 sample_size = self.sample_size,
+					 l1_num_filt = self.vs_l1_num_filt, l1_window = self.vs_l1_window, l1_strides = self.vs_l1_strides,
+					 l1_padding_type = self.vs_l1_padding_type,
+					 l2_num_filt = self.vs_l2_num_filt, l2_window = self.vs_l2_window, l2_strides = self.vs_l2_strides,
+					 l2_padding_type = self.vs_l2_padding_type,
+					 l3_num_filt = self.vs_l3_num_filt, l3_window = self.vs_l3_window, l3_strides = self.vs_l3_strides,
+					 l3_padding_type = self.vs_l3_padding_type,
+					 l4_num_filt = self.vs_l4_num_filt, l4_window = self.vs_l4_window, l4_strides = self.vs_l4_strides,
+					 l4_padding_type = self.vs_l4_padding_type,
+					 fc_num_units = self.vs_fc_num_unis,
+					 learning_rate = self.vs_learning_rate)
 
-				# Name of the saved model file to load (without the number of training steps part)
-				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
+			# Name of the saved model file to load (without the number of training steps part)
+			model_load_path = "./SavedModels/" + self.vs_network_name + ".ckpt"
 
-				# Number of levels the model to load has been trained on
-				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+			# Number of levels the model to load has been trained on
+			# Automatically changed by ejecutar_pruebas.py!
+			self.dataset_size_model=5
 
-				# <Load the already-trained model in order to test performance>
-				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
+			# <Load the already-trained model in order to test performance>
+			self.vs_model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -231,6 +215,8 @@ class Agent(AbstractPlayer):
 		if self.EXECUTION_MODE == 'test' and not self.is_training:
 			self.num_actions_lv = 0
 			self.num_incorrect_subgoals = 0
+			self.num_false_positives = 0 # False positive: when the model predicts a subgoal is invalid but it was valid
+			self.num_false_negatives = 0 # False negative: when the model predicts a subgoal is valid but it was invalid
 
 
 	def act(self, sso, elapsedTimer):
@@ -257,42 +243,42 @@ class Agent(AbstractPlayer):
 
 			# Create Learning model
 
-			curr_name = self.network_name + "_lvs={}".format(self.dataset_size_for_training) # Append dataset size to the name of the network
+			vs_curr_name = self.vs_network_name + "_lvs={}".format(self.dataset_size_for_training) # Append dataset size to the name of the network
 			tf.reset_default_graph() # Clear Tensorflow Graph and Variables
 
 			# DQNetwork
-			self.model = DQNetwork(writer_name=curr_name,
+			self.vs_model = DQNetworkValidSubgoals(writer_name=vs_curr_name,
 					 sample_size = self.sample_size,
-					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 l1_padding_type = self.l1_padding_type,
-					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
-					 l2_padding_type = self.l2_padding_type,
-					 l3_num_filt = self.l3_num_filt, l3_window = self.l3_window, l3_strides = self.l3_strides,
-					 l3_padding_type = self.l3_padding_type,
-					 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
-					 l4_padding_type = self.l4_padding_type,
-					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
-					 learning_rate = self.learning_rate)
+					 l1_num_filt = self.vs_l1_num_filt, l1_window = self.vs_l1_window, l1_strides = self.vs_l1_strides,
+					 l1_padding_type = self.vs_l1_padding_type,
+					 l2_num_filt = self.vs_l2_num_filt, l2_window = self.vs_l2_window, l2_strides = self.vs_l2_strides,
+					 l2_padding_type = self.vs_l2_padding_type,
+					 l3_num_filt = self.vs_l3_num_filt, l3_window = self.vs_l3_window, l3_strides = self.vs_l3_strides,
+					 l3_padding_type = self.vs_l3_padding_type,
+					 l4_num_filt = self.vs_l4_num_filt, l4_window = self.vs_l4_window, l4_strides = self.vs_l4_strides,
+					 l4_padding_type = self.vs_l4_padding_type,
+					 fc_num_units = self.vs_fc_num_unis,
+					 learning_rate = self.vs_learning_rate)
 
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
-			self.target_network = DQNetwork(name="TargetNetwork",
+			self.vs_target_network = DQNetworkValidSubgoals(name="TargetNetworkValidSubgoals",
 					 create_writer = False,
 					 sample_size = self.sample_size,
-					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
-					 l1_padding_type = self.l1_padding_type,
-					 l2_num_filt = self.l2_num_filt, l2_window = self.l2_window, l2_strides = self.l2_strides,
-					 l2_padding_type = self.l2_padding_type,
-					 l3_num_filt = self.l3_num_filt, l3_window = self.l3_window, l3_strides = self.l3_strides,
-					 l3_padding_type = self.l3_padding_type,
-					 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
-					 l4_padding_type = self.l4_padding_type,
-					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
-					 learning_rate = self.learning_rate)
+					 l1_num_filt = self.vs_l1_num_filt, l1_window = self.vs_l1_window, l1_strides = self.vs_l1_strides,
+					 l1_padding_type = self.vs_l1_padding_type,
+					 l2_num_filt = self.vs_l2_num_filt, l2_window = self.vs_l2_window, l2_strides = self.vs_l2_strides,
+					 l2_padding_type = self.vs_l2_padding_type,
+					 l3_num_filt = self.vs_l3_num_filt, l3_window = self.vs_l3_window, l3_strides = self.vs_l3_strides,
+					 l3_padding_type = self.vs_l3_padding_type,
+					 l4_num_filt = self.vs_l4_num_filt, l4_window = self.vs_l4_window, l4_strides = self.vs_l4_strides,
+					 l4_padding_type = self.vs_l4_padding_type,
+					 fc_num_units = self.vs_fc_num_unis,
+					 learning_rate = self.vs_learning_rate)
 
 			# Initialize target network's weights with those of the DQNetwork
-			self.update_target_network()
-			self.tau = 0
+			self.update_target_network_valid_subgoals()
+			self.vs_tau = 0
 
 			num_samples = len(self.memory)
 
@@ -301,12 +287,12 @@ class Agent(AbstractPlayer):
 			ind_batch = 0 # Index for selecting the next minibatch
 
 			# Execute the training of the current model
-			for curr_it in range(self.num_train_its):   
+			for curr_it in range(self.vs_num_train_its):   
 				# Choose next batch from Experience Replay
 
-				if ind_batch+self.batch_size < num_samples:
-					batch = self.memory[ind_batch:ind_batch+self.batch_size]
-					ind_batch = (ind_batch + self.batch_size)
+				if ind_batch+self.vs_batch_size < num_samples:
+					batch = self.memory[ind_batch:ind_batch+self.vs_batch_size]
+					ind_batch = (ind_batch + self.vs_batch_size)
 				else: # Got to the end of the experience replay -> shuffle it and start again
 					batch = self.memory[ind_batch:]
 					ind_batch = 0
@@ -314,31 +300,37 @@ class Agent(AbstractPlayer):
 					random.shuffle(self.memory)
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-				batch_R = [each[1] for each in batch] # r values (plan lenghts)
+
+				# r values (1 if the player dies or the plan is invalid, 0 otherwise)
+				batch_R = [1 if each[1] == self.num_actions_invalid_plan else 0 for each in batch]
+				# batch_R = [each[1] for each in batch] 
+
 				batch_S = [each[2] for each in batch] # s' values (sso instances)
 
 				# Calculate Q_targets
 				Q_targets = []
 				
 				for r, s in zip(batch_R, batch_S):
-					Q_target = r + self.gamma*self.get_min_Q_value(s)
+					# Q_target = r + self.vs_gamma*self.get_min_Q_value(s)
+					Q_target = r + self.vs_gamma*self.get_min_Q_value_valid_subgoals(s)
+
 					Q_targets.append(Q_target)
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
 				# Execute one training step
-				self.model.train(batch_X, Q_targets)
-				self.tau += 1
+				self.vs_model.train(batch_X, Q_targets)
+				self.vs_tau += 1
 
 				# Update target network every tau training steps
-				if self.tau >= self.max_tau:
-					update_ops = self.update_target_network()
-					self.target_network.update_weights(update_ops)
+				if self.vs_tau >= self.vs_max_tau:
+					update_ops = self.update_target_network_valid_subgoals()
+					self.vs_target_network.update_weights(update_ops)
 
-					self.tau = 0
+					self.vs_tau = 0
 
 				# Save Logs
-				self.model.save_logs(batch_X, Q_targets, curr_it)
+				self.vs_model.save_logs(batch_X, Q_targets, curr_it)
 
 				# Periodically print the progress of the training
 				if curr_it % 500 == 0 and curr_it != 0:
@@ -346,7 +338,7 @@ class Agent(AbstractPlayer):
 
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							
 			# Save the current trained model
-			self.model.save_model(path = self.model_save_path, num_it = self.dataset_size_for_training)
+			self.vs_model.save_model(path = self.vs_model_save_path, num_it = self.dataset_size_for_training)
 			print("\n> Current model saved! Dataset size={} levels\n".format(self.dataset_size_for_training))
 
 
@@ -413,34 +405,67 @@ class Agent(AbstractPlayer):
 
 			# Use the Learning model to select a subgoal if the agent is in test/validation phase
 			else:
-				# Keep selecting subgoal until one is attainable from the current state of the game
-				while len(subgoals) > 0 and len(self.action_list) == 0:
+				# <TEMPORAL>
 
-					# Select the subgoal using either the learning model or randomly (random model)
-					if self.goal_selection_mode == "best": # Use the model to select the best subgoal
-						chosen_subgoal = self.choose_next_subgoal(sso.observationGrid, subgoals)
-					else: # Select subgoals randomly
-						chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
+				# BoulderDash and IceAndFire
+				# Obtain the correct valid subgoals and select one randomly
+				if self.game_playing != 'Catapults':
+					# Correct valid subgoals
+					correct_valid_subgoals = self.obtain_valid_subgoals(sso)
 
-					# Remove the selected subgoal from the list of eligible subgoals
-					subgoals.remove(chosen_subgoal)
+					chosen_subgoal = correct_valid_subgoals[random.randint(0,
+									 len(correct_valid_subgoals) - 1)]
+
+					# Find the plan to the chosen subgoal
 
 					# If the game is IceAndFire, check how many types of boots the agent has
 					if self.game_playing == 'IceAndFire': 
 						boots_resources = self.get_boots_resources(sso)
 					else:
 						boots_resources = []
-
-					# Obtain the plan
+					
 					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
 
-					# If there is no valid plan to the chosen subgoal, increment the number of
-					# non-eligible subgoals selected
-					if len(self.action_list) == 0:
-						self.num_incorrect_subgoals += 1 
+					# Measure the quality of the prediction of the trained model
 
-				# If none of the subgoals is attainable, the agent is at a dead end ->
-				# the agent loses the game and escapes the level
+					predicted_valid_subgoals = self.predict_valid_subgoals(sso)
+
+					# False positives
+					# The model predicts a subgoal is invalid but it was valid
+					for corr_val_subgoal in correct_valid_subgoals:
+						if corr_val_subgoal not in predicted_valid_subgoals:
+							self.num_false_positives += 1
+
+					# False negatives
+					# The model predicts a subgoal is valid but it was invalid
+					for pred_val_subgoal in predicted_valid_subgoals:
+						if pred_val_subgoal not in correct_valid_subgoals:
+							self.num_false_negatives += 1
+
+				# Catapults game
+				# Predict the valid subgoals and select one randomly
+				else: 
+					predicted_valid_subgoals = self.predict_valid_subgoals(sso)
+
+					if len(predicted_valid_subgoals) == 0:
+						print(">> The model has predicted all the subgoals are invalid!")
+
+					# Select a random subgoal until one has a valid plan associated
+					while len(self.action_list) == 0 and len(predicted_valid_subgoals) > 0:
+
+						chosen_subgoal = predicted_valid_subgoals[random.randint(0,
+										 len(predicted_valid_subgoals) - 1)]
+
+						predicted_valid_subgoals.remove(chosen_subgoal)
+
+						self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources=[])
+
+						# If there is no valid plan to the chosen subgoal, increment the number of
+						# non-eligible subgoals selected
+						if len(self.action_list) == 0:
+							self.num_incorrect_subgoals += 1 
+
+				# If none of the subgoals is attainable, the agent loses the game and escapes the level
 				if len(self.action_list) == 0:
 					self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 					return 'ACTION_ESCAPE'
@@ -624,6 +649,60 @@ class Agent(AbstractPlayer):
 			subgoal_pos.append((exit_pos_x, exit_pos_y))
 
 			return subgoal_pos
+
+	def predict_valid_subgoals(self, sso, prob_threshold=0.5):
+		"""
+		Uses the trained DQNetworkValidSubgoals to select all the valid subgoals in the current state
+		of the game @sso
+		@prob_threshold If the model predicts a Q_value smaller than @prob_threshold, the subgoal is considered
+		                valid
+		"""
+
+		# Retrieve subgoals list (list of subgoals positions)
+		subgoals = self.get_subgoals_positions(sso)
+
+		# Iterate over every subgoal and select it if the network predicts its valid
+		# (prob. of NOT being valid < 0.5)
+		valid_subgoals = []
+
+		for curr_subgoal in subgoals:
+			# Encode it as a one_hot_grid
+			one_hot_grid = self.encode_game_state(sso.observationGrid, curr_subgoal)
+
+			# Predict the associated probability
+			curr_Q_val = self.vs_model.predict(one_hot_grid)
+
+			if curr_Q_val < prob_threshold:
+				valid_subgoals.append(curr_subgoal)
+
+		return valid_subgoals
+
+	def obtain_valid_subgoals(self, sso):
+		"""
+		This method can only be used in BoulderDash or IceAndFire.
+		In those two games, obtains a list of all the valid subgoals present in the current state of the game,
+		i.e., subgoals for which there exist a valid plan.
+		"""
+
+		# Retrieve subgoals list (list of subgoals positions)
+		subgoals = self.get_subgoals_positions(sso)
+
+		# If the game is IceAndFire, check how many types of boots the agent has
+		if self.game_playing == 'IceAndFire': 
+			boots_resources = self.get_boots_resources(sso)
+		else:
+			boots_resources = []
+
+		# For each subgoal, try to obtain a plan. If there is none, the subgoal is invalid
+		valid_subgoals = []
+
+		for curr_subgoal in subgoals:
+			curr_plan = self.search_plan(sso, curr_subgoal, boots_resources)
+
+			if len(curr_plan) > 0:
+				valid_subgoals.append(curr_subgoal)
+
+		return valid_subgoals
 
 	def get_boots_resources(self, sso):
 		"""
@@ -877,6 +956,8 @@ class Agent(AbstractPlayer):
 
 
 	def choose_next_subgoal(self, obs_grid, possible_subgoals):
+		# <TODO>
+
 		"""
 		Uses the learnt model to choose the best subgoal to plan for among all the
 		possible subgoals, from the current state of the game.
@@ -907,9 +988,9 @@ class Agent(AbstractPlayer):
 		return best_subgoal
 
 
-	def get_min_Q_value(self, sso):
+	def get_min_Q_value_valid_subgoals(self, sso):
 		"""
-		Uses the Target Network (<with the current weights>) to obtain the Q-value associated with the state:
+		Uses the Target Network for Valid Subgoals (<with the current weights>) to obtain the Q-value associated with the state:
 		the minimum Q-value among all possible subgoals present at that state.
 		If sso is 'None' (corresponds to an end state), the Q-value is 0.
 
@@ -929,7 +1010,7 @@ class Agent(AbstractPlayer):
 		one_hot_grid_array = self.encode_game_state_all_subgoals(observationGrid, subgoals)
 
 		# Predict the Q_values for all the subgoals
-		Q_values = self.target_network.predict_batch(one_hot_grid_array)
+		Q_values = self.vs_target_network.predict_batch(one_hot_grid_array)
 
 		# Get the min Q_value
 		min_Q_val = np.min(Q_values)
@@ -937,17 +1018,17 @@ class Agent(AbstractPlayer):
 		return min_Q_val
 
 
-	def update_target_network(self):
+	def update_target_network_valid_subgoals(self):
 		"""
-		Method used every tau steps to update the target network. It changes the target network's weights
-		to those of the DQNetwork.
+		Method used every tau steps to update the target network for the valids subgoals. It changes the target network's weights
+		to those of the DQNetwork for the valid subgoals.
 		"""
 
 		# Get the parameters of the DQNNetwork
-		from_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "DQNetwork")
+		from_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "DQNetworkValidSubgoals")
 		
 		# Get the parameters of the Target_network
-		to_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "TargetNetwork")
+		to_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, "TargetNetworkValidSubgoals")
 
 		op_holder = []
 		
@@ -1149,17 +1230,17 @@ class Agent(AbstractPlayer):
 				print("\n\nThe player has lost\n\n")
 				self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 
-			# Save the number of actions and the number of incorrect subgoals used to complete the 
-			# current level to the output file
+			# Save the results of the execution
 			test_output_file = "test_output.txt"
 
 			with open(test_output_file, "a") as file:
-				if self.goal_selection_mode == "best":
-					file.write("{}-{} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
+				if self.game_playing == 'Catapults': # Print the number of incorrect subgoals and number of actions used
+					file.write("{}-{} | {} | {} | {}\n".format(self.vs_network_name, self.dataset_size_model,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
-				else:
-					file.write("{} | {} | {} | {}\n".format(self.network_name,
-					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
+
+				else: # BoulderDash and IceAndFire -> print the number of false positives, negatives and actions used
+					file.write("{}-{} | {} | {} | {} | {}\n".format(self.vs_network_name, self.dataset_size_model,
+					 self.game_playing, self.num_false_positives, self.num_false_negatives, self.num_actions_lv))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")

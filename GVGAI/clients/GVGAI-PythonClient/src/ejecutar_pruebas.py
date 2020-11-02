@@ -15,7 +15,7 @@ script_execution_mode = "test"
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
-goal_selection_mode = "best"
+# goal_selection_mode = "best"
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -23,38 +23,39 @@ goal_selection_mode = "best"
 
 # Architecture
 # First conv layer
-l1_num_filt = [32]
-l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+vs_l1_num_filt = [32]
+vs_l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32]
-l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+vs_l2_num_filt = [32]
+vs_l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64] # 32 does worse 
-l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+vs_l3_num_filt = [64] # 32 does worse 
+vs_l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [128]
-l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+vs_l4_num_filt = [64] #128
+vs_l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
+vs_fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [5000] # Number of iterations for training #7500
-tau=[250] # Update period of the target network
-alfa = [0.005] # Learning rate # 0.01 is too much
-dropout = [0.0] # Dropout value
-batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
+vs_num_its = [1000] # Number of iterations for training #7500
+vs_tau=[250] # Update period of the target network
+vs_alfa = [0.005] # Learning rate # 0.01 is too much
+vs_dropout = [0.0] # Dropout value
+vs_batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['BoulderDash']
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [25] # 20
+datasets_sizes_for_training_BoulderDash = [5] # 25 # 20
 datasets_sizes_for_training_IceAndFire = [50] # 45
 datasets_sizes_for_training_Catapults = [100] # 45
-repetitions_per_model = 30 # Each model is trained this number of times
+repetitions_per_model = 1 # 30 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -88,10 +89,10 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_b) if o == 'BoulderDash' else 
 				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_i) if o == 'IceAndFire' else
 				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_c)
-					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
- 					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
- 					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
-					for n in tau for o in games_to_play 
+					for a in vs_l1_num_filt for b in vs_l1_filter_structure for c in vs_l2_num_filt for d in vs_l2_filter_structure \
+ 					for e in vs_l3_num_filt for f in vs_l3_filter_structure for g in vs_l4_num_filt for h in vs_l4_filter_structure \
+ 					for i in vs_fc_num_unis for j in vs_num_its for k in vs_alfa for l in vs_dropout for m in vs_batch_size \
+					for n in vs_tau for o in games_to_play 
  					for p_b in datasets_sizes_for_training_BoulderDash for p_i in datasets_sizes_for_training_IceAndFire
  					for p_c in datasets_sizes_for_training_Catapults]
 
@@ -99,20 +100,20 @@ try:
 	# Iterate over the different models
 	for curr_model_params in models_params:
 		# <Current model hyperparameters>
-		curr_l1_num_filt = curr_model_params[0]
-		curr_l1_filter_structure = curr_model_params[1]
-		curr_l2_num_filt = curr_model_params[2]
-		curr_l2_filter_structure = curr_model_params[3]
-		curr_l3_num_filt = curr_model_params[4]
-		curr_l3_filter_structure = curr_model_params[5]
-		curr_l4_num_filt = curr_model_params[6]
-		curr_l4_filter_structure = curr_model_params[7]
-		curr_fc_num_unis = curr_model_params[8]
-		curr_num_its = curr_model_params[9]
-		curr_alfa = curr_model_params[10]
-		curr_dropout = curr_model_params[11]
-		curr_batch_size = curr_model_params[12]
-		curr_tau = curr_model_params[13]
+		curr_vs_l1_num_filt = curr_model_params[0]
+		curr_vs_l1_filter_structure = curr_model_params[1]
+		curr_vs_l2_num_filt = curr_model_params[2]
+		curr_vs_l2_filter_structure = curr_model_params[3]
+		curr_vs_l3_num_filt = curr_model_params[4]
+		curr_vs_l3_filter_structure = curr_model_params[5]
+		curr_vs_l4_num_filt = curr_model_params[6]
+		curr_vs_l4_filter_structure = curr_model_params[7]
+		curr_vs_fc_num_unis = curr_model_params[8]
+		curr_vs_num_its = curr_model_params[9]
+		curr_vs_alfa = curr_model_params[10]
+		curr_vs_dropout = curr_model_params[11]
+		curr_vs_batch_size = curr_model_params[12]
+		curr_vs_tau = curr_model_params[13]
 		curr_game = curr_model_params[14]
 		dataset_size_for_training = curr_model_params[15]
 
@@ -140,40 +141,40 @@ try:
 			agent_file = file.read()
 
 		# Change model params
-		agent_file = re.sub(r'self.l1_num_filt=.*', 'self.l1_num_filt={}'.format(curr_l1_num_filt), agent_file, count=1)
-		agent_file = re.sub(r'self.l1_window=.*', 'self.l1_window={}'.format(curr_l1_filter_structure[0]), agent_file, count=1)
-		agent_file = re.sub(r'self.l1_strides=.*', 'self.l1_strides={}'.format(curr_l1_filter_structure[1]), agent_file, count=1)
-		agent_file = re.sub(r'self.l1_padding_type=.*', 'self.l1_padding_type="{}"'.format(curr_l1_filter_structure[2]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l1_num_filt=.*', 'self.vs_l1_num_filt={}'.format(curr_vs_l1_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l1_window=.*', 'self.vs_l1_window={}'.format(curr_vs_l1_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l1_strides=.*', 'self.vs_l1_strides={}'.format(curr_vs_l1_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l1_padding_type=.*', 'self.vs_l1_padding_type="{}"'.format(curr_vs_l1_filter_structure[2]), agent_file, count=1)
 
-		agent_file = re.sub(r'self.l2_num_filt=.*', 'self.l2_num_filt={}'.format(curr_l2_num_filt), agent_file, count=1)
-		agent_file = re.sub(r'self.l2_window=.*', 'self.l2_window={}'.format(curr_l2_filter_structure[0]), agent_file, count=1)
-		agent_file = re.sub(r'self.l2_strides=.*', 'self.l2_strides={}'.format(curr_l2_filter_structure[1]), agent_file, count=1)
-		agent_file = re.sub(r'self.l2_padding_type=.*', 'self.l2_padding_type="{}"'.format(curr_l2_filter_structure[2]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l2_num_filt=.*', 'self.vs_l2_num_filt={}'.format(curr_vs_l2_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l2_window=.*', 'self.vs_l2_window={}'.format(curr_vs_l2_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l2_strides=.*', 'self.vs_l2_strides={}'.format(curr_vs_l2_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l2_padding_type=.*', 'self.vs_l2_padding_type="{}"'.format(curr_vs_l2_filter_structure[2]), agent_file, count=1)
 
-		agent_file = re.sub(r'self.l3_num_filt=.*', 'self.l3_num_filt={}'.format(curr_l3_num_filt), agent_file, count=1)
-		agent_file = re.sub(r'self.l3_window=.*', 'self.l3_window={}'.format(curr_l3_filter_structure[0]), agent_file, count=1)
-		agent_file = re.sub(r'self.l3_strides=.*', 'self.l3_strides={}'.format(curr_l3_filter_structure[1]), agent_file, count=1)
-		agent_file = re.sub(r'self.l3_padding_type=.*', 'self.l3_padding_type="{}"'.format(curr_l3_filter_structure[2]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l3_num_filt=.*', 'self.vs_l3_num_filt={}'.format(curr_vs_l3_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l3_window=.*', 'self.vs_l3_window={}'.format(curr_vs_l3_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l3_strides=.*', 'self.vs_l3_strides={}'.format(curr_vs_l3_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l3_padding_type=.*', 'self.vs_l3_padding_type="{}"'.format(curr_vs_l3_filter_structure[2]), agent_file, count=1)
 
-		agent_file = re.sub(r'self.l4_num_filt=.*', 'self.l4_num_filt={}'.format(curr_l4_num_filt), agent_file, count=1)
-		agent_file = re.sub(r'self.l4_window=.*', 'self.l4_window={}'.format(curr_l4_filter_structure[0]), agent_file, count=1)
-		agent_file = re.sub(r'self.l4_strides=.*', 'self.l4_strides={}'.format(curr_l4_filter_structure[1]), agent_file, count=1)
-		agent_file = re.sub(r'self.l4_padding_type=.*', 'self.l4_padding_type="{}"'.format(curr_l4_filter_structure[2]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l4_num_filt=.*', 'self.vs_l4_num_filt={}'.format(curr_vs_l4_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l4_window=.*', 'self.vs_l4_window={}'.format(curr_vs_l4_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l4_strides=.*', 'self.vs_l4_strides={}'.format(curr_vs_l4_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_l4_padding_type=.*', 'self.vs_l4_padding_type="{}"'.format(curr_vs_l4_filter_structure[2]), agent_file, count=1)
 
 
-		agent_file = re.sub(r'self.fc_num_unis=.*', 'self.fc_num_unis={}'.format(curr_fc_num_unis), agent_file, count=1)
-		agent_file = re.sub(r'self.learning_rate=.*', 'self.learning_rate={}'.format(curr_alfa), agent_file, count=1)
-		agent_file = re.sub(r'self.dropout_prob=.*', 'self.dropout_prob={}'.format(curr_dropout), agent_file, count=1)
-		agent_file = re.sub(r'self.num_train_its=.*', 'self.num_train_its={}'.format(curr_num_its), agent_file, count=1)
-		agent_file = re.sub(r'self.batch_size=.*', 'self.batch_size={}'.format(curr_batch_size), agent_file, count=1)
-		agent_file = re.sub(r'self.max_tau=.*', 'self.max_tau={}'.format(curr_tau), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_fc_num_unis=.*', 'self.vs_fc_num_unis={}'.format(curr_vs_fc_num_unis), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_learning_rate=.*', 'self.vs_learning_rate={}'.format(curr_vs_alfa), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_dropout_prob=.*', 'self.vs_dropout_prob={}'.format(curr_vs_dropout), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_num_train_its=.*', 'self.vs_num_train_its={}'.format(curr_vs_num_its), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_batch_size=.*', 'self.vs_batch_size={}'.format(curr_vs_batch_size), agent_file, count=1)
+		agent_file = re.sub(r'self.vs_max_tau=.*', 'self.vs_max_tau={}'.format(curr_vs_tau), agent_file, count=1)
 
 		# Change other variables
 		agent_file = re.sub(r'self.game_playing=.*', 'self.game_playing="{}"'.format(curr_game), agent_file, count=1)
 		agent_file = re.sub(r'self.dataset_size_for_training=.*', 'self.dataset_size_for_training={}'.format(dataset_size_for_training), agent_file, count=1)
 
 		# Change goal_selection_mode
-		agent_file = re.sub(r'self.goal_selection_mode=.*', 'self.goal_selection_mode="{}"'.format(goal_selection_mode), agent_file, count=1)
+		# agent_file = re.sub(r'self.goal_selection_mode=.*', 'self.goal_selection_mode="{}"'.format(goal_selection_mode), agent_file, count=1)
 
 		# Save file
 		with open('MyAgent/Agent.py', 'w') as file:
@@ -200,18 +201,17 @@ try:
 			# <Create the model name using the hyperparameters values>
 
 			if script_execution_mode == "validation":
-				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
-								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
-								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
-								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
-								curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
-								curr_fc_num_unis[0], curr_fc_num_unis[1], \
-								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
+				curr_vs_model_name = "DQNValidSubgoals_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
+								format(curr_vs_l1_num_filt, curr_vs_l1_filter_structure[0][0], curr_vs_l1_filter_structure[1][0], curr_vs_l1_filter_structure[2], \
+								curr_vs_l2_num_filt, curr_vs_l2_filter_structure[0][0], curr_vs_l2_filter_structure[1][0], curr_vs_l2_filter_structure[2], \
+								curr_vs_l3_num_filt, curr_vs_l3_filter_structure[0][0], curr_vs_l3_filter_structure[1][0], curr_vs_l3_filter_structure[2], \
+								curr_vs_l4_num_filt, curr_vs_l4_filter_structure[0][0], curr_vs_l4_filter_structure[1][0], curr_vs_l4_filter_structure[2], \
+								curr_vs_fc_num_unis[0], curr_vs_fc_num_unis[1], \
+								curr_vs_num_its, curr_vs_alfa, curr_vs_dropout, curr_vs_batch_size, curr_vs_tau, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_prueba_test-10_its-{}_tau-{}_{}_{}".format(curr_num_its, curr_tau, curr_game, curr_rep)
-				# curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
+				curr_vs_model_name = "DQNValidSubgoals_prueba_test-10_its-{}_tau-{}_{}_{}".format(curr_vs_num_its, curr_vs_tau, curr_game, curr_rep)
 
-			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
+			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_vs_model_name, curr_rep))
 
 			# <Change Agent.py>	
 
@@ -220,7 +220,7 @@ try:
 				agent_file = file.read()
 
 			# Change the model name
-			agent_file = re.sub(r'self.network_name=.*', 'self.network_name="{}"'.format(curr_model_name), agent_file, count=1)
+			agent_file = re.sub(r'self.vs_network_name=.*', 'self.vs_network_name="{}"'.format(curr_vs_model_name), agent_file, count=1)
 
 			# Save file
 			with open('MyAgent/Agent.py', 'w') as file:
@@ -230,37 +230,38 @@ try:
 			# ------ TRAINING ------
 
 			# Skip training if we are testing the random model
-			if goal_selection_mode == "best":
-				# <Change Agent.py>
+			# if goal_selection_mode == "best":
 
-				# Load file in memory
-				with open('MyAgent/Agent.py', 'r') as file:
-					agent_file = file.read()
+			# <Change Agent.py>
 
-				# Change execution mode
-				agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="train"', agent_file, count=1)
+			# Load file in memory
+			with open('MyAgent/Agent.py', 'r') as file:
+				agent_file = file.read()
 
-				# Save file
-				with open('MyAgent/Agent.py', 'w') as file:
-					file.write(agent_file)
+			# Change execution mode
+			agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="train"', agent_file, count=1)
 
-				# <Change CompetitionParameters.py>
+			# Save file
+			with open('MyAgent/Agent.py', 'w') as file:
+				file.write(agent_file)
 
-				# Load file in memory
-				with open('utils/CompetitionParameters.py', 'r') as file:
-					comp_param_file = file.read()
+			# <Change CompetitionParameters.py>
 
-				# Change learning time to training time
-				comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN", comp_param_file, count=1)
+			# Load file in memory
+			with open('utils/CompetitionParameters.py', 'r') as file:
+				comp_param_file = file.read()
 
-				# Save file
-				with open('utils/CompetitionParameters.py', 'w') as file:
-					file.write(comp_param_file)
+			# Change learning time to training time
+			comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN", comp_param_file, count=1)
 
-				# <Execute the training with the current hyperparameters and wait until it finishes>
+			# Save file
+			with open('utils/CompetitionParameters.py', 'w') as file:
+				file.write(comp_param_file)
 
-				print("\n> Starting the training of the current model")
-				subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
+			# <Execute the training with the current hyperparameters and wait until it finishes>
+
+			print("\n> Starting the training of the current model")
+			subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
 
 			# ------ VALIDATION / TEST ------
@@ -395,7 +396,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					
