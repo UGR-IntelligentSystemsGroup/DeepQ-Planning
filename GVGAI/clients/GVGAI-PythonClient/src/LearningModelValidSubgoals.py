@@ -12,6 +12,7 @@ class DQNetworkValidSubgoals:
 
 	# Create CNN architecture
     def __init__(self, name="DQNetworkValidSubgoals", writer_name="DQNetworkValidSubgoals",
+                 sess=None,
                  create_writer = True,
                  sample_size=[13, 26, 9],
                  l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
@@ -211,17 +212,19 @@ class DQNetworkValidSubgoals:
 
         # --- Initialization ---
 
+        if sess is not None:
+            self.sess = sess
+        else:
+            # Create Session
 
-        # Create Session
-
-        # Run on GPU
-        
-        # Needed for running on GPU
-        gpu_options = tf.GPUOptions(allow_growth=True)
-        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-        
-        # Run on CPU (it's faster if model and batch_size is small)               
-        # self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
+            # Run on GPU
+            
+            # Needed for running on GPU
+            gpu_options = tf.GPUOptions(allow_growth=True)
+            self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+            
+            # Run on CPU (it's faster if model and batch_size is small)               
+            # self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
 
         # Initialize variables
         self.sess.run(tf.global_variables_initializer())

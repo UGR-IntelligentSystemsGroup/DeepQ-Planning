@@ -7,6 +7,10 @@ import glob
 import random
 import sys
 
+# APLICAR Y TESTEAR ESTOS CAMBIOS EN LA RAMA DQP-ALLGAMES!!!!!
+# Cambiar learning rate (hacer pruebas de overfitting)
+# Ver que los pesos se copian correctamente -> usar la misma sesión para ambas networks
+
 """
 Creo que puede que la TargetNetwork no esté recibiendo los pesos de la DQNetwork.
 Puedo comprobarlo simplemente eliminando la target network y prediciendo con la DQNetwork.
@@ -15,15 +19,6 @@ Puedo comprobarlo simplemente eliminando la target network y prediciendo con la 
 En los niveles malos de test, veo que se predicen muchos valores cercanos a 0.5 o cercanos
 a 0.
 
-Comparación ejecuciones Normal y Q_target network que no se actualizan sus pesos ->
-son idénticas hasta 15000 iteraciones o así, donde la ejecución con Q_target network
-estática empieza a oscilar mucho su pérdida (no converge a 0).
-
-Sin target network no funciona el entrenamiento (siempre predice un Q_value cercano a 0).
-Esto sucede también con la función de pérdida L2!!
-
-Al hacer pruebas con L2 norm loss y Q-target estático, al final la pérdida termina convergiendo
-a 0, pero tarda mucho.
 
 Pruebo a aumentar el learning rate. -> alfa = 0.01: NO FUNCIONA (siempre predice Q-value de 0)
 Al probar a disminuir el learning rate (alfa=0.001) -> <<<<<La pérdida sí converge a 0!!!!!>>>>>
@@ -32,6 +27,13 @@ Al probar alfa=0.0001 -> La pérdida converge a 0 un poco más rápido que en el
 Al probar alfa=0.00005 -> La pérdida converge un poco más lenta a 0.
 
 >>> Mejor valor de alfa=0.0001
+
+Con alfa 0.0001, la pérdida converge a 0 (para un nivel de BoulderDash) incluso sin usar
+Target Network.
+
+Pruebo si funciona correctamente la operación de copiar pesos a la target network.
+Cuando puse mal a propósito los nombres, no me dio ninguna excepción.
+AHORA SÍ FUNCIONA BIEN.
 """
 
 
@@ -74,9 +76,9 @@ vs_l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 vs_fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-vs_num_its = [10000] # Number of iterations for training #7500
-vs_tau=[250] # Update period of the target network
-vs_alfa = [0.00005] # 0.005 # Learning rate # 0.01 is too much
+vs_num_its = [5000] # Number of iterations for training #7500
+vs_tau=[100] # 250 # Update period of the target network
+vs_alfa = [0.0001] # 0.005 # 0.0001 # Learning rate
 vs_dropout = [0.0] # Dropout value
 vs_batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
@@ -84,7 +86,7 @@ vs_batch_size = [16] # 16 works better than 32 for test. For training loss, 32 w
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash']
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [1] # 20 # 25
+datasets_sizes_for_training_BoulderDash = [1, 5, 10, 25] # 20 # 25
 datasets_sizes_for_training_IceAndFire = [45] # 50
 datasets_sizes_for_training_Catapults = [95] # 100
 repetitions_per_model = 1 # 30 # Each model is trained this number of times
@@ -118,15 +120,27 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_b) if o == 'BoulderDash' else 
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_i) if o == 'IceAndFire' else
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_c)
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
 					for a in vs_l1_num_filt for b in vs_l1_filter_structure for c in vs_l2_num_filt for d in vs_l2_filter_structure \
  					for e in vs_l3_num_filt for f in vs_l3_filter_structure for g in vs_l4_num_filt for h in vs_l4_filter_structure \
  					for i in vs_fc_num_unis for j in vs_num_its for k in vs_alfa for l in vs_dropout for m in vs_batch_size \
-					for n in vs_tau for o in games_to_play 
- 					for p_b in datasets_sizes_for_training_BoulderDash for p_i in datasets_sizes_for_training_IceAndFire
- 					for p_c in datasets_sizes_for_training_Catapults]
+					for n in vs_tau for o in games_to_play]
+
+# Add the corresponding dataset sizes for each game
+models_params = []
+
+for par in models_params_prev:
+	if par[-1] == 'BoulderDash':
+		for dataset_size in datasets_sizes_for_training_BoulderDash:
+			models_params.append(par + [dataset_size])
+
+	elif par[-1] == 'IceAndFire':
+		for dataset_size in datasets_sizes_for_training_IceAndFire:
+			models_params.append(par + [dataset_size])
+
+	else: # Catapults
+		for dataset_size in datasets_sizes_for_training_Catapults:
+			models_params.append(par + [dataset_size])
 
 try:
 	# Iterate over the different models
@@ -241,7 +255,7 @@ try:
 								curr_vs_fc_num_unis[0], curr_vs_fc_num_unis[1], \
 								curr_vs_num_its, curr_vs_alfa, curr_vs_dropout, curr_vs_batch_size, curr_vs_tau, curr_game, curr_rep)
 			else:
-				curr_vs_model_name = "DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-{}_tau-{}_alfa-{}_{}_{}".format(curr_vs_num_its,
+				curr_vs_model_name = "DQNValidSubgoals_pruebas_tras_bug_Target_Network_its-{}_tau-{}_alfa-{}_{}_{}".format(curr_vs_num_its,
 				 curr_vs_tau, curr_vs_alfa, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_vs_model_name, curr_rep))

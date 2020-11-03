@@ -54,14 +54,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.vs_network_name="DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-10000_tau-250_alfa-5e-05_BoulderDash_0"
+		self.vs_network_name="DQNValidSubgoals_pruebas_tras_bug_Target_Network_its-5000_tau-100_alfa-0.0001_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=1
+		self.dataset_size_for_training=25
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -95,14 +95,14 @@ class Agent(AbstractPlayer):
 		self.vs_fc_num_unis=[32, 1]
 
 		# Training params
-		self.vs_learning_rate=5e-05
-		self.vs_num_train_its=10000
+		self.vs_learning_rate=0.0001
+		self.vs_num_train_its=5000
 		self.vs_batch_size=16
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.vs_max_tau=250
+		self.vs_max_tau=100
 		self.vs_tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		self.vs_gamma=1 
@@ -175,14 +175,14 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=1
+			self.dataset_size_model=25
 
 			# <Load the already-trained model in order to test performance>
 			self.vs_model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -263,6 +263,7 @@ class Agent(AbstractPlayer):
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
 			self.vs_target_network = DQNetworkValidSubgoals(name="TargetNetworkValidSubgoals",
+					 sess = self.vs_model.sess,
 					 create_writer = False,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.vs_l1_num_filt, l1_window = self.vs_l1_window, l1_strides = self.vs_l1_strides,
@@ -277,8 +278,9 @@ class Agent(AbstractPlayer):
 					 learning_rate = self.vs_learning_rate)
 
 			# Initialize target network's weights with those of the DQNetwork
-			self.update_target_network_valid_subgoals()
-			self.vs_tau = 0
+			update_ops = self.update_target_network_valid_subgoals()
+			self.vs_target_network.update_weights(update_ops)
+			self.vs_tau = 0	
 
 			num_samples = len(self.memory)
 
@@ -323,15 +325,23 @@ class Agent(AbstractPlayer):
 				self.vs_tau += 1
 
 				# Update target network every tau training steps
-
-				# <QUITAR>
-				"""
 				if self.vs_tau >= self.vs_max_tau:
+					# <QUITAR>
+					# prev_weights = tf.get_default_graph().get_tensor_by_name('TargetNetworkValidSubgoals/conv3/kernel:0').eval(session=self.vs_target_network.sess)
+
 					update_ops = self.update_target_network_valid_subgoals()
 					self.vs_target_network.update_weights(update_ops)
 
-					self.vs_tau = 0"""
+					self.vs_tau = 0
 
+
+					# post_weights = tf.get_default_graph().get_tensor_by_name('TargetNetworkValidSubgoals/conv3/kernel:0').eval(session=self.vs_target_network.sess)
+					# <QUITAR>
+					# VEO SI LOS PESOS HAN CAMBIADO
+					# print(">> Comparación pesos antes y después:", np.array_equal(prev_weights, post_weights))
+
+
+		
 				# Save Logs
 				self.vs_model.save_logs(batch_X, Q_targets, curr_it)
 
