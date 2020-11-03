@@ -7,10 +7,42 @@ import glob
 import random
 import sys
 
+"""
+Creo que puede que la TargetNetwork no esté recibiendo los pesos de la DQNetwork.
+Puedo comprobarlo simplemente eliminando la target network y prediciendo con la DQNetwork.
+
+
+En los niveles malos de test, veo que se predicen muchos valores cercanos a 0.5 o cercanos
+a 0.
+
+Comparación ejecuciones Normal y Q_target network que no se actualizan sus pesos ->
+son idénticas hasta 15000 iteraciones o así, donde la ejecución con Q_target network
+estática empieza a oscilar mucho su pérdida (no converge a 0).
+
+Sin target network no funciona el entrenamiento (siempre predice un Q_value cercano a 0).
+Esto sucede también con la función de pérdida L2!!
+
+Al hacer pruebas con L2 norm loss y Q-target estático, al final la pérdida termina convergiendo
+a 0, pero tarda mucho.
+
+Pruebo a aumentar el learning rate. -> alfa = 0.01: NO FUNCIONA (siempre predice Q-value de 0)
+Al probar a disminuir el learning rate (alfa=0.001) -> <<<<<La pérdida sí converge a 0!!!!!>>>>>
+Al probar alfa=0.0005 -> La pérdida converge a 0 super rápido!!!!
+Al probar alfa=0.0001 -> La pérdida converge a 0 un poco más rápido que en el caso anterior.
+Al probar alfa=0.00005 -> La pérdida converge un poco más lenta a 0.
+
+>>> Mejor valor de alfa=0.0001
+"""
+
+
+
+
+
+
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
 # "test" -> trains and tests on the 5 test levels
-script_execution_mode = "test"
+script_execution_mode = "test" # <<<CAMBIAR>>>
 
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
@@ -31,20 +63,20 @@ vs_l2_num_filt = [32]
 vs_l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-vs_l3_num_filt = [64] # 32 does worse 
+vs_l3_num_filt = [64]
 vs_l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-vs_l4_num_filt = [64] #128
+vs_l4_num_filt = [128]
 vs_l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
 vs_fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-vs_num_its = [1000] # Number of iterations for training #7500
+vs_num_its = [10000] # Number of iterations for training #7500
 vs_tau=[250] # Update period of the target network
-vs_alfa = [0.005] # Learning rate # 0.01 is too much
+vs_alfa = [0.00005] # 0.005 # Learning rate # 0.01 is too much
 vs_dropout = [0.0] # Dropout value
 vs_batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
@@ -52,9 +84,9 @@ vs_batch_size = [16] # 16 works better than 32 for test. For training loss, 32 w
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash']
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [5] # 25 # 20
-datasets_sizes_for_training_IceAndFire = [50] # 45
-datasets_sizes_for_training_Catapults = [100] # 45
+datasets_sizes_for_training_BoulderDash = [1] # 20 # 25
+datasets_sizes_for_training_IceAndFire = [45] # 50
+datasets_sizes_for_training_Catapults = [95] # 100
 repetitions_per_model = 1 # 30 # Each model is trained this number of times
 
 # <Script variables>
@@ -201,7 +233,7 @@ try:
 			# <Create the model name using the hyperparameters values>
 
 			if script_execution_mode == "validation":
-				curr_vs_model_name = "DQNValidSubgoals_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
+				curr_vs_model_name = "DQNValidSubgoals_3_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
 								format(curr_vs_l1_num_filt, curr_vs_l1_filter_structure[0][0], curr_vs_l1_filter_structure[1][0], curr_vs_l1_filter_structure[2], \
 								curr_vs_l2_num_filt, curr_vs_l2_filter_structure[0][0], curr_vs_l2_filter_structure[1][0], curr_vs_l2_filter_structure[2], \
 								curr_vs_l3_num_filt, curr_vs_l3_filter_structure[0][0], curr_vs_l3_filter_structure[1][0], curr_vs_l3_filter_structure[2], \
@@ -209,7 +241,8 @@ try:
 								curr_vs_fc_num_unis[0], curr_vs_fc_num_unis[1], \
 								curr_vs_num_its, curr_vs_alfa, curr_vs_dropout, curr_vs_batch_size, curr_vs_tau, curr_game, curr_rep)
 			else:
-				curr_vs_model_name = "DQNValidSubgoals_prueba_test-10_its-{}_tau-{}_{}_{}".format(curr_vs_num_its, curr_vs_tau, curr_game, curr_rep)
+				curr_vs_model_name = "DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-{}_tau-{}_alfa-{}_{}_{}".format(curr_vs_num_its,
+				 curr_vs_tau, curr_vs_alfa, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_vs_model_name, curr_rep))
 

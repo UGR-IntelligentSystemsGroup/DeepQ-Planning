@@ -21038,3 +21038,734 @@ Average num actions per completed level:  [21.0, nan, nan, nan, 15.0]
 
 Los resultados empeoran bastante respecto a usar 7500 iteraciones
 de entrenamiento.
+
+---------------------------------------------------------
+Prueba Valid Subgoals. 30 rep, 3 juegos, niveles de validación
+---------------------------------------------------------
+
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 12.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 14.75 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 10.307692307692308 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 11.909090909090908 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 17.6 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.8 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.4166666666666667 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 5.0 | 0.6666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.23076923076923078 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.8 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.3076923076923077 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.26666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.38461538461538464 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.23076923076923078 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 8.142857142857142 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 0.0 | 0.45454545454545453 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 7.0 | 0.08333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 3.4615384615384617 | 0.07692307692307693 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 12.714285714285714 | 0.2857142857142857 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.3333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 9.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.13333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.8333333333333334 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.5714285714285714 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.36363636363636365 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.35714285714285715 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.6 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 16.333333333333332 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 13.333333333333334 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 13.9 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 9.25 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 17.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_7-20 | BoulderDash | 18.25 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_7-20 | BoulderDash | 18.333333333333332 | 0.16666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_7-20 | BoulderDash | 13.363636363636363 | 0.18181818181818182 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_7-20 | BoulderDash | 6.285714285714286 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_7-20 | BoulderDash | 8.583333333333334 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_8-20 | BoulderDash | 0.0 | 0.6666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_8-20 | BoulderDash | 0.0 | 0.4444444444444444 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_8-20 | BoulderDash | 0.0 | 0.4 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_8-20 | BoulderDash | 3.0 | 0.3157894736842105 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_8-20 | BoulderDash | 0.0 | 0.75 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_9-20 | BoulderDash | 10.266666666666667 | 0.2 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_9-20 | BoulderDash | 11.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_9-20 | BoulderDash | 7.933333333333334 | 0.06666666666666667 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_9-20 | BoulderDash | 13.285714285714286 | 0.2857142857142857 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_9-20 | BoulderDash | 9.785714285714286 | 0.07142857142857142 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_10-20 | BoulderDash | 0.0 | 0.8333333333333334 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_10-20 | BoulderDash | 0.0 | 0.6666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_10-20 | BoulderDash | 0.0 | 0.46153846153846156 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_10-20 | BoulderDash | 0.0 | 0.7 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_10-20 | BoulderDash | 0.0 | 0.3333333333333333 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_11-20 | BoulderDash | 0.0 | 0.8333333333333334 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_11-20 | BoulderDash | 0.0 | 0.2857142857142857 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_11-20 | BoulderDash | 0.0 | 0.5555555555555556 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_11-20 | BoulderDash | 0.0 | 0.4 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_11-20 | BoulderDash | 0.0 | 0.42857142857142855 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_12-20 | BoulderDash | 13.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_12-20 | BoulderDash | 15.571428571428571 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_12-20 | BoulderDash | 11.727272727272727 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_12-20 | BoulderDash | 16.571428571428573 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_12-20 | BoulderDash | 10.153846153846153 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_13-20 | BoulderDash | 0.0 | 0.2857142857142857 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_13-20 | BoulderDash | 1.3846153846153846 | 0.38461538461538464 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_13-20 | BoulderDash | 0.0 | 0.25 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_13-20 | BoulderDash | 0.0 | 0.38461538461538464 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_13-20 | BoulderDash | 0.0 | 0.3333333333333333 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_14-20 | BoulderDash | 10.666666666666666 | 0.08333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_14-20 | BoulderDash | 13.090909090909092 | 0.18181818181818182 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_14-20 | BoulderDash | 10.166666666666666 | 0.16666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_14-20 | BoulderDash | 12.583333333333334 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_14-20 | BoulderDash | 11.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_15-20 | BoulderDash | 16.333333333333332 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_15-20 | BoulderDash | 12.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_15-20 | BoulderDash | 9.133333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_15-20 | BoulderDash | 11.0 | 0.09090909090909091 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_15-20 | BoulderDash | 17.333333333333332 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_16-20 | BoulderDash | 0.0 | 0.4375 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_16-20 | BoulderDash | 0.0 | 0.5714285714285714 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_16-20 | BoulderDash | 0.0 | 0.6666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_16-20 | BoulderDash | 11.777777777777779 | 0.3888888888888889 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_16-20 | BoulderDash | 0.0 | 0.6 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_17-20 | BoulderDash | 12.333333333333334 | 0.08333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_17-20 | BoulderDash | 13.8 | 0.2 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_17-20 | BoulderDash | 11.333333333333334 | 0.08333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_17-20 | BoulderDash | 10.357142857142858 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_17-20 | BoulderDash | 15.0 | 0.375 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_18-20 | BoulderDash | 13.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_18-20 | BoulderDash | 2.3333333333333335 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_18-20 | BoulderDash | 13.272727272727273 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_18-20 | BoulderDash | 11.666666666666666 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_18-20 | BoulderDash | 14.857142857142858 | 0.14285714285714285 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_19-20 | BoulderDash | 16.11111111111111 | 0.2222222222222222 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_19-20 | BoulderDash | 7.333333333333333 | 0.1111111111111111 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_19-20 | BoulderDash | 18.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_19-20 | BoulderDash | 15.428571428571429 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_19-20 | BoulderDash | 16.666666666666668 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_20-20 | BoulderDash | 0.0 | 0.5384615384615384 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_20-20 | BoulderDash | 0.0 | 0.45454545454545453 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_20-20 | BoulderDash | 0.0 | 0.4444444444444444 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_20-20 | BoulderDash | 0.0 | 0.25 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_20-20 | BoulderDash | 0.0 | 0.3076923076923077 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_21-20 | BoulderDash | 18.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_21-20 | BoulderDash | 11.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_21-20 | BoulderDash | 16.142857142857142 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_21-20 | BoulderDash | 15.1 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_21-20 | BoulderDash | 14.166666666666666 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_22-20 | BoulderDash | 0.0 | 0.8 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_22-20 | BoulderDash | 0.0 | 0.4 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_22-20 | BoulderDash | 0.0 | 0.875 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_22-20 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_22-20 | BoulderDash | 0.0 | 0.6 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_23-20 | BoulderDash | 16.0 | 0.25 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_23-20 | BoulderDash | 15.4 | 0.1 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_23-20 | BoulderDash | 18.0 | 0.75 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_23-20 | BoulderDash | 10.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_23-20 | BoulderDash | 7.571428571428571 | 0.2857142857142857 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_24-20 | BoulderDash | 13.444444444444445 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_24-20 | BoulderDash | 16.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_24-20 | BoulderDash | 14.363636363636363 | 0.09090909090909091 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_24-20 | BoulderDash | 2.3 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_24-20 | BoulderDash | 14.5 | 0.25 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_25-20 | BoulderDash | 11.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_25-20 | BoulderDash | 12.307692307692308 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_25-20 | BoulderDash | 9.857142857142858 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_25-20 | BoulderDash | 10.76923076923077 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_25-20 | BoulderDash | 9.1875 | 0.1875 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_26-20 | BoulderDash | 0.0 | 0.36363636363636365 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_26-20 | BoulderDash | 0.0 | 0.26666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_26-20 | BoulderDash | 0.0 | 0.625 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_26-20 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_26-20 | BoulderDash | 0.0 | 0.3333333333333333 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_27-20 | BoulderDash | 18.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_27-20 | BoulderDash | 16.444444444444443 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_27-20 | BoulderDash | 15.909090909090908 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_27-20 | BoulderDash | 11.909090909090908 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_27-20 | BoulderDash | 15.5 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_28-20 | BoulderDash | 0.0 | 0.45454545454545453 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_28-20 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_28-20 | BoulderDash | 0.0 | 0.5454545454545454 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_28-20 | BoulderDash | 0.0 | 0.4166666666666667 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_28-20 | BoulderDash | 0.0 | 0.2 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_29-20 | BoulderDash | 13.6 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_29-20 | BoulderDash | 16.75 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_29-20 | BoulderDash | 13.272727272727273 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_29-20 | BoulderDash | 17.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_29-20 | BoulderDash | 17.6 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_0-45 | IceAndFire | 2.625 | 0.25 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_0-45 | IceAndFire | 3.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_0-45 | IceAndFire | 1.4444444444444444 | 0.1111111111111111 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_0-45 | IceAndFire | 2.111111111111111 | 0.1111111111111111 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_0-45 | IceAndFire | 2.2 | 0.1 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_1-45 | IceAndFire | 6.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_1-45 | IceAndFire | 4.2 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_1-45 | IceAndFire | 4.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_1-45 | IceAndFire | 4.75 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_1-45 | IceAndFire | 2.125 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_2-45 | IceAndFire | 0.5833333333333334 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_2-45 | IceAndFire | 1.2222222222222223 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_2-45 | IceAndFire | 1.25 | 2.875 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_2-45 | IceAndFire | 0.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_2-45 | IceAndFire | 2.25 | 0.125 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_3-45 | IceAndFire | 4.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_3-45 | IceAndFire | 4.333333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_3-45 | IceAndFire | 3.25 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_3-45 | IceAndFire | 4.7272727272727275 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_3-45 | IceAndFire | 3.4285714285714284 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_4-45 | IceAndFire | 3.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_4-45 | IceAndFire | 5.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_4-45 | IceAndFire | 3.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_4-45 | IceAndFire | 3.0 | 0.2857142857142857 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_4-45 | IceAndFire | 4.125 | 0.125 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_5-45 | IceAndFire | 4.111111111111111 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_5-45 | IceAndFire | 3.1666666666666665 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_5-45 | IceAndFire | 2.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_5-45 | IceAndFire | 3.4545454545454546 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_5-45 | IceAndFire | 3.1818181818181817 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_6-45 | IceAndFire | 5.571428571428571 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_6-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_6-45 | IceAndFire | 4.111111111111111 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_6-45 | IceAndFire | 3.9 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_6-45 | IceAndFire | 4.125 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_7-45 | IceAndFire | 1.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_7-45 | IceAndFire | 1.1428571428571428 | 0.14285714285714285 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_7-45 | IceAndFire | 1.875 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_7-45 | IceAndFire | 1.3 | 0.1 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_7-45 | IceAndFire | 1.875 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_8-45 | IceAndFire | 2.5714285714285716 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_8-45 | IceAndFire | 2.25 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_8-45 | IceAndFire | 3.2222222222222223 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_8-45 | IceAndFire | 1.5555555555555556 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_8-45 | IceAndFire | 3.375 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_9-45 | IceAndFire | 3.9 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_9-45 | IceAndFire | 4.285714285714286 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_9-45 | IceAndFire | 5.285714285714286 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_9-45 | IceAndFire | 2.875 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_9-45 | IceAndFire | 4.625 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_10-45 | IceAndFire | 3.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_10-45 | IceAndFire | 3.6 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_10-45 | IceAndFire | 4.777777777777778 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_10-45 | IceAndFire | 3.857142857142857 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_10-45 | IceAndFire | 3.375 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_11-45 | IceAndFire | 2.6363636363636362 | 0.09090909090909091 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_11-45 | IceAndFire | 2.5555555555555554 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_11-45 | IceAndFire | 2.4 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_11-45 | IceAndFire | 4.333333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_11-45 | IceAndFire | 2.888888888888889 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_12-45 | IceAndFire | 3.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_12-45 | IceAndFire | 1.5 | 0.3333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_12-45 | IceAndFire | 1.4444444444444444 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_12-45 | IceAndFire | 1.1428571428571428 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_12-45 | IceAndFire | 1.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_13-45 | IceAndFire | 1.8 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_13-45 | IceAndFire | 2.4285714285714284 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_13-45 | IceAndFire | 3.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_13-45 | IceAndFire | 2.1666666666666665 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_13-45 | IceAndFire | 2.125 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_14-45 | IceAndFire | 3.5555555555555554 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_14-45 | IceAndFire | 4.111111111111111 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_14-45 | IceAndFire | 4.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_14-45 | IceAndFire | 5.285714285714286 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_14-45 | IceAndFire | 3.7777777777777777 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_15-45 | IceAndFire | 4.3 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_15-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_15-45 | IceAndFire | 3.6666666666666665 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_15-45 | IceAndFire | 4.777777777777778 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_15-45 | IceAndFire | 3.888888888888889 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_16-45 | IceAndFire | 0.5454545454545454 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_16-45 | IceAndFire | 1.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_16-45 | IceAndFire | 0.3 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_16-45 | IceAndFire | 0.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_16-45 | IceAndFire | 1.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_17-45 | IceAndFire | 0.1111111111111111 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_17-45 | IceAndFire | 0.375 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_17-45 | IceAndFire | 0.375 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_17-45 | IceAndFire | 0.75 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_17-45 | IceAndFire | 0.4444444444444444 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_18-45 | IceAndFire | 3.4285714285714284 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_18-45 | IceAndFire | 3.375 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_18-45 | IceAndFire | 3.888888888888889 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_18-45 | IceAndFire | 4.333333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_18-45 | IceAndFire | 2.875 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_19-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_19-45 | IceAndFire | 4.125 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_19-45 | IceAndFire | 4.222222222222222 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_19-45 | IceAndFire | 3.75 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_19-45 | IceAndFire | 4.545454545454546 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_20-45 | IceAndFire | 4.142857142857143 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_20-45 | IceAndFire | 3.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_20-45 | IceAndFire | 3.2222222222222223 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_20-45 | IceAndFire | 3.142857142857143 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_20-45 | IceAndFire | 2.7777777777777777 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_21-45 | IceAndFire | 3.2857142857142856 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_21-45 | IceAndFire | 4.333333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_21-45 | IceAndFire | 3.7 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_21-45 | IceAndFire | 3.8333333333333335 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_21-45 | IceAndFire | 3.8181818181818183 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_22-45 | IceAndFire | 3.0 | 0.14285714285714285 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_22-45 | IceAndFire | 2.6 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_22-45 | IceAndFire | 2.4 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_22-45 | IceAndFire | 2.5714285714285716 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_22-45 | IceAndFire | 2.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_23-45 | IceAndFire | 4.428571428571429 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_23-45 | IceAndFire | 3.3636363636363638 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_23-45 | IceAndFire | 3.142857142857143 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_23-45 | IceAndFire | 3.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_23-45 | IceAndFire | 3.5 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_24-45 | IceAndFire | 4.333333333333333 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_24-45 | IceAndFire | 3.6363636363636362 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_24-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_24-45 | IceAndFire | 4.2727272727272725 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_24-45 | IceAndFire | 4.142857142857143 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_25-45 | IceAndFire | 0.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_25-45 | IceAndFire | 0.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_25-45 | IceAndFire | 0.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_25-45 | IceAndFire | 0.1 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_25-45 | IceAndFire | 0.0 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_26-45 | IceAndFire | 1.4 | 0.2 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_26-45 | IceAndFire | 1.5 | 0.16666666666666666 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_26-45 | IceAndFire | 0.0 | 0.4444444444444444 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_26-45 | IceAndFire | 1.2222222222222223 | 0.4444444444444444 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_26-45 | IceAndFire | 0.1111111111111111 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_27-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_27-45 | IceAndFire | 3.6666666666666665 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_27-45 | IceAndFire | 4.222222222222222 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_27-45 | IceAndFire | 4.0 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_27-45 | IceAndFire | 3.4444444444444446 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_28-45 | IceAndFire | 4.714285714285714 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_28-45 | IceAndFire | 4.555555555555555 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_28-45 | IceAndFire | 3.125 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_28-45 | IceAndFire | 3.5 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_28-45 | IceAndFire | 4.888888888888889 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_29-45 | IceAndFire | 1.5714285714285714 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_29-45 | IceAndFire | 0.6 | 0.9 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_29-45 | IceAndFire | 1.0 | 1.3333333333333333 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_29-45 | IceAndFire | 0.625 | 0.0 
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_IceAndFire_29-45 | IceAndFire | 1.2 | 0.2 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_0-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_0-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_0-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_0-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_0-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_1-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_1-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_1-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_1-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_1-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_2-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_2-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_2-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_2-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_2-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_3-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_3-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_3-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_3-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_3-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_4-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_4-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_4-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_4-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_4-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_5-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_5-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_5-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_5-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_5-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_6-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_6-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_6-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_6-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_6-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_7-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_7-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_7-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_7-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_7-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_8-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_8-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_8-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_8-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_8-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_9-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_9-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_9-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_9-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_9-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_10-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_10-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_10-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_10-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_10-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_11-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_11-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_11-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_11-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_11-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_12-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_12-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_12-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_12-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_12-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_13-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_13-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_13-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_13-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_13-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_14-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_14-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_14-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_14-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_14-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_15-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_15-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_15-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_15-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_15-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_16-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_16-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_16-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_16-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_16-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_17-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_17-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_17-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_17-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_17-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_18-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_18-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_18-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_18-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_18-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_19-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_19-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_19-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_19-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_19-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_20-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_20-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_20-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_21-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_21-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_21-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_21-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_21-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_22-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_22-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_22-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_22-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_22-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_23-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_23-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_23-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_23-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_23-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_24-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_24-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_24-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_24-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_24-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_25-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_25-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_25-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_25-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_25-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_26-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_26-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_26-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_26-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_26-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_27-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_27-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_27-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_27-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_27-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_28-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_28-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_28-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_28-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_28-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_29-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_29-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_29-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_29-95 | Catapults | -1 | 0
+DQNValidSubgoals_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_Catapults_29-95 | Catapults | -1 | 0
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+Los resultados en BoulderDash y IceAndFire son buenos.
+En Catapults son muy malos.
+Hay un error que hace que en algunos niveles (tanto de
+BoulderDash como en IceAndFire) el agente prediga que
+todos los subobjetivos son inválidos.

@@ -1,8 +1,78 @@
-DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0-5 | BoulderDash | 0 | 5 | 158
-DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0-5 | BoulderDash | 17 | 3 | 235
-DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0-5 | BoulderDash | 0 | 4 | 69
-DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0-5 | BoulderDash | 94 | 3 | 291
-DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0-5 | BoulderDash | 12 | 4 | 245
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 5.8125 | 0.125 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 13.909090909090908 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 17.625 | 0.5 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 9.416666666666666 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_0-20 | BoulderDash | 12.9 | 0.3 
 
 -----------------------------------------------------------------------------------
 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 2.0 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.3333333333333333 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.25 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.6666666666666666 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_1-20 | BoulderDash | 0.0 | 0.5 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 7.5 | 0.375 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.2727272727272727 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 8.8 | 0.4 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 0.0 | 0.3333333333333333 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_2-20 | BoulderDash | 6.1875 | 0.0 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 12.583333333333334 | 0.08333333333333333 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 14.11111111111111 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 11.222222222222221 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 11.0 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_3-20 | BoulderDash | 11.272727272727273 | 0.09090909090909091 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.4666666666666667 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.8333333333333334 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.5454545454545454 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_4-20 | BoulderDash | 0.0 | 0.45454545454545453 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.375 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.2 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.46153846153846156 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_5-20 | BoulderDash | 0.0 | 0.1 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 12.083333333333334 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 7.636363636363637 | 0.0 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 7.266666666666667 | 0.3333333333333333 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 2.3 | 0.3 
+DQNValidSubgoals_3_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-7500_alfa-0.005_dropout-0.0_batch-16_tau-250_BoulderDash_6-20 | BoulderDash | 4.5625 | 0.25 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_prueba_overfitting_1_lvl-7500_tau-250_BoulderDash_0-1 | BoulderDash | 18.0 | 0.0 
+DQNValidSubgoals_prueba_overfitting_1_lvl-7500_tau-250_BoulderDash_0-1 | BoulderDash | 11.428571428571429 | 0.07142857142857142 
+DQNValidSubgoals_prueba_overfitting_Q_target_estático_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_prueba_overfitting_Q_target_estático_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.6363636363636364 
+DQNValidSubgoals_prueba_overfitting_No_Target_Network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 1.6 | 0.13333333333333333 
+DQNValidSubgoals_prueba_overfitting_No_Target_Network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.14285714285714285 | 0.42857142857142855 
+DQNValidSubgoals_prueba_overfitting_No_Target_Network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.23076923076923078 | 0.07692307692307693 
+DQNValidSubgoals_prueba_overfitting_No_Target_Network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.5 
+DQNValidSubgoals_prueba_overfitting_No_Target_Network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.2 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_prueba_overfitting_L2_loss_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 10.666666666666666 | 0.0 
+DQNValidSubgoals_prueba_overfitting_L2_loss_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 4.411764705882353 | 0.23529411764705882 
+DQNValidSubgoals_prueba_overfitting_L2_loss_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 9.6 | 0.4 
+DQNValidSubgoals_prueba_overfitting_L2_loss_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 12.6 | 0.0 
+DQNValidSubgoals_prueba_overfitting_L2_loss_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 9.4 | 0.1 
+
+-----------------------------------------------------------------------------------
+
+DQNValidSubgoals_prueba_overfitting_L2_loss_sin_Target_network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.3125 
+DQNValidSubgoals_prueba_overfitting_L2_loss_sin_Target_network_lvl-20000_tau-250_BoulderDash_0-1 | BoulderDash | 0.0 | 0.3333333333333333 

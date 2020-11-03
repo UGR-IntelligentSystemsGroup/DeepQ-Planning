@@ -54,14 +54,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.vs_network_name="DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0"
+		self.vs_network_name="DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-10000_tau-250_alfa-5e-05_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=5
+		self.dataset_size_for_training=1
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -86,7 +86,7 @@ class Agent(AbstractPlayer):
 		self.vs_l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.vs_l4_num_filt=64
+		self.vs_l4_num_filt=128
 		self.vs_l4_window=[4, 4]
 		self.vs_l4_strides=[1, 1]
 		self.vs_l4_padding_type="VALID"
@@ -95,8 +95,8 @@ class Agent(AbstractPlayer):
 		self.vs_fc_num_unis=[32, 1]
 
 		# Training params
-		self.vs_learning_rate=0.005
-		self.vs_num_train_its=1000
+		self.vs_learning_rate=5e-05
+		self.vs_num_train_its=10000
 		self.vs_batch_size=16
 		
 		# Extra params
@@ -175,14 +175,14 @@ class Agent(AbstractPlayer):
 
 			# Number of levels the model to load has been trained on
 			# Automatically changed by ejecutar_pruebas.py!
-			self.dataset_size_model=5
+			self.dataset_size_model=1
 
 			# <Load the already-trained model in order to test performance>
 			self.vs_model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -217,7 +217,7 @@ class Agent(AbstractPlayer):
 			self.num_incorrect_subgoals = 0
 			self.num_false_positives = 0 # False positive: when the model predicts a subgoal is invalid but it was valid
 			self.num_false_negatives = 0 # False negative: when the model predicts a subgoal is valid but it was invalid
-
+			self.num_subgoals_used_to_beat_level = 0 # The number of subgoals the agent selected before finishing the level
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -323,11 +323,14 @@ class Agent(AbstractPlayer):
 				self.vs_tau += 1
 
 				# Update target network every tau training steps
+
+				# <QUITAR>
+				"""
 				if self.vs_tau >= self.vs_max_tau:
 					update_ops = self.update_target_network_valid_subgoals()
 					self.vs_target_network.update_weights(update_ops)
 
-					self.vs_tau = 0
+					self.vs_tau = 0"""
 
 				# Save Logs
 				self.vs_model.save_logs(batch_X, Q_targets, curr_it)
@@ -405,6 +408,7 @@ class Agent(AbstractPlayer):
 
 			# Use the Learning model to select a subgoal if the agent is in test/validation phase
 			else:
+				
 				# <TEMPORAL>
 
 				# BoulderDash and IceAndFire
@@ -430,6 +434,21 @@ class Agent(AbstractPlayer):
 
 					predicted_valid_subgoals = self.predict_valid_subgoals(sso)
 
+
+
+					# <QUITAR>
+					for curr_subgoal in subgoals:
+						one_hot_matrix = self.encode_game_state(sso.observationGrid, curr_subgoal)
+
+						curr_Q_val = self.vs_model.predict(one_hot_matrix)
+
+						print("Q_val:", curr_Q_val)
+
+					print("\n----------------------------\n")
+
+
+
+
 					# False positives
 					# The model predicts a subgoal is invalid but it was valid
 					for corr_val_subgoal in correct_valid_subgoals:
@@ -441,6 +460,10 @@ class Agent(AbstractPlayer):
 					for pred_val_subgoal in predicted_valid_subgoals:
 						if pred_val_subgoal not in correct_valid_subgoals:
 							self.num_false_negatives += 1
+
+					# Increment this counter to calculate the average number of false positives
+					# and negatives
+					self.num_subgoals_used_to_beat_level += 1
 
 				# Catapults game
 				# Predict the valid subgoals and select one randomly
@@ -465,10 +488,10 @@ class Agent(AbstractPlayer):
 						if len(self.action_list) == 0:
 							self.num_incorrect_subgoals += 1 
 
-				# If none of the subgoals is attainable, the agent loses the game and escapes the level
-				if len(self.action_list) == 0:
-					self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
-					return 'ACTION_ESCAPE'
+					# If none of the subgoals is attainable, the agent loses the game and escapes the level
+					if len(self.action_list) == 0:
+						self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
+						return 'ACTION_ESCAPE'
 
 		# Save dataset and exit the program if the experience replay is the right size
 		if self.EXECUTION_MODE == 'create_dataset':
@@ -1009,7 +1032,7 @@ class Agent(AbstractPlayer):
 		# Encode every subgoal as its corresponding one_hot_grid
 		one_hot_grid_array = self.encode_game_state_all_subgoals(observationGrid, subgoals)
 
-		# Predict the Q_values for all the subgoals
+		# Predict the Q_values
 		Q_values = self.vs_target_network.predict_batch(one_hot_grid_array)
 
 		# Get the min Q_value
@@ -1238,9 +1261,10 @@ class Agent(AbstractPlayer):
 					file.write("{}-{} | {} | {} | {}\n".format(self.vs_network_name, self.dataset_size_model,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
 
-				else: # BoulderDash and IceAndFire -> print the number of false positives, negatives and actions used
-					file.write("{}-{} | {} | {} | {} | {}\n".format(self.vs_network_name, self.dataset_size_model,
-					 self.game_playing, self.num_false_positives, self.num_false_negatives, self.num_actions_lv))
+				else: # BoulderDash and IceAndFire -> print the number of false positives and false negatives
+					file.write("{}-{} | {} | {} | {} \n".format(self.vs_network_name, self.dataset_size_model,
+					 self.game_playing, self.num_false_positives / self.num_subgoals_used_to_beat_level,
+					  self.num_false_negatives / self.num_subgoals_used_to_beat_level))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")

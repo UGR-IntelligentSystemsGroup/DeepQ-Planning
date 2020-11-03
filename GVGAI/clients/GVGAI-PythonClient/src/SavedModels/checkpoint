@@ -1,2 +1,2 @@
-model_checkpoint_path: "DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0.ckpt-5"
-all_model_checkpoint_paths: "DQNValidSubgoals_prueba_test-10_its-1000_tau-250_BoulderDash_0.ckpt-5"
+model_checkpoint_path: "DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-10000_tau-250_alfa-0.001_BoulderDash_0.ckpt-1"
+all_model_checkpoint_paths: "DQNValidSubgoals_prueba_overfitting_L2_loss_Q_target_estatico_lvl-10000_tau-250_alfa-0.001_BoulderDash_0.ckpt-1"

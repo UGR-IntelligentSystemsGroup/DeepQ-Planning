@@ -175,10 +175,18 @@ class DQNetworkValidSubgoals:
             
             # Train
             
-            # self.loss = tf.reduce_mean(tf.square(self.Q_target - self.Q_val), name="loss")
+            # L2 norm loss
+            self.loss = tf.reduce_mean(tf.square(self.Q_target - self.Q_val), name="loss")
+            
             # Log loss
-            self.loss = tf.reduce_mean(-(self.Q_target*tf.math.log(self.Q_val) + 
-                         (1 - self.Q_target)*tf.math.log(1 - self.Q_val)), name="loss")
+            """
+            self.Q_val_clipped = tf.clip_by_value(self.Q_val, 1e-3, 1.0-1e-3) # If Q_val is 0 or 1, log(0) is infinite and can result in NaN
+
+            self.loss = tf.reduce_mean(-(self.Q_target*tf.math.log(self.Q_val_clipped) + 
+                         (1 - self.Q_target)*tf.math.log(1 - self.Q_val_clipped)), name="loss")
+            """
+
+
             
             self.optimizer = tf.train.AdamOptimizer(learning_rate=self.alfa, name="optimizer")
             
@@ -194,7 +202,9 @@ class DQNetworkValidSubgoals:
 
             if create_writer:
               self.train_loss_sum = tf.summary.scalar('train_loss', self.loss) # Training loss
-              
+              self.Q_val_sum = tf.summary.scalar('Q_value', tf.reduce_mean(self.Q_val))
+              self.Q_target_sum = tf.summary.scalar('Q_target', tf.reduce_mean(self.Q_target))
+
               self.writer = tf.summary.FileWriter("DQNetworkLogs/" + writer_name)
               self.writer.add_graph(tf.get_default_graph())
             
@@ -252,12 +262,18 @@ class DQNetworkValidSubgoals:
             self.sess.run(self.train_op, feed_dict=data_dict)
 
     # Calculate Training Loss and store it as a log
+    # Also save the average Q_val and Q_target as logs
     def save_logs(self, X, Y, it):
         # Training Loss
         data_dict_train = {self.X : X, self.Q_target : Y, self.is_training : True}
 
         train_loss_log = self.sess.run(self.train_loss_sum, feed_dict=data_dict_train)
+        Q_val_log = self.sess.run(self.Q_val_sum, feed_dict=data_dict_train)
+        Q_target_log = self.sess.run(self.Q_target_sum, feed_dict=data_dict_train)
+
         self.writer.add_summary(train_loss_log, it)
+        self.writer.add_summary(Q_val_log, it)
+        self.writer.add_summary(Q_target_log, it)
 
     # Saves the model variables in the file given by 'path', so that it can be loaded next time
     def save_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):
