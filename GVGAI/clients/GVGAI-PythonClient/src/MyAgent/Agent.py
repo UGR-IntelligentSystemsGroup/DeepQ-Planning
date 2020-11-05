@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,14 +54,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_test-10_its-5000_tau-250_BoulderDash_0"
+		self.network_name="DQN_prueba_overfitting_train_y_test-Catapults"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=25
+		self.dataset_size_for_training=1
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -91,27 +91,20 @@ class Agent(AbstractPlayer):
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
 
-		# Don't use max pooling
-		"""
-		self.max_pool_size=[2, 2]
-		self.max_pool_str=[1, 1]
-		"""
-
-
 		# Number of units of the first and second fully-connected layers
 		self.fc_num_unis=[32, 1]
 
 		# Training params
-		self.learning_rate=0.005
+		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=5000
+		self.num_train_its=7500
 		self.batch_size=16
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=250
+		self.max_tau=10
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		# Gamma changed from 0.9 to 1!!!
@@ -191,7 +184,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+				self.dataset_size_model=1
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -276,7 +269,9 @@ class Agent(AbstractPlayer):
 
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
+			# Use the same tf.session as the main DQNetwork
 			self.target_network = DQNetwork(name="TargetNetwork",
+					 sess = self.model.sess,
 					 create_writer = False,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
@@ -291,7 +286,8 @@ class Agent(AbstractPlayer):
 					 learning_rate = self.learning_rate)
 
 			# Initialize target network's weights with those of the DQNetwork
-			self.update_target_network()
+			update_ops = self.update_target_network()
+			self.target_network.update_weights(update_ops)
 			self.tau = 0
 
 			num_samples = len(self.memory)
@@ -332,10 +328,21 @@ class Agent(AbstractPlayer):
 
 				# Update target network every tau training steps
 				if self.tau >= self.max_tau:
+					# <QUITAR>
+					# prev_weights = tf.get_default_graph().get_tensor_by_name('TargetNetwork/conv3/kernel:0').eval(session=self.target_network.sess)
+
+
 					update_ops = self.update_target_network()
 					self.target_network.update_weights(update_ops)
 
 					self.tau = 0
+
+
+					# post_weights = tf.get_default_graph().get_tensor_by_name('TargetNetwork/conv3/kernel:0').eval(session=self.target_network.sess)
+					# <QUITAR>
+					# VEO SI LOS PESOS HAN CAMBIADO
+					# print(">> Comparación pesos antes y después:", np.array_equal(prev_weights, post_weights))
+
 
 				# Save Logs
 				self.model.save_logs(batch_X, Q_targets, curr_it)

@@ -7,6 +7,44 @@ import glob
 import random
 import sys
 
+# Probar a hacer overfitting sobre los niveles de test para cada juego!!!
+
+"""
+Resultados pruebas.
+
+Mejores valores de alfa -> 0.001 y 0.0005.
+
+alfa-0.001 funciona bastante mejor (según el training loss) que alfa-0.0005.
+
+Tau: parece que tau=100 funciona bien más o menos para los tres juegos. En catapults
+no está claro (parece que para Catapults va bien tanto tau=10 como tau=250 o 500!!!)
+
+Debería hacer pruebas para tau entrenando sobre todos los niveles de entrenamiento y evaluando
+sobre test, realizando varias repeticiones.
+
+
+CREO QUE INCLUSO CON ESTE VALOR DE ALFA EL ENTRENAMIENTO SIGUE SIENDO INESTABLE.
+
+MIRAR LOS RESULTADOS EN TEST SOBRE UN ÚNICO NIVEL DE BOULDERDASH CON UN ALFA
+MUY PEQUEÑO!!!!!
+
+POR LAS PRUEBAS SOBRE UN ÚNICO NIVEL DE ENTRENAMIENTO EN BOULDERDASH, <ALFA=0.0005>
+PARECE EL MEJOR VALOR
+
+>>> Pruebas sobre 25 niveles de BoulderDash (sobre test y 10000 training its)
+
+Parece que el mejor valor de alfa (usando 10000 its) es <<0.0001>>. alfa=0.0005 obtiene
+resultados bastante malos en test y alfa=0.00005 disminuye muy lento el training loss.
+
+>>> Pruebas overfitting
+El agente es capaz de resolver el nivel sobre el que fue entrenado para los tres juegos!!!!
+
+
+(quizás el valor de alfa sea demasiado grande para IceAndFire aunque no lo sé)
+
+"""
+
+
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
 # "test" -> trains and tests on the 5 test levels
@@ -42,19 +80,20 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [5000] # Number of iterations for training #7500
-tau=[250] # Update period of the target network
-alfa = [0.005] # Learning rate # 0.01 is too much
+num_its = [5000, 7500, 10000] # Number of iterations for training #7500 #10000
+tau=[10] # Update period of the target network
+alfa = [0.0001, 0.00005] # Learning rate # 0.01 is too much # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
+# games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [25] # 20
-datasets_sizes_for_training_IceAndFire = [50] # 45
-datasets_sizes_for_training_Catapults = [100] # 45
-repetitions_per_model = 30 # Each model is trained this number of times
+datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
+datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
+datasets_sizes_for_training_Catapults = [100] # 100 # 45
+repetitions_per_model = 4 # 30 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -85,15 +124,34 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params = [ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_b) if o == 'BoulderDash' else 
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_i) if o == 'IceAndFire' else
-				  (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p_c)
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
  					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
-					for n in tau for o in games_to_play 
- 					for p_b in datasets_sizes_for_training_BoulderDash for p_i in datasets_sizes_for_training_IceAndFire
- 					for p_c in datasets_sizes_for_training_Catapults]
+					for n in tau for o in games_to_play]
+
+# Add the corresponding dataset sizes for each game
+models_params = []
+
+for par in models_params_prev:
+	if par[-1] == 'BoulderDash':
+		for dataset_size in datasets_sizes_for_training_BoulderDash:
+			models_params.append(par + [dataset_size])
+
+	elif par[-1] == 'IceAndFire':
+		for dataset_size in datasets_sizes_for_training_IceAndFire:
+			models_params.append(par + [dataset_size])
+
+	else: # Catapults
+		for dataset_size in datasets_sizes_for_training_Catapults:
+			models_params.append(par + [dataset_size])
+
+
+"""
+for i in models_params:
+	print(i)
+
+sys.exit()"""
 
 try:
 	# Iterate over the different models
@@ -208,8 +266,8 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_prueba_test-10_its-{}_tau-{}_{}_{}".format(curr_num_its, curr_tau, curr_game, curr_rep)
-				# curr_model_name = "Random_Model-{}_{}".format(curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_mejor_alfa_y_num_its_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
+				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 

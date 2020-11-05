@@ -21038,3 +21038,703 @@ Average num actions per completed level:  [21.0, nan, nan, nan, 15.0]
 
 Los resultados empeoran bastante respecto a usar 7500 iteraciones
 de entrenamiento.
+
+-------------------------------------------------------------------------------------------
+TRAS BUG TARGET NETWORK Y ALFA!!!!!
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+Pruebas sobre test (3 juegos, 5 rep.) con distinto valor de tau
+-------------------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 283
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 215
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 186
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 245
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 154
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 219
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_1-25 | BoulderDash | 4 | 296
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 93
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 281
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 169
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 250
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 298
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_2-25 | BoulderDash | 7 | 122
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_2-25 | BoulderDash | 1 | 232
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 78
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 166
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_3-25 | BoulderDash | 5 | 120
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 226
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 95
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_4-25 | BoulderDash | 4 | 78
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_4-25 | BoulderDash | 2 | 92
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_4-25 | BoulderDash | 0 | 288
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_4-25 | BoulderDash | 0 | 96
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_BoulderDash_4-25 | BoulderDash | 0 | 250
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 8 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 97
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 7 | 83
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 134
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 127
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 117
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 11 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 10 | 106
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 129
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 121
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 7 | 133
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 6 | 106
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 117
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 1 | 91
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 142
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 1 | 206
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 3 | 151
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 1 | 127
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 22 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 0 | 180
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 1 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_1-100 | Catapults | -1 | 5
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_1-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_2-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_2-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_3-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_3-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_4-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_4-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-10_Catapults_4-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 111
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 297
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_0-25 | BoulderDash | 5 | 91
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 141
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 247
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 292
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 230
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 260
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 123
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 210
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 242
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 240
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 153
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 186
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_3-25 | BoulderDash | 1 | 303
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_3-25 | BoulderDash | 0 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_3-25 | BoulderDash | 0 | 202
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_3-25 | BoulderDash | 2 | 233
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_3-25 | BoulderDash | 0 | 167
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_4-25 | BoulderDash | 0 | 76
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_4-25 | BoulderDash | 0 | 240
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_4-25 | BoulderDash | 0 | 275
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_4-25 | BoulderDash | 0 | 211
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_BoulderDash_4-25 | BoulderDash | 0 | 237
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_0-50 | IceAndFire | 2 | 133
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_0-50 | IceAndFire | 0 | 125
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_0-50 | IceAndFire | 12 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_0-50 | IceAndFire | 3 | 148
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_0-50 | IceAndFire | 0 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_1-50 | IceAndFire | 0 | 119
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_1-50 | IceAndFire | 0 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_1-50 | IceAndFire | 0 | 83
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_1-50 | IceAndFire | 6 | 134
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_1-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_2-50 | IceAndFire | 1 | 121
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_2-50 | IceAndFire | 0 | 125
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_2-50 | IceAndFire | 5 | 135
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_2-50 | IceAndFire | 4 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_2-50 | IceAndFire | 3 | 206
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_3-50 | IceAndFire | 0 | 119
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_3-50 | IceAndFire | 3 | 131
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_3-50 | IceAndFire | 17 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_3-50 | IceAndFire | 3 | 158
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_3-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_4-50 | IceAndFire | 2 | 131
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_4-50 | IceAndFire | 0 | 115
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_4-50 | IceAndFire | 17 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_4-50 | IceAndFire | 1 | 150
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_IceAndFire_4-50 | IceAndFire | 0 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_0-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_1-100 | Catapults | -1 | 25
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_1-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_2-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_2-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_3-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_3-100 | Catapults | -1 | 25
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_4-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_4-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_4-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-50_Catapults_4-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_0-25 | BoulderDash | 1 | 117
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_0-25 | BoulderDash | 0 | 207
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_0-25 | BoulderDash | 2 | 233
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_0-25 | BoulderDash | 4 | 151
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_0-25 | BoulderDash | 1 | 106
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 258
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_1-25 | BoulderDash | 2 | 242
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 267
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 242
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 67
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 232
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_2-25 | BoulderDash | 5 | 169
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 140
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 192
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_3-25 | BoulderDash | 3 | 166
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_3-25 | BoulderDash | 0 | 295
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_3-25 | BoulderDash | 0 | 222
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_3-25 | BoulderDash | 1 | 183
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_3-25 | BoulderDash | 0 | 279
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_4-25 | BoulderDash | 0 | 291
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_4-25 | BoulderDash | 2 | 94
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_4-25 | BoulderDash | 0 | 178
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_4-25 | BoulderDash | 4 | 96
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_BoulderDash_4-25 | BoulderDash | 0 | 116
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_0-50 | IceAndFire | 1 | 139
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_0-50 | IceAndFire | 2 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_0-50 | IceAndFire | 2 | 93
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_0-50 | IceAndFire | 2 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_0-50 | IceAndFire | 7 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_1-50 | IceAndFire | 0 | 121
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_1-50 | IceAndFire | 0 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_1-50 | IceAndFire | 15 | 99
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_1-50 | IceAndFire | 2 | 150
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_1-50 | IceAndFire | 7 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_2-50 | IceAndFire | 1 | 99
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_2-50 | IceAndFire | 6 | 117
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_2-50 | IceAndFire | 13 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_2-50 | IceAndFire | 2 | 108
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_2-50 | IceAndFire | 0 | 236
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_3-50 | IceAndFire | 3 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_3-50 | IceAndFire | 2 | 119
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_3-50 | IceAndFire | 20 | 135
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_3-50 | IceAndFire | 1 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_3-50 | IceAndFire | 0 | 234
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_4-50 | IceAndFire | 1 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_4-50 | IceAndFire | 4 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_4-50 | IceAndFire | 15 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_4-50 | IceAndFire | 0 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_IceAndFire_4-50 | IceAndFire | 0 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_1-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_1-100 | Catapults | 5 | 27
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_1-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_2-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_3-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_4-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_4-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-100_Catapults_4-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 167
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_0-25 | BoulderDash | 6 | 125
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 276
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 227
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 165
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_1-25 | BoulderDash | 3 | 103
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_1-25 | BoulderDash | 0 | 238
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_1-25 | BoulderDash | 1 | 62
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_1-25 | BoulderDash | 0 | 222
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_1-25 | BoulderDash | 0 | 103
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_2-25 | BoulderDash | 2 | 139
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 130
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 217
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 66
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 199
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_3-25 | BoulderDash | 0 | 95
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_3-25 | BoulderDash | 0 | 265
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_3-25 | BoulderDash | 0 | 200
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_3-25 | BoulderDash | 0 | 247
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_3-25 | BoulderDash | 0 | 139
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_4-25 | BoulderDash | 0 | 160
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_4-25 | BoulderDash | 4 | 134
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_4-25 | BoulderDash | 0 | 250
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_4-25 | BoulderDash | 2 | 70
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_BoulderDash_4-25 | BoulderDash | 0 | 149
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_0-50 | IceAndFire | 0 | 115
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_0-50 | IceAndFire | 3 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_0-50 | IceAndFire | 13 | 135
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_0-50 | IceAndFire | 2 | 156
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_0-50 | IceAndFire | 4 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_1-50 | IceAndFire | 2 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_1-50 | IceAndFire | 1 | 97
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_1-50 | IceAndFire | 13 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_1-50 | IceAndFire | 0 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_1-50 | IceAndFire | 0 | 138
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_2-50 | IceAndFire | 1 | 175
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_2-50 | IceAndFire | 0 | 143
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_2-50 | IceAndFire | 11 | 133
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_2-50 | IceAndFire | 4 | 156
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_2-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_3-50 | IceAndFire | 0 | 107
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_3-50 | IceAndFire | 0 | 115
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_3-50 | IceAndFire | 0 | 129
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_3-50 | IceAndFire | 1 | 138
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_3-50 | IceAndFire | 2 | 220
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_4-50 | IceAndFire | 4 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_4-50 | IceAndFire | 0 | 117
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_4-50 | IceAndFire | 18 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_4-50 | IceAndFire | 0 | 126
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_IceAndFire_4-50 | IceAndFire | 1 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_0-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_1-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_2-100 | Catapults | -1 | 12
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_2-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_3-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_3-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_3-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_4-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_4-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_4-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-250_Catapults_4-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 266
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 281
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_0-25 | BoulderDash | 4 | 213
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 238
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_0-25 | BoulderDash | 2 | 104
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 255
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 262
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 247
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_1-25 | BoulderDash | 2 | 278
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 161
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 140
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 91
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 272
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_2-25 | BoulderDash | 3 | 254
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 147
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_3-25 | BoulderDash | 0 | 147
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_3-25 | BoulderDash | 3 | 113
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_3-25 | BoulderDash | 0 | 149
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_3-25 | BoulderDash | 0 | 237
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_3-25 | BoulderDash | 0 | 138
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 169
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 94
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 79
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 293
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_BoulderDash_4-25 | BoulderDash | 0 | 84
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_0-50 | IceAndFire | 1 | 129
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_0-50 | IceAndFire | 0 | 99
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_0-50 | IceAndFire | 15 | 131
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_0-50 | IceAndFire | 3 | 100
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_0-50 | IceAndFire | 15 | 226
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_1-50 | IceAndFire | 3 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_1-50 | IceAndFire | 0 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_1-50 | IceAndFire | 25 | 89
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_1-50 | IceAndFire | 9 | 156
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_1-50 | IceAndFire | 12 | 142
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_2-50 | IceAndFire | 1 | 109
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_2-50 | IceAndFire | 2 | 125
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_2-50 | IceAndFire | 5 | 133
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_2-50 | IceAndFire | 0 | 160
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_2-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 123
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_3-50 | IceAndFire | 1 | 99
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_3-50 | IceAndFire | 0 | 129
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_3-50 | IceAndFire | 1 | 146
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_3-50 | IceAndFire | 2 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_4-50 | IceAndFire | 2 | 107
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_4-50 | IceAndFire | 4 | 105
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_4-50 | IceAndFire | 9 | 107
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_4-50 | IceAndFire | 9 | 84
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_IceAndFire_4-50 | IceAndFire | 9 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_0-100 | Catapults | -1 | 12
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_0-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_1-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_1-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_2-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_3-100 | Catapults | -1 | 11
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_3-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_4-100 | Catapults | -1 | 16
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_4-100 | Catapults | -1 | 13
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_4-100 | Catapults | -1 | 22
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_bugs_5_alfa-0.001_its-5000_tau-500_Catapults_4-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+>> Resultados en test
+
+> tau=10:
+	> BoulderDash: 23 errores -> bastantes acciones!
+	> IceAndFire: 91 errores
+	> Catapults: 0 niveles resueltos
+
+> tau=50:
+	> BoulderDash: 8 errores -> muchas acciones!
+	> IceAndFire: 79 errores
+	> Catapults: 1 niveles resueltos
+
+> tau=100:
+	> BoulderDash: 25 errores -> muchas acciones!
+	> IceAndFire: 106 errores
+	> Catapults: 2 niveles resueltos
+
+> tau=250:
+	> BoulderDash: 17 errores -> menos acciones que el resto
+	> IceAndFire: 82 errores
+	> Catapults: 0 niveles resueltos
+
+> tau=500:
+	> BoulderDash: 45 errores -> bastantes acciones!
+	> IceAndFire: 91 errores
+	> Catapults: 3 niveles resueltos
+
+Mejor valor de tau por resultados en test: 250.
+
+>> Resultados en entrenamiento (training loss)
+
+tau-10 -> en una ejecución de BoulderDash el training loss se dispara y nunca converge!!!!
+
+tau-50 y tau-100 -> el training loss tiene bastantes picos
+
+tau-250 y tau-500 -> el training loss tiene menos picos pero sigue teniendo bastantes
+
+>>> CREO QUE EL TRAINING LOSS NO CONVERGE!!!! (QUIZÁS EL LEARNING RATE
+SEA DEMASIADO ALTO!!!). Se observa que el loss es bajo y de repente se dispara y salen picos!!!!
+
+TENGO QUE HACER QUE EL ENTRENAMIENTO SEA MÁS ESTABLE!!!! (esto no lo voy a conseguir aumentando tau solo)
+
+--------------------------------------------------------------------------------------------
+Pruebas sobre un único nivel de entrenamiento BoulderDash, evaluando en los 5 niveles (diferentes) de test
+--------------------------------------------------------------------------------------------
+
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 1 | 136
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 92
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 5 | 101
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 233
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 104
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_estabilizar_training_alfa-5e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 172
+DQN_pruebas_estabilizar_training_alfa-5e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 2 | 64
+DQN_pruebas_estabilizar_training_alfa-5e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 170
+DQN_pruebas_estabilizar_training_alfa-5e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 1 | 180
+DQN_pruebas_estabilizar_training_alfa-5e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 101
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_estabilizar_training_alfa-1e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 1 | 153
+DQN_pruebas_estabilizar_training_alfa-1e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 86
+DQN_pruebas_estabilizar_training_alfa-1e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 211
+DQN_pruebas_estabilizar_training_alfa-1e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 0 | 185
+DQN_pruebas_estabilizar_training_alfa-1e-05_its-10000_tau-10_BoulderDash_0-1 | BoulderDash | 2 | 132
+
+-----------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+Pruebas entrenando sobre los 25 niveles de BoulderDash y evaluando en test
+--------------------------------------------------------------------------------------------
+
+DQN_pruebas_estabilizar_training_alfa-0.0005_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 322
+DQN_pruebas_estabilizar_training_alfa-0.0005_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 4 | 201
+DQN_pruebas_estabilizar_training_alfa-0.0005_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 220
+DQN_pruebas_estabilizar_training_alfa-0.0005_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 218
+DQN_pruebas_estabilizar_training_alfa-0.0005_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 179
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 103
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 74
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 83
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 142
+DQN_pruebas_estabilizar_training_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 92
+
+-----------------------------------------------------------------------------------
