@@ -80,9 +80,9 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [5000, 7500, 10000] # Number of iterations for training #7500 #10000
-tau=[10] # Update period of the target network
-alfa = [0.0001, 0.00005] # Learning rate # 0.01 is too much # 0.0001
+num_its = [10000] # Number of iterations for training #7500 #10000
+tau=[10, 50, 100, 250, 500] # Update period of the target network
+alfa = [0.0001] # Learning rate # 0.01 is too much # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
@@ -93,7 +93,7 @@ games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
 datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
 datasets_sizes_for_training_Catapults = [100] # 100 # 45
-repetitions_per_model = 4 # 30 # Each model is trained this number of times
+repetitions_per_model = 3 # 30 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -266,7 +266,7 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_pruebas_test_mejor_alfa_y_num_its_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_mejor_tau_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
