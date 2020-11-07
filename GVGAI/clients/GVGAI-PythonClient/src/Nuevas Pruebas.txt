@@ -22221,3 +22221,477 @@ Los resultados presentan mucha varianza en test.
 Por las gráficas de training, en BoulderDash tarda 10000 iteraciones en converger y aun así no converge del todo (sigue teniendo picos). En IceAndFire no converge la pérdida y en Catapults todavía menos. Usar un alfa más pequeño (0.00005) no mejora la estabilidad del entrenamiento (solo hace que la pérdida disminuya más lentamente).
 
 >> Quizás debería probar un valor de tau mayor.
+
+----------------------------------------------------------------------
+Pruebas mejor tau - 10000 its. alfa=0.0001 3 games 3 repetitions
+----------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 83
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 2 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 130
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 2 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 112
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 2 | 88
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 103
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 180
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 3 | 153
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 95
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 206
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 110
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 1 | 88
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 111
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 148
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 26 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 130
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 4 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 3 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 28 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 151
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 6 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 14 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 142
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_0-100 | Catapults | -1 | 12
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_0-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_1-100 | Catapults | 6 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_1-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_2-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults_2-100 | Catapults | 2 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_0-25 | BoulderDash | 1 | 193
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 299
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_0-25 | BoulderDash | 3 | 83
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_0-25 | BoulderDash | 2 | 119
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_0-25 | BoulderDash | 0 | 270
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_1-25 | BoulderDash | 1 | 103
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_1-25 | BoulderDash | 4 | 87
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_1-25 | BoulderDash | 2 | 80
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_1-25 | BoulderDash | 1 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_1-25 | BoulderDash | 0 | 141
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 232
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_2-25 | BoulderDash | 4 | 100
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 164
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 227
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash_2-25 | BoulderDash | 0 | 129
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_0-50 | IceAndFire | 4 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_0-50 | IceAndFire | 4 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_0-50 | IceAndFire | 19 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_0-50 | IceAndFire | 0 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_0-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_1-50 | IceAndFire | 3 | 103
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_1-50 | IceAndFire | 1 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_1-50 | IceAndFire | 32 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_1-50 | IceAndFire | 2 | 150
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_1-50 | IceAndFire | 0 | 166
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_2-50 | IceAndFire | 2 | 167
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_2-50 | IceAndFire | 3 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_2-50 | IceAndFire | 8 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_2-50 | IceAndFire | 0 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire_2-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_0-100 | Catapults | -1 | 5
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_0-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_1-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_1-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_2-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults_2-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_0-25 | BoulderDash | 0 | 259
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_0-25 | BoulderDash | 1 | 183
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_0-25 | BoulderDash | 4 | 95
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_0-25 | BoulderDash | 0 | 148
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_0-25 | BoulderDash | 0 | 122
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 196
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 217
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_1-25 | BoulderDash | 6 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 95
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_1-25 | BoulderDash | 0 | 114
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_2-25 | BoulderDash | 2 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_2-25 | BoulderDash | 1 | 144
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_2-25 | BoulderDash | 4 | 89
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 172
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash_2-25 | BoulderDash | 0 | 149
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_0-50 | IceAndFire | 2 | 111
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_0-50 | IceAndFire | 4 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_0-50 | IceAndFire | 15 | 155
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_0-50 | IceAndFire | 1 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_0-50 | IceAndFire | 18 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_1-50 | IceAndFire | 5 | 147
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_1-50 | IceAndFire | 1 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_1-50 | IceAndFire | 22 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_1-50 | IceAndFire | 7 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_1-50 | IceAndFire | 3 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_2-50 | IceAndFire | 3 | 161
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_2-50 | IceAndFire | 4 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_2-50 | IceAndFire | 22 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_2-50 | IceAndFire | 1 | 154
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire_2-50 | IceAndFire | 2 | 218
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_1-100 | Catapults | -1 | 5
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_1-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_1-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_2-100 | Catapults | 9 | 21
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults_2-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_0-25 | BoulderDash | 2 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_0-25 | BoulderDash | 3 | 69
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_0-25 | BoulderDash | 3 | 144
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_0-25 | BoulderDash | 0 | 215
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_1-25 | BoulderDash | 4 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_1-25 | BoulderDash | 0 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_1-25 | BoulderDash | 5 | 98
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_1-25 | BoulderDash | 5 | 211
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_1-25 | BoulderDash | 0 | 154
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_2-25 | BoulderDash | 1 | 114
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_2-25 | BoulderDash | 1 | 141
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 177
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_2-25 | BoulderDash | 5 | 134
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash_2-25 | BoulderDash | 0 | 123
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_0-50 | IceAndFire | 1 | 139
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_0-50 | IceAndFire | 0 | 123
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_0-50 | IceAndFire | 7 | 133
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_0-50 | IceAndFire | 2 | 142
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_0-50 | IceAndFire | 1 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_1-50 | IceAndFire | 7 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_1-50 | IceAndFire | 5 | 119
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_1-50 | IceAndFire | 17 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_1-50 | IceAndFire | 0 | 180
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_1-50 | IceAndFire | 0 | 144
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_2-50 | IceAndFire | 4 | 141
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_2-50 | IceAndFire | 3 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_2-50 | IceAndFire | 2 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_2-50 | IceAndFire | 4 | 152
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire_2-50 | IceAndFire | 0 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_0-100 | Catapults | 20 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_1-100 | Catapults | 12 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_1-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_1-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_2-100 | Catapults | -1 | 5
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults_2-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_0-25 | BoulderDash | 3 | 149
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 79
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_0-25 | BoulderDash | 2 | 166
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_0-25 | BoulderDash | 0 | 104
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 228
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 231
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 160
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 224
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_1-25 | BoulderDash | 0 | 115
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_2-25 | BoulderDash | 2 | 101
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_2-25 | BoulderDash | 6 | 51
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_2-25 | BoulderDash | 3 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 140
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash_2-25 | BoulderDash | 0 | 92
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_0-50 | IceAndFire | 4 | 151
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_0-50 | IceAndFire | 1 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_0-50 | IceAndFire | 24 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_0-50 | IceAndFire | 0 | 138
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_0-50 | IceAndFire | 3 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_1-50 | IceAndFire | 0 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_1-50 | IceAndFire | 2 | 101
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_1-50 | IceAndFire | 17 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_1-50 | IceAndFire | 5 | 134
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_1-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_2-50 | IceAndFire | 4 | 143
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_2-50 | IceAndFire | 10 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_2-50 | IceAndFire | 21 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_2-50 | IceAndFire | 3 | 118
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire_2-50 | IceAndFire | 1 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_0-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_0-100 | Catapults | 12 | 21
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_1-100 | Catapults | -1 | 12
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_1-100 | Catapults | 1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2-100 | Catapults | 6 | 20
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+En las gráficas de entrenamiento casi no se aprecia diferencia entre usar un valor
+de tau u otro.
+
+>>> Resultados en test:
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash - lvs=25
+Average num errors per level:  [0.6666666666666666, 0.6666666666666666, 0.3333333333333333, 1.6666666666666667, 0.3333333333333333]
+Average num actions per level:  [125.66666666666667, 108.66666666666667, 132.66666666666666, 133.0, 118.33333333333333]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_BoulderDash - lvs=25
+Average num errors per level:  [0.6666666666666666, 2.6666666666666665, 1.6666666666666667, 1.0, 0.0]
+Average num actions per level:  [176.0, 162.0, 109.0, 158.33333333333334, 180.0]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_BoulderDash - lvs=25
+Average num errors per level:  [1.6666666666666667, 2.0, 1.6666666666666667, 0.0, 0.0]
+Average num actions per level:  [159.33333333333334, 120.33333333333333, 149.33333333333334, 163.66666666666666, 103.66666666666667]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_BoulderDash - lvs=25
+Average num errors per level:  [2.3333333333333335, 0.3333333333333333, 2.6666666666666665, 4.333333333333333, 0.0]
+Average num actions per level:  [117.0, 135.66666666666666, 114.66666666666667, 163.0, 164.0]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_BoulderDash - lvs=25
+Average num errors per level:  [0.6666666666666666, 0.6666666666666666, 4.666666666666667, 0.0, 0.0]
+Average num actions per level:  [195.33333333333334, 181.33333333333334, 99.0, 138.33333333333334, 128.33333333333334]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_IceAndFire - lvs=50
+Average num errors per level:  [3.3333333333333335, 3.0, 19.666666666666668, 3.0, 7.666666666666667]
+Average num actions per level:  [139.66666666666666, 117.0, 123.0, 140.66666666666666, 212.66666666666666]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire - lvs=50
+Average num errors per level:  [3.0, 2.6666666666666665, 19.666666666666668, 0.6666666666666666, 0.6666666666666666]
+Average num actions per level:  [133.0, 109.66666666666667, 106.33333333333333, 122.0, 186.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [2.6666666666666665, 4.333333333333333, 22.666666666666668, 1.0, 1.3333333333333333]
+Average num actions per level:  [124.33333333333333, 109.0, 107.66666666666667, 131.33333333333334, 174.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_IceAndFire - lvs=50
+Average num errors per level:  [2.6666666666666665, 4.333333333333333, 20.666666666666668, 2.6666666666666665, 2.0]
+Average num actions per level:  [141.66666666666666, 107.0, 123.0, 130.0, 195.33333333333334]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_IceAndFire - lvs=50
+Average num errors per level:  [4.0, 2.6666666666666665, 8.666666666666666, 2.0, 0.3333333333333333]
+Average num actions per level:  [129.66666666666666, 115.66666666666667, 122.33333333333333, 158.0, 164.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-100_Catapults - lvs=100
+Success rate per level [0.0, 33.33333333333333, 0.0, 0.0, 0.0]
+Average num errors per completed level:  [-1, 9.0, -1, -1, -1]
+Average num actions per completed level:  [-1, 21.0, -1, -1, -1]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-250_Catapults - lvs=100
+Success rate per level [0.0, 33.33333333333333, 0.0, 33.33333333333333, 33.33333333333333]
+Average num errors per completed level:  [-1, 12.0, -1, 20.0, 0.0]
+Average num actions per completed level:  [-1, 22.0, -1, 22.0, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults - lvs=100
+Success rate per level [0.0, 33.33333333333333, 0.0, 0.0, 66.66666666666666]
+Average num errors per completed level:  [-1, 6.0, -1, -1, 1.0]
+Average num actions per completed level:  [-1, 22.0, -1, -1, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults - lvs=100
+Success rate per level [0.0, 66.66666666666666, 0.0, 0.0, 33.33333333333333]
+Average num errors per completed level:  [-1, 9.0, -1, -1, 1.0]
+Average num actions per completed level:  [-1, 20.5, -1, -1, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 0.0, 0.0]
+Average num errors per completed level:  [-1, -1, -1, -1, -1]
+Average num actions per completed level:  [-1, -1, -1, -1, -1]
+
+>> Mejores arquitecturas:
+	> BoulderDash: DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash
+	> IceAndFire: DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-50_IceAndFire y 
+	              DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire
+	> Catapults: DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_Catapults
+
+>> Mejor valor de <<<<tau=10>>>>

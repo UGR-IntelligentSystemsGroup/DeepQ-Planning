@@ -80,9 +80,9 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [10000] # Number of iterations for training #7500 #10000
-tau=[10, 50, 100, 250, 500] # Update period of the target network
-alfa = [0.0001] # Learning rate # 0.01 is too much # 0.0001
+num_its = [2500, 5000, 7500, 10000] # Number of iterations for training #7500 #10000
+tau=[10] # Update period of the target network
+alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
@@ -93,7 +93,7 @@ games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
 datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
 datasets_sizes_for_training_Catapults = [100] # 100 # 45
-repetitions_per_model = 3 # 30 # Each model is trained this number of times
+repetitions_per_model = 4 # 30 # Each model is trained this number of times
 
 # <Script variables>
 

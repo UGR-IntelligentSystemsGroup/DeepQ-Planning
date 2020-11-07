@@ -54,11 +54,11 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_test_mejor_alfa_y_num_its_alfa-0.0001_its-10000_tau-10_Catapults_1"
+		self.network_name="DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
@@ -104,7 +104,7 @@ class Agent(AbstractPlayer):
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=10
+		self.max_tau=500
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		# Gamma changed from 0.9 to 1!!!

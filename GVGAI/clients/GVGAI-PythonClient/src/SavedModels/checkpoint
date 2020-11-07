@@ -1,0 +1,2 @@
+model_checkpoint_path: "DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2.ckpt-100"
+all_model_checkpoint_paths: "DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-500_Catapults_2.ckpt-100"
