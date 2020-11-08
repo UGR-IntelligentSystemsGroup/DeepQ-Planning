@@ -88,12 +88,12 @@ batch_size = [16] # 16 works better than 32 for test. For training loss, 32 work
 
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['BoulderDash']
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
 datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
 datasets_sizes_for_training_Catapults = [100] # 100 # 45
-repetitions_per_model = 4 # 30 # Each model is trained this number of times
+repetitions_per_model = 11 # 30 # Each model is trained this number of times
 
 # <Script variables>
 
