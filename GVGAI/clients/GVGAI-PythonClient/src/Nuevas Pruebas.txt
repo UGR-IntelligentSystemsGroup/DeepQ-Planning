@@ -23688,11 +23688,515 @@ Average num actions per level:  [149.13333333333333, 123.8, 95.93333333333334, 1
 
 >>> Mejor num its. (por resultados en test) -> <<<10000>>>
 
+----------------------------------------------------------
+Mismas pruebas num its pero ahora con IceAndFire (sumando a las pruebas anteriores, 15 reps.) 
+----------------------------------------------------------
 
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 139
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 17 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 9 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 126
 
+-----------------------------------------------------------------------------------
 
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 27 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 10 | 104
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 130
 
+-----------------------------------------------------------------------------------
 
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 149
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 123
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 23 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 154
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 8 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 26 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 9 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 1 | 126
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 137
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 17 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 8 | 162
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 119
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 22 | 149
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 13 | 155
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 9 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 5 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 21 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 8 | 114
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 3 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_4-50 | IceAndFire | 4 | 157
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_4-50 | IceAndFire | 0 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_4-50 | IceAndFire | 13 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_4-50 | IceAndFire | 4 | 88
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_4-50 | IceAndFire | 3 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_5-50 | IceAndFire | 1 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_5-50 | IceAndFire | 1 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_5-50 | IceAndFire | 7 | 151
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_5-50 | IceAndFire | 5 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_5-50 | IceAndFire | 3 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_6-50 | IceAndFire | 3 | 95
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_6-50 | IceAndFire | 3 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_6-50 | IceAndFire | 17 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_6-50 | IceAndFire | 12 | 156
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_6-50 | IceAndFire | 2 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_7-50 | IceAndFire | 6 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_7-50 | IceAndFire | 1 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_7-50 | IceAndFire | 17 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_7-50 | IceAndFire | 11 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_7-50 | IceAndFire | 4 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_8-50 | IceAndFire | 1 | 165
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_8-50 | IceAndFire | 9 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_8-50 | IceAndFire | 24 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_8-50 | IceAndFire | 10 | 106
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_8-50 | IceAndFire | 2 | 146
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_9-50 | IceAndFire | 5 | 143
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_9-50 | IceAndFire | 3 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_9-50 | IceAndFire | 34 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_9-50 | IceAndFire | 4 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_9-50 | IceAndFire | 8 | 236
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_10-50 | IceAndFire | 6 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_10-50 | IceAndFire | 4 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_10-50 | IceAndFire | 26 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_10-50 | IceAndFire | 12 | 106
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire_10-50 | IceAndFire | 4 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 93
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 6 | 104
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 3 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 23 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 192
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 5 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 5 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 19 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 7 | 143
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 3 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 15 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 134
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 147
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 6 | 101
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 7 | 118
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 4 | 161
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 103
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 17 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 103
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 0 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 21 | 143
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 137
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 1 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 16 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 5 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 6 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 3 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 22 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 7 | 170
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_4-50 | IceAndFire | 0 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_5-50 | IceAndFire | 4 | 183
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_5-50 | IceAndFire | 1 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_5-50 | IceAndFire | 27 | 139
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_5-50 | IceAndFire | 6 | 158
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_5-50 | IceAndFire | 1 | 196
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_6-50 | IceAndFire | 7 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_6-50 | IceAndFire | 4 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_6-50 | IceAndFire | 11 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_6-50 | IceAndFire | 7 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_6-50 | IceAndFire | 0 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_7-50 | IceAndFire | 6 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_7-50 | IceAndFire | 3 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_7-50 | IceAndFire | 23 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_7-50 | IceAndFire | 8 | 134
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_7-50 | IceAndFire | 2 | 196
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_8-50 | IceAndFire | 5 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_8-50 | IceAndFire | 1 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_8-50 | IceAndFire | 19 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_8-50 | IceAndFire | 5 | 98
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_8-50 | IceAndFire | 1 | 192
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_9-50 | IceAndFire | 2 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_9-50 | IceAndFire | 1 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_9-50 | IceAndFire | 19 | 89
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_9-50 | IceAndFire | 4 | 138
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_9-50 | IceAndFire | 0 | 224
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_10-50 | IceAndFire | 2 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_10-50 | IceAndFire | 1 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_10-50 | IceAndFire | 19 | 163
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_10-50 | IceAndFire | 5 | 132
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire_10-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 22 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 7 | 126
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 23 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 3 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 12 | 133
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 7 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 7 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 14 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 168
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 127
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 119
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 33 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 7 | 150
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 168
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 7 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 17 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 124
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 226
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 16 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 7 | 140
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_2-50 | IceAndFire | 16 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 6 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 7 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 11 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 196
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_4-50 | IceAndFire | 1 | 151
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_4-50 | IceAndFire | 5 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_4-50 | IceAndFire | 15 | 153
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_4-50 | IceAndFire | 2 | 100
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_4-50 | IceAndFire | 0 | 206
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_5-50 | IceAndFire | 2 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_5-50 | IceAndFire | 0 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_5-50 | IceAndFire | 16 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_5-50 | IceAndFire | 2 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_5-50 | IceAndFire | 5 | 146
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_6-50 | IceAndFire | 3 | 101
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_6-50 | IceAndFire | 2 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_6-50 | IceAndFire | 23 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_6-50 | IceAndFire | 1 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_6-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_7-50 | IceAndFire | 6 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_7-50 | IceAndFire | 0 | 101
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_7-50 | IceAndFire | 10 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_7-50 | IceAndFire | 4 | 96
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_7-50 | IceAndFire | 0 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_8-50 | IceAndFire | 7 | 141
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_8-50 | IceAndFire | 1 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_8-50 | IceAndFire | 13 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_8-50 | IceAndFire | 3 | 132
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_8-50 | IceAndFire | 7 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_9-50 | IceAndFire | 5 | 113
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_9-50 | IceAndFire | 2 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_9-50 | IceAndFire | 12 | 133
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_9-50 | IceAndFire | 10 | 146
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_9-50 | IceAndFire | 8 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_10-50 | IceAndFire | 3 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_10-50 | IceAndFire | 1 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_10-50 | IceAndFire | 29 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_10-50 | IceAndFire | 7 | 116
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire_10-50 | IceAndFire | 0 | 158
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 6 | 115
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 14 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 5 | 83
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 11 | 168
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 11 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 7 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 13 | 135
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 168
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 7 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 11 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 83
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 138
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 16 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 5 | 133
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 3 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 10 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 2 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 10 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 5 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 10 | 134
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 4 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 18 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 108
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_1-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 0 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 11 | 109
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 9 | 104
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_2-50 | IceAndFire | 17 | 236
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 2 | 133
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 6 | 119
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 13 | 141
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 142
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_4-50 | IceAndFire | 6 | 177
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_4-50 | IceAndFire | 6 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_4-50 | IceAndFire | 17 | 145
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_4-50 | IceAndFire | 3 | 140
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_4-50 | IceAndFire | 3 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_5-50 | IceAndFire | 5 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_5-50 | IceAndFire | 0 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_5-50 | IceAndFire | 24 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_5-50 | IceAndFire | 4 | 130
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_5-50 | IceAndFire | 4 | 234
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_6-50 | IceAndFire | 7 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_6-50 | IceAndFire | 7 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_6-50 | IceAndFire | 4 | 129
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_6-50 | IceAndFire | 1 | 168
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_6-50 | IceAndFire | 10 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_7-50 | IceAndFire | 3 | 99
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_7-50 | IceAndFire | 4 | 107
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_7-50 | IceAndFire | 8 | 89
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_7-50 | IceAndFire | 6 | 138
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_7-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_8-50 | IceAndFire | 2 | 171
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_8-50 | IceAndFire | 3 | 105
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_8-50 | IceAndFire | 8 | 97
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_8-50 | IceAndFire | 2 | 122
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_8-50 | IceAndFire | 1 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_9-50 | IceAndFire | 1 | 143
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_9-50 | IceAndFire | 0 | 117
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_9-50 | IceAndFire | 4 | 83
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_9-50 | IceAndFire | 10 | 158
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_9-50 | IceAndFire | 5 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_10-50 | IceAndFire | 8 | 121
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_10-50 | IceAndFire | 2 | 125
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_10-50 | IceAndFire | 16 | 131
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_10-50 | IceAndFire | 1 | 168
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire_10-50 | IceAndFire | 3 | 130
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-2500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [3.2, 3.066666666666667, 20.266666666666666, 7.733333333333333, 2.6666666666666665]
+Average num actions per level:  [131.66666666666666, 111.53333333333333, 118.86666666666666, 116.66666666666667, 148.4]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-5000_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [4.0, 1.8, 17.4, 4.333333333333333, 0.8]
+Average num actions per level:  [127.26666666666667, 109.93333333333334, 120.86666666666666, 124.0, 174.13333333333333]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-7500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [4.466666666666667, 2.1333333333333333, 17.733333333333334, 4.266666666666667, 3.2]
+Average num actions per level:  [123.93333333333334, 106.73333333333333, 113.8, 136.0, 187.06666666666666]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [4.066666666666666, 5.0, 10.533333333333333, 4.266666666666667, 5.2]
+Average num actions per level:  [129.26666666666668, 110.73333333333333, 112.46666666666667, 140.53333333333333, 176.0]
+
+>>> Mejor num its.=<<2500>>, aunque los resultados son parecidos entre iteraciones
 
 
 
