@@ -81,20 +81,26 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
 
 # Training params
-num_its = [2500, 5000, 7500, 10000] # Number of iterations for training #7500 #10000
 tau=[10] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
-batch_size = [16] # 16 works better than 32 for test. For training loss, 32 works better than 16.
+batch_size = [8, 16, 32, 64] # 16 works better than 32 for test. For training loss, 32 works better than 16.
 
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['Catapults']
+games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
 datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
 datasets_sizes_for_training_Catapults = [100] # 100 # 45
-repetitions_per_model = 11 # 30 # Each model is trained this number of times
+
+# Number of iterations for training
+num_its_BoulderDash = [10000] # 10000
+num_its_IceAndFire = [2500] # 2500
+num_its_Catapults = [2500] # 2500
+
+repetitions_per_model = 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -125,31 +131,51 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o]
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
- 					for i in fc_num_unis for j in num_its for k in alfa for l in dropout for m in batch_size \
-					for n in tau for o in games_to_play]
+ 					for i in fc_num_unis for j in alfa for k in dropout for l in batch_size \
+					for m in tau for n in games_to_play]
 
 # Add the corresponding dataset sizes for each game
-models_params = []
+models_params_prev_2 = []
 
 for par in models_params_prev:
 	if par[-1] == 'BoulderDash':
 		for dataset_size in datasets_sizes_for_training_BoulderDash:
-			models_params.append(par + [dataset_size])
+			models_params_prev_2.append(par + [dataset_size])
 
 	elif par[-1] == 'IceAndFire':
 		for dataset_size in datasets_sizes_for_training_IceAndFire:
-			models_params.append(par + [dataset_size])
+			models_params_prev_2.append(par + [dataset_size])
 
 	else: # Catapults
 		for dataset_size in datasets_sizes_for_training_Catapults:
-			models_params.append(par + [dataset_size])
+			models_params_prev_2.append(par + [dataset_size])
 
+# Add the corresponding training its for each game
+models_params = []
 
-"""
-for i in models_params:
+for par in models_params_prev_2:
+	if par[-2] == 'BoulderDash':
+		for num_its in num_its_BoulderDash:
+			curr_par = par[:] # Copy by value, not by reference
+			curr_par.insert(9, num_its)
+			models_params.append(curr_par)
+
+	elif par[-2] == 'IceAndFire':
+		for num_its in num_its_IceAndFire:
+			curr_par = par[:]
+			curr_par.insert(9, num_its)
+			models_params.append(curr_par)
+
+	else: # 'Catapults'
+		for num_its in num_its_Catapults:
+			curr_par = par[:]
+			curr_par.insert(9, num_its)
+			models_params.append(curr_par)
+
+"""for i in models_params:
 	print(i)
 
 sys.exit()"""
@@ -267,7 +293,7 @@ try:
 								curr_fc_num_unis[0], curr_fc_num_unis[1], \
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 			else:
-				curr_model_name = "DQN_pruebas_test_mejor_tau_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_mejor_batch-size_batch-{}_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_batch_size, curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
