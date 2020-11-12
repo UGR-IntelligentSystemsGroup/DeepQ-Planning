@@ -24714,3 +24714,476 @@ Average num actions per completed level:  [-1, 21.5, 27.0, 22.0, 15.0]
 
 >>> Mejor num. its = <<2500>> (). 5000 its. y 10000 también funcionan bien.
 Tasa media de éxito con 2500 its. -> 22.66%
+
+--------------------------------------------------------------------------
+Pruebas mejor tamaño de batch - 4 repeticiones, 3 juegos 
+--------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 124
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 5 | 140
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 5 | 98
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 272
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 138
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 6 | 103
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 129
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 3 | 141
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 1 | 160
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 1 | 87
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 223
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 4 | 71
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 5 | 100
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 91
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 78
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 177
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 3 | 108
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 2 | 129
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 256
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 128
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 129
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 107
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 19 | 109
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 11 | 104
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 111
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 99
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 32 | 109
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 7 | 96
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 7 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 9 | 125
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 99
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 17 | 117
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 10 | 96
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 6 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 6 | 133
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 4 | 119
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 18 | 109
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 16 | 88
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 10 | 170
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | 18 | 21
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 10
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | 2 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 20
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 5
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | 15 | 22
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 8 | 21
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 2 | 100
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 91
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 5 | 102
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 4 | 133
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 137
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 181
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 102
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 110
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 115
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 123
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 1 | 164
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 176
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 2 | 114
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 109
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 183
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 201
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 3 | 225
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 1 | 93
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 1 | 126
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 84
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 5 | 147
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 1 | 109
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 9 | 107
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 8 | 96
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 166
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 4 | 127
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 101
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 21 | 117
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 96
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 2 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 7 | 113
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 0 | 101
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 18 | 117
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 108
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 140
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 3 | 123
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 1 | 117
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 16 | 117
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 12 | 134
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 3 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | 11 | 21
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | 15 | 27
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 9
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 11 | 21
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 13 | 27
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 9
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 5
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 12 | 21
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 22 | 22
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 112
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 4 | 118
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 5 | 101
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 165
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 2 | 181
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 107
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 4 | 104
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 2 | 123
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 80
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 123
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 5 | 150
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 3 | 87
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 3 | 122
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 202
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 1 | 128
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 3 | 110
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 1 | 76
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 2 | 123
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 149
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 4 | 101
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 7 | 115
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 22 | 89
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 6 | 104
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 5 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 3 | 99
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 12 | 119
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 20 | 109
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 3 | 108
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 125
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 117
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 20 | 117
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 3 | 106
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 7 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 5 | 115
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 2 | 127
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 11 | 117
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 6 | 104
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 20
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 12
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | 6 | 21
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | 9 | 27
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 11
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 6 | 27
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 15 | 22
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 148
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 1 | 105
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 5 | 125
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 4 | 135
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_0-25 | BoulderDash | 0 | 182
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 3 | 121
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 2 | 113
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 5 | 87
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 6 | 105
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_1-25 | BoulderDash | 0 | 174
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 190
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 108
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 1 | 104
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 4 | 176
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_2-25 | BoulderDash | 0 | 111
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 3 | 104
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 169
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 4 | 104
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 1 | 134
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash_3-25 | BoulderDash | 0 | 172
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 5 | 89
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 0 | 119
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 11 | 155
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 3 | 124
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_0-50 | IceAndFire | 2 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 163
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 6 | 107
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 5 | 125
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 4 | 134
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_1-50 | IceAndFire | 0 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 4 | 121
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 1 | 99
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 14 | 99
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 108
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_2-50 | IceAndFire | 2 | 234
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 149
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 117
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 11 | 129
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 7 | 112
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire_3-50 | IceAndFire | 0 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | 7 | 27
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 14 | 21
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_1-100 | Catapults | 2 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 12
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | 14 | 22
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_2-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 13
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 10
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 25
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | -1 | 7
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3-100 | Catapults | 5 | 15
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-10000_tau-10_BoulderDash - lvs=25
+Average num errors per level:  [1.5, 3.0, 3.75, 0.5, 0.25]
+Average num actions per level:  [156.75, 112.0, 117.0, 194.75, 107.75]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-10000_tau-10_BoulderDash - lvs=25
+Average num errors per level:  [0.75, 1.0, 2.0, 1.25, 0.0]
+Average num actions per level:  [161.5, 148.5, 104.75, 120.75, 131.75]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-10000_tau-10_BoulderDash - lvs=25
+Average num errors per level:  [1.0, 3.0, 3.25, 2.0, 0.0]
+Average num actions per level:  [136.0, 121.25, 92.0, 133.25, 139.25]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-10000_tau-10_BoulderDash - lvs=25
+Average num errors per level:  [1.5, 0.75, 3.75, 3.75, 0.0]
+Average num actions per level:  [140.75, 123.75, 105.0, 137.5, 159.75]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [6.25, 3.25, 21.5, 11.0, 6.5]
+Average num actions per level:  [124.5, 106.0, 111.0, 96.0, 172.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [4.75, 1.0, 16.0, 7.5, 2.75]
+Average num actions per level:  [127.5, 107.0, 114.5, 108.5, 157.5]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [3.5, 5.5, 18.25, 4.5, 3.0]
+Average num actions per level:  [110.0, 119.5, 108.0, 105.5, 173.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_IceAndFire - lvs=50
+Average num errors per level:  [3.75, 1.75, 10.25, 4.0, 1.0]
+Average num actions per level:  [130.5, 110.5, 127.0, 119.5, 195.5]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_batch-size_batch-8_alfa-0.0001_its-2500_tau-10_Catapults - lvs=100
+Success rate per level [25.0, 25.0, 0.0, 25.0, 50.0]
+Average num errors per completed level:  [18.0, 8.0, -1, 15.0, 1.5]
+Average num actions per completed level:  [21.0, 21.0, -1, 22.0, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_batch-size_batch-16_alfa-0.0001_its-2500_tau-10_Catapults - lvs=100
+Success rate per level [25.0, 50.0, 50.0, 25.0, 50.0]
+Average num errors per completed level:  [11.0, 11.5, 14.0, 22.0, 0.5]
+Average num actions per completed level:  [21.0, 21.0, 27.0, 22.0, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_batch-size_batch-32_alfa-0.0001_its-2500_tau-10_Catapults - lvs=100
+Success rate per level [0.0, 25.0, 50.0, 25.0, 50.0]
+Average num errors per completed level:  [-1, 6.0, 7.5, 15.0, 0.5]
+Average num actions per completed level:  [-1, 21.0, 27.0, 22.0, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults - lvs=100
+Success rate per level [0.0, 50.0, 0.0, 25.0, 50.0]
+Average num errors per completed level:  [-1, 10.5, -1, 14.0, 3.5]
+Average num actions per completed level:  [-1, 24.0, -1, 22.0, 15.0]
+
+>> BoulderDash -> mejor tamaño de <<batch=32>>
+>> IceAndFire -> mejor tamaño de <<batch=32>>, aunque 16 funciona casi igual de bien
+>> Catapults -> mejor tamaño de <<batch=32>>, aunque 16 funciona casi igual de bien
+   (tiene un poco más de success rate pero comete más errores)
+
+>>> Mejor tamaño de batch -> <<32>>

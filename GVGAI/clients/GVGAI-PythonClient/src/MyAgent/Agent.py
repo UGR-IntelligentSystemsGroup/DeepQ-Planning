@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,14 +54,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_test_mejor_tau_alfa-0.0001_its-10000_tau-10_BoulderDash_0"
+		self.network_name="DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=25
+		self.dataset_size_for_training=100
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -98,8 +98,8 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=10000
-		self.batch_size=8
+		self.num_train_its=2500
+		self.batch_size=64
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network

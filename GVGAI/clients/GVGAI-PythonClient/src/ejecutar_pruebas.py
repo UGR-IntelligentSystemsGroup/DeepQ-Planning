@@ -44,7 +44,8 @@ El agente es capaz de resolver el nivel sobre el que fue entrenado para los tres
 
 """
 
-# PROBAR BATCH SIZE!
+# Valor max. de repeticiones por días -> unas 50
+
 
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
@@ -84,8 +85,7 @@ fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connecte
 tau=[10] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
-batch_size = [8, 16, 32, 64] # 16 works better than 32 for test. For training loss, 32 works better than 16.
-
+batch_size = [32] # 32
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
