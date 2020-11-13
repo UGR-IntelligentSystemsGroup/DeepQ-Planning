@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,17 +58,20 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_test_mejor_batch-size_batch-64_alfa-0.0001_its-2500_tau-10_Catapults_3"
+		self.network_name="DQN_Pruebas_val_conv1-16,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-256,4,1,VALID_fc-32_1_its-500_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=5
+
+		# Seed for selecting which levels to train the model on
+		self.level_seed=29974
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
 
 		# Architecture
 		# First conv layer
-		self.l1_num_filt=32
+		self.l1_num_filt=16
 		self.l1_window=[4, 4]
 		self.l1_strides=[1, 1]
 		self.l1_padding_type="VALID"
@@ -86,7 +89,7 @@ class Agent(AbstractPlayer):
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=128
+		self.l4_num_filt=256
 		self.l4_window=[4, 4]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
@@ -98,8 +101,8 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=2500
-		self.batch_size=64
+		self.num_train_its=500
+		self.batch_size=32
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
@@ -184,14 +187,14 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+				self.dataset_size_model=5
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -243,7 +246,7 @@ class Agent(AbstractPlayer):
 
 		if self.EXECUTION_MODE == 'train':
 			# Load dataset of current size
-			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training)
+			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed)
 
 			# Shuffle dataset
 			random.shuffle(self.memory)
@@ -1087,7 +1090,7 @@ class Agent(AbstractPlayer):
 		print("Saving finished!")
 
 
-	def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True):
+	def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True, seed=None):
 		"""
 		Uses the pickle module to load the previously saved experience replay.
 
@@ -1096,13 +1099,19 @@ class Agent(AbstractPlayer):
 		@num_levels The number of levels whose datasets to load
 		@write_loaded_datasets If True, the names of the loaded datasets are
 							   written in the 'loaded_datasets.txt' file
+		@seed Seed for level selection. If None, a random one is used.
 		"""
 
 		# Delete current experience replay
 		del self.memory[:]
 
 		# Use glob to get all the different existing datasets in the folder
-		datasets = glob.glob('{}/dataset_{}*'.format(folder, game))
+		# Use sorted to order them by name
+		datasets = sorted(glob.glob('{}/dataset_{}*'.format(folder, game)))
+
+		# Use a seed for repetibility
+		if seed is not None:
+			random.seed(seed)
 
 		# Choose "num_levels" levels randomly
 		selected_datasets = random.sample(datasets, k=num_levels)

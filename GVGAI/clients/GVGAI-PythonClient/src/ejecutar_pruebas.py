@@ -41,7 +41,6 @@ El agente es capaz de resolver el nivel sobre el que fue entrenado para los tres
 
 
 (quizás el valor de alfa sea demasiado grande para IceAndFire aunque no lo sé)
-
 """
 
 # Valor max. de repeticiones por días -> unas 50
@@ -50,12 +49,16 @@ El agente es capaz de resolver el nivel sobre el que fue entrenado para los tres
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
 # "test" -> trains and tests on the 5 test levels
-script_execution_mode = "test"
+script_execution_mode = "validation"
 
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
 goal_selection_mode = "best"
+
+# <Seed>
+# Used for repetibility
+seed=28912
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -63,23 +66,23 @@ goal_selection_mode = "best"
 
 # Architecture
 # First conv layer
-l1_num_filt = [32]
+l1_num_filt = [16, 32] # 32
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32]
+l2_num_filt = [32] # 32
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64] # 32 does worse 
+l3_num_filt = [64] # 64 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [128]
+l4_num_filt = [128, 256] # 128
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32, 1]] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[32, 1]] # [32,1] # Number of units of the first and second fully-connected layers
 
 # Training params
 tau=[10] # Update period of the target network
@@ -91,16 +94,16 @@ batch_size = [32] # 32
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
-datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
-datasets_sizes_for_training_Catapults = [100] # 100 # 45
+datasets_sizes_for_training_BoulderDash = [20] # 25 # 20
+datasets_sizes_for_training_IceAndFire = [45] # 50 # 45
+datasets_sizes_for_training_Catapults = [95] # 100 # 45
 
 # Number of iterations for training
 num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 4 # Each model is trained this number of times
+repetitions_per_model = 4 # 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -281,6 +284,8 @@ try:
 		# <Repeat each execution (train + val) the number of times given by "repetitions_per_model">
 		# If the goal selection mode is random, skip the training part
 		for curr_rep in range(repetitions_per_model):
+			# <Calculate the seed for the current execution>
+			curr_seed = seed*(curr_rep+1) % 1000000
 
 			# <Create the model name using the hyperparameters values>
 
@@ -306,6 +311,9 @@ try:
 
 			# Change the model name
 			agent_file = re.sub(r'self.network_name=.*', 'self.network_name="{}"'.format(curr_model_name), agent_file, count=1)
+
+			# Change the seed
+			agent_file = re.sub(r'self.level_seed=.*', 'self.level_seed={}'.format(curr_seed), agent_file, count=1)
 
 			# Save file
 			with open('MyAgent/Agent.py', 'w') as file:
@@ -382,7 +390,7 @@ try:
 			# <Select the five validation or test levels to use, depending on the
 			# script_execution_mode>
 
-			# Select five validation levels
+			# Select five validation levels using the random seed
 			if script_execution_mode == "validation":
 				# Get all the training/validation levels
 				all_levels = glob.glob(curr_lvs_path_train_val + "*")
@@ -408,6 +416,9 @@ try:
 						levels_to_remove.append(lv)
 
 				all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
+
+				# Set the seed for repetibility
+				random.seed(curr_seed)
 
 				# Select 5 validation levels among all the possible levels
 				val_levels = random.sample(all_levels, k=5)
