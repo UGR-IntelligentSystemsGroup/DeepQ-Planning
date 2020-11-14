@@ -66,19 +66,19 @@ seed=28912
 
 # Architecture
 # First conv layer
-l1_num_filt = [16, 32] # 32
+l1_num_filt = [32] # 32
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32] # 32
+l2_num_filt = [32, 64] # 32
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64] # 64 
+l3_num_filt = [64, 128] # 64 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [128, 256] # 128
+l4_num_filt = [128] # 128
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!

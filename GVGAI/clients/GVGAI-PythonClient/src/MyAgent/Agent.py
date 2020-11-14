@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -58,20 +58,20 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-16,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-256,4,1,VALID_fc-32_1_its-500_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1"
+		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-256,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=5
+		self.dataset_size_for_training=95
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=29974
+		self.level_seed=115648
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
 
 		# Architecture
 		# First conv layer
-		self.l1_num_filt=16
+		self.l1_num_filt=32
 		self.l1_window=[4, 4]
 		self.l1_strides=[1, 1]
 		self.l1_padding_type="VALID"
@@ -101,7 +101,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=500
+		self.num_train_its=2500
 		self.batch_size=32
 		
 		# Extra params
@@ -187,14 +187,14 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=5
+				self.dataset_size_model=95
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
