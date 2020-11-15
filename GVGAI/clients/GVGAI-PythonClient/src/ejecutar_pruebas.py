@@ -58,7 +58,7 @@ goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
-seed=28912
+seed=28912 # 28912
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -70,11 +70,11 @@ l1_num_filt = [32] # 32
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32, 64] # 32
+l2_num_filt = [32] # 32
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64, 128] # 64 
+l3_num_filt = [64] # 64 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -82,7 +82,7 @@ l4_num_filt = [128] # 128
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
-fc_num_unis = [[32, 1]] # [32,1] # Number of units of the first and second fully-connected layers
+fc_num_unis = [[16, 1], [32, 1], [16, 8], [32, 8]] # [32,1] # Number of units of the first and second fully-connected layers
 
 # Training params
 tau=[10] # Update period of the target network
