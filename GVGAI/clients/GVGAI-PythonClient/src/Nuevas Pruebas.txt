@@ -26132,3 +26132,864 @@ Average num actions per completed level:  [2.0, 10.0, -1, 13.5, -1]
 >> Catapults: mejor -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults y DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults 
 
 >>> Mejor arquitectura para los tres juegos: [32, 32, 64, 128]
+
+----------------------------------------------------------------------
+Pruebas mejor num unidades fully connected - 3 juegos, 8 rep. 
+----------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 5 | 69
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 207
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 220
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 65
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 205
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 126
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 5 | 109
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 4 | 62
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 3 | 66
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 77
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 214
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 149
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 207
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 179
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 221
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 131
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 209
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 127
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 192
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 3 | 86
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 2 | 115
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 11 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 25 | 114
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 5 | 106
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 9 | 110
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 11 | 165
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 14 | 114
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 6 | 169
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 11 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 8 | 161
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 0 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 75
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 146
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 4 | 148
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 60
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 9 | 172
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 5 | 152
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 10 | 167
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 22 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 15
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | 11 | 10
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 16
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 13 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 12
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 6 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 1 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 91
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 177
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 251
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 149
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 1 | 92
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 3 | 130
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 1 | 51
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 92
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 1 | 46
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 106
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 134
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 116
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 216
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 129
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 196
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 70
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 176
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 161
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 203
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 20 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 17 | 116
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 9 | 139
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 12 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 110
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 7 | 146
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 5 | 102
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 9 | 133
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 18 | 112
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 5 | 143
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 0 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 14 | 113
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 7 | 166
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 63
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 10 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 114
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 70
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 8 | 190
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 7 | 165
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 22 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 10 | 12
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 7
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 15
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | 11 | 11
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 12
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 5
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 14
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 3 | 165
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 188
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 214
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 1 | 73
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 3 | 59
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 1 | 150
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 4 | 147
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 5 | 133
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 179
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 107
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 156
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 168
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 148
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 122
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 158
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 1 | 85
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 154
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 162
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 2 | 56
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 15 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 84
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 1 | 121
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 6 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 21 | 106
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 10 | 146
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 1 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 16 | 183
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 9 | 98
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 8 | 175
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 11 | 134
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 11 | 131
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 154
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 71
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 26 | 150
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 3 | 96
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 84
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 14 | 174
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 8 | 140
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 18 | 153
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 15 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 7
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 14
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | 7 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 2
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 16
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 5 | 20
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 6 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 2 | 70
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 105
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 185
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 82
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 3 | 113
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 77
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 2 | 60
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 48
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 117
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 7 | 60
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 2 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 137
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 283
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 89
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 55
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 128
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 195
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 159
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 9 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 11 | 116
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 6 | 157
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 25 | 104
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 15 | 100
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 8 | 118
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 106
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 8 | 161
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 9 | 86
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 11 | 181
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 11 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 6 | 115
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 2 | 124
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 7 | 73
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 28 | 132
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 124
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 88
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 13 | 190
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 4 | 126
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 139
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 19 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 7
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 15
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 1
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 16
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 21
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+------------ NUEVO
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 138
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 156
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 203
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 213
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 3 | 122
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 238
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 2 | 81
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 102
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 1 | 85
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 112
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 211
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 174
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 148
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 84
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 192
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 190
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 74
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 125
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 17 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 3 | 110
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 220
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 2 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 14 | 125
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 17 | 190
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 63
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 11 | 95
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 3 | 109
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 8 | 192
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 17 | 130
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 7 | 84
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 73
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 2 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 1 | 77
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 6 | 179
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 85
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 158
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 2
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | 12 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 24
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 16
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 2 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 12
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 16
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 1 | 15
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 149
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 144
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 171
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 170
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 129
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 155
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 86
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 125
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 76
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 157
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 158
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 174
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 154
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 118
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 4 | 42
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 215
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 141
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 6 | 63
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 155
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 88
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 7 | 90
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 5 | 92
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 3 | 218
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 4 | 102
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 155
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 5 | 192
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 4 | 77
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 10 | 97
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 3 | 107
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 18 | 202
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 17 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 3 | 148
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 5 | 75
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 1 | 118
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 0 | 67
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 147
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 75
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 139
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 4 | 112
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 5 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 3
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 6 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 21 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 4 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 117
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 146
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 137
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 174
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 132
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 3 | 100
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 118
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 99
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 101
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 140
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 98
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 163
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 152
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 222
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 153
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 142
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 1 | 67
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 245
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 1 | 82
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 6 | 88
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 3 | 88
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 11 | 190
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 136
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 11 | 125
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 6 | 232
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 3 | 57
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 13 | 75
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 113
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 9 | 220
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 9 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 0 | 120
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 2 | 57
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 0 | 104
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 1 | 77
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 85
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 133
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 4 | 112
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 1 | 142
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 3
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 16
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 8 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 18
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | 11 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 223
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 95
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 123
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 187
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0-20 | BoulderDash | 0 | 129
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 203
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 76
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 57
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 72
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_1-20 | BoulderDash | 0 | 138
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 97
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 120
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 132
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 136
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_2-20 | BoulderDash | 0 | 221
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 135
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 158
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 5 | 86
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 201
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_3-20 | BoulderDash | 0 | 108
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 14 | 110
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 2 | 94
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 13 | 218
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 8 | 140
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_0-45 | IceAndFire | 10 | 113
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 10 | 230
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 63
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 73
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 10 | 89
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_1-45 | IceAndFire | 2 | 174
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 13 | 108
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 5 | 122
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 6 | 69
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 2 | 102
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_2-45 | IceAndFire | 5 | 97
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 169
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 3 | 89
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 2 | 155
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 6 | 112
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire_3-45 | IceAndFire | 0 | 168
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 13
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 4
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | 2 | 12
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_0-95 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 10
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 11
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_1-95 | Catapults | -1 | 16
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 6
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 10 | 9
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 7
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | 16 | 19
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_2-95 | Catapults | -1 | 16
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 5
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 8
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 18
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 2
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3-95 | Catapults | -1 | 28
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis - 8 rep.:
+
+--- BoulderDash ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash - lvs=20
+Average num errors per level:  [0.625, 0.875, 0.5, 0.125, 0.75]
+Average num actions per level:  [159.0, 157.75, 140.875, 134.5, 135.625]
+
+--- BoulderDash ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash - lvs=20
+Average num errors per level:  [0.25, 0.375, 0.875, 0.0, 0.625]
+Average num actions per level:  [147.375, 121.25, 129.125, 154.875, 117.875]
+
+--- BoulderDash ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash - lvs=20
+Average num errors per level:  [0.5, 1.0, 0.75, 0.125, 0.75]
+Average num actions per level:  [146.375, 131.375, 141.625, 149.375, 115.375]
+
+--- BoulderDash ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash - lvs=20
+Average num errors per level:  [0.5, 0.25, 0.625, 0.0, 1.25]
+Average num actions per level:  [128.5, 100.875, 112.0, 159.125, 127.125]
+
+--- IceAndFire ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire - lvs=45
+Average num errors per level:  [8.625, 3.875, 6.5, 8.875, 9.125]
+Average num actions per level:  [138.125, 99.125, 143.375, 104.0, 138.0]
+
+--- IceAndFire ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire - lvs=45
+Average num errors per level:  [7.5, 3.875, 7.625, 5.25, 11.875]
+Average num actions per level:  [131.375, 94.625, 135.875, 108.5, 143.5]
+
+--- IceAndFire ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire - lvs=45
+Average num errors per level:  [7.5, 6.0, 6.5, 5.75, 7.5]
+Average num actions per level:  [127.625, 99.125, 144.625, 105.75, 137.25]
+
+--- IceAndFire ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire - lvs=45
+Average num errors per level:  [10.875, 4.125, 5.875, 5.25, 8.375]
+Average num actions per level:  [134.875, 94.875, 132.875, 108.25, 143.5]
+
+--- Catapults ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults - lvs=95
+Success rate per level [0.0, 25.0, 0.0, 25.0, 0.0]
+Average num errors per completed level:  [-1, 14.5, -1, 9.0, -1]
+Average num actions per completed level:  [-1, 9.5, -1, 15.5, -1]
+
+--- Catapults ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults - lvs=95
+Success rate per level [12.5, 37.5, 12.5, 12.5, 12.5]
+Average num errors per completed level:  [4.0, 13.0, 10.0, 21.0, 5.0]
+Average num actions per completed level:  [19.0, 10.333333333333334, 12.0, 19.0, 11.0]
+
+--- Catapults ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults - lvs=95
+Success rate per level [0.0, 25.0, 12.5, 37.5, 12.5]
+Average num errors per completed level:  [-1, 12.0, 12.0, 6.666666666666667, 11.0]
+Average num actions per completed level:  [-1, 9.5, 19.0, 13.666666666666666, 10.0]
+
+--- Catapults ---
+
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-16_8_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults - lvs=95
+Success rate per level [12.5, 37.5, 12.5, 12.5, 0.0]
+Average num errors per completed level:  [5.0, 11.333333333333334, 7.0, 6.0, -1]
+Average num actions per completed level:  [20.0, 13.0, 10.0, 7.0, -1]
+
+>> BoulderDash: mejor -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_8_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash,
+DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash
+
+>> IceAndFire: mejor -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_IceAndFire
+
+>> Catapults: mejor -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults
+
+>>> En IceAndFire y Catapults, se obtienen resultados parecidos con varias arquitecturas diferentes. Mejor num. unidades fc para los tres juegos -> [32, 1]
