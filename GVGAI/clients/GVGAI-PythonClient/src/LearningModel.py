@@ -139,6 +139,7 @@ class DQNetwork:
 				# Batch Normalization
 
 				self.conv4 = tf.layers.batch_normalization(self.conv4, axis = 3, momentum=0.99, training=self.is_training)
+			
 			else: # Only use three layers if l4_num_filt == -1
 				self.conv4 = self.conv3
 

@@ -7,44 +7,13 @@ import glob
 import random
 import sys
 
-# Probar a hacer overfitting sobre los niveles de test para cada juego!!!
-
-"""
-Resultados pruebas.
-
-Mejores valores de alfa -> 0.001 y 0.0005.
-
-alfa-0.001 funciona bastante mejor (según el training loss) que alfa-0.0005.
-
-Tau: parece que tau=100 funciona bien más o menos para los tres juegos. En catapults
-no está claro (parece que para Catapults va bien tanto tau=10 como tau=250 o 500!!!)
-
-Debería hacer pruebas para tau entrenando sobre todos los niveles de entrenamiento y evaluando
-sobre test, realizando varias repeticiones.
-
-
-CREO QUE INCLUSO CON ESTE VALOR DE ALFA EL ENTRENAMIENTO SIGUE SIENDO INESTABLE.
-
-MIRAR LOS RESULTADOS EN TEST SOBRE UN ÚNICO NIVEL DE BOULDERDASH CON UN ALFA
-MUY PEQUEÑO!!!!!
-
-POR LAS PRUEBAS SOBRE UN ÚNICO NIVEL DE ENTRENAMIENTO EN BOULDERDASH, <ALFA=0.0005>
-PARECE EL MEJOR VALOR
-
->>> Pruebas sobre 25 niveles de BoulderDash (sobre test y 10000 training its)
-
-Parece que el mejor valor de alfa (usando 10000 its) es <<0.0001>>. alfa=0.0005 obtiene
-resultados bastante malos en test y alfa=0.00005 disminuye muy lento el training loss.
-
->>> Pruebas overfitting
-El agente es capaz de resolver el nivel sobre el que fue entrenado para los tres juegos!!!!
-
-
-(quizás el valor de alfa sea demasiado grande para IceAndFire aunque no lo sé)
-"""
-
 # Valor max. de repeticiones por días -> unas 50
 
+"""
+Mejor arquitectura 3 capas conv. -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10
+[32, 64, 64]
+
+"""
 
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
@@ -58,7 +27,7 @@ goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
-seed=12348 # 28912
+seed=28912 # 28912
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -70,15 +39,15 @@ l1_num_filt = [32] # 32
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [32, 64] # 32
+l2_num_filt = [64] # 32
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l3_num_filt = [64, 128] # 64 
+l3_num_filt = [64] # 64 
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [-1] # 128
+l4_num_filt = [64, 128] # 128
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
@@ -103,7 +72,7 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 4 # 4 # Each model is trained this number of times
+repetitions_per_model = 8 # 4 # Each model is trained this number of times
 
 # <Script variables>
 

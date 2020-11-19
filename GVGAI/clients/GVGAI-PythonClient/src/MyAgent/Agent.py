@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,17 +54,17 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0"
+		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=20
+		self.dataset_size_for_training=95
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=12348
+		self.level_seed=115648
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -77,13 +77,13 @@ class Agent(AbstractPlayer):
 		self.l1_padding_type="VALID"
 
 		# Second conv layer
-		self.l2_num_filt=32
+		self.l2_num_filt=64
 		self.l2_window=[4, 4]
 		self.l2_strides=[1, 1]
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
-		self.l3_num_filt=64
+		self.l3_num_filt=128
 		self.l3_window=[4, 4]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
@@ -101,7 +101,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=10000
+		self.num_train_its=2500
 		self.batch_size=32
 		
 		# Extra params
