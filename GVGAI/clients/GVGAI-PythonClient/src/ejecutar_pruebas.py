@@ -33,6 +33,9 @@ seed=28912 # 28912
 # This script trains and validates one model per each different combination of
 # these hyperparameters
 
+# Comparo en validación [32, 64, 64, 128] con 
+# [32, 32, 64, 128]
+
 # Architecture
 # First conv layer
 l1_num_filt = [32] # 32
@@ -47,7 +50,7 @@ l3_num_filt = [64] # 64
 l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
-l4_num_filt = [64, 128] # 128
+l4_num_filt = [128] # 128
 l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # A single fc layer works better!
@@ -72,7 +75,7 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 8 # 4 # Each model is trained this number of times
+repetitions_per_model = 16 # 4 # Each model is trained this number of times
 
 # <Script variables>
 

@@ -58,13 +58,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-128,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_3"
+		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_7"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=95
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=115648
+		self.level_seed=231296
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -83,13 +83,13 @@ class Agent(AbstractPlayer):
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
-		self.l3_num_filt=128
+		self.l3_num_filt=64
 		self.l3_window=[4, 4]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=-1
+		self.l4_num_filt=128
 		self.l4_window=[4, 4]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
