@@ -12,7 +12,7 @@ import sys
 """
 Mejor arquitectura 3 capas conv. -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10
 [32, 64, 64]
-
+Un poco peor que la mejor con 4 capas 
 """
 
 # <Execution mode of the script>
@@ -27,14 +27,11 @@ goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
-seed=28912 # 28912
+seed=13498 # 28912
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
-
-# Comparo en validación [32, 64, 64, 128] con 
-# [32, 32, 64, 128]
 
 # Architecture
 # First conv layer
@@ -42,7 +39,7 @@ l1_num_filt = [32] # 32
 l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Second conv layer
-l2_num_filt = [64] # 32
+l2_num_filt = [32] # 32
 l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 
 # Third conv layer
@@ -57,7 +54,7 @@ l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
 fc_num_unis = [[32, 1]] # [32,1] # Number of units of the first and second fully-connected layers
 
 # Training params
-tau=[10] # Update period of the target network
+tau=[10, 50] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
@@ -75,7 +72,7 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 16 # 4 # Each model is trained this number of times
+repetitions_per_model = 8 # 4 # Each model is trained this number of times
 
 # <Script variables>
 
