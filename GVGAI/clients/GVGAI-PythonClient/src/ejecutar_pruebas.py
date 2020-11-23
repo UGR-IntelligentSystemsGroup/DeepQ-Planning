@@ -27,7 +27,7 @@ goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
-seed=13498 # 28912
+seed=28912 # 28912 (No cambiar la seed!)
 
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
@@ -36,25 +36,25 @@ seed=13498 # 28912
 # Architecture
 # First conv layer
 l1_num_filt = [32] # 32
-l1_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+l1_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Second conv layer
 l2_num_filt = [32] # 32
-l2_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Third conv layer
 l3_num_filt = [64] # 64 
-l3_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Third conv layer
 l4_num_filt = [128] # 128
-l4_filter_structure = [ [[4,4],[1,1],"VALID"] ]
+l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # A single fc layer works better!
 fc_num_unis = [[32, 1]] # [32,1] # Number of units of the first and second fully-connected layers
 
 # Training params
-tau=[10, 50] # Update period of the target network
+tau=[10] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
@@ -72,7 +72,7 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 8 # 4 # Each model is trained this number of times
+repetitions_per_model = 16 # 4 # Each model is trained this number of times
 
 # <Script variables>
 
