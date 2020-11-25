@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,17 +54,17 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-32,4,1,VALID_conv3-64,4,1,VALID_conv4-128,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-50_Catapults_7"
+		self.network_name="DQN_Pruebas_val_conv1-32,3,1,VALID_conv2-32,3,1,VALID_conv3-64,3,1,VALID_conv4-64,3,1,VALID_fc-32_1_its-10000_alfa-0.0001_dropout-0.0_batch-32_tau-10_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=95
+		self.dataset_size_for_training=20
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=107984
+		self.level_seed=28912
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -72,27 +72,33 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[4, 4]
+		self.l1_window=[3, 3]
 		self.l1_strides=[1, 1]
 		self.l1_padding_type="VALID"
 
 		# Second conv layer
 		self.l2_num_filt=32
-		self.l2_window=[4, 4]
+		self.l2_window=[3, 3]
 		self.l2_strides=[1, 1]
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
 		self.l3_num_filt=64
-		self.l3_window=[4, 4]
+		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=128
-		self.l4_window=[4, 4]
+		self.l4_num_filt=64
+		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
+
+		# Fifth conv layer
+		self.l5_num_filt=128
+		self.l5_window=[3, 3]
+		self.l5_strides=[1, 1]
+		self.l5_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
 		self.fc_num_unis=[32, 1]
@@ -101,13 +107,13 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=2500
+		self.num_train_its=10000
 		self.batch_size=32
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=50
+		self.max_tau=10
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		# Gamma changed from 0.9 to 1!!!

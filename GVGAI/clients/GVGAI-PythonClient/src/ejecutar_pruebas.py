@@ -46,9 +46,13 @@ l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"]
 l3_num_filt = [64] # 64 
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
-# Third conv layer
-l4_num_filt = [128] # 128
+# Fourth conv layer
+l4_num_filt = [64] # 128
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
+
+# Fifth conv layer
+l5_num_filt = [128] # 128
+l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # A single fc layer works better!
 fc_num_unis = [[32, 1]] # [32,1] # Number of units of the first and second fully-connected layers
@@ -103,11 +107,12 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n]
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
- 					for i in fc_num_unis for j in alfa for k in dropout for l in batch_size \
-					for m in tau for n in games_to_play]
+ 					for i in l5_num_filt for j in l5_filter_structure \
+ 					for k in fc_num_unis for l in alfa for m in dropout for n in batch_size \
+					for o in tau for p in games_to_play]
 
 # Add the corresponding dataset sizes for each game
 models_params_prev_2 = []
@@ -132,19 +137,19 @@ for par in models_params_prev_2:
 	if par[-2] == 'BoulderDash':
 		for num_its in num_its_BoulderDash:
 			curr_par = par[:] # Copy by value, not by reference
-			curr_par.insert(9, num_its)
+			curr_par.insert(11, num_its)
 			models_params.append(curr_par)
 
 	elif par[-2] == 'IceAndFire':
 		for num_its in num_its_IceAndFire:
 			curr_par = par[:]
-			curr_par.insert(9, num_its)
+			curr_par.insert(11, num_its)
 			models_params.append(curr_par)
 
 	else: # 'Catapults'
 		for num_its in num_its_Catapults:
 			curr_par = par[:]
-			curr_par.insert(9, num_its)
+			curr_par.insert(11, num_its)
 			models_params.append(curr_par)
 
 """for i in models_params:
@@ -164,14 +169,16 @@ try:
 		curr_l3_filter_structure = curr_model_params[5]
 		curr_l4_num_filt = curr_model_params[6]
 		curr_l4_filter_structure = curr_model_params[7]
-		curr_fc_num_unis = curr_model_params[8]
-		curr_num_its = curr_model_params[9]
-		curr_alfa = curr_model_params[10]
-		curr_dropout = curr_model_params[11]
-		curr_batch_size = curr_model_params[12]
-		curr_tau = curr_model_params[13]
-		curr_game = curr_model_params[14]
-		dataset_size_for_training = curr_model_params[15]
+		curr_l5_num_filt = curr_model_params[8]
+		curr_l5_filter_structure = curr_model_params[9]
+		curr_fc_num_unis = curr_model_params[10]
+		curr_num_its = curr_model_params[11]
+		curr_alfa = curr_model_params[12]
+		curr_dropout = curr_model_params[13]
+		curr_batch_size = curr_model_params[14]
+		curr_tau = curr_model_params[15]
+		curr_game = curr_model_params[16]
+		dataset_size_for_training = curr_model_params[17]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -217,6 +224,10 @@ try:
 		agent_file = re.sub(r'self.l4_strides=.*', 'self.l4_strides={}'.format(curr_l4_filter_structure[1]), agent_file, count=1)
 		agent_file = re.sub(r'self.l4_padding_type=.*', 'self.l4_padding_type="{}"'.format(curr_l4_filter_structure[2]), agent_file, count=1)
 
+		agent_file = re.sub(r'self.l5_num_filt=.*', 'self.l5_num_filt={}'.format(curr_l5_num_filt), agent_file, count=1)
+		agent_file = re.sub(r'self.l5_window=.*', 'self.l5_window={}'.format(curr_l5_filter_structure[0]), agent_file, count=1)
+		agent_file = re.sub(r'self.l5_strides=.*', 'self.l5_strides={}'.format(curr_l5_filter_structure[1]), agent_file, count=1)
+		agent_file = re.sub(r'self.l5_padding_type=.*', 'self.l5_padding_type="{}"'.format(curr_l5_filter_structure[2]), agent_file, count=1)
 
 		agent_file = re.sub(r'self.fc_num_unis=.*', 'self.fc_num_unis={}'.format(curr_fc_num_unis), agent_file, count=1)
 		agent_file = re.sub(r'self.learning_rate=.*', 'self.learning_rate={}'.format(curr_alfa), agent_file, count=1)
