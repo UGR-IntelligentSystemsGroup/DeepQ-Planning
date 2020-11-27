@@ -78,7 +78,7 @@ class DQNetwork:
 										 kernel_size = l1_window,
 										 strides = l1_strides,
 										 padding = l1_padding_type,
-										 activation = tf.nn.relu,
+										 activation = tf.nn.leaky_relu,
 										 use_bias = True,
 										 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 										 name = "conv1")
@@ -96,7 +96,7 @@ class DQNetwork:
 										 kernel_size = l2_window,
 										 strides = l2_strides,
 										 padding = l2_padding_type,
-										 activation = tf.nn.relu,
+										 activation = tf.nn.leaky_relu,
 										 use_bias = True,
 										 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 										 name = "conv2")
@@ -114,7 +114,7 @@ class DQNetwork:
 							 kernel_size = l3_window,
 							 strides = l3_strides,
 							 padding = l3_padding_type,
-							 activation = tf.nn.relu,
+							 activation = tf.nn.leaky_relu,
 							 use_bias = True,
 							 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 							 name = "conv3")
@@ -133,7 +133,7 @@ class DQNetwork:
 								 kernel_size = l4_window,
 								 strides = l4_strides,
 								 padding = l4_padding_type,
-								 activation = tf.nn.relu,
+								 activation = tf.nn.leaky_relu,
 								 use_bias = True,
 								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 								 name = "conv4")
@@ -155,7 +155,7 @@ class DQNetwork:
 								 kernel_size = l5_window,
 								 strides = l5_strides,
 								 padding = l5_padding_type,
-								 activation = tf.nn.relu,
+								 activation = tf.nn.leaky_relu,
 								 use_bias = True,
 								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 								 name = "conv5")
@@ -176,7 +176,7 @@ class DQNetwork:
 
 			self.fc_1 = tf.layers.dense(inputs = self.flatten,
 								  units = fc_num_units[0],
-								  activation = tf.nn.relu,
+								  activation = tf.nn.leaky_relu,
 								  kernel_initializer=tf.contrib.layers.xavier_initializer(),
 								  kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
 								  name="fc_1")
@@ -192,7 +192,7 @@ class DQNetwork:
 
 			  self.fc_2 = tf.layers.dense(inputs = self.fc_1,
 									units = fc_num_units[1],
-									activation = tf.nn.relu,
+									activation = tf.nn.leaky_relu,
 									kernel_initializer=tf.contrib.layers.xavier_initializer(),
 									kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization),
 									name="fc_2")

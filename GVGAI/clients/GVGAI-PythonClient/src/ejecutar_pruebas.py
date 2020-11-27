@@ -43,15 +43,15 @@ l2_num_filt = [32] # 32
 l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Third conv layer
-l3_num_filt = [32] # 64 
+l3_num_filt = [32] # 32 
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fourth conv layer
-l4_num_filt = [64] # 128
+l4_num_filt = [64] # 64
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fifth conv layer
-l5_num_filt = [64]
+l5_num_filt = [64] # 64
 l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # A single fc layer works better!
@@ -76,7 +76,8 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 8 # 4 # Each model is trained this number of times
+# 16 rep. (3 games) is too much time!
+repetitions_per_model = 15 # 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -270,7 +271,7 @@ try:
 			# <Create the model name using the hyperparameters values>
 
 			if script_execution_mode == "validation":
-				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_conv5-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_val_Leaky-Relu_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_conv5-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
