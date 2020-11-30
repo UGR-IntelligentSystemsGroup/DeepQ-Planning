@@ -13,6 +13,9 @@ import sys
 Mejor arquitectura 3 capas conv. -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10
 [32, 64, 64]
 Un poco peor que la mejor con 4 capas 
+
+LEAKY RELU CREO QUE ME DA ERROR -> NO USARLA (además en BoulderDash
+obtiene más acciones)
 """
 
 # <Execution mode of the script>
@@ -64,7 +67,7 @@ dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['Catapults'] # CAMBIAR LOS JUEGOS Y LAS ITERACIONES!
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [20] # 25 # 20
@@ -76,8 +79,8 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-# 16 rep. (3 games) is too much time!
-repetitions_per_model = 15 # 4 # Each model is trained this number of times
+# Cada noche puedo ejecutar unos 16*2=32 modelos diferentes
+repetitions_per_model = 16 # 4 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -271,7 +274,7 @@ try:
 			# <Create the model name using the hyperparameters values>
 
 			if script_execution_mode == "validation":
-				curr_model_name = "DQN_Pruebas_val_Leaky-Relu_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_conv5-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_conv5-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
 								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
 								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
