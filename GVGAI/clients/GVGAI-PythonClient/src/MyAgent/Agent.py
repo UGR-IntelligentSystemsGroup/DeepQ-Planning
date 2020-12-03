@@ -58,13 +58,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_val_conv1-32,3,1,VALID_conv2-32,3,1,VALID_conv3-32,3,1,VALID_conv4-32,3,1,VALID_conv5-64,3,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10_Catapults_15"
+		self.network_name="DQN_val_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_12"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=95
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=462592
+		self.level_seed=375856
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -89,7 +89,7 @@ class Agent(AbstractPlayer):
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=32
+		self.l4_num_filt=64
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
@@ -99,6 +99,12 @@ class Agent(AbstractPlayer):
 		self.l5_window=[3, 3]
 		self.l5_strides=[1, 1]
 		self.l5_padding_type="VALID"
+
+		# Sixth conv layer
+		self.l6_num_filt=-1
+		self.l6_window=[3, 3]
+		self.l6_strides=[1, 1]
+		self.l6_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
 		self.fc_num_unis=[32, 1]
@@ -185,6 +191,10 @@ class Agent(AbstractPlayer):
 						 l3_padding_type = self.l3_padding_type,
 						 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
 						 l4_padding_type = self.l4_padding_type,
+						 l5_num_filt = self.l5_num_filt, l5_window = self.l5_window, l5_strides = self.l5_strides,
+						 l5_padding_type = self.l5_padding_type,
+						 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
+						 l6_padding_type = self.l6_padding_type,
 						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 						 learning_rate = self.learning_rate)
 
@@ -273,6 +283,10 @@ class Agent(AbstractPlayer):
 					 l3_padding_type = self.l3_padding_type,
 					 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
 					 l4_padding_type = self.l4_padding_type,
+					 l5_num_filt = self.l5_num_filt, l5_window = self.l5_window, l5_strides = self.l5_strides,
+					 l5_padding_type = self.l5_padding_type,
+					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
+				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
 					 learning_rate = self.learning_rate)
 
@@ -291,6 +305,10 @@ class Agent(AbstractPlayer):
 					 l3_padding_type = self.l3_padding_type,
 					 l4_num_filt = self.l4_num_filt, l4_window = self.l4_window, l4_strides = self.l4_strides,
 					 l4_padding_type = self.l4_padding_type,
+					 l5_num_filt = self.l5_num_filt, l5_window = self.l5_window, l5_strides = self.l5_strides,
+					 l5_padding_type = self.l5_padding_type,
+					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
+				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate)
 

@@ -22,6 +22,8 @@ class DQNetwork:
 				 l4_padding_type = "SAME",
 				 l5_num_filt = 2, l5_window = [4,4], l5_strides = [2,2],
 				 l5_padding_type = "SAME",
+				 l6_num_filt = 2, l6_window = [4,4], l6_strides = [2,2],
+				 l6_padding_type = "SAME",
 				 fc_num_units = [16, 1], dropout_prob = 0.5,
 				 l2_regularization=0.0,
 				 learning_rate = 0.005):
@@ -167,10 +169,31 @@ class DQNetwork:
 			else: # Only use four layers if l5_num_filt == -1
 				self.conv5 = self.conv4
 
+			"""
+			Sixth convnet:
+			"""
+			if l6_num_filt != -1:
+				self.conv6 = tf.layers.conv2d(inputs = self.conv5,
+								 filters = l6_num_filt,
+								 kernel_size = l6_window,
+								 strides = l6_strides,
+								 padding = l6_padding_type,
+								 activation = tf.nn.relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv6")
+				
+				# Batch Normalization
+
+				self.conv6 = tf.layers.batch_normalization(self.conv6, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: # Only use five layers if l6_num_filt == -1
+				self.conv6 = self.conv5
+
 
 			# Flatten output of conv layers
 			
-			self.flatten = tf.contrib.layers.flatten(self.conv5)
+			self.flatten = tf.contrib.layers.flatten(self.conv6)
 			
 			# Fully connected layer 1
 
