@@ -1,0 +1,240 @@
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_0-20 | BoulderDash | 0 | 116
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_0-20 | BoulderDash | 0 | 155
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_0-20 | BoulderDash | 0 | 237
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_0-20 | BoulderDash | 0 | 218
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_0-20 | BoulderDash | 0 | 100
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_1-20 | BoulderDash | 0 | 183
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_1-20 | BoulderDash | 0 | 164
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_1-20 | BoulderDash | 1 | 48
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_1-20 | BoulderDash | 0 | 79
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_1-20 | BoulderDash | 0 | 119
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_2-20 | BoulderDash | 0 | 102
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_2-20 | BoulderDash | 0 | 108
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_2-20 | BoulderDash | 0 | 124
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_2-20 | BoulderDash | 0 | 173
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_2-20 | BoulderDash | 0 | 131
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_3-20 | BoulderDash | 0 | 198
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_3-20 | BoulderDash | 0 | 61
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_3-20 | BoulderDash | 0 | 275
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_3-20 | BoulderDash | 0 | 148
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_3-20 | BoulderDash | 1 | 104
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_4-20 | BoulderDash | 0 | 169
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_4-20 | BoulderDash | 0 | 57
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_4-20 | BoulderDash | 0 | 100
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_4-20 | BoulderDash | 0 | 161
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_4-20 | BoulderDash | 0 | 135
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_5-20 | BoulderDash | 1 | 60
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_5-20 | BoulderDash | 1 | 220
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_5-20 | BoulderDash | 0 | 270
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_5-20 | BoulderDash | 0 | 335
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_5-20 | BoulderDash | 0 | 191
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_6-20 | BoulderDash | 1 | 107
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_6-20 | BoulderDash | 0 | 106
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_6-20 | BoulderDash | 0 | 223
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_6-20 | BoulderDash | 0 | 189
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_6-20 | BoulderDash | 0 | 204
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_7-20 | BoulderDash | 0 | 162
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_7-20 | BoulderDash | 3 | 152
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_7-20 | BoulderDash | 0 | 180
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_7-20 | BoulderDash | 0 | 133
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_7-20 | BoulderDash | 0 | 63
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_8-20 | BoulderDash | 0 | 96
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_8-20 | BoulderDash | 0 | 56
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_8-20 | BoulderDash | 0 | 196
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_8-20 | BoulderDash | 1 | 138
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_8-20 | BoulderDash | 0 | 84
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_9-20 | BoulderDash | 0 | 102
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_9-20 | BoulderDash | 0 | 111
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_9-20 | BoulderDash | 0 | 188
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_9-20 | BoulderDash | 0 | 174
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_9-20 | BoulderDash | 0 | 180
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_0-45 | IceAndFire | 12 | 138
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_0-45 | IceAndFire | 13 | 122
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_0-45 | IceAndFire | 9 | 157
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_0-45 | IceAndFire | 11 | 100
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_0-45 | IceAndFire | 30 | 110
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_1-45 | IceAndFire | 1 | 116
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_1-45 | IceAndFire | 6 | 82
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_1-45 | IceAndFire | 6 | 159
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_1-45 | IceAndFire | 14 | 100
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_1-45 | IceAndFire | 9 | 149
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_2-45 | IceAndFire | 9 | 80
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_2-45 | IceAndFire | 15 | 139
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_2-45 | IceAndFire | 2 | 124
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_2-45 | IceAndFire | 4 | 49
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_2-45 | IceAndFire | 10 | 130
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_3-45 | IceAndFire | 1 | 90
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_3-45 | IceAndFire | 2 | 102
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_3-45 | IceAndFire | 19 | 168
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_3-45 | IceAndFire | 3 | 150
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_3-45 | IceAndFire | 22 | 153
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_4-45 | IceAndFire | 3 | 128
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_4-45 | IceAndFire | 1 | 170
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_4-45 | IceAndFire | 18 | 164
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_4-45 | IceAndFire | 5 | 123
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_4-45 | IceAndFire | 5 | 124
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_5-45 | IceAndFire | 1 | 146
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_5-45 | IceAndFire | 1 | 112
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_5-45 | IceAndFire | 7 | 114
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_5-45 | IceAndFire | 9 | 140
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_5-45 | IceAndFire | 9 | 104
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_6-45 | IceAndFire | 11 | 109
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_6-45 | IceAndFire | 6 | 124
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_6-45 | IceAndFire | 2 | 134
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_6-45 | IceAndFire | 2 | 98
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_6-45 | IceAndFire | 13 | 144
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_7-45 | IceAndFire | 18 | 121
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_7-45 | IceAndFire | 15 | 107
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_7-45 | IceAndFire | 6 | 194
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_7-45 | IceAndFire | 6 | 126
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_7-45 | IceAndFire | 2 | 110
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_8-45 | IceAndFire | 25 | 180
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_8-45 | IceAndFire | 18 | 133
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_8-45 | IceAndFire | 10 | 225
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_8-45 | IceAndFire | 3 | 115
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_8-45 | IceAndFire | 4 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_9-45 | IceAndFire | 16 | 205
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_9-45 | IceAndFire | 4 | 126
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_9-45 | IceAndFire | 0 | 206
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_9-45 | IceAndFire | 17 | 109
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_IceAndFire_9-45 | IceAndFire | 7 | 106
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0-95 | Catapults | -1 | 4
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0-95 | Catapults | 12 | 7
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_1-95 | Catapults | 9 | 2
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_1-95 | Catapults | -1 | 10
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_1-95 | Catapults | 9 | 9
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_1-95 | Catapults | -1 | 4
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_1-95 | Catapults | -1 | 3
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_2-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_2-95 | Catapults | -1 | 10
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_2-95 | Catapults | -1 | 3
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_2-95 | Catapults | 8 | 20
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_2-95 | Catapults | 5 | 20
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_3-95 | Catapults | 14 | 20
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_3-95 | Catapults | -1 | 6
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_3-95 | Catapults | -1 | 7
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_3-95 | Catapults | -1 | 12
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_3-95 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_4-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_4-95 | Catapults | -1 | 12
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_4-95 | Catapults | -1 | 4
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_4-95 | Catapults | -1 | 25
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_4-95 | Catapults | -1 | 6
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_5-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_5-95 | Catapults | -1 | 15
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_5-95 | Catapults | -1 | 7
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_5-95 | Catapults | -1 | 12
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_5-95 | Catapults | -1 | 7
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_6-95 | Catapults | -1 | 11
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_6-95 | Catapults | -1 | 10
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_6-95 | Catapults | -1 | 15
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_6-95 | Catapults | -1 | 9
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_6-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_7-95 | Catapults | -1 | 6
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_7-95 | Catapults | -1 | 2
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_7-95 | Catapults | -1 | 12
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_7-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_7-95 | Catapults | -1 | 6
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_8-95 | Catapults | -1 | 9
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_8-95 | Catapults | 24 | 10
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_8-95 | Catapults | -1 | 7
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_8-95 | Catapults | 9 | 9
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_8-95 | Catapults | -1 | 8
+
+-----------------------------------------------------------------------------------
+
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9-95 | Catapults | -1 | 15
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9-95 | Catapults | -1 | 2
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9-95 | Catapults | -1 | 14
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9-95 | Catapults | -1 | 5
+DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9-95 | Catapults | -1 | 10
+
+-----------------------------------------------------------------------------------
+

@@ -18,6 +18,9 @@ Si se ven las gráficas de entrenamiento, se aprecia
 que para BoulderDash tiende a cero pero para Catapults y
 IceAndFire no disminuyen más después de un punto!!! (arquitectura
 con cinco capas)
+
+He comprobado que se guardan bien los samples (el one_hot_matrix es correcto para
+cada estado del juego)
 """
 
 # <Execution mode of the script>
@@ -45,6 +48,8 @@ seed=28912 # 28912 (No cambiar la seed!)
 
 # PROBAR A USAR LEAKY RELU!!
 
+# MIRAR GRÁFICAS DE ENTRENAMIENTO!!
+
 # Architecture
 # First conv layer
 l1_num_filt = [32] # 32
@@ -59,11 +64,11 @@ l3_num_filt = [32] # 32
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fourth conv layer
-l4_num_filt = [32] # 64
+l4_num_filt = [32] # 32
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fifth conv layer
-l5_num_filt = [32] # 64
+l5_num_filt = [64] # 64
 l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Sixth conv layer
@@ -92,7 +97,7 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 13 # 4 # 13 # Each model is trained this number of times
+repetitions_per_model = 10 # 4 # 13 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -308,7 +313,7 @@ try:
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 				"""
 
-				curr_model_name = "DQN_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_BN-SOLO-INPUT_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
 									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
 

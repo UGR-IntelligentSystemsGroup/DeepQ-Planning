@@ -87,7 +87,7 @@ class DQNetwork:
 						
 			# Batch Normalization
 
-			self.conv1 = tf.layers.batch_normalization(self.conv1, axis = 3, momentum=0.99, training=self.is_training)
+			# self.conv1 = tf.layers.batch_normalization(self.conv1, axis = 3, momentum=0.99, training=self.is_training)
 			 
 			"""
 			Second convnet:
@@ -105,7 +105,7 @@ class DQNetwork:
 			
 			# Batch Normalization
 
-			self.conv2 = tf.layers.batch_normalization(self.conv2, axis = 3, momentum=0.99, training=self.is_training)
+			# self.conv2 = tf.layers.batch_normalization(self.conv2, axis = 3, momentum=0.99, training=self.is_training)
 			
 			"""
 			Third convnet:
@@ -123,7 +123,7 @@ class DQNetwork:
 			
 			# Batch Normalization
 
-			self.conv3 = tf.layers.batch_normalization(self.conv3, axis = 3, momentum=0.99, training=self.is_training)
+			# self.conv3 = tf.layers.batch_normalization(self.conv3, axis = 3, momentum=0.99, training=self.is_training)
 
 			"""
 			Fourth convnet:
@@ -142,7 +142,7 @@ class DQNetwork:
 				
 				# Batch Normalization
 
-				self.conv4 = tf.layers.batch_normalization(self.conv4, axis = 3, momentum=0.99, training=self.is_training)
+				# self.conv4 = tf.layers.batch_normalization(self.conv4, axis = 3, momentum=0.99, training=self.is_training)
 			
 			else: # Only use three layers if l4_num_filt == -1
 				self.conv4 = self.conv3
@@ -164,7 +164,7 @@ class DQNetwork:
 				
 				# Batch Normalization
 
-				self.conv5 = tf.layers.batch_normalization(self.conv5, axis = 3, momentum=0.99, training=self.is_training)
+				# self.conv5 = tf.layers.batch_normalization(self.conv5, axis = 3, momentum=0.99, training=self.is_training)
 			
 			else: # Only use four layers if l5_num_filt == -1
 				self.conv5 = self.conv4
@@ -185,7 +185,7 @@ class DQNetwork:
 				
 				# Batch Normalization
 
-				self.conv6 = tf.layers.batch_normalization(self.conv6, axis = 3, momentum=0.99, training=self.is_training)
+				# self.conv6 = tf.layers.batch_normalization(self.conv6, axis = 3, momentum=0.99, training=self.is_training)
 			
 			else: # Only use five layers if l6_num_filt == -1
 				self.conv6 = self.conv5
