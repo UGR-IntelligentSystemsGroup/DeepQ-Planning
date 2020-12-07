@@ -1,2 +1,0 @@
-model_checkpoint_path: "DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9.ckpt-95"
-all_model_checkpoint_paths: "DQN_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_9.ckpt-95"

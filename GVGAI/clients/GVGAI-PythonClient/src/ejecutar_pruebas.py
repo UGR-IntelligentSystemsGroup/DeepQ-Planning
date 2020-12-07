@@ -7,7 +7,6 @@ import glob
 import random
 import sys
 
-# Valor max. de repeticiones por días -> unas 50
 
 """
 Mejor arquitectura 3 capas conv. -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10
@@ -49,6 +48,8 @@ seed=28912 # 28912 (No cambiar la seed!)
 # PROBAR A USAR LEAKY RELU!!
 
 # MIRAR GRÁFICAS DE ENTRENAMIENTO!!
+
+
 
 # Architecture
 # First conv layer
@@ -97,7 +98,13 @@ num_its_BoulderDash = [10000] # 10000
 num_its_IceAndFire = [2500] # 2500
 num_its_Catapults = [2500] # 2500
 
-repetitions_per_model = 10 # 4 # 13 # Each model is trained this number of times
+# Training time:
+# > BoulderDash (10000 it.) -> 13 min
+# > IceAndFire (2500 it.) -> 2 min
+# > Catapults (2500 it.) -> 1 min
+# Around 20 min to train+test one round of the three games -> 3 repetitions_per_model equals one hour of execution
+# 10 hours of execution -> 30 repetitions_per_model
+repetitions_per_model = 30 # 30 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -313,7 +320,7 @@ try:
 								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
 				"""
 
-				curr_model_name = "DQN_BN-SOLO-INPUT_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Leaky-Relu_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
 									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
 
