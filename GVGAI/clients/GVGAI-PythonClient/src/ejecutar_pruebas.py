@@ -20,6 +20,77 @@ con cinco capas)
 
 He comprobado que se guardan bien los samples (el one_hot_matrix es correcto para
 cada estado del juego)
+
+---- Pruebas gráficas entrenamiento
+
+El modelo Full-FC funciona mucho mejor en entrenamiento que usar una CNN!!!!
+
+# Al aumentar el número de niveles de los juegos, aumenta el training error. Parece que al aumentar el número de niveles
+# el modelo DQN no puede memorizar!! -> tengo suficientes samples como para crear un modelo muy complejo!!!
+
+# Cuando aplico dropout, las gráficas de entrenamiento son prácticamente iguales (es bueno porque
+# no empeora el entrenamiento pero ayuda al test!!)
+
+Los resultados en test de los modelos fully-connected son muy malos!!
+Sin embargo, las gráficas de training son muy buenas y el loss converge en los tres juegos.
+BoulderDash -> loss de alrededor de 200 al final
+Catapults y IceAndFire -> loss alrededor de 3000 al final.
+
+----
+
+>>> Comparación gráficas de entrenamiento modelos FC, conv 4 capas y conv 6 capas:
+> BoulderDash: modelo FC -> loss=200 (converge casi perfectamente), 
+               modelos conv (4 y 6 capas) -> loss=1000 (convergen bien, pero peor 
+               que el modelo FC)
+
+> IceAndFire: modelo FC -> loss=4000, conv 4 capas -> loss=30000, 
+              conv 6 capas -> loss=15000
+
+> Catapults: model FC -> loss=3000, conv 4 capas -> loss=40000,
+			 conv 6 capas -> loss=55000
+
+En BoulderDash ambos modelos conv son igual de buenos, en IceAndFire tiene mejor training loss
+el de 6 capas y en Catapults el de 4 capas.
+
+----
+
+>>> Pruebas a usar Batch Normalization SOLO para los inputs:
+> Catapults: El training loss converge más rápido SIN batch normalization (se requieren menos train its.)
+			 El training loss al final del entrenamiento (10000 its.) es el mismo en ambos casos.
+			 Sin BN, el número de iteraciones para Catapults debería ser de 1000 (o incluso 500).
+> IceAndFire: El training loss converge más rápido SIN batch normalization.
+              El Q-target y el Q-value es mucho mayor que con batch normalization!!!!!
+              <<<<<LOS RESULTADOS EN TEST MEJORAN MUCHÍSIMO!!!!!>>>>>>
+> BoulderDash: El training loss CON Batch Normalization es mejor, al contrario que los otros
+               dos juegos: de 1000 de media de training loss al final (con BN) paso a 3000.
+               Los resultados en test empeoran un poco al quitar el batch normalization.
+
+<<No uso Batch Normalization excepto, quizás, para BoulderDash.>>
+
+---- Pruebas de regularización (L2 y dropout) (solo uso BN para los inputs de aquí en adelante):
+
+>>> L2 reg = 0.1
+> BoulderDash: ambas gráficas de entrenamiento son casi idénticas. Los resultados en test
+               son prácticamente idénticos también.
+> IceAndFire: empeora el training loss al usar L2 regularization (se dobla el training loss).
+              Las gráficas de Q-target y Q-value también son diferentes. Los resultados en test
+              empeoran bastante!!!
+> Catapults: las gráficas de entrenamiento son muy parecidas. Empeoran los resultados de test.
+
+<<NO USO REGULARIZACIÓN L2!!!>>
+
+>>> Dropout = 0.1 (solo en las capas convolucionales)
+> BoulderDash: el training loss no varía, pero el Q-target y Q-val sí!! Empeoran los resultados
+               en test!!
+> IceAndFire: el training loss no varía. Empeoran los resultados de test.
+> Catapults: el training loss no varía. Resuelve 3 niveles en test en vez de 2 (creo que es suerte).
+
+Dropout no mejora los resultados en test pero hace que las gráficas de entrenamiento tengan más "ruido".
+<<NO USO DROPOUT>>
+
+
+¡SI LA REGULARIZACIÓN FUNCIONA HACER REFERENCIA AL PAPER "Regularization for Deep Q-Learning"!
+
 """
 
 # <Execution mode of the script>
@@ -39,17 +110,6 @@ seed=28912 # 28912 (No cambiar la seed!)
 # <Model Hyperparameters>
 # This script trains and validates one model per each different combination of
 # these hyperparameters
-
-
-
-# PROBAR A ENCONTRAR UNA ARQUITECTURA QUE SEA CAPAZ DE CONVERGER A 0 SU TRAINING LOSS
-# SOBRE ICEANDFIRE Y CATAPULTS!!!
-
-# PROBAR A USAR LEAKY RELU!!
-
-# MIRAR GRÁFICAS DE ENTRENAMIENTO!!
-
-
 
 # Architecture
 # First conv layer
@@ -94,17 +154,12 @@ datasets_sizes_for_training_IceAndFire = [45] # 50 # 45
 datasets_sizes_for_training_Catapults = [95] # 100 # 95
 
 # Number of iterations for training
-num_its_BoulderDash = [10000] # 10000
-num_its_IceAndFire = [2500] # 2500
+num_its_BoulderDash = [7500] # 10000
+num_its_IceAndFire = [7500] # 2500
 num_its_Catapults = [2500] # 2500
 
-# Training time:
-# > BoulderDash (10000 it.) -> 13 min
-# > IceAndFire (2500 it.) -> 2 min
-# > Catapults (2500 it.) -> 1 min
-# Around 20 min to train+test one round of the three games -> 3 repetitions_per_model equals one hour of execution
-# 10 hours of execution -> 30 repetitions_per_model
-repetitions_per_model = 30 # 30 # Each model is trained this number of times
+# Around 15 rep. per night (three games)
+repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -308,24 +363,15 @@ try:
 
 			if script_execution_mode == "validation":
 				# The name of the model can't be that long!! (it raises an exception on tensorflow)
-				"""
-				curr_model_name = "DQN_Pruebas_val_conv1-{},{},{},{}_conv2-{},{},{},{}_conv3-{},{},{},{}_conv4-{},{},{},{}_conv5-{},{},{},{}_conv6-{},{},{},{}_fc-{}_{}_its-{}_alfa-{}_dropout-{}_batch-{}_tau-{}_{}_{}". \
-								format(curr_l1_num_filt, curr_l1_filter_structure[0][0], curr_l1_filter_structure[1][0], curr_l1_filter_structure[2], \
-								curr_l2_num_filt, curr_l2_filter_structure[0][0], curr_l2_filter_structure[1][0], curr_l2_filter_structure[2], \
-								curr_l3_num_filt, curr_l3_filter_structure[0][0], curr_l3_filter_structure[1][0], curr_l3_filter_structure[2], \
-								curr_l4_num_filt, curr_l4_filter_structure[0][0], curr_l4_filter_structure[1][0], curr_l4_filter_structure[2], \
-								curr_l5_num_filt, curr_l5_filter_structure[0][0], curr_l5_filter_structure[1][0], curr_l5_filter_structure[2], \
-								curr_l6_num_filt, curr_l6_filter_structure[0][0], curr_l6_filter_structure[1][0], curr_l6_filter_structure[2], \
-								curr_fc_num_unis[0], curr_fc_num_unis[1], \
-								curr_num_its, curr_alfa, curr_dropout, curr_batch_size, curr_tau, curr_game, curr_rep)
-				"""
-
-				curr_model_name = "DQN_Leaky-Relu_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas-conv-loss_BN-solo-inputs_Dropout-0.1_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
 								format(curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
 									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
 
+				"""curr_model_name = "DQN_Full-FC-7-layers_Dropout-0.5_its-{}_{}_{}". \
+								format(curr_num_its, curr_game, curr_rep)"""
+
 			else:
-				curr_model_name = "DQN_pruebas_test_mejor_batch-size_batch-{}_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_batch_size, curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_batch-{}_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_batch_size, curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
@@ -518,7 +564,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					

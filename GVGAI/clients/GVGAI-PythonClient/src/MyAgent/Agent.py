@@ -32,7 +32,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,17 +54,17 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Leaky-Relu_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-10000_BoulderDash_27"
+		self.network_name="DQN_Pruebas-conv-loss_BN-solo-inputs_Dropout-0.1_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=20
+		self.dataset_size_for_training=95
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=809536
+		self.level_seed=28912
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -113,7 +113,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=10000
+		self.num_train_its=2500
 		self.batch_size=32
 		
 		# Extra params
@@ -203,7 +203,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=20
+				self.dataset_size_model=95
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -349,27 +349,16 @@ class Agent(AbstractPlayer):
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
-				# Execute one training step
+				# Execute one training step				
 				self.model.train(batch_X, Q_targets)
 				self.tau += 1
 
 				# Update target network every tau training steps
 				if self.tau >= self.max_tau:
-					# <QUITAR>
-					# prev_weights = tf.get_default_graph().get_tensor_by_name('TargetNetwork/conv3/kernel:0').eval(session=self.target_network.sess)
-
-
 					update_ops = self.update_target_network()
 					self.target_network.update_weights(update_ops)
 
 					self.tau = 0
-
-
-					# post_weights = tf.get_default_graph().get_tensor_by_name('TargetNetwork/conv3/kernel:0').eval(session=self.target_network.sess)
-					# <QUITAR>
-					# VEO SI LOS PESOS HAN CAMBIADO
-					# print(">> Comparación pesos antes y después:", np.array_equal(prev_weights, post_weights))
-
 
 				# Save Logs
 				self.model.save_logs(batch_X, Q_targets, curr_it)
