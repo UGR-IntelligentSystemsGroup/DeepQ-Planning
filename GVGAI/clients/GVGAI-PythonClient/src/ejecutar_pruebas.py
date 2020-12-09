@@ -61,6 +61,7 @@ el de 6 capas y en Catapults el de 4 capas.
 > IceAndFire: El training loss converge más rápido SIN batch normalization.
               El Q-target y el Q-value es mucho mayor que con batch normalization!!!!!
               <<<<<LOS RESULTADOS EN TEST MEJORAN MUCHÍSIMO!!!!!>>>>>>
+              Mejor num de train its. sin BN -> 7500
 > BoulderDash: El training loss CON Batch Normalization es mejor, al contrario que los otros
                dos juegos: de 1000 de media de training loss al final (con BN) paso a 3000.
                Los resultados en test empeoran un poco al quitar el batch normalization.
@@ -88,15 +89,21 @@ el de 6 capas y en Catapults el de 4 capas.
 Dropout no mejora los resultados en test pero hace que las gráficas de entrenamiento tengan más "ruido".
 <<NO USO DROPOUT>>
 
+---- Comparo en test a usar 3 vs 4 vs 6 capas conv
 
-¡SI LA REGULARIZACIÓN FUNCIONA HACER REFERENCIA AL PAPER "Regularization for Deep Q-Learning"!
+>>> 3 capas vs 4 capas:
+Las gráficas de entrenamiento de los tres juegos son muy parecidas en ambos casos.
+
+
+
+CAMBIAR DE TEST A VALIDACIÓN!!!!
 
 """
 
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
 # "test" -> trains and tests on the 5 test levels
-script_execution_mode = "validation"
+script_execution_mode = "test"
 
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
@@ -111,6 +118,13 @@ seed=28912 # 28912 (No cambiar la seed!)
 # This script trains and validates one model per each different combination of
 # these hyperparameters
 
+
+
+
+# PROBAR QUE SE EJECUTAN LOS NIVELES DE IGNACIO!
+
+# Hacer pruebas 6 capas
+
 # Architecture
 # First conv layer
 l1_num_filt = [32] # 32
@@ -121,19 +135,19 @@ l2_num_filt = [32] # 32
 l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Third conv layer
-l3_num_filt = [32] # 32 
+l3_num_filt = [64] # 32 
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fourth conv layer
-l4_num_filt = [32] # 32
+l4_num_filt = [64] # 32
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fifth conv layer
-l5_num_filt = [64] # 64
+l5_num_filt = [-1] # 64
 l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Sixth conv layer
-l6_num_filt = [64] # 64
+l6_num_filt = [-1] # 64
 l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # A single fc layer works better!
@@ -144,22 +158,23 @@ tau=[10] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
+use_BN = [False, True] # If True, Batch Normalization is applied after each conv layer
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [20] # 25 # 20
-datasets_sizes_for_training_IceAndFire = [45] # 50 # 45
-datasets_sizes_for_training_Catapults = [95] # 100 # 95
+datasets_sizes_for_training_BoulderDash = [25] # 25 # 20
+datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
+datasets_sizes_for_training_Catapults = [100] # 100 # 95
 
 # Number of iterations for training
-num_its_BoulderDash = [7500] # 10000
+num_its_BoulderDash = [5000] # 10000
 num_its_IceAndFire = [7500] # 2500
 num_its_Catapults = [2500] # 2500
 
-# Around 15 rep. per night (three games)
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+# Around 19 rep. per night (three games)
+repetitions_per_model = 8 # 15 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -190,12 +205,12 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r]
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
  					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
  					for i in l5_num_filt for j in l5_filter_structure for k in l6_num_filt for l in l6_filter_structure \
- 					for m in fc_num_unis for n in alfa for o in dropout for p in batch_size \
-					for q in tau for r in games_to_play]
+ 					for m in fc_num_unis for n in alfa for o in dropout for p in batch_size for q in use_BN \
+					for r in tau for s in games_to_play]
 
 # Add the corresponding dataset sizes for each game
 models_params_prev_2 = []
@@ -263,9 +278,10 @@ try:
 		curr_alfa = curr_model_params[14]
 		curr_dropout = curr_model_params[15]
 		curr_batch_size = curr_model_params[16]
-		curr_tau = curr_model_params[17]
-		curr_game = curr_model_params[18]
-		dataset_size_for_training = curr_model_params[19]
+		curr_use_BN = curr_model_params[17]
+		curr_tau = curr_model_params[18]
+		curr_game = curr_model_params[19]
+		dataset_size_for_training = curr_model_params[20]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -327,6 +343,7 @@ try:
 		agent_file = re.sub(r'self.num_train_its=.*', 'self.num_train_its={}'.format(curr_num_its), agent_file, count=1)
 		agent_file = re.sub(r'self.batch_size=.*', 'self.batch_size={}'.format(curr_batch_size), agent_file, count=1)
 		agent_file = re.sub(r'self.max_tau=.*', 'self.max_tau={}'.format(curr_tau), agent_file, count=1)
+		agent_file = re.sub(r'self.use_BN=.*', 'self.use_BN={}'.format(curr_use_BN), agent_file, count=1)
 
 		# Change other variables
 		agent_file = re.sub(r'self.game_playing=.*', 'self.game_playing="{}"'.format(curr_game), agent_file, count=1)
@@ -371,7 +388,9 @@ try:
 								format(curr_num_its, curr_game, curr_rep)"""
 
 			else:
-				curr_model_name = "DQN_pruebas_test_batch-{}_alfa-{}_its-{}_tau-{}_{}_{}".format(curr_batch_size, curr_alfa, curr_num_its, curr_tau, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_BN-{}_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
+								format(curr_use_BN, curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
+									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
@@ -564,7 +583,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	# subprocess.call("shutdown -t 60", shell=True)
+	subprocess.call("shutdown -t 60", shell=True)
 
 
 					

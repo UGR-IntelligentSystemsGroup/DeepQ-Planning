@@ -58,13 +58,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas-conv-loss_BN-solo-inputs_Dropout-0.1_val_c1-32_c2-32_c3-32_c4-32_c5-64_c6-64_fc-32_1_its-2500_Catapults_0"
+		self.network_name="DQN_pruebas_test_BN-True_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-2500_Catapults_7"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=95
+		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=28912
+		self.level_seed=231296
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -83,25 +83,25 @@ class Agent(AbstractPlayer):
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
-		self.l3_num_filt=32
+		self.l3_num_filt=64
 		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=32
+		self.l4_num_filt=64
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
 
 		# Fifth conv layer
-		self.l5_num_filt=64
+		self.l5_num_filt=-1
 		self.l5_window=[3, 3]
 		self.l5_strides=[1, 1]
 		self.l5_padding_type="VALID"
 
 		# Sixth conv layer
-		self.l6_num_filt=64
+		self.l6_num_filt=-1
 		self.l6_window=[3, 3]
 		self.l6_strides=[1, 1]
 		self.l6_padding_type="VALID"
@@ -115,6 +115,7 @@ class Agent(AbstractPlayer):
 		self.dropout_prob=0.0
 		self.num_train_its=2500
 		self.batch_size=32
+		self.use_BN=True
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
@@ -196,14 +197,15 @@ class Agent(AbstractPlayer):
 						 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 						 l6_padding_type = self.l6_padding_type,
 						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
-						 learning_rate = self.learning_rate)
+						 learning_rate = self.learning_rate,
+						 use_BN=self.use_BN)
 
 				# Name of the saved model file to load (without the number of training steps part)
 				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=95
+				self.dataset_size_model=100
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -288,7 +290,8 @@ class Agent(AbstractPlayer):
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
-					 learning_rate = self.learning_rate)
+					 learning_rate = self.learning_rate,
+					 use_BN=self.use_BN)
 
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
@@ -310,7 +313,8 @@ class Agent(AbstractPlayer):
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
-					 learning_rate = self.learning_rate)
+					 learning_rate = self.learning_rate,
+					 use_BN=self.use_BN)
 
 			# Initialize target network's weights with those of the DQNetwork
 			update_ops = self.update_target_network()
