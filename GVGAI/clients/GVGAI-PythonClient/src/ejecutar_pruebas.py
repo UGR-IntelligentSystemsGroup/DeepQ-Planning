@@ -123,7 +123,25 @@ seed=28912 # 28912 (No cambiar la seed!)
 
 # PROBAR QUE SE EJECUTAN LOS NIVELES DE IGNACIO!
 
-# Hacer pruebas 6 capas
+# PROBAR LA ARQUITECTURA CON MAX POOLING!!!
+
+# Probar a aumentar el tamaño de filtro a 4x4 en la tercera capa
+
+# PROBAR A APLICAR PADDING PARA QUE TODOS LOS JUEGOS TENGAN LA MISMA
+# DIMENSIÓN!!!
+
+# Probar a disminuir el valor de la penalización cuando se elige un
+# subobjetivo no alcanzable o muere (1000)
+
+# QUIZÁS TENGA QUE AÑADIR AL ONE-HOT-MATRIX EL NÚMERO DE GEMAS,
+# MONEDAS Y BOTAS QUE HA COGIDO EL AGENTE!!!
+
+
+""" <<<IMPORTANTE>>>
+CUANDO IGNACIO ME DE LOS NUEVOS NIVELES Y TENGA QUE VOLVER A CREAR EL DATASET,
+AÑADIR AL ONE-HOT MATRIX LA INFORMACIÓN ADICIONAL SOBRE LOS RECURSOS
+OBTENIDOS POR EL AGENTE!
+"""
 
 # Architecture
 # First conv layer
@@ -158,7 +176,8 @@ tau=[10] # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
-use_BN = [False, True] # If True, Batch Normalization is applied after each conv layer
+use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
+                 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
@@ -169,12 +188,13 @@ datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
 datasets_sizes_for_training_Catapults = [100] # 100 # 95
 
 # Number of iterations for training
-num_its_BoulderDash = [5000] # 10000
-num_its_IceAndFire = [7500] # 2500
-num_its_Catapults = [2500] # 2500
+num_its_BoulderDash = [5000] # 5000 # 10000
+num_its_IceAndFire = [7500] # 7500 # 2500
+num_its_Catapults = [2500] # 2500 # 2500
 
 # Around 19 rep. per night (three games)
-repetitions_per_model = 8 # 15 # Each model is trained this number of times
+ini_rep_model = 3 # Index of the first repetition (0 by default)
+repetitions_per_model = 3 # 15 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -372,7 +392,7 @@ try:
 
 		# <Repeat each execution (train + val) the number of times given by "repetitions_per_model">
 		# If the goal selection mode is random, skip the training part
-		for curr_rep in range(repetitions_per_model):
+		for curr_rep in range(ini_rep_model, ini_rep_model+repetitions_per_model):
 			# <Calculate the seed for the current execution>
 			curr_seed = seed*(curr_rep+1) % 1000000
 
@@ -388,9 +408,8 @@ try:
 								format(curr_num_its, curr_game, curr_rep)"""
 
 			else:
-				curr_model_name = "DQN_pruebas_test_BN-{}_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
-								format(curr_use_BN, curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
-									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_tam_filtros_5_4_3_3_its-{}_{}_{}". \
+								format(curr_num_its, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
@@ -583,7 +602,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					

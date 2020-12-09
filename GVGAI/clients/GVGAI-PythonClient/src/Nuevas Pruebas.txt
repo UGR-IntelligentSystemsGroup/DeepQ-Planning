@@ -34360,3 +34360,513 @@ de BoulderDash y IceAndFire. En Catapults, el training loss aumenta al añadir B
 > Catapults: ambos tienen el mismo success rate, aunque se cometen menos errores SIN BN.
 
 <<< Uso BN solo con BoulderDash!!!! >>>
+
+------------------------------------------------------------------------------
+Pruebas test 4vs5vs6 capas conv - 3 repeticiones 
+------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 2 | 130
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 2 | 140
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 5 | 73
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 143
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 125
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 4 | 113
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 5 | 137
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 2 | 80
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 1 | 77
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 84
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 110
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 83
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 195
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 99
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 123
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 161
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 115
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 9 | 135
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 3 | 92
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 3 | 143
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 123
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 22 | 135
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 11 | 96
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 5 | 166
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 153
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 113
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 12 | 99
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 2 | 104
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 4
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 9
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 20
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 9
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 11
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 5
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 122
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 6 | 109
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 74
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 116
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 65
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 2 | 181
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 146
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 79
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 110
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 128
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 3 | 155
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 7 | 126
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 69
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 143
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 136
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 153
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 14 | 99
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 8 | 104
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 121
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 13 | 109
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 2 | 100
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 103
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 4 | 113
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 9 | 135
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 148
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire_2-50 | IceAndFire | 3 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 26
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 4
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 7
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | 10 | 22
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_0-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 7
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_1-100 | Catapults | 15 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 20
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 4
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 25
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | 9 | 22
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults_2-100 | Catapults | -1 | 20
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- BoulderDash ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-5000_BoulderDash - lvs=25
+Average num errors per level:  [1.6666666666666667, 4.333333333333333, 0.0, 0.0, 0.0]
+Average num actions per level:  [152.66666666666666, 127.0, 74.0, 123.0, 109.66666666666667]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_BN-True_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-5000_BoulderDash - lvs=25
+Average num errors per level:  [1.5, 0.75, 1.625, 0.5, 0.75]
+Average num actions per level:  [117.5, 127.0, 98.625, 99.875, 99.25]
+
+--- BoulderDash ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-5000_BoulderDash - lvs=25
+Average num errors per level:  [2.3333333333333335, 2.6666666666666665, 2.3333333333333335, 0.3333333333333333, 0.3333333333333333]
+Average num actions per level:  [117.66666666666667, 120.0, 116.0, 106.33333333333333, 110.66666666666667]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-7500_IceAndFire - lvs=50
+Average num errors per level:  [0.0, 1.3333333333333333, 12.0, 3.3333333333333335, 1.0]
+Average num actions per level:  [125.66666666666667, 102.33333333333333, 114.33333333333333, 117.33333333333333, 180.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_BN-False_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-7500_IceAndFire - lvs=50
+Average num errors per level:  [0.5, 0.0, 10.75, 7.25, 1.875]
+Average num actions per level:  [126.25, 103.5, 110.25, 99.0, 126.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-7500_IceAndFire - lvs=50
+Average num errors per level:  [1.0, 0.0, 14.333333333333334, 5.333333333333333, 2.0]
+Average num actions per level:  [152.33333333333334, 117.0, 123.0, 97.33333333333333, 139.33333333333334]
+
+--- Catapults ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4--1_c5--1_c6--1_fc-32_1_its-2500_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 30.0, 10.0]
+Average num errors per completed level:  [-1, -1, -1, 11.0, 14.0]
+Average num actions per completed level:  [-1, -1, -1, 22.0, 15.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-2500_Catapults - lvs=100
+Success rate per level [10.0, 0.0, 0.0, 10.0, 0.0]
+Average num errors per completed level:  [7.0, -1, -1, 7.0, -1]
+Average num actions per completed level:  [21.0, -1, -1, 22.0, -1]
+
+--- Catapults ---
+
+DQN_pruebas_test_num_capas_conv_c1-32_c2-32_c3-32_c4-64_c5-64_c6--1_fc-32_1_its-2500_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 0.0, 0.0]
+Average num errors per completed level:  [-1, -1, -1, -1, -1]
+Average num actions per completed level:  [-1, -1, -1, -1, -1]
+
+>> Resultados en entrenamiento:
+> BoulderDash: 3 capas -> loss=2500, 4 capas -> loss=2500, 5 capas -> loss=2500 
+> IceAndFire: 3 capas -> loss=115000, 4 capas -> loss=100000, 5 capas -> 110000. <<Tanto con 4 como 5 capas, en una ejecución (de entre todas las repeticiones) el loss converge a un valor mucho menor (30000) y los Q-values y Q-targets son mayores!!!>>
+> Catapults: 3 capas -> loss=58000, 4 capas -> loss=55000, 5 capas -> loss=50000.
+
+>> Resultados en test:
+> BoulderDash: mejor arquitectura = 4 capas (por acciones y errores)
+> IceAndFire: mejor arquitectura = 4 capas (por acciones y errores)
+> Catapults: mejor arquitectura = 3 capas (obtiene un success rate de 40). Con 4 capas obtiene un success rate de 20. En ambos casos los resultados son muy malos!!!!
+
+<<<Elijo usar 4 capas convolucionales>>>
+
+-------------------------------------------------------------------------------------------------------
+Pruebas test Concat vs No Concat - 3 reps.
+-------------------------------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_0-25 | BoulderDash | 5 | 131
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_0-25 | BoulderDash | 7 | 157
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_0-25 | BoulderDash | 0 | 156
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_0-25 | BoulderDash | 2 | 85
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_0-25 | BoulderDash | 0 | 127
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_1-25 | BoulderDash | 1 | 147
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_1-25 | BoulderDash | 0 | 68
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_1-25 | BoulderDash | 3 | 78
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_1-25 | BoulderDash | 0 | 229
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_1-25 | BoulderDash | 0 | 253
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_2-25 | BoulderDash | 0 | 177
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_2-25 | BoulderDash | 0 | 104
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_2-25 | BoulderDash | 0 | 111
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_2-25 | BoulderDash | 0 | 154
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash_2-25 | BoulderDash | 0 | 163
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_0-50 | IceAndFire | 0 | 149
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_0-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_0-50 | IceAndFire | 11 | 99
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_0-50 | IceAndFire | 10 | 106
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_0-50 | IceAndFire | 2 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_1-50 | IceAndFire | 0 | 151
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_1-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_1-50 | IceAndFire | 21 | 135
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_1-50 | IceAndFire | 4 | 96
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_1-50 | IceAndFire | 2 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_2-50 | IceAndFire | 0 | 101
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_2-50 | IceAndFire | 0 | 97
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_2-50 | IceAndFire | 9 | 117
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_2-50 | IceAndFire | 6 | 104
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire_2-50 | IceAndFire | 1 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_0-100 | Catapults | -1 | 4
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_0-100 | Catapults | -1 | 25
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_0-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_1-100 | Catapults | 0 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_2-100 | Catapults | -1 | 4
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_2-100 | Catapults | -1 | 22
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults_2-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis (concat vs no concat):
+
+--- BoulderDash ---
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_BoulderDash - lvs=25
+Average num errors per level:  [2.0, 2.3333333333333335, 1.0, 0.6666666666666666, 0.0]
+Average num actions per level:  [151.66666666666666, 109.66666666666667, 115.0, 156.0, 181.0]
+
+--- IceAndFire ---
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_IceAndFire - lvs=50
+Average num errors per level:  [0.0, 0.0, 13.666666666666666, 6.666666666666667, 1.6666666666666667]
+Average num actions per level:  [133.66666666666666, 97.0, 117.0, 102.0, 126.0]
+
+--- Catapults ---
+
+DQN_pruebas_test_Concat_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-10000_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 0.0, 33.33333333333333]
+Average num errors per completed level:  [-1, -1, -1, -1, 0.0]
+Average num actions per completed level:  [-1, -1, -1, -1, 15.0]
+
+>> Train:
+> BoulderDash: el loss pasa de 2500 a 600 al añadir la conexión densa. 
+> IceAndFire: el loss pasa de 100000 a 80000 al añadir la conexión densa. 
+> Catapults: el loss pasa de 55000 a 52000 al añadir la conexión densa. 
+
+>> Test:
+> BoulderDash: aumentan las acciones bastante.
+> IceAndFire: los resultados son prácticamente iguales, aunque un poco peores.
+> Catapults: el success rate pasa de 20 a 33 y disminuyen mucho los errores (haría falta más pruebas para ver qué modelo es mejor.)
+
+<<Por ahora no añado la conexión densa>>
+
+-------------------------------------------------------------------------------------
+Pruebas test tamaño filtros capas conv (padding VALID) -> [5,4,3,3] - 3 rep.
+-------------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 102
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 195
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 144
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 143
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 121
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_1-25 | BoulderDash | 1 | 87
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 197
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_1-25 | BoulderDash | 3 | 78
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 153
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 158
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 121
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 113
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 116
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 87
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 85
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 145
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 117
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_0-50 | IceAndFire | 6 | 135
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_0-50 | IceAndFire | 8 | 104
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_0-50 | IceAndFire | 1 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 141
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 105
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_1-50 | IceAndFire | 9 | 135
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_1-50 | IceAndFire | 5 | 104
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 147
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 97
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_2-50 | IceAndFire | 10 | 89
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_2-50 | IceAndFire | 4 | 112
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_0-100 | Catapults | -1 | 4
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_0-100 | Catapults | 2 | 15
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_1-100 | Catapults | -1 | 16
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_1-100 | Catapults | -1 | 9
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_1-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_2-100 | Catapults | -1 | 20
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_2-100 | Catapults | -1 | 5
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_2-100 | Catapults | -1 | 25
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_2-100 | Catapults | -1 | 9
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_2-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_3-25 | BoulderDash | 1 | 115
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 184
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 175
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 79
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 107
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 102
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 112
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 151
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_4-25 | BoulderDash | 3 | 86
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 125
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_5-25 | BoulderDash | 6 | 109
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 97
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 81
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 123
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 143
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_3-50 | IceAndFire | 3 | 139
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_3-50 | IceAndFire | 0 | 103
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_3-50 | IceAndFire | 7 | 89
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_3-50 | IceAndFire | 7 | 104
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_3-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_4-50 | IceAndFire | 0 | 109
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_4-50 | IceAndFire | 0 | 97
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_4-50 | IceAndFire | 6 | 135
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_4-50 | IceAndFire | 2 | 104
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_4-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_5-50 | IceAndFire | 0 | 131
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_5-50 | IceAndFire | 0 | 107
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_5-50 | IceAndFire | 7 | 135
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_5-50 | IceAndFire | 6 | 104
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire_5-50 | IceAndFire | 0 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_3-100 | Catapults | -1 | 20
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_3-100 | Catapults | -1 | 4
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_3-100 | Catapults | -1 | 22
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_3-100 | Catapults | -1 | 9
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_3-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_4-100 | Catapults | -1 | 26
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_4-100 | Catapults | -1 | 4
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_4-100 | Catapults | -1 | 22
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_4-100 | Catapults | -1 | 9
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_4-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5-100 | Catapults | -1 | 20
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5-100 | Catapults | -1 | 5
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5-100 | Catapults | -1 | 22
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5-100 | Catapults | -1 | 9
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- BoulderDash ---
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-5000_BoulderDash - lvs=25
+Average num errors per level:  [1.3333333333333333, 0.16666666666666666, 0.5, 0.5, 0.0]
+Average num actions per level:  [106.0, 149.66666666666666, 124.16666666666667, 111.83333333333333, 123.16666666666667]
+
+--- IceAndFire ---
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-7500_IceAndFire - lvs=50
+Average num errors per level:  [0.5, 0.0, 7.5, 5.333333333333333, 0.16666666666666666]
+Average num actions per level:  [135.33333333333334, 104.33333333333333, 119.66666666666667, 105.33333333333333, 159.33333333333334]
+
+--- Catapults ---
+
+DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 0.0, 16.666666666666664]
+Average num errors per completed level:  [-1, -1, -1, -1, 2.0]
+Average num actions per completed level:  [-1, -1, -1, -1, 15.0]
+
+
+>> Train:
+> BoulderDash: el loss pasa de 2500 a 2000.
+> IceAndFire: el loss pasa de 100000 a 40000.
+> Catapults: el loss pasa de 55000 a 65000.
+
+>> Test:
+> BoulderDash: las acciones empeoran un poco.
+> IceAndFire: las acciones empeoran.
+> Catapults: los resultados son parecidos.
+
+<<Solo uso filtros 3x3!!!>>

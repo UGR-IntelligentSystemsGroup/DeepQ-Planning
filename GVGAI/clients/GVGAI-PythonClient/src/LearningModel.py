@@ -26,7 +26,7 @@ class DQNetwork:
 				 l6_padding_type = "SAME",
 				 fc_num_units = [16, 1], dropout_prob = 0.5,
 				 learning_rate = 0.005,
-				 use_BN = True):
+				 use_BN = True, game_playing="BoulderDash"):
 
 		self.variable_scope = name
 
@@ -61,6 +61,9 @@ class DQNetwork:
 
 			# --- Architecture ---
 
+			# If the game is BoulderDash, always use Batch Normalization
+			if game_playing == "BoulderDash":
+				use_BN = True
 
 			"""
 			Batch Normalization of inputs

@@ -58,13 +58,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_test_BN-True_c1-32_c2-32_c3-64_c4-64_c5--1_c6--1_fc-32_1_its-2500_Catapults_7"
+		self.network_name="DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=231296
+		self.level_seed=173472
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -72,13 +72,13 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[3, 3]
+		self.l1_window=[5, 5]
 		self.l1_strides=[1, 1]
 		self.l1_padding_type="VALID"
 
 		# Second conv layer
 		self.l2_num_filt=32
-		self.l2_window=[3, 3]
+		self.l2_window=[4, 4]
 		self.l2_strides=[1, 1]
 		self.l2_padding_type="VALID"
 
@@ -115,7 +115,7 @@ class Agent(AbstractPlayer):
 		self.dropout_prob=0.0
 		self.num_train_its=2500
 		self.batch_size=32
-		self.use_BN=True
+		self.use_BN=False
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
@@ -198,7 +198,7 @@ class Agent(AbstractPlayer):
 						 l6_padding_type = self.l6_padding_type,
 						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 						 learning_rate = self.learning_rate,
-						 use_BN=self.use_BN)
+						 use_BN=self.use_BN, game_playing=self.game_playing)
 
 				# Name of the saved model file to load (without the number of training steps part)
 				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
@@ -291,7 +291,7 @@ class Agent(AbstractPlayer):
 				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
 					 learning_rate = self.learning_rate,
-					 use_BN=self.use_BN)
+					 use_BN=self.use_BN, game_playing=self.game_playing)
 
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
@@ -314,7 +314,7 @@ class Agent(AbstractPlayer):
 				     l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate,
-					 use_BN=self.use_BN)
+					 use_BN=self.use_BN, game_playing=self.game_playing)
 
 			# Initialize target network's weights with those of the DQNetwork
 			update_ops = self.update_target_network()
