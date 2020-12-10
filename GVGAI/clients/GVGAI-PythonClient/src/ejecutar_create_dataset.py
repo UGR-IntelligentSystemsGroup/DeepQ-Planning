@@ -1,6 +1,4 @@
 # Executes Agent.py sucesively in "create_dataset" mode to create the datasets for all three games.
-# Preconditions: Agent.py must be already in "create_dataset" mode and the training time set in CompetitionParameters.py must
-# be correct.
 
 import re
 import subprocess
@@ -29,11 +27,9 @@ training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults
 
 # Other variables
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['Catapults']
+games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
-
-id_dataset_ini = 0 # The first dataset created for each game will start by this index
 
 try:
 	for current_game in games_to_play:
@@ -61,12 +57,28 @@ try:
 		with open('MyAgent/Agent.py', 'r') as file:
 			agent_file = file.read()
 
+		# Change execution mode
+		agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="create_dataset"', agent_file, count=1)
+
 		# Set game_playing
 		agent_file = re.sub(r'self.game_playing=.+', "self.game_playing='{}'".format(game_playing), agent_file, count=1)
 
 		# Save Agent.py
 		with open('MyAgent/Agent.py', 'w') as file:
 			file.write(agent_file)
+
+		# <Change CompetitionParameters.py>
+
+		# Load file in memory
+		with open('utils/CompetitionParameters.py', 'r') as file:
+			comp_param_file = file.read()
+
+		# Change learning time to training time
+		comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=100*60*MILLIS_IN_MIN", comp_param_file, count=1)
+
+		# Save file
+		with open('utils/CompetitionParameters.py', 'w') as file:
+			file.write(comp_param_file)
 
 		# Load oneClickRunFromPythonClient.sh
 		with open('oneclickRunFromPythonClient.sh', 'r') as file:
@@ -128,5 +140,5 @@ finally:
 	print(">> All datasets have been created")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 

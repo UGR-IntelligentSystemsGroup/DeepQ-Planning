@@ -600,7 +600,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					

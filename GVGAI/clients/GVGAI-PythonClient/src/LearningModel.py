@@ -44,6 +44,9 @@ class DQNetwork:
 
 			self.X = tf.placeholder(tf.float32, X_shape, name="X") # type tf.float32 is needed for the rest of operations
 
+			# Batch of agent resources
+			self.Agent_res = tf.placeholder(tf.float32, [None, 3], name="Agent_res")
+
 			# Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s, R(s,a) : plan length from state s to subgoal a)
 			self.Q_target = tf.placeholder(tf.float32, [None, 1], name="Q_target")
 			
@@ -197,8 +200,10 @@ class DQNetwork:
 
 
 			# Flatten output of conv layers
-			
 			self.flatten = tf.contrib.layers.flatten(self.conv6)
+
+			# Concatenate agent resources
+			self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
 			
 			# Fully connected layer 1
 
@@ -290,14 +295,19 @@ class DQNetwork:
 
 	# Predicts the associated y-value (plan length) for x (a (subgoal, game state) pair one-hot encoded)
 	# Dropout is not activated
-	def predict(self, x):
+	def predict(self, x, agent_res):
 		# Shape of a one-element batch
 		x_shape = [1]
 		x_shape.extend(self.sample_size) # e.g.: [1, 13, 26, 9]
 
 		# Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
 		x_resh = np.reshape(x, x_shape)
-		data_dict = {self.X : x_resh, self.is_training : False, self.dropout_placeholder : 0.0}
+
+		# Reshape the list with the agent resources too
+		agent_res_resh = np.reshape(agent_res, [1, 3])
+
+		data_dict = {self.X : x_resh, self.Agent_res : agent_res_resh,
+		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
 
@@ -305,8 +315,9 @@ class DQNetwork:
 
 	# Predicts the associated y-value (plan length) for a batch of x ((subgoal, game state) pairs one-hot encoded)
 	# Dropout is not activated
-	def predict_batch(self, x):
-		data_dict = {self.X : x, self.is_training : False, self.dropout_placeholder : 0.0}
+	def predict_batch(self, x, agent_res):
+		data_dict = {self.X : x, self.Agent_res : agent_res,
+		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
 
@@ -314,17 +325,19 @@ class DQNetwork:
 
 	# Execute num_it training steps using X, Y (Q_targets) as the current batches. They must have the same number of elements
 	# Dropout is activated
-	def train(self, X, Y, num_it = 1):
-		data_dict = {self.X : X, self.Q_target : Y, self.is_training : True, self.dropout_placeholder : self.dropout_prob}
+	def train(self, X, Agent_res, Y, num_it = 1):
+		data_dict = {self.X : X, self.Agent_res : Agent_res,
+		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
 		for it in range(num_it):
 			self.sess.run(self.train_op, feed_dict=data_dict)
 
 	# Calculate Training Loss and store it as a log
 	# Dropout is not activated
-	def save_logs(self, X, Y, it):
+	def save_logs(self, X, Agent_res, Y, it):
 		# Training Loss
-		data_dict_train = {self.X : X, self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
+		data_dict_train = {self.X : X, self.Agent_res : Agent_res,
+		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
 		train_loss_log, Q_val_log, Q_target_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
 		 self.Q_target_sum], feed_dict=data_dict_train)
