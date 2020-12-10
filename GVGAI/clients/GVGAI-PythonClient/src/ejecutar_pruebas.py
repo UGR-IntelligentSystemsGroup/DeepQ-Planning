@@ -123,10 +123,6 @@ seed=28912 # 28912 (No cambiar la seed!)
 
 # PROBAR QUE SE EJECUTAN LOS NIVELES DE IGNACIO!
 
-# PROBAR LA ARQUITECTURA CON MAX POOLING!!!
-
-# Probar a aumentar el tamaño de filtro a 4x4 en la tercera capa
-
 # PROBAR A APLICAR PADDING PARA QUE TODOS LOS JUEGOS TENGAN LA MISMA
 # DIMENSIÓN!!!
 
@@ -143,22 +139,24 @@ AÑADIR AL ONE-HOT MATRIX LA INFORMACIÓN ADICIONAL SOBRE LOS RECURSOS
 OBTENIDOS POR EL AGENTE!
 """
 
+# CAMBIAR LEARNING MODEL EN AGENT.PY Y SAME A VALID!!!
+
 # Architecture
 # First conv layer
 l1_num_filt = [32] # 32
-l1_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
+l1_filter_structure = [ [[3,3],[1,1],"SAME"] ] # [[4,4],[1,1],"VALID"] 
 
 # Second conv layer
 l2_num_filt = [32] # 32
-l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
+l2_filter_structure = [ [[3,3],[1,1],"SAME"] ] # [[4,4],[1,1],"VALID"] 
 
 # Third conv layer
 l3_num_filt = [64] # 32 
-l3_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
+l3_filter_structure = [ [[3,3],[1,1],"SAME"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fourth conv layer
 l4_num_filt = [64] # 32
-l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] # [[4,4],[1,1],"VALID"] 
+l4_filter_structure = [ [[3,3],[1,1],"SAME"] ] # [[4,4],[1,1],"VALID"] 
 
 # Fifth conv layer
 l5_num_filt = [-1] # 64
@@ -193,8 +191,8 @@ num_its_IceAndFire = [7500] # 7500 # 2500
 num_its_Catapults = [2500] # 2500 # 2500
 
 # Around 19 rep. per night (three games)
-ini_rep_model = 3 # Index of the first repetition (0 by default)
-repetitions_per_model = 3 # 15 # Each model is trained this number of times
+ini_rep_model = 0 # Index of the first repetition (0 by default)
+repetitions_per_model = 18 # 15 # Each model is trained this number of times
 
 # <Script variables>
 
@@ -408,7 +406,7 @@ try:
 								format(curr_num_its, curr_game, curr_rep)"""
 
 			else:
-				curr_model_name = "DQN_pruebas_tam_filtros_5_4_3_3_its-{}_{}_{}". \
+				curr_model_name = "DQN_pruebas_max_pooling_y_padding_SAME_its-{}_{}_{}". \
 								format(curr_num_its, curr_game, curr_rep)
 				# curr_model_name = "DQN_prueba_overfitting_train_y_test-{}".format(curr_game)
 
@@ -602,7 +600,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	# subprocess.call("shutdown -t 60", shell=True)
+	subprocess.call("shutdown -t 60", shell=True)
 
 
 					

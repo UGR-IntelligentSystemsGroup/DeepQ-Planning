@@ -58,13 +58,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_tam_filtros_5_4_3_3_its-2500_Catapults_5"
+		self.network_name="DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=173472
+		self.level_seed=520416
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -72,27 +72,27 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[5, 5]
+		self.l1_window=[3, 3]
 		self.l1_strides=[1, 1]
-		self.l1_padding_type="VALID"
+		self.l1_padding_type="SAME"
 
 		# Second conv layer
 		self.l2_num_filt=32
-		self.l2_window=[4, 4]
+		self.l2_window=[3, 3]
 		self.l2_strides=[1, 1]
-		self.l2_padding_type="VALID"
+		self.l2_padding_type="SAME"
 
 		# Third conv layer
 		self.l3_num_filt=64
 		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
-		self.l3_padding_type="VALID"
+		self.l3_padding_type="SAME"
 
 		# Fourth conv layer
 		self.l4_num_filt=64
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
-		self.l4_padding_type="VALID"
+		self.l4_padding_type="SAME"
 
 		# Fifth conv layer
 		self.l5_num_filt=-1
@@ -288,7 +288,7 @@ class Agent(AbstractPlayer):
 					 l5_num_filt = self.l5_num_filt, l5_window = self.l5_window, l5_strides = self.l5_strides,
 					 l5_padding_type = self.l5_padding_type,
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
-				     l6_padding_type = self.l6_padding_type,
+					 l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
@@ -311,7 +311,7 @@ class Agent(AbstractPlayer):
 					 l5_num_filt = self.l5_num_filt, l5_window = self.l5_window, l5_strides = self.l5_strides,
 					 l5_padding_type = self.l5_padding_type,
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
-				     l6_padding_type = self.l6_padding_type,
+					 l6_padding_type = self.l6_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
@@ -557,6 +557,69 @@ class Agent(AbstractPlayer):
 					# Create the new, incomplete mem_sample
 					self.mem_sample = [one_hot_grid, plan_length]
 
+
+	def get_agent_resources(self, sso):
+		"""
+		Returns a list with three elements, that contains the resources the agent has in
+		the state given by sso. These resources depend on the game being played.
+		"""
+
+		# BoulderDash -> [gems]
+		if self.game_playing == 'BoulderDash':
+			keys = sso.avatarResources.keys()
+
+			if len(keys) > 0:
+				gem_key = list(sso.avatarResources)[0]
+				num_gems = sso.avatarResources[gem_key]
+			else:
+				num_gems = 0
+
+			agent_resources = [num_gems, 0, 0]
+
+		# IceAndFire -> [coins, fire_boots, ice_boots]
+		elif self.game_playing == "IceAndFire":
+			# Get the number of coins left on the map
+			coin_itype = 10 # Itype of coins
+
+			coins_on_the_map = 0
+
+			obs = sso.observationGrid
+			X_MAX = sso.observationGridNum
+			Y_MAX = sso.observationGridMaxRow
+
+			for y in range(Y_MAX):
+				for x in range(X_MAX):
+					observation = sso.observationGrid[x][y][0]
+
+					if observation is not None:
+						if observation.itype == coin_itype:
+							coins_on_the_map += 1
+
+			# Each level always has 10 coins at the start
+			num_coins_agent = 10 - coins_on_the_map
+
+			# Get the boots the agent has
+			keys = sso.avatarResources.keys()
+			ice_boot_key = '8'  # Keys of each boot in the avatarResources dictionary
+			fire_boot_key = '9'                     
+
+			ice_boots_agent = 0
+			fire_boots_agent = 0
+			# Check if the agent has at least one boot  
+			if len(keys) > 0:
+				if ice_boot_key in keys: # The agent has ice boots
+					ice_boots_agent = 1
+				if fire_boot_key in keys: # The agent has fire boots
+					fire_boots_agent = 1
+			
+			agent_resources = [num_coins_agent, fire_boots_agent, ice_boots_agent]
+
+		# Catapults -> no resources
+		else:
+			agent_resources = [0,0,0]
+
+		return agent_resources
+	
 
 	def get_subgoals_positions(self, sso):
 		"""

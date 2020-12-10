@@ -34870,3 +34870,472 @@ Average num actions per completed level:  [-1, -1, -1, -1, 15.0]
 > Catapults: los resultados son parecidos.
 
 <<Solo uso filtros 3x3!!!>>
+
+--------------------------------------------------------------------------------------
+Pruebas max pooling y padding SAME - 18 rep.
+--------------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 167
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 122
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 138
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 172
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0-25 | BoulderDash | 0 | 182
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_1-25 | BoulderDash | 3 | 150
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_1-25 | BoulderDash | 1 | 98
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_1-25 | BoulderDash | 4 | 110
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 186
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_1-25 | BoulderDash | 0 | 106
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 332
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 253
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 95
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_2-25 | BoulderDash | 1 | 105
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_2-25 | BoulderDash | 0 | 234
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_3-25 | BoulderDash | 2 | 125
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 129
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 221
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 171
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_3-25 | BoulderDash | 0 | 218
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_4-25 | BoulderDash | 1 | 231
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_4-25 | BoulderDash | 1 | 128
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 121
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_4-25 | BoulderDash | 0 | 137
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 234
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 176
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 118
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_5-25 | BoulderDash | 2 | 100
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_5-25 | BoulderDash | 0 | 258
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_6-25 | BoulderDash | 0 | 136
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_6-25 | BoulderDash | 0 | 243
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_6-25 | BoulderDash | 0 | 176
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_6-25 | BoulderDash | 0 | 137
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_6-25 | BoulderDash | 0 | 155
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_7-25 | BoulderDash | 0 | 237
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_7-25 | BoulderDash | 0 | 282
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_7-25 | BoulderDash | 0 | 237
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_7-25 | BoulderDash | 0 | 254
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_7-25 | BoulderDash | 1 | 241
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_8-25 | BoulderDash | 0 | 274
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_8-25 | BoulderDash | 0 | 163
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_8-25 | BoulderDash | 3 | 86
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_8-25 | BoulderDash | 0 | 175
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_8-25 | BoulderDash | 0 | 158
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_9-25 | BoulderDash | 1 | 98
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_9-25 | BoulderDash | 0 | 142
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_9-25 | BoulderDash | 0 | 184
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_9-25 | BoulderDash | 5 | 214
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_9-25 | BoulderDash | 0 | 179
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_10-25 | BoulderDash | 0 | 202
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_10-25 | BoulderDash | 0 | 253
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_10-25 | BoulderDash | 0 | 113
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_10-25 | BoulderDash | 1 | 147
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_10-25 | BoulderDash | 0 | 240
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_11-25 | BoulderDash | 0 | 250
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_11-25 | BoulderDash | 0 | 216
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_11-25 | BoulderDash | 0 | 110
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_11-25 | BoulderDash | 2 | 144
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_11-25 | BoulderDash | 0 | 229
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_12-25 | BoulderDash | 0 | 256
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_12-25 | BoulderDash | 0 | 105
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_12-25 | BoulderDash | 0 | 138
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_12-25 | BoulderDash | 0 | 140
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_12-25 | BoulderDash | 0 | 177
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_13-25 | BoulderDash | 0 | 306
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_13-25 | BoulderDash | 0 | 141
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_13-25 | BoulderDash | 0 | 103
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_13-25 | BoulderDash | 0 | 124
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_13-25 | BoulderDash | 0 | 154
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_14-25 | BoulderDash | 0 | 212
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_14-25 | BoulderDash | 0 | 145
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_14-25 | BoulderDash | 0 | 135
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_14-25 | BoulderDash | 0 | 87
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_14-25 | BoulderDash | 0 | 99
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_15-25 | BoulderDash | 0 | 244
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_15-25 | BoulderDash | 0 | 90
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_15-25 | BoulderDash | 0 | 187
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_15-25 | BoulderDash | 0 | 114
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_15-25 | BoulderDash | 0 | 261
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_16-25 | BoulderDash | 0 | 261
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_16-25 | BoulderDash | 0 | 134
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_16-25 | BoulderDash | 0 | 163
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_16-25 | BoulderDash | 0 | 145
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_16-25 | BoulderDash | 0 | 195
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_17-25 | BoulderDash | 0 | 267
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_17-25 | BoulderDash | 0 | 143
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_17-25 | BoulderDash | 0 | 127
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_17-25 | BoulderDash | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_17-25 | BoulderDash | 0 | 77
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_0-50 | IceAndFire | 0 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_0-50 | IceAndFire | 14 | 151
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_0-50 | IceAndFire | 2 | 96
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_0-50 | IceAndFire | 3 | 210
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_1-50 | IceAndFire | 0 | 119
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_1-50 | IceAndFire | 5 | 149
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_1-50 | IceAndFire | 16 | 156
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_1-50 | IceAndFire | 4 | 226
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_2-50 | IceAndFire | 1 | 99
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 103
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_2-50 | IceAndFire | 17 | 89
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_2-50 | IceAndFire | 16 | 148
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_2-50 | IceAndFire | 0 | 126
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_3-50 | IceAndFire | 3 | 129
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_3-50 | IceAndFire | 10 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_3-50 | IceAndFire | 10 | 145
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_3-50 | IceAndFire | 0 | 96
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_3-50 | IceAndFire | 3 | 234
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_4-50 | IceAndFire | 0 | 111
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_4-50 | IceAndFire | 5 | 135
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_4-50 | IceAndFire | 13 | 143
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_4-50 | IceAndFire | 2 | 134
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_4-50 | IceAndFire | 3 | 194
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_5-50 | IceAndFire | 7 | 121
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_5-50 | IceAndFire | 0 | 115
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_5-50 | IceAndFire | 17 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_5-50 | IceAndFire | 4 | 118
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_5-50 | IceAndFire | 1 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_6-50 | IceAndFire | 0 | 137
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_6-50 | IceAndFire | 6 | 133
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_6-50 | IceAndFire | 13 | 141
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_6-50 | IceAndFire | 2 | 106
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_6-50 | IceAndFire | 4 | 198
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_7-50 | IceAndFire | 7 | 123
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_7-50 | IceAndFire | 2 | 103
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_7-50 | IceAndFire | 13 | 143
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_7-50 | IceAndFire | 7 | 148
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_7-50 | IceAndFire | 5 | 208
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_8-50 | IceAndFire | 6 | 131
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_8-50 | IceAndFire | 0 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_8-50 | IceAndFire | 15 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_8-50 | IceAndFire | 0 | 108
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_8-50 | IceAndFire | 0 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_9-50 | IceAndFire | 0 | 95
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_9-50 | IceAndFire | 0 | 107
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_9-50 | IceAndFire | 17 | 143
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_9-50 | IceAndFire | 5 | 146
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_9-50 | IceAndFire | 5 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_10-50 | IceAndFire | 0 | 111
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_10-50 | IceAndFire | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_10-50 | IceAndFire | 12 | 99
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_10-50 | IceAndFire | 6 | 156
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_10-50 | IceAndFire | 1 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_11-50 | IceAndFire | 5 | 137
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_11-50 | IceAndFire | 0 | 129
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_11-50 | IceAndFire | 22 | 145
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_11-50 | IceAndFire | 0 | 96
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_11-50 | IceAndFire | 1 | 166
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_12-50 | IceAndFire | 0 | 111
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_12-50 | IceAndFire | 7 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_12-50 | IceAndFire | 15 | 155
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_12-50 | IceAndFire | 10 | 114
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_12-50 | IceAndFire | 2 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_13-50 | IceAndFire | 1 | 131
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_13-50 | IceAndFire | 2 | 141
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_13-50 | IceAndFire | 18 | 99
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_13-50 | IceAndFire | 0 | 182
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_13-50 | IceAndFire | 11 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_14-50 | IceAndFire | 0 | 111
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_14-50 | IceAndFire | 0 | 123
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_14-50 | IceAndFire | 16 | 145
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_14-50 | IceAndFire | 9 | 106
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_14-50 | IceAndFire | 2 | 228
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_15-50 | IceAndFire | 0 | 101
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_15-50 | IceAndFire | 0 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_15-50 | IceAndFire | 14 | 155
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_15-50 | IceAndFire | 1 | 170
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_15-50 | IceAndFire | 2 | 160
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_16-50 | IceAndFire | 3 | 119
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_16-50 | IceAndFire | 0 | 109
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_16-50 | IceAndFire | 20 | 97
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_16-50 | IceAndFire | 0 | 152
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_16-50 | IceAndFire | 2 | 238
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_17-50 | IceAndFire | 2 | 127
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_17-50 | IceAndFire | 0 | 107
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_17-50 | IceAndFire | 17 | 99
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_17-50 | IceAndFire | 8 | 132
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire_17-50 | IceAndFire | 0 | 156
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_0-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_0-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_0-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_0-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_0-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_1-100 | Catapults | -1 | 26
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_1-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_1-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_1-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_1-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_2-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_2-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_2-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_2-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_2-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_3-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_3-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_3-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_3-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_3-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_4-100 | Catapults | -1 | 20
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_4-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_4-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_4-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_4-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_5-100 | Catapults | -1 | 26
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_5-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_5-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_5-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_5-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_6-100 | Catapults | -1 | 13
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_6-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_6-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_6-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_6-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_7-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_7-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_7-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_7-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_7-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_8-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_8-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_8-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_8-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_8-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_9-100 | Catapults | -1 | 20
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_9-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_9-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_9-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_9-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_10-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_10-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_10-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_10-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_10-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_11-100 | Catapults | -1 | 26
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_11-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_11-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_11-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_11-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_12-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_12-100 | Catapults | -1 | 5
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_12-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_12-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_12-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_13-100 | Catapults | -1 | 20
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_13-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_13-100 | Catapults | -1 | 25
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_13-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_13-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_14-100 | Catapults | -1 | 20
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_14-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_14-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_14-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_14-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_15-100 | Catapults | -1 | 13
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_15-100 | Catapults | -1 | 5
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_15-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_15-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_15-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_16-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_16-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_16-100 | Catapults | -1 | 7
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_16-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_16-100 | Catapults | -1 | 13
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17-100 | Catapults | -1 | 16
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17-100 | Catapults | -1 | 4
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17-100 | Catapults | -1 | 22
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17-100 | Catapults | -1 | 9
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults_17-100 | Catapults | -1 | 9
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- BoulderDash ---
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash - lvs=25
+Average num errors per level:  [0.3888888888888889, 0.1111111111111111, 0.4444444444444444, 0.6111111111111112, 0.05555555555555555]
+Average num actions per level:  [221.22222222222223, 164.61111111111111, 142.33333333333334, 146.27777777777777, 183.33333333333334]
+
+--- IceAndFire ---
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-7500_IceAndFire - lvs=50
+Average num errors per level:  [1.9444444444444444, 1.7777777777777777, 14.88888888888889, 4.888888888888889, 2.7222222222222223]
+Average num actions per level:  [117.33333333333333, 113.44444444444444, 127.33333333333333, 131.33333333333334, 193.77777777777777]
+
+--- Catapults ---
+
+DQN_pruebas_max_pooling_y_padding_SAME_its-2500_Catapults - lvs=100
+Success rate per level [0.0, 0.0, 0.0, 0.0, 0.0]
+Average num errors per completed level:  [-1, -1, -1, -1, -1]
+Average num actions per completed level:  [-1, -1, -1, -1, -1]
+
+>>> Train:
+> BoulderDash: el loss pasa de 2500 a 800.
+> IceAndFire: el loss pasa de 100000 a 50000.
+> Catapults: el loss pasa de 55000 a 60000.
+
+>>> Test:
+> BoulderDash: las acciones aumentan mucho.
+> IceAndFire: aumentan las acciones.
+> Catapults: NO RESUELVE NI UN NIVEL!!!
+
+<<Parece que Max pooling funciona muy mal en test -> no lo uso.>>
