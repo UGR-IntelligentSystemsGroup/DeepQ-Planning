@@ -14,6 +14,7 @@ import tensorflow as tf
 import pickle
 import sys
 import glob
+import time
 
 from LearningModel import DQNetwork
 
@@ -32,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing='BoulderDash'
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -54,14 +55,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="create_dataset"
+		self.EXECUTION_MODE="train"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_max_pooling_y_padding_SAME_its-5000_BoulderDash_0"
+		self.network_name="DQN_pruebas_8_capas_base_fc-64_8_its-10000_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=25
+		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
 		self.level_seed=28912
@@ -80,7 +81,7 @@ class Agent(AbstractPlayer):
 		self.l2_num_filt=32
 		self.l2_window=[3, 3]
 		self.l2_strides=[1, 1]
-		self.l2_padding_type="SAME"
+		self.l2_padding_type="VALID"
 
 		# Third conv layer
 		self.l3_num_filt=64
@@ -92,28 +93,98 @@ class Agent(AbstractPlayer):
 		self.l4_num_filt=64
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
-		self.l4_padding_type="SAME"
+		self.l4_padding_type="VALID"
 
 		# Fifth conv layer
-		self.l5_num_filt=-1
+		self.l5_num_filt=128
 		self.l5_window=[3, 3]
 		self.l5_strides=[1, 1]
 		self.l5_padding_type="VALID"
 
 		# Sixth conv layer
-		self.l6_num_filt=-1
+		self.l6_num_filt=128
 		self.l6_window=[3, 3]
 		self.l6_strides=[1, 1]
 		self.l6_padding_type="VALID"
 
+		self.l7_num_filt=256
+		self.l7_window=[3, 3]
+		self.l7_strides=[1, 1]
+		self.l7_padding_type="VALID"
+
+		self.l8_num_filt=256
+		self.l8_window=[3, 3]
+		self.l8_strides=[1, 1]
+		self.l8_padding_type="VALID"
+
+		self.l9_num_filt=-1
+		self.l9_window=[3, 3]
+		self.l9_strides=[1, 1]
+		self.l9_padding_type="VALID"
+
+		self.l10_num_filt=-1
+		self.l10_window=[3, 3]
+		self.l10_strides=[1, 1]
+		self.l10_padding_type="VALID"
+
+		self.l11_num_filt=-1
+		self.l11_window=[3, 3]
+		self.l11_strides=[1, 1]
+		self.l11_padding_type="SAME"
+
+		self.l12_num_filt=-1
+		self.l12_window=[3, 3]
+		self.l12_strides=[1, 1]
+		self.l12_padding_type="VALID"
+
+		self.l13_num_filt=-1
+		self.l13_window=[3, 3]
+		self.l13_strides=[1, 1]
+		self.l13_padding_type="SAME"
+
+		self.l14_num_filt=-1
+		self.l14_window=[3, 3]
+		self.l14_strides=[1, 1]
+		self.l14_padding_type="VALID"
+
+		self.l15_num_filt=-1
+		self.l15_window=[3, 3]
+		self.l15_strides=[1, 1]
+		self.l15_padding_type="VALID"
+
+		self.l16_num_filt=-1
+		self.l16_window=[3, 3]
+		self.l16_strides=[1, 1]
+		self.l16_padding_type="VALID"
+
+		self.l17_num_filt=-1
+		self.l17_window=[3, 3]
+		self.l17_strides=[1, 1]
+		self.l17_padding_type="SAME"
+
+		self.l18_num_filt=-1
+		self.l18_window=[3, 3]
+		self.l18_strides=[1, 1]
+		self.l18_padding_type="VALID"
+
+		self.l19_num_filt=-1
+		self.l19_window=[3, 3]
+		self.l19_strides=[1, 1]
+		self.l19_padding_type="VALID"
+
+		self.l20_num_filt=-1
+		self.l20_window=[3, 3]
+		self.l20_strides=[1, 1]
+		self.l20_padding_type="VALID"
+
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[32, 1]
+		self.fc_num_unis=[64, 8]
 
 		# Training params
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=5000
+		self.num_train_its=10000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -135,7 +206,6 @@ class Agent(AbstractPlayer):
 		else: # Catapults
 			self.sample_size=[16, 16, 9]
 
-
 		if self.EXECUTION_MODE == 'create_dataset':
 
 			# Attribute that stores agent's experience to implement experience replay (for training)
@@ -151,7 +221,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=13
+			id_dataset=75
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -197,6 +267,34 @@ class Agent(AbstractPlayer):
 						 l5_padding_type = self.l5_padding_type,
 						 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 						 l6_padding_type = self.l6_padding_type,
+						 l7_num_filt = self.l7_num_filt, l7_window = self.l7_window, l7_strides = self.l7_strides,
+						 l7_padding_type = self.l7_padding_type,
+						 l8_num_filt = self.l8_num_filt, l8_window = self.l8_window, l8_strides = self.l8_strides,
+						 l8_padding_type = self.l8_padding_type,
+						 l9_num_filt = self.l9_num_filt, l9_window = self.l9_window, l9_strides = self.l9_strides,
+						 l9_padding_type = self.l9_padding_type,
+						 l10_num_filt = self.l10_num_filt, l10_window = self.l10_window, l10_strides = self.l10_strides,
+						 l10_padding_type = self.l10_padding_type,
+						 l11_num_filt = self.l11_num_filt, l11_window = self.l11_window, l11_strides = self.l11_strides,
+						 l11_padding_type = self.l11_padding_type,
+						 l12_num_filt = self.l12_num_filt, l12_window = self.l12_window, l12_strides = self.l12_strides,
+						 l12_padding_type = self.l12_padding_type,
+						 l13_num_filt = self.l13_num_filt, l13_window = self.l13_window, l13_strides = self.l13_strides,
+						 l13_padding_type = self.l13_padding_type,
+						 l14_num_filt = self.l14_num_filt, l14_window = self.l14_window, l14_strides = self.l14_strides,
+						 l14_padding_type = self.l14_padding_type,
+						 l15_num_filt = self.l15_num_filt, l15_window = self.l15_window, l15_strides = self.l15_strides,
+						 l15_padding_type = self.l15_padding_type,
+						 l16_num_filt = self.l16_num_filt, l16_window = self.l16_window, l16_strides = self.l16_strides,
+						 l16_padding_type = self.l16_padding_type,
+						 l17_num_filt = self.l17_num_filt, l17_window = self.l17_window, l17_strides = self.l17_strides,
+						 l17_padding_type = self.l17_padding_type,
+						 l18_num_filt = self.l18_num_filt, l18_window = self.l18_window, l18_strides = self.l18_strides,
+						 l18_padding_type = self.l18_padding_type,
+						 l19_num_filt = self.l19_num_filt, l19_window = self.l19_window, l19_strides = self.l19_strides,
+						 l19_padding_type = self.l19_padding_type,
+						 l20_num_filt = self.l20_num_filt, l20_window = self.l20_window, l20_strides = self.l20_strides,
+						 l20_padding_type = self.l20_padding_type,
 						 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 						 learning_rate = self.learning_rate,
 						 use_BN=self.use_BN, game_playing=self.game_playing)
@@ -206,14 +304,14 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=25
+				self.dataset_size_model=75
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -247,6 +345,10 @@ class Agent(AbstractPlayer):
 			self.num_actions_lv = 0
 			self.num_incorrect_subgoals = 0
 
+			# Measure the goal selection + planning times
+			self.total_time_curr_lv = 0
+			self.num_calls_planner = 0 # Times the method search_plan has been called in the current level
+
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -268,7 +370,8 @@ class Agent(AbstractPlayer):
 			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed)
 
 			# Shuffle dataset
-			random.shuffle(self.memory)
+			# DO NOT USE random.shuffle (it does not work well with numpy arrays)
+			np.random.shuffle(self.memory)
 
 			# Create Learning model
 
@@ -290,6 +393,34 @@ class Agent(AbstractPlayer):
 					 l5_padding_type = self.l5_padding_type,
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 					 l6_padding_type = self.l6_padding_type,
+					 l7_num_filt = self.l7_num_filt, l7_window = self.l7_window, l7_strides = self.l7_strides,
+					 l7_padding_type = self.l7_padding_type,
+					 l8_num_filt = self.l8_num_filt, l8_window = self.l8_window, l8_strides = self.l8_strides,
+					 l8_padding_type = self.l8_padding_type,
+					 l9_num_filt = self.l9_num_filt, l9_window = self.l9_window, l9_strides = self.l9_strides,
+					 l9_padding_type = self.l9_padding_type,
+					 l10_num_filt = self.l10_num_filt, l10_window = self.l10_window, l10_strides = self.l10_strides,
+					 l10_padding_type = self.l10_padding_type,
+					 l11_num_filt = self.l11_num_filt, l11_window = self.l11_window, l11_strides = self.l11_strides,
+					 l11_padding_type = self.l11_padding_type,
+					 l12_num_filt = self.l12_num_filt, l12_window = self.l12_window, l12_strides = self.l12_strides,
+					 l12_padding_type = self.l12_padding_type,
+					 l13_num_filt = self.l13_num_filt, l13_window = self.l13_window, l13_strides = self.l13_strides,
+					 l13_padding_type = self.l13_padding_type,
+					 l14_num_filt = self.l14_num_filt, l14_window = self.l14_window, l14_strides = self.l14_strides,
+					 l14_padding_type = self.l14_padding_type,
+					 l15_num_filt = self.l15_num_filt, l15_window = self.l15_window, l15_strides = self.l15_strides,
+					 l15_padding_type = self.l15_padding_type,
+					 l16_num_filt = self.l16_num_filt, l16_window = self.l16_window, l16_strides = self.l16_strides,
+					 l16_padding_type = self.l16_padding_type,
+					 l17_num_filt = self.l17_num_filt, l17_window = self.l17_window, l17_strides = self.l17_strides,
+					 l17_padding_type = self.l17_padding_type,
+					 l18_num_filt = self.l18_num_filt, l18_window = self.l18_window, l18_strides = self.l18_strides,
+					 l18_padding_type = self.l18_padding_type,
+					 l19_num_filt = self.l19_num_filt, l19_window = self.l19_window, l19_strides = self.l19_strides,
+					 l19_padding_type = self.l19_padding_type,
+					 l20_num_filt = self.l20_num_filt, l20_window = self.l20_window, l20_strides = self.l20_strides,
+					 l20_padding_type = self.l20_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = self.dropout_prob,
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
@@ -313,13 +444,41 @@ class Agent(AbstractPlayer):
 					 l5_padding_type = self.l5_padding_type,
 					 l6_num_filt = self.l6_num_filt, l6_window = self.l6_window, l6_strides = self.l6_strides,
 					 l6_padding_type = self.l6_padding_type,
+					 l7_num_filt = self.l7_num_filt, l7_window = self.l7_window, l7_strides = self.l7_strides,
+					 l7_padding_type = self.l7_padding_type,
+					 l8_num_filt = self.l8_num_filt, l8_window = self.l8_window, l8_strides = self.l8_strides,
+					 l8_padding_type = self.l8_padding_type,
+					 l9_num_filt = self.l9_num_filt, l9_window = self.l9_window, l9_strides = self.l9_strides,
+					 l9_padding_type = self.l9_padding_type,
+					 l10_num_filt = self.l10_num_filt, l10_window = self.l10_window, l10_strides = self.l10_strides,
+					 l10_padding_type = self.l10_padding_type,
+					 l11_num_filt = self.l11_num_filt, l11_window = self.l11_window, l11_strides = self.l11_strides,
+					 l11_padding_type = self.l11_padding_type,
+					 l12_num_filt = self.l12_num_filt, l12_window = self.l12_window, l12_strides = self.l12_strides,
+					 l12_padding_type = self.l12_padding_type,
+					 l13_num_filt = self.l13_num_filt, l13_window = self.l13_window, l13_strides = self.l13_strides,
+					 l13_padding_type = self.l13_padding_type,
+					 l14_num_filt = self.l14_num_filt, l14_window = self.l14_window, l14_strides = self.l14_strides,
+					 l14_padding_type = self.l14_padding_type,
+					 l15_num_filt = self.l15_num_filt, l15_window = self.l15_window, l15_strides = self.l15_strides,
+					 l15_padding_type = self.l15_padding_type,
+					 l16_num_filt = self.l16_num_filt, l16_window = self.l16_window, l16_strides = self.l16_strides,
+					 l16_padding_type = self.l16_padding_type,
+					 l17_num_filt = self.l17_num_filt, l17_window = self.l17_window, l17_strides = self.l17_strides,
+					 l17_padding_type = self.l17_padding_type,
+					 l18_num_filt = self.l18_num_filt, l18_window = self.l18_window, l18_strides = self.l18_strides,
+					 l18_padding_type = self.l18_padding_type,
+					 l19_num_filt = self.l19_num_filt, l19_window = self.l19_window, l19_strides = self.l19_strides,
+					 l19_padding_type = self.l19_padding_type,
+					 l20_num_filt = self.l20_num_filt, l20_window = self.l20_window, l20_strides = self.l20_strides,
+					 l20_padding_type = self.l20_padding_type,
 					 fc_num_units = self.fc_num_unis, dropout_prob = 0.0,
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
 
 			# Initialize target network's weights with those of the DQNetwork
-			update_ops = self.update_target_network()
-			self.target_network.update_weights(update_ops)
+			self.update_ops = self.update_target_network() # ONLY CALL THIS ONCE (else new nodes will be added to the graph with each iter)
+			self.target_network.update_weights(self.update_ops)
 			self.tau = 0
 
 			num_samples = len(self.memory)
@@ -339,7 +498,7 @@ class Agent(AbstractPlayer):
 					batch = self.memory[ind_batch:]
 					ind_batch = 0
 
-					random.shuffle(self.memory)
+					np.random.shuffle(self.memory)
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
 				batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
@@ -350,6 +509,14 @@ class Agent(AbstractPlayer):
 				Q_targets = []
 				
 				for r, s in zip(batch_R, batch_S):
+					# QUITAR ***
+					if s is None:
+						# Plan inválido a la salida -> penalización
+						if r == 1000:
+							r = 100
+						else: # Plan válido a la salida -> recompensa
+							r = -100
+
 					Q_target = r + self.gamma*self.get_min_Q_value(s)
 					Q_targets.append(Q_target)
 
@@ -361,8 +528,8 @@ class Agent(AbstractPlayer):
 
 				# Update target network every tau training steps
 				if self.tau >= self.max_tau:
-					update_ops = self.update_target_network()
-					self.target_network.update_weights(update_ops)
+					# update_ops = self.update_target_network()
+					self.target_network.update_weights(self.update_ops)
 
 					self.tau = 0
 
@@ -432,6 +599,8 @@ class Agent(AbstractPlayer):
 					self.total_num_samples += 1
 
 					# Show the number of samples collected periodically
+					print("New sample")
+
 					if self.total_num_samples % 10 == 0:
 						print("n_total_samples:", self.total_num_samples)
 						print("n_unique_samples:", len(self.memory))
@@ -450,12 +619,20 @@ class Agent(AbstractPlayer):
 
 					# Select the subgoal using either the learning model or randomly (random model)
 					if self.goal_selection_mode == "best": # Use the model to select the best subgoal
-						# chosen_subgoal = self.choose_next_subgoal(sso, subgoals)
 
 						# Order subgoals by their predicted Q_values
 						if not ordered_subgoals: # Only do it once
 							ordered_subgoals = True
+
+							# Measure goal selection time
+							start = time.time()
+
 							subgoals = self.get_best_subgoals(sso, subgoals)
+
+							end = time.time()
+
+							if not self.is_training:
+								self.total_time_curr_lv += end-start
 
 						# Get the first subgoal (the one with the smallest Q_value)
 						chosen_subgoal = subgoals[0]
@@ -474,7 +651,20 @@ class Agent(AbstractPlayer):
 						boots_resources = []
 
 					# Obtain the plan
+
+					# QUITAR!!
+					print(">> Chosen Subgoal: ", chosen_subgoal)
+
+					# Measure planning time
+					start = time.time()
+
 					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
+
+					end = time.time()
+
+					if not self.is_training:
+						self.total_time_curr_lv += end-start
+						self.num_calls_planner += 1
 
 					# If there is no valid plan to the chosen subgoal, increment the number of
 					# non-eligible subgoals selected
@@ -1040,6 +1230,7 @@ class Agent(AbstractPlayer):
 
 
 		# QUITAR
+		
 		print("----------------")
 		print("subgoals:", possible_subgoals)
 		print("Q_values:", Q_values)
@@ -1229,7 +1420,7 @@ class Agent(AbstractPlayer):
 		print("Saving finished!")
 
 
-	def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True, seed=None):
+	def load_dataset(self, folder, game, num_levels=20, write_loaded_datasets=True, seed=None, max_samples_per_level=500):
 		"""
 		Uses the pickle module to load the previously saved experience replay.
 
@@ -1239,6 +1430,7 @@ class Agent(AbstractPlayer):
 		@write_loaded_datasets If True, the names of the loaded datasets are
 							   written in the 'loaded_datasets.txt' file
 		@seed Seed for level selection. If None, a random one is used.
+		@max_samples_per_level If a level has more than this number of samples, only load the first "max_samples_per_level"
 		"""
 
 		# Delete current experience replay
@@ -1262,6 +1454,9 @@ class Agent(AbstractPlayer):
 			# Load the dataset and append the samples to memory
 			with open(dataset_path, 'rb') as file:
 				curr_dataset = pickle.load(file)
+
+				if len(curr_dataset) > max_samples_per_level:
+					curr_dataset = curr_dataset[:max_samples_per_level]
 
 				total_num_samples += len(curr_dataset) # Store the number of samples
 				self.memory.extend(curr_dataset)
@@ -1305,17 +1500,22 @@ class Agent(AbstractPlayer):
 				print("\n\nThe player has lost\n\n")
 				self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 
+			# Calculate average planning time per subgoal in the current level
+			mean_time_curr_level = self.total_time_curr_lv / self.num_calls_planner
+
 			# Save the number of actions and the number of incorrect subgoals used to complete the 
 			# current level to the output file
 			test_output_file = "test_output.txt"
 
 			with open(test_output_file, "a") as file:
 				if self.goal_selection_mode == "best":
-					file.write("{}-{} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
-					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
+					file.write("{}-{} | {} | {} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
+					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
+					 self.total_time_curr_lv, mean_time_curr_level))
 				else:
-					file.write("{} | {} | {} | {}\n".format(self.network_name,
-					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv))
+					file.write("{} | {} | {} | {} | {} | {}\n".format(self.network_name,
+					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
+					 self.total_time_curr_lv, mean_time_curr_level))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")

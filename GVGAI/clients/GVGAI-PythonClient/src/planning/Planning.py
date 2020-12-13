@@ -16,9 +16,12 @@ class Planning:
                 print(exc)
 
         # Command to be run
-        self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
+        """self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
                 '-f', self.game_information["problemFile"], '-O', '-g', '1', '-h', '1'
-        ]
+        ]"""
+
+        self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
+                '-f', self.game_information["problemFile"], '-O']
 
 
     def generate_problem_file(self, pddl_predicates, pddl_objects, goal):

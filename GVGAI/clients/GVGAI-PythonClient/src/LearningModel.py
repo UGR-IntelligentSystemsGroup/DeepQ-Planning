@@ -24,6 +24,34 @@ class DQNetwork:
 				 l5_padding_type = "SAME",
 				 l6_num_filt = 2, l6_window = [4,4], l6_strides = [2,2],
 				 l6_padding_type = "SAME",
+				 l7_num_filt = 2, l7_window = [4,4], l7_strides = [2,2],
+				 l7_padding_type = "SAME",
+				 l8_num_filt = 2, l8_window = [4,4], l8_strides = [2,2],
+				 l8_padding_type = "SAME",
+				 l9_num_filt = 2, l9_window = [4,4], l9_strides = [2,2],
+				 l9_padding_type = "SAME",
+				 l10_num_filt = 2, l10_window = [4,4], l10_strides = [2,2],
+				 l10_padding_type = "SAME",
+				 l11_num_filt = 2, l11_window = [4,4], l11_strides = [2,2],
+				 l11_padding_type = "SAME",
+				 l12_num_filt = 2, l12_window = [4,4], l12_strides = [2,2],
+				 l12_padding_type = "SAME",
+				 l13_num_filt = 2, l13_window = [4,4], l13_strides = [2,2],
+				 l13_padding_type = "SAME",
+				 l14_num_filt = 2, l14_window = [4,4], l14_strides = [2,2],
+				 l14_padding_type = "SAME",
+				 l15_num_filt = 2, l15_window = [4,4], l15_strides = [2,2],
+				 l15_padding_type = "SAME",
+				 l16_num_filt = 2, l16_window = [4,4], l16_strides = [2,2],
+				 l16_padding_type = "SAME",
+				 l17_num_filt = 2, l17_window = [4,4], l17_strides = [2,2],
+				 l17_padding_type = "SAME",
+				 l18_num_filt = 2, l18_window = [4,4], l18_strides = [2,2],
+				 l18_padding_type = "SAME",
+				 l19_num_filt = 2, l19_window = [4,4], l19_strides = [2,2],
+				 l19_padding_type = "SAME",
+				 l20_num_filt = 2, l20_window = [4,4], l20_strides = [2,2],
+				 l20_padding_type = "SAME",
 				 fc_num_units = [16, 1], dropout_prob = 0.5,
 				 learning_rate = 0.005,
 				 use_BN = True, game_playing="BoulderDash"):
@@ -86,7 +114,7 @@ class DQNetwork:
 										 kernel_size = l1_window,
 										 strides = l1_strides,
 										 padding = l1_padding_type,
-										 activation = tf.nn.relu,
+										 activation = tf.nn.leaky_relu,
 										 use_bias = True,
 										 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 										 name = "conv1")
@@ -104,7 +132,7 @@ class DQNetwork:
 										 kernel_size = l2_window,
 										 strides = l2_strides,
 										 padding = l2_padding_type,
-										 activation = tf.nn.relu,
+										 activation = tf.nn.leaky_relu,
 										 use_bias = True,
 										 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 										 name = "conv2")
@@ -118,20 +146,25 @@ class DQNetwork:
 			Third convnet:
 			"""
 
-			self.conv3 = tf.layers.conv2d(inputs = self.conv2,
-							 filters = l3_num_filt,
-							 kernel_size = l3_window,
-							 strides = l3_strides,
-							 padding = l3_padding_type,
-							 activation = tf.nn.relu,
-							 use_bias = True,
-							 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
-							 name = "conv3")
-			
-			# Batch Normalization
+			if l3_num_filt != -1:
+				self.conv3 = tf.layers.conv2d(inputs = self.conv2,
+								 filters = l3_num_filt,
+								 kernel_size = l3_window,
+								 strides = l3_strides,
+								 padding = l3_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv3")
+				
+				# Batch Normalization
 
-			if use_BN:
-				self.conv3 = tf.layers.batch_normalization(self.conv3, axis = 3, momentum=0.99, training=self.is_training)
+				if use_BN:
+					self.conv3 = tf.layers.batch_normalization(self.conv3, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: # Only use three layers if l3_num_filt == -1
+				self.conv3 = self.conv2
+
 
 			"""
 			Fourth convnet:
@@ -143,7 +176,7 @@ class DQNetwork:
 								 kernel_size = l4_window,
 								 strides = l4_strides,
 								 padding = l4_padding_type,
-								 activation = tf.nn.relu,
+								 activation = tf.nn.leaky_relu,
 								 use_bias = True,
 								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 								 name = "conv4")
@@ -152,7 +185,7 @@ class DQNetwork:
 				if use_BN:
 					self.conv4 = tf.layers.batch_normalization(self.conv4, axis = 3, momentum=0.99, training=self.is_training)
 			
-			else: # Only use three layers if l4_num_filt == -1
+			else: # Only use four layers if l4_num_filt == -1
 				self.conv4 = self.conv3
 
 			"""
@@ -165,7 +198,7 @@ class DQNetwork:
 								 kernel_size = l5_window,
 								 strides = l5_strides,
 								 padding = l5_padding_type,
-								 activation = tf.nn.relu,
+								 activation = tf.nn.leaky_relu,
 								 use_bias = True,
 								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 								 name = "conv5")
@@ -186,7 +219,7 @@ class DQNetwork:
 								 kernel_size = l6_window,
 								 strides = l6_strides,
 								 padding = l6_padding_type,
-								 activation = tf.nn.relu,
+								 activation = tf.nn.leaky_relu,
 								 use_bias = True,
 								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 								 name = "conv6")
@@ -198,9 +231,273 @@ class DQNetwork:
 			else: # Only use five layers if l6_num_filt == -1
 				self.conv6 = self.conv5
 
+			if l7_num_filt != -1:
+				self.conv7 = tf.layers.conv2d(inputs = self.conv6,
+								 filters = l7_num_filt,
+								 kernel_size = l7_window,
+								 strides = l7_strides,
+								 padding = l7_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv7")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv7 = tf.layers.batch_normalization(self.conv7, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv7 = self.conv6
+
+			if l8_num_filt != -1:
+				self.conv8 = tf.layers.conv2d(inputs = self.conv7,
+								 filters = l8_num_filt,
+								 kernel_size = l8_window,
+								 strides = l8_strides,
+								 padding = l8_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv8")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv8 = tf.layers.batch_normalization(self.conv8, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv8 = self.conv7
+
+
+			if l9_num_filt != -1:
+				self.conv9 = tf.layers.conv2d(inputs = self.conv8,
+								 filters = l9_num_filt,
+								 kernel_size = l9_window,
+								 strides = l9_strides,
+								 padding = l9_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv9")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv9 = tf.layers.batch_normalization(self.conv9, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv9 = self.conv8
+
+
+			if l10_num_filt != -1:
+				self.conv10 = tf.layers.conv2d(inputs = self.conv9,
+								 filters = l10_num_filt,
+								 kernel_size = l10_window,
+								 strides = l10_strides,
+								 padding = l10_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv10")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv10 = tf.layers.batch_normalization(self.conv10, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv10 = self.conv9
+
+
+			if l11_num_filt != -1:
+				self.conv11 = tf.layers.conv2d(inputs = self.conv10,
+								 filters = l11_num_filt,
+								 kernel_size = l11_window,
+								 strides = l11_strides,
+								 padding = l11_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv11")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv11 = tf.layers.batch_normalization(self.conv11, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv11 = self.conv10
+
+
+			if l12_num_filt != -1:
+				self.conv12 = tf.layers.conv2d(inputs = self.conv11,
+								 filters = l12_num_filt,
+								 kernel_size = l12_window,
+								 strides = l12_strides,
+								 padding = l12_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv12")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv12 = tf.layers.batch_normalization(self.conv12, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv12 = self.conv11
+
+
+			if l13_num_filt != -1:
+				self.conv13 = tf.layers.conv2d(inputs = self.conv12,
+								 filters = l13_num_filt,
+								 kernel_size = l13_window,
+								 strides = l13_strides,
+								 padding = l13_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv13")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv13 = tf.layers.batch_normalization(self.conv13, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv13 = self.conv12
+
+
+			if l14_num_filt != -1:
+				self.conv14 = tf.layers.conv2d(inputs = self.conv13,
+								 filters = l14_num_filt,
+								 kernel_size = l14_window,
+								 strides = l14_strides,
+								 padding = l14_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv14")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv14 = tf.layers.batch_normalization(self.conv14, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv14 = self.conv13
+
+
+			if l15_num_filt != -1:
+				self.conv15 = tf.layers.conv2d(inputs = self.conv14,
+								 filters = l15_num_filt,
+								 kernel_size = l15_window,
+								 strides = l15_strides,
+								 padding = l15_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv15")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv15 = tf.layers.batch_normalization(self.conv15, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv15 = self.conv14
+
+
+			if l16_num_filt != -1:
+				self.conv16 = tf.layers.conv2d(inputs = self.conv15,
+								 filters = l16_num_filt,
+								 kernel_size = l16_window,
+								 strides = l16_strides,
+								 padding = l16_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv16")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv16 = tf.layers.batch_normalization(self.conv16, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv16 = self.conv15
+
+
+			if l17_num_filt != -1:
+				self.conv17 = tf.layers.conv2d(inputs = self.conv16,
+								 filters = l17_num_filt,
+								 kernel_size = l17_window,
+								 strides = l17_strides,
+								 padding = l17_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv17")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv17 = tf.layers.batch_normalization(self.conv17, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv17 = self.conv16
+
+			
+			if l18_num_filt != -1:
+				self.conv18 = tf.layers.conv2d(inputs = self.conv17,
+								 filters = l18_num_filt,
+								 kernel_size = l18_window,
+								 strides = l18_strides,
+								 padding = l18_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv18")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv18 = tf.layers.batch_normalization(self.conv18, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv18 = self.conv17
+
+
+			if l19_num_filt != -1:
+				self.conv19 = tf.layers.conv2d(inputs = self.conv18,
+								 filters = l19_num_filt,
+								 kernel_size = l19_window,
+								 strides = l19_strides,
+								 padding = l19_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv19")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv19 = tf.layers.batch_normalization(self.conv19, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv19 = self.conv18
+
+
+			if l20_num_filt != -1:
+				self.conv20 = tf.layers.conv2d(inputs = self.conv19,
+								 filters = l20_num_filt,
+								 kernel_size = l20_window,
+								 strides = l20_strides,
+								 padding = l20_padding_type,
+								 activation = tf.nn.leaky_relu,
+								 use_bias = True,
+								 kernel_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
+								 name = "conv20")
+				
+				# Batch Normalization
+				if use_BN:
+					self.conv20 = tf.layers.batch_normalization(self.conv20, axis = 3, momentum=0.99, training=self.is_training)
+			
+			else: 
+				self.conv20 = self.conv19
+
 
 			# Flatten output of conv layers
-			self.flatten = tf.contrib.layers.flatten(self.conv6)
+			self.flatten = tf.contrib.layers.flatten(self.conv20)
 
 			# Concatenate agent resources
 			self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
@@ -209,7 +506,7 @@ class DQNetwork:
 
 			self.fc_1 = tf.layers.dense(inputs = self.flatten,
 								  units = fc_num_units[0],
-								  activation = tf.nn.relu,
+								  activation = tf.nn.leaky_relu,
 								  kernel_initializer=tf.contrib.layers.xavier_initializer(),
 								  name="fc_1")
 
@@ -224,7 +521,7 @@ class DQNetwork:
 
 			  self.fc_2 = tf.layers.dense(inputs = self.fc_1,
 									units = fc_num_units[1],
-									activation = tf.nn.relu,
+									activation = tf.nn.leaky_relu,
 									kernel_initializer=tf.contrib.layers.xavier_initializer(),
 									name="fc_2")
 
