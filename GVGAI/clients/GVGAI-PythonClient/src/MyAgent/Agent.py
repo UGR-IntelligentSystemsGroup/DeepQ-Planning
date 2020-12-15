@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -59,10 +59,10 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_8_capas_base_fc-64_8_its-10000_BoulderDash_0"
+		self.network_name="DQN_pruebas_test_Catapults_100_lvs_fc-128_32_1_1_its-10000_Catapults_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=200
 
 		# Seed for selecting which levels to train the model on
 		self.level_seed=28912
@@ -81,13 +81,13 @@ class Agent(AbstractPlayer):
 		self.l2_num_filt=32
 		self.l2_window=[3, 3]
 		self.l2_strides=[1, 1]
-		self.l2_padding_type="VALID"
+		self.l2_padding_type="SAME"
 
 		# Third conv layer
 		self.l3_num_filt=64
 		self.l3_window=[3, 3]
 		self.l3_strides=[1, 1]
-		self.l3_padding_type="SAME"
+		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
 		self.l4_num_filt=64
@@ -178,7 +178,7 @@ class Agent(AbstractPlayer):
 		self.l20_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[64, 8]
+		self.fc_num_unis=[128, 32, 1, 1]
 
 		# Training params
 		self.learning_rate=0.0001
@@ -194,7 +194,6 @@ class Agent(AbstractPlayer):
 		self.max_tau=10
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
-		# Gamma changed from 0.9 to 1!!!
 		self.gamma=1 
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
@@ -221,7 +220,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=75
+			id_dataset=82
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -304,7 +303,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=75
+				self.dataset_size_model=100
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -509,12 +508,13 @@ class Agent(AbstractPlayer):
 				Q_targets = []
 				
 				for r, s in zip(batch_R, batch_S):
-					# QUITAR ***
+					# Modify the reward when the current state is terminal (the next
+					# state s is None)
 					if s is None:
-						# Plan inválido a la salida -> penalización
-						if r == 1000:
+						# Invalid plan -> penalization
+						if r >= 1000:
 							r = 100
-						else: # Plan válido a la salida -> recompensa
+						else: # Valid plan -> reward
 							r = -100
 
 					Q_target = r + self.gamma*self.get_min_Q_value(s)
@@ -1228,14 +1228,11 @@ class Agent(AbstractPlayer):
 		# Obtain the ordered subgoals according to the Q_values
 		ordered_subgoals = [goal for _, goal in sorted_zip_list]
 
-
-		# QUITAR
-		
-		print("----------------")
-		print("subgoals:", possible_subgoals)
-		print("Q_values:", Q_values)
-		print("Ordered:", ordered_subgoals)
-		print("----------------")
+		#print("----------------")
+		#print("subgoals:", possible_subgoals)
+		#print("Q_values:", Q_values)
+		#print("Ordered:", ordered_subgoals)
+		#print("----------------")
 
 		return ordered_subgoals
 

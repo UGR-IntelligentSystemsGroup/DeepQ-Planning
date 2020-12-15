@@ -116,39 +116,64 @@ seed=28912 # 28912 (No cambiar la seed!)
 # these hyperparameters
 
 
-
-
-
-
-
-
-
-# Probar a usa padding SAME en las primeras capas conv y VALID solo en las últimas
-# (disminuir la dimensionalidad más lentamente)
-
 """
-DE LA MISMA MANERA QUE DOY RECOMPENSA POSITIVA (1000) CUANDO SE ESCOGE EL OBJETIVO CUANDO NO TOCA,
-DAR UNA RECOMPENSA NEGATIVA CUANDO SE ESCOGE EL OBJETIVO, PARA MOTIVAR QUE SE ESCOJA CUANTO ANTES!!!
+Pruebas
+> Entre [512,128,32,1] y [1024,256,32,1] ambos obtienen casi los mismos resultados en test!!!
+
+> Entre 6 capas y 8 capas conv (con 256 filtros las 2 últimas), se obtienen mejores resultados en 
+test con 8 capas, aunque las gráficas de entrenamiento tienen más picos.
+
+> Entre 15000 y 20000 training its. Se obtienen resultados un poco mejores (en test) con 
+  20000 training its.
+
+> Al probar dropout, los resultados al usar dropout 0.2 y no usarlo son casi idénticos. Al usar
+dropout 0.4 empeoran los resultados -> no uso dropout
+
+> IceAndFire y Catapults funcionan mejor SIN Batch Normalization!!
+  (las gráficas de Q-value y Q-target son diferentes con BN y en IceAndFire
+   los resultados en test son peores)
+   BoulderDash funciona mejor CON BN!!!
+
+> Pruebas mejor num fc tres juegos.
+  Al aumentar el número de unidades fc en BoulderDash, el loss no disminuye!!
+  Las gráficas de Q-value y Q-target sí varían un poco.
+  Lo mismo pasa en IceAndFire (de hecho al aumentar las unidades fc más allá
+  de [128, 32] el entrenamiento es más inestable al igual que las gráficas
+  de Q_val y Q-target).
+  Lo mismo ocurre con Catapults.
+
+  Respecto a test, para IceAndFire y Catapults los mejores resultados son con el
+  menor número de unidades fc (128, 32). En BoulderDash, funciona mejor usar
+  [512, 128, 32] unidades fc, obteniendo un 7% menos de acciones de media que con
+  128, 32. 
+
+> Pruebas 6 capas 128 vs 8 capas 256.
+  Con 8 capas el training loss es mejor y en test, para boulderdash da igual, para iceandfire
+  es un poco mejor y en Catapults es también un poco mejor -> uso 8 capas.
+
+> Al entrenar Catapults sobre solo los 100 niveles antiguos, los resultados empeoran.
 """
 
-# CAMBIAR A VALIDATION!!!!
 
-# PONER 100 NIVELES DE BOULDERDASH!!
 
-# HACER GIT PUSH
 
-# CREATE DATASET CON ICE AND FIRE!!
 
-# Mejor número de capas=8 (con 6 ya empeora el loss)
+
+# Tengo que disminuir los samples por level quizás (ahora estoy usando hasta 500)
+
+# <Probar a usar capas de 128 filtros en vez de 256>
+
+# <<PROBAR A EJECUTAR DE GOLPE EN LOS 10 NIVELES DE TEST>>
+
 
 # Architecture
 l1_num_filt = [32]
 l1_filter_structure = [ [[3,3],[1,1],"SAME"] ]
 l2_num_filt = [32]
-l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
+l2_filter_structure = [ [[3,3],[1,1],"SAME"] ] 
 
 l3_num_filt = [64]
-l3_filter_structure = [ [[3,3],[1,1],"SAME"] ] 
+l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l4_num_filt = [64]
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
 
@@ -162,7 +187,8 @@ l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l8_num_filt = [256]
 l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
-# No usar más capas! (8 parece ser el óptimo)
+
+
 
 l9_num_filt = [-1]
 l9_filter_structure = [ [[3,3],[1,1],"VALID"] ]
@@ -189,40 +215,40 @@ l19_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l20_num_filt = [-1]
 l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
-# A single fc layer works better!
-fc_num_unis = [[64, 8]] # [32,1] # Number of units of the first and second fully-connected layers
+# Number of units of the fully-connected layers
+fc_num_unis = [[128,32,1,1]]  
 
 # Training params
 tau=[10] # Update period of the target network
-alfa = [0.0001] # Learning rate # 0.0001
+alfa = [0.0001] # Learning rate # 0.0001 # 0.0005 is too big even with the new penalization
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
                  # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash']
+games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [100] # 25 # 20
-datasets_sizes_for_training_IceAndFire = [50] # 50 # 45
-datasets_sizes_for_training_Catapults = [200] # 100 # 95
+datasets_sizes_for_training_BoulderDash = [100]
+datasets_sizes_for_training_IceAndFire = [100]
+datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [10000] # 10000 # 5000 # 10000
-num_its_IceAndFire = [2500] # 10000 # 7500 # 2500
-num_its_Catapults = [2500] # 2500 # 2500
+num_its_BoulderDash = [20000, 25000, 30000] # 10000 # 5000 # 10000
+num_its_IceAndFire = [15000, 20000, 25000, 30000] # 10000 # 7500 # 2500
+num_its_Catapults = [15000, 20000, 25000, 30000] # 15000 # 2500 # 2500
 
-# Around 19 rep. per night (three games)
+# 1 hour -> 1 rep. for every game
 ini_rep_model = 0 # Index of the first repetition (0 by default)
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+repetitions_per_model = 4 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
 # for testing the trained model (or random model)
 # The need to be grouped in pairs (or as a one-element tuple)
 # test_level_indexes = [(5,6),(7,8),(9,10)]
-# test_level_indexes = [(0,1),(2,3),(4,)]
+# test_level_indexes = [(0,1),(2,3),(4,)] # Use this one for validation
 test_level_indexes = [(0,1),(2,3),(4,)]
 
 
@@ -536,19 +562,15 @@ try:
 			# *** Name ***
 			if script_execution_mode == "validation":
 				# The name of the model can't be that long!! (it raises an exception on tensorflow)
-				curr_model_name = "DQN_pruebas_Solo_CEROS_6(random-order)(val)_its-{}_{}_{}". \
-								format(curr_num_its, curr_game, curr_rep)
 
-				"""curr_model_name = "DQN_Pruebas-conv-loss_BN-solo-inputs_Dropout-0.1_val_c1-{}_c2-{}_c3-{}_c4-{}_c5-{}_c6-{}_fc-{}_{}_its-{}_{}_{}". \
-								format(curr_l1_num_filt, curr_l2_num_filt, curr_l3_num_filt, curr_l4_num_filt, curr_l5_num_filt, curr_l6_num_filt, \
-									   curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)"""
-
-				"""curr_model_name = "DQN_Full-FC-7-layers_Dropout-0.5_its-{}_{}_{}". \
-								format(curr_num_its, curr_game, curr_rep)"""
+				curr_model_name = "DQN_pruebas_val_mejor_num_its_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
+								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_pruebas_8_capas_base_fc-{}_{}_its-{}_{}_{}". \
-								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_pruebas_test_mejor_num_its_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
+								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 
@@ -694,7 +716,11 @@ try:
 					subprocess.call("rm {} 2> /dev/null".format(level), shell=True)
 
 				if len(curr_val_levels) == 1: # Only one validation level to test
-					val_level_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
+
+					if script_execution_mode == "test":					
+						val_level_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
+					else:
+						val_level_name = val_levels[curr_val_levels[0]]
 
 					print("\nNIVEL:", val_level_name)
 
@@ -716,8 +742,13 @@ try:
 						file.write(agent_file)
 
 				else: # Two validation levels to test
-					val_level1_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
-					val_level2_name = val_levels_path + str(curr_val_levels[1]) + ".txt"
+
+					if script_execution_mode == "test":	
+						val_level1_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
+						val_level2_name = val_levels_path + str(curr_val_levels[1]) + ".txt"
+					else:
+						val_level1_name = val_levels[curr_val_levels[0]]
+						val_level2_name = val_levels[curr_val_levels[1]]
 
 					print("\nNIVELES:", val_level1_name, val_level2_name)
 

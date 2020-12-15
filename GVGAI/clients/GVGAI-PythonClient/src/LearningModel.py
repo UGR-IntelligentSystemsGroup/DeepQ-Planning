@@ -52,7 +52,7 @@ class DQNetwork:
 				 l19_padding_type = "SAME",
 				 l20_num_filt = 2, l20_window = [4,4], l20_strides = [2,2],
 				 l20_padding_type = "SAME",
-				 fc_num_units = [16, 1], dropout_prob = 0.5,
+				 fc_num_units = [16, 1, 1, 1], dropout_prob = 0.0,
 				 learning_rate = 0.005,
 				 use_BN = True, game_playing="BoulderDash"):
 
@@ -528,10 +528,45 @@ class DQNetwork:
 			else:
 			  self.fc_2 = self.fc_1
 			
+			# Fully connected layer 3
+			# <Only if fc_num_units[2] != 1>
+			if fc_num_units[2] != 1:
+			  # Dropout 2
+			  # If there is a single fc layer, don't use droput after it since it is right before
+			  # the output layer
+			  self.fc_2 = tf.layers.dropout(self.fc_2, rate=self.dropout_placeholder, name="Dropout_2")
+
+			  self.fc_3 = tf.layers.dense(inputs = self.fc_2,
+									units = fc_num_units[2],
+									activation = tf.nn.leaky_relu,
+									kernel_initializer=tf.contrib.layers.xavier_initializer(),
+									name="fc_3")
+
+			else:
+			  self.fc_3 = self.fc_2
+
+			# Fully connected layer 4
+			# <Only if fc_num_units[3] != 1>
+			if fc_num_units[3] != 1:
+			  # Dropout 3
+			  # If there is a single fc layer, don't use droput after it since it is right before
+			  # the output layer
+			  self.fc_3 = tf.layers.dropout(self.fc_3, rate=self.dropout_placeholder, name="Dropout_3")
+
+			  self.fc_4 = tf.layers.dense(inputs = self.fc_3,
+									units = fc_num_units[3],
+									activation = tf.nn.leaky_relu,
+									kernel_initializer=tf.contrib.layers.xavier_initializer(),
+									name="fc_4")
+
+			else:
+			  self.fc_4 = self.fc_3
+
+
 
 			# Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
 			
-			self.Q_val = tf.layers.dense(inputs = self.fc_2, 
+			self.Q_val = tf.layers.dense(inputs = self.fc_4, 
 										  kernel_initializer=tf.contrib.layers.xavier_initializer(),
 										  units = 1, 
 										  activation=None,

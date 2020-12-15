@@ -148,6 +148,56 @@ SavedDatasets/dataset_IceAndFire_49.dat: 345
 SavedDatasets/dataset_IceAndFire_26.dat: 501
 SavedDatasets/dataset_IceAndFire_23.dat: 500
 SavedDatasets/dataset_IceAndFire_29.dat: 502
+SavedDatasets/dataset_IceAndFire_76.dat: 469
+SavedDatasets/dataset_IceAndFire_71.dat: 361
+SavedDatasets/dataset_IceAndFire_85.dat: 299
+SavedDatasets/dataset_IceAndFire_84.dat: 500
+SavedDatasets/dataset_IceAndFire_98.dat: 25
+SavedDatasets/dataset_IceAndFire_78.dat: 501
+SavedDatasets/dataset_IceAndFire_69.dat: 500
+SavedDatasets/dataset_IceAndFire_73.dat: 500
+SavedDatasets/dataset_IceAndFire_79.dat: 500
+SavedDatasets/dataset_IceAndFire_56.dat: 425
+SavedDatasets/dataset_IceAndFire_97.dat: 500
+SavedDatasets/dataset_IceAndFire_57.dat: 375
+SavedDatasets/dataset_IceAndFire_55.dat: 500
+SavedDatasets/dataset_IceAndFire_53.dat: 500
+SavedDatasets/dataset_IceAndFire_74.dat: 429
+SavedDatasets/dataset_IceAndFire_86.dat: 500
+SavedDatasets/dataset_IceAndFire_58.dat: 500
+SavedDatasets/dataset_IceAndFire_99.dat: 400
+SavedDatasets/dataset_IceAndFire_89.dat: 500
+SavedDatasets/dataset_IceAndFire_63.dat: 500
+SavedDatasets/dataset_IceAndFire_93.dat: 500
+SavedDatasets/dataset_IceAndFire_50.dat: 500
+SavedDatasets/dataset_IceAndFire_61.dat: 502
+SavedDatasets/dataset_IceAndFire_75.dat: 502
+SavedDatasets/dataset_IceAndFire_64.dat: 500
+SavedDatasets/dataset_IceAndFire_67.dat: 501
+SavedDatasets/dataset_IceAndFire_60.dat: 500
+SavedDatasets/dataset_IceAndFire_87.dat: 467
+SavedDatasets/dataset_IceAndFire_81.dat: 462
+SavedDatasets/dataset_IceAndFire_65.dat: 500
+SavedDatasets/dataset_IceAndFire_90.dat: 501
+SavedDatasets/dataset_IceAndFire_70.dat: 500
+SavedDatasets/dataset_IceAndFire_94.dat: 500
+SavedDatasets/dataset_IceAndFire_62.dat: 500
+SavedDatasets/dataset_IceAndFire_59.dat: 471
+SavedDatasets/dataset_IceAndFire_68.dat: 501
+SavedDatasets/dataset_IceAndFire_92.dat: 501
+SavedDatasets/dataset_IceAndFire_54.dat: 59
+SavedDatasets/dataset_IceAndFire_95.dat: 500
+SavedDatasets/dataset_IceAndFire_80.dat: 438
+SavedDatasets/dataset_IceAndFire_88.dat: 500
+SavedDatasets/dataset_IceAndFire_96.dat: 501
+SavedDatasets/dataset_IceAndFire_72.dat: 106
+SavedDatasets/dataset_IceAndFire_83.dat: 463
+SavedDatasets/dataset_IceAndFire_52.dat: 502
+SavedDatasets/dataset_IceAndFire_77.dat: 500
+SavedDatasets/dataset_IceAndFire_51.dat: 465
+SavedDatasets/dataset_IceAndFire_66.dat: 500
+SavedDatasets/dataset_IceAndFire_91.dat: 500
+SavedDatasets/dataset_IceAndFire_82.dat: 502
 SavedDatasets/dataset_Catapults_41.dat: 89
 SavedDatasets/dataset_Catapults_31.dat: 97
 SavedDatasets/dataset_Catapults_46.dat: 174
@@ -348,10 +398,3 @@ SavedDatasets/dataset_Catapults_138.dat: 509
 SavedDatasets/dataset_Catapults_165.dat: 500
 SavedDatasets/dataset_Catapults_167.dat: 500
 SavedDatasets/dataset_Catapults_183.dat: 500
-
-
-
-
-
-
-

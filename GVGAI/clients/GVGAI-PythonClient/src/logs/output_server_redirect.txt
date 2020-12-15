@@ -1,2 +1,2 @@
-[GAME] Game idx:11 game name boulderdash
+[GAME] Game idx:16 game name catapults
 [PHASE] Starting First Phase of Training in 3 levels.

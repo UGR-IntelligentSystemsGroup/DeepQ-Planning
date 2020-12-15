@@ -1,271 +1,210 @@
-DQN_c1-16_c2-16_c3-32_c4-32_c5-64_c6-64_c7-128_c8-128_c9-256_c10-256_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 121
-DQN_c1-16_c2-16_c3-32_c4-32_c5-64_c6-64_c7-128_c8-128_c9-256_c10-256_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 1 | 86
-DQN_c1-16_c2-16_c3-32_c4-32_c5-64_c6-64_c7-128_c8-128_c9-256_c10-256_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 101
-DQN_c1-16_c2-16_c3-32_c4-32_c5-64_c6-64_c7-128_c8-128_c9-256_c10-256_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 117
-DQN_c1-16_c2-16_c3-32_c4-32_c5-64_c6-64_c7-128_c8-128_c9-256_c10-256_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 73
------------------------------------------------------------------------------------
 
-DQN_pruebas_14_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 1 | 216
-DQN_pruebas_14_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 150
-DQN_pruebas_14_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 124
-DQN_pruebas_14_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 131
-DQN_pruebas_14_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 1 | 106
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 2 | 189
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 1 | 43
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 166
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 0 | 127
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_0-44 | BoulderDash | 2 | 106
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 80 | 1.9631977081298828 | 0.17847251892089844
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 2 | 55 | 0.6497328281402588 | 0.05414440234502157
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 64 | 1.8355870246887207 | 0.18355870246887207
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 91 | 0.6156594753265381 | 0.07695743441581726
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 1 | 56 | 1.8581206798553467 | 0.16892006180503152
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_1-44 | BoulderDash | 0 | 134
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_1-44 | BoulderDash | 0 | 140
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_1-44 | BoulderDash | 4 | 127
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_1-44 | BoulderDash | 1 | 113
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_1-44 | BoulderDash | 1 | 92
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 86 | 2.021106719970703 | 0.1837369745427912
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 2 | 52 | 0.6749482154846191 | 0.05624568462371826
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 76 | 1.9156506061553955 | 0.15963755051294962
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 88 | 0.6017677783966064 | 0.0752209722995758
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 61 | 1.8398056030273438 | 0.18398056030273438
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_2-44 | BoulderDash | 0 | 167
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_2-44 | BoulderDash | 0 | 80
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_2-44 | BoulderDash | 0 | 265
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_2-44 | BoulderDash | 2 | 135
-DQN_pruebas_12_capas_fc-64_8_its-10000_BoulderDash_2-44 | BoulderDash | 0 | 210
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 86 | 2.1485540866851807 | 0.17904617389043173
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 1 | 47 | 0.6781620979309082 | 0.06165109981190075
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 1 | 71 | 1.8225698471069336 | 0.16568816791881213
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 111 | 0.9957821369171143 | 0.08298184474309285
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 74 | 1.7541749477386475 | 0.19490832752651638
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_0-50 | IceAndFire | 0 | 161
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_0-50 | IceAndFire | 10 | 105
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_0-50 | IceAndFire | 17 | 89
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_0-50 | IceAndFire | 11 | 176
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_0-50 | IceAndFire | 2 | 160
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 86 | 1.8408985137939453 | 0.20454427931043836
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 46 | 0.6649045944213867 | 0.06649045944213867
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 2 | 89 | 2.0172743797302246 | 0.15517495228694037
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 75 | 0.6882188320159912 | 0.0625653483650901
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 68 | 1.726154088973999 | 0.1726154088973999
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_1-50 | IceAndFire | 0 | 137
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_1-50 | IceAndFire | 6 | 111
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_1-50 | IceAndFire | 3 | 91
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_1-50 | IceAndFire | 2 | 122
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_1-50 | IceAndFire | 2 | 194
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 4 | 134 | 1.6916344165802002 | 0.11277562777201335
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 4 | 129 | 0.45277953147888184 | 0.05030883683098687
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 1 | 123 | 1.3154652118682861 | 0.14616280131869847
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 0 | 121 | 0.6489837169647217 | 0.058998519724065605
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 10 | 238 | 1.9817421436309814 | 0.0943686735062372
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_2-50 | IceAndFire | 0 | 113
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_2-50 | IceAndFire | 1 | 97
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_2-50 | IceAndFire | 10 | 83
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_2-50 | IceAndFire | 7 | 156
-DQN_pruebas_12_capas_fc-64_8_its-10000_IceAndFire_2-50 | IceAndFire | 2 | 194
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 5 | 106 | 1.7321338653564453 | 0.10825836658477783
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 21 | 131 | 1.5647833347320557 | 0.04889947921037674
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 3 | 111 | 1.6684706211090088 | 0.11917647293635777
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 125 | 0.5994234085083008 | 0.054493037137118255
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 142 | 1.302393913269043 | 0.16279923915863037
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_0-100 | Catapults | -1 | 20
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_0-100 | Catapults | -1 | 4
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_0-100 | Catapults | -1 | 25
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_0-100 | Catapults | -1 | 9
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_0-100 | Catapults | -1 | 9
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 2 | 134 | 1.635977029800415 | 0.12584438690772423
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 6 | 93 | 0.7053656578063965 | 0.0470243771870931
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 97 | 1.2833976745605469 | 0.16042470932006836
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 3 | 101 | 0.5928502082824707 | 0.05389547348022461
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 3 | 196 | 1.3596348762512207 | 0.13596348762512206
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_1-100 | Catapults | -1 | 20
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_1-100 | Catapults | -1 | 4
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_1-100 | Catapults | -1 | 25
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_1-100 | Catapults | -1 | 9
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_1-100 | Catapults | -1 | 11
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 7 | 126 | 1.8790814876556396 | 0.10439341598086888
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 15 | 135 | 1.2231481075286865 | 0.048925924301147464
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 3 | 97 | 1.5134944915771484 | 0.12612454096476236
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 1 | 105 | 0.4471256732940674 | 0.05589070916175842
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 5 | 198 | 1.5240764617919922 | 0.11723665090707633
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_2-100 | Catapults | -1 | 20
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_2-100 | Catapults | -1 | 5
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_2-100 | Catapults | -1 | 22
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_2-100 | Catapults | -1 | 9
-DQN_pruebas_12_capas_fc-64_8_its-2500_Catapults_2-100 | Catapults | -1 | 9
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 5 | 0.8744010925292969 | 0.43720054626464844
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 16 | 0.6534411907196045 | 0.07260457674662273
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | 2 | 15 | 1.0526025295257568 | 0.21052050590515137
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | 4 | 27 | 0.6109342575073242 | 0.06788158416748047
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 7 | 1.523317575454712 | 0.11717827503497784
 
 -----------------------------------------------------------------------------------
 
-
--------- Tiempos Random
-
-
--- NIVELES GVGAI (SENCILLOS)
-
-Random_times_test-BoulderDash | BoulderDash | 0 | 159 | 0.42427754402160645 | 0.03857068582014604
-Random_times_test-BoulderDash | BoulderDash | 0 | 149 | 0.3107330799102783 | 0.034525897767808705
-Random_times_test-BoulderDash | BoulderDash | 0 | 188 | 0.3862621784210205 | 0.035114743492820046
-Random_times_test-BoulderDash | BoulderDash | 0 | 240 | 0.47775697708129883 | 0.036750536698561445
-Random_times_test-BoulderDash | BoulderDash | 1 | 191 | 0.4022824764251709 | 0.03352353970209757
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 5 | 1.200291633605957 | 0.15003645420074463
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 26 | 1.0958786010742188 | 0.06849241256713867
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 9 | 1.435002326965332 | 0.11958352724711101
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 22 | 0.811058521270752 | 0.06238911702082707
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 16 | 1.847191572189331 | 0.108658327775843
 
 -----------------------------------------------------------------------------------
 
-Random_times_test-IceAndFire | IceAndFire | 5 | 142 | 0.21591567993164062 | 0.01542254856654576
-Random_times_test-IceAndFire | IceAndFire | 13 | 145 | 0.35257935523986816 | 0.016789493106660388
-Random_times_test-IceAndFire | IceAndFire | 0 | 105 | 0.10943412780761719 | 0.01823902130126953
-Random_times_test-IceAndFire | IceAndFire | 3 | 105 | 0.12969565391540527 | 0.012969565391540528
-Random_times_test-IceAndFire | IceAndFire | 9 | 170 | 0.25721287727355957 | 0.016075804829597473
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 4 | 0.9578959941864014 | 0.3192986647288005
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 16 | 1.0828089714050293 | 0.06767556071281433
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 9 | 1.452733039855957 | 0.11174869537353516
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 25 | 1.00557279586792 | 0.062848299741745
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | 4 | 22 | 1.358799695968628 | 0.1509777439965142
 
 -----------------------------------------------------------------------------------
 
-Random_times_test-Catapults | Catapults | -1 | 5 | 0.20167207717895508 | 0.025209009647369385
-Random_times_test-Catapults | Catapults | -1 | 13 | 0.6695971488952637 | 0.02789988120396932
-Random_times_test-Catapults | Catapults | -1 | 11 | 0.4181039333343506 | 0.02787359555562337
-Random_times_test-Catapults | Catapults | -1 | 7 | 0.028134584426879883 | 0.028134584426879883
-Random_times_test-Catapults | Catapults | -1 | 9 | 0.5160963535308838 | 0.03035860903122846
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 4 | 1.397946834564209 | 0.11649556954701741
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 16 | 1.0918200016021729 | 0.0642247059765984
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 9 | 1.4110920429229736 | 0.11759100357691447
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | 7 | 27 | 0.8100218772888184 | 0.06750182310740153
+DQN_pruebas_test_8_capas_256_mejor_num_fc_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 16 | 1.7425868511199951 | 0.1089116781949997
 
 -----------------------------------------------------------------------------------
 
--- NIVELES IGNACIO (COMPLICADOS)
-
-Random_times_test-BoulderDash | BoulderDash | 0 | 110 | 0.28527307510375977 | 0.0475455125172933
-Random_times_test-BoulderDash | BoulderDash | 0 | 255 | 0.7376377582550049 | 0.05674136601961576
-Random_times_test-BoulderDash | BoulderDash | 0 | 558 | 1.0521292686462402 | 0.0618899569791906
-Random_times_test-BoulderDash | BoulderDash | 0 | 399 | 0.7359573841094971 | 0.05256838457924979
-Random_times_test-BoulderDash | BoulderDash | 0 | 107 | 0.23724079132080078 | 0.03954013188680013
-Random_times_test-BoulderDash | BoulderDash | 0 | 397 | 0.6135532855987549 | 0.03834708034992218
-
-Random_times_test-IceAndFire | IceAndFire | 5 | 126 | 0.24758315086364746 | 0.014563714756685145
-Random_times_test-IceAndFire | IceAndFire | -1 | 4 | 0.38833165168762207 | 0.014935832757216234
-Random_times_test-IceAndFire | IceAndFire | 10 | 192 | 0.2795543670654297 | 0.013977718353271485
-Random_times_test-IceAndFire | IceAndFire | 0 | 287 | 0.24921774864196777 | 0.020768145720163982
-Random_times_test-IceAndFire | IceAndFire | 5 | 127 | 0.23297572135925293 | 0.014560982584953308
-Random_times_test-IceAndFire | IceAndFire | 1 | 163 | 0.2202138900756836 | 0.015729563576834544
-
-Random_times_test-Catapults | Catapults | -1 | 1012 | 17.971448183059692 | 0.03423132987249465
-Random_times_test-Catapults | Catapults | 415 | 778 | 15.91497802734375 | 0.032216554711222166
-Random_times_test-Catapults | Catapults | -1 | 692 | 35.407742500305176 | 0.03602008392706529
-Random_times_test-Catapults | Catapults | -1 | 140 | 42.18121862411499 | 0.03719684182020722
-Random_times_test-Catapults | Catapults | -1 | 7 | 0.5136570930480957 | 0.03424380620320638
-Random_times_test-Catapults | Catapults | -1 | 30 | 2.406903028488159 | 0.029352475957172674
-
-
--------- Tiempos DQP
-
--- NIVELES GVGAI (SENCILLOS)
-
-DQP_times_test-BoulderDash-44 | BoulderDash | 0 | 127 | 2.0074729919433594 | 0.16728941599527994
-DQP_times_test-BoulderDash-44 | BoulderDash | 0 | 221 | 1.376800537109375 | 0.0764889187282986
-DQP_times_test-BoulderDash-44 | BoulderDash | 0 | 98 | 1.6422159671783447 | 0.18246844079759386
-DQP_times_test-BoulderDash-44 | BoulderDash | 0 | 216 | 1.300523281097412 | 0.08128270506858826
-DQP_times_test-BoulderDash-44 | BoulderDash | 0 | 169 | 1.8335931301116943 | 0.18335931301116942
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 94 | 2.314652442932129 | 0.25718360477023655
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 1 | 52 | 0.9010331630706787 | 0.09010331630706787
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 103 | 2.238880157470703 | 0.22388801574707032
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 0 | 69 | 0.802757740020752 | 0.0802757740020752
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_0-100 | BoulderDash | 2 | 68 | 2.312093496322632 | 0.192674458026886
 
 -----------------------------------------------------------------------------------
 
-
-DQP_times_test-IceAndFire-50 | IceAndFire | 2 | 130 | 1.524216890335083 | 0.13856517184864392
-DQP_times_test-IceAndFire-50 | IceAndFire | 11 | 145 | 0.810218334197998 | 0.042643070220947266
-DQP_times_test-IceAndFire-50 | IceAndFire | 0 | 135 | 1.4713587760925293 | 0.16348430845472547
-DQP_times_test-IceAndFire-50 | IceAndFire | 1 | 147 | 0.5533137321472168 | 0.05030124837701971
-DQP_times_test-IceAndFire-50 | IceAndFire | 5 | 226 | 1.4865422248840332 | 0.10618158749171666
-
------------------------------------------------------------------------------------
-
-DQP_times_test-Catapults-100 | Catapults | -1 | 10 | 1.046522617340088 | 0.174420436223348
-DQP_times_test-Catapults-100 | Catapults | -1 | 16 | 0.463228702545166 | 0.06617552893502372
-DQP_times_test-Catapults-100 | Catapults | -1 | 13 | 1.4167239665985107 | 0.1089787666614239
-DQP_times_test-Catapults-100 | Catapults | -1 | 22 | 0.8458404541015625 | 0.04975532082950368
-DQP_times_test-Catapults-100 | Catapults | -1 | 9 | 0.9760560989379883 | 0.24401402473449707
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 93 | 2.2210347652435303 | 0.24678164058261448
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 40 | 0.7860808372497559 | 0.07146189429543236
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 87 | 2.217372417449951 | 0.22173724174499512
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 95 | 0.8178071975708008 | 0.08178071975708008
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 73 | 2.3638033866882324 | 0.2148912169716575
 
 -----------------------------------------------------------------------------------
 
--- NIVELES IGNACIO (COMPLICADOS)
-
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 277 | 2.9570937156677246 | 0.15563651135093287
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 333 | 1.1961784362792969 | 0.08544131687709264
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 443 | 2.923997402191162 | 0.18274983763694763
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 357 | 1.333927869796753 | 0.08892852465311686
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 151 | 1.7682251930236816 | 0.19646946589152017
-DQP_times_test-BoulderDash-50 | BoulderDash | 0 | 175 | 1.0928382873535156 | 0.08406448364257812
-
-DQP_times_test-IceAndFire-50 | IceAndFire | 0 | 132 | 1.4258573055267334 | 0.14258573055267335
-DQP_times_test-IceAndFire-50 | IceAndFire | -1 | 5 | 0.992011547088623 | 0.036741168410689744
-DQP_times_test-IceAndFire-50 | IceAndFire | 0 | 162 | 1.5416913032531738 | 0.1284742752710978
-DQP_times_test-IceAndFire-50 | IceAndFire | 1 | 181 | 0.5072846412658691 | 0.0422737201054891
-DQP_times_test-IceAndFire-50 | IceAndFire | 2 | 103 | 1.694270133972168 | 0.1129513422648112
-DQP_times_test-IceAndFire-50 | IceAndFire | 0 | 127 | 0.38039135932922363 | 0.038039135932922366
-
-DQP_times_test-Catapults-100 | Catapults | 580 | 401 | 41.05365037918091 | 0.06526812460919064
-DQP_times_test-Catapults-100 | Catapults | 1239 | 436 | 75.11330819129944 | 0.057823947799306726
-DQP_times_test-Catapults-100 | Catapults | -1 | 302 | 116.41367673873901 | 0.06202113837972244
-DQP_times_test-Catapults-100 | Catapults | 460 | 228 | 32.98927879333496 | 0.06664500766330295
-DQP_times_test-Catapults-100 | Catapults | -1 | 20 | 3.7804694175720215 | 0.07715243709330656
-DQP_times_test-Catapults-100 | Catapults | -1 | 163 | 11.303825378417969 | 0.05651912689208984
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 0 | 137 | 2.158440351486206 | 0.30834862164088656
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 0 | 305 | 1.8269672393798828 | 0.1405359414907602
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 1 | 166 | 2.1308257579803467 | 0.26635321974754333
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 0 | 283 | 1.877223253250122 | 0.14440178871154785
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 0 | 192 | 2.6809229850769043 | 0.24372027137062766
-DQN_pruebas_20_capas_fc-64_8_its-15000_BoulderDash_0-50 | BoulderDash | 1 | 143 | 0.49737048149108887 | 0.06217131018638611
-DQN_pruebas_20_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 206 | 2.5874345302581787 | 0.2352213209325617
-DQN_pruebas_20_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 2 | 89 | 0.7832918167114258 | 0.08703242407904731
-DQN_pruebas_20_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 188 | 2.6431591510772705 | 0.24028719555247913
-DQN_pruebas_20_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 159 | 0.9393672943115234 | 0.09393672943115235
-DQN_pruebas_20_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 243 | 3.26275897026062 | 0.20392243564128876
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 2 | 86 | 2.153151512145996 | 0.19574104655872693
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 104 | 1.3586487770080566 | 0.10451144438523513
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 1 | 77 | 1.683164358139038 | 0.24045205116271973
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 3 | 125 | 1.0074410438537598 | 0.09158554944125089
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 96 | 2.2316112518310547 | 0.22316112518310546
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_15_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 156 | 2.547656536102295 | 0.2123047113418579
-DQN_pruebas_15_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 3 | 73 | 0.6178455352783203 | 0.056167775934392754
-DQN_pruebas_15_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 235 | 2.459683418273926 | 0.2049736181894938
-DQN_pruebas_15_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 122 | 0.7481997013092041 | 0.10688567161560059
-DQN_pruebas_15_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 113 | 2.0613934993743896 | 0.22904372215270996
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 396 | 3.9810376167297363 | 0.1809562553058971
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 196 | 1.5647163391113281 | 0.0782358169555664
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 285 | 3.7607102394104004 | 0.17908143997192383
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 183 | 1.2745208740234375 | 0.08496805826822916
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 267 | 3.7138102054595947 | 0.17684810502188547
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_10_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 175 | 1.9920036792755127 | 0.18109124357050116
-DQN_pruebas_10_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 208 | 1.034644365310669 | 0.07958802810082069
-DQN_pruebas_10_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 137 | 1.9185924530029297 | 0.17441749572753906
-DQN_pruebas_10_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 183 | 0.7883083820343018 | 0.08758982022603352
-DQN_pruebas_10_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 245 | 2.533201217651367 | 0.14901183633243337
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 0 | 138 | 1.6271910667419434 | 0.18079900741577148
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 11 | 109 | 1.1685118675231934 | 0.05311417579650879
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 4 | 105 | 1.5737073421478271 | 0.14306430383162064
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 0 | 117 | 0.6953327655792236 | 0.06953327655792237
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_0-100 | IceAndFire | 0 | 126 | 1.1748251914978027 | 0.23496503829956056
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_8_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 153 | 1.9762437343597412 | 0.17965852130543103
-DQN_pruebas_8_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 149 | 0.7438831329345703 | 0.08265368143717448
-DQN_pruebas_8_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 118 | 1.5739634037017822 | 0.19674542546272278
-DQN_pruebas_8_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 191 | 1.0181150436401367 | 0.08484292030334473
-DQN_pruebas_8_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 110 | 1.5849096775054932 | 0.19811370968818665
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 1 | 138 | 1.7363569736480713 | 0.17363569736480713
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 3 | 145 | 0.8123633861541748 | 0.06248949124262883
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 101 | 1.4137310981750488 | 0.2019615854535784
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 125 | 0.7505030632019043 | 0.06822755120017311
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 1 | 138 | 1.380258321762085 | 0.19717976025172643
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_6_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 145 | 2.123112916946411 | 0.17692607641220093
-DQN_pruebas_6_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 4 | 244 | 1.5990092754364014 | 0.0726822397925637
-DQN_pruebas_6_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 90 | 1.4152932167053223 | 0.23588220278422037
-DQN_pruebas_6_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 6 | 293 | 1.7936861515045166 | 0.07473692297935486
-DQN_pruebas_6_capas_Leaky_relu_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 233 | 2.4764819145202637 | 0.15478011965751648
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 11 | 156 | 2.308455467224121 | 0.10492979396473277
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 1 | 83 | 0.4552767276763916 | 0.05690959095954895
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 139 | 1.6855907440185547 | 0.18728786044650608
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 119 | 0.6368017196655273 | 0.05789106542413885
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 8 | 208 | 1.9994585514068604 | 0.1176152089062859
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_8_capas_tras_bug_shuffle_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 159 | 5.315816402435303 | 0.4832560365850275
-DQN_pruebas_8_capas_tras_bug_shuffle_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 168 | 2.493006944656372 | 0.19176976497356707
-DQN_pruebas_8_capas_tras_bug_shuffle_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 174 | 1.9791693687438965 | 0.19791693687438966
-DQN_pruebas_8_capas_tras_bug_shuffle_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 198 | 1.4735276699066162 | 0.09823517799377442
-DQN_pruebas_8_capas_tras_bug_shuffle_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 112 | 2.096745491027832 | 0.19061322645707565
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 32 | 122 | 3.0103673934936523 | 0.06841744076121938
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 9 | 93 | 0.5010795593261719 | 0.02947526819565717
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 10 | 109 | 1.6066112518310547 | 0.10041320323944092
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 6 | 105 | 0.554025411605835 | 0.03957324368613107
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 6 | 204 | 1.3231265544891357 | 0.11026054620742798
 
 -----------------------------------------------------------------------------------
 
-DQN_pruebas_8_capas_penalizacion_100_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 119 | 3.4418272972106934 | 0.1564466953277588
-DQN_pruebas_8_capas_penalizacion_100_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 73 | 0.9717562198638916 | 0.07475047845106858
-DQN_pruebas_8_capas_penalizacion_100_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 112 | 3.338277816772461 | 0.15173990076238458
-DQN_pruebas_8_capas_penalizacion_100_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 0 | 141 | 1.4947876930236816 | 0.07473938465118408
-DQN_pruebas_8_capas_penalizacion_100_fc-64_8_its-10000_BoulderDash_0-50 | BoulderDash | 1 | 148 | 2.869102716445923 | 0.15100540612873278
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 5 | 1.821183204650879 | 0.13008451461791992
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 20 | 0.9786314964294434 | 0.08155262470245361
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | 2 | 15 | 1.144191026687622 | 0.2860477566719055
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | 8 | 27 | 1.0614433288574219 | 0.0816494868351863
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_0-200 | Catapults | -1 | 9 | 1.5345098972320557 | 0.15345098972320556
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 4 | 1.377220869064331 | 0.19674583843776158
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 26 | 1.409905195236206 | 0.08811907470226288
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | 5 | 15 | 1.2520005702972412 | 0.17885722432817733
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 22 | 0.8759574890136719 | 0.06738134530874398
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_1-200 | Catapults | -1 | 16 | 1.8465595245361328 | 0.13189710889543807
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 4 | 1.1887145042419434 | 0.23774290084838867
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 16 | 1.042816400527954 | 0.08021664619445801
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 13 | 2.037302255630493 | 0.10722643450686806
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 22 | 1.0338633060455322 | 0.06461645662784576
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_2-200 | Catapults | -1 | 9 | 1.5045757293701172 | 0.16717508104112414
+
+-----------------------------------------------------------------------------------
+
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 5 | 1.2497012615203857 | 0.20828354358673096
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 16 | 0.9593894481658936 | 0.08721722256053578
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 9 | 1.509145736694336 | 0.13719506697221237
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 25 | 1.1378858089447021 | 0.07585905392964681
+DQN_pruebas_test_10_capas_256_its_fc-128_32_1_1_its-15000_Catapults_3-200 | Catapults | -1 | 16 | 2.1310906410217285 | 0.12535827300127814
 
 -----------------------------------------------------------------------------------
 
 
------- 75 NIVELES
 
 
-DQN_pruebas_8_capas_penalizacion_1000_fc-64_8_its-10000_BoulderDash_0-75 | BoulderDash | 0 | 120 | 6.451128959655762 | 0.8063911199569702
-DQN_pruebas_8_capas_penalizacion_1000_fc-64_8_its-10000_BoulderDash_0-75 | BoulderDash | 0 | 100 | 0.655207633972168 | 0.081900954246521
-DQN_pruebas_8_capas_penalizacion_1000_fc-64_8_its-10000_BoulderDash_0-75 | BoulderDash | 0 | 167 | 2.029905080795288 | 0.18453682552684436
-DQN_pruebas_8_capas_penalizacion_1000_fc-64_8_its-10000_BoulderDash_0-75 | BoulderDash | 0 | 118 | 0.7438464164733887 | 0.07438464164733886
-DQN_pruebas_8_capas_penalizacion_1000_fc-64_8_its-10000_BoulderDash_0-75 | BoulderDash | 0 | 70 | 1.3245055675506592 | 0.26490111351013185
+------- Pruebas mejor num its.
 
 
 
 
------------------------------------------------------------------------------------
+
+
+
 
 
 
