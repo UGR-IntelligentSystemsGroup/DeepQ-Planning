@@ -55,17 +55,17 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_pruebas_test_Catapults_100_lvs_fc-128_32_1_1_its-10000_Catapults_0"
+		self.network_name="DQN_Random_Model_test_fc-128_32_1_1_its-25000_Catapults_14"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=200
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=28912
+		self.level_seed=433680
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -96,7 +96,7 @@ class Agent(AbstractPlayer):
 		self.l4_padding_type="VALID"
 
 		# Fifth conv layer
-		self.l5_num_filt=128
+		self.l5_num_filt=64
 		self.l5_window=[3, 3]
 		self.l5_strides=[1, 1]
 		self.l5_padding_type="VALID"
@@ -107,12 +107,12 @@ class Agent(AbstractPlayer):
 		self.l6_strides=[1, 1]
 		self.l6_padding_type="VALID"
 
-		self.l7_num_filt=256
+		self.l7_num_filt=128
 		self.l7_window=[3, 3]
 		self.l7_strides=[1, 1]
 		self.l7_padding_type="VALID"
 
-		self.l8_num_filt=256
+		self.l8_num_filt=128
 		self.l8_window=[3, 3]
 		self.l8_strides=[1, 1]
 		self.l8_padding_type="VALID"
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=10000
+		self.num_train_its=25000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -246,7 +246,7 @@ class Agent(AbstractPlayer):
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
 			# "random" -> select a random one (corresponds with the random model)
 			# Automatically changed by the scripts!
-			self.goal_selection_mode="best"
+			self.goal_selection_mode="random"
 
 			# Create Learning Model unles goal selection model is random
 
@@ -303,7 +303,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+				self.dataset_size_model=200
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)

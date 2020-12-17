@@ -5,10 +5,17 @@ This script parses the execution results stored in test_output.txt
 import re
 import numpy as np
 
-output_file = "test_output.txt"
-num_test_levels = 5
 
-def get_average_results_per_game(game_list):
+
+import sys
+
+output_file = "test_output.txt"
+# games = ['BoulderDash', 'IceAndFire', 'Catapults']
+games = ['BoulderDash', 'IceAndFire', 'Catapults']
+num_test_levels = 11
+model = "Random" # 'DQP' o 'Random'
+
+def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 	"""
 	This function reads the output file and calculates for each game in
 	@game_list the average results: number of errors and actions for
@@ -21,24 +28,40 @@ def get_average_results_per_game(game_list):
 	for curr_game in game_list:
 		# Find all the different game models for the current game
 		# Each parenthesis represents a different group
-		# Group 1 -> Name of the network
-		# Group 2 -> Number of levels it was trained on
-		match_list = re.findall(r'(DQN.*)_[0-9]+-([0-9]+) \| {} \|.*'.format(curr_game), results_str)
+
+		if model == "DQP":
+			# Group 1 -> Name of the network
+			# Group 2 -> Number of levels it was trained on
+			match_list = re.findall(r'(DQN.*)_[0-9]+-([0-9]+) \| {} \|.*'.format(curr_game), results_str)
+		else:
+			# Group 1 -> Name of the network
+			match_list = re.findall(r'(DQN.*)_[0-9]+ \| {} \|.*'.format(curr_game), results_str)
+
 
 		# Convert it to a set to get the unique values (model names)
 		match_set = set(match_list)
 
+
+
 		# For each different model of the current game, match the corresponding test/validation results
 		for curr_match in match_set:
 			# Get all the lines containing the results
-			curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
-				format(curr_match[0], curr_match[1], curr_game), results_str)
+			if model == "DQP":
+				curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
+					format(curr_match[0], curr_match[1], curr_game), results_str)
+			else:
+				curr_model_match_list = re.findall(r'{}_[0-9]+ \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
+					format(curr_match, curr_game), results_str)
 
 			# Separe the number of errors, actions, total time and mean time
 			curr_model_num_errors = [int(match[0]) for match in curr_model_match_list]
 			curr_model_num_actions = [int(match[1]) for match in curr_model_match_list]
 			curr_model_total_time = [float(match[2]) for match in curr_model_match_list]
 			curr_model_mean_time = [float(match[3]) for match in curr_model_match_list]
+
+
+			#print(len(curr_model_num_errors))
+			#sys.exit()
 
 			if curr_game in ('BoulderDash', 'IceAndFire'):
 				# Calculate the average number of errors and actions for each of the
@@ -52,7 +75,11 @@ def get_average_results_per_game(game_list):
 				average_mean_time_per_level = [np.average(curr_model_mean_time[i::num_test_levels]) for i in range(num_test_levels)]
 
 				print("\n--- {} ---\n".format(curr_game))
-				print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+
+				if model == "DQP":
+					print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+				else:
+					print("{}".format(curr_match)) # Model Name
 				print("Average num errors per level: ", average_num_errors_per_level)
 				print("Average num actions per level: ", average_num_actions_per_level)
 				print("Average total time per level: ", average_total_time_per_level)
@@ -113,7 +140,10 @@ def get_average_results_per_game(game_list):
 
 
 				print("\n--- {} ---\n".format(curr_game))
-				print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+				if model == "DQP":
+					print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+				else:
+					print("{}".format(curr_match)) # Model Name
 				print("Success rate per level", success_rate_per_level)
 				print("Average num errors per completed level: ", average_num_errors_per_completed_level)
 				print("Average num actions per completed level: ", average_num_actions_per_completed_level)
@@ -121,7 +151,4 @@ def get_average_results_per_game(game_list):
 				print("Average mean time per completed level: ", average_mean_time_per_completed_level)
 
 if __name__ == '__main__':
-	# games = ['BoulderDash', 'IceAndFire', 'Catapults']
-	games = ['BoulderDash', 'IceAndFire', 'Catapults']
-
-	get_average_results_per_game(games)
+	get_average_results_per_game(games, num_test_levels, model)

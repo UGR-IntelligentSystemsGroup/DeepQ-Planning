@@ -500,7 +500,7 @@ class DQNetwork:
 			self.flatten = tf.contrib.layers.flatten(self.conv20)
 
 			# Concatenate agent resources
-			self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
+			# self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
 			
 			# Fully connected layer 1
 

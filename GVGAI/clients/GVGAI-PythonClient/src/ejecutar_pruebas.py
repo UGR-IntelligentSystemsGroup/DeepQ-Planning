@@ -105,7 +105,7 @@ script_execution_mode = "test"
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
-goal_selection_mode = "best"
+goal_selection_mode = "random"
 
 # <Seed>
 # Used for repetibility
@@ -151,7 +151,17 @@ dropout 0.4 empeoran los resultados -> no uso dropout
   Con 8 capas el training loss es mejor y en test, para boulderdash da igual, para iceandfire
   es un poco mejor y en Catapults es también un poco mejor -> uso 8 capas.
 
+> Al probar a aumentar las capas a 10 (usando 256 filtros en las últimas), los resultados
+  empeoran en BoulderDash y Catapults, y se mantienen igual en IceAndFire.
+
 > Al entrenar Catapults sobre solo los 100 niveles antiguos, los resultados empeoran.
+
+> Pruebas mejor num its.
+  BoulderDash: no está claro cuál es mejor -> Me quedo con 20000
+  IceAndFire: no está claro cuál es mejor -> Me quedo con 20000
+  Catapults: 25000 repeticiones.
+
+> El mejor número de filtros en las últimas capas conv es 128, no 64 o 256.
 """
 
 
@@ -159,12 +169,12 @@ dropout 0.4 empeoran los resultados -> no uso dropout
 
 
 
-# Tengo que disminuir los samples por level quizás (ahora estoy usando hasta 500)
+# <<VER RESULTADOS FF (PLANES ÓPTIMOS Y NO) PARA TODOS LOS NIVELES
+# (DIFÍCILES Y NO)>>
 
-# <Probar a usar capas de 128 filtros en vez de 256>
+# <<REPETIR EJECUCIONES CON RANDOM MODEL (goal_selection_mode = "random")>>
 
-# <<PROBAR A EJECUTAR DE GOLPE EN LOS 10 NIVELES DE TEST>>
-
+# <<EJECUTAR SOBRE LOS 10 NIVELES DE TEST>>
 
 # Architecture
 l1_num_filt = [32]
@@ -176,16 +186,16 @@ l3_num_filt = [64]
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l4_num_filt = [64]
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
-
-l5_num_filt = [128]
+l5_num_filt = [64]
 l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+
 l6_num_filt = [128]
 l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-
-l7_num_filt = [256]
+l7_num_filt = [128]
 l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l8_num_filt = [256]
+l8_num_filt = [128]
 l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+
 
 
 
@@ -235,13 +245,13 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [20000, 25000, 30000] # 10000 # 5000 # 10000
-num_its_IceAndFire = [15000, 20000, 25000, 30000] # 10000 # 7500 # 2500
-num_its_Catapults = [15000, 20000, 25000, 30000] # 15000 # 2500 # 2500
+num_its_BoulderDash = [20000] # 20000 # 10000 # 5000 # 10000
+num_its_IceAndFire = [20000] # 20000 # 10000 # 7500 # 2500
+num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
 
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 0 # Index of the first repetition (0 by default)
-repetitions_per_model = 4 # Each model is trained this number of times
+repetitions_per_model = 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -249,7 +259,8 @@ repetitions_per_model = 4 # Each model is trained this number of times
 # The need to be grouped in pairs (or as a one-element tuple)
 # test_level_indexes = [(5,6),(7,8),(9,10)]
 # test_level_indexes = [(0,1),(2,3),(4,)] # Use this one for validation
-test_level_indexes = [(0,1),(2,3),(4,)]
+# test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
+test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 
 
 # <Script variables>
@@ -563,12 +574,12 @@ try:
 			if script_execution_mode == "validation":
 				# The name of the model can't be that long!! (it raises an exception on tensorflow)
 
-				curr_model_name = "DQN_pruebas_val_mejor_num_its_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Random_Model_val_fc-{}_{}_{}_{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_pruebas_test_mejor_num_its_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Random_Model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
