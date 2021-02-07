@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Random_Model_test_fc-128_32_1_1_its-25000_Catapults_14"
+		self.network_name="DQN_Random_Model_test_fc-128_32_1_1_its-1000_BoulderDash_0"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=5
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=433680
+		self.level_seed=28912
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=25000
+		self.num_train_its=1000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -303,7 +303,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=200
+				self.dataset_size_model=5
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -345,7 +345,8 @@ class Agent(AbstractPlayer):
 			self.num_incorrect_subgoals = 0
 
 			# Measure the goal selection + planning times
-			self.total_time_curr_lv = 0
+			self.total_time_planning_curr_lv = 0
+			self.total_time_goal_selec_curr_lv = 0
 			self.num_calls_planner = 0 # Times the method search_plan has been called in the current level
 
 
@@ -632,7 +633,7 @@ class Agent(AbstractPlayer):
 							end = time.time()
 
 							if not self.is_training:
-								self.total_time_curr_lv += end-start
+								self.total_time_goal_selec_curr_lv += end-start
 
 						# Get the first subgoal (the one with the smallest Q_value)
 						chosen_subgoal = subgoals[0]
@@ -663,7 +664,7 @@ class Agent(AbstractPlayer):
 					end = time.time()
 
 					if not self.is_training:
-						self.total_time_curr_lv += end-start
+						self.total_time_planning_curr_lv += end-start
 						self.num_calls_planner += 1
 
 					# If there is no valid plan to the chosen subgoal, increment the number of
@@ -1497,8 +1498,8 @@ class Agent(AbstractPlayer):
 				print("\n\nThe player has lost\n\n")
 				self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
 
-			# Calculate average planning time per subgoal in the current level
-			mean_time_curr_level = self.total_time_curr_lv / self.num_calls_planner
+			# Calculate average time per subgoal in the current level
+			# mean_time_curr_level = self.total_time_curr_lv / self.num_calls_planner
 
 			# Save the number of actions and the number of incorrect subgoals used to complete the 
 			# current level to the output file
@@ -1508,11 +1509,11 @@ class Agent(AbstractPlayer):
 				if self.goal_selection_mode == "best":
 					file.write("{}-{} | {} | {} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
-					 self.total_time_curr_lv, mean_time_curr_level))
+					 self.total_time_planning_curr_lv, self.total_time_goal_selec_curr_lv))
 				else:
-					file.write("{} | {} | {} | {} | {} | {}\n".format(self.network_name,
+					file.write("{} | {} | {} | {} | {}\n".format(self.network_name,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
-					 self.total_time_curr_lv, mean_time_curr_level))
+					 self.total_time_planning_curr_lv))
 
 				if self.num_test_levels == 1: # For the last of the five val/test levels, write a linebreak
 					file.write("\n-----------------------------------------------------------------------------------\n\n")

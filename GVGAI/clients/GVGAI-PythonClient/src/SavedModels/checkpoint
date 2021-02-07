@@ -1,0 +1,2 @@
+model_checkpoint_path: "DQN_Random_Model_test_fc-128_32_1_1_its-1000_BoulderDash_0.ckpt-5"
+all_model_checkpoint_paths: "DQN_Random_Model_test_fc-128_32_1_1_its-1000_BoulderDash_0.ckpt-5"

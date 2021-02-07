@@ -105,7 +105,7 @@ script_execution_mode = "test"
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
-goal_selection_mode = "random"
+goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
@@ -164,17 +164,6 @@ dropout 0.4 empeoran los resultados -> no uso dropout
 > El mejor número de filtros en las últimas capas conv es 128, no 64 o 256.
 """
 
-
-
-
-
-
-# <<VER RESULTADOS FF (PLANES ÓPTIMOS Y NO) PARA TODOS LOS NIVELES
-# (DIFÍCILES Y NO)>>
-
-# <<REPETIR EJECUCIONES CON RANDOM MODEL (goal_selection_mode = "random")>>
-
-# <<EJECUTAR SOBRE LOS 10 NIVELES DE TEST>>
 
 # Architecture
 l1_num_filt = [32]
@@ -251,7 +240,7 @@ num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
 
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 0 # Index of the first repetition (0 by default)
-repetitions_per_model = 15 # Each model is trained this number of times
+repetitions_per_model = 15 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -796,7 +785,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	# subprocess.call("shutdown -t 60", shell=True)
+	subprocess.call("shutdown -t 60", shell=True)
 
 
 					
