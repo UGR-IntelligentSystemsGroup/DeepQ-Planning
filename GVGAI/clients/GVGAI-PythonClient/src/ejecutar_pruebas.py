@@ -239,8 +239,8 @@ num_its_IceAndFire = [20000] # 20000 # 10000 # 7500 # 2500
 num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
 
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 0 # Index of the first repetition (0 by default)
-repetitions_per_model = 15 # 15 # Each model is trained this number of times
+ini_rep_model = 1 # Index of the first repetition
+repetitions_per_model = 10 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -563,12 +563,12 @@ try:
 			if script_execution_mode == "validation":
 				# The name of the model can't be that long!! (it raises an exception on tensorflow)
 
-				curr_model_name = "DQN_Random_Model_val_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Final_Model_val_fc-{}_{}_{}_{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Random_Model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Final_Model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 

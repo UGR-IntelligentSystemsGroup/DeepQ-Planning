@@ -12,8 +12,8 @@ import sys
 output_file = "test_output.txt"
 # games = ['BoulderDash', 'IceAndFire', 'Catapults']
 games = ['BoulderDash', 'IceAndFire', 'Catapults']
-num_test_levels = 11
-model = "Random" # 'DQP' o 'Random'
+num_test_levels = 11 # Number of levels each model is tested on (11 = 5 default test levels + 6 new (hard) test levels)
+model = "DQP" # 'DQP' o 'Random'
 
 def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 	"""
@@ -49,15 +49,21 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 			if model == "DQP":
 				curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
 					format(curr_match[0], curr_match[1], curr_game), results_str)
+
+				# Separe the number of errors, actions, planning and goal selection time
+				curr_model_num_errors = [int(match[0]) for match in curr_model_match_list]
+				curr_model_num_actions = [int(match[1]) for match in curr_model_match_list]
+				curr_model_planning_time = [float(match[2]) for match in curr_model_match_list]
+				curr_model_goal_selec_time = [float(match[3]) for match in curr_model_match_list]
 			else:
-				curr_model_match_list = re.findall(r'{}_[0-9]+ \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
+				curr_model_match_list = re.findall(r'{}_[0-9]+ \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*)'.
 					format(curr_match, curr_game), results_str)
 
-			# Separe the number of errors, actions, total time and mean time
-			curr_model_num_errors = [int(match[0]) for match in curr_model_match_list]
-			curr_model_num_actions = [int(match[1]) for match in curr_model_match_list]
-			curr_model_total_time = [float(match[2]) for match in curr_model_match_list]
-			curr_model_mean_time = [float(match[3]) for match in curr_model_match_list]
+				# Separe the number of errors, actions, planning and goal selection time
+				curr_model_num_errors = [int(match[0]) for match in curr_model_match_list]
+				curr_model_num_actions = [int(match[1]) for match in curr_model_match_list]
+				curr_model_planning_time = [float(match[2]) for match in curr_model_match_list]
+				curr_model_goal_selec_time = [0 for match in curr_model_match_list] # The Random Model does not spend time selecting subgoals
 
 
 			#print(len(curr_model_num_errors))
@@ -71,8 +77,8 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 
 				# Calculate the average total time and mean time for each of the five
 				# test/validation levels
-				average_total_time_per_level = [np.average(curr_model_total_time[i::num_test_levels]) for i in range(num_test_levels)]
-				average_mean_time_per_level = [np.average(curr_model_mean_time[i::num_test_levels]) for i in range(num_test_levels)]
+				average_planning_time_per_level = [np.average(curr_model_planning_time[i::num_test_levels]) for i in range(num_test_levels)]
+				average_goal_selec_time_per_level = [np.average(curr_model_goal_selec_time[i::num_test_levels]) for i in range(num_test_levels)]
 
 				print("\n--- {} ---\n".format(curr_game))
 
@@ -82,8 +88,8 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 					print("{}".format(curr_match)) # Model Name
 				print("Average num errors per level: ", average_num_errors_per_level)
 				print("Average num actions per level: ", average_num_actions_per_level)
-				print("Average total time per level: ", average_total_time_per_level)
-				print("Average mean time per level: ", average_mean_time_per_level)
+				print("Average planning time per level: ", average_planning_time_per_level)
+				print("Average goal selection time per level: ", average_goal_selec_time_per_level)
 
 			else: # Catapults
 				# Calculate success_rate (percentage of levels the agent beats)
@@ -109,34 +115,34 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 					else: # otherwise, we calculate the average
 						average_num_errors_per_completed_level.append(np.average(curr_num_errors))
 
-				# Calculate the average number of actions, average total time and average mean time
+				# Calculate the average number of actions, average planning time and average goal selec time
 				# per test level <completed>
 				average_num_actions_per_completed_level = []
-				average_total_time_per_completed_level = []
-				average_mean_time_per_completed_level = []
+				average_planning_time_per_completed_level = []
+				average_goal_selec_time_per_completed_level = []
 
 				for i in range(num_test_levels):
-					# Obtain the number of errors, total time and mean time of the current level
+					# Obtain the number of errors, planning time and goal selec time of the current level
 					curr_num_actions = curr_model_num_actions[i::num_test_levels]
-					curr_total_time = curr_model_total_time[i::num_test_levels]
-					curr_mean_time = curr_model_mean_time[i::num_test_levels]
+					curr_planning_time = curr_model_planning_time[i::num_test_levels]
+					curr_goal_selec_time = curr_model_goal_selec_time[i::num_test_levels]
 
 					# Delete the entries of levels with -1 errors (levels not completed)
 					curr_num_errors = curr_model_num_errors[i::num_test_levels]
 					curr_num_actions = [a for a,e in zip(curr_num_actions, curr_num_errors) if e != -1]
-					curr_total_time = [a for a,e in zip(curr_total_time, curr_num_errors) if e != -1]
-					curr_mean_time = [a for a,e in zip(curr_mean_time, curr_num_errors) if e != -1]
+					curr_planning_time = [a for a,e in zip(curr_planning_time, curr_num_errors) if e != -1]
+					curr_goal_selec_time = [a for a,e in zip(curr_goal_selec_time, curr_num_errors) if e != -1]
 
 					# If no level was completed, the average number of actions, total time and
 					# mean time is -1 (undetermined)
 					if len(curr_num_actions) == 0:
 						average_num_actions_per_completed_level.append(-1)
-						average_total_time_per_completed_level.append(-1)
-						average_mean_time_per_completed_level.append(-1)
+						average_planning_time_per_completed_level.append(-1)
+						average_goal_selec_time_per_completed_level.append(-1)
 					else: # otherwise, we calculate the average
 						average_num_actions_per_completed_level.append(np.average(curr_num_actions))
-						average_total_time_per_completed_level.append(np.average(curr_total_time))
-						average_mean_time_per_completed_level.append(np.average(curr_mean_time))
+						average_planning_time_per_completed_level.append(np.average(curr_planning_time))
+						average_goal_selec_time_per_completed_level.append(np.average(curr_goal_selec_time))
 
 
 				print("\n--- {} ---\n".format(curr_game))
@@ -147,8 +153,8 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 				print("Success rate per level", success_rate_per_level)
 				print("Average num errors per completed level: ", average_num_errors_per_completed_level)
 				print("Average num actions per completed level: ", average_num_actions_per_completed_level)
-				print("Average total time per completed level: ", average_total_time_per_completed_level)
-				print("Average mean time per completed level: ", average_mean_time_per_completed_level)
+				print("Average planning time per completed level: ", average_planning_time_per_completed_level)
+				print("Average goal selection time per completed level: ", average_goal_selec_time_per_completed_level)
 
 if __name__ == '__main__':
 	get_average_results_per_game(games, num_test_levels, model)
