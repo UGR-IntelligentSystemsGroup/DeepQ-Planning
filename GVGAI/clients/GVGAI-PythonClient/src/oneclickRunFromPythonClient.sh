@@ -5,7 +5,7 @@
 # 43 -> IceAndFire
 # 16 -> Catapults
 
-game_id=16
+game_id=43
 server_dir=../../..
 agent_name=MyAgent.Agent
 sh_dir=utils
@@ -19,4 +19,4 @@ fi
 # Run the client with visualisation on
 #python3 TestLearningClient.py -gameId ${game_id} -agentName ${agent_name} -serverDir ${server_dir} -shDir ${sh_dir} -visuals
 # Run the client with visualisation
-python3 TestLearningClient.py -gameId ${game_id} -agentName ${agent_name} -serverDir ${server_dir} -shDir ${sh_dir}
+python3 TestLearningClient.py -gameId ${game_id} -agentName ${agent_name} -serverDir ${server_dir} -shDir ${sh_dir} -visuals

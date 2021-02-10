@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="IceAndFire"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15"
+		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=462592
+		self.level_seed=346944
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=25000
+		self.num_train_its=20000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -245,8 +245,9 @@ class Agent(AbstractPlayer):
 
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
 			# "random" -> select a random one (corresponds with the random model)
+			# "greedy" -> plans to every subgoal and selects the one with the shortest plan
 			# Automatically changed by the scripts!
-			self.goal_selection_mode="best"
+			self.goal_selection_mode="greedy"
 
 			# Create Learning Model unles goal selection model is random
 
@@ -303,14 +304,14 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=200
+				self.dataset_size_model=100
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -347,7 +348,6 @@ class Agent(AbstractPlayer):
 			# Measure the goal selection + planning times
 			self.total_time_planning_curr_lv = 0
 			self.total_time_goal_selec_curr_lv = 0
-			self.num_calls_planner = 0 # Times the method search_plan has been called in the current level
 
 
 	def act(self, sso, elapsedTimer):
@@ -638,12 +638,36 @@ class Agent(AbstractPlayer):
 						# Get the first subgoal (the one with the smallest Q_value)
 						chosen_subgoal = subgoals[0]
 
-					else: # Select subgoals randomly
+					elif self.goal_selection_mode == "random": # Select subgoals randomly
 						chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
 
+					# goal selection mode = greedy
+					else: # Plan to every subgoal and select the one of the shortest plan
+
+						# Order subgoals by their plan lengths
+						if not ordered_subgoals: # Only do it once
+							ordered_subgoals = True
+
+							# Measure planning times
+							start = time.time()
+
+							old_subgoals = subgoals
+							subgoals = self.order_subgoals_by_plan_length(sso, subgoals)
+
+							end = time.time()
+
+							if not self.is_training:
+								self.total_time_planning_curr_lv += end-start
+
+						# Get the first subgoal (the one with the smallest plan length)
+						if len(subgoals) > 0:
+							chosen_subgoal = subgoals[0]
+						else: # If there is no valid subgoal, choose any subgoal
+							chosen_subgoal = old_subgoals[0]
 
 					# Remove the selected subgoal from the list of eligible subgoals
-					subgoals.remove(chosen_subgoal)
+					if len(subgoals) > 0:
+						subgoals.remove(chosen_subgoal)
 
 					# If the game is IceAndFire, check how many types of boots the agent has
 					if self.game_playing == 'IceAndFire': 
@@ -653,19 +677,19 @@ class Agent(AbstractPlayer):
 
 					# Obtain the plan
 
-					# QUITAR!!
-					print(">> Chosen Subgoal: ", chosen_subgoal)
-
-					# Measure planning time
 					start = time.time()
 
 					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
 
 					end = time.time()
 
-					if not self.is_training:
+					# Measure planning time unless the goal selection mode is greedy, because in that case
+					# we have already planned for each subgoal
+					# (we could actually obtain a list of plans for each possible subgoal in that case but
+					# to simplify the code we plan for each subgoal again (even though it's not needed) and
+					# don't add the planning time)
+					if not self.is_training and self.goal_selection_mode != "greedy":
 						self.total_time_planning_curr_lv += end-start
-						self.num_calls_planner += 1
 
 					# If there is no valid plan to the chosen subgoal, increment the number of
 					# non-eligible subgoals selected
@@ -1234,6 +1258,48 @@ class Agent(AbstractPlayer):
 		#print("Q_values:", Q_values)
 		#print("Ordered:", ordered_subgoals)
 		#print("----------------")
+
+		return ordered_subgoals
+
+	def order_subgoals_by_plan_length(self, sso, possible_subgoals):
+		"""
+		Returns a list with the subgoals ordered by plan length (the first one is the subgoal with the
+		shortest valid plan). If for a given subgoal the planner can't find a valid plan, that subgoal
+		is not added to the @ordered_subgoals list.
+		This method DOES NOT measure planning time.
+
+		@param obs_grid Current state of the game (instance of SerializableStateObservation class)
+		@param possible_subgoals List of possible subgoals to choose from. Each element
+								 corresponds to a (pos_x, pos_y) pair.
+		"""
+
+		# If the game is IceAndFire, check how many types of boots the agent has
+		if self.game_playing == 'IceAndFire': 
+			boots_resources = self.get_boots_resources(sso)
+		else:
+			boots_resources = []
+
+		# For each subgoal, try to find a valid plan
+
+		valid_subgoals = [] # List with all the subgoals for which a valid plan exists
+		valid_subgoals_plan_lengths = [] # Plan length associated with each element of valid_subgoals
+
+		for curr_subgoal in possible_subgoals:
+			# Call the planner
+			curr_plan = self.search_plan(sso, curr_subgoal, boots_resources)
+
+			# If the subgoal is not valid (plan length == 0) do not add it to the list
+			if len(curr_plan) > 0: 
+				valid_subgoals.append(curr_subgoal)
+				valid_subgoals_plan_lengths.append(len(curr_plan))
+
+		# Order the subgoals according to their plan lengths
+
+		# Order this list according to the first element (plan lengths), small first big last
+		sorted_zip_list = sorted(zip(valid_subgoals_plan_lengths, valid_subgoals))
+
+		# Obtain the ordered subgoals according to the plan lengths
+		ordered_subgoals = [goal for _, goal in sorted_zip_list]
 
 		return ordered_subgoals
 

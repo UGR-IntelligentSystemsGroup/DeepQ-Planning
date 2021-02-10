@@ -105,7 +105,8 @@ script_execution_mode = "test"
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
-goal_selection_mode = "best"
+# "greedy" -> plan for each subgoal and select the valid subgoal with the shortest plan
+goal_selection_mode = "greedy"
 
 # <Seed>
 # Used for repetibility
@@ -239,8 +240,8 @@ num_its_IceAndFire = [20000] # 20000 # 10000 # 7500 # 2500
 num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
 
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 11 # Index of the first repetition
-repetitions_per_model = 5 # 15 # Each model is trained this number of times
+ini_rep_model = 1 # Index of the first repetition
+repetitions_per_model = 15 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -785,7 +786,7 @@ finally:
 	print(">> ejecutar_prueba.py finished!!")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 
 
 					

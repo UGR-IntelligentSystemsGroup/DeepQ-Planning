@@ -1,2 +1,0 @@
-model_checkpoint_path: "DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15.ckpt-200"
-all_model_checkpoint_paths: "DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15.ckpt-200"
