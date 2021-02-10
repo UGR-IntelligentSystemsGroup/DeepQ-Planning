@@ -39038,3 +39038,691 @@ Average num errors per completed level:  [9.666666666666666, 7.0, 5.0, 8.0, 11.0
 Average num actions per completed level:  [25.333333333333332, 21.0, 15.0, 27.0, 22.0, -1, 738.6428571428571, -1, -1, -1, -1]
 Average total time per completed level:  [0.36536145210266113, 0.3667452335357666, 0.19909310340881348, 0.37771423657735187, 0.49863386154174805, -1, 21.444013323102677, -1, -1, -1, -1]
 Average mean time per completed level:  [0.02669594448710245, 0.030562102794647217, 0.02826294799645742, 0.02939599178455494, 0.031164616346359253, -1, 0.03379162218782384, -1, -1, -1, -1]
+
+--------------------------------------------------------------------------
+Pruebas tras feedback ICAPS - 15 rep. 3 juegos - tiempo dividido en planning
+y goal selec
+--------------------------------------------------------------------------
+
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 112 | 0.7655563354492188 | 1.058422327041626
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 3 | 36 | 0.50020432472229 | 0.026207923889160156
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 60 | 0.43650078773498535 | 0.9290449619293213
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 76 | 0.694338321685791 | 0.1371605396270752
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 87 | 0.5985851287841797 | 1.0026004314422607
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 160 | 0.9506936073303223 | 0.11015796661376953
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 175 | 0.9726192951202393 | 1.1103265285491943
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 162 | 0.802654504776001 | 0.05459928512573242
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 122 | 0.8031401634216309 | 0.9754467010498047
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 134 | 0.737586259841919 | 0.10944581031799316
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 87 | 0.5983893871307373 | 0.9834637641906738
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 105 | 0.6214704513549805 | 1.0068035125732422
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 6 | 49 | 0.5412743091583252 | 0.05551934242248535
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 5 | 60 | 0.4836466312408447 | 0.9481716156005859
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 67 | 0.5730788707733154 | 0.05448269844055176
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 3 | 60 | 0.5116395950317383 | 0.956608772277832
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 79 | 0.5675704479217529 | 0.0491487979888916
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 137 | 0.659172534942627 | 0.9916436672210693
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 1 | 107 | 0.8321175575256348 | 0.027445554733276367
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 89 | 0.6468722820281982 | 0.9184086322784424
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 3 | 72 | 0.530512809753418 | 0.07973170280456543
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_2-100 | BoulderDash | 1 | 89 | 0.605078935623169 | 0.9856007099151611
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 127 | 0.8027725219726562 | 1.1039798259735107
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 57 | 0.5637097358703613 | 0.05613350868225098
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 44 | 0.48412322998046875 | 0.9546675682067871
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 101 | 0.6417207717895508 | 0.13258743286132812
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 76 | 0.49631261825561523 | 0.9506857395172119
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 82 | 0.7678091526031494 | 0.10869312286376953
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 109 | 0.57535719871521 | 0.9586334228515625
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 200 | 0.9704701900482178 | 0.1312093734741211
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 69 | 0.7700610160827637 | 0.9534499645233154
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 120 | 0.6294515132904053 | 0.05552101135253906
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 121 | 0.8149616718292236 | 1.084266185760498
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 120 | 0.7367875576019287 | 1.0536072254180908
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 6 | 59 | 0.5640280246734619 | 0.08198356628417969
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 4 | 58 | 0.5372366905212402 | 0.9832870960235596
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 96 | 0.4801046848297119 | 0.0467839241027832
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 3 | 59 | 0.5679230690002441 | 0.9905762672424316
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 128 | 1.0250153541564941 | 0.16191673278808594
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 153 | 0.6418094635009766 | 0.9710211753845215
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 177 | 1.1418914794921875 | 0.1091454029083252
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 99 | 0.8449196815490723 | 0.9803869724273682
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 120 | 0.6187777519226074 | 0.08204078674316406
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 137 | 0.7695372104644775 | 1.0419650077819824
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 89 | 0.5601143836975098 | 0.995816707611084
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 4 | 52 | 0.5314557552337646 | 0.08338642120361328
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 3 | 42 | 0.529059886932373 | 0.9910671710968018
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 83 | 0.7314586639404297 | 0.10888791084289551
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 3 | 74 | 0.5144948959350586 | 0.9543406963348389
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 92 | 0.7642054557800293 | 0.13137316703796387
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 158 | 0.7124028205871582 | 1.0104482173919678
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 225 | 1.2174205780029297 | 0.14155244827270508
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 76 | 0.9264593124389648 | 1.0121216773986816
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 1 | 84 | 0.522944450378418 | 0.02432990074157715
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 113 | 0.6523478031158447 | 1.0116264820098877
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 94 | 0.6837754249572754 | 1.0342440605163574
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 5 | 56 | 0.5442461967468262 | 0.053138017654418945
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 1 | 68 | 0.423933744430542 | 0.9195597171783447
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 90 | 0.48148322105407715 | 0.022441625595092773
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 4 | 64 | 0.5517494678497314 | 0.9788815975189209
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 96 | 0.709763765335083 | 0.054499149322509766
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 1 | 143 | 0.7352161407470703 | 1.0055079460144043
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 188 | 1.0058627128601074 | 0.0850682258605957
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 2 | 80 | 0.7621724605560303 | 0.9558670520782471
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 3 | 86 | 0.5347528457641602 | 0.05318140983581543
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_6-100 | BoulderDash | 1 | 99 | 0.5745954513549805 | 0.9828500747680664
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 90 | 0.7067725658416748 | 1.06388258934021
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 62 | 0.7021644115447998 | 0.060793161392211914
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 63 | 0.5897648334503174 | 0.9981052875518799
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 75 | 0.558875560760498 | 0.0264589786529541
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 1 | 54 | 0.5007641315460205 | 0.9532725811004639
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 98 | 0.6732349395751953 | 0.07896661758422852
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 120 | 0.6663563251495361 | 0.9781947135925293
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 205 | 1.1435480117797852 | 0.1397409439086914
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 3 | 121 | 0.6478404998779297 | 0.9515509605407715
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 92 | 0.6077187061309814 | 0.08105039596557617
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_7-100 | BoulderDash | 1 | 133 | 0.5763528347015381 | 0.9478874206542969
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 96 | 0.6212255954742432 | 1.0077850818634033
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 51 | 0.49327540397644043 | 0.05122542381286621
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 67 | 0.53759765625 | 0.98199462890625
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 105 | 0.6505656242370605 | 0.10436892509460449
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 69 | 0.5566117763519287 | 0.981666088104248
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 79 | 0.5752773284912109 | 0.04923558235168457
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 136 | 0.7158141136169434 | 1.0083584785461426
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 262 | 1.143692970275879 | 0.11115670204162598
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 2 | 102 | 0.5800065994262695 | 0.8881711959838867
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 0 | 71 | 0.4758930206298828 | 0.1046907901763916
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_8-100 | BoulderDash | 1 | 87 | 0.5923798084259033 | 0.9788055419921875
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 119 | 0.6030540466308594 | 0.9996199607849121
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 1 | 46 | 0.5404846668243408 | 0.11003851890563965
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 4 | 50 | 0.4903857707977295 | 0.9480991363525391
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 102 | 0.425508975982666 | 0.044002532958984375
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 2 | 73 | 0.587440013885498 | 0.977318286895752
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 147 | 1.0164892673492432 | 0.16366171836853027
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 170 | 0.780663251876831 | 1.0288608074188232
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 143 | 0.907433271408081 | 0.03064584732055664
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 1 | 105 | 0.6496682167053223 | 0.9134736061096191
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 0 | 133 | 0.5727338790893555 | 0.10664200782775879
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_9-100 | BoulderDash | 2 | 100 | 0.5709152221679688 | 0.9760370254516602
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 76 | 0.6238870620727539 | 1.026824951171875
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 2 | 56 | 0.3816792964935303 | 0.021038532257080078
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 60 | 0.49889612197875977 | 0.9535086154937744
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 84 | 0.42383718490600586 | 0.01900339126586914
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 3 | 77 | 0.5425035953521729 | 0.9807300567626953
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 96 | 0.7555789947509766 | 0.10666036605834961
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 1 | 93 | 0.6300456523895264 | 0.9774506092071533
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 147 | 1.03993558883667 | 0.05547928810119629
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 2 | 89 | 0.6679582595825195 | 0.9286966323852539
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 3 | 102 | 0.6311969757080078 | 0.10648250579833984
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_10-100 | BoulderDash | 0 | 87 | 0.5785996913909912 | 0.9550127983093262
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 6 | 158 | 0.6135549545288086 | 0.8700206279754639
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 14 | 135 | 0.8801758289337158 | 0.057724952697753906
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 5 | 109 | 0.5666999816894531 | 0.8219256401062012
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 97 | 0.36226773262023926 | 0.07305574417114258
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 1 | 194 | 0.32112932205200195 | 0.7818429470062256
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 100 | 0.46312808990478516 | 0.13535785675048828
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 5 | 88 | 0.5685627460479736 | 0.8360686302185059
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 180 | 0.4566538333892822 | 0.07927799224853516
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 237 | 0.47637200355529785 | 0.8877010345458984
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 99 | 0.4567832946777344 | 0.046179771423339844
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_1-100 | IceAndFire | 0 | 131 | 0.4249293804168701 | 0.8673536777496338
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 9 | 146 | 0.6470773220062256 | 0.8726763725280762
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 27 | 117 | 1.4048185348510742 | 0.06005668640136719
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 3 | 109 | 0.4805638790130615 | 0.823613166809082
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 99 | 0.35134458541870117 | 0.05588221549987793
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 126 | 0.19289851188659668 | 0.7412142753601074
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 1 | 144 | 0.4938046932220459 | 0.17236828804016113
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 152 | 0.39966392517089844 | 0.8575770854949951
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 152 | 0.38963961601257324 | 0.04120445251464844
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 217 | 0.43577146530151367 | 0.8659014701843262
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 95 | 0.4665541648864746 | 0.06077933311462402
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_2-100 | IceAndFire | 0 | 115 | 0.3795278072357178 | 0.8438656330108643
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 184 | 0.42041015625 | 0.881913423538208
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 10 | 97 | 0.7463889122009277 | 0.05693793296813965
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 117 | 0.23377609252929688 | 0.7618589401245117
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 127 | 0.3091003894805908 | 0.0716402530670166
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 2 | 228 | 0.4022400379180908 | 0.8046660423278809
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 126 | 0.3864552974700928 | 0.11225008964538574
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 4 | 114 | 0.5567169189453125 | 0.8473482131958008
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 178 | 0.3951241970062256 | 0.04219484329223633
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 207 | 0.44182348251342773 | 0.8640432357788086
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 105 | 0.45867347717285156 | 0.06348752975463867
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_3-100 | IceAndFire | 0 | 129 | 0.43033289909362793 | 0.8611087799072266
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 2 | 118 | 0.5052340030670166 | 0.8953220844268799
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 10 | 135 | 0.7679100036621094 | 0.06142067909240723
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 105 | 0.2751171588897705 | 0.774808406829834
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 1 | 105 | 0.3563976287841797 | 0.08885765075683594
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 2 | 208 | 0.4249155521392822 | 0.8172698020935059
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 148 | 0.45705556869506836 | 0.09906625747680664
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 136 | 0.4304037094116211 | 0.865969181060791
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 176 | 0.4670841693878174 | 0.06427431106567383
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 223 | 0.4781351089477539 | 0.8883073329925537
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 103 | 0.45740246772766113 | 0.04574751853942871
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_4-100 | IceAndFire | 0 | 133 | 0.49080681800842285 | 0.9126253128051758
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 1 | 106 | 0.4513833522796631 | 0.8849935531616211
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 10 | 155 | 0.8910019397735596 | 0.06686568260192871
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 97 | 0.2809171676635742 | 0.7838706970214844
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 4 | 113 | 0.5398733615875244 | 0.11409544944763184
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 1 | 126 | 0.19579625129699707 | 0.724879264831543
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 122 | 0.5018901824951172 | 0.1907501220703125
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 1 | 98 | 0.5144498348236084 | 0.8815500736236572
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 174 | 0.4717416763305664 | 0.046209096908569336
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 203 | 0.43636512756347656 | 0.8692705631256104
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 91 | 0.5020263195037842 | 0.06421136856079102
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_5-100 | IceAndFire | 0 | 121 | 0.34871506690979004 | 0.814093828201294
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 6 | 96 | 0.7060451507568359 | 0.9061734676361084
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 5 | 129 | 0.4312300682067871 | 0.013089895248413086
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 1 | 99 | 0.3639805316925049 | 0.8268351554870605
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 105 | 0.3228144645690918 | 0.07044434547424316
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 16 | 208 | 1.0385701656341553 | 0.8411948680877686
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 126 | 0.46120500564575195 | 0.08065319061279297
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 102 | 0.43465614318847656 | 0.8610289096832275
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 190 | 0.42810916900634766 | 0.044171810150146484
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 253 | 0.42795658111572266 | 0.8636147975921631
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 113 | 0.47184300422668457 | 0.06357789039611816
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_6-100 | IceAndFire | 0 | 121 | 0.34664082527160645 | 0.8229033946990967
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 6 | 122 | 0.5985813140869141 | 0.87778639793396
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 7 | 135 | 0.5314197540283203 | 0.03547072410583496
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 4 | 131 | 0.5120465755462646 | 0.8230290412902832
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 3 | 125 | 0.4591960906982422 | 0.05621480941772461
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 6 | 170 | 0.5475349426269531 | 0.7958533763885498
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 166 | 0.4297525882720947 | 0.09759807586669922
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 94 | 0.43261289596557617 | 0.8646838665008545
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 158 | 0.4791421890258789 | 0.04605364799499512
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 243 | 0.5131146907806396 | 0.9025459289550781
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 105 | 0.45889973640441895 | 0.027199506759643555
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_7-100 | IceAndFire | 0 | 117 | 0.4318530559539795 | 0.8714730739593506
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 3 | 116 | 0.5745143890380859 | 0.9090492725372314
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 10 | 135 | 0.7165086269378662 | 0.039430856704711914
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 123 | 0.3250105381011963 | 0.8028204441070557
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 101 | 0.3519601821899414 | 0.057105064392089844
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 4 | 130 | 0.4427618980407715 | 0.7792935371398926
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 134 | 0.46884703636169434 | 0.11438107490539551
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 2 | 126 | 0.4705672264099121 | 0.8351373672485352
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 188 | 0.40048813819885254 | 0.042391300201416016
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 215 | 0.4396698474884033 | 0.8643412590026855
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 99 | 0.45263147354125977 | 0.0628669261932373
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_8-100 | IceAndFire | 0 | 89 | 0.4295196533203125 | 0.8610236644744873
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 8 | 122 | 0.6513144969940186 | 0.8763830661773682
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 15 | 155 | 0.9563338756561279 | 0.056700706481933594
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 0 | 97 | 0.3558492660522461 | 0.8171679973602295
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 1 | 107 | 0.36167049407958984 | 0.05491828918457031
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 8 | 206 | 0.5517833232879639 | 0.7906968593597412
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 1 | 156 | 0.5013141632080078 | 0.12070369720458984
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 3 | 98 | 0.4339745044708252 | 0.8378138542175293
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 0 | 204 | 0.43626999855041504 | 0.08011126518249512
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 0 | 231 | 0.4678530693054199 | 0.8829147815704346
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 0 | 111 | 0.4634082317352295 | 0.044403791427612305
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_9-100 | IceAndFire | 0 | 135 | 0.45752692222595215 | 0.8860666751861572
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 118 | 0.3790452480316162 | 0.8668725490570068
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 19 | 89 | 1.067361831665039 | 0.057706356048583984
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 97 | 0.31423068046569824 | 0.7944653034210205
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 95 | 0.31517934799194336 | 0.054662466049194336
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 3 | 208 | 0.43388915061950684 | 0.7923221588134766
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 126 | 0.49594593048095703 | 0.11890387535095215
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 2 | 98 | 0.5374269485473633 | 0.8814661502838135
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 200 | 0.4738123416900635 | 0.04628872871398926
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 205 | 0.5211267471313477 | 0.907310962677002
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 105 | 0.46964120864868164 | 0.027331113815307617
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_10-100 | IceAndFire | 0 | 125 | 0.48763251304626465 | 0.8988823890686035
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 5 | 0.23195433616638184 | 0.7141275405883789
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 16 | 0.3468654155731201 | 0.08272910118103027
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 9 | 0.5459079742431641 | 0.6818807125091553
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 7 | 0.1408998966217041 | 0.0022733211517333984
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 7 | 0.4525890350341797 | 0.7021529674530029
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | 1218 | 924 | 78.15596771240234 | 3.8719451427459717
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | 168 | 798 | 13.383190393447876 | 6.590766429901123
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 767 | 137.1033411026001 | 2.002312183380127
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 150 | 74.78789067268372 | 2.947190761566162
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 19 | 0.22434234619140625 | 0.27205371856689453
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_1-200 | Catapults | -1 | 176 | 8.28501844406128 | 1.2386183738708496
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 4 | 0.19351744651794434 | 0.7095465660095215
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 16 | 0.4095034599304199 | 0.0826418399810791
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 9 | 0.8377056121826172 | 0.6752872467041016
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 22 | 0.5314505100250244 | 0.04385066032409668
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | 13 | 22 | 0.8977155685424805 | 0.7461371421813965
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 916 | 19.81075382232666 | 4.281952619552612
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | 456 | 774 | 30.048526525497437 | 5.471737861633301
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 517 | 128.63914251327515 | 2.025214910507202
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | 1184 | 150 | 76.39649677276611 | 2.8326478004455566
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 31 | 1.2699756622314453 | 0.40875720977783203
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_2-200 | Catapults | -1 | 211 | 10.117335557937622 | 1.3557865619659424
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 4 | 0.19130539894104004 | 0.7105922698974609
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 13 | 0.34647679328918457 | 0.06341361999511719
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | 2 | 15 | 0.2040259838104248 | 0.6935093402862549
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 22 | 0.859032392501831 | 0.04400157928466797
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 9 | 0.3459765911102295 | 0.7027215957641602
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 934 | 25.202561140060425 | 5.21331262588501
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | 241 | 704 | 17.471781730651855 | 5.158793926239014
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 717 | 130.75134825706482 | 2.0507798194885254
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | 585 | 141 | 38.46405649185181 | 2.623365640640259
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 21 | 3.5981433391571045 | 0.20696020126342773
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_3-200 | Catapults | -1 | 53 | 5.631267070770264 | 0.86794114112854
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 5 | 0.19029974937438965 | 0.7117996215820312
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 16 | 0.4027585983276367 | 0.08376479148864746
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 13 | 0.6621015071868896 | 0.710808515548706
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 22 | 0.7096536159515381 | 0.025394201278686523
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | 8 | 22 | 0.6585445404052734 | 0.744377851486206
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 948 | 46.89310383796692 | 4.093709468841553
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | 504 | 650 | 31.439550161361694 | 5.908255100250244
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 807 | 104.65226340293884 | 2.010118246078491
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 35 | 49.61714005470276 | 1.699291467666626
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 78 | 1.8830702304840088 | 1.1457898616790771
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_4-200 | Catapults | -1 | 130 | 5.636056423187256 | 1.1625192165374756
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 5 | 0.14238905906677246 | 0.7043919563293457
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 20 | 0.6390848159790039 | 0.08381199836730957
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | 1 | 15 | 0.15160155296325684 | 0.6792409420013428
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 7 | 0.09914684295654297 | 0.0020716190338134766
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 16 | 0.6738448143005371 | 0.7474675178527832
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | 331 | 763 | 22.988574743270874 | 4.312702655792236
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | 517 | 701 | 32.39138627052307 | 5.480175733566284
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 459 | 122.93045926094055 | 2.2429497241973877
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 144 | 19.32585835456848 | 2.8610002994537354
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 7 | 2.2729437351226807 | 0.14051294326782227
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_5-200 | Catapults | -1 | 175 | 10.70746636390686 | 1.3597354888916016
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 5 | 0.1392977237701416 | 0.708357572555542
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 16 | 0.24808716773986816 | 0.08337092399597168
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 13 | 0.7091796398162842 | 0.7034552097320557
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 7 | 0.20086669921875 | 0.0018432140350341797
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 9 | 0.3494873046875 | 0.6958882808685303
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 967 | 50.6670458316803 | 5.942153215408325
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | 326 | 840 | 22.27345895767212 | 6.49780011177063
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 937 | 26.204522371292114 | 2.1166062355041504
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 52 | 7.679239273071289 | 2.1677823066711426
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 65 | 1.2360715866088867 | 1.114001750946045
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_6-200 | Catapults | -1 | 117 | 5.312556982040405 | 1.3126294612884521
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 4 | 0.18753337860107422 | 0.7097318172454834
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 16 | 0.45020294189453125 | 0.0833749771118164
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 9 | 0.6007552146911621 | 0.6832053661346436
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 22 | 0.6662638187408447 | 0.044350385665893555
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 9 | 0.3038926124572754 | 0.695401668548584
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 959 | 53.050593852996826 | 6.827232122421265
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | 528 | 868 | 35.99496603012085 | 6.607560396194458
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 849 | 125.97022128105164 | 2.3139052391052246
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 82 | 25.625818252563477 | 2.2638261318206787
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 54 | 4.655806541442871 | 0.9262964725494385
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_7-200 | Catapults | -1 | 90 | 4.728633165359497 | 1.2327055931091309
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 5 | 0.2951478958129883 | 0.709526538848877
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 16 | 0.5748236179351807 | 0.08465957641601562
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 9 | 0.65262770652771 | 0.6784045696258545
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 7 | 0.3028295040130615 | 0.002129793167114258
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 7 | 0.36544275283813477 | 0.698413610458374
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 924 | 24.232174158096313 | 6.945508718490601
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | 413 | 836 | 26.814840078353882 | 7.191504955291748
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 686 | 49.42184352874756 | 1.397747278213501
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 65 | 6.907654762268066 | 2.4331421852111816
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 56 | 1.9607126712799072 | 0.9143719673156738
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_8-200 | Catapults | -1 | 41 | 4.959163188934326 | 0.8286371231079102
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 5 | 0.09395861625671387 | 0.713329553604126
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | 5 | 21 | 0.5341315269470215 | 0.10267376899719238
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | 0 | 15 | 0.10479974746704102 | 0.6824064254760742
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 22 | 0.6020402908325195 | 0.043845176696777344
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 9 | 0.2609555721282959 | 0.7042114734649658
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | 364 | 899 | 25.23859930038452 | 4.802236557006836
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | 403 | 636 | 26.370726585388184 | 5.9198691844940186
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 634 | 27.215357542037964 | 1.8887722492218018
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | 188 | 188 | 14.211159944534302 | 3.979882001876831
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 63 | 2.069068193435669 | 0.9956672191619873
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_9-200 | Catapults | -1 | 132 | 4.102204322814941 | 1.1948444843292236
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 4 | 0.2786135673522949 | 0.7255220413208008
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | 10 | 21 | 0.7398533821105957 | 0.10334277153015137
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 13 | 0.6000649929046631 | 0.7003047466278076
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 7 | 0.24914813041687012 | 0.002454042434692383
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 9 | 0.6572608947753906 | 0.6960651874542236
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 959 | 23.001755475997925 | 5.838662624359131
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | 223 | 751 | 15.446319341659546 | 5.763063192367554
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 489 | 115.9023756980896 | 2.118760108947754
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 137 | 23.83222484588623 | 2.723590850830078
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 22 | 0.691760778427124 | 0.33979344367980957
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10-200 | Catapults | -1 | 134 | 6.001704692840576 | 1.1298143863677979
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 116 | 0.9147515296936035 | 1.137075662612915
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 46 | 0.4087839126586914 | 0.019880056381225586
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 3 | 60 | 0.5146915912628174 | 0.9616270065307617
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 109 | 0.7302663326263428 | 0.16051793098449707
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 3 | 80 | 0.5094649791717529 | 0.9516968727111816
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 117 | 0.8210148811340332 | 0.11038327217102051
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 152 | 0.8120057582855225 | 1.0399959087371826
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 175 | 1.2944574356079102 | 0.14149951934814453
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 123 | 0.7429046630859375 | 0.959496021270752
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 118 | 0.7064127922058105 | 0.13913321495056152
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_11-100 | BoulderDash | 0 | 158 | 0.9117245674133301 | 1.107011318206787
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 0 | 88 | 0.8016359806060791 | 1.1149375438690186
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 2 | 52 | 0.5618913173675537 | 0.028046131134033203
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 1 | 64 | 0.5026330947875977 | 0.9606921672821045
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 0 | 78 | 0.602869987487793 | 0.05606818199157715
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 1 | 55 | 0.4104931354522705 | 0.8940749168395996
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 0 | 127 | 0.9040684700012207 | 0.18886113166809082
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 1 | 110 | 0.671846866607666 | 0.9818193912506104
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 0 | 158 | 0.8240969181060791 | 0.028548002243041992
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 2 | 117 | 0.6668472290039062 | 0.9587199687957764
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 0 | 105 | 0.75958251953125 | 0.10990619659423828
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_12-100 | BoulderDash | 2 | 97 | 0.601041316986084 | 0.9869093894958496
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 112 | 0.6931946277618408 | 1.035193681716919
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 54 | 0.610783576965332 | 0.055390357971191406
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 3 | 47 | 0.5488851070404053 | 0.9935755729675293
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 80 | 0.5773875713348389 | 0.10017132759094238
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 2 | 71 | 0.578270435333252 | 0.9811186790466309
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 142 | 0.8816874027252197 | 0.10968399047851562
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 1 | 148 | 0.667661190032959 | 0.9909853935241699
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 250 | 1.1662342548370361 | 0.16400766372680664
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 156 | 0.8975791931152344 | 1.0295062065124512
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 139 | 0.8877396583557129 | 0.11471128463745117
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_13-100 | BoulderDash | 0 | 148 | 0.7140340805053711 | 1.010927677154541
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 111 | 0.6933627128601074 | 1.0284767150878906
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 2 | 42 | 0.4525339603424072 | 0.05054330825805664
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 4 | 57 | 0.4893629550933838 | 0.947826623916626
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 91 | 0.6179385185241699 | 0.05609321594238281
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 2 | 66 | 0.5171873569488525 | 0.9456119537353516
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 92 | 0.7344369888305664 | 0.1312694549560547
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 143 | 0.7543461322784424 | 1.0093235969543457
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 139 | 0.9139161109924316 | 0.02991461753845215
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 80 | 0.7770023345947266 | 0.9475007057189941
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 112 | 0.819756031036377 | 0.1382734775543213
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_14-100 | BoulderDash | 0 | 132 | 0.7172353267669678 | 1.0067288875579834
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 78 | 0.5910754203796387 | 1.011265516281128
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 48 | 0.561469554901123 | 0.05394768714904785
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 1 | 72 | 0.5599117279052734 | 0.976860761642456
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 111 | 0.7312805652618408 | 0.11148571968078613
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 4 | 61 | 0.5588960647583008 | 0.9838168621063232
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 112 | 0.852137565612793 | 0.10824084281921387
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 1 | 138 | 0.6729638576507568 | 0.9832825660705566
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 158 | 1.0820579528808594 | 0.10601186752319336
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 71 | 0.5865797996520996 | 0.897883415222168
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 92 | 0.4874546527862549 | 0.0967094898223877
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash_15-100 | BoulderDash | 0 | 87 | 0.4981694221496582 | 0.9306707382202148
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 15 | 106 | 1.0419156551361084 | 0.9032886028289795
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 21 | 135 | 1.2560226917266846 | 0.05927443504333496
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 99 | 0.2537205219268799 | 0.7714745998382568
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 125 | 0.33156299591064453 | 0.07051324844360352
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 13 | 142 | 0.8900833129882812 | 0.8241050243377686
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 132 | 0.39377570152282715 | 0.09523916244506836
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 1 | 84 | 0.4491450786590576 | 0.8459491729736328
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 168 | 0.36290764808654785 | 0.05666017532348633
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 241 | 0.4512214660644531 | 0.8648452758789062
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 95 | 0.3992934226989746 | 0.040938377380371094
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11-100 | IceAndFire | 0 | 145 | 0.48836398124694824 | 0.8909797668457031
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 12 | 156 | 0.887209415435791 | 0.8775739669799805
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 15 | 109 | 0.9549510478973389 | 0.04015469551086426
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 15 | 111 | 0.7409951686859131 | 0.8335721492767334
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 125 | 0.287367582321167 | 0.03302001953125
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 152 | 0.3270277976989746 | 0.8144834041595459
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 128 | 0.5185608863830566 | 0.1196293830871582
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 5 | 116 | 0.48298215866088867 | 0.805293083190918
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 172 | 0.44175267219543457 | 0.09807729721069336
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 195 | 0.48563385009765625 | 0.8920233249664307
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 105 | 0.5059323310852051 | 0.045961618423461914
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_12-100 | IceAndFire | 0 | 159 | 0.44238972663879395 | 0.8715267181396484
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 11 | 98 | 0.8700406551361084 | 0.8831918239593506
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 14 | 99 | 0.9447097778320312 | 0.05959439277648926
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 101 | 0.4188408851623535 | 0.848825216293335
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 1 | 119 | 0.41844892501831055 | 0.05745220184326172
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 15 | 236 | 0.9288449287414551 | 0.8548743724822998
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 110 | 0.4698069095611572 | 0.08156514167785645
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 3 | 98 | 0.4956851005554199 | 0.8251304626464844
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 174 | 0.32805347442626953 | 0.05249643325805664
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 211 | 0.4533264636993408 | 0.8754932880401611
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 91 | 0.4906022548675537 | 0.04540276527404785
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_13-100 | IceAndFire | 0 | 115 | 0.4759659767150879 | 0.888608455657959
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 3 | 96 | 0.44033074378967285 | 0.8468992710113525
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 12 | 107 | 0.9439680576324463 | 0.08278179168701172
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 9 | 117 | 0.7474956512451172 | 0.8254404067993164
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 1 | 107 | 0.48779940605163574 | 0.07873320579528809
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 3 | 138 | 0.3691389560699463 | 0.7740912437438965
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 0 | 144 | 0.5215284824371338 | 0.15327954292297363
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 0 | 116 | 0.400040864944458 | 0.8388500213623047
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 0 | 178 | 0.39586544036865234 | 0.05913591384887695
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 0 | 245 | 0.4987061023712158 | 0.8835310935974121
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 0 | 109 | 0.3973500728607178 | 0.0400235652923584
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_14-100 | IceAndFire | 1 | 111 | 0.4458751678466797 | 0.8700196743011475
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 1 | 126 | 0.4030489921569824 | 0.8437638282775879
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 21 | 99 | 1.3410954475402832 | 0.08237433433532715
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 0 | 123 | 0.40241336822509766 | 0.8408565521240234
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 2 | 95 | 0.4780597686767578 | 0.07723808288574219
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 13 | 238 | 0.9343791007995605 | 0.8428666591644287
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 0 | 138 | 0.4255647659301758 | 0.07924962043762207
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 0 | 140 | 0.44731950759887695 | 0.871218204498291
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 0 | 194 | 0.40288329124450684 | 0.05709052085876465
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 2 | 221 | 0.5181777477264404 | 0.8654158115386963
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 0 | 85 | 0.47986364364624023 | 0.06303644180297852
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_15-100 | IceAndFire | 1 | 119 | 0.4280815124511719 | 0.8732125759124756
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 5 | 0.195084810256958 | 0.7174177169799805
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 16 | 0.46100592613220215 | 0.08481526374816895
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 13 | 0.7251949310302734 | 0.7098979949951172
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 22 | 0.5676674842834473 | 0.02481222152709961
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 9 | 0.31410861015319824 | 0.7117364406585693
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 936 | 22.253427267074585 | 4.983211278915405
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | 581 | 761 | 36.56708312034607 | 6.005753755569458
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 896 | 51.75032997131348 | 2.651790142059326
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 80 | 37.55551624298096 | 2.1771183013916016
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 49 | 1.3773000240325928 | 0.7314052581787109
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_11-200 | Catapults | -1 | 113 | 5.6347815990448 | 1.3936316967010498
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 4 | 0.09556317329406738 | 0.7111873626708984
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 16 | 0.39666199684143066 | 0.08314967155456543
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 9 | 0.6600563526153564 | 0.6982073783874512
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 7 | 0.04972052574157715 | 0.002305269241333008
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 7 | 0.30214905738830566 | 0.7162823677062988
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 914 | 70.49741315841675 | 6.145318508148193
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | 1048 | 698 | 68.7988543510437 | 5.904499769210815
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 742 | 93.23310279846191 | 2.3076906204223633
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 34 | 19.45321035385132 | 1.490906000137329
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 53 | 0.975785493850708 | 0.6729300022125244
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_12-200 | Catapults | -1 | 165 | 4.566349267959595 | 1.3158988952636719
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 5 | 0.6960251331329346 | 0.7118325233459473
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 16 | 0.5602777004241943 | 0.08273124694824219
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 13 | 0.7314679622650146 | 0.7090122699737549
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | 11 | 27 | 0.8276653289794922 | 0.06497359275817871
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | 5 | 22 | 0.5211706161499023 | 0.7532906532287598
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 978 | 36.813905239105225 | 6.061291694641113
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | 517 | 807 | 32.406861782073975 | 6.6763811111450195
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 544 | 94.52774095535278 | 1.2012567520141602
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 124 | 28.236942052841187 | 2.74808406829834
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 19 | 6.3556740283966064 | 0.33839964866638184
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_13-200 | Catapults | -1 | 123 | 9.230109930038452 | 1.0637197494506836
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 4 | 0.1911449432373047 | 0.7223720550537109
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | 12 | 21 | 0.8626384735107422 | 0.10408139228820801
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 9 | 0.5666840076446533 | 0.6855714321136475
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 22 | 0.6747639179229736 | 0.04381227493286133
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 7 | 0.5177280902862549 | 0.7088847160339355
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | 645 | 684 | 42.887511253356934 | 5.791087627410889
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | 240 | 887 | 18.229435682296753 | 6.672621011734009
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 749 | 72.91017246246338 | 2.1063549518585205
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 107 | 29.521182537078857 | 2.888544797897339
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 39 | 1.9698915481567383 | 0.534264326095581
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_14-200 | Catapults | -1 | 25 | 3.5956428050994873 | 0.7976415157318115
+
+-----------------------------------------------------------------------------------
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 4 | 0.5201785564422607 | 0.7178490161895752
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 20 | 0.7332663536071777 | 0.08356761932373047
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 9 | 0.6010229587554932 | 0.694603443145752
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 22 | 0.5138242244720459 | 0.043358564376831055
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 16 | 0.8826825618743896 | 0.7555489540100098
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 934 | 41.33062767982483 | 5.6238391399383545
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | 242 | 848 | 17.74245047569275 | 6.462681531906128
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 760 | 134.84215712547302 | 1.688424825668335
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 125 | 106.2336778640747 | 2.6287314891815186
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 34 | 12.416930198669434 | 0.5364072322845459
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15-200 | Catapults | -1 | 71 | 5.368208885192871 | 0.9773743152618408
+
+-----------------------------------------------------------------------------------
+
+>>>> Análisis:
+
+--- BoulderDash ---
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_BoulderDash - lvs=100
+
+Average num errors per level:  [0.06666666666666667, 2.066666666666667, 2.0, 0.0, 2.1333333333333333, 0.0, 0.4, 0.06666666666666667, 0.9333333333333333, 0.6666666666666666, 0.6]
+Std num errors per level:  [0.24944382578492946, 2.1746008573733455, 1.7126976771553504, 0.0, 1.2578641509408803, 0.0, 0.48989794855663565, 0.24944382578492946, 0.9977753031397176, 1.1925695879998877, 0.7118052168020874]
+
+Average num actions per level:  [102.2, 51.06666666666667, 58.13333333333333, 89.86666666666666, 68.4, 109.8, 139.0, 179.73333333333332, 99.93333333333334, 105.33333333333333, 111.66666666666667]
+Std num actions per level:  [15.458331087151677, 6.587530307752333, 8.531249745624741, 13.185176862252888, 9.300896014184154, 25.097675855212838, 22.102790170775574, 41.25605679439351, 23.564002678284993, 21.35623770444806, 23.84020879848907]
+
+Average planning time per level:  [0.6946290810902913, 0.5305322964986166, 0.5084419886271159, 0.5947143236796061, 0.5334890842437744, 0.7999322414398193, 0.7112187067667644, 1.0323859691619872, 0.731334114074707, 0.6348342577616374, 0.6516908486684163]
+Std planning time per level:  [0.0936748113270472, 0.07564650714528254, 0.04272378173604329, 0.1024442343646338, 0.0456042702547172, 0.13618516919946255, 0.09138436801245303, 0.1484475829648197, 0.10367979189656339, 0.11963671841365622, 0.10785734568130105]
+
+Average goal selection time per level:  [1.0451956907908122, 0.053818130493164064, 0.9632058620452881, 0.07870095570882162, 0.9655333201090495, 0.11085012753804525, 1.0030568281809489, 0.09040164947509766, 0.9513786474863688, 0.09345666567484538, 0.9993175347646077]
+Std goal selection time per level:  [0.042216517581683356, 0.02388643413765623, 0.022800201804916854, 0.04428084364869881, 0.025373070355521908, 0.0401224728372777, 0.035643330619478164, 0.047130502555344705, 0.03765535461214773, 0.03040343923127377, 0.04627596249441266]
+
+--- IceAndFire ---
+
+DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire - lvs=100
+
+Average num errors per level:  [5.533333333333333, 14.0, 2.466666666666667, 0.8666666666666667, 5.8, 0.13333333333333333, 1.7333333333333334, 0.0, 0.13333333333333333, 0.0, 0.13333333333333333]
+Std num errors per level:  [4.529410067056808, 5.727128425310541, 4.208985098043892, 1.2036980056845192, 5.528109984434101, 0.339934634239519, 1.8061622912192088, 0.0, 0.49888765156985887, 0.0, 0.33993463423951903]
+
+Average num actions per level:  [124.53333333333333, 122.06666666666666, 109.0, 109.66666666666667, 180.66666666666666, 133.33333333333334, 110.66666666666667, 179.06666666666666, 223.13333333333333, 100.73333333333333, 124.33333333333333]
+Std num actions per level:  [24.899442207049983, 20.43352365327353, 10.708252269472673, 11.37638880410749, 40.36940535713759, 16.373420195209334, 19.550504398153574, 13.892284029473181, 17.087487299840845, 7.792874237974645, 15.46896534642472]
+
+Average planning time per level:  [0.6126470565795898, 0.9222597599029541, 0.4181104977925619, 0.3822028636932373, 0.5333995501200358, 0.4659090201059977, 0.47028050422668455, 0.42196852366129556, 0.469683583577474, 0.4620603402455648, 0.43387742042541505]
+Std planning time per level:  [0.19002749072857364, 0.26301403479682006, 0.1579739946301602, 0.07335479031534557, 0.2697845576976363, 0.040560590797637956, 0.052209504425481744, 0.04311778001519678, 0.030970184028159098, 0.029570055064011086, 0.044431628853631756]
+
+Average goal selection time per level:  [0.8797272205352783, 0.05530560811360677, 0.8100375811258952, 0.06758886973063151, 0.7986435890197754, 0.11806635856628418, 0.8503389517466228, 0.05704251925150553, 0.8784840106964111, 0.04940983454386393, 0.8689162413279216]
+Std goal selection time per level:  [0.018442422010669063, 0.017105123108427534, 0.02595057201914033, 0.018068851354282423, 0.03494785075793763, 0.03200829274740969, 0.02067549749549345, 0.01631626255595463, 0.01427919290942233, 0.01246737955859785, 0.025672428353451484]
+
+--- Catapults ---
+
+DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults - lvs=200
+Success rate per level [0.0, 20.0, 20.0, 6.666666666666667, 20.0, 26.666666666666668, 100.0, 0.0, 20.0, 0.0, 0.0]
+
+Average num errors per completed level:  [-1, 9.0, 1.0, 11.0, 8.666666666666666, 639.5, 427.1333333333333, -1, 652.3333333333334, -1, -1]
+Std num errors per completed level:  [-1, 2.943920288775949, 0.816496580927726, 0.0, 3.2998316455372216, 355.5857843052784, 210.71113454732813, -1, 409.39331808041135, -1, -1]
+
+Average num actions per completed level:  [-1, 21.0, 15.0, 27.0, 22.0, 817.5, 770.6, -1, 159.66666666666666, -1, -1]
+Std num actions per completed level:  [-1, 0.0, 0.0, 0.0, 0.0, 98.45938248841499, 76.54872086891241, -1, 20.368821489936252, -1, -1]
+
+Average planning time per completed level:  [-1, 0.7122077941894531, 0.15347576141357422, 0.8276653289794922, 0.6924769083658854, 42.31766325235367, 28.358628765741983, -1, 43.02390440305074, -1, -1]
+Std planning time per completed level:  [-1, 0.13552960902519673, 0.04053061384274604, 0.0, 0.15558508816644995, 22.079497737623022, 13.100347123874917, -1, 25.59099045680087, -1, -1]
+
+Average goal selection time per completed level:  [-1, 0.10336597760518391, 0.685052235921224, 0.06497359275817871, 0.7479352156321207, 4.694492995738983, 6.154097604751587, -1, 3.145298480987549, -1, -1]
+Std goal selection time per completed level:  [-1, 0.0005748940330131731, 0.006118116926417163, 0.0, 0.003854374988344783, 0.713525979790923, 0.5471412683939534, -1, 0.5962924313948404, -1, -1]
+

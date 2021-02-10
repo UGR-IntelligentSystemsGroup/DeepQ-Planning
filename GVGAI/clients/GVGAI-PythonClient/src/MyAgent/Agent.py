@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_10"
+		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=200
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=318032
+		self.level_seed=462592
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!

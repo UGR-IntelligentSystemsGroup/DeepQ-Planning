@@ -239,8 +239,8 @@ num_its_IceAndFire = [20000] # 20000 # 10000 # 7500 # 2500
 num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
 
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 10 # 15 # Each model is trained this number of times
+ini_rep_model = 11 # Index of the first repetition
+repetitions_per_model = 5 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use

@@ -70,15 +70,19 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 			#sys.exit()
 
 			if curr_game in ('BoulderDash', 'IceAndFire'):
-				# Calculate the average number of errors and actions for each of the
+				# Calculate the average and std number of errors and actions for each of the
 				# five test/validation levels
 				average_num_errors_per_level = [np.average(curr_model_num_errors[i::num_test_levels]) for i in range(num_test_levels)]
 				average_num_actions_per_level = [np.average(curr_model_num_actions[i::num_test_levels]) for i in range(num_test_levels)]
+				std_num_errors_per_level = [np.std(curr_model_num_errors[i::num_test_levels]) for i in range(num_test_levels)]
+				std_num_actions_per_level = [np.std(curr_model_num_actions[i::num_test_levels]) for i in range(num_test_levels)]
 
-				# Calculate the average total time and mean time for each of the five
+				# Calculate the average and std total time and mean time for each of the five
 				# test/validation levels
 				average_planning_time_per_level = [np.average(curr_model_planning_time[i::num_test_levels]) for i in range(num_test_levels)]
 				average_goal_selec_time_per_level = [np.average(curr_model_goal_selec_time[i::num_test_levels]) for i in range(num_test_levels)]
+				std_planning_time_per_level = [np.std(curr_model_planning_time[i::num_test_levels]) for i in range(num_test_levels)]
+				std_goal_selec_time_per_level = [np.std(curr_model_goal_selec_time[i::num_test_levels]) for i in range(num_test_levels)]
 
 				print("\n--- {} ---\n".format(curr_game))
 
@@ -86,10 +90,14 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 					print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
 				else:
 					print("{}".format(curr_match)) # Model Name
-				print("Average num errors per level: ", average_num_errors_per_level)
-				print("Average num actions per level: ", average_num_actions_per_level)
-				print("Average planning time per level: ", average_planning_time_per_level)
-				print("Average goal selection time per level: ", average_goal_selec_time_per_level)
+				print("\nAverage num errors per level: ", average_num_errors_per_level)
+				print("Std num errors per level: ", std_num_errors_per_level)
+				print("\nAverage num actions per level: ", average_num_actions_per_level)
+				print("Std num actions per level: ", std_num_actions_per_level)
+				print("\nAverage planning time per level: ", average_planning_time_per_level)
+				print("Std planning time per level: ", std_planning_time_per_level)
+				print("\nAverage goal selection time per level: ", average_goal_selec_time_per_level)
+				print("Std goal selection time per level: ", std_goal_selec_time_per_level)
 
 			else: # Catapults
 				# Calculate success_rate (percentage of levels the agent beats)
@@ -100,8 +108,9 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 				 / len(curr_model_num_errors[i::num_test_levels]) * 100 for i in range(num_test_levels)]
 
 				
-				# Calculate the average number of errors per test level <completed>
+				# Calculate the average and std number of errors per test level <completed>
 				average_num_errors_per_completed_level = []
+				std_num_errors_per_completed_level = []
 				for i in range(num_test_levels):
 					# Obtain the number of errors of the current level
 					curr_num_errors = curr_model_num_errors[i::num_test_levels]
@@ -109,17 +118,22 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 					# Delete the -1 entries (only use the errors of the completed levels)
 					curr_num_errors = [e for e in curr_num_errors if e != -1]
 
-					# If no level was completed, the average number of errors is -1 (undetermined)
+					# If no level was completed, the average and std number of errors is -1 (undetermined)
 					if len(curr_num_errors) == 0:
 						average_num_errors_per_completed_level.append(-1)
-					else: # otherwise, we calculate the average
+						std_num_errors_per_completed_level.append(-1)
+					else: # otherwise, we calculate the average and std
 						average_num_errors_per_completed_level.append(np.average(curr_num_errors))
+						std_num_errors_per_completed_level.append(np.std(curr_num_errors))
 
-				# Calculate the average number of actions, average planning time and average goal selec time
+				# Calculate the average and std number of actions, average planning time and average goal selec time
 				# per test level <completed>
 				average_num_actions_per_completed_level = []
 				average_planning_time_per_completed_level = []
 				average_goal_selec_time_per_completed_level = []
+				std_num_actions_per_completed_level = []
+				std_planning_time_per_completed_level = []
+				std_goal_selec_time_per_completed_level = []
 
 				for i in range(num_test_levels):
 					# Obtain the number of errors, planning time and goal selec time of the current level
@@ -139,10 +153,16 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 						average_num_actions_per_completed_level.append(-1)
 						average_planning_time_per_completed_level.append(-1)
 						average_goal_selec_time_per_completed_level.append(-1)
-					else: # otherwise, we calculate the average
+						std_num_actions_per_completed_level.append(-1)
+						std_planning_time_per_completed_level.append(-1)
+						std_goal_selec_time_per_completed_level.append(-1)
+					else: # otherwise, we calculate the average and std
 						average_num_actions_per_completed_level.append(np.average(curr_num_actions))
 						average_planning_time_per_completed_level.append(np.average(curr_planning_time))
 						average_goal_selec_time_per_completed_level.append(np.average(curr_goal_selec_time))
+						std_num_actions_per_completed_level.append(np.std(curr_num_actions))
+						std_planning_time_per_completed_level.append(np.std(curr_planning_time))
+						std_goal_selec_time_per_completed_level.append(np.std(curr_goal_selec_time))
 
 
 				print("\n--- {} ---\n".format(curr_game))
@@ -151,10 +171,14 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 				else:
 					print("{}".format(curr_match)) # Model Name
 				print("Success rate per level", success_rate_per_level)
-				print("Average num errors per completed level: ", average_num_errors_per_completed_level)
-				print("Average num actions per completed level: ", average_num_actions_per_completed_level)
-				print("Average planning time per completed level: ", average_planning_time_per_completed_level)
-				print("Average goal selection time per completed level: ", average_goal_selec_time_per_completed_level)
+				print("\nAverage num errors per completed level: ", average_num_errors_per_completed_level)
+				print("Std num errors per completed level: ", std_num_errors_per_completed_level)
+				print("\nAverage num actions per completed level: ", average_num_actions_per_completed_level)
+				print("Std num actions per completed level: ", std_num_actions_per_completed_level)
+				print("\nAverage planning time per completed level: ", average_planning_time_per_completed_level)
+				print("Std planning time per completed level: ", std_planning_time_per_completed_level)
+				print("\nAverage goal selection time per completed level: ", average_goal_selec_time_per_completed_level)
+				print("Std goal selection time per completed level: ", std_goal_selec_time_per_completed_level)
 
 if __name__ == '__main__':
 	get_average_results_per_game(games, num_test_levels, model)
