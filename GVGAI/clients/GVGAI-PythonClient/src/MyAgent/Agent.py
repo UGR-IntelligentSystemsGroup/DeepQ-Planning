@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="IceAndFire"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-20000_IceAndFire_11"
+		self.network_name="DQN_Final_Model_test_fc-128_32_1_1_its-25000_Catapults_15"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=200
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=346944
+		self.level_seed=462592
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=20000
+		self.num_train_its=25000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -304,14 +304,14 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+				self.dataset_size_model=200
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False

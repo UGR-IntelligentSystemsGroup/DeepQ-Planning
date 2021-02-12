@@ -13,7 +13,7 @@ output_file = "test_output.txt"
 # games = ['BoulderDash', 'IceAndFire', 'Catapults']
 games = ['BoulderDash', 'IceAndFire', 'Catapults']
 num_test_levels = 11 # Number of levels each model is tested on (11 = 5 default test levels + 6 new (hard) test levels)
-model = "DQP" # 'DQP' o 'Random'
+model = "DQP" # 'DQP' 'Random' o 'Greedy'
 
 def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 	"""
@@ -63,7 +63,7 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 				curr_model_num_errors = [int(match[0]) for match in curr_model_match_list]
 				curr_model_num_actions = [int(match[1]) for match in curr_model_match_list]
 				curr_model_planning_time = [float(match[2]) for match in curr_model_match_list]
-				curr_model_goal_selec_time = [0 for match in curr_model_match_list] # The Random Model does not spend time selecting subgoals
+				curr_model_goal_selec_time = [0 for match in curr_model_match_list] # The Random Model/Greedy model does not spend time selecting subgoals
 
 
 			#print(len(curr_model_num_errors))

@@ -99,14 +99,14 @@ Las gráficas de entrenamiento de los tres juegos son muy parecidas en ambos cas
 
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
-# "test" -> trains and tests on the 5 test levels
+# "test" -> trains and tests on all the test levels
 script_execution_mode = "test"
 
 # <Goal Selection Mode>
 # "best" -> use the trained model to select the best subgoal at each state
 # "random" -> select subgoals randomly. This corresponds to the Random Model
 # "greedy" -> plan for each subgoal and select the valid subgoal with the shortest plan
-goal_selection_mode = "greedy"
+goal_selection_mode = "best"
 
 # <Seed>
 # Used for repetibility
