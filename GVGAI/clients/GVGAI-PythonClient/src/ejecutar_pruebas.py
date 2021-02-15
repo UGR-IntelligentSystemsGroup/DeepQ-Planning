@@ -163,8 +163,25 @@ dropout 0.4 empeoran los resultados -> no uso dropout
   Catapults: 25000 repeticiones.
 
 > El mejor número de filtros en las últimas capas conv es 128, no 64 o 256.
+
+>> Pruebas tau=500 <<
+
+alfa-0.00025 es demasiado alto!
+
+¡Parece que sí se puede producir overfitting por usar demasiadas training its!
+Los resultados en BoulderDash con 40000 iteraciones son mejores que con 200000.
+En IceAndFire los resultados con 200000 iteraciones son mejores que con 40000.
+En IceAndFire los resultados con 100000 y 200000 iteraciones son casi idénticos.
+<<ENTRENO EN BOULDERDASH CON 40000 ITERACIONES Y EN ICEANDFIRE CON 100000.>>
+Entreno también con 100000 its en Catapults (aunque sería necesario hacer más pruebas).
+
 """
 
+
+# Pruebas a realizar
+"""
+Ver en BoulderDash si con tau=500 es mejor 20000 o 40000 training its.
+"""
 
 # Architecture
 l1_num_filt = [32]
@@ -219,7 +236,7 @@ l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 fc_num_unis = [[128,32,1,1]]  
 
 # Training params
-tau=[10] # Update period of the target network
+tau=[500] # 10 # Update period of the target network
 alfa = [0.0001] # Learning rate # 0.0001 # 0.0005 is too big even with the new penalization
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
@@ -227,7 +244,7 @@ use_BN = [False] # If True, Batch Normalization is applied after each conv layer
                  # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
+games_to_play = ['Catapults']
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
@@ -235,13 +252,12 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [20000] # 20000 # 10000 # 5000 # 10000
-num_its_IceAndFire = [20000] # 20000 # 10000 # 7500 # 2500
-num_its_Catapults = [25000] # 25000 # 15000 # 2500 # 2500
-
+num_its_BoulderDash = [40000] # 40000 # 20000 
+num_its_IceAndFire = [100000] # 100000 # 20000 
+num_its_Catapults = [100000] # 20000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 15 # 15 # Each model is trained this number of times
+repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -569,9 +585,9 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Final_Model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_mejor_tau_e_its_test_fc-{}_{}_{}_{}_tau-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
-								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
+								 curr_fc_num_unis[3], curr_tau, curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 
