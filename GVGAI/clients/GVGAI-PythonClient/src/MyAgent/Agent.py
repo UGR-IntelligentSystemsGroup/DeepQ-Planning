@@ -33,7 +33,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="Catapults"
+		self.game_playing="IceAndFire"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_mejor_tau_e_its_test_fc-128_32_1_1_tau-500_its-100000_Catapults_1"
+		self.network_name="DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=231296
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=100000
+		self.num_train_its=50000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -304,7 +304,7 @@ class Agent(AbstractPlayer):
 
 				# Number of levels the model to load has been trained on
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=200
+				self.dataset_size_model=100
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
@@ -519,6 +519,7 @@ class Agent(AbstractPlayer):
 							r = -100
 
 					Q_target = r + self.gamma*self.get_min_Q_value(s)
+
 					Q_targets.append(Q_target)
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
@@ -1306,8 +1307,15 @@ class Agent(AbstractPlayer):
 
 	def get_min_Q_value(self, sso):
 		"""
-		Uses the Target Network (<with the current weights>) to obtain the Q-value associated with the state:
-		the minimum Q-value among all possible subgoals present at that state.
+		This method is used to compute the Q-target. It calculates the minimum Q-value associated
+		with the state sso.
+		It employs the technique known as Double DQNs.
+		It first uses the DQN network to select the best action (the one with the minimum
+		predicted Q-value) to take in the state sso.
+		It then predicts the Q-value associated with taking that action in state sso using
+		the target network.
+		This way it decouples action selection from Q-value generation.
+
 		If sso is 'None' (corresponds to an end state), the Q-value is 0.
 
 		@param sso Game state for which to calculate the Q-value.
@@ -1339,7 +1347,7 @@ class Agent(AbstractPlayer):
 		min_Q_val = np.min(Q_values)
 
 		return min_Q_val
-
+		
 
 	def update_target_network(self):
 		"""

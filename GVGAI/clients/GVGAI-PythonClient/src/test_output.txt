@@ -1,0 +1,196 @@
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 102 | 0.7725784778594971 | 1.0609369277954102
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 2 | 31 | 0.5113310813903809 | 0.0251467227935791
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 2 | 60 | 0.5112254619598389 | 0.9463725090026855
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 89 | 0.564612865447998 | 0.07793569564819336
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 4 | 83 | 0.5735504627227783 | 0.9856386184692383
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 132 | 0.9212865829467773 | 0.11117267608642578
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 1 | 110 | 0.6857602596282959 | 0.9783766269683838
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 218 | 1.166771411895752 | 0.13575458526611328
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 0 | 95 | 0.6967737674713135 | 0.9207394123077393
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 2 | 89 | 0.6454622745513916 | 0.08555006980895996
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_1-100 | BoulderDash | 2 | 81 | 0.5928986072540283 | 0.9543440341949463
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 79 | 0.4982485771179199 | 0.9600777626037598
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 4 | 60 | 0.4702901840209961 | 0.07667326927185059
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 2 | 57 | 0.5022578239440918 | 0.9523618221282959
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 90 | 0.498424768447876 | 0.021668434143066406
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 76 | 0.39242029190063477 | 0.8991522789001465
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 136 | 0.7163140773773193 | 0.10872220993041992
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 163 | 0.8017082214355469 | 1.0406007766723633
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 2 | 128 | 0.8350534439086914 | 0.02713799476623535
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 5 | 110 | 0.8631184101104736 | 0.9903244972229004
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 4 | 88 | 0.6369113922119141 | 0.02952742576599121
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_2-100 | BoulderDash | 0 | 102 | 0.5625119209289551 | 0.9542531967163086
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 78 | 0.5803110599517822 | 1.001476764678955
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 42 | 0.5109825134277344 | 0.024678707122802734
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 1 | 68 | 0.5057053565979004 | 0.9573662281036377
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 64 | 0.623197078704834 | 0.08228397369384766
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 2 | 60 | 0.5269474983215332 | 0.9471855163574219
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 99 | 0.7429280281066895 | 0.13120388984680176
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 137 | 0.6954250335693359 | 0.9767322540283203
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 158 | 1.0506224632263184 | 0.11762690544128418
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 4 | 111 | 0.7379932403564453 | 0.9530742168426514
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 91 | 0.6298434734344482 | 0.08142352104187012
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_3-100 | BoulderDash | 0 | 100 | 0.6818296909332275 | 1.0221548080444336
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 77 | 0.6044771671295166 | 1.0087039470672607
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 48 | 0.5339534282684326 | 0.02579641342163086
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 1 | 66 | 0.448716402053833 | 0.9224603176116943
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 106 | 0.6861684322357178 | 0.1605219841003418
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 64 | 0.5606956481933594 | 0.9756031036376953
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 85 | 0.7099094390869141 | 0.07896065711975098
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 138 | 0.675818681716919 | 0.9863240718841553
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 1 | 138 | 0.7329292297363281 | 0.021866798400878906
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 2 | 104 | 0.6650006771087646 | 0.9229447841644287
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 2 | 75 | 0.613091230392456 | 0.08258605003356934
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_4-100 | BoulderDash | 0 | 106 | 0.6684856414794922 | 1.018144130706787
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 113 | 0.8211257457733154 | 1.083815574645996
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 1 | 59 | 0.5897247791290283 | 0.028131723403930664
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 2 | 62 | 0.5661797523498535 | 0.984891414642334
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 112 | 0.7898087501525879 | 0.13540077209472656
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 85 | 0.7079195976257324 | 1.0452001094818115
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 135 | 0.9850857257843018 | 0.08722472190856934
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 141 | 0.7565648555755615 | 1.0085208415985107
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 223 | 1.4576647281646729 | 0.1933457851409912
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 1 | 80 | 0.7985758781433105 | 0.955263614654541
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 0 | 119 | 0.7622675895690918 | 0.13643193244934082
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_5-100 | BoulderDash | 1 | 106 | 0.6265556812286377 | 0.9845552444458008
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 77 | 0.6107268333435059 | 1.0113575458526611
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 50 | 0.5363938808441162 | 0.02425670623779297
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 2 | 64 | 0.45638132095336914 | 0.9328765869140625
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 85 | 0.6053285598754883 | 0.12858176231384277
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 64 | 0.5726580619812012 | 0.9814658164978027
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 128 | 0.7932789325714111 | 0.05499982833862305
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 130 | 0.6927604675292969 | 0.9888501167297363
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 231 | 1.164663553237915 | 0.13978266716003418
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 1 | 118 | 0.834399938583374 | 0.9822850227355957
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 0 | 114 | 0.8286852836608887 | 0.10993671417236328
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_6-100 | BoulderDash | 2 | 93 | 0.6064774990081787 | 0.9778969287872314
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 82 | 0.666750431060791 | 1.0531458854675293
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 1 | 46 | 0.5267527103424072 | 0.024008512496948242
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 1 | 44 | 0.4953289031982422 | 0.9423205852508545
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 75 | 0.42295241355895996 | 0.04554605484008789
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 1 | 73 | 0.4259171485900879 | 0.8979294300079346
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 92 | 0.6837587356567383 | 0.11001896858215332
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 113 | 0.6551129817962646 | 0.9830753803253174
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 157 | 1.1461284160614014 | 0.10947751998901367
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 107 | 0.7623672485351562 | 0.9581890106201172
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 102 | 0.7696533203125 | 0.10827350616455078
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-20000_BoulderDash_7-100 | BoulderDash | 0 | 119 | 0.6848866939544678 | 1.0179059505462646
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 5 | 106 | 0.6132175922393799 | 0.8774890899658203
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 3 | 97 | 0.4112377166748047 | 0.033779144287109375
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 2 | 105 | 0.4436678886413574 | 0.8252520561218262
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 125 | 0.32242703437805176 | 0.07236194610595703
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 9 | 168 | 0.6935944557189941 | 0.8106229305267334
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 122 | 0.47476696968078613 | 0.09821557998657227
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 156 | 0.42290663719177246 | 0.8511207103729248
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 184 | 0.4521193504333496 | 0.06067919731140137
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 253 | 0.5015573501586914 | 0.8862504959106445
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 0 | 125 | 0.44470810890197754 | 0.04363846778869629
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_1-100 | IceAndFire | 1 | 113 | 0.3912386894226074 | 0.839364767074585
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 5 | 156 | 0.6135361194610596 | 0.8879969120025635
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 11 | 101 | 0.7790248394012451 | 0.054692745208740234
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 97 | 0.28461742401123047 | 0.7801609039306641
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 91 | 0.2869076728820801 | 0.06881928443908691
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 9 | 198 | 0.7389407157897949 | 0.8239989280700684
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 144 | 0.5196175575256348 | 0.10190415382385254
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 2 | 88 | 0.4813261032104492 | 0.8473758697509766
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 158 | 0.4089372158050537 | 0.059223175048828125
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 177 | 0.5348660945892334 | 0.9072635173797607
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 119 | 0.51698899269104 | 0.029883623123168945
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_2-100 | IceAndFire | 0 | 113 | 0.35385680198669434 | 0.8293166160583496
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 6 | 134 | 0.649651050567627 | 0.8606817722320557
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 21 | 89 | 1.311311960220337 | 0.0798187255859375
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 6 | 137 | 0.676142692565918 | 0.8385982513427734
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 99 | 0.29770946502685547 | 0.01611161231994629
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 3 | 166 | 0.449110746383667 | 0.8034875392913818
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 166 | 0.48394322395324707 | 0.11650347709655762
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 6 | 88 | 0.6403088569641113 | 0.8646695613861084
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 166 | 0.40201902389526367 | 0.04201674461364746
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 249 | 0.49159765243530273 | 0.8900537490844727
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 91 | 0.4773883819580078 | 0.04413723945617676
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_3-100 | IceAndFire | 0 | 123 | 0.4894986152648926 | 0.8927164077758789
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 10 | 126 | 0.8345868587493896 | 0.8642511367797852
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 14 | 155 | 1.094705581665039 | 0.08298254013061523
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 8 | 109 | 0.7115681171417236 | 0.8236072063446045
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 107 | 0.40629053115844727 | 0.07576656341552734
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 4 | 140 | 0.5011868476867676 | 0.7994163036346436
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 146 | 0.5163905620574951 | 0.11826848983764648
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 12 | 84 | 0.855745792388916 | 0.8423824310302734
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 178 | 0.44342947006225586 | 0.061132192611694336
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 245 | 0.49285244941711426 | 0.8784818649291992
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 97 | 0.40654444694519043 | 0.04159259796142578
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_4-100 | IceAndFire | 0 | 143 | 0.4884064197540283 | 0.8821344375610352
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 3 | 120 | 0.5402321815490723 | 0.8665032386779785
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 18 | 145 | 1.215557336807251 | 0.0811777114868164
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 3 | 109 | 0.44513559341430664 | 0.8017275333404541
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 109 | 0.36468052864074707 | 0.05477309226989746
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 1 | 140 | 0.33695483207702637 | 0.7828638553619385
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 178 | 0.5299739837646484 | 0.13671493530273438
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 86 | 0.44211554527282715 | 0.8630931377410889
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 166 | 0.4850192070007324 | 0.062067508697509766
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 241 | 0.5342857837677002 | 0.9053440093994141
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 125 | 0.48000669479370117 | 0.027266740798950195
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_5-100 | IceAndFire | 0 | 101 | 0.43246960639953613 | 0.8590354919433594
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 6 | 110 | 0.7076766490936279 | 0.8761522769927979
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 17 | 143 | 1.1103835105895996 | 0.04212689399719238
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 0 | 103 | 0.41408634185791016 | 0.8412375450134277
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 5 | 127 | 0.626232385635376 | 0.07814478874206543
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 15 | 220 | 1.1285855770111084 | 0.8964576721191406
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 0 | 144 | 0.4888792037963867 | 0.0469813346862793
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 2 | 82 | 0.462543249130249 | 0.8195066452026367
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 0 | 194 | 0.46063232421875 | 0.07807183265686035
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 0 | 183 | 0.49733781814575195 | 0.8870937824249268
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 1 | 99 | 0.44449710845947266 | 0.043433427810668945
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_6-100 | IceAndFire | 0 | 111 | 0.449155330657959 | 0.8646032810211182
+
+-----------------------------------------------------------------------------------
+
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 5 | 158 | 0.6015298366546631 | 0.926999568939209
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 17 | 153 | 1.172300100326538 | 0.1058039665222168
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 2 | 103 | 0.4891080856323242 | 0.8987541198730469
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 107 | 0.34395313262939453 | 0.041262149810791016
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 17 | 266 | 1.1784162521362305 | 0.9520514011383057
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 144 | 0.49152064323425293 | 0.05246114730834961
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 14 | 82 | 1.089770793914795 | 0.9471390247344971
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 178 | 0.42308664321899414 | 0.06467866897583008
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 275 | 0.4916055202484131 | 0.9759767055511475
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 105 | 0.4288785457611084 | 0.04511618614196777
+DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7-100 | IceAndFire | 0 | 125 | 0.46639370918273926 | 0.9591827392578125
+
+-----------------------------------------------------------------------------------
+

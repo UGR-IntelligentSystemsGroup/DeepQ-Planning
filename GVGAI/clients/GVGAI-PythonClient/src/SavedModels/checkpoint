@@ -1,0 +1,2 @@
+model_checkpoint_path: "DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7.ckpt-100"
+all_model_checkpoint_paths: "DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7.ckpt-100"
