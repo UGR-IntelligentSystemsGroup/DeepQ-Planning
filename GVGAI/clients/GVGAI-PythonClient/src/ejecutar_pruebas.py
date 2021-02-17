@@ -188,6 +188,19 @@ Entreno también con 100000 its en Catapults (aunque sería necesario hacer más
   empieza a descender por debajo de 0 a partir de 100k its!!!)
 
 > VER SI DEBERÍA USAR TAU=1000
+
+> Probar prioritized Experience Replay
+  https://github.com/simoninithomas/Deep_reinforcement_learning_Course/blob/master/
+  Dueling%20Double%20DQN%20with%20PER%20and%20fixed-q%20targets/Dueling%20Deep%20Q%20
+  Learning%20with%20Doom%20(%2B%20double%20DQNs%20and%20Prioritized%20Experience%20Replay).ipynb
+  Por lo que aparece en el paper Rainbow DQN: https://arxiv.org/pdf/1710.02298.pdf
+  parece que el prioritized Experience Replay es muy importante!!!
+
+> Probar Dueling DQN -> Muy difícil de implementar para este modelo
+  (para calcular Q(s,a) necesito pasarle a la CNN el batch ((s,a1),(s,a2),...) para
+   todos los subobjetivos (a) posibles, ya que necesito calcular la media de las ventajas
+   de todas las acciones)
+
 """
 
 # Architecture
@@ -251,7 +264,7 @@ use_BN = [False] # If True, Batch Normalization is applied after each conv layer
                  # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash', 'IceAndFire']
+games_to_play = ['Catapults']
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
@@ -259,12 +272,12 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [20000] # 40000 # 20000 
-num_its_IceAndFire = [50000] # 100000 # 20000 
-num_its_Catapults = [100000] # 100000 # 20000
+num_its_BoulderDash = [1000000] # 40000 # 20000 
+num_its_IceAndFire = [400000] # 100000 # 20000 # Creo que el mejor número de its es 400000
+num_its_Catapults = [1000000] # 100000 # 20000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 7 # 15 # Each model is trained this number of times
+repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -592,7 +605,7 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Pruebas_test_Double_DQNs_fc-{}_{}_{}_{}_tau-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_convergencia_test_fc-{}_{}_{}_{}_tau-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
 								 curr_fc_num_unis[3], curr_tau, curr_num_its, curr_game, curr_rep)
 

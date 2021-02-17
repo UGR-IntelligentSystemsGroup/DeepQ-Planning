@@ -59,13 +59,13 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_test_Double_DQNs_fc-128_32_1_1_tau-500_its-50000_IceAndFire_7"
+		self.network_name="DQN_Pruebas_convergencia_test_fc-128_32_1_1_tau-500_its-1000000_IceAndFire_1"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=231296
+		self.level_seed=57824
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -184,7 +184,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=50000
+		self.num_train_its=1000000
 		self.batch_size=32
 		self.use_BN=False
 		
