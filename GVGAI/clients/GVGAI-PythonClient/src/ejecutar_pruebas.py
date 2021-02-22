@@ -178,6 +178,20 @@ En IceAndFire los resultados con 100000 y 200000 iteraciones son casi idénticos
 <<ENTRENO EN BOULDERDASH CON 40000 ITERACIONES Y EN ICEANDFIRE CON 100000.>>
 Entreno también con 100000 its en Catapults (aunque sería necesario hacer más pruebas).
 
+>> Pruebas PER <<
+Las losses abs y huber no funcionan bien (en IceAndFire el Q-value no disminuye
+por debajo de 0 sino que sigue aumentando)
+
+Con alfa=0.0001 (el que estábamos usando) en IceAndFire parece que el mejor número
+de its es 400000 (en ese número ya hay pocos picos y el loss está por debajo de 10)
+
+Con alfa=0.000025 también converge el loss pero mucho más lento y pero (<<el mejor
+alfa es 0.0001>>)
+
+En BoulderDash, para que converja es necesario usar alfa=0.00005. Parece que el mejor
+num de its es 300000.
+
+
 """
 
 
@@ -256,15 +270,15 @@ l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 fc_num_unis = [[128,32,1,1]]  
 
 # Training params
-tau=[500] # 10 # Update period of the target network
-alfa = [0.0001] # Learning rate # 0.0001 # 0.0005 is too big even with the new penalization
+tau=[1000] # 10 # Update period of the target network
+alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
                  # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['Catapults']
+games_to_play = ['BoulderDash'] # Catapults
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
@@ -272,9 +286,9 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [1000000] # 40000 # 20000 
-num_its_IceAndFire = [400000] # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [1000000] # 100000 # 20000
+num_its_BoulderDash = [1000000] # 1000000 # 40000 # 20000 
+num_its_IceAndFire = [1000000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
+num_its_Catapults = [1000000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
@@ -605,9 +619,8 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Pruebas_convergencia_test_fc-{}_{}_{}_{}_tau-{}_its-{}_{}_{}". \
-								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
-								 curr_fc_num_unis[3], curr_tau, curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_Pruebas_PER_test_sqr-loss_alfa-{}_tau-{}_its-{}_{}_{}". \
+								format(curr_alfa, curr_tau, curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 

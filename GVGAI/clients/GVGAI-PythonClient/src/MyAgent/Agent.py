@@ -17,6 +17,7 @@ import glob
 import time
 
 from LearningModel import DQNetwork
+from PrioritizedExperienceReplay import Memory
 
 class Agent(AbstractPlayer):
 	NUM_GEMS_FOR_EXIT = 9
@@ -33,7 +34,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="IceAndFire"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -55,11 +56,11 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_convergencia_test_fc-128_32_1_1_tau-500_its-1000000_IceAndFire_1"
+		self.network_name="DQN_Pruebas_PER_test_sqr-loss_alfa-5e-05_tau-1000_its-1000000_BoulderDash_1"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
@@ -181,7 +182,7 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 32, 1, 1]
 
 		# Training params
-		self.learning_rate=0.0001
+		self.learning_rate=5e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
 		self.num_train_its=1000000
@@ -191,7 +192,7 @@ class Agent(AbstractPlayer):
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=500
+		self.max_tau=1000
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
 		self.gamma=1 
@@ -235,8 +236,11 @@ class Agent(AbstractPlayer):
 			# Name of the saved model file (without the number of dataset size part)
 			self.model_save_path = "./SavedModels/" + self.network_name + ".ckpt"
 
-			# Experience Replay
+			# Array with samples
 			self.memory = []
+
+			# Prioritized Experience Replay
+			self.PER = None
 
 			# Folder where the datasets are stored
 			self.datasets_folder = 'SavedDatasets'
@@ -373,6 +377,9 @@ class Agent(AbstractPlayer):
 			# DO NOT USE random.shuffle (it does not work well with numpy arrays)
 			np.random.shuffle(self.memory)
 
+			# Create Prioritized Experience Replay
+			self.PER = Memory(len(self.memory), self.memory)
+
 			# Create Learning model
 
 			curr_name = self.network_name + "_lvs={}".format(self.dataset_size_for_training) # Append dataset size to the name of the network
@@ -488,22 +495,37 @@ class Agent(AbstractPlayer):
 			ind_batch = 0 # Index for selecting the next minibatch
 
 			# Execute the training of the current model
+			
+			# <<QUITAR>>
+			tree_idx_set = set()
+
 			for curr_it in range(self.num_train_its):   
 				# Choose next batch from Experience Replay
 
-				if ind_batch+self.batch_size < num_samples:
+				"""if ind_batch+self.batch_size < num_samples:
 					batch = self.memory[ind_batch:ind_batch+self.batch_size]
 					ind_batch = (ind_batch + self.batch_size)
 				else: # Got to the end of the experience replay -> shuffle it and start again
 					batch = self.memory[ind_batch:]
 					ind_batch = 0
 
-					np.random.shuffle(self.memory)
+					np.random.shuffle(self.memory)"""
+
+				tree_idx, batch, sample_weights = self.PER.sample(self.batch_size)
+
+				# <<QUITAR>>
+				for curr_idx in tree_idx:
+					tree_idx_set.add(curr_idx)
+
+				if curr_it % 100 == 0:
+					print("> Num samples used:", len(tree_idx_set))
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
 				batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
 				batch_R = [each[2] for each in batch] # r values (plan lenghts)
 				batch_S = [each[3] for each in batch] # s' values (sso instances)
+
+				# <Por aquí>
 
 				# Calculate Q_targets
 				Q_targets = []
@@ -524,9 +546,13 @@ class Agent(AbstractPlayer):
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
-				# Execute one training step				
-				self.model.train(batch_X, batch_Res, Q_targets)
+				# Execute one training step
+				# absolute_errors is used to update the priority scores of the PER				
+				absolute_errors = self.model.train(batch_X, batch_Res, Q_targets, sample_weights)
 				self.tau += 1
+
+				# Update the priority scores of the PER
+				self.PER.batch_update(tree_idx, absolute_errors)
 
 				# Update target network every tau training steps
 				if self.tau >= self.max_tau:

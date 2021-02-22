@@ -1,2 +1,0 @@
-model_checkpoint_path: "DQN_Pruebas_convergencia_test_fc-128_32_1_1_tau-500_its-1000000_IceAndFire_1.ckpt-100"
-all_model_checkpoint_paths: "DQN_Pruebas_convergencia_test_fc-128_32_1_1_tau-500_its-1000000_IceAndFire_1.ckpt-100"

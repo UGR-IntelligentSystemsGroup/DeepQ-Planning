@@ -88,6 +88,9 @@ class DQNetwork:
 			# Dropout Probability (probability of deactivation)
 			self.dropout_placeholder = tf.placeholder(tf.float32)
 			self.dropout_prob = dropout_prob
+
+			# Sample weights needed for Prioritized Experience Replay
+			self.sample_weights = tf.placeholder(tf.float32, [None,1], name='sample_weights')
 			
 
 			# --- Architecture ---
@@ -574,10 +577,18 @@ class DQNetwork:
 			
 			# Train
 			
+			# Errors for updating sumtree in prioritized experience replay
+			self.absolute_errors = tf.abs(self.Q_target - self.Q_val)
+
+
 			# The loss is the difference between our predicted Q_values and the Q_targets
 			# Sum(Qtarget - Q)^2
-			self.loss = tf.reduce_mean(tf.square(self.Q_target - self.Q_val), name="loss")
-			
+			# We multiply by self.sample_weights so that every sample has a different weight
+			# according to the prioritized experience replay probabilities
+			# Absolute loss and huber loss don't work well, so we use sqr loss
+			self.loss = tf.reduce_mean(self.sample_weights * tf.square(self.Q_target - self.Q_val),
+				name="loss")
+
 			self.optimizer = tf.train.AdamOptimizer(learning_rate=self.alfa, name="optimizer")
 			
 			# Mean and Variance Shift Operations needed for Batch Normalization
@@ -657,18 +668,27 @@ class DQNetwork:
 
 	# Execute num_it training steps using X, Y (Q_targets) as the current batches. They must have the same number of elements
 	# Dropout is activated
-	def train(self, X, Agent_res, Y, num_it = 1):
+	# Returns the absolute errors abs(Q_target - Q_val) to update the priority scores of
+	# the experience replay
+	def train(self, X, Agent_res, Y, sample_weights):
 		data_dict = {self.X : X, self.Agent_res : Agent_res,
-		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : self.dropout_prob}
+		 self.Q_target : Y, self.sample_weights : sample_weights,
+		 self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
-		for it in range(num_it):
-			self.sess.run(self.train_op, feed_dict=data_dict)
+		_, absolute_errors = self.sess.run([self.train_op, self.absolute_errors], feed_dict=data_dict)
+
+		return absolute_errors
 
 	# Calculate Training Loss and store it as a log
 	# Dropout is not activated
 	def save_logs(self, X, Agent_res, Y, it):
+		# Use sample_weights = 1 for every sample in X
+		num_samples = X.shape[0]
+		sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
+
 		# Training Loss
 		data_dict_train = {self.X : X, self.Agent_res : Agent_res,
+		 self.sample_weights : sample_weights,
 		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
 		train_loss_log, Q_val_log, Q_target_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
