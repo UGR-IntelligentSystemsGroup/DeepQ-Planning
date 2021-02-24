@@ -40,11 +40,11 @@ Catapults y IceAndFire -> loss alrededor de 3000 al final.
 
 >>> Comparación gráficas de entrenamiento modelos FC, conv 4 capas y conv 6 capas:
 > BoulderDash: modelo FC -> loss=200 (converge casi perfectamente), 
-               modelos conv (4 y 6 capas) -> loss=1000 (convergen bien, pero peor 
-               que el modelo FC)
+							 modelos conv (4 y 6 capas) -> loss=1000 (convergen bien, pero peor 
+							 que el modelo FC)
 
 > IceAndFire: modelo FC -> loss=4000, conv 4 capas -> loss=30000, 
-              conv 6 capas -> loss=15000
+							conv 6 capas -> loss=15000
 
 > Catapults: model FC -> loss=3000, conv 4 capas -> loss=40000,
 			 conv 6 capas -> loss=55000
@@ -59,12 +59,12 @@ el de 6 capas y en Catapults el de 4 capas.
 			 El training loss al final del entrenamiento (10000 its.) es el mismo en ambos casos.
 			 Sin BN, el número de iteraciones para Catapults debería ser de 1000 (o incluso 500).
 > IceAndFire: El training loss converge más rápido SIN batch normalization.
-              El Q-target y el Q-value es mucho mayor que con batch normalization!!!!!
-              <<<<<LOS RESULTADOS EN TEST MEJORAN MUCHÍSIMO!!!!!>>>>>>
-              Mejor num de train its. sin BN -> 7500
+							El Q-target y el Q-value es mucho mayor que con batch normalization!!!!!
+							<<<<<LOS RESULTADOS EN TEST MEJORAN MUCHÍSIMO!!!!!>>>>>>
+							Mejor num de train its. sin BN -> 7500
 > BoulderDash: El training loss CON Batch Normalization es mejor, al contrario que los otros
-               dos juegos: de 1000 de media de training loss al final (con BN) paso a 3000.
-               Los resultados en test empeoran un poco al quitar el batch normalization.
+							 dos juegos: de 1000 de media de training loss al final (con BN) paso a 3000.
+							 Los resultados en test empeoran un poco al quitar el batch normalization.
 
 <<No uso Batch Normalization excepto, quizás, para BoulderDash.>>
 
@@ -72,17 +72,17 @@ el de 6 capas y en Catapults el de 4 capas.
 
 >>> L2 reg = 0.1
 > BoulderDash: ambas gráficas de entrenamiento son casi idénticas. Los resultados en test
-               son prácticamente idénticos también.
+							 son prácticamente idénticos también.
 > IceAndFire: empeora el training loss al usar L2 regularization (se dobla el training loss).
-              Las gráficas de Q-target y Q-value también son diferentes. Los resultados en test
-              empeoran bastante!!!
+							Las gráficas de Q-target y Q-value también son diferentes. Los resultados en test
+							empeoran bastante!!!
 > Catapults: las gráficas de entrenamiento son muy parecidas. Empeoran los resultados de test.
 
 <<NO USO REGULARIZACIÓN L2!!!>>
 
 >>> Dropout = 0.1 (solo en las capas convolucionales)
 > BoulderDash: el training loss no varía, pero el Q-target y Q-val sí!! Empeoran los resultados
-               en test!!
+							 en test!!
 > IceAndFire: el training loss no varía. Empeoran los resultados de test.
 > Catapults: el training loss no varía. Resuelve 3 niveles en test en vez de 2 (creo que es suerte).
 
@@ -125,42 +125,42 @@ Pruebas
 test con 8 capas, aunque las gráficas de entrenamiento tienen más picos.
 
 > Entre 15000 y 20000 training its. Se obtienen resultados un poco mejores (en test) con 
-  20000 training its.
+	20000 training its.
 
 > Al probar dropout, los resultados al usar dropout 0.2 y no usarlo son casi idénticos. Al usar
 dropout 0.4 empeoran los resultados -> no uso dropout
 
 > IceAndFire y Catapults funcionan mejor SIN Batch Normalization!!
-  (las gráficas de Q-value y Q-target son diferentes con BN y en IceAndFire
-   los resultados en test son peores)
-   BoulderDash funciona mejor CON BN!!!
+	(las gráficas de Q-value y Q-target son diferentes con BN y en IceAndFire
+	 los resultados en test son peores)
+	 BoulderDash funciona mejor CON BN!!!
 
 > Pruebas mejor num fc tres juegos.
-  Al aumentar el número de unidades fc en BoulderDash, el loss no disminuye!!
-  Las gráficas de Q-value y Q-target sí varían un poco.
-  Lo mismo pasa en IceAndFire (de hecho al aumentar las unidades fc más allá
-  de [128, 32] el entrenamiento es más inestable al igual que las gráficas
-  de Q_val y Q-target).
-  Lo mismo ocurre con Catapults.
+	Al aumentar el número de unidades fc en BoulderDash, el loss no disminuye!!
+	Las gráficas de Q-value y Q-target sí varían un poco.
+	Lo mismo pasa en IceAndFire (de hecho al aumentar las unidades fc más allá
+	de [128, 32] el entrenamiento es más inestable al igual que las gráficas
+	de Q_val y Q-target).
+	Lo mismo ocurre con Catapults.
 
-  Respecto a test, para IceAndFire y Catapults los mejores resultados son con el
-  menor número de unidades fc (128, 32). En BoulderDash, funciona mejor usar
-  [512, 128, 32] unidades fc, obteniendo un 7% menos de acciones de media que con
-  128, 32. 
+	Respecto a test, para IceAndFire y Catapults los mejores resultados son con el
+	menor número de unidades fc (128, 32). En BoulderDash, funciona mejor usar
+	[512, 128, 32] unidades fc, obteniendo un 7% menos de acciones de media que con
+	128, 32. 
 
 > Pruebas 6 capas 128 vs 8 capas 256.
-  Con 8 capas el training loss es mejor y en test, para boulderdash da igual, para iceandfire
-  es un poco mejor y en Catapults es también un poco mejor -> uso 8 capas.
+	Con 8 capas el training loss es mejor y en test, para boulderdash da igual, para iceandfire
+	es un poco mejor y en Catapults es también un poco mejor -> uso 8 capas.
 
 > Al probar a aumentar las capas a 10 (usando 256 filtros en las últimas), los resultados
-  empeoran en BoulderDash y Catapults, y se mantienen igual en IceAndFire.
+	empeoran en BoulderDash y Catapults, y se mantienen igual en IceAndFire.
 
 > Al entrenar Catapults sobre solo los 100 niveles antiguos, los resultados empeoran.
 
 > Pruebas mejor num its.
-  BoulderDash: no está claro cuál es mejor -> Me quedo con 20000
-  IceAndFire: no está claro cuál es mejor -> Me quedo con 20000
-  Catapults: 25000 repeticiones.
+	BoulderDash: no está claro cuál es mejor -> Me quedo con 20000
+	IceAndFire: no está claro cuál es mejor -> Me quedo con 20000
+	Catapults: 25000 repeticiones.
 
 > El mejor número de filtros en las últimas capas conv es 128, no 64 o 256.
 
@@ -191,6 +191,15 @@ alfa es 0.0001>>)
 En BoulderDash, para que converja es necesario usar alfa=0.00005. Parece que el mejor
 num de its es 300000.
 
+>> Pruebas modelos simples <<
+
+>> Modelo con 512 unidades fc, 3 capas conv. (modelo simple)
+Al probar con el modelo de DQN Nature (3 capas conv, 512 unidades fc), es capaz de converger en IceAndFire
+en 1M train its. El error converge muy rápido. Sin embargo, el Q-target y Q-value tardan en descender
+lo suficiente (en el modelo complejo, ambas gráficas disminuyen por debajo de 0 mucho más rápido).
+
+Los resultados en test (tras 1M train its) son prácticamente idénticos (un 2% de más acciones en todos los
+niveles de media, aunque tiene menos errores) que el modelo complejo (con 1M de train its y PER también).
 
 """
 
@@ -198,26 +207,24 @@ num de its es 300000.
 # << Pruebas a realizar >>
 """
 > VER MEJOR NÚMERO DE TRAINING ITS EN LOS TRES JUEGOS!!!
-  (en boulderdash por ahora estoy usando 40k its pero parece que el Q-target solo
-  empieza a descender por debajo de 0 a partir de 100k its!!!)
-
-> VER SI DEBERÍA USAR TAU=1000
-
-> Probar prioritized Experience Replay
-  https://github.com/simoninithomas/Deep_reinforcement_learning_Course/blob/master/
-  Dueling%20Double%20DQN%20with%20PER%20and%20fixed-q%20targets/Dueling%20Deep%20Q%20
-  Learning%20with%20Doom%20(%2B%20double%20DQNs%20and%20Prioritized%20Experience%20Replay).ipynb
-  Por lo que aparece en el paper Rainbow DQN: https://arxiv.org/pdf/1710.02298.pdf
-  parece que el prioritized Experience Replay es muy importante!!!
+	(en boulderdash por ahora estoy usando 40k its pero parece que el Q-target solo
+	empieza a descender por debajo de 0 a partir de 100k its!!!)
 
 > Probar Dueling DQN -> Muy difícil de implementar para este modelo
-  (para calcular Q(s,a) necesito pasarle a la CNN el batch ((s,a1),(s,a2),...) para
-   todos los subobjetivos (a) posibles, ya que necesito calcular la media de las ventajas
-   de todas las acciones)
+	(para calcular Q(s,a) necesito pasarle a la CNN el batch ((s,a1),(s,a2),...) para
+	 todos los subobjetivos (a) posibles, ya que necesito calcular la media de las ventajas
+	 de todas las acciones)
+
+> Implementar guardado modelo cada X train its
 
 """
 
-# Architecture
+# <Architecture>
+
+# Complex architecture
+# 8 conv layers -> it is able to converge on all three games
+# fc units -> [128,32,1,1]
+"""
 l1_num_filt = [32]
 l1_filter_structure = [ [[3,3],[1,1],"SAME"] ]
 l2_num_filt = [32]
@@ -236,9 +243,30 @@ l7_num_filt = [128]
 l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l8_num_filt = [128]
 l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+"""
 
+# Simple architecture (inspired by DQN architecture of original paper)
+# 3 conv layers
+# fc units -> [[512,1,1,1]] 
 
+l1_num_filt = [32]
+l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
+l2_num_filt = [64]
+l2_filter_structure = [ [[5,5],[1,1],"VALID"] ] 
+l3_num_filt = [64]
+l3_filter_structure = [ [[5,5],[1,1],"VALID"] ]
 
+l4_num_filt = [-1]
+l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
+l5_num_filt = [-1]
+l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+
+l6_num_filt = [-1]
+l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l7_num_filt = [-1]
+l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l8_num_filt = [-1]
+l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 
 l9_num_filt = [-1]
@@ -267,18 +295,19 @@ l20_num_filt = [-1]
 l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Number of units of the fully-connected layers
-fc_num_unis = [[128,32,1,1]]  
+fc_num_unis = [[512,1,1,1]]  
 
 # Training params
 tau=[1000] # 10 # Update period of the target network
-alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+# CHANGE FOR BOULDERDASH!
+alfa = [0.0001] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
-                 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
+								 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['BoulderDash'] # Catapults
+games_to_play = ['IceAndFire']
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
@@ -287,7 +316,7 @@ datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
 num_its_BoulderDash = [1000000] # 1000000 # 40000 # 20000 
-num_its_IceAndFire = [1000000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
+num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [1000000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
@@ -302,6 +331,13 @@ repetitions_per_model = 1 # 15 # Each model is trained this number of times
 # test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 
+# If False, each saved model is only tested at the end of the training
+# If True, each saved model is tested every "test_it_interval" training its
+test_all_its = True
+test_it_interval = 20000
+
+# If True, the train phase is skipped (we assume the model has already been trained and saved)
+skip_train = False
 
 # <Script variables>
 
@@ -334,16 +370,16 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # Save the hyperparameters for each different model in a list
 models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq,rr,ss,tt,uu]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
- 					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
- 					for i in l5_num_filt for j in l5_filter_structure for k in l6_num_filt for l in l6_filter_structure \
- 					for m in l7_num_filt for n in l7_filter_structure for o in l8_num_filt for p in l8_filter_structure \
- 					for q in l9_num_filt for r in l9_filter_structure for s in l10_num_filt for t in l10_filter_structure \
- 					for u in l11_num_filt for v in l11_filter_structure for w in l12_num_filt for x in l12_filter_structure \
- 					for y in l13_num_filt for z in l13_filter_structure for aa in l14_num_filt for bb in l14_filter_structure \
- 					for cc in l15_num_filt for dd in l15_filter_structure for ee in l16_num_filt for ff in l16_filter_structure \
- 					for gg in l17_num_filt for hh in l17_filter_structure for ii in l18_num_filt for jj in l18_filter_structure \
- 					for kk in l19_num_filt for ll in l19_filter_structure for mm in l20_num_filt for nn in l20_filter_structure \
- 					for oo in fc_num_unis for pp in alfa for qq in dropout for rr in batch_size for ss in use_BN \
+					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
+					for i in l5_num_filt for j in l5_filter_structure for k in l6_num_filt for l in l6_filter_structure \
+					for m in l7_num_filt for n in l7_filter_structure for o in l8_num_filt for p in l8_filter_structure \
+					for q in l9_num_filt for r in l9_filter_structure for s in l10_num_filt for t in l10_filter_structure \
+					for u in l11_num_filt for v in l11_filter_structure for w in l12_num_filt for x in l12_filter_structure \
+					for y in l13_num_filt for z in l13_filter_structure for aa in l14_num_filt for bb in l14_filter_structure \
+					for cc in l15_num_filt for dd in l15_filter_structure for ee in l16_num_filt for ff in l16_filter_structure \
+					for gg in l17_num_filt for hh in l17_filter_structure for ii in l18_num_filt for jj in l18_filter_structure \
+					for kk in l19_num_filt for ll in l19_filter_structure for mm in l20_num_filt for nn in l20_filter_structure \
+					for oo in fc_num_unis for pp in alfa for qq in dropout for rr in batch_size for ss in use_BN \
 					for tt in tau for uu in games_to_play]
 
 # Add the corresponding dataset sizes for each game
@@ -619,8 +655,10 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Pruebas_PER_test_sqr-loss_alfa-{}_tau-{}_its-{}_{}_{}". \
-								format(curr_alfa, curr_tau, curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_Simple_model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
+								 curr_fc_num_unis[3], curr_num_its,
+								 curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 
@@ -645,8 +683,8 @@ try:
 
 			# ------ TRAINING ------
 
-			# Skip training if we are testing the random model
-			if goal_selection_mode == "best":
+			# Skip training if we are testing the random/greedy model or if skip_train is True
+			if goal_selection_mode == "best" and skip_train == False:
 				# <Change Agent.py>
 
 				# Load file in memory
@@ -681,152 +719,161 @@ try:
 
 			# ------ VALIDATION / TEST ------
 
-
-			# <Change Agent.py>
-
-			# Load file in memory
-			with open('MyAgent/Agent.py', 'r') as file:
-				agent_file = file.read()
-
-			# Change execution mode
-			agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="test"', agent_file, count=1)
-			# Change dataset size
-			agent_file = re.sub(r'self.dataset_size_model=.*', 'self.dataset_size_model={}'.format(dataset_size_for_training), agent_file, count=1)
-
-			# Save file
-			with open('MyAgent/Agent.py', 'w') as file:
-				file.write(agent_file)
-
-			# <Change CompetitionParameters.py>
-
-			# Load file in memory
-			with open('utils/CompetitionParameters.py', 'r') as file:
-				comp_param_file = file.read()
-
-			# Change learning time to test time
-			comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=1", comp_param_file, count=1)
-
-			# Save file
-			with open('utils/CompetitionParameters.py', 'w') as file:
-				file.write(comp_param_file)
-
-			# <Select the five validation or test levels to use, depending on the
-			# script_execution_mode>
-
-			# Select five validation levels using the random seed
-			if script_execution_mode == "validation":
-				# Get all the training/validation levels
-				all_levels = glob.glob(curr_lvs_path_train_val + "*")
-
-				# Get the datasets used to train the model
-				with open('loaded_datasets.txt', 'r') as file:
-					train_datasets = file.read().splitlines()
-
-				# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
-				# Ids of the train datasets (e.g.: [5, 7, 21])
-				train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
-
-				# Remove the levels used for training
-				levels_to_remove = []
-
-				for lv in all_levels:
-					# Get lv id
-					lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
-
-					# If the lv id is in train_datasets_ids, that means that level was used for training:
-					# then don't use it for validation
-					if lv_id in train_datasets_ids:
-						levels_to_remove.append(lv)
-
-				all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
-
-				# Set the seed for repetibility
-				random.seed(curr_seed)
-
-				# Select 5 validation levels among all the possible levels
-				val_levels = random.sample(all_levels, k=5)
-				print("\n> Validation levels:", val_levels)
-
-			# Use the five test levels
+			# Check if we are going to test only the saved model with the largest number of training its
+			# of if we are going to test the saved model every "test_it_interval" train its
+			if test_all_its == False:
+				array_its_to_test = [curr_num_its]
 			else:
-				# Get all the test levels
-				val_levels = glob.glob(curr_lvs_path_test + "*")
-				print("\n> Test levels:", val_levels)
+				array_its_to_test = [i for i in range(test_it_interval, curr_num_its+1, test_it_interval)]
 
-				# Get the path of the test levels without the index and the ".txt"
-				val_levels_path = re.search(r"(\D+)\d+.txt", val_levels[0]).group(1) # \D matches any character which is NOT a digit
+			# Obtain the test results of the model for each number of its
+			for array_its_to_test_curr_elem in array_its_to_test:
 
-			# <Validate the model on a different pair of val/test levels each time>
-			for curr_val_levels in test_level_indexes:
+				# <Change Agent.py>
 
-				# <Remove the test levels (3-4) of the corresponding game>
-				test_levels_current_game = [test_lvs_directory + level_name for level_name in curr_test_lvs]
-				
-				for level in test_levels_current_game:
-					subprocess.call("rm {} 2> /dev/null".format(level), shell=True)
+				# Load file in memory
+				with open('MyAgent/Agent.py', 'r') as file:
+					agent_file = file.read()
 
-				if len(curr_val_levels) == 1: # Only one validation level to test
+				# Change execution mode
+				agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="test"', agent_file, count=1)
+				# Change num of train its (of the model to load)
+				agent_file = re.sub(r'self.num_train_its_model=.*', 'self.num_train_its_model={}'.format(array_its_to_test_curr_elem), agent_file, count=1)
 
-					if script_execution_mode == "test":					
-						val_level_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
-					else:
-						val_level_name = val_levels[curr_val_levels[0]]
+				# Save file
+				with open('MyAgent/Agent.py', 'w') as file:
+					file.write(agent_file)
 
-					print("\nNIVEL:", val_level_name)
+				# <Change CompetitionParameters.py>
 
-					# <Copy the new validation level as the levels 3-4>
-					subprocess.call("cp {} {}".format(val_level_name, test_levels_current_game[0]), shell=True) 
-					subprocess.call("cp {} {}".format(val_level_name, test_levels_current_game[1]), shell=True) 
+				# Load file in memory
+				with open('utils/CompetitionParameters.py', 'r') as file:
+					comp_param_file = file.read()
 
-					# <Change Agent.py>
+				# Change learning time to test time
+				comp_param_file = re.sub(r'TOTAL_LEARNING_TIME=.*', "TOTAL_LEARNING_TIME=1", comp_param_file, count=1)
 
-					# Load file in memory
-					with open('MyAgent/Agent.py', 'r') as file:
-						agent_file = file.read()
+				# Save file
+				with open('utils/CompetitionParameters.py', 'w') as file:
+					file.write(comp_param_file)
 
-					# Change num_test_levels
-					agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=1', agent_file, count=1)
+				# <Select the five validation or test levels to use, depending on the
+				# script_execution_mode>
 
-					# Save file
-					with open('MyAgent/Agent.py', 'w') as file:
-						file.write(agent_file)
+				# Select five validation levels using the random seed
+				if script_execution_mode == "validation":
+					# Get all the training/validation levels
+					all_levels = glob.glob(curr_lvs_path_train_val + "*")
 
-				else: # Two validation levels to test
+					# Get the datasets used to train the model
+					with open('loaded_datasets.txt', 'r') as file:
+						train_datasets = file.read().splitlines()
 
-					if script_execution_mode == "test":	
-						val_level1_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
-						val_level2_name = val_levels_path + str(curr_val_levels[1]) + ".txt"
-					else:
-						val_level1_name = val_levels[curr_val_levels[0]]
-						val_level2_name = val_levels[curr_val_levels[1]]
+					# The dataset of id 'j' has been collected at lv of id 'j': transform the datasets into their corresponding levels
+					# Ids of the train datasets (e.g.: [5, 7, 21])
+					train_datasets_ids = [int(re.search(r'[0-9]+.dat', dataset).group(0).rstrip('.dat')) for dataset in train_datasets]
 
-					print("\nNIVELES:", val_level1_name, val_level2_name)
+					# Remove the levels used for training
+					levels_to_remove = []
 
-					# <Copy the new validation levels as the levels 3-4>
-					subprocess.call("cp {} {}".format(val_level1_name, test_levels_current_game[0]), shell=True) 
-					subprocess.call("cp {} {}".format(val_level2_name, test_levels_current_game[1]), shell=True) 
+					for lv in all_levels:
+						# Get lv id
+						lv_id = int(re.search(r'lvl[0-9]+', lv).group(0).lstrip('lvl'))
 
-					# <Change Agent.py>
+						# If the lv id is in train_datasets_ids, that means that level was used for training:
+						# then don't use it for validation
+						if lv_id in train_datasets_ids:
+							levels_to_remove.append(lv)
 
-					# Load file in memory
-					with open('MyAgent/Agent.py', 'r') as file:
-						agent_file = file.read()
+					all_levels = [lv for lv in all_levels if lv not in levels_to_remove]
 
-					# Change num_test_levels
-					agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=2', agent_file, count=1)
+					# Set the seed for repetibility
+					random.seed(curr_seed)
 
-					# Save file
-					with open('MyAgent/Agent.py', 'w') as file:
-						file.write(agent_file)
+					# Select 5 validation levels among all the possible levels
+					val_levels = random.sample(all_levels, k=5)
+					print("\n> Validation levels:", val_levels)
+
+				# Use the five test levels
+				else:
+					# Get all the test levels
+					val_levels = glob.glob(curr_lvs_path_test + "*")
+					print("\n> Test levels:", val_levels)
+
+					# Get the path of the test levels without the index and the ".txt"
+					val_levels_path = re.search(r"(\D+)\d+.txt", val_levels[0]).group(1) # \D matches any character which is NOT a digit
+
+				# <Validate the model on a different pair of val/test levels each time>
+				for curr_val_levels in test_level_indexes:
+
+					# <Remove the test levels (3-4) of the corresponding game>
+					test_levels_current_game = [test_lvs_directory + level_name for level_name in curr_test_lvs]
+					
+					for level in test_levels_current_game:
+						subprocess.call("rm {} 2> /dev/null".format(level), shell=True)
+
+					if len(curr_val_levels) == 1: # Only one validation level to test
+
+						if script_execution_mode == "test":					
+							val_level_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
+						else:
+							val_level_name = val_levels[curr_val_levels[0]]
+
+						print("\nNIVEL:", val_level_name)
+
+						# <Copy the new validation level as the levels 3-4>
+						subprocess.call("cp {} {}".format(val_level_name, test_levels_current_game[0]), shell=True) 
+						subprocess.call("cp {} {}".format(val_level_name, test_levels_current_game[1]), shell=True) 
+
+						# <Change Agent.py>
+
+						# Load file in memory
+						with open('MyAgent/Agent.py', 'r') as file:
+							agent_file = file.read()
+
+						# Change num_test_levels
+						agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=1', agent_file, count=1)
+
+						# Save file
+						with open('MyAgent/Agent.py', 'w') as file:
+							file.write(agent_file)
+
+					else: # Two validation levels to test
+
+						if script_execution_mode == "test":	
+							val_level1_name = val_levels_path + str(curr_val_levels[0]) + ".txt"
+							val_level2_name = val_levels_path + str(curr_val_levels[1]) + ".txt"
+						else:
+							val_level1_name = val_levels[curr_val_levels[0]]
+							val_level2_name = val_levels[curr_val_levels[1]]
+
+						print("\nNIVELES:", val_level1_name, val_level2_name)
+
+						# <Copy the new validation levels as the levels 3-4>
+						subprocess.call("cp {} {}".format(val_level1_name, test_levels_current_game[0]), shell=True) 
+						subprocess.call("cp {} {}".format(val_level2_name, test_levels_current_game[1]), shell=True) 
+
+						# <Change Agent.py>
+
+						# Load file in memory
+						with open('MyAgent/Agent.py', 'r') as file:
+							agent_file = file.read()
+
+						# Change num_test_levels
+						agent_file = re.sub(r'self.num_test_levels=.*', 'self.num_test_levels=2', agent_file, count=1)
+
+						# Save file
+						with open('MyAgent/Agent.py', 'w') as file:
+							file.write(agent_file)
 
 
-				# <Execute the validation on the current validation levels>
+					# <Execute the validation on the current validation levels>
 
-				print("\n> Validating/Testing the model on level(s):", curr_val_levels)
-				subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
+					print("\n> Validating/Testing the model on level(s):", curr_val_levels)
+					subprocess.call("bash oneclickRunFromPythonClient.sh", shell=True)
 
-				# <Kill java process so that the memory doesn't fill>
-				subprocess.call("killall java 2> /dev/null", shell=True)
+					# <Kill java process so that the memory doesn't fill>
+					subprocess.call("killall java 2> /dev/null", shell=True)
 
 except Exception as e:
 	print(">> Exception!!")

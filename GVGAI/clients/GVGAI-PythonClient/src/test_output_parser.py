@@ -9,9 +9,10 @@ import numpy as np
 
 import sys
 
-output_file = "test_output.txt"
+input_file = "test_output.txt"
+output_file = "test_output_num-its.txt" # If None, the results are printed in the terminal
 # games = ['BoulderDash', 'IceAndFire', 'Catapults']
-games = ['BoulderDash', 'IceAndFire', 'Catapults']
+games = ['IceAndFire']
 num_test_levels = 11 # Number of levels each model is tested on (11 = 5 default test levels + 6 new (hard) test levels)
 model = "DQP" # 'DQP' 'Random' o 'Greedy'
 
@@ -22,7 +23,7 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 	BoulderDash and IceAndFire and also the success rate for Catapults.
 	"""
 
-	with open(output_file, 'r') as f:
+	with open(input_file, 'r') as f:
 		results_str = f.read()
 
 	for curr_game in game_list:
@@ -31,23 +32,26 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 
 		if model == "DQP":
 			# Group 1 -> Name of the network
-			# Group 2 -> Number of levels it was trained on
-			match_list = re.findall(r'(DQN.*)_[0-9]+-([0-9]+) \| {} \|.*'.format(curr_game), results_str)
+			# Group 2 -> Number of levels it was trained on and number of iterations of the loaded model
+
+			#match_list = re.findall(r'(DQN.*)_[0-9]+-([0-9]+) \| {} \|.*'.format(curr_game), results_str)
+
+			match_list = re.findall(r'(DQN.*)_[0-9]+_(lvs=[0-9]+-[0-9]+) \| {} \|.*'.format(curr_game), results_str)
 		else:
 			# Group 1 -> Name of the network
 			match_list = re.findall(r'(DQN.*)_[0-9]+ \| {} \|.*'.format(curr_game), results_str)
 
-
 		# Convert it to a set to get the unique values (model names)
 		match_set = set(match_list)
-
-
 
 		# For each different model of the current game, match the corresponding test/validation results
 		for curr_match in match_set:
 			# Get all the lines containing the results
 			if model == "DQP":
-				curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
+				#curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
+				#	format(curr_match[0], curr_match[1], curr_game), results_str)
+
+				curr_model_match_list = re.findall(r'{}_[0-9]+_{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
 					format(curr_match[0], curr_match[1], curr_game), results_str)
 
 				# Separe the number of errors, actions, planning and goal selection time
@@ -84,20 +88,38 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 				std_planning_time_per_level = [np.std(curr_model_planning_time[i::num_test_levels]) for i in range(num_test_levels)]
 				std_goal_selec_time_per_level = [np.std(curr_model_goal_selec_time[i::num_test_levels]) for i in range(num_test_levels)]
 
-				print("\n--- {} ---\n".format(curr_game))
+				
+				if output_file is None:
+					print("\n--- {} ---\n".format(curr_game))
 
-				if model == "DQP":
-					print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+					if model == "DQP":
+						print("{} - {}".format(curr_match[0], curr_match[1])) # Model Name and number of levels (and train its in the case of DQP)
+					else:
+						print("{}".format(curr_match)) # Model Name
+					print("\nAverage num errors per level: ", average_num_errors_per_level)
+					print("Std num errors per level: ", std_num_errors_per_level)
+					print("\nAverage num actions per level: ", average_num_actions_per_level)
+					print("Std num actions per level: ", std_num_actions_per_level)
+					print("\nAverage planning time per level: ", average_planning_time_per_level)
+					print("Std planning time per level: ", std_planning_time_per_level)
+					print("\nAverage goal selection time per level: ", average_goal_selec_time_per_level)
+					print("Std goal selection time per level: ", std_goal_selec_time_per_level)
 				else:
-					print("{}".format(curr_match)) # Model Name
-				print("\nAverage num errors per level: ", average_num_errors_per_level)
-				print("Std num errors per level: ", std_num_errors_per_level)
-				print("\nAverage num actions per level: ", average_num_actions_per_level)
-				print("Std num actions per level: ", std_num_actions_per_level)
-				print("\nAverage planning time per level: ", average_planning_time_per_level)
-				print("Std planning time per level: ", std_planning_time_per_level)
-				print("\nAverage goal selection time per level: ", average_goal_selec_time_per_level)
-				print("Std goal selection time per level: ", std_goal_selec_time_per_level)
+					with open(output_file, 'a') as f:
+						f.write("\n--- {} ---\n\n".format(curr_game))
+
+						if model == "DQP":
+							f.write("{} - {}\n".format(curr_match[0], curr_match[1])) # Model Name and number of levels (and train its in the case of DQP)
+						else:
+							f.write("{}".format(curr_match)) # Model Name
+						f.write("\nAverage num errors per level: {}\n".format(average_num_errors_per_level))
+						f.write("Std num errors per level: {}\n".format(std_num_errors_per_level))
+						f.write("\nAverage num actions per level: {}\n".format(average_num_actions_per_level))
+						f.write("Std num actions per level: {}\n".format(std_num_actions_per_level))
+						f.write("\nAverage planning time per level: {}\n".format(average_planning_time_per_level))
+						f.write("Std planning time per level: {}\n".format(std_planning_time_per_level))
+						f.write("\nAverage goal selection time per level: {}\n".format(average_goal_selec_time_per_level))
+						f.write("Std goal selection time per level: {}\n".format(std_goal_selec_time_per_level))
 
 			else: # Catapults
 				# Calculate success_rate (percentage of levels the agent beats)
@@ -164,21 +186,37 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 						std_planning_time_per_completed_level.append(np.std(curr_planning_time))
 						std_goal_selec_time_per_completed_level.append(np.std(curr_goal_selec_time))
 
-
-				print("\n--- {} ---\n".format(curr_game))
-				if model == "DQP":
-					print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+				if output_file is None:
+					print("\n--- {} ---\n".format(curr_game))
+					if model == "DQP":
+						print("{} - lvs={}".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+					else:
+						print("{}".format(curr_match)) # Model Name
+					print("Success rate per level", success_rate_per_level)
+					print("\nAverage num errors per completed level: ", average_num_errors_per_completed_level)
+					print("Std num errors per completed level: ", std_num_errors_per_completed_level)
+					print("\nAverage num actions per completed level: ", average_num_actions_per_completed_level)
+					print("Std num actions per completed level: ", std_num_actions_per_completed_level)
+					print("\nAverage planning time per completed level: ", average_planning_time_per_completed_level)
+					print("Std planning time per completed level: ", std_planning_time_per_completed_level)
+					print("\nAverage goal selection time per completed level: ", average_goal_selec_time_per_completed_level)
+					print("Std goal selection time per completed level: ", std_goal_selec_time_per_completed_level)
 				else:
-					print("{}".format(curr_match)) # Model Name
-				print("Success rate per level", success_rate_per_level)
-				print("\nAverage num errors per completed level: ", average_num_errors_per_completed_level)
-				print("Std num errors per completed level: ", std_num_errors_per_completed_level)
-				print("\nAverage num actions per completed level: ", average_num_actions_per_completed_level)
-				print("Std num actions per completed level: ", std_num_actions_per_completed_level)
-				print("\nAverage planning time per completed level: ", average_planning_time_per_completed_level)
-				print("Std planning time per completed level: ", std_planning_time_per_completed_level)
-				print("\nAverage goal selection time per completed level: ", average_goal_selec_time_per_completed_level)
-				print("Std goal selection time per completed level: ", std_goal_selec_time_per_completed_level)
+					with open(output_file, 'a') as f:
+						f.write("\n--- {} ---\n\n".format(curr_game))
+						if model == "DQP":
+							f.write("{} - lvs={}\n".format(curr_match[0], curr_match[1])) # Model Name and number of levels
+						else:
+							f.write("{}\n".format(curr_match)) # Model Name
+						f.write("Success rate per level: {}\n".format(success_rate_per_level))
+						f.write("\nAverage num errors per completed level: {}\n".format(average_num_errors_per_completed_level))
+						f.write("Std num errors per completed level: {}\n".format(std_num_errors_per_completed_level))
+						f.write("\nAverage num actions per completed level: {}\n".format(average_num_actions_per_completed_level))
+						f.write("Std num actions per completed level: {}\n".format(std_num_actions_per_completed_level))
+						f.write("\nAverage planning time per completed level: {}\n".format(average_planning_time_per_completed_level))
+						f.write("Std planning time per completed level: {}\n".format(std_planning_time_per_completed_level))
+						f.write("\nAverage goal selection time per completed level: {}\n".format(average_goal_selec_time_per_completed_level))
+						f.write("Std goal selection time per completed level: {}\n".format(std_goal_selec_time_per_completed_level))
 
 if __name__ == '__main__':
 	get_average_results_per_game(games, num_test_levels, model)

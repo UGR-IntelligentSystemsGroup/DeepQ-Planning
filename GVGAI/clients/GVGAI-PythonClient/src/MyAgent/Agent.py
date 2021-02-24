@@ -34,7 +34,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="IceAndFire"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -56,14 +56,15 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
-
-		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
-		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_PER_test_sqr-loss_alfa-5e-05_tau-1000_its-1000000_BoulderDash_1"
+		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=100
+
+		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
+		# Add the name of the game being played!!!
+		self.network_name="DQN_Simple_model_test_fc-512_1_1_1_its-1500000_IceAndFire_1"
+		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
 		self.level_seed=57824
@@ -74,46 +75,46 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[3, 3]
+		self.l1_window=[5, 5]
 		self.l1_strides=[1, 1]
-		self.l1_padding_type="SAME"
+		self.l1_padding_type="VALID"
 
 		# Second conv layer
-		self.l2_num_filt=32
-		self.l2_window=[3, 3]
+		self.l2_num_filt=64
+		self.l2_window=[5, 5]
 		self.l2_strides=[1, 1]
-		self.l2_padding_type="SAME"
+		self.l2_padding_type="VALID"
 
 		# Third conv layer
 		self.l3_num_filt=64
-		self.l3_window=[3, 3]
+		self.l3_window=[5, 5]
 		self.l3_strides=[1, 1]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
-		self.l4_num_filt=64
+		self.l4_num_filt=-1
 		self.l4_window=[3, 3]
 		self.l4_strides=[1, 1]
 		self.l4_padding_type="VALID"
 
 		# Fifth conv layer
-		self.l5_num_filt=64
+		self.l5_num_filt=-1
 		self.l5_window=[3, 3]
 		self.l5_strides=[1, 1]
 		self.l5_padding_type="VALID"
 
 		# Sixth conv layer
-		self.l6_num_filt=128
+		self.l6_num_filt=-1
 		self.l6_window=[3, 3]
 		self.l6_strides=[1, 1]
 		self.l6_padding_type="VALID"
 
-		self.l7_num_filt=128
+		self.l7_num_filt=-1
 		self.l7_window=[3, 3]
 		self.l7_strides=[1, 1]
 		self.l7_padding_type="VALID"
 
-		self.l8_num_filt=128
+		self.l8_num_filt=-1
 		self.l8_window=[3, 3]
 		self.l8_strides=[1, 1]
 		self.l8_padding_type="VALID"
@@ -179,13 +180,13 @@ class Agent(AbstractPlayer):
 		self.l20_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[128, 32, 1, 1]
+		self.fc_num_unis=[512, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=5e-05
+		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=1000000
+		self.num_train_its=1500000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -306,12 +307,12 @@ class Agent(AbstractPlayer):
 				# Name of the saved model file to load (without the number of training steps part)
 				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
-				# Number of levels the model to load has been trained on
+				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.dataset_size_model=100
+				self.num_train_its_model=1500000
 
 				# <Load the already-trained model in order to test performance>
-				self.model.load_model(path = model_load_path, num_it = self.dataset_size_model)
+				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -382,11 +383,10 @@ class Agent(AbstractPlayer):
 
 			# Create Learning model
 
-			curr_name = self.network_name + "_lvs={}".format(self.dataset_size_for_training) # Append dataset size to the name of the network
 			tf.reset_default_graph() # Clear Tensorflow Graph and Variables
 
 			# DQNetwork
-			self.model = DQNetwork(writer_name=curr_name,
+			self.model = DQNetwork(writer_name=self.network_name,
 					 sample_size = self.sample_size,
 					 l1_num_filt = self.l1_num_filt, l1_window = self.l1_window, l1_strides = self.l1_strides,
 					 l1_padding_type = self.l1_padding_type,
@@ -496,36 +496,15 @@ class Agent(AbstractPlayer):
 
 			# Execute the training of the current model
 			
-			# <<QUITAR>>
-			tree_idx_set = set()
-
 			for curr_it in range(self.num_train_its):   
 				# Choose next batch from Experience Replay
 
-				"""if ind_batch+self.batch_size < num_samples:
-					batch = self.memory[ind_batch:ind_batch+self.batch_size]
-					ind_batch = (ind_batch + self.batch_size)
-				else: # Got to the end of the experience replay -> shuffle it and start again
-					batch = self.memory[ind_batch:]
-					ind_batch = 0
-
-					np.random.shuffle(self.memory)"""
-
 				tree_idx, batch, sample_weights = self.PER.sample(self.batch_size)
-
-				# <<QUITAR>>
-				for curr_idx in tree_idx:
-					tree_idx_set.add(curr_idx)
-
-				if curr_it % 100 == 0:
-					print("> Num samples used:", len(tree_idx_set))
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
 				batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
 				batch_R = [each[2] for each in batch] # r values (plan lenghts)
 				batch_S = [each[3] for each in batch] # s' values (sso instances)
-
-				# <Por aquí>
 
 				# Calculate Q_targets
 				Q_targets = []
@@ -565,13 +544,18 @@ class Agent(AbstractPlayer):
 				if curr_it % 5 == 0:
 					self.model.save_logs(batch_X, batch_Res, Q_targets, curr_it)
 
+				# Save the model each 20k training its
+				if curr_it > 0 and curr_it % 20000 == 0:
+					self.model.save_model(path = self.model_save_path, num_it = curr_it)
+
+
 				# Periodically print the progress of the training
 				if curr_it % 500 == 0 and curr_it != 0:
 					print("- {} its completed".format(curr_it))
 
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							
 			# Save the current trained model
-			self.model.save_model(path = self.model_save_path, num_it = self.dataset_size_for_training)
+			self.model.save_model(path = self.model_save_path, num_it = self.num_train_its)
 			print("\n> Current model saved! Dataset size={} levels\n".format(self.dataset_size_for_training))
 
 
@@ -1607,7 +1591,7 @@ class Agent(AbstractPlayer):
 
 			with open(test_output_file, "a") as file:
 				if self.goal_selection_mode == "best":
-					file.write("{}-{} | {} | {} | {} | {} | {}\n".format(self.network_name, self.dataset_size_model,
+					file.write("{}-{} | {} | {} | {} | {} | {}\n".format(self.network_name, self.num_train_its_model,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
 					 self.total_time_planning_curr_lv, self.total_time_goal_selec_curr_lv))
 				else:
