@@ -201,6 +201,9 @@ lo suficiente (en el modelo complejo, ambas gráficas disminuyen por debajo de 0
 Los resultados en test (tras 1M train its) son prácticamente idénticos (un 2% de más acciones en todos los
 niveles de media, aunque tiene menos errores) que el modelo complejo (con 1M de train its y PER también).
 
+Tras el mejor número de its (1.25M), el modelo simple es mejor que el complejo (este último con su número
+óptimo de iteraciones también) -> usa un 96% del número de acciones y comete menos errores
+
 """
 
 
@@ -214,9 +217,6 @@ niveles de media, aunque tiene menos errores) que el modelo complejo (con 1M de 
 	(para calcular Q(s,a) necesito pasarle a la CNN el batch ((s,a1),(s,a2),...) para
 	 todos los subobjetivos (a) posibles, ya que necesito calcular la media de las ventajas
 	 de todas las acciones)
-
-> Implementar guardado modelo cada X train its
-
 """
 
 # <Architecture>
@@ -295,7 +295,7 @@ l20_num_filt = [-1]
 l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 # Number of units of the fully-connected layers
-fc_num_unis = [[512,1,1,1]]  
+fc_num_unis = [[128,1,1,1]] 
 
 # Training params
 tau=[1000] # 10 # Update period of the target network
@@ -303,6 +303,7 @@ tau=[1000] # 10 # Update period of the target network
 alfa = [0.0001] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
+# CAMBIAR SI ES NECESARIO!
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
 								 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params

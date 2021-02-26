@@ -63,7 +63,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_test_fc-512_1_1_1_its-1500000_IceAndFire_1"
+		self.network_name="DQN_Simple_model_BN_test_fc-512_1_1_1_its-1500000_IceAndFire_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
@@ -188,7 +188,7 @@ class Agent(AbstractPlayer):
 		self.dropout_prob=0.0
 		self.num_train_its=1500000
 		self.batch_size=32
-		self.use_BN=False
+		self.use_BN=True
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
