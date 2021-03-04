@@ -34,7 +34,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="IceAndFire"
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -63,7 +63,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_BN_test_fc-512_1_1_1_its-1500000_IceAndFire_1"
+		self.network_name="DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-1000000_BoulderDash_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
@@ -180,15 +180,15 @@ class Agent(AbstractPlayer):
 		self.l20_padding_type="VALID"
 
 		# Number of units of the first and second fully-connected layers
-		self.fc_num_unis=[512, 1, 1, 1]
+		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=0.0001
+		self.learning_rate=5e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=1500000
+		self.num_train_its=1000000
 		self.batch_size=32
-		self.use_BN=True
+		self.use_BN=False
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
@@ -196,7 +196,7 @@ class Agent(AbstractPlayer):
 		self.max_tau=1000
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
-		self.gamma=1 
+		self.gamma=1
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -245,6 +245,9 @@ class Agent(AbstractPlayer):
 
 			# Folder where the datasets are stored
 			self.datasets_folder = 'SavedDatasets'
+
+			# Period for saving the trained model -> the model is saved every X training iterations
+			self.num_its_each_model_save = 50000
 
 		else: # Test
 
@@ -309,7 +312,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=1500000
+				self.num_train_its_model=1000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
@@ -544,8 +547,8 @@ class Agent(AbstractPlayer):
 				if curr_it % 5 == 0:
 					self.model.save_logs(batch_X, batch_Res, Q_targets, curr_it)
 
-				# Save the model each 20k training its
-				if curr_it > 0 and curr_it % 20000 == 0:
+				# Save the model each X training its
+				if curr_it > 0 and curr_it % self.num_its_each_model_save == 0:
 					self.model.save_model(path = self.model_save_path, num_it = curr_it)
 
 

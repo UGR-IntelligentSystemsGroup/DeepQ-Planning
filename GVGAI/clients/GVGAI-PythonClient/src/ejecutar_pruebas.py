@@ -203,21 +203,8 @@ niveles de media, aunque tiene menos errores) que el modelo complejo (con 1M de 
 
 Tras el mejor número de its (1.25M), el modelo simple es mejor que el complejo (este último con su número
 óptimo de iteraciones también) -> usa un 96% del número de acciones y comete menos errores
-
 """
 
-
-# << Pruebas a realizar >>
-"""
-> VER MEJOR NÚMERO DE TRAINING ITS EN LOS TRES JUEGOS!!!
-	(en boulderdash por ahora estoy usando 40k its pero parece que el Q-target solo
-	empieza a descender por debajo de 0 a partir de 100k its!!!)
-
-> Probar Dueling DQN -> Muy difícil de implementar para este modelo
-	(para calcular Q(s,a) necesito pasarle a la CNN el batch ((s,a1),(s,a2),...) para
-	 todos los subobjetivos (a) posibles, ya que necesito calcular la media de las ventajas
-	 de todas las acciones)
-"""
 
 # <Architecture>
 
@@ -248,7 +235,6 @@ l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 # Simple architecture (inspired by DQN architecture of original paper)
 # 3 conv layers
 # fc units -> [[512,1,1,1]] 
-
 l1_num_filt = [32]
 l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
 l2_num_filt = [64]
@@ -268,6 +254,28 @@ l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l8_num_filt = [-1]
 l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
+
+# Architecture with 5 conv layers
+# fc units -> [[128,1,1,1]] 
+"""
+l1_num_filt = [32]
+l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
+l2_num_filt = [32]
+l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
+l3_num_filt = [64]
+l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l4_num_filt = [64]
+l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
+l5_num_filt = [64]
+l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+
+l6_num_filt = [-1]
+l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l7_num_filt = [-1]
+l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+l8_num_filt = [-1]
+l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
+"""
 
 l9_num_filt = [-1]
 l9_filter_structure = [ [[3,3],[1,1],"VALID"] ]
@@ -300,15 +308,15 @@ fc_num_unis = [[128,1,1,1]]
 # Training params
 tau=[1000] # 10 # Update period of the target network
 # CHANGE FOR BOULDERDASH!
-alfa = [0.0001] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+gamma = [1] # 1 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
-# CAMBIAR SI ES NECESARIO!
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
 								 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['IceAndFire']
+games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
@@ -316,9 +324,9 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [1000000] # 1000000 # 40000 # 20000 
+num_its_BoulderDash = [500000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [1000000] # 100000 # 20000 # Creo que el mejor número de its es 300000
+num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
@@ -335,7 +343,7 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
 test_all_its = True
-test_it_interval = 20000
+test_it_interval = 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 skip_train = False
@@ -369,7 +377,7 @@ test_lvs_directory = "../../../examples/gridphysics/" # Path where the test leve
 # ----- Execution -----
 
 # Save the hyperparameters for each different model in a list
-models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq,rr,ss,tt,uu]
+models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq,rr,ss,tt,uu,vv]
 					for a in l1_num_filt for b in l1_filter_structure for c in l2_num_filt for d in l2_filter_structure \
 					for e in l3_num_filt for f in l3_filter_structure for g in l4_num_filt for h in l4_filter_structure \
 					for i in l5_num_filt for j in l5_filter_structure for k in l6_num_filt for l in l6_filter_structure \
@@ -380,8 +388,8 @@ models_params_prev = [ [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,b
 					for cc in l15_num_filt for dd in l15_filter_structure for ee in l16_num_filt for ff in l16_filter_structure \
 					for gg in l17_num_filt for hh in l17_filter_structure for ii in l18_num_filt for jj in l18_filter_structure \
 					for kk in l19_num_filt for ll in l19_filter_structure for mm in l20_num_filt for nn in l20_filter_structure \
-					for oo in fc_num_unis for pp in alfa for qq in dropout for rr in batch_size for ss in use_BN \
-					for tt in tau for uu in games_to_play]
+					for oo in fc_num_unis for pp in alfa for qq in gamma for rr in dropout for ss in batch_size for tt in use_BN \
+					for uu in tau for vv in games_to_play]
 
 # Add the corresponding dataset sizes for each game
 models_params_prev_2 = []
@@ -475,12 +483,13 @@ try:
 		curr_fc_num_unis = curr_model_params[40]
 		curr_num_its = curr_model_params[41]
 		curr_alfa = curr_model_params[42]
-		curr_dropout = curr_model_params[43]
-		curr_batch_size = curr_model_params[44]
-		curr_use_BN = curr_model_params[45]
-		curr_tau = curr_model_params[46]
-		curr_game = curr_model_params[47]
-		dataset_size_for_training = curr_model_params[48]
+		curr_gamma = curr_model_params[43]
+		curr_dropout = curr_model_params[44]
+		curr_batch_size = curr_model_params[45]
+		curr_use_BN = curr_model_params[46]
+		curr_tau = curr_model_params[47]
+		curr_game = curr_model_params[48]
+		dataset_size_for_training = curr_model_params[49]
 
 		# Variables that depend on the game being played
 		if curr_game == 'BoulderDash':
@@ -608,6 +617,7 @@ try:
 
 		agent_file = re.sub(r'self.fc_num_unis=.*', 'self.fc_num_unis={}'.format(curr_fc_num_unis), agent_file, count=1)
 		agent_file = re.sub(r'self.learning_rate=.*', 'self.learning_rate={}'.format(curr_alfa), agent_file, count=1)
+		agent_file = re.sub(r'self.gamma=.*', 'self.gamma={}'.format(curr_gamma), agent_file, count=1)
 		agent_file = re.sub(r'self.dropout_prob=.*', 'self.dropout_prob={}'.format(curr_dropout), agent_file, count=1)
 		agent_file = re.sub(r'self.num_train_its=.*', 'self.num_train_its={}'.format(curr_num_its), agent_file, count=1)
 		agent_file = re.sub(r'self.batch_size=.*', 'self.batch_size={}'.format(curr_batch_size), agent_file, count=1)
@@ -656,10 +666,9 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_model_test_fc-{}_{}_{}_{}_its-{}_{}_{}". \
-								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
-								 curr_fc_num_unis[3], curr_num_its,
-								 curr_game, curr_rep)
+				curr_model_name = "DQN_Simple_model_test_gamma-{}_fc-{}_{}_{}_{}_its-{}_{}_{}". \
+								format(curr_gamma, curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
+								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 
