@@ -328,8 +328,8 @@ num_its_BoulderDash = [500000] # After 500000 its, results are always bad # 1000
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+ini_rep_model = 2 # Index of the first repetition
+repetitions_per_model = 2 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -343,7 +343,7 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
 test_all_its = True
-test_it_interval = 50000 # 20000
+test_it_interval = 10000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 skip_train = False

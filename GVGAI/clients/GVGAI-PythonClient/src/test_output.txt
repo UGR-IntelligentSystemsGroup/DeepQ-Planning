@@ -1,0 +1,703 @@
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 2 | 101 | 0.38523030281066895 | 0.7137811183929443
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 5 | 71 | 0.4435853958129883 | 0.03624105453491211
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 7 | 67 | 0.4308431148529053 | 0.7102694511413574
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 2 | 85 | 0.33782124519348145 | 0.01885056495666504
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 4 | 70 | 0.5102019309997559 | 0.7246294021606445
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 3 | 108 | 0.46625542640686035 | 0.014811515808105469
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 6 | 120 | 0.5704967975616455 | 0.7245197296142578
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 2 | 176 | 0.7616078853607178 | 0.02580857276916504
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 5 | 126 | 0.5232791900634766 | 0.7119083404541016
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 3 | 92 | 0.4010899066925049 | 0.021731853485107422
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-10000 | BoulderDash | 4 | 126 | 0.4717574119567871 | 0.72479248046875
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 1 | 94 | 0.3943815231323242 | 0.6968152523040771
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 3 | 60 | 0.36653780937194824 | 0.021892070770263672
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 6 | 80 | 0.430556058883667 | 0.7166471481323242
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 0 | 80 | 0.39665865898132324 | 0.03394365310668945
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 4 | 57 | 0.41004204750061035 | 0.7093102931976318
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 4 | 90 | 0.6455709934234619 | 0.041730403900146484
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 7 | 111 | 0.6502912044525146 | 0.7328565120697021
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 1 | 164 | 0.8315467834472656 | 0.02568507194519043
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 5 | 117 | 0.518282413482666 | 0.6975185871124268
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 3 | 115 | 0.5355546474456787 | 0.04541277885437012
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-20000 | BoulderDash | 2 | 109 | 0.4129302501678467 | 0.7163259983062744
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 1 | 86 | 0.39127635955810547 | 0.701108455657959
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 4 | 54 | 0.3728139400482178 | 0.04166746139526367
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 6 | 87 | 0.4535863399505615 | 0.7112863063812256
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 0 | 115 | 0.5846884250640869 | 0.05347013473510742
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 3 | 67 | 0.4528329372406006 | 0.7173359394073486
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 2 | 99 | 0.5859744548797607 | 0.0380246639251709
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 4 | 140 | 0.6227920055389404 | 0.7328829765319824
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 0 | 202 | 1.1166982650756836 | 0.0579679012298584
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 5 | 123 | 0.5299553871154785 | 0.7004785537719727
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 0 | 79 | 0.416978120803833 | 0.041252851486206055
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-30000 | BoulderDash | 1 | 102 | 0.5305867195129395 | 0.7281191349029541
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 1 | 92 | 0.4537665843963623 | 0.7141342163085938
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 4 | 43 | 0.44855642318725586 | 0.030771970748901367
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 6 | 96 | 0.5129144191741943 | 0.7325944900512695
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 0 | 102 | 0.6358282566070557 | 0.047693729400634766
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 3 | 91 | 0.5750308036804199 | 0.7372503280639648
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 1 | 80 | 0.5931699275970459 | 0.025719404220581055
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 3 | 150 | 0.6160311698913574 | 0.729426383972168
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 0 | 157 | 0.8784549236297607 | 0.033190011978149414
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 6 | 130 | 0.5815637111663818 | 0.712719202041626
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 1 | 81 | 0.5183024406433105 | 0.03253364562988281
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-40000 | BoulderDash | 3 | 85 | 0.4697742462158203 | 0.7144176959991455
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 3 | 83 | 0.5952372550964355 | 0.742415189743042
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 2 | 62 | 0.44823431968688965 | 0.016911029815673828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 6 | 106 | 0.4519460201263428 | 0.7114436626434326
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 0 | 86 | 0.5266528129577637 | 0.03877854347229004
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 5 | 73 | 0.4968233108520508 | 0.7221434116363525
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 0 | 139 | 0.7715466022491455 | 0.03680062294006348
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 4 | 135 | 0.5591621398925781 | 0.7276701927185059
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 0 | 161 | 1.0376722812652588 | 0.04417252540588379
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 6 | 101 | 0.5714974403381348 | 0.7168073654174805
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 0 | 68 | 0.4135446548461914 | 0.022369384765625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-50000 | BoulderDash | 1 | 88 | 0.4923698902130127 | 0.7233414649963379
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 1 | 76 | 0.4537792205810547 | 0.7197816371917725
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 7 | 73 | 0.5273454189300537 | 0.034966230392456055
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 7 | 72 | 0.4897277355194092 | 0.7196142673492432
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 0 | 127 | 0.6852595806121826 | 0.05556225776672363
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 5 | 75 | 0.5019173622131348 | 0.7371010780334473
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 0 | 141 | 0.8828959465026855 | 0.05315661430358887
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 2 | 146 | 0.6402688026428223 | 0.7313971519470215
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 0 | 229 | 1.3770103454589844 | 0.06984806060791016
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 6 | 105 | 0.5831606388092041 | 0.7149679660797119
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 1 | 82 | 0.46122169494628906 | 0.03665804862976074
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-60000 | BoulderDash | 3 | 88 | 0.5151510238647461 | 0.7115323543548584
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 2 | 83 | 0.5338008403778076 | 0.723304033279419
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 4 | 51 | 0.3783762454986572 | 0.020305156707763672
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 6 | 93 | 0.4817774295806885 | 0.7249100208282471
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 0 | 132 | 0.749847412109375 | 0.057270050048828125
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 4 | 69 | 0.40363144874572754 | 0.7043466567993164
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 0 | 99 | 0.7573120594024658 | 0.04880690574645996
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 5 | 119 | 0.5625934600830078 | 0.731926679611206
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 0 | 176 | 1.1423826217651367 | 0.057645559310913086
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 6 | 105 | 0.582709789276123 | 0.7104575634002686
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 2 | 108 | 0.5920314788818359 | 0.03540658950805664
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-70000 | BoulderDash | 4 | 125 | 0.6306376457214355 | 0.7364873886108398
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 2 | 83 | 0.6185867786407471 | 0.7237286567687988
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 3 | 51 | 0.37667107582092285 | 0.014721393585205078
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 3 | 69 | 0.3817136287689209 | 0.709050178527832
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 0 | 132 | 0.7634134292602539 | 0.07647919654846191
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 4 | 72 | 0.402982234954834 | 0.7027287483215332
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 0 | 149 | 0.925450325012207 | 0.06742358207702637
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 1 | 141 | 0.6645276546478271 | 0.7363665103912354
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 0 | 162 | 1.159132480621338 | 0.052527427673339844
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 6 | 102 | 0.5900390148162842 | 0.7206058502197266
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 0 | 81 | 0.5367636680603027 | 0.03942728042602539
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-80000 | BoulderDash | 1 | 87 | 0.47994351387023926 | 0.7201735973358154
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 2 | 83 | 0.5334041118621826 | 0.722900390625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 5 | 68 | 0.4391360282897949 | 0.02911210060119629
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 8 | 70 | 0.4812009334564209 | 0.7298827171325684
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 0 | 104 | 0.7299454212188721 | 0.058503150939941406
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 4 | 74 | 0.45074033737182617 | 0.7180924415588379
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 0 | 104 | 0.7849149703979492 | 0.04836463928222656
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 1 | 174 | 0.7323851585388184 | 0.7444124221801758
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 0 | 200 | 1.3406012058258057 | 0.06273436546325684
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 5 | 101 | 0.5158665180206299 | 0.7160849571228027
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 0 | 80 | 0.4820997714996338 | 0.03267621994018555
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-90000 | BoulderDash | 3 | 92 | 0.5661182403564453 | 0.7268579006195068
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 1 | 74 | 0.5330698490142822 | 0.7266430854797363
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 5 | 66 | 0.43932437896728516 | 0.018312454223632812
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 8 | 67 | 0.4777872562408447 | 0.7210314273834229
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 0 | 136 | 0.7032783031463623 | 0.05123472213745117
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 3 | 75 | 0.41182804107666016 | 0.707148551940918
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 0 | 104 | 0.7875511646270752 | 0.05543661117553711
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 6 | 143 | 0.656843900680542 | 0.743574857711792
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 0 | 200 | 1.3425190448760986 | 0.06925439834594727
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 6 | 102 | 0.5795259475708008 | 0.7265007495880127
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 2 | 93 | 0.48478102684020996 | 0.030604839324951172
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-100000 | BoulderDash | 2 | 88 | 0.5343513488769531 | 0.7229588031768799
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 1 | 74 | 0.5297200679779053 | 0.7162783145904541
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 3 | 48 | 0.32494378089904785 | 0.018323421478271484
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 8 | 52 | 0.4864356517791748 | 0.7251064777374268
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 0 | 92 | 0.7065136432647705 | 0.06482219696044922
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 4 | 90 | 0.503401517868042 | 0.7292981147766113
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 0 | 104 | 0.7857029438018799 | 0.03622841835021973
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 2 | 146 | 0.5991165637969971 | 0.7245807647705078
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 1 | 148 | 0.7099747657775879 | 0.02513885498046875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 6 | 101 | 0.589869499206543 | 0.713129997253418
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 2 | 89 | 0.6178297996520996 | 0.03543591499328613
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-110000 | BoulderDash | 4 | 92 | 0.576301097869873 | 0.7368631362915039
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 4 | 79 | 0.5630006790161133 | 0.7443358898162842
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 3 | 53 | 0.32717323303222656 | 0.01848578453063965
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 8 | 52 | 0.4789423942565918 | 0.7176733016967773
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 0 | 84 | 0.5985593795776367 | 0.043131113052368164
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 3 | 64 | 0.33148932456970215 | 0.6949210166931152
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 0 | 123 | 0.8161060810089111 | 0.06550145149230957
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 5 | 146 | 0.5998833179473877 | 0.7236745357513428
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 0 | 162 | 1.1385314464569092 | 0.0711519718170166
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 6 | 102 | 0.5786163806915283 | 0.7151644229888916
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 0 | 68 | 0.36191654205322266 | 0.019596338272094727
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-120000 | BoulderDash | 0 | 83 | 0.42494773864746094 | 0.7113833427429199
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 1 | 74 | 0.5331161022186279 | 0.7331645488739014
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 3 | 68 | 0.43507981300354004 | 0.023244380950927734
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 6 | 62 | 0.4870610237121582 | 0.7192718982696533
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 0 | 101 | 0.603125810623169 | 0.05453896522521973
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 5 | 89 | 0.5194787979125977 | 0.7273261547088623
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 0 | 125 | 0.7843358516693115 | 0.04190373420715332
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 1 | 185 | 0.7765285968780518 | 0.7497270107269287
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 0 | 129 | 0.7957963943481445 | 0.027074337005615234
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 5 | 113 | 0.5894229412078857 | 0.7230300903320312
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 2 | 86 | 0.4737586975097656 | 0.02341771125793457
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-130000 | BoulderDash | 0 | 101 | 0.5977351665496826 | 0.7251715660095215
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 2 | 74 | 0.5258529186248779 | 0.7221295833587646
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 4 | 51 | 0.3917057514190674 | 0.022083044052124023
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 8 | 52 | 0.47661900520324707 | 0.716238260269165
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 0 | 91 | 0.6550140380859375 | 0.0622866153717041
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 4 | 84 | 0.4460175037384033 | 0.7152342796325684
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 0 | 131 | 0.9653184413909912 | 0.06761670112609863
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 0 | 178 | 0.803657054901123 | 0.7499186992645264
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 0 | 194 | 1.3075060844421387 | 0.05119729042053223
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 4 | 113 | 0.5829367637634277 | 0.7117130756378174
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 0 | 91 | 0.5408687591552734 | 0.032257795333862305
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-140000 | BoulderDash | 3 | 150 | 0.7590382099151611 | 0.7412734031677246
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 1 | 74 | 0.5289645195007324 | 0.7271082401275635
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 3 | 42 | 0.3262970447540283 | 0.012796163558959961
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 7 | 52 | 0.48242831230163574 | 0.725346565246582
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 0 | 92 | 0.6611864566802979 | 0.05011773109436035
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 2 | 61 | 0.4020082950592041 | 0.7047443389892578
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 0 | 104 | 0.774406909942627 | 0.05414915084838867
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 5 | 151 | 0.6094417572021484 | 0.7219352722167969
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 0 | 138 | 0.8933775424957275 | 0.03571486473083496
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 4 | 108 | 0.5782744884490967 | 0.712299108505249
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 2 | 74 | 0.46676063537597656 | 0.03136610984802246
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-150000 | BoulderDash | 0 | 86 | 0.4757421016693115 | 0.7252976894378662
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 1 | 95 | 0.5357151031494141 | 0.7349903583526611
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 3 | 42 | 0.32350587844848633 | 0.02641749382019043
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 8 | 72 | 0.4845247268676758 | 0.7216792106628418
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 0 | 84 | 0.5435714721679688 | 0.0406038761138916
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 3 | 115 | 0.39240479469299316 | 0.7238357067108154
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 0 | 140 | 0.7783312797546387 | 0.049840450286865234
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 1 | 180 | 0.7798357009887695 | 0.751328706741333
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 0 | 139 | 0.8683812618255615 | 0.028749704360961914
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 4 | 108 | 0.5720508098602295 | 0.7094550132751465
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 0 | 91 | 0.48500680923461914 | 0.031343936920166016
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-160000 | BoulderDash | 1 | 109 | 0.5839543342590332 | 0.7224061489105225
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 1 | 77 | 0.5564255714416504 | 0.7093470096588135
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 2 | 42 | 0.32617712020874023 | 0.018810510635375977
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 8 | 66 | 0.5223314762115479 | 0.7308704853057861
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 0 | 85 | 0.6006104946136475 | 0.041172027587890625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 2 | 73 | 0.455211877822876 | 0.7195298671722412
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 0 | 150 | 0.7862098217010498 | 0.04814505577087402
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 1 | 180 | 0.7964332103729248 | 0.7589058876037598
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 1 | 158 | 0.8337032794952393 | 0.022084474563598633
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 4 | 113 | 0.6332724094390869 | 0.7268598079681396
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 1 | 93 | 0.5470485687255859 | 0.02651190757751465
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-170000 | BoulderDash | 1 | 102 | 0.522529125213623 | 0.7240722179412842
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 2 | 83 | 0.5386660099029541 | 0.7267906665802002
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 3 | 53 | 0.3304140567779541 | 0.018508434295654297
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 9 | 60 | 0.5387125015258789 | 0.7367987632751465
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 0 | 90 | 0.6352880001068115 | 0.03698873519897461
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 3 | 61 | 0.4602632522583008 | 0.7168824672698975
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 0 | 156 | 0.9091780185699463 | 0.05945992469787598
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 0 | 149 | 0.7160885334014893 | 0.7489943504333496
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 1 | 148 | 0.912036657333374 | 0.02866649627685547
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 5 | 113 | 0.5836775302886963 | 0.7270569801330566
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 1 | 94 | 0.5437483787536621 | 0.03330111503601074
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-180000 | BoulderDash | 0 | 100 | 0.5657742023468018 | 0.7206106185913086
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 1 | 74 | 0.5330209732055664 | 0.7215960025787354
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 3 | 53 | 0.3228156566619873 | 0.012363672256469727
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 7 | 66 | 0.47812557220458984 | 0.7258172035217285
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 0 | 85 | 0.593503475189209 | 0.04716062545776367
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 4 | 98 | 0.4402933120727539 | 0.7166693210601807
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 0 | 138 | 0.6995787620544434 | 0.041651248931884766
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 0 | 151 | 0.6031007766723633 | 0.7386479377746582
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 1 | 139 | 0.8296327590942383 | 0.02775740623474121
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 5 | 112 | 0.5838174819946289 | 0.727595329284668
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 1 | 79 | 0.6349003314971924 | 0.048134565353393555
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-190000 | BoulderDash | 0 | 99 | 0.6345252990722656 | 0.7309541702270508
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 2 | 74 | 0.5259265899658203 | 0.7296833992004395
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 4 | 47 | 0.39472198486328125 | 0.01393747329711914
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 9 | 66 | 0.5131769180297852 | 0.7255136966705322
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 1 | 68 | 0.4728734493255615 | 0.025811195373535156
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 1 | 61 | 0.4428408145904541 | 0.7104823589324951
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 0 | 156 | 0.8098185062408447 | 0.050093650817871094
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 0 | 173 | 0.7611098289489746 | 0.7584984302520752
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 1 | 139 | 0.8245739936828613 | 0.02730846405029297
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 6 | 102 | 0.577303409576416 | 0.7126543521881104
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 0 | 98 | 0.6050078868865967 | 0.03560233116149902
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-200000 | BoulderDash | 0 | 159 | 0.7427704334259033 | 0.7481367588043213
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 1 | 74 | 0.5313832759857178 | 0.7252156734466553
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 3 | 53 | 0.31768798828125 | 0.012865543365478516
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 9 | 72 | 0.5327723026275635 | 0.7437164783477783
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 0 | 96 | 0.6608161926269531 | 0.05071115493774414
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 2 | 51 | 0.4543795585632324 | 0.7144458293914795
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 0 | 131 | 0.9950172901153564 | 0.07567262649536133
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 0 | 161 | 0.655989408493042 | 0.7358839511871338
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 1 | 148 | 0.8983023166656494 | 0.029859542846679688
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 5 | 112 | 0.5801031589508057 | 0.719207763671875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 0 | 82 | 0.6386370658874512 | 0.04366922378540039
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-210000 | BoulderDash | 1 | 108 | 0.5191977024078369 | 0.7277634143829346
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 1 | 74 | 0.5473475456237793 | 0.7194652557373047
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 3 | 53 | 0.33206915855407715 | 0.013514995574951172
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 9 | 66 | 0.5211312770843506 | 0.7360877990722656
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 0 | 90 | 0.5962023735046387 | 0.035225868225097656
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 2 | 61 | 0.3904128074645996 | 0.7079312801361084
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 0 | 155 | 0.8955845832824707 | 0.06710386276245117
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 0 | 154 | 0.662555456161499 | 0.7302894592285156
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 1 | 134 | 0.8315348625183105 | 0.027335643768310547
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 5 | 112 | 0.5754625797271729 | 0.7196638584136963
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 1 | 74 | 0.5683860778808594 | 0.03562808036804199
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-220000 | BoulderDash | 2 | 87 | 0.5338389873504639 | 0.732201099395752
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 86 | 0.59027099609375 | 0.7308878898620605
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 4 | 53 | 0.3265838623046875 | 0.019083261489868164
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 8 | 84 | 0.479142427444458 | 0.7229418754577637
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 96 | 0.6485676765441895 | 0.05064034461975098
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 3 | 77 | 0.4465324878692627 | 0.7133049964904785
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 161 | 0.8883378505706787 | 0.059674978256225586
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 154 | 0.6743910312652588 | 0.7208616733551025
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 1 | 139 | 0.8394527435302734 | 0.027740478515625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 3 | 131 | 0.7159247398376465 | 0.7332503795623779
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 78 | 0.5229287147521973 | 0.03305244445800781
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-230000 | BoulderDash | 0 | 98 | 0.7497029304504395 | 0.7511188983917236
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 2 | 83 | 0.5399858951568604 | 0.7229397296905518
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 7 | 51 | 0.43001580238342285 | 0.029230117797851562
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 8 | 82 | 0.4945521354675293 | 0.7216463088989258
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 0 | 90 | 0.5408279895782471 | 0.03987526893615723
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 3 | 74 | 0.44571685791015625 | 0.7135038375854492
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 0 | 161 | 0.8929445743560791 | 0.05991363525390625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 1 | 154 | 0.6782448291778564 | 0.7306394577026367
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 0 | 137 | 0.8575403690338135 | 0.029564380645751953
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 5 | 112 | 0.5863151550292969 | 0.7108879089355469
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 0 | 98 | 0.6133825778961182 | 0.0424809455871582
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-240000 | BoulderDash | 0 | 158 | 0.8373012542724609 | 0.7529811859130859
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 2 | 74 | 0.5316269397735596 | 0.714712381362915
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 4 | 52 | 0.3209502696990967 | 0.01216578483581543
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 7 | 84 | 0.4406566619873047 | 0.7068138122558594
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 0 | 81 | 0.5477466583251953 | 0.04688286781311035
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 4 | 68 | 0.3941612243652344 | 0.7092885971069336
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 0 | 146 | 0.9281573295593262 | 0.07371950149536133
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 6 | 147 | 0.5986354351043701 | 0.7133665084838867
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 0 | 144 | 0.9470760822296143 | 0.04423666000366211
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 5 | 108 | 0.5849525928497314 | 0.7089426517486572
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 2 | 95 | 0.6201753616333008 | 0.03516554832458496
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-250000 | BoulderDash | 2 | 124 | 0.6646530628204346 | 0.7396481037139893
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 1 | 74 | 0.5595028400421143 | 0.7368874549865723
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 6 | 56 | 0.3838045597076416 | 0.021941184997558594
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 7 | 91 | 0.439190149307251 | 0.7103245258331299
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 0 | 112 | 0.5117447376251221 | 0.038637638092041016
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 3 | 51 | 0.3980069160461426 | 0.7072017192840576
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 0 | 148 | 0.7514359951019287 | 0.05635786056518555
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 3 | 128 | 0.6178271770477295 | 0.7222707271575928
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 0 | 159 | 1.0354442596435547 | 0.05250883102416992
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 5 | 116 | 0.568995475769043 | 0.7120363712310791
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 0 | 96 | 0.6034836769104004 | 0.035155296325683594
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-260000 | BoulderDash | 1 | 101 | 0.6078708171844482 | 0.7326748371124268
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 3 | 77 | 0.5036463737487793 | 0.7165212631225586
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 5 | 54 | 0.32402944564819336 | 0.01914811134338379
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 7 | 82 | 0.43727993965148926 | 0.7176554203033447
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 0 | 86 | 0.5483708381652832 | 0.0465395450592041
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 4 | 61 | 0.4496641159057617 | 0.7079751491546631
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 0 | 125 | 0.7614643573760986 | 0.04260659217834473
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 0 | 154 | 0.6559672355651855 | 0.7269484996795654
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 0 | 142 | 0.9575846195220947 | 0.03879833221435547
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 4 | 120 | 0.6303906440734863 | 0.7171339988708496
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 1 | 81 | 0.4536590576171875 | 0.02373504638671875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-270000 | BoulderDash | 0 | 102 | 0.5618805885314941 | 0.72743821144104
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 3 | 77 | 0.49805760383605957 | 0.720698356628418
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 5 | 52 | 0.3498985767364502 | 0.01278829574584961
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 8 | 64 | 0.4942154884338379 | 0.717583179473877
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 0 | 90 | 0.539677619934082 | 0.03472280502319336
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 2 | 61 | 0.39058637619018555 | 0.6945769786834717
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 1 | 148 | 0.8166978359222412 | 0.05706310272216797
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 3 | 149 | 0.6022021770477295 | 0.7184023857116699
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 0 | 159 | 1.032639503479004 | 0.05324196815490723
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 3 | 131 | 0.7109460830688477 | 0.7337079048156738
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 2 | 79 | 0.5730938911437988 | 0.03554487228393555
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-280000 | BoulderDash | 1 | 106 | 0.5712742805480957 | 0.7294204235076904
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 2 | 83 | 0.5299592018127441 | 0.7215158939361572
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 5 | 47 | 0.3755471706390381 | 0.02147674560546875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 8 | 64 | 0.4767131805419922 | 0.7362508773803711
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 0 | 81 | 0.5910029411315918 | 0.03375673294067383
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 3 | 51 | 0.3943142890930176 | 0.7208929061889648
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 0 | 153 | 0.8162269592285156 | 0.05789351463317871
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 1 | 154 | 0.6581530570983887 | 0.7287740707397461
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 1 | 139 | 0.8294277191162109 | 0.02789902687072754
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 4 | 121 | 0.6409313678741455 | 0.7267024517059326
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 1 | 74 | 0.5764715671539307 | 0.03495502471923828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-290000 | BoulderDash | 1 | 87 | 0.4842369556427002 | 0.7246453762054443
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 3 | 77 | 0.5022232532501221 | 0.7430770397186279
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 3 | 54 | 0.2698674201965332 | 0.016926288604736328
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 8 | 64 | 0.4775686264038086 | 0.7322061061859131
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 2 | 75 | 0.5838661193847656 | 0.042087554931640625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 4 | 61 | 0.3995845317840576 | 0.7022016048431396
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 0 | 123 | 0.7111568450927734 | 0.04275202751159668
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 4 | 128 | 0.6131057739257812 | 0.747352123260498
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 1 | 217 | 0.8135421276092529 | 0.034160614013671875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 6 | 122 | 0.6316676139831543 | 0.7157983779907227
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 2 | 94 | 0.5888760089874268 | 0.028112411499023438
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-300000 | BoulderDash | 1 | 111 | 0.5883967876434326 | 0.7300302982330322
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 2 | 77 | 0.4715709686279297 | 0.7140238285064697
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 4 | 53 | 0.3221261501312256 | 0.01929497718811035
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 6 | 86 | 0.3777313232421875 | 0.699742317199707
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 0 | 104 | 0.4674191474914551 | 0.04850625991821289
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 3 | 61 | 0.3960750102996826 | 0.7083039283752441
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 0 | 153 | 0.8285191059112549 | 0.0582730770111084
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 0 | 154 | 0.6638550758361816 | 0.7287487983703613
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 1 | 148 | 0.916895866394043 | 0.030199050903320312
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 3 | 109 | 0.5099849700927734 | 0.7053778171539307
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 1 | 74 | 0.5809614658355713 | 0.04091310501098633
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-310000 | BoulderDash | 1 | 154 | 0.7420165538787842 | 0.7626957893371582
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 2 | 83 | 0.5331270694732666 | 0.727137565612793
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 7 | 50 | 0.4307401180267334 | 0.01716446876525879
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 8 | 64 | 0.4684009552001953 | 0.7275435924530029
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 0 | 108 | 0.5720500946044922 | 0.045261383056640625
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 3 | 98 | 0.4060859680175781 | 0.704484224319458
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 0 | 153 | 0.8258993625640869 | 0.0578155517578125
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 4 | 149 | 0.5975830554962158 | 0.7247729301452637
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 0 | 139 | 0.8482637405395508 | 0.03452491760253906
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 4 | 120 | 0.6319589614868164 | 0.7154998779296875
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 1 | 82 | 0.6285750865936279 | 0.042214155197143555
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-320000 | BoulderDash | 1 | 114 | 0.5473909378051758 | 0.7201352119445801
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 5 | 81 | 0.5581932067871094 | 0.7303683757781982
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 8 | 64 | 0.4947996139526367 | 0.026654958724975586
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 8 | 64 | 0.4699528217315674 | 0.7310237884521484
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 2 | 116 | 0.621964693069458 | 0.0478816032409668
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 4 | 51 | 0.3911893367767334 | 0.6980853080749512
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 0 | 148 | 0.807532787322998 | 0.05845355987548828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 5 | 149 | 0.6037235260009766 | 0.7213253974914551
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 0 | 142 | 0.9509484767913818 | 0.04467964172363281
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 4 | 120 | 0.637584924697876 | 0.7279379367828369
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 2 | 81 | 0.5756490230560303 | 0.03546619415283203
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-330000 | BoulderDash | 0 | 153 | 0.7971844673156738 | 0.760141134262085
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 3 | 86 | 0.5809309482574463 | 0.7390689849853516
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 7 | 64 | 0.48820042610168457 | 0.025942087173461914
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 7 | 86 | 0.4292898178100586 | 0.7139425277709961
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 1 | 85 | 0.4574005603790283 | 0.030369043350219727
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 4 | 61 | 0.39455366134643555 | 0.7082357406616211
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 0 | 157 | 0.9167792797088623 | 0.07482695579528809
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 3 | 154 | 0.6590297222137451 | 0.7298679351806641
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 0 | 139 | 0.824976921081543 | 0.028960466384887695
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 4 | 109 | 0.5094869136810303 | 0.7103772163391113
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 1 | 82 | 0.6425175666809082 | 0.04989933967590332
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-340000 | BoulderDash | 1 | 114 | 0.6191143989562988 | 0.7209200859069824
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 0 | 93 | 0.6134123802185059 | 0.7300980091094971
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 6 | 45 | 0.3903329372406006 | 0.013814687728881836
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 7 | 88 | 0.42778658866882324 | 0.7128562927246094
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 1 | 85 | 0.45592427253723145 | 0.029386043548583984
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 2 | 91 | 0.5094060897827148 | 0.7237353324890137
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 0 | 106 | 0.827458381652832 | 0.05155372619628906
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 2 | 131 | 0.5710675716400146 | 0.7188456058502197
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 1 | 139 | 0.8273820877075195 | 0.029412508010864258
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 5 | 112 | 0.6467840671539307 | 0.7131164073944092
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 1 | 82 | 0.643125057220459 | 0.03659558296203613
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-350000 | BoulderDash | 0 | 100 | 0.6194648742675781 | 0.7302327156066895
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 3 | 77 | 0.49991798400878906 | 0.72247314453125
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 7 | 50 | 0.4353954792022705 | 0.016616106033325195
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 7 | 90 | 0.4238591194152832 | 0.7127647399902344
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 0 | 102 | 0.4091496467590332 | 0.020830154418945312
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 5 | 70 | 0.3970019817352295 | 0.696692705154419
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 0 | 106 | 0.8444008827209473 | 0.05819964408874512
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 1 | 154 | 0.6546180248260498 | 0.7343592643737793
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 0 | 228 | 1.1947510242462158 | 0.06267714500427246
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 5 | 112 | 0.6599593162536621 | 0.7275636196136475
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 0 | 75 | 0.5220754146575928 | 0.03303933143615723
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-360000 | BoulderDash | 1 | 102 | 0.6300675868988037 | 0.7183272838592529
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 4 | 77 | 0.5021867752075195 | 0.7303345203399658
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 7 | 50 | 0.4413573741912842 | 0.01821446418762207
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 7 | 69 | 0.4458644390106201 | 0.7098612785339355
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 0 | 104 | 0.46775150299072266 | 0.029453754425048828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 3 | 68 | 0.44811320304870605 | 0.715024471282959
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 0 | 106 | 0.8205945491790771 | 0.05179476737976074
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 1 | 128 | 0.6028809547424316 | 0.731055498123169
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 0 | 139 | 0.822737455368042 | 0.03477191925048828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 3 | 131 | 0.6991183757781982 | 0.7340342998504639
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 3 | 79 | 0.4638195037841797 | 0.024564266204833984
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-370000 | BoulderDash | 1 | 114 | 0.5446867942810059 | 0.7208414077758789
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 93 | 0.601332426071167 | 0.7295336723327637
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 7 | 50 | 0.4393322467803955 | 0.0237734317779541
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 8 | 64 | 0.4819018840789795 | 0.7198159694671631
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 116 | 0.5736384391784668 | 0.051619529724121094
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 2 | 61 | 0.3994472026824951 | 0.7038638591766357
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 123 | 0.6965129375457764 | 0.04145216941833496
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 1 | 166 | 0.7313847541809082 | 0.7394134998321533
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 142 | 0.9694380760192871 | 0.030921459197998047
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 5 | 112 | 0.668853759765625 | 0.7235643863677979
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 86 | 0.5330688953399658 | 0.020071744918823242
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-380000 | BoulderDash | 0 | 114 | 0.5501329898834229 | 0.721627950668335
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 0 | 93 | 0.5916264057159424 | 0.7277028560638428
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 7 | 50 | 0.42883729934692383 | 0.01720261573791504
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 8 | 67 | 0.46903443336486816 | 0.7247636318206787
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 0 | 105 | 0.4598841667175293 | 0.030109167098999023
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 5 | 70 | 0.38478636741638184 | 0.6989293098449707
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 0 | 152 | 0.8081424236297607 | 0.05799293518066406
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 1 | 128 | 0.5947272777557373 | 0.726510763168335
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 0 | 207 | 1.001410722732544 | 0.05336189270019531
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 4 | 109 | 0.5123691558837891 | 0.7044591903686523
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 1 | 75 | 0.5146846771240234 | 0.04529595375061035
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-390000 | BoulderDash | 1 | 114 | 0.5346808433532715 | 0.7234742641448975
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 1 | 94 | 0.5956792831420898 | 0.7306251525878906
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 7 | 50 | 0.42827820777893066 | 0.0162966251373291
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 8 | 67 | 0.481703519821167 | 0.723778247833252
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 0 | 123 | 0.5730571746826172 | 0.04622936248779297
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 3 | 81 | 0.41214919090270996 | 0.6993083953857422
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 0 | 105 | 0.6774389743804932 | 0.04067277908325195
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 5 | 128 | 0.5906977653503418 | 0.7217192649841309
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 0 | 142 | 0.9391560554504395 | 0.04444122314453125
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 4 | 109 | 0.5055661201477051 | 0.6996090412139893
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 0 | 86 | 0.5338358879089355 | 0.04018402099609375
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-400000 | BoulderDash | 1 | 114 | 0.5435934066772461 | 0.7200918197631836
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 0 | 94 | 0.5916769504547119 | 0.7330894470214844
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 7 | 50 | 0.4330453872680664 | 0.023024797439575195
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 8 | 67 | 0.48227429389953613 | 0.7241206169128418
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 0 | 105 | 0.4653925895690918 | 0.028615713119506836
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 2 | 81 | 0.40274524688720703 | 0.6995611190795898
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 0 | 106 | 0.8160622119903564 | 0.05877828598022461
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 5 | 128 | 0.6215343475341797 | 0.7137753963470459
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 0 | 276 | 1.2673876285552979 | 0.07628273963928223
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 4 | 143 | 0.5685007572174072 | 0.7134089469909668
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 3 | 76 | 0.5798425674438477 | 0.040235042572021484
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-410000 | BoulderDash | 1 | 114 | 0.5427761077880859 | 0.719717264175415
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 3 | 81 | 0.5578832626342773 | 0.7330446243286133
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 6 | 50 | 0.4388110637664795 | 0.01675248146057129
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 8 | 67 | 0.47484636306762695 | 0.7214727401733398
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 0 | 114 | 0.5709412097930908 | 0.04570794105529785
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 3 | 68 | 0.45504188537597656 | 0.7184164524078369
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 0 | 106 | 0.838512659072876 | 0.051239728927612305
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 1 | 128 | 0.6013619899749756 | 0.7215044498443604
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 1 | 139 | 0.8112380504608154 | 0.03403115272521973
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 4 | 109 | 0.506580114364624 | 0.7108414173126221
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 0 | 82 | 0.6399481296539307 | 0.049834251403808594
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-420000 | BoulderDash | 0 | 140 | 0.7461414337158203 | 0.7526562213897705
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 3 | 81 | 0.5648322105407715 | 0.7320411205291748
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 5 | 54 | 0.32218480110168457 | 0.012883186340332031
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 8 | 67 | 0.47324681282043457 | 0.7250752449035645
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 2 | 85 | 0.45038700103759766 | 0.023960590362548828
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 3 | 81 | 0.4119992256164551 | 0.7034056186676025
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 0 | 125 | 0.7643570899963379 | 0.04911398887634277
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 1 | 128 | 0.5999696254730225 | 0.7204082012176514
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 0 | 213 | 1.0890815258026123 | 0.06191229820251465
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 5 | 134 | 0.7620267868041992 | 0.7359445095062256
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 0 | 86 | 0.5409049987792969 | 0.02661752700805664
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-430000 | BoulderDash | 1 | 114 | 0.5481877326965332 | 0.7221105098724365
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 3 | 81 | 0.5576472282409668 | 0.7297666072845459
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 5 | 56 | 0.3220703601837158 | 0.0195009708404541
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 8 | 67 | 0.46671628952026367 | 0.718860387802124
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 0 | 105 | 0.46184802055358887 | 0.029184579849243164
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 6 | 52 | 0.455350399017334 | 0.7079188823699951
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 1 | 127 | 0.7705230712890625 | 0.04224729537963867
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 5 | 128 | 0.6005885601043701 | 0.7166650295257568
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 0 | 159 | 1.0257995128631592 | 0.054239511489868164
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 5 | 129 | 0.6512632369995117 | 0.7159147262573242
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 0 | 75 | 0.4582850933074951 | 0.029439926147460938
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-440000 | BoulderDash | 1 | 114 | 0.5514631271362305 | 0.7348291873931885
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 2 | 93 | 0.5890882015228271 | 0.7273731231689453
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 5 | 54 | 0.3207728862762451 | 0.018668174743652344
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 8 | 67 | 0.4903874397277832 | 0.7218418121337891
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 0 | 105 | 0.4774184226989746 | 0.02999424934387207
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 5 | 65 | 0.3946573734283447 | 0.6980738639831543
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 0 | 138 | 0.711688756942749 | 0.04857683181762695
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 5 | 128 | 0.5992867946624756 | 0.7234423160552979
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 0 | 216 | 1.077174425125122 | 0.06159257888793945
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 5 | 129 | 0.6281712055206299 | 0.720984697341919
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 1 | 75 | 0.5299983024597168 | 0.03225588798522949
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-450000 | BoulderDash | 0 | 143 | 0.7507214546203613 | 0.7602665424346924
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 3 | 81 | 0.5526859760284424 | 0.7218301296234131
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 7 | 50 | 0.432659387588501 | 0.016848087310791016
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 8 | 67 | 0.4732217788696289 | 0.7253565788269043
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 0 | 114 | 0.5719332695007324 | 0.045781612396240234
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 2 | 81 | 0.3990352153778076 | 0.7068884372711182
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 0 | 125 | 0.7601284980773926 | 0.05052804946899414
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 5 | 121 | 0.5405387878417969 | 0.7095861434936523
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 0 | 244 | 1.2442188262939453 | 0.08366847038269043
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 6 | 109 | 0.6330668926239014 | 0.7278692722320557
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 0 | 76 | 0.5156450271606445 | 0.03310990333557129
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-460000 | BoulderDash | 0 | 178 | 0.8828434944152832 | 0.7730462551116943
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 94 | 0.5892624855041504 | 0.7273201942443848
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 7 | 57 | 0.4296114444732666 | 0.017081737518310547
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 8 | 67 | 0.4779326915740967 | 0.7172186374664307
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 78 | 0.5456357002258301 | 0.027237892150878906
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 6 | 65 | 0.44387173652648926 | 0.7196855545043945
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 138 | 0.7024250030517578 | 0.04208230972290039
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 128 | 0.6136996746063232 | 0.7230792045593262
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 255 | 1.2158286571502686 | 0.06958818435668945
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 5 | 152 | 0.9740128517150879 | 0.7677922248840332
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 75 | 0.5216219425201416 | 0.025620222091674805
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-470000 | BoulderDash | 0 | 143 | 0.7359621524810791 | 0.7519967555999756
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 2 | 78 | 0.49964165687561035 | 0.7199230194091797
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 5 | 53 | 0.3246171474456787 | 0.01917409896850586
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 7 | 67 | 0.4347038269042969 | 0.714503288269043
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 2 | 85 | 0.4504673480987549 | 0.02360081672668457
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 4 | 99 | 0.4130697250366211 | 0.6984951496124268
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 0 | 106 | 0.81219482421875 | 0.05860257148742676
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 0 | 128 | 0.5984063148498535 | 0.7264964580535889
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 0 | 227 | 1.038701057434082 | 0.05319333076477051
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 4 | 155 | 0.9789001941680908 | 0.7596955299377441
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 0 | 75 | 0.46774911880493164 | 0.02435779571533203
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-480000 | BoulderDash | 1 | 114 | 0.5441985130310059 | 0.7262058258056641
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 4 | 81 | 0.558469295501709 | 0.7383685111999512
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 7 | 69 | 0.4396355152130127 | 0.02311992645263672
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 8 | 67 | 0.4725632667541504 | 0.721914529800415
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 2 | 85 | 0.45160794258117676 | 0.0234982967376709
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 5 | 69 | 0.5164055824279785 | 0.7206897735595703
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 0 | 106 | 0.8292818069458008 | 0.04563260078430176
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 2 | 128 | 0.5940032005310059 | 0.716651439666748
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 0 | 244 | 1.233001947402954 | 0.07683897018432617
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 4 | 129 | 0.5572140216827393 | 0.7183771133422852
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 0 | 75 | 0.5131781101226807 | 0.03842329978942871
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-490000 | BoulderDash | 1 | 114 | 0.5332515239715576 | 0.7159414291381836
+
+-----------------------------------------------------------------------------------
+
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 6 | 81 | 0.5611000061035156 | 0.730130672454834
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 7 | 57 | 0.4387507438659668 | 0.016883134841918945
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 7 | 100 | 0.4555509090423584 | 0.7063384056091309
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 2 | 85 | 0.4533534049987793 | 0.023532629013061523
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 5 | 81 | 0.39032864570617676 | 0.7045462131500244
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 0 | 106 | 0.8194520473480225 | 0.058681488037109375
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 4 | 128 | 0.5992650985717773 | 0.7140569686889648
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 0 | 222 | 1.1804907321929932 | 0.06952381134033203
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 5 | 127 | 0.6276741027832031 | 0.7209928035736084
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 0 | 75 | 0.4604971408843994 | 0.02995586395263672
+DQN_Simple_model_test_gamma-1_fc-128_1_1_1_its-500000_BoulderDash_1_lvs=100-500000 | BoulderDash | 0 | 109 | 0.5131475925445557 | 0.7200822830200195
+
+-----------------------------------------------------------------------------------
+
+
+<< NUEVO >>
+
