@@ -2,4 +2,4 @@
 [PHASE] Starting First Phase of Training in 3 levels.
 [TRAINING] Result (1->win; 0->lose): level:0, Player0:-1, Player0-Score:0.0, timesteps:0
 [PHASE] Starting Validation in 2 levels.
-[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:18.0, timesteps:108
+[VALIDATION] Result (1->win; 0->lose): level:3, Player0:1, Player0-Score:20.0, timesteps:115
