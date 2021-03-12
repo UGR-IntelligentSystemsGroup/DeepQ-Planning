@@ -16,10 +16,19 @@ class Planning:
                 print(exc)
 
         # Command to be run
-        """self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
+
+        # Options:
+        # -O -g 1 -h 1 -> always finds the optimum plan
+        # -O OR -O -g 1 -h 5 -> BFS (finds short plans but not always the shortest)
+        # No optimization options (-O) -> EHC (does not optimize plan length)
+
+        # Optimal plans
+        """
+        self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
                 '-f', self.game_information["problemFile"], '-O', '-g', '1', '-h', '1'
         ]"""
 
+        # BFS
         self.planner_command = ['planning/ff', '-o', self.game_information["domainFile"],
                 '-f', self.game_information["problemFile"], '-O']
 

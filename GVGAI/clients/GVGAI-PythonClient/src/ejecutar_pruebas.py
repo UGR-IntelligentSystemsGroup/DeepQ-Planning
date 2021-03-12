@@ -309,7 +309,8 @@ fc_num_unis = [[128,1,1,1]]
 tau=[1000] # 10 # Update period of the target network
 # CHANGE FOR BOULDERDASH!
 alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
-gamma = [1] # 1 # Discount rate for rewards
+# CAMBIAR
+gamma = [0.7] # 1 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
@@ -319,17 +320,18 @@ use_BN = [False] # If True, Batch Normalization is applied after each conv layer
 games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [100]
+datasets_sizes_for_training_BoulderDash = [25, 50] # CAMBIAR
 datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
+# CAMBIAR 
 num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 # 1 hour -> 1 rep. for every game
 ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+repetitions_per_model = 5 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
