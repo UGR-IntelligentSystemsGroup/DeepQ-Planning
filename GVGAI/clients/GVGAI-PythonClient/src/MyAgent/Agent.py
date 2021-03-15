@@ -59,7 +59,7 @@ class Agent(AbstractPlayer):
 		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=5
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
