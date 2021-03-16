@@ -1,5 +1,1 @@
-SavedDatasets/dataset_BoulderDash_2.dat
-SavedDatasets/dataset_BoulderDash_82.dat
-SavedDatasets/dataset_BoulderDash_29.dat
-SavedDatasets/dataset_BoulderDash_77.dat
-SavedDatasets/dataset_BoulderDash_50.dat
+SavedDatasets/dataset_BoulderDash_25.dat

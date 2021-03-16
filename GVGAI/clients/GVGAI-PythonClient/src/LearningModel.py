@@ -670,12 +670,22 @@ class DQNetwork:
 	# Dropout is activated
 	# Returns the absolute errors abs(Q_target - Q_val) to update the priority scores of
 	# the experience replay
-	def train(self, X, Agent_res, Y, sample_weights):
+	def train(self, X, Agent_res, Y, sample_weights=None):
+		# If sample_weights is None, use a weight of 1 for each sample
+		if sample_weights is None:
+			num_samples = X.shape[0]
+			sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
+
 		data_dict = {self.X : X, self.Agent_res : Agent_res,
 		 self.Q_target : Y, self.sample_weights : sample_weights,
 		 self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
-		_, absolute_errors = self.sess.run([self.train_op, self.absolute_errors], feed_dict=data_dict)
+		# If sample_weights is None, we are not using PER so there is no need to calculate absolute_errors
+		if sample_weights is None: 
+			self.sess.run(self.train_op, feed_dict=data_dict)
+			absolute_errors = None
+		else:
+			_, absolute_errors = self.sess.run([self.train_op, self.absolute_errors], feed_dict=data_dict)
 
 		return absolute_errors
 

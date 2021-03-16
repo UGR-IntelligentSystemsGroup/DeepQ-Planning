@@ -56,18 +56,18 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=5
+		self.dataset_size_for_training=1
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_test_CAEPIA_gamma-0.7_fc-128_1_1_1_its-100000_BoulderDash_5"
+		self.network_name="DQN_Simple_model_test_CAEPIA_PER_gamma-0.7_fc-128_1_1_1_its-10000_BoulderDash_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=173472
+		self.level_seed=57824
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -186,7 +186,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=5e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=100000
+		self.num_train_its=10000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -248,6 +248,9 @@ class Agent(AbstractPlayer):
 
 			# Period for saving the trained model -> the model is saved every X training iterations
 			self.num_its_each_model_save = 10000
+
+			# If true, PER is used. Otherwise, random sampling is used.
+			self.use_PER=False
 
 		else: # Test
 
@@ -312,14 +315,14 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=100000
+				self.num_train_its_model=10000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -382,7 +385,8 @@ class Agent(AbstractPlayer):
 			np.random.shuffle(self.memory)
 
 			# Create Prioritized Experience Replay
-			self.PER = Memory(len(self.memory), self.memory)
+			if self.use_PER:
+				self.PER = Memory(len(self.memory), self.memory)
 
 			# Create Learning model
 
@@ -500,9 +504,21 @@ class Agent(AbstractPlayer):
 			# Execute the training of the current model
 			
 			for curr_it in range(self.num_train_its):   
-				# Choose next batch from Experience Replay
+				# Choose next batch from Experience Replay (using PER or random sampling)
 
-				tree_idx, batch, sample_weights = self.PER.sample(self.batch_size)
+				# PER
+				if self.use_PER:
+					tree_idx, batch, sample_weights = self.PER.sample(self.batch_size)	
+				else: # Random Sampling
+					if ind_batch+self.batch_size < num_samples:
+						batch = self.memory[ind_batch:ind_batch+self.batch_size]
+						ind_batch = (ind_batch + self.batch_size)
+					else: # Got to the end of the experience replay -> shuffle it and start again
+						batch = self.memory[ind_batch:]
+						ind_batch = 0
+
+						np.random.shuffle(self.memory)
+
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
 				batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
@@ -529,12 +545,17 @@ class Agent(AbstractPlayer):
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
 				# Execute one training step
-				# absolute_errors is used to update the priority scores of the PER				
-				absolute_errors = self.model.train(batch_X, batch_Res, Q_targets, sample_weights)
+				# absolute_errors is used to update the priority scores of the PER	
+				if self.use_PER:			
+					absolute_errors = self.model.train(batch_X, batch_Res, Q_targets, sample_weights)
+				else: # If we are not using PER, don't pass sample_weights
+					self.model.train(batch_X, batch_Res, Q_targets)
+
 				self.tau += 1
 
 				# Update the priority scores of the PER
-				self.PER.batch_update(tree_idx, absolute_errors)
+				if self.use_PER:
+					self.PER.batch_update(tree_idx, absolute_errors)
 
 				# Update target network every tau training steps
 				if self.tau >= self.max_tau:
