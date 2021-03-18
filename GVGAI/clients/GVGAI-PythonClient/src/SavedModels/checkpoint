@@ -1,0 +1,2 @@
+model_checkpoint_path: "DQN_Simple_model_test_NO-PER_gamma-0.7_fc-128_1_1_1_its-1000000_BoulderDash_1_lvs=100.ckpt-1000000"
+all_model_checkpoint_paths: "DQN_Simple_model_test_NO-PER_gamma-0.7_fc-128_1_1_1_its-1000000_BoulderDash_1_lvs=100.ckpt-1000000"

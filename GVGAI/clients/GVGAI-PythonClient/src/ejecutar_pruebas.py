@@ -333,7 +333,7 @@ num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de it
 use_PER = [False] # If False, random sampling is used instead of Prioritized Experience Replay
 
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 1 # Index of the first repetition
+ini_rep_model = 2 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
