@@ -325,7 +325,7 @@ datasets_sizes_for_training_IceAndFire = [100]
 datasets_sizes_for_training_Catapults = [200]
 
 # Number of iterations for training
-num_its_BoulderDash = [1000000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
+num_its_BoulderDash = [150000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de its es 300000
 
@@ -333,8 +333,8 @@ num_its_Catapults = [1500000] # 100000 # 20000 # Creo que el mejor número de it
 use_PER = [False] # If False, random sampling is used instead of Prioritized Experience Replay
 
 # 1 hour -> 1 rep. for every game
-ini_rep_model = 2 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+ini_rep_model = 8 # Index of the first repetition
+repetitions_per_model = 4 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -347,7 +347,7 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
-test_all_its = True
+test_all_its = False
 test_it_interval = 10000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
@@ -673,9 +673,8 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_model_test_NO-PER_gamma-{}_fc-{}_{}_{}_{}_its-{}_{}_{}". \
-								format(curr_gamma, curr_fc_num_unis[0], curr_fc_num_unis[1], curr_fc_num_unis[2],
-								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_Simple_model_test_NO-PER_mejor-num-its_gamma-{}_its-{}_{}_{}". \
+								format(curr_gamma, curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 

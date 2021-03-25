@@ -63,11 +63,11 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_test_NO-PER_gamma-0.7_fc-128_1_1_1_its-1000000_BoulderDash_1"
+		self.network_name="DQN_Simple_model_test_NO-PER_mejor-num-its_gamma-0.7_its-150000_BoulderDash_11"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=346944
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -186,7 +186,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=5e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=1000000
+		self.num_train_its=150000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -315,7 +315,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=1000000
+				self.num_train_its_model=150000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
