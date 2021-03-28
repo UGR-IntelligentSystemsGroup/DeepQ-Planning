@@ -16,6 +16,7 @@ import sys
 import glob
 import time
 
+# LearningModelFastRep.py is actually a little slower than LearningModel.py
 from LearningModel import DQNetwork
 from PrioritizedExperienceReplay import Memory
 
@@ -34,7 +35,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing="Catapults"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -56,18 +57,18 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=100
+		self.dataset_size_for_training=200
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_test_NO-PER_mejor-num-its_gamma-0.7_its-150000_BoulderDash_11"
+		self.network_name="DQN_Catapults_NO_persistent_tensors_20_rep_gamma-1_its-1000000_Catapults_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=346944
+		self.level_seed=57824
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -183,10 +184,10 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=5e-05
+		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=150000
+		self.num_train_its=1000000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -196,7 +197,7 @@ class Agent(AbstractPlayer):
 		self.max_tau=1000
 		self.tau=0 # Counter that resets to 0 when the target network is updated
 		# Discount rate for Deep Q-Learning
-		self.gamma=0.7
+		self.gamma=1
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -247,10 +248,14 @@ class Agent(AbstractPlayer):
 			self.datasets_folder = 'SavedDatasets'
 
 			# Period for saving the trained model -> the model is saved every X training iterations
-			self.num_its_each_model_save = 10000
+			self.num_its_each_model_save = 100000
 
 			# If true, PER is used. Otherwise, random sampling is used.
-			self.use_PER=False
+			self.use_PER=True
+
+			# Each time self.model.train is called, this variable controls how many train
+			# repetitions are performed
+			self.num_repetitions_each_train_call = 20
 
 		else: # Test
 
@@ -315,7 +320,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=150000
+				self.num_train_its_model=1000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
@@ -502,8 +507,9 @@ class Agent(AbstractPlayer):
 			ind_batch = 0 # Index for selecting the next minibatch
 
 			# Execute the training of the current model
-			
-			for curr_it in range(self.num_train_its):   
+			curr_it = 0
+
+			while curr_it < self.num_train_its:   
 				# Choose next batch from Experience Replay (using PER or random sampling)
 
 				# PER
@@ -521,7 +527,7 @@ class Agent(AbstractPlayer):
 
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-				batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
+				# batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
 				batch_R = [each[2] for each in batch] # r values (plan lenghts)
 				batch_S = [each[3] for each in batch] # s' values (sso instances)
 
@@ -547,9 +553,9 @@ class Agent(AbstractPlayer):
 				# Execute one training step
 				# absolute_errors is used to update the priority scores of the PER	
 				if self.use_PER:			
-					absolute_errors = self.model.train(batch_X, batch_Res, Q_targets, sample_weights)
+					absolute_errors = self.model.train(batch_X, Q_targets, sample_weights, num_its = self.num_repetitions_each_train_call)
 				else: # If we are not using PER, don't pass sample_weights
-					self.model.train(batch_X, batch_Res, Q_targets)
+					self.model.train(batch_X, Q_targets, num_its = self.num_repetitions_each_train_call)
 
 				self.tau += 1
 
@@ -564,9 +570,9 @@ class Agent(AbstractPlayer):
 
 					self.tau = 0
 
-				# Save Logs every 5 training its
-				if curr_it % 5 == 0:
-					self.model.save_logs(batch_X, batch_Res, Q_targets, curr_it)
+				# Save Logs every 1000 training its
+				if curr_it % 1000 == 0:
+					self.model.save_logs(batch_X, Q_targets, curr_it)
 
 				# Save the model each X training its
 				if curr_it > 0 and curr_it % self.num_its_each_model_save == 0:
@@ -577,6 +583,9 @@ class Agent(AbstractPlayer):
 				if curr_it % 500 == 0 and curr_it != 0:
 					print("- {} its completed".format(curr_it))
 
+				# Update the curr_it taking into account how many train its are performed
+				# in each self.model.train call
+				curr_it += self.num_repetitions_each_train_call
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							
 			# Save the current trained model
 			self.model.save_model(path = self.model_save_path, num_it = self.num_train_its)
@@ -1268,17 +1277,17 @@ class Agent(AbstractPlayer):
 		observationGrid = sso.observationGrid
 
 		# Retrieve resources the agent has at the sso state
-		agent_resources = self.get_agent_resources(sso)
+		# agent_resources = self.get_agent_resources(sso)
 
 		# Encode every subgoal as its corresponding one_hot_grid
 		one_hot_grid_array = self.encode_game_state_all_subgoals(observationGrid, possible_subgoals)
 
 		# Encode the agent resources to that every one_hot grid has the same resources
 		# associated
-		agent_resources_array = np.repeat([agent_resources], len(possible_subgoals), axis=0)
+		# agent_resources_array = np.repeat([agent_resources], len(possible_subgoals), axis=0)
 
 		# Predict the Q_values for all the possible subgoals
-		Q_values = self.model.predict_batch(one_hot_grid_array, agent_resources_array)
+		Q_values = self.model.predict_batch(one_hot_grid_array)
 
 		# Order the subgoals according to their Q_values
 
@@ -1362,7 +1371,7 @@ class Agent(AbstractPlayer):
 		observationGrid = sso.observationGrid
 
 		# Retrieve resources the agent has at the sso state
-		agent_resources = self.get_agent_resources(sso)
+		# agent_resources = self.get_agent_resources(sso)
 
 		# Retrieve subgoals list (list of subgoals positions)
 		subgoals = self.get_subgoals_positions(sso)
@@ -1372,10 +1381,10 @@ class Agent(AbstractPlayer):
 
 		# Encode the agent resources to that every one_hot grid has the same resources
 		# associated
-		agent_resources_array = np.repeat([agent_resources], len(subgoals), axis=0)
+		# agent_resources_array = np.repeat([agent_resources], len(subgoals), axis=0)
 
 		# Predict the Q_values for all the subgoals
-		Q_values = self.target_network.predict_batch(one_hot_grid_array, agent_resources_array)
+		Q_values = self.target_network.predict_batch(one_hot_grid_array)
 
 		# Get the min Q_value
 		min_Q_val = np.min(Q_values)

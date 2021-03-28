@@ -125,3 +125,6 @@ dmypy.json
 
 # Ignore datasets (so that I don't use git lfs)
 *.dat
+
+# Ignore Model Logs
+events.out.tfevents.*

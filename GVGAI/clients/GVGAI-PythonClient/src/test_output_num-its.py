@@ -8,7 +8,7 @@ import numpy as np
 input_file = "test_output_parsed.txt"
 
 # BoulderDash, IceAndFire or Catapults
-game_playing = "BoulderDash"
+game_playing = "Catapults"
 
 with open(input_file, 'r') as f:
 	input_data = f.read()

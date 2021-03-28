@@ -60,6 +60,23 @@ class DQNetwork:
 
 		with tf.variable_scope(self.variable_scope):
 
+			# Session initialization
+			if sess is None:
+				# Create Session
+
+				# Run on GPU
+				
+				# Needed for running on GPU
+				gpu_options = tf.GPUOptions(allow_growth=True)
+				self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+				
+				# Run on CPU (it's faster if model and batch_size are small)               
+				# self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
+			else:
+				# Reuse session passed as a parameter
+				self.sess = sess
+
+
 			# --- Constants, Variables and Placeholders ---
 
 			# Size of a sample, as rows x cols x (number of observations + 1)
@@ -70,28 +87,48 @@ class DQNetwork:
 			X_shape = [None]
 			X_shape.extend(self.sample_size) # e.g.: [None, 13, 26, 9]
 
-			self.X = tf.placeholder(tf.float32, X_shape, name="X") # type tf.float32 is needed for the rest of operations
-
-			# Batch of agent resources
-			# self.Agent_res = tf.placeholder(tf.float32, [None, 3], name="Agent_res")
+			self.X_ph = tf.placeholder(tf.float32, X_shape) # type tf.float32 is needed for the rest of operations
 
 			# Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s, R(s,a) : plan length from state s to subgoal a)
-			self.Q_target = tf.placeholder(tf.float32, [None, 1], name="Q_target")
+			self.Q_target_ph = tf.placeholder(tf.float32, [None, 1])
 			
 			# Placeholder for batch normalization
 			# During training (big batches) -> true, during test (small batches) -> false
-			self.is_training = tf.placeholder(tf.bool, name="is_training")
+			self.is_training_ph = tf.placeholder(tf.bool)
 
 			# Learning Rate
 			self.alfa = tf.constant(learning_rate)
 
 			# Dropout Probability (probability of deactivation)
-			self.dropout_placeholder = tf.placeholder(tf.float32)
+			self.dropout_placeholder_ph = tf.placeholder(tf.float32)
 			self.dropout_prob = dropout_prob
 
 			# Sample weights needed for Prioritized Experience Replay
-			self.sample_weights = tf.placeholder(tf.float32, [None,1], name='sample_weights')
+			self.sample_weights_ph = tf.placeholder(tf.float32, [None,1])
 			
+			# Operations obtaining handles for persistent tensors
+			self.X_handle_op = tf.get_session_handle(self.X_ph)
+			self.Q_target_handle_op = tf.get_session_handle(self.Q_target_ph)
+			self.is_training_handle_op = tf.get_session_handle(self.is_training_ph)
+			self.dropout_placeholder_handle_op = tf.get_session_handle(self.dropout_placeholder_ph)
+			self.sample_weights_handle_op = tf.get_session_handle(self.sample_weights_ph)
+
+			# Handle needed for tf.get_session_tensor
+			dummy_handle = self.sess.run(tf.get_session_handle(tf.constant(1, dtype=tf.float32)))
+
+			# Persistent Tensors (loaded with the handles)
+			self.X_handle_ph, self.X = tf.get_session_tensor(dummy_handle, tf.float32)
+			self.Q_target_handle_ph, self.Q_target = tf.get_session_tensor(dummy_handle, tf.float32)
+			self.is_training_handle_ph, self.is_training = tf.get_session_tensor(dummy_handle, tf.bool)
+			self.dropout_placeholder_handle_ph, self.dropout_placeholder = tf.get_session_tensor(dummy_handle, tf.float32)
+			self.sample_weights_handle_ph, self.sample_weights = tf.get_session_tensor(dummy_handle, tf.float32)
+
+			# Reshape tensors (if not, valueerror is raised)
+			self.X.set_shape(X_shape)
+			self.Q_target.set_shape([None, 1])
+			self.is_training.set_shape([])
+			self.dropout_placeholder.set_shape([])
+			self.sample_weights.set_shape([None,1])
 
 			# --- Architecture ---
 
@@ -501,9 +538,6 @@ class DQNetwork:
 
 			# Flatten output of conv layers
 			self.flatten = tf.contrib.layers.flatten(self.conv20)
-
-			# Concatenate agent resources
-			# self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
 			
 			# Fully connected layer 1
 
@@ -600,7 +634,6 @@ class DQNetwork:
 
 				# tf.group in case we do not want the output
 				self.train_op_group = tf.group(self.train_op)
-			
 
 			# --- Summaries ---
 
@@ -614,21 +647,6 @@ class DQNetwork:
 			
 
 		# --- Initialization ---
-
-		if sess is None:
-			# Create Session
-
-			# Run on GPU
-			
-			# Needed for running on GPU
-			gpu_options = tf.GPUOptions(allow_growth=True)
-			self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-			
-			# Run on CPU (it's faster if model and batch_size is small)               
-			# self.sess = tf.Session(config=tf.ConfigProto(device_count = {'GPU': 0}))
-		else:
-			# Reuse session passed as a parameter
-			self.sess = sess
 
 		# Initialize variables
 		self.sess.run(tf.global_variables_initializer())
@@ -649,20 +667,41 @@ class DQNetwork:
 		# Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
 		x_resh = np.reshape(x, x_shape)
 
-		data_dict = {self.X : x_resh,
-		 self.is_training : False, self.dropout_placeholder : 0.0}
+		# <Upload data to placeholders and obtain handles>
+		data_dict = {self.X_ph : x_resh, self.is_training_ph : False,
+		 self.dropout_placeholder_ph : 0.0}
 
-		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
+		X_handle, dropout_placeholder_handle, \
+		is_training_handle = self.sess.run([self.X_handle_op, 
+			self.dropout_placeholder_handle_op,
+			self.is_training_handle_op], feed_dict=data_dict)
+
+		# <Use persistent tensors>
+		data_dict_handles = {self.X_handle_ph : X_handle.handle, 
+			self.dropout_placeholder_handle_ph : dropout_placeholder_handle.handle,
+			self.is_training_handle_ph : is_training_handle.handle}
+
+		prediction = self.sess.run(self.Q_val, feed_dict = data_dict_handles)
 
 		return prediction
 
 	# Predicts the associated y-value (plan length) for a batch of x ((subgoal, game state) pairs one-hot encoded)
 	# Dropout is not activated
 	def predict_batch(self, x):
-		data_dict = {self.X : x,
-		 self.is_training : False, self.dropout_placeholder : 0.0}
+		# <Upload data to placeholders and obtain handles>
+		data_dict = {self.X_ph : x, self.is_training_ph : False, self.dropout_placeholder_ph : 0.0}
 
-		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
+		X_handle, dropout_placeholder_handle, \
+		is_training_handle = self.sess.run([self.X_handle_op, 
+			self.dropout_placeholder_handle_op,
+			self.is_training_handle_op], feed_dict=data_dict)
+
+		# <Use persistent tensors>
+		data_dict_handles = {self.X_handle_ph : X_handle.handle, 
+			self.dropout_placeholder_handle_ph : dropout_placeholder_handle.handle,
+			self.is_training_handle_ph : is_training_handle.handle}
+
+		prediction = self.sess.run(self.Q_val, feed_dict = data_dict_handles)
 
 		return prediction
 
@@ -676,21 +715,34 @@ class DQNetwork:
 			num_samples = X.shape[0]
 			sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
-		data_dict = {self.X : X,
-		 self.Q_target : Y, self.sample_weights : sample_weights,
-		 self.is_training : True, self.dropout_placeholder : self.dropout_prob}
+		# <Upload data to placeholders and obtain handles>
+		data_dict = {self.X_ph : X,
+		 self.Q_target_ph : Y, self.sample_weights_ph : sample_weights,
+		 self.is_training_ph : True, self.dropout_placeholder_ph : self.dropout_prob}
+
+		X_handle, Q_target_handle, sample_weights_handle, \
+		 dropout_placeholder_handle, is_training_handle = self.sess.run([self.X_handle_op, self.Q_target_handle_op, 
+			self.sample_weights_handle_op, self.dropout_placeholder_handle_op,
+			self.is_training_handle_op], feed_dict=data_dict)
+
+		# <Repeat training op with the same data>
+
+		data_dict_handles = {self.X_handle_ph : X_handle.handle, self.Q_target_handle_ph : Q_target_handle.handle,
+			self.sample_weights_handle_ph : sample_weights_handle.handle, 
+			self.dropout_placeholder_handle_ph : dropout_placeholder_handle.handle,
+			self.is_training_handle_ph : is_training_handle.handle}
 
 		# If sample_weights is None, we are not using PER so there is no need to calculate absolute_errors
 		if sample_weights is None: 
 			for i in range(num_its):
-				self.sess.run(self.train_op_group, feed_dict=data_dict)
+				self.sess.run(self.train_op_group, feed_dict = data_dict_handles)
 			absolute_errors = None
 		else:
 			# Only obtain the absolute errors for the last call to self.train_op
 			for i in range(num_its-1):
-				self.sess.run(self.train_op_group, feed_dict=data_dict)
+				self.sess.run(self.train_op_group, feed_dict = data_dict_handles)
 			
-			_, absolute_errors = self.sess.run([self.train_op, self.absolute_errors], feed_dict=data_dict)
+			_, absolute_errors = self.sess.run([self.train_op, self.absolute_errors], feed_dict = data_dict_handles)
 
 		return absolute_errors
 
@@ -701,13 +753,25 @@ class DQNetwork:
 		num_samples = X.shape[0]
 		sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
-		# Training Loss
-		data_dict_train = {self.X : X,
-		 self.sample_weights : sample_weights,
-		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
+		# <Upload data to placeholders and obtain handles>
+		data_dict = {self.X_ph : X,
+		 self.sample_weights_ph : sample_weights,
+		 self.Q_target_ph : Y, self.is_training_ph : True, self.dropout_placeholder_ph : 0.0}
+
+		X_handle, Q_target_handle, sample_weights_handle, \
+		 dropout_placeholder_handle, is_training_handle = self.sess.run([self.X_handle_op, self.Q_target_handle_op, 
+			self.sample_weights_handle_op, self.dropout_placeholder_handle_op,
+			self.is_training_handle_op], feed_dict=data_dict)
+
+		# <Execute op with the persistent tensors>
+
+		data_dict_handles = {self.X_handle_ph : X_handle.handle, self.Q_target_handle_ph : Q_target_handle.handle,
+			self.sample_weights_handle_ph : sample_weights_handle.handle, 
+			self.dropout_placeholder_handle_ph : dropout_placeholder_handle.handle,
+			self.is_training_handle_ph : is_training_handle.handle}
 
 		train_loss_log, Q_val_log, Q_target_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
-		 self.Q_target_sum], feed_dict=data_dict_train)
+		 self.Q_target_sum], feed_dict = data_dict_handles)
 
 		self.writer.add_summary(train_loss_log, it)
 		self.writer.add_summary(Q_val_log, it)
@@ -737,3 +801,4 @@ class DQNetwork:
 	# every tau steps
 	def update_weights(self, update_ops):
 		self.sess.run(update_ops)
+
