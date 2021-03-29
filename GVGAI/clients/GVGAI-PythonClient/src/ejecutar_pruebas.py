@@ -328,6 +328,8 @@ num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [20000000] # 20000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
+num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
+
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
@@ -709,6 +711,9 @@ try:
 
 				# Change execution mode
 				agent_file = re.sub(r'self.EXECUTION_MODE=.*', 'self.EXECUTION_MODE="train"', agent_file, count=1)
+
+				# Change num its of the checkpoint to load and resume training
+				agent_file = re.sub(r'self.num_train_its_model_to_load_train=.*', 'self.num_train_its_model_to_load_train={}'.format(num_its_resume_training), agent_file, count=1)
 
 				# Save file
 				with open('MyAgent/Agent.py', 'w') as file:

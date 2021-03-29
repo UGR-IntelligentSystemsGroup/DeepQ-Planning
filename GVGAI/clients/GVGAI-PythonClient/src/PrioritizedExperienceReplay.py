@@ -5,6 +5,7 @@
 # Learning%20with%20Doom%20(%2B%20double%20DQNs%20and%20Prioritized%20Experience%20Replay).ipynb
 
 import numpy as np
+import pickle
 
 # It is a binary tree where the parent contains the sum of their children.
 # Each leave node contains the sampling probability of a sample (s,a,r,s') in the prioritized 
@@ -304,3 +305,20 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
 
 		for ti, p in zip(tree_idx, ps):
 			self.tree.update(ti, p)
+
+	"""
+	Save the memory object to a file using the pickle module. WE ONLY SAVE THE WEIGHTS
+	TREE BUT NOT THE DATA TREE!
+	"""
+	def save_memory(self, path):
+		with open(path, 'wb') as file:
+			# self.tree.tree -> weights tree of the SumTree object
+			pickle.dump(self.tree.tree, file)
+
+	"""
+	Load the memory object from a file using the pickle module
+	"""
+	def load_memory(self, path):
+		with open(path, 'rb') as file:
+			new_tree = pickle.load(file)
+			self.tree.tree = new_tree

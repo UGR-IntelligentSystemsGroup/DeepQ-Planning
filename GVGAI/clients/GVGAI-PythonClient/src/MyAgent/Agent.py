@@ -64,11 +64,14 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Catapults_NO_persistent_tensors_20_rep_gamma-1_its-1000000_Catapults_1"
+		self.network_name="DQN_Pruebas_save_and_load_models_gamma-1_its-300000_Catapults_15"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
+		# Name of the saved model file to load (without the number of training steps part)
+		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
+
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=462592
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -187,7 +190,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=1000000
+		self.num_train_its=300000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -257,6 +260,10 @@ class Agent(AbstractPlayer):
 			# repetitions are performed
 			self.num_repetitions_each_train_call = 20
 
+			# If it does not equal 0, then the model with the corresponding num its is loaded
+			# (instead of creating a new one) and training resumes
+			self.num_train_its_model_to_load_train=100000
+
 		else: # Test
 
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
@@ -315,15 +322,12 @@ class Agent(AbstractPlayer):
 						 learning_rate = self.learning_rate,
 						 use_BN=self.use_BN, game_playing=self.game_playing)
 
-				# Name of the saved model file to load (without the number of training steps part)
-				model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
-
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=1000000
+				self.num_train_its_model=200000
 
 				# <Load the already-trained model in order to test performance>
-				self.model.load_model(path = model_load_path, num_it = self.num_train_its_model)
+				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
@@ -385,13 +389,16 @@ class Agent(AbstractPlayer):
 			# Load dataset of current size
 			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed)
 
-			# Shuffle dataset
+			# Shuffle dataset (only if we are using random sampling)
 			# DO NOT USE random.shuffle (it does not work well with numpy arrays)
-			np.random.shuffle(self.memory)
+			if not self.use_PER:
+				np.random.shuffle(self.memory)
 
 			# Create Prioritized Experience Replay
 			if self.use_PER:
 				self.PER = Memory(len(self.memory), self.memory)
+
+
 
 			# Create Learning model
 
@@ -444,6 +451,9 @@ class Agent(AbstractPlayer):
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
 
+			# Current training iteration
+			curr_it = 0
+
 			# Target Network
 			# Used to predict the Q targets. It is upgraded every max_tau updates.
 			# Use the same tf.session as the main DQNetwork
@@ -495,6 +505,23 @@ class Agent(AbstractPlayer):
 					 learning_rate = self.learning_rate,
 					 use_BN=self.use_BN, game_playing=self.game_playing)
 
+			# Load checkpoint and resume training
+			# THE CHECKPOINT HAS TO BE LOADED <<AFTER>> CREATING THE TARGET AND DQN NETWORKS
+			# Otherwise, the weights of the DQNetwork are reset (god knows why...)
+			if self.num_train_its_model_to_load_train != 0:
+				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model_to_load_train)
+				curr_it = self.num_train_its_model_to_load_train # Don't start from train_it=0
+
+				# Print the values of the loaded weights (dense layer 1)
+				# kernel = tf.get_default_graph().get_tensor_by_name('DQNetwork/fc_1/kernel:0')
+				# print("\n\n >>> Kernel AFTER LOAD MODEL:", self.model.sess.run(kernel)[0,:5])
+
+				# Load PER
+				if self.use_PER:
+					PER_load_path = "./SavedModels/" + self.network_name + "_{}".format(self.num_train_its_model_to_load_train) + ".tree"
+					self.PER.load_memory(PER_load_path)
+
+
 			# Initialize target network's weights with those of the DQNetwork
 			self.update_ops = self.update_target_network() # ONLY CALL THIS ONCE (else new nodes will be added to the graph with each iter)
 			self.target_network.update_weights(self.update_ops)
@@ -506,8 +533,8 @@ class Agent(AbstractPlayer):
 
 			ind_batch = 0 # Index for selecting the next minibatch
 
+
 			# Execute the training of the current model
-			curr_it = 0
 
 			while curr_it < self.num_train_its:   
 				# Choose next batch from Experience Replay (using PER or random sampling)
@@ -574,9 +601,13 @@ class Agent(AbstractPlayer):
 				if curr_it % 1000 == 0:
 					self.model.save_logs(batch_X, Q_targets, curr_it)
 
-				# Save the model each X training its
-				if curr_it > 0 and curr_it % self.num_its_each_model_save == 0:
+				# Save the model each X training its along with the weights tree (if we are using PER)
+				if curr_it > 0 and curr_it % self.num_its_each_model_save == 0:	
 					self.model.save_model(path = self.model_save_path, num_it = curr_it)
+
+					if self.use_PER:
+						PER_save_path = "./SavedModels/" + self.network_name + "_{}".format(curr_it) + ".tree"
+						self.PER.save_memory(PER_save_path)
 
 
 				# Periodically print the progress of the training
@@ -586,11 +617,15 @@ class Agent(AbstractPlayer):
 				# Update the curr_it taking into account how many train its are performed
 				# in each self.model.train call
 				curr_it += self.num_repetitions_each_train_call
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							
+				
 			# Save the current trained model
 			self.model.save_model(path = self.model_save_path, num_it = self.num_train_its)
 			print("\n> Current model saved! Dataset size={} levels\n".format(self.dataset_size_for_training))
 
+			# Save PER
+			if self.use_PER:
+				PER_save_path = "./SavedModels/" + self.network_name + "_{}".format(self.num_train_its) + ".tree"
+				self.PER.save_memory(PER_save_path)
 
 			# Exit the program after finishing training
 			print("\nTraining finished!")
