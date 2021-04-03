@@ -326,7 +326,7 @@ datasets_sizes_for_training_Catapults = [200]
 # Number of iterations for training
 num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [20000000] # 20000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
+num_its_Catapults = [30000000] # 20000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
@@ -353,7 +353,8 @@ test_all_its = True
 test_it_interval = 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
-skip_train = False
+# CAMBIAR
+skip_train = True
 
 # <Script variables>
 

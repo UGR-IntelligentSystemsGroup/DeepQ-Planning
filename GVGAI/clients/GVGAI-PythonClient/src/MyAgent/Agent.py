@@ -57,21 +57,21 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="train"
+		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=200
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_save_and_load_models_gamma-1_its-300000_Catapults_15"
+		self.network_name="DQN_Simple_model_Catapults_20_rep_mejor_num_its_gamma-1_its-30000000_Catapults_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=462592
+		self.level_seed=57824
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -190,7 +190,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=300000
+		self.num_train_its=30000000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -262,7 +262,7 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=100000
+			self.num_train_its_model_to_load_train=17500000
 
 		else: # Test
 
@@ -324,7 +324,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=200000
+				self.num_train_its_model=30000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
