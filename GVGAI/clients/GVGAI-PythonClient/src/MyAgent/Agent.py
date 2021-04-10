@@ -64,7 +64,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_model_Catapults_20_rep_mejor_num_its_gamma-1_its-30000000_Catapults_1"
+		self.network_name="DQN_Simple_Model_with-hard_levels_num_rep-10_fc-128_1_correct_tau-10000_gamma-1_its-15000000_Catapults_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -190,15 +190,14 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=30000000
+		self.num_train_its=15000000
 		self.batch_size=32
 		self.use_BN=False
 		
 		# Extra params
 		# Number of training its before copying the DQNetwork's weights to the target network
 		# default max_tau was 250
-		self.max_tau=1000
-		self.tau=0 # Counter that resets to 0 when the target network is updated
+		self.max_tau=10000
 		# Discount rate for Deep Q-Learning
 		self.gamma=1
 
@@ -258,11 +257,11 @@ class Agent(AbstractPlayer):
 
 			# Each time self.model.train is called, this variable controls how many train
 			# repetitions are performed
-			self.num_repetitions_each_train_call = 20
+			self.num_repetitions_each_train_call = 10
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=17500000
+			self.num_train_its_model_to_load_train=2100000
 
 		else: # Test
 
@@ -324,14 +323,14 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=30000000
+				self.num_train_its_model=15000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -525,14 +524,12 @@ class Agent(AbstractPlayer):
 			# Initialize target network's weights with those of the DQNetwork
 			self.update_ops = self.update_target_network() # ONLY CALL THIS ONCE (else new nodes will be added to the graph with each iter)
 			self.target_network.update_weights(self.update_ops)
-			self.tau = 0
 
 			num_samples = len(self.memory)
 
 			print("\n> Started training of model on {} levels\n".format(self.dataset_size_for_training))
 
 			ind_batch = 0 # Index for selecting the next minibatch
-
 
 			# Execute the training of the current model
 
@@ -566,10 +563,11 @@ class Agent(AbstractPlayer):
 					# state s is None)
 					if s is None:
 						# Invalid plan -> penalization
-						if r >= 1000:
+						# Clip rewards to [-100, 100]
+						if r >= 100: # Goal Selection error (there is no plan to the select goal or the agent dies)
 							r = 100
-						else: # Valid plan -> reward
-							r = -100
+						else: # Valid plan -> reward (the agent completes the level)
+							r = r - 100 # Always equal to -100 or greater than -100 (r is a positive number)
 
 					Q_target = r + self.gamma*self.get_min_Q_value(s)
 
@@ -584,25 +582,21 @@ class Agent(AbstractPlayer):
 				else: # If we are not using PER, don't pass sample_weights
 					self.model.train(batch_X, Q_targets, num_its = self.num_repetitions_each_train_call)
 
-				self.tau += 1
-
 				# Update the priority scores of the PER
 				if self.use_PER:
 					self.PER.batch_update(tree_idx, absolute_errors)
 
-				# Update target network every tau training steps
-				if self.tau >= self.max_tau:
+				# Update target network every max_tau training steps
+				if curr_it % self.max_tau == 0: 
 					# update_ops = self.update_target_network()
 					self.target_network.update_weights(self.update_ops)
 
-					self.tau = 0
-
 				# Save Logs every 1000 training its
-				if curr_it % 1000 == 0:
+				if curr_it % 1000 == 0 and curr_it > 0:
 					self.model.save_logs(batch_X, Q_targets, curr_it)
 
 				# Save the model each X training its along with the weights tree (if we are using PER)
-				if curr_it > 0 and curr_it % self.num_its_each_model_save == 0:	
+				if curr_it % self.num_its_each_model_save == 0 and curr_it > 0:	
 					self.model.save_model(path = self.model_save_path, num_it = curr_it)
 
 					if self.use_PER:
@@ -611,7 +605,7 @@ class Agent(AbstractPlayer):
 
 
 				# Periodically print the progress of the training
-				if curr_it % 500 == 0 and curr_it != 0:
+				if curr_it % 500 == 0 and curr_it > 0:
 					print("- {} its completed".format(curr_it))
 
 				# Update the curr_it taking into account how many train its are performed

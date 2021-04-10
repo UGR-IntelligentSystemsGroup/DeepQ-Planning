@@ -235,6 +235,7 @@ l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 # Simple architecture (inspired by DQN architecture of original paper)
 # 3 conv layers
 # fc units -> [[512,1,1,1]] 
+
 l1_num_filt = [32]
 l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
 l2_num_filt = [64]
@@ -306,7 +307,7 @@ l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 fc_num_unis = [[128,1,1,1]] 
 
 # Training params
-tau=[1000] # 10 # Update period of the target network
+tau=[10000] # 1000 # Update period of the target network
 # CHANGE FOR BOULDERDASH!
 alfa = [0.0001] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 # CAMBIAR
@@ -326,7 +327,7 @@ datasets_sizes_for_training_Catapults = [200]
 # Number of iterations for training
 num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [30000000] # 20000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
+num_its_Catapults = [15000000] # 10000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
@@ -345,7 +346,7 @@ repetitions_per_model = 1 # 15 # Each model is trained this number of times
 # test_level_indexes = [(0,1),(2,3),(4,)] # Use this one for validation
 # test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 # CAMBIAR
-test_level_indexes = [(0,1),(2,3),(4,)]
+test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9)]
 
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
@@ -353,8 +354,7 @@ test_all_its = True
 test_it_interval = 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
-# CAMBIAR
-skip_train = True
+skip_train = False
 
 # <Script variables>
 
@@ -676,8 +676,9 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_model_Catapults_20_rep_mejor_num_its_gamma-{}_its-{}_{}_{}". \
-								format(curr_gamma, curr_num_its, curr_game, curr_rep)
+				curr_model_name = "DQN_Simple_Model_with-hard_levels_num_rep-10_fc-{}_{}_correct_tau-{}_gamma-{}_its-{}_{}_{}". \
+								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_tau,
+									curr_gamma, curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_times_test-{}".format(curr_game)
 

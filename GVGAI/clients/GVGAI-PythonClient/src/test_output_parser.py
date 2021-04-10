@@ -13,7 +13,7 @@ input_file = "test_output.txt"
 output_file = "test_output_parsed.txt" # If None, the results are printed in the terminal
 # games = ['BoulderDash', 'IceAndFire', 'Catapults']
 games = ['Catapults']
-num_test_levels = 5 # Number of levels each model is tested on (11 = 5 default test levels + 6 new (hard) test levels)
+num_test_levels = 10 # Number of levels each model is tested on (11 = 5 default test levels + 6 new (hard) test levels)
 model = "DQP" # 'DQP' 'Random' o 'Greedy'
 
 def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
