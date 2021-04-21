@@ -27,7 +27,7 @@ training_lvs_catapults = ('catapults_lvl0.txt', 'catapults_lvl1.txt', 'catapults
 
 # Other variables
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['IceAndFire']
+games_to_play = ['Catapults']
 
 training_lvs_directory = "../../../examples/gridphysics/" # Path where the training levels (0-2) are located
 
@@ -140,5 +140,5 @@ finally:
 	print(">> All datasets have been created")
 
 	# Shutdown the computer in a minute
-	subprocess.call("shutdown -t 60", shell=True)
+	# subprocess.call("shutdown -t 60", shell=True)
 

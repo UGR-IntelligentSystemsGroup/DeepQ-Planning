@@ -60,18 +60,18 @@ class Agent(AbstractPlayer):
 		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=400
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_Model_with-hard_levels_num_rep-10_fc-128_1_correct_tau-10000_gamma-1_its-15000000_Catapults_1"
+		self.network_name="DQN_Simple_Model_num_rep-20_fc-128_1_tau-10000_gamma-1_its-30000000_Catapults_3"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=115648
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -190,7 +190,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=15000000
+		self.num_train_its=30000000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -225,7 +225,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=82
+			id_dataset=383
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -257,11 +257,11 @@ class Agent(AbstractPlayer):
 
 			# Each time self.model.train is called, this variable controls how many train
 			# repetitions are performed
-			self.num_repetitions_each_train_call = 10
+			self.num_repetitions_each_train_call = 20
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=2100000
+			self.num_train_its_model_to_load_train=23000000
 
 		else: # Test
 
@@ -323,7 +323,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=15000000
+				self.num_train_its_model=30000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
@@ -630,7 +630,6 @@ class Agent(AbstractPlayer):
 		if self.EXECUTION_MODE=="test" and self.is_training:
 			return 'ACTION_ESCAPE'
 
-
 		# <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
 
 		# Check if the agent can act at the current game state, i.e., execute an action.
@@ -778,7 +777,7 @@ class Agent(AbstractPlayer):
 		# Save dataset and exit the program if the experience replay is the right size
 		if self.EXECUTION_MODE == 'create_dataset':
 			if self.total_num_samples >= self.num_total_samples_for_saving_dataset or \
-			   len(self.memory) >= self.num_unique_samples_for_saving_dataset:
+				len(self.memory) >= self.num_unique_samples_for_saving_dataset:
 			
 				self.save_dataset(self.dataset_save_path, self.datasets_sizes_file_path)
 

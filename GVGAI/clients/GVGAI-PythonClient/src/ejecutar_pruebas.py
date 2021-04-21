@@ -323,11 +323,11 @@ games_to_play = ['Catapults']
 # For each size, a different model is trained and tested on this number of levels
 datasets_sizes_for_training_BoulderDash = [100]
 datasets_sizes_for_training_IceAndFire = [100]
-datasets_sizes_for_training_Catapults = [200]
+datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
 num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [15000000] # 10000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
+num_its_Catapults = [30000000] # 10000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
@@ -676,7 +676,7 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_Model_with-hard_levels_num_rep-10_fc-{}_{}_correct_tau-{}_gamma-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Simple_Model_num_rep-20_fc-{}_{}_tau-{}_gamma-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_tau,
 									curr_gamma, curr_num_its, curr_game, curr_rep)
 
