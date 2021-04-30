@@ -64,7 +64,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_Model_num_rep-20_fc-128_1_tau-10000_gamma-1_its-30000000_Catapults_3"
+		self.network_name="DQN_Simple_Model_discrete_rewards_fc-128_1_tau-10000_gamma-1_its-30000000_Catapults_3"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -261,7 +261,7 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=23000000
+			self.num_train_its_model_to_load_train=20900000
 
 		else: # Test
 
@@ -552,7 +552,7 @@ class Agent(AbstractPlayer):
 
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
 				# batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
-				batch_R = [each[2] for each in batch] # r values (plan lenghts)
+				batch_R = [each[2] for each in batch] # r values (plan lengths)
 				batch_S = [each[3] for each in batch] # s' values (sso instances)
 
 				# Calculate Q_targets
@@ -561,16 +561,27 @@ class Agent(AbstractPlayer):
 				for r, s in zip(batch_R, batch_S):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
-					if s is None:
-						# Invalid plan -> penalization
-						# Clip rewards to [-100, 100]
-						if r >= 100: # Goal Selection error (there is no plan to the select goal or the agent dies)
-							r = 100
-						else: # Valid plan -> reward (the agent completes the level)
-							r = r - 100 # Always equal to -100 or greater than -100 (r is a positive number)
+					if self.game_playing != "Catapults":
+						if s is None:
+							# Clip rewards to [-100, 100]
+							if r >= 100: # Goal Selection error (there is no plan to the selected goal or the agent dies)
+								r = 100
+							else: # Valid plan -> reward (the agent completes the level)
+								r = r - 100 # Always equal to -100 or greater than -100 (r is a positive number)
 
-					Q_target = r + self.gamma*self.get_min_Q_value(s)
+						Q_target = r + self.gamma*self.get_min_Q_value(s)
 
+					# Use discrete rewards for Catapults (Q_target is always either 100 or -100)
+					else:
+						if s is None: # Terminal state
+							if r >= 100: # Goal Selection error (there is no plan to the select goal or the agent dies)
+								Q_target = 100
+							else: # Valid plan -> reward (the agent completes the level)
+								Q_target = -100 
+
+						else: # Non-terminal state
+							Q_target = self.get_min_Q_value(s)
+					
 					Q_targets.append(Q_target)
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
