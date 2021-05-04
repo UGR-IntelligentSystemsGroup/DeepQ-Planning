@@ -13,7 +13,7 @@ w > Wall (tree)
 x > Fire
 _ > Ice
 t > Spikes (the player dies if it walks on them)
-c > Coin
+c > Coin (10 per level)
 i > Ice Boots
 f > Fire Boots
 e > Exit

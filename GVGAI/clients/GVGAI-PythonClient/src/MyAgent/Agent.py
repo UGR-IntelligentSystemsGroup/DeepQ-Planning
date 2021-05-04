@@ -64,7 +64,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_Model_discrete_rewards_fc-128_1_tau-10000_gamma-1_its-30000000_Catapults_3"
+		self.network_name="DQN_Simple_Model_discrete_rewards_all-test-levels_fc-128_1_tau-10000_gamma-1_its-20000000_Catapults_3"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -190,7 +190,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=0.0001
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=30000000
+		self.num_train_its=20000000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -261,7 +261,7 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=20900000
+			self.num_train_its_model_to_load_train=1000000
 
 		else: # Test
 
@@ -323,14 +323,14 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=30000000
+				self.num_train_its_model=20000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False

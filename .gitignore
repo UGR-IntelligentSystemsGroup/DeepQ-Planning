@@ -128,3 +128,6 @@ dmypy.json
 
 # Ignore Model Logs
 events.out.tfevents.*
+
+# Ignore saved models
+GVGAI/clients/GVGAI-PythonClient/src/SavedModels/

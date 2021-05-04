@@ -53,8 +53,8 @@ patterns_list_iaf.append(('c',10)) # There must be only 10 coins (c)
 
 # Catapults
 patterns_list_cat = []
-patterns_list_iaf.append(('A',1)) # There must be only one agent (A)
-patterns_list_iaf.append(('g',1)) # There must be only one exit (g)
+patterns_list_cat.append(('A',1)) # There must be only one agent (A)
+patterns_list_cat.append(('g',1)) # There must be only one exit (g)
 
 # Use the correct patterns according to the chosen game
 if chosen_game == 0: # BoulderDash
