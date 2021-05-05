@@ -308,25 +308,25 @@ fc_num_unis = [[128,1,1,1]]
 
 # Training params
 tau=[10000] # 1000 # Update period of the target network
-# CHANGE FOR BOULDERDASH!
-alfa = [0.0001] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+# CHANGE FOR BOULDERDASH! <CAMBIAR>
+alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 # CAMBIAR
-gamma = [1] # 0.7 # Discount rate for rewards
+gamma = [0.7] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
 								 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
-games_to_play = ['Catapults']
+games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [100]
-datasets_sizes_for_training_IceAndFire = [100]
+datasets_sizes_for_training_BoulderDash = [200] # 100
+datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [100000] # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
-num_its_IceAndFire = [1500000] # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
+num_its_BoulderDash = [20000000] # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
+num_its_IceAndFire = [20000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [20000000] # 30000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
 # , , 
@@ -335,7 +335,7 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 3 # Index of the first repetition
+ini_rep_model = 1 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
@@ -355,11 +355,11 @@ test_it_interval = 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 # CAMBIAR
-skip_train = True
+skip_train = False
 
 # If True, only training is performed.
 # CAMBIAR
-skip_test = False
+skip_test = True
 
 # <Script variables>
 
