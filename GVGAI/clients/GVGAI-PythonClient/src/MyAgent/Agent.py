@@ -26,6 +26,53 @@ class Agent(AbstractPlayer):
 	OUT_FILE = 'planning/plan.txt'
 
 	def __init__(self):
+		
+		"""
+		load_path = 'SavedDatasets/dataset_BoulderDash_0.dat'
+		save_path = 'SavedDatasets/dataset_BoulderDash_0_NEW.dat'
+
+		with open(load_path, 'rb') as file:
+			curr_dataset = pickle.load(file)
+
+		new_dataset = []
+		for curr_sample in curr_dataset:
+			new_curr_sample = [curr_sample[0], curr_sample[1], curr_sample[2], curr_sample[0], [(1,1),(2,2),(3,3),(4,4)]]
+			new_dataset.append(new_curr_sample)
+
+		print("Length:", len(new_dataset))
+		print("\n\n")
+		print(new_dataset[0])
+
+		with open(save_path, 'wb') as file:
+			pickle.dump(new_dataset, file)
+		"""
+
+		# SSO puede valer None!!!
+		"""
+		for game_playing in ('BoulderDash', 'IceAndFire', 'Catapults'):
+			self.game_playing = game_playing
+			datasets = sorted(glob.glob('{}/dataset_{}*'.format('SavedDatasets', game_playing)))
+
+			for dataset_path in datasets:
+				with open(dataset_path, 'rb') as file:
+					curr_dataset = pickle.load(file)
+
+				print(">", dataset_path)
+
+				# Each sample -> (one_hot_grid, plan_length, next_state_one_hot_grid, subgoal_positions)
+				new_dataset = [  [sample[0], sample[2], (lambda x : None if x is None else self.encode_game_state(x.observationGrid, None) )(sample[3]), \
+				  (lambda x : None if x is None else self.get_subgoals_positions(x))(sample[3])] for sample in curr_dataset]           
+
+				with open(dataset_path, 'wb') as file: 
+					pickle.dump(new_dataset, file)
+
+		sys.exit()
+		"""
+
+		# ---------- EXIT ----------------
+
+
+
 		"""
 		Agent constructor
 		Creates a new agent and sets SSO type to JSON
@@ -35,7 +82,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing='BoulderDash'
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -57,21 +104,21 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="create_dataset"
+		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=400
+		self.dataset_size_for_training=200
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Simple_Model_discrete_rewards_all-test-levels_fc-128_1_tau-10000_gamma-1_its-20000000_Catapults_3"
+		self.network_name="DQP_test_new_dataset_format-BoulderDash"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=115648
+		self.level_seed=57824
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -187,10 +234,10 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=0.0001
+		self.learning_rate=5e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=20000000
+		self.num_train_its=100000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -199,7 +246,7 @@ class Agent(AbstractPlayer):
 		# default max_tau was 250
 		self.max_tau=10000
 		# Discount rate for Deep Q-Learning
-		self.gamma=1
+		self.gamma=0.7
 
 		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -261,7 +308,7 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=1000000
+			self.num_train_its_model_to_load_train=0
 
 		else: # Test
 
@@ -323,7 +370,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=20000000
+				self.num_train_its_model=100000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
@@ -549,16 +596,15 @@ class Agent(AbstractPlayer):
 
 						np.random.shuffle(self.memory)
 
-
 				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-				# batch_Res = np.array([each[1] for each in batch]) # List of Agent Resources for the DQNetwork
-				batch_R = [each[2] for each in batch] # r values (plan lengths)
-				batch_S = [each[3] for each in batch] # s' values (sso instances)
+				batch_R = [each[1] for each in batch] # r values (plan lengths)
+				batch_S = [each[2] for each in batch] # s' values (as one-hot grids)
+				batch_goal_pos = [each[3] for each in batch] # position of subgoals at states s'
 
 				# Calculate Q_targets
 				Q_targets = []
 				
-				for r, s in zip(batch_R, batch_S):
+				for r, s, goal_pos in zip(batch_R, batch_S, batch_goal_pos):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
 					if self.game_playing != "Catapults":
@@ -569,7 +615,7 @@ class Agent(AbstractPlayer):
 							else: # Valid plan -> reward (the agent completes the level)
 								r = r - 100 # Always equal to -100 or greater than -100 (r is a positive number)
 
-						Q_target = r + self.gamma*self.get_min_Q_value(s)
+						Q_target = r + self.gamma*self.get_min_Q_value(s, goal_pos)
 
 					# Use discrete rewards for Catapults (Q_target is always either 100 or -100)
 					else:
@@ -580,7 +626,7 @@ class Agent(AbstractPlayer):
 								Q_target = -100 
 
 						else: # Non-terminal state
-							Q_target = self.get_min_Q_value(s)
+							Q_target = self.get_min_Q_value(s, goal_pos)
 					
 					Q_targets.append(Q_target)
 
@@ -817,19 +863,22 @@ class Agent(AbstractPlayer):
 		If the chosen_subgoal corresponds to the final goal or the plan is invalid,
 		the new mem_sample is already added to the experience replay. If not, it will be added
 		the next time this method is called.
+		Mem samples are of the form (one_hot_grid, plan_length, next_state_one_hot_grid, subgoal_positions_next_state)
 		
 		@param sso The current state of the game
 		@param chosen_subgoal The selected subgoal for the current state of the game
 		@param plan_length The number of actions of the plan obtained for the (sso, chosen_subgoal) pair.
 						   If it's 0, the plan is invalid.
 		"""
-		# Obtain the resources of the agent at the current state of the game given by sso
-		agent_resources = self.get_agent_resources(sso)
 
 		# If the old mem_sample lacks the new state of the game, complete it
 		# and add it to the experience replay
-		if len(self.mem_sample) == 3:
-			self.mem_sample.append(sso) # Add the end state (the current state of the game)
+		if len(self.mem_sample) == 2:
+			# Add the next state (the current state of the game) and the positions of the subgoals
+			# at that state
+			self.mem_sample.append(self.encode_game_state(sso.observationGrid, None))
+			self.mem_sample.append(self.get_subgoals_positions(sso))
+
 			self.memory.append(self.mem_sample) # Add old mem_sample to memory
 
 		# <Check if the new sample is unique>
@@ -851,7 +900,7 @@ class Agent(AbstractPlayer):
 				plan_length = self.num_actions_invalid_plan  
 
 				# Save it already to the experience replay (since there is no end state)
-				self.mem_sample = [one_hot_grid, agent_resources, plan_length, None]
+				self.mem_sample = [one_hot_grid, plan_length, None, None]
 
 				self.memory.append(self.mem_sample)
 			
@@ -867,12 +916,12 @@ class Agent(AbstractPlayer):
 
 				if subgoal_is_final:
 					# Save the new sample already to the experience replay (since there is no end state)
-					self.mem_sample = [one_hot_grid, agent_resources, plan_length, None]
+					self.mem_sample = [one_hot_grid, plan_length, None, None]
 					
 					self.memory.append(self.mem_sample)
 				else:
 					# Create the new, incomplete mem_sample
-					self.mem_sample = [one_hot_grid, agent_resources, plan_length]
+					self.mem_sample = [one_hot_grid, plan_length]
 
 
 	def get_agent_resources(self, sso):
@@ -1118,7 +1167,8 @@ class Agent(AbstractPlayer):
 		is an array full of zeroes
 
 		@param obs_grid Matrix of observations
-		@param goal_pos (x, y) position (not as pixels but as grid) of the selected goal  
+		@param goal_pos (x, y) position (not as pixels but as grid) of the selected goal
+		                If it's None, no goal is encoded into the observation matrix.  
 		"""
 
 		# Dictionaries that maps itype (key) to one-hot array position to write a 1
@@ -1190,7 +1240,8 @@ class Agent(AbstractPlayer):
 							one_hot_grid[y][x][this_pos] = 1
 
 		# Encode the goal position within that grid
-		one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
+		if goal_pos is not None:
+			one_hot_grid[goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
 
 		return one_hot_grid
 
@@ -1282,13 +1333,35 @@ class Agent(AbstractPlayer):
 
 		return one_hot_grid_array
 
+	def encode_game_state_one_hot_grid_all_subgoals(self, one_hot_grid, goal_pos_list):
+		"""
+		This method works the same as encode_game_state_all_subgoals but the game state
+		is represented as a one-hot matrix (with no subgoal associated).
+
+		@param one_hot_grid One-hot grid of the corresponding game state.
+		@param goal_pos_list List in which every element corresponds to the (x, y) position 
+							 (not as pixels but as grid) of a goal  
+		"""
+
+		# Repeat the one_hot_grid along a first, new numpy axis, so that there is a different
+		# one_hot_grid for each subgoal
+		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(goal_pos_list), axis=0)
+
+		one_hot_length = one_hot_grid.shape[2] # "Depth" of the one_hot_grid (size of the array for each [x][y] pos of the one_hot_grid)
+
+		# Encode a goal position in each grid
+		for ind, goal_pos in enumerate(goal_pos_list):
+			one_hot_grid_array[ind][goal_pos[1]][goal_pos[0]][one_hot_length-1] = 1
+
+		return one_hot_grid_array
+
 	def get_best_subgoals(self, sso, possible_subgoals):
 		"""
 		Returns a list with the subgoals in "possible_subgoals" ordered according to their
 		corresponding Q-values obtained with the trained model. The first element of the list
 		corresponds to the best subgoal, according to the predicted Q-value.
 
-		@param obs_grid Current state of the game (instance of SerializableStateObservation class)
+		@param sso Current state of the game (instance of SerializableStateObservation class)
 		@param possible_subgoals List of possible subgoals to choose from. Each element
 								 corresponds to a (pos_x, pos_y) pair.
 		"""
@@ -1387,40 +1460,29 @@ class Agent(AbstractPlayer):
 		return ordered_subgoals
 
 
-	def get_min_Q_value(self, sso):
+	def get_min_Q_value(self, one_hot_grid, subgoals):
 		"""
 		This method is used to compute the Q-target. It calculates the minimum Q-value associated
-		with the state sso.
+		with the state given by one_hot_grid.
 		It employs the technique known as Double DQNs.
 		It first uses the DQN network to select the best action (the one with the minimum
-		predicted Q-value) to take in the state sso.
-		It then predicts the Q-value associated with taking that action in state sso using
+		predicted Q-value) to take in the state given by one_hot_grid.
+		It then predicts the Q-value associated with taking that action in state given by one_hot_grid using
 		the target network.
 		This way it decouples action selection from Q-value generation.
 
 		If sso is 'None' (corresponds to an end state), the Q-value is 0.
 
-		@param sso Game state for which to calculate the Q-value.
+		@param one_hot_grid Game state for which to calculate the Q-value (represented as a one-hot matrix)
+		@param subgoals List with the (x,y) position of each subgoal
 		"""
 
-		# Check if sso is a terminal state (end of level)
-		if sso is None:
+		# Check if one_hot_grid is a terminal state (end of level)
+		if one_hot_grid is None:
 			return 0
 
-		observationGrid = sso.observationGrid
-
-		# Retrieve resources the agent has at the sso state
-		# agent_resources = self.get_agent_resources(sso)
-
-		# Retrieve subgoals list (list of subgoals positions)
-		subgoals = self.get_subgoals_positions(sso)
-
 		# Encode every subgoal as its corresponding one_hot_grid
-		one_hot_grid_array = self.encode_game_state_all_subgoals(observationGrid, subgoals)
-
-		# Encode the agent resources to that every one_hot grid has the same resources
-		# associated
-		# agent_resources_array = np.repeat([agent_resources], len(subgoals), axis=0)
+		one_hot_grid_array = self.encode_game_state_one_hot_grid_all_subgoals(one_hot_grid, subgoals)
 
 		# Predict the Q_values for all the subgoals
 		Q_values = self.target_network.predict_batch(one_hot_grid_array)
@@ -1613,6 +1675,7 @@ class Agent(AbstractPlayer):
 					curr_dataset = curr_dataset[:max_samples_per_level]
 
 				total_num_samples += len(curr_dataset) # Store the number of samples
+
 				self.memory.extend(curr_dataset)
 
 			print("> {} loaded.".format(dataset_path))
@@ -1631,17 +1694,17 @@ class Agent(AbstractPlayer):
 
 		if self.EXECUTION_MODE == 'create_dataset':
 			# Check if the current mem_sample is incomplete
-			if len(self.mem_sample) == 3: 
+			if len(self.mem_sample) == 2: 
 
 				# If the player has lost the game, the plan of the mem_sample is invalid
 				if sso.gameWinner == "PLAYER_LOSES":
 					print("Incomplete mem_sample in result method - Player Loses")
-					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.num_actions_invalid_plan, None]
+					final_mem_sample = [self.mem_sample[0], self.num_actions_invalid_plan, None, None]
 
 				# If the player has won, the plan is valid (the mem_sample is associated with a plan that completes the level)
 				else:
 					print("Incomplete mem_sample in result method - Player Wins")
-					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.mem_sample[2], None]
+					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], None, None]
 
 				# Add the final mem_sample of the level to the experience replay
 				self.memory.append(final_mem_sample)

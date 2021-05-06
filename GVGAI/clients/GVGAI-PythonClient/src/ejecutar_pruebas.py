@@ -325,7 +325,7 @@ datasets_sizes_for_training_BoulderDash = [200] # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [20000000] # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
+num_its_BoulderDash = [100000] # 5000000 # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [20000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [20000000] # 30000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
@@ -681,11 +681,11 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_Model_discrete_rewards_all-test-levels_fc-{}_{}_tau-{}_gamma-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Simple_Model_fc-{}_{}_tau-{}_gamma-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_tau,
-									curr_gamma, curr_num_its, curr_game, curr_rep)
+								curr_gamma, curr_num_its, curr_game, curr_rep)
 
-				# curr_model_name = "DQP_times_test-{}".format(curr_game)
+				# curr_model_name = "DQP_test_new_dataset_format-{}".format(curr_game)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
