@@ -111,14 +111,14 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQP_test_new_dataset_format-BoulderDash"
+		self.network_name="DQN_Prueba_Simple_Model_mejor_num_its_fc-128_1_tau-10000_alfa-5e-06_its-5000000_BoulderDash_4"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=144560
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -234,10 +234,10 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=5e-05
+		self.learning_rate=5e-06
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=100000
+		self.num_train_its=5000000
 		self.batch_size=32
 		self.use_BN=False
 		
@@ -248,7 +248,7 @@ class Agent(AbstractPlayer):
 		# Discount rate for Deep Q-Learning
 		self.gamma=0.7
 
-		# Sample size. It depens on the game being played. The format is (rows, cols, number of observations + 1)
+		# Sample size. It depends on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
 		if self.game_playing == 'BoulderDash':
 			self.sample_size=[13, 26, 7]
@@ -370,7 +370,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=100000
+				self.num_train_its_model=5000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
@@ -629,6 +629,9 @@ class Agent(AbstractPlayer):
 							Q_target = self.get_min_Q_value(s, goal_pos)
 					
 					Q_targets.append(Q_target)
+
+				# Clip the Q-targets to [-100,100]
+				Q_targets = np.clip(Q_targets, -100, 100)
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 

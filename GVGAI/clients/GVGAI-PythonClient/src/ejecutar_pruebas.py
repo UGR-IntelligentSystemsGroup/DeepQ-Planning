@@ -309,7 +309,8 @@ fc_num_unis = [[128,1,1,1]]
 # Training params
 tau=[10000] # 1000 # Update period of the target network
 # CHANGE FOR BOULDERDASH! <CAMBIAR>
-alfa = [0.00005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+# QUIZÁS TENGA QUE PROBAR A USAR UN ALFA TODAVÍA MENOR QUE 0.00001!!!!
+alfa = [0.000005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
 # CAMBIAR
 gamma = [0.7] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
@@ -325,8 +326,8 @@ datasets_sizes_for_training_BoulderDash = [200] # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [100000] # 5000000 # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
-num_its_IceAndFire = [20000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
+num_its_BoulderDash = [5000000] # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
+num_its_IceAndFire = [5000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [20000000] # 30000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
 # , , 
@@ -336,7 +337,7 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
 ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+repetitions_per_model = 4 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -355,11 +356,11 @@ test_it_interval = 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 # CAMBIAR
-skip_train = False
+skip_train = True
 
 # If True, only training is performed.
 # CAMBIAR
-skip_test = True
+skip_test = False
 
 # <Script variables>
 
@@ -681,9 +682,9 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Simple_Model_fc-{}_{}_tau-{}_gamma-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Prueba_Simple_Model_mejor_num_its_fc-{}_{}_tau-{}_alfa-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_tau,
-								curr_gamma, curr_num_its, curr_game, curr_rep)
+								curr_alfa, curr_num_its, curr_game, curr_rep)
 
 				# curr_model_name = "DQP_test_new_dataset_format-{}".format(curr_game)
 

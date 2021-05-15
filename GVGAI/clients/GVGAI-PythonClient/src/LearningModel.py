@@ -596,7 +596,29 @@ class DQNetwork:
 
 			# Execute mean and variance updates of batch norm each training step
 			with tf.control_dependencies(self.update_ops):
+				# No gradient clipping -> we can simply call optimizer.minimize()
 				self.train_op = self.optimizer.minimize(self.loss, name="train_op")
+
+				# Gradient clipping -> we need to compute, clip and apply the gradient
+				# Reference: https://stackoverflow.com/questions/36498127/how-to-apply-gradient-clipping-in-tensorflow
+				# BoulderDash
+				# 1e-8 con alfa=0.0001 - too high
+				# 1e-9 con alfa=0.0001 - bien, pero disminuye muy lento el loss y el q-target va hacia -100
+				# 1e-9 con alfa=0.00005 - bien, pero disminuye muy lento el loss 
+				# IceAndFire
+				# 1e-9 con alfa=0.0001 - bien, pero converge muy lento el loss
+				# -- Vuelvo a usar 1e-8 
+				# IceAndFire, alfa=0.0001, 1e-8 -> disminuye demasiado lento el loss -> NO USAR CLIPPING CON ICEANDFIRE
+				# BoulderDash, alfa=0.00005, 1e-8 -> too high (el q-target diverge)
+				# BoulderDash, alfa=0.00002, 1e-8 -> disminuye demasiado lento el loss
+
+				#max_grad_value = 1e-8 # Clip gradient between (max_grad_value, -max_grad_value)
+				#gvs = self.optimizer.compute_gradients(self.loss)
+				# capped_gvs = [(tf.clip_by_value(grad, -max_grad_value, max_grad_value), var) for grad, var in gvs]
+				# If a gradient is None, don't clip it (else an exception is raised)
+				#capped_gvs = [ ((lambda x : x if x is None else tf.clip_by_value(x, -max_grad_value, max_grad_value))(grad), var) for grad, var in gvs]
+
+				#self.train_op = self.optimizer.apply_gradients(capped_gvs, name="train_op")
 
 				# tf.group in case we do not want the output
 				self.train_op_group = tf.group(self.train_op)

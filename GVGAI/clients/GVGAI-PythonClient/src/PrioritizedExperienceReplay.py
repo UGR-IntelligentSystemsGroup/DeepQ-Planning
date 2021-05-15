@@ -213,7 +213,8 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
 	# Do not increment the value of b over time
 	PER_b_increment_per_sampling = 0 # 0.001
 	
-	absolute_error_upper = 1.  # clipped abs error
+	# absolute_error_upper = 1.  # clipped abs error
+	absolute_error_upper = 20.
 
 	def __init__(self, capacity, dataset):
 		# Making the tree
