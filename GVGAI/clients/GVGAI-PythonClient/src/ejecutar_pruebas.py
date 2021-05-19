@@ -307,12 +307,11 @@ l20_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 fc_num_unis = [[128,1,1,1]] 
 
 # Training params
-tau=[10000] # 1000 # Update period of the target network
+tau=[10000] # 10000 # Update period of the target network
 # CHANGE FOR BOULDERDASH! <CAMBIAR>
-# QUIZÁS TENGA QUE PROBAR A USAR UN ALFA TODAVÍA MENOR QUE 0.00001!!!!
-alfa = [0.000005] # 0.0001 # 0.00005 for BoulderDash # Learning rate
+alfa = [0.00001] # 0.00001 # 0.0001 for IceAndFire # 0.00001 for BoulderDash # Learning rate
 # CAMBIAR
-gamma = [0.7] # 0.7 # Discount rate for rewards
+gamma = [1] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
@@ -322,22 +321,21 @@ use_BN = [False] # If True, Batch Normalization is applied after each conv layer
 games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [200] # 100
+datasets_sizes_for_training_BoulderDash = [200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [5000000] # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
+num_its_BoulderDash = [5000000] # 5000000 # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
 num_its_IceAndFire = [5000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
 num_its_Catapults = [20000000] # 30000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
 
-# , , 
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
 ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 4 # 15 # Each model is trained this number of times
+repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -352,15 +350,15 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
 test_all_its = True
-test_it_interval = 100000 # 50000 # 20000
+test_it_interval = 100000 # 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 # CAMBIAR
-skip_train = True
+skip_train = False
 
 # If True, only training is performed.
 # CAMBIAR
-skip_test = False
+skip_test = True
 
 # <Script variables>
 
@@ -682,11 +680,11 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Prueba_Simple_Model_mejor_num_its_fc-{}_{}_tau-{}_alfa-{}_its-{}_{}_{}". \
-								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_tau,
+				curr_model_name = "DQN_Prueba_Simple_Model_Double_DQN_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
+								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 								curr_alfa, curr_num_its, curr_game, curr_rep)
 
-				# curr_model_name = "DQP_test_new_dataset_format-{}".format(curr_game)
+				# curr_model_name = "DQN_pruebas_comp_dataset_antiguo_1-rep-per-train-it_200-lvs_alfa-{}_{}_{}".format(curr_alfa, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
@@ -755,7 +753,6 @@ try:
 				if test_all_its == False:
 					array_its_to_test = [curr_num_its]
 				else:
-					# <CAMBIAR>
 					array_its_to_test = [i for i in range(test_it_interval, curr_num_its+1, test_it_interval)]
 
 				# Obtain the test results of the model for each number of its

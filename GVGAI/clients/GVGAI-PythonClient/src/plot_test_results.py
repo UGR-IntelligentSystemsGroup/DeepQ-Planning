@@ -43,6 +43,9 @@ test_results_bd_1e05 = [-0.5, 1.95, -0.88, 1.41, 1.49, -0.63, 2.62, -0.8, -0.69,
 test_results_bd_2e05 = [-0.7, 0.51, 0.19, -0.53, -0.51, 0.29, -0.07, -0.73, -0.55, 1.79, -0.38, 1.35, 1.16, 0.27, -0.63, -0.63, 1.3, 1.21, -0.7, -0.88, -0.69, -0.51, 1.95, -0.61, 2.62, -0.77, -0.66, -0.79, 0.14, -0.8, 1.49, 0.44, 2.14, 0.18, -0.49, -0.5, -0.69, -0.48, 0.11, 2.0, 1.41, -0.5, -0.82, -0.68, -0.48, -0.83, 0.09, 1.18, 0.34, 1.88]
 test_results_bd_5e05 = [-0.5, 1.49, -0.8, 0.18, 1.79, -0.82, 1.35, -0.7, -0.48, -0.79, 1.88, 0.09, -0.5, 0.44, -0.63, 1.3, 1.16, -0.49, 2.14, -0.88, -0.63, 0.51, -0.83, 0.11, -0.48, -0.51, 1.95, 2.0, 1.18, -0.68, 0.19, -0.53, -0.66, -0.73, -0.38, -0.07, -0.55, 2.62, -0.7, -0.51, 1.41, -0.69, 1.21, 0.27, 0.14, 0.34, 0.29, -0.77, -0.69, -0.61]
 
+# 200 levels, 1 rep per train it, alfa=5e-05
+test_results_bd_5e06_1rep = [-0.20422198, -0.14699491, -0.67105196, -0.83866617,  0.14398191, -0.26746632,  0.24797667,  0.21938459, -0.22582254, -0.04011256, -0.23654053,  0.181207  ,  0.15539771,  0.14073779,  0.22142368, 0.154585  , -0.03707954,  0.03954883,  0.43843236,  0.72528098]
+test_results_bd_5e06_1rep_only_easy_lvs = [ 1.47546557, -0.03460983, -0.5190457 , -0.77395638,  0.60118128, -0.37286528,  0.01158249,  0.20878661, -0.65454631, -0.35906274, -0.68815623,  0.35073206,  0.39752578, -0.02678509, -0.45443618, -0.06775028, -0.07997824, -0.24975058,  0.80353551,  0.43213353]
 
 # < Moving Average >
 
@@ -87,6 +90,9 @@ test_results_bd_1e05_avg = moving_average(test_results_bd_1e05, i)
 test_results_bd_2e05_avg = moving_average(test_results_bd_2e05, i)
 test_results_bd_5e05_avg = moving_average(test_results_bd_5e05, i)
 
+# 200 levels, 1 rep per train it, alfa=5e-05
+test_results_bd_5e06_1rep_avg = moving_average(test_results_bd_5e06_1rep, i)
+test_results_bd_5e06_1rep_avg_only_easy_lvs = moving_average(test_results_bd_5e06_1rep_only_easy_lvs, i)
 
 # < Plots >
 
@@ -147,7 +153,7 @@ plt.title("Discrete rewards - Hard levels")
 plt.show()"""
 
 # --------- BoulderDash -----------
-
+"""
 # x = list(range(20, len(test_results_discrete_1)-19)) # Adjust X axis (moving average erases elements)
 plt.plot(test_results_bd_5e06_avg)
 plt.title("BoulderDash - lr 5e-06")
@@ -166,4 +172,16 @@ plt.show()
 # x = list(range(20, len(test_results_discrete_1)-19)) # Adjust X axis (moving average erases elements)
 plt.plot(test_results_bd_5e05_avg)
 plt.title("BoulderDash - lr 5e-05")
+plt.show()
+"""
+
+# 200 levels, 1 rep per train it, alfa=5e-05
+x = list(range(5,101,5))
+plt.plot(x, test_results_bd_5e06_1rep_avg)
+plt.title("BoulderDash - 200 lvs, lr=5e-06, 1 rep per train it")
+plt.show()
+
+x = list(range(5,101,5))
+plt.plot(x, test_results_bd_5e06_1rep_avg_only_easy_lvs)
+plt.title("BoulderDash - 200 lvs, lr=5e-06, 1 rep per train it, only results on easy levels")
 plt.show()

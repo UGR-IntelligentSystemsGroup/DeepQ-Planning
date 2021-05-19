@@ -28,47 +28,31 @@ class Agent(AbstractPlayer):
 	def __init__(self):
 		
 		"""
-		load_path = 'SavedDatasets/dataset_BoulderDash_0.dat'
-		save_path = 'SavedDatasets/dataset_BoulderDash_0_NEW.dat'
+		load_path = 'SavedDatasets/dataset_BoulderDash_120.dat'
 
 		with open(load_path, 'rb') as file:
 			curr_dataset = pickle.load(file)
 
-		new_dataset = []
-		for curr_sample in curr_dataset:
-			new_curr_sample = [curr_sample[0], curr_sample[1], curr_sample[2], curr_sample[0], [(1,1),(2,2),(3,3),(4,4)]]
-			new_dataset.append(new_curr_sample)
+		curr_sample = curr_dataset[0]
 
-		print("Length:", len(new_dataset))
-		print("\n\n")
-		print(new_dataset[0])
+		curr_state = curr_sample[2]
 
-		with open(save_path, 'wb') as file:
-			pickle.dump(new_dataset, file)
-		"""
+		one_hot_grid_subgoals =  []
 
-		# SSO puede valer None!!!
-		"""
-		for game_playing in ('BoulderDash', 'IceAndFire', 'Catapults'):
-			self.game_playing = game_playing
-			datasets = sorted(glob.glob('{}/dataset_{}*'.format('SavedDatasets', game_playing)))
+		for i in range(curr_state.shape[0]):
+			for j in range(curr_state.shape[1]):
+				if curr_state[i][j][4] == 1:
+					print(1, end =" ")
+					#one_hot_grid_subgoals.append((j, i))
+				else:
+					print(0, end =" ")
+			print("\n")
 
-			for dataset_path in datasets:
-				with open(dataset_path, 'rb') as file:
-					curr_dataset = pickle.load(file)
-
-				print(">", dataset_path)
-
-				# Each sample -> (one_hot_grid, plan_length, next_state_one_hot_grid, subgoal_positions)
-				new_dataset = [  [sample[0], sample[2], (lambda x : None if x is None else self.encode_game_state(x.observationGrid, None) )(sample[3]), \
-				  (lambda x : None if x is None else self.get_subgoals_positions(x))(sample[3])] for sample in curr_dataset]           
-
-				with open(dataset_path, 'wb') as file: 
-					pickle.dump(new_dataset, file)
+		#print("Subgoals guardados:", curr_sample[3])
+		#print("Subgoals del one-hot-grid:", one_hot_grid_subgoals)
 
 		sys.exit()
 		"""
-
 		# ---------- EXIT ----------------
 
 
@@ -111,7 +95,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Prueba_Simple_Model_mejor_num_its_fc-128_1_tau-10000_alfa-5e-06_its-5000000_BoulderDash_4"
+		self.network_name="DQN_Prueba_Simple_Model_Double_DQN_fc-128_1_tau-10000_alfa-1e-05_its-5000000_BoulderDash_4"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -234,7 +218,7 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=5e-06
+		self.learning_rate=1e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
 		self.num_train_its=5000000
@@ -304,6 +288,7 @@ class Agent(AbstractPlayer):
 
 			# Each time self.model.train is called, this variable controls how many train
 			# repetitions are performed
+			# To use more repetitions per train call, the learning rate must be reduced
 			self.num_repetitions_each_train_call = 20
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
@@ -1479,8 +1464,9 @@ class Agent(AbstractPlayer):
 		@param one_hot_grid Game state for which to calculate the Q-value (represented as a one-hot matrix)
 		@param subgoals List with the (x,y) position of each subgoal
 		"""
-
+		"""
 		# Check if one_hot_grid is a terminal state (end of level)
+		# WITHOUT DOUBLE DQN
 		if one_hot_grid is None:
 			return 0
 
@@ -1494,7 +1480,22 @@ class Agent(AbstractPlayer):
 		min_Q_val = np.min(Q_values)
 
 		return min_Q_val
-		
+		"""
+
+		if one_hot_grid is None:
+			return 0
+
+		# Encode every subgoal as its corresponding one_hot_grid
+		one_hot_grid_array = self.encode_game_state_one_hot_grid_all_subgoals(one_hot_grid, subgoals)
+
+		# Get the action with the minimum Q_val as predicted by the DQN Network
+		Q_values_DQN = self.model.predict_batch(one_hot_grid_array)
+		best_goal_ind = np.argmin(Q_values_DQN)
+
+		# Get the min Q_value associated with the best goal, using the Target Network
+		min_Q_val = self.target_network.predict(one_hot_grid_array[best_goal_ind])
+
+		return min_Q_val
 
 	def update_target_network(self):
 		"""

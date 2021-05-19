@@ -46,6 +46,7 @@ def get_average_results_per_game(game_list, num_test_levels=5, model="DQP"):
 
 		# For each different model of the current game, match the corresponding test/validation results
 		for curr_match in match_set:
+
 			# Get all the lines containing the results
 			if model == "DQP":
 				#curr_model_match_list = re.findall(r'{}_[0-9]+-{} \| {} \| (-?[0-9]+) \| ([0-9]+) \| (\d+.?\d*) \| (\d+.?\d*)'.
