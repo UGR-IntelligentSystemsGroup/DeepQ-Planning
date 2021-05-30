@@ -236,12 +236,22 @@ l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 # 3 conv layers
 # fc units -> [[512,1,1,1]] 
 
+""" Model without padding
 l1_num_filt = [32]
 l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
 l2_num_filt = [64]
 l2_filter_structure = [ [[5,5],[1,1],"VALID"] ] 
 l3_num_filt = [64]
 l3_filter_structure = [ [[5,5],[1,1],"VALID"] ]
+"""
+
+# Model with padding (input image of size 30x30)
+l1_num_filt = [32]
+l1_filter_structure = [ [[4,4],[2,2],"VALID"] ]
+l2_num_filt = [64]
+l2_filter_structure = [ [[4,4],[2,2],"VALID"] ]
+l3_num_filt = [64]
+l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
 l4_num_filt = [-1]
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
@@ -310,8 +320,7 @@ fc_num_unis = [[128,1,1,1]]
 tau=[10000] # 10000 # Update period of the target network
 # CHANGE FOR BOULDERDASH! <CAMBIAR>
 alfa = [0.00001] # 0.00001 # 0.0001 for IceAndFire # 0.00001 for BoulderDash # Learning rate
-# CAMBIAR
-gamma = [1] # 0.7 # Discount rate for rewards
+gamma = [0.7] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
@@ -353,11 +362,9 @@ test_all_its = True
 test_it_interval = 100000 # 100000 # 50000 # 20000
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
-# CAMBIAR
 skip_train = False
 
 # If True, only training is performed.
-# CAMBIAR
 skip_test = True
 
 # <Script variables>
@@ -680,7 +687,7 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Prueba_Simple_Model_Double_DQN_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Padding-30x30_convs-4-2_4-2_4-2_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 								curr_alfa, curr_num_its, curr_game, curr_rep)
 

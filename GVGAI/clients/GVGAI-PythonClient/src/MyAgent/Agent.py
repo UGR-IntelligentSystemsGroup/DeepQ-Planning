@@ -95,7 +95,7 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Prueba_Simple_Model_Double_DQN_fc-128_1_tau-10000_alfa-1e-05_its-5000000_BoulderDash_4"
+		self.network_name="DQN_Padding-30x30_convs-4-2_4-2_4-2_fc-128_1_gamma-0.7_alfa-1e-05_its-5000000_BoulderDash_4"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -110,20 +110,20 @@ class Agent(AbstractPlayer):
 		# Architecture
 		# First conv layer
 		self.l1_num_filt=32
-		self.l1_window=[5, 5]
-		self.l1_strides=[1, 1]
+		self.l1_window=[4, 4]
+		self.l1_strides=[2, 2]
 		self.l1_padding_type="VALID"
 
 		# Second conv layer
 		self.l2_num_filt=64
-		self.l2_window=[5, 5]
-		self.l2_strides=[1, 1]
+		self.l2_window=[4, 4]
+		self.l2_strides=[2, 2]
 		self.l2_padding_type="VALID"
 
 		# Third conv layer
 		self.l3_num_filt=64
-		self.l3_window=[5, 5]
-		self.l3_strides=[1, 1]
+		self.l3_window=[4, 4]
+		self.l3_strides=[2, 2]
 		self.l3_padding_type="VALID"
 
 		# Fourth conv layer
@@ -233,7 +233,7 @@ class Agent(AbstractPlayer):
 		self.gamma=0.7
 
 		# Sample size. It depends on the game being played. The format is (rows, cols, number of observations + 1)
-		# Sizes: BoulderDash=[13, 26, 9], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
+		# Sizes: BoulderDash=[13, 26, 7], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
 		if self.game_playing == 'BoulderDash':
 			self.sample_size=[13, 26, 7]
 		elif self.game_playing == 'IceAndFire':
@@ -355,7 +355,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=5000000
+				self.num_train_its_model=4700000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
@@ -592,23 +592,26 @@ class Agent(AbstractPlayer):
 				for r, s, goal_pos in zip(batch_R, batch_S, batch_goal_pos):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
+					
+					# CAMBIAR
+
 					if self.game_playing != "Catapults":
 						if s is None:
-							# Clip rewards to [-100, 100]
-							if r >= 100: # Goal Selection error (there is no plan to the selected goal or the agent dies)
-								r = 100
+							# Clip rewards to [-200, 200]
+							if r >= 200: # Goal Selection error (there is no plan to the selected goal or the agent dies)
+								r = 200
 							else: # Valid plan -> reward (the agent completes the level)
-								r = r - 100 # Always equal to -100 or greater than -100 (r is a positive number)
+								r = r - 200 # Always equal to -100 or greater than -100 (r is a positive number)
 
 						Q_target = r + self.gamma*self.get_min_Q_value(s, goal_pos)
 
 					# Use discrete rewards for Catapults (Q_target is always either 100 or -100)
 					else:
 						if s is None: # Terminal state
-							if r >= 100: # Goal Selection error (there is no plan to the select goal or the agent dies)
-								Q_target = 100
+							if r >= 200: # Goal Selection error (there is no plan to the select goal or the agent dies)
+								Q_target = 200
 							else: # Valid plan -> reward (the agent completes the level)
-								Q_target = -100 
+								Q_target = -200 
 
 						else: # Non-terminal state
 							Q_target = self.get_min_Q_value(s, goal_pos)
@@ -616,7 +619,7 @@ class Agent(AbstractPlayer):
 					Q_targets.append(Q_target)
 
 				# Clip the Q-targets to [-100,100]
-				Q_targets = np.clip(Q_targets, -100, 100)
+				Q_targets = np.clip(Q_targets, -200, 200)
 
 				Q_targets = np.reshape(Q_targets, (-1, 1)) 
 
@@ -668,6 +671,7 @@ class Agent(AbstractPlayer):
 
 			# Exit the program after finishing training
 			print("\nTraining finished!")
+			self.model.close_session()
 			sys.exit()
   
 

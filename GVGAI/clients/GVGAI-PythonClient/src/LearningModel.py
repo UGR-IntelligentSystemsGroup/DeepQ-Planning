@@ -11,7 +11,7 @@ class DQNetwork:
 	# Create CNN architecture
 	def __init__(self, name="DQNetwork", writer_name="DQNetwork", create_writer = True,
 				 sess=None,
-				 sample_size=[13, 26, 9],
+				 sample_size=[13, 26, 7],
 				 l1_num_filt = 2, l1_window = [4,4], l1_strides = [2,2],
 				 l1_padding_type = "SAME",
 				 l2_num_filt = 2, l2_window = [4,4], l2_strides = [2,2],
@@ -100,10 +100,28 @@ class DQNetwork:
 				use_BN = True
 
 			"""
+			Padding of inputs
+			"""
+			# No padding
+			self.padding = tf.constant([[0, 0,], [0, 0,], [0, 0], [0, 0]])
+
+			# Padding to make the input image of size 30x30
+			if game_playing == "BoulderDash":
+				# Size before padding = [batch_size, 13, 26, 9]
+				self.padding = tf.constant([[0, 0], [8, 9,], [2, 2], [0, 0]])
+			elif game_playing == "IceAndFire":
+				# Size before padding = [batch_size, 14, 16, 10]
+				self.padding = tf.constant([[0, 0], [8, 8,], [7, 7], [0, 0]])
+
+
+			self.X_pad = tf.pad(self.X, self.padding, mode="CONSTANT", name="Padding") # Pad with zeroes
+
+
+			"""
 			Batch Normalization of inputs
 			"""
 			
-			self.X_norm = tf.layers.batch_normalization(self.X, axis = 3, momentum=0.99, training=self.is_training)
+			self.X_norm = tf.layers.batch_normalization(self.X_pad, axis = 3, momentum=0.99, training=self.is_training)
 
 			
 			"""
