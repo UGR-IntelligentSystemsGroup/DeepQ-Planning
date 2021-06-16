@@ -7,96 +7,6 @@ import glob
 import random
 import sys
 
-
-"""
-Mejor arquitectura 3 capas conv. -> DQN_Pruebas_val_conv1-32,4,1,VALID_conv2-64,4,1,VALID_conv3-64,4,1,VALID_conv4--1,4,1,VALID_fc-32_1_its-2500_alfa-0.0001_dropout-0.0_batch-32_tau-10
-[32, 64, 64]
-Un poco peor que la mejor con 4 capas 
-
-Si se ven las gráficas de entrenamiento, se aprecia
-que para BoulderDash tiende a cero pero para Catapults y
-IceAndFire no disminuyen más después de un punto!!! (arquitectura
-con cinco capas)
-
-He comprobado que se guardan bien los samples (el one_hot_matrix es correcto para
-cada estado del juego)
-
----- Pruebas gráficas entrenamiento
-
-El modelo Full-FC funciona mucho mejor en entrenamiento que usar una CNN!!!!
-
-# Al aumentar el número de niveles de los juegos, aumenta el training error. Parece que al aumentar el número de niveles
-# el modelo DQN no puede memorizar!! -> tengo suficientes samples como para crear un modelo muy complejo!!!
-
-# Cuando aplico dropout, las gráficas de entrenamiento son prácticamente iguales (es bueno porque
-# no empeora el entrenamiento pero ayuda al test!!)
-
-Los resultados en test de los modelos fully-connected son muy malos!!
-Sin embargo, las gráficas de training son muy buenas y el loss converge en los tres juegos.
-BoulderDash -> loss de alrededor de 200 al final
-Catapults y IceAndFire -> loss alrededor de 3000 al final.
-
-----
-
->>> Comparación gráficas de entrenamiento modelos FC, conv 4 capas y conv 6 capas:
-> BoulderDash: modelo FC -> loss=200 (converge casi perfectamente), 
-							 modelos conv (4 y 6 capas) -> loss=1000 (convergen bien, pero peor 
-							 que el modelo FC)
-
-> IceAndFire: modelo FC -> loss=4000, conv 4 capas -> loss=30000, 
-							conv 6 capas -> loss=15000
-
-> Catapults: model FC -> loss=3000, conv 4 capas -> loss=40000,
-			 conv 6 capas -> loss=55000
-
-En BoulderDash ambos modelos conv son igual de buenos, en IceAndFire tiene mejor training loss
-el de 6 capas y en Catapults el de 4 capas.
-
-----
-
->>> Pruebas a usar Batch Normalization SOLO para los inputs:
-> Catapults: El training loss converge más rápido SIN batch normalization (se requieren menos train its.)
-			 El training loss al final del entrenamiento (10000 its.) es el mismo en ambos casos.
-			 Sin BN, el número de iteraciones para Catapults debería ser de 1000 (o incluso 500).
-> IceAndFire: El training loss converge más rápido SIN batch normalization.
-							El Q-target y el Q-value es mucho mayor que con batch normalization!!!!!
-							<<<<<LOS RESULTADOS EN TEST MEJORAN MUCHÍSIMO!!!!!>>>>>>
-							Mejor num de train its. sin BN -> 7500
-> BoulderDash: El training loss CON Batch Normalization es mejor, al contrario que los otros
-							 dos juegos: de 1000 de media de training loss al final (con BN) paso a 3000.
-							 Los resultados en test empeoran un poco al quitar el batch normalization.
-
-<<No uso Batch Normalization excepto, quizás, para BoulderDash.>>
-
----- Pruebas de regularización (L2 y dropout) (solo uso BN para los inputs de aquí en adelante):
-
->>> L2 reg = 0.1
-> BoulderDash: ambas gráficas de entrenamiento son casi idénticas. Los resultados en test
-							 son prácticamente idénticos también.
-> IceAndFire: empeora el training loss al usar L2 regularization (se dobla el training loss).
-							Las gráficas de Q-target y Q-value también son diferentes. Los resultados en test
-							empeoran bastante!!!
-> Catapults: las gráficas de entrenamiento son muy parecidas. Empeoran los resultados de test.
-
-<<NO USO REGULARIZACIÓN L2!!!>>
-
->>> Dropout = 0.1 (solo en las capas convolucionales)
-> BoulderDash: el training loss no varía, pero el Q-target y Q-val sí!! Empeoran los resultados
-							 en test!!
-> IceAndFire: el training loss no varía. Empeoran los resultados de test.
-> Catapults: el training loss no varía. Resuelve 3 niveles en test en vez de 2 (creo que es suerte).
-
-Dropout no mejora los resultados en test pero hace que las gráficas de entrenamiento tengan más "ruido".
-<<NO USO DROPOUT>>
-
----- Comparo en test a usar 3 vs 4 vs 6 capas conv
-
->>> 3 capas vs 4 capas:
-Las gráficas de entrenamiento de los tres juegos son muy parecidas en ambos casos.
-
-
-"""
-
 # <Execution mode of the script>
 # "validation" -> trains and validates on 5 levels not used for training
 # "test" -> trains and tests on all the test levels
@@ -117,120 +27,7 @@ seed=28912 # 28912 (No cambiar la seed!)
 # these hyperparameters
 
 
-"""
-Pruebas
-> Entre [512,128,32,1] y [1024,256,32,1] ambos obtienen casi los mismos resultados en test!!!
-
-> Entre 6 capas y 8 capas conv (con 256 filtros las 2 últimas), se obtienen mejores resultados en 
-test con 8 capas, aunque las gráficas de entrenamiento tienen más picos.
-
-> Entre 15000 y 20000 training its. Se obtienen resultados un poco mejores (en test) con 
-	20000 training its.
-
-> Al probar dropout, los resultados al usar dropout 0.2 y no usarlo son casi idénticos. Al usar
-dropout 0.4 empeoran los resultados -> no uso dropout
-
-> IceAndFire y Catapults funcionan mejor SIN Batch Normalization!!
-	(las gráficas de Q-value y Q-target son diferentes con BN y en IceAndFire
-	 los resultados en test son peores)
-	 BoulderDash funciona mejor CON BN!!!
-
-> Pruebas mejor num fc tres juegos.
-	Al aumentar el número de unidades fc en BoulderDash, el loss no disminuye!!
-	Las gráficas de Q-value y Q-target sí varían un poco.
-	Lo mismo pasa en IceAndFire (de hecho al aumentar las unidades fc más allá
-	de [128, 32] el entrenamiento es más inestable al igual que las gráficas
-	de Q_val y Q-target).
-	Lo mismo ocurre con Catapults.
-
-	Respecto a test, para IceAndFire y Catapults los mejores resultados son con el
-	menor número de unidades fc (128, 32). En BoulderDash, funciona mejor usar
-	[512, 128, 32] unidades fc, obteniendo un 7% menos de acciones de media que con
-	128, 32. 
-
-> Pruebas 6 capas 128 vs 8 capas 256.
-	Con 8 capas el training loss es mejor y en test, para boulderdash da igual, para iceandfire
-	es un poco mejor y en Catapults es también un poco mejor -> uso 8 capas.
-
-> Al probar a aumentar las capas a 10 (usando 256 filtros en las últimas), los resultados
-	empeoran en BoulderDash y Catapults, y se mantienen igual en IceAndFire.
-
-> Al entrenar Catapults sobre solo los 100 niveles antiguos, los resultados empeoran.
-
-> Pruebas mejor num its.
-	BoulderDash: no está claro cuál es mejor -> Me quedo con 20000
-	IceAndFire: no está claro cuál es mejor -> Me quedo con 20000
-	Catapults: 25000 repeticiones.
-
-> El mejor número de filtros en las últimas capas conv es 128, no 64 o 256.
-
->> Pruebas tau=500 <<
-
-alfa-0.00025 es demasiado alto!
-
-EN BOULDERDASH ES A PARTIR DE 100K TRAINING ITS CUANDO EL Q-TARGET Y Q-VALUE
-EMPIEZA A DISMINUIR POR DEBAJO DE 0!!!
-
-¡Parece que sí se puede producir overfitting por usar demasiadas training its!
-Los resultados en BoulderDash con 40000 iteraciones son mejores que con 200000.
-En IceAndFire los resultados con 200000 iteraciones son mejores que con 40000.
-En IceAndFire los resultados con 100000 y 200000 iteraciones son casi idénticos.
-<<ENTRENO EN BOULDERDASH CON 40000 ITERACIONES Y EN ICEANDFIRE CON 100000.>>
-Entreno también con 100000 its en Catapults (aunque sería necesario hacer más pruebas).
-
->> Pruebas PER <<
-Las losses abs y huber no funcionan bien (en IceAndFire el Q-value no disminuye
-por debajo de 0 sino que sigue aumentando)
-
-Con alfa=0.0001 (el que estábamos usando) en IceAndFire parece que el mejor número
-de its es 400000 (en ese número ya hay pocos picos y el loss está por debajo de 10)
-
-Con alfa=0.000025 también converge el loss pero mucho más lento y pero (<<el mejor
-alfa es 0.0001>>)
-
-En BoulderDash, para que converja es necesario usar alfa=0.00005. Parece que el mejor
-num de its es 300000.
-
->> Pruebas modelos simples <<
-
->> Modelo con 512 unidades fc, 3 capas conv. (modelo simple)
-Al probar con el modelo de DQN Nature (3 capas conv, 512 unidades fc), es capaz de converger en IceAndFire
-en 1M train its. El error converge muy rápido. Sin embargo, el Q-target y Q-value tardan en descender
-lo suficiente (en el modelo complejo, ambas gráficas disminuyen por debajo de 0 mucho más rápido).
-
-Los resultados en test (tras 1M train its) son prácticamente idénticos (un 2% de más acciones en todos los
-niveles de media, aunque tiene menos errores) que el modelo complejo (con 1M de train its y PER también).
-
-Tras el mejor número de its (1.25M), el modelo simple es mejor que el complejo (este último con su número
-óptimo de iteraciones también) -> usa un 96% del número de acciones y comete menos errores
-"""
-
-
 # <Architecture>
-
-# Complex architecture
-# 8 conv layers -> it is able to converge on all three games
-# fc units -> [128,32,1,1]
-"""
-l1_num_filt = [32]
-l1_filter_structure = [ [[3,3],[1,1],"SAME"] ]
-l2_num_filt = [32]
-l2_filter_structure = [ [[3,3],[1,1],"SAME"] ] 
-
-l3_num_filt = [64]
-l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l4_num_filt = [64]
-l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
-l5_num_filt = [64]
-l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-
-l6_num_filt = [128]
-l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l7_num_filt = [128]
-l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l8_num_filt = [128]
-l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-"""
 
 # Simple architecture (inspired by DQN architecture of original paper)
 # 3 conv layers
@@ -253,41 +50,18 @@ l2_filter_structure = [ [[4,4],[2,2],"VALID"] ]
 l3_num_filt = [64]
 l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 
+
+
 l4_num_filt = [-1]
 l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
 l5_num_filt = [-1]
 l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-
 l6_num_filt = [-1]
 l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l7_num_filt = [-1]
 l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l8_num_filt = [-1]
 l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-
-
-# Architecture with 5 conv layers
-# fc units -> [[128,1,1,1]] 
-"""
-l1_num_filt = [32]
-l1_filter_structure = [ [[5,5],[1,1],"VALID"] ]
-l2_num_filt = [32]
-l2_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
-l3_num_filt = [64]
-l3_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l4_num_filt = [64]
-l4_filter_structure = [ [[3,3],[1,1],"VALID"] ] 
-l5_num_filt = [64]
-l5_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-
-l6_num_filt = [-1]
-l6_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l7_num_filt = [-1]
-l7_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-l8_num_filt = [-1]
-l8_filter_structure = [ [[3,3],[1,1],"VALID"] ]
-"""
-
 l9_num_filt = [-1]
 l9_filter_structure = [ [[3,3],[1,1],"VALID"] ]
 l10_num_filt = [-1]
@@ -318,13 +92,13 @@ fc_num_unis = [[128,1,1,1]]
 
 # Training params
 tau=[10000] # 10000 # Update period of the target network
-# CHANGE FOR BOULDERDASH! <CAMBIAR>
-alfa = [0.00001] # 0.00001 # 0.0001 for IceAndFire # 0.00001 for BoulderDash # Learning rate
+alfa = [0.00001] # 0.00001 # Learning rate
 gamma = [0.7] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
-use_BN = [False] # If True, Batch Normalization is applied after each conv layer for all the games.
-								 # If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
+
+use_BN = [True] # If True, Batch Normalization is applied after each conv layer for all the games.
+								# If False, BN is only applied to BoulderDash (BoulderDash ALWAYS uses BN)
 # Extra params
 # games_to_play = ['BoulderDash', 'IceAndFire', 'Catapults']
 games_to_play = ['BoulderDash']
@@ -334,9 +108,9 @@ datasets_sizes_for_training_BoulderDash = [200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [5000000] # 5000000 # 100000 # After 500000 its, results are always bad # 1000000 # 40000 # 20000 
-num_its_IceAndFire = [5000000] # 1500000 # 400000 # 100000 # 20000 # Creo que el mejor número de its es 400000
-num_its_Catapults = [20000000] # 30000000 # 1500000 # 100000 # 20000 # Creo que el mejor número de its es 300000
+num_its_BoulderDash = [5000000] # 5000000
+num_its_IceAndFire = [10000000] # 5000000
+num_its_Catapults = [20000000] # 30000000
 
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
@@ -687,7 +461,7 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Padding-30x30_convs-4-2_4-2_4-2_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Pruebas_USE-BN_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 								curr_alfa, curr_num_its, curr_game, curr_rep)
 
