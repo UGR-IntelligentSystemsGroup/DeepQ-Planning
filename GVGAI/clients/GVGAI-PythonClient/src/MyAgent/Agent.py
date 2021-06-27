@@ -88,21 +88,21 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="train"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=50
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Pruebas_USE-BN_fc-128_1_gamma-0.9_alfa-1e-05_its-5000000_BoulderDash_4"
+		self.network_name="DQN_Final_Results_ESWA_fc-128_1_gamma-0.7_alfa-1e-05_its-1200000_BoulderDash_5"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=144560
+		self.level_seed=173472
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -221,7 +221,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=1e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=5000000
+		self.num_train_its=1200000
 		self.batch_size=32
 		self.use_BN=True
 		
@@ -230,7 +230,7 @@ class Agent(AbstractPlayer):
 		# default max_tau was 250
 		self.max_tau=10000
 		# Discount rate for Deep Q-Learning
-		self.gamma=0.9
+		self.gamma=0.7
 
 		# Sample size. It depends on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 7], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -281,7 +281,7 @@ class Agent(AbstractPlayer):
 			self.datasets_folder = 'SavedDatasets'
 
 			# Period for saving the trained model -> the model is saved every X training iterations
-			self.num_its_each_model_save = 100000
+			self.num_its_each_model_save = 10000000 # Only save final model # 100000 # <Cambiar>
 
 			# If true, PER is used. Otherwise, random sampling is used.
 			self.use_PER=True
@@ -593,8 +593,6 @@ class Agent(AbstractPlayer):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
 					
-					# CAMBIAR
-
 					if self.game_playing != "Catapults":
 						if s is None:
 							# Clip rewards to [-200, 200]

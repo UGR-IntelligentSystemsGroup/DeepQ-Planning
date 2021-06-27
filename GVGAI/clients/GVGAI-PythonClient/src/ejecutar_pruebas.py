@@ -104,11 +104,12 @@ use_BN = [True] # If True, Batch Normalization is applied after each conv layer 
 games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
-datasets_sizes_for_training_BoulderDash = [200] # 200 # 100
+# VER SI CUANDO USO MENOS DE 200 NIVELES LOS NIVELES SE ESCOGEN AL AZAR CON LA MISMA SEMILLA O CAMBIA PARA CADA REPETICIÓN!!!
+datasets_sizes_for_training_BoulderDash = [50] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
-num_its_BoulderDash = [5000000] # 5000000
+num_its_BoulderDash = [1200000] # 5000000
 num_its_IceAndFire = [10000000] # 5000000
 num_its_Catapults = [20000000] # 30000000
 
@@ -117,7 +118,7 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 1 # Index of the first repetition
+ini_rep_model = 6 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
@@ -132,8 +133,9 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
-test_all_its = True
-test_it_interval = 100000 # 100000 # 50000 # 20000
+test_all_its = False # Cambiar
+test_it_interval = 100000 # Cambiar # Only test last num of its # 100000
+# Cambiar self.num_its_each_model_save en Agent.py!!!
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
 skip_train = False
@@ -461,7 +463,7 @@ try:
 								 curr_fc_num_unis[3], curr_num_its, curr_game, curr_rep)
 
 			else:
-				curr_model_name = "DQN_Pruebas_USE-BN_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
+				curr_model_name = "DQN_Final_Results_ESWA_fc-{}_{}_gamma-{}_alfa-{}_its-{}_{}_{}". \
 								format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 								curr_alfa, curr_num_its, curr_game, curr_rep)
 
