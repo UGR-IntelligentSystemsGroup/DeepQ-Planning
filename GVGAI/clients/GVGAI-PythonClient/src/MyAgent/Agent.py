@@ -95,14 +95,14 @@ class Agent(AbstractPlayer):
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_Final_Results_ESWA_fc-128_1_gamma-0.7_alfa-1e-05_its-1200000_BoulderDash_6"
+		self.network_name="DQN_Final_Results_ESWA_fc-128_1_gamma-0.7_alfa-1e-05_its-1200000_BoulderDash_10"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=202384
+		self.level_seed=318032
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
