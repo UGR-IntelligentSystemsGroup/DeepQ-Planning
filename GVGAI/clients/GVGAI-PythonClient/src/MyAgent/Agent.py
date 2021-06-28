@@ -595,39 +595,23 @@ class Agent(AbstractPlayer):
 
 						np.random.shuffle(self.memory)
 
-				batch_X = np.array([each[0] for each in batch]) # inputs for the DQNetwork
-				batch_R = [each[1] for each in batch] # r values (plan lengths)
-				batch_S = [each[2] for each in batch] # s' values (as one-hot grids)
-				batch_goal_pos = [each[3] for each in batch] # position of subgoals at states s'
+                #Memory samples are of the form (s,a,r,s')
+                batch_S = np.array([each[0] for each in batch]) 
+                batch_A = [each[1] for each in batch] 
+                batch_R = np.array([each[2] for each in batch]) 
+                batch_next_S = np.array([each[3] for each in batch]) 
+                
+                # One-hot encode actions in batch_A
+                batch_A = self.encode_action_batch(batch_A)
 
 				# Calculate Q_targets
 				Q_targets = []
 				
-				for r, s, goal_pos in zip(batch_R, batch_S, batch_goal_pos):
+				for r, next_s in zip(batch_R, batch_next_S):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
 					
-					if self.game_playing != "Catapults":
-						if s is None:
-							# Clip rewards to [-200, 200]
-							if r >= 200: # Goal Selection error (there is no plan to the selected goal or the agent dies)
-								r = 200
-							else: # Valid plan -> reward (the agent completes the level)
-								r = r - 200 # Always equal to -200 or greater than -200 (r is a positive number)
-
-						Q_target = r + self.gamma*self.get_min_Q_value(s, goal_pos)
-
-					# Use discrete rewards for Catapults (Q_target is always either 200 or -200)
-					else:
-						if s is None: # Terminal state
-							if r >= 200: # Goal Selection error (there is no plan to the select goal or the agent dies)
-								Q_target = 200
-							else: # Valid plan -> reward (the agent completes the level)
-								Q_target = -200 
-
-						else: # Non-terminal state
-							Q_target = self.get_min_Q_value(s, goal_pos)
-					
+                    Q_target = r + self.gamma*self.get_max_Q_value(next_s)
 					Q_targets.append(Q_target)
 
 				# Clip the Q-targets to [-200,200]
@@ -638,9 +622,9 @@ class Agent(AbstractPlayer):
 				# Execute one training step
 				# absolute_errors is used to update the priority scores of the PER	
 				if self.use_PER:			
-					absolute_errors = self.model.train(batch_X, Q_targets, sample_weights, num_its = self.num_repetitions_each_train_call)
+					absolute_errors = self.model.train(batch_S, batch_A, Q_targets, sample_weights, num_its = self.num_repetitions_each_train_call)
 				else: # If we are not using PER, don't pass sample_weights
-					self.model.train(batch_X, Q_targets, num_its = self.num_repetitions_each_train_call)
+					self.model.train(batch_S, batch_A, Q_targets, num_its = self.num_repetitions_each_train_call)
 
 				# Update the priority scores of the PER
 				if self.use_PER:
@@ -648,12 +632,11 @@ class Agent(AbstractPlayer):
 
 				# Update target network every max_tau training steps
 				if curr_it % self.max_tau == 0: 
-					# update_ops = self.update_target_network()
 					self.target_network.update_weights(self.update_ops)
 
 				# Save Logs every 1000 training its
 				if curr_it % 1000 == 0 and curr_it > 0:
-					self.model.save_logs(batch_X, Q_targets, curr_it)
+					self.model.save_logs(batch_S, batch_A, Q_targets, curr_it)
 
 				# Save the model each X training its along with the weights tree (if we are using PER)
 				if curr_it % self.num_its_each_model_save == 0 and curr_it > 0:	
@@ -662,7 +645,6 @@ class Agent(AbstractPlayer):
 					if self.use_PER:
 						PER_save_path = "./SavedModels/" + self.network_name + "_{}".format(curr_it) + ".tree"
 						self.PER.save_memory(PER_save_path)
-
 
 				# Periodically print the progress of the training
 				if curr_it % 500 == 0 and curr_it > 0:
@@ -1003,6 +985,27 @@ class Agent(AbstractPlayer):
 			# Create a new incomplete mem_sample
 			self.mem_sample = [one_hot_grid, chosen_action] # (s,a,_,_)
 
+
+    def encode_action_batch(self, action_batch):
+        """
+        Receives a list of actions @action_batch, represented as a vector of strings,
+        and returns that same vector of actions but each action encoded as a one-hot vector.
+        
+        Example: ["ACTION_UP", "ACTION_RIGHT"] -> np.array([ [1,0,0,0], [0,1,0,0] ] )
+        """
+        action_encoding_dict = {"ACTION_UP" : 0, "ACTION_RIGHT" : 1, "ACTION_DOWN" : 2, "ACTION_LEFT" : 3}
+        
+        action_batch_encoded = []
+        
+        for curr_action in action_batch:
+            encoded_action = [0,0,0,0]
+            encoded_action[action_encoding_dict[curr_action]] = 1
+            
+            action_batch_encoded.append(encoded_action)
+        
+        action_batch_encoded = np.array(action_batch_encoded).reshape((-1,4))
+        
+        return action_batch_encoded
 
 	def get_agent_resources(self, sso):
 		"""
@@ -1542,55 +1545,35 @@ class Agent(AbstractPlayer):
 
 		return ordered_subgoals
 
-
-	def get_min_Q_value(self, one_hot_grid, subgoals):
+	def get_max_Q_value(self, one_hot_grid):
 		"""
-		This method is used to compute the Q-target. It calculates the minimum Q-value associated
+		This method is used to compute the Q-target. It calculates the maximum Q-value associated
 		with the state given by one_hot_grid.
 		It employs the technique known as Double DQNs.
-		It first uses the DQN network to select the best action (the one with the minimum
-		predicted Q-value) to take in the state given by one_hot_grid.
-		It then predicts the Q-value associated with taking that action in state given by one_hot_grid using
-		the target network.
-		This way it decouples action selection from Q-value generation.
 
-		If sso is 'None' (corresponds to an end state), the Q-value is 0.
-
-		@param one_hot_grid Game state for which to calculate the Q-value (represented as a one-hot matrix)
-		@param subgoals List with the (x,y) position of each subgoal
+		If one_hot_grid is 'None' (corresponds to an end state), the Q-value is 0.
 		"""
-		"""
-		# Check if one_hot_grid is a terminal state (end of level)
-		# WITHOUT DOUBLE DQN
+		
 		if one_hot_grid is None:
 			return 0
 
-		# Encode every subgoal as its corresponding one_hot_grid
-		one_hot_grid_array = self.encode_game_state_one_hot_grid_all_subgoals(one_hot_grid, subgoals)
+		# Repeat the one_hot_grid four times
+		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(self.POSSIBLE_ACTIONS), axis=0)
+		
+		# Obtain an array representing each possible action
+		action_array = np.array([ [1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1] ])
 
-		# Predict the Q_values for all the subgoals
-		Q_values = self.target_network.predict_batch(one_hot_grid_array)
+		# Get the action with the maximum Q_val as predicted by the DQN Network
+		Q_values_DQN = self.model.predict_batch(one_hot_grid_array, action_array)
+		best_action_ind = np.argmax(Q_values_DQN)
+		
+		best_action = [0,0,0,0]
+		best_action[best_action_ind] = 1
 
-		# Get the min Q_value
-		min_Q_val = np.min(Q_values)
+		# Get the max Q_value associated with the best goal, using the Target Network
+		max_Q_val = self.target_network.predict(one_hot_grid, np.array(best_action))
 
-		return min_Q_val
-		"""
-
-		if one_hot_grid is None:
-			return 0
-
-		# Encode every subgoal as its corresponding one_hot_grid
-		one_hot_grid_array = self.encode_game_state_one_hot_grid_all_subgoals(one_hot_grid, subgoals)
-
-		# Get the action with the minimum Q_val as predicted by the DQN Network
-		Q_values_DQN = self.model.predict_batch(one_hot_grid_array)
-		best_goal_ind = np.argmin(Q_values_DQN)
-
-		# Get the min Q_value associated with the best goal, using the Target Network
-		min_Q_val = self.target_network.predict(one_hot_grid_array[best_goal_ind])
-
-		return min_Q_val
+		return max_Q_val
 
 	def update_target_network(self):
 		"""

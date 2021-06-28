@@ -201,7 +201,7 @@ class SumTree(object):
 
 # This class corresponds to the prioritized experience replay
 # It stores the samples of the experience replay and their priority scores (probabilies of being sampled)
-class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
+class Memory(object):  # stored as ( s, a, r, s') in SumTree
 	"""
 	This SumTree code is modified version and the original code is from:
 	https://github.com/jaara/AI-blog/blob/master/Seaquest-DDQN-PER.py

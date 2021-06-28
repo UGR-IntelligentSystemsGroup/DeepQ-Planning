@@ -1,10 +1,9 @@
 import tensorflow as tf
 import numpy as np
 
-# Model used to choose next subgoal using Deep Q-Learning
-# Given a pair (observation, subgoal) encoded as a one-hot observation matrix
-# the model predicts the length of the plan that gets that subgoal and, then,
-# completes the level
+# Model used to choose next action using Deep Q-Learning
+# Given a pair (s, a) encoded as a one-hot observation matrix and a one-hot action vector
+# the model predicts the cummulative reward of applyin a at s
 
 class DQNetwork:
 
@@ -66,16 +65,18 @@ class DQNetwork:
 			# It depends on the game being played
 			self.sample_size = sample_size
 
-			# Batch of inputs (game states + goals, one-hot encoded)
+			# Batch of inputs (one-hot encoded)
+			
+			# State s
 			X_shape = [None]
 			X_shape.extend(self.sample_size) # e.g.: [None, 13, 26, 9]
 
 			self.X = tf.placeholder(tf.float32, X_shape, name="X") # type tf.float32 is needed for the rest of operations
+			
+			# Action a
+			self.input_action = tf.placeholder(tf.float32, [None, 4], name="input_action")
 
-			# Batch of agent resources
-			# self.Agent_res = tf.placeholder(tf.float32, [None, 3], name="Agent_res")
-
-			# Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s, R(s,a) : plan length from state s to subgoal a)
+			# Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s)
 			self.Q_target = tf.placeholder(tf.float32, [None, 1], name="Q_target")
 			
 			# Placeholder for batch normalization
@@ -520,8 +521,8 @@ class DQNetwork:
 			# Flatten output of conv layers
 			self.flatten = tf.contrib.layers.flatten(self.conv20)
 
-			# Concatenate agent resources
-			# self.flatten = tf.concat([self.flatten, self.Agent_res], 1)
+			# Concatenate input action "a"
+			self.flatten = tf.concat([self.flatten, self.input_action], 1)
 			
 			# Fully connected layer 1
 
@@ -585,7 +586,7 @@ class DQNetwork:
 
 
 
-			# Output Layer -> outputs the Q_value for the current (game state, subgoal) pair
+			# Output Layer -> outputs the Q_value for the current (s, a) pair
 			
 			self.Q_val = tf.layers.dense(inputs = self.fc_4, 
 										  kernel_initializer=tf.contrib.layers.xavier_initializer(),
@@ -619,16 +620,6 @@ class DQNetwork:
 
 				# Gradient clipping -> we need to compute, clip and apply the gradient
 				# Reference: https://stackoverflow.com/questions/36498127/how-to-apply-gradient-clipping-in-tensorflow
-				# BoulderDash
-				# 1e-8 con alfa=0.0001 - too high
-				# 1e-9 con alfa=0.0001 - bien, pero disminuye muy lento el loss y el q-target va hacia -100
-				# 1e-9 con alfa=0.00005 - bien, pero disminuye muy lento el loss 
-				# IceAndFire
-				# 1e-9 con alfa=0.0001 - bien, pero converge muy lento el loss
-				# -- Vuelvo a usar 1e-8 
-				# IceAndFire, alfa=0.0001, 1e-8 -> disminuye demasiado lento el loss -> NO USAR CLIPPING CON ICEANDFIRE
-				# BoulderDash, alfa=0.00005, 1e-8 -> too high (el q-target diverge)
-				# BoulderDash, alfa=0.00002, 1e-8 -> disminuye demasiado lento el loss
 
 				#max_grad_value = 1e-8 # Clip gradient between (max_grad_value, -max_grad_value)
 				#gvs = self.optimizer.compute_gradients(self.loss)
@@ -679,27 +670,30 @@ class DQNetwork:
 	def close_session(self):
 		self.sess.close()
 
-	# Predicts the associated y-value (plan length) for x (a (subgoal, game state) pair one-hot encoded)
+	# Predicts the associated y-value for a (s,a ) pair)
 	# Dropout is not activated
-	def predict(self, x):
+	def predict(self, x, a):
 		# Shape of a one-element batch
 		x_shape = [1]
 		x_shape.extend(self.sample_size) # e.g.: [1, 13, 26, 9]
-
+		
 		# Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
 		x_resh = np.reshape(x, x_shape)
+		
+		# Reshape input action so that it has the shape of a one-element batch
+		a_resh = np.reshape(a, [1, 4])
 
-		data_dict = {self.X : x_resh,
+		data_dict = {self.X : x_resh, self.input_action : a_resh,
 		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
 
 		return prediction
 
-	# Predicts the associated y-value (plan length) for a batch of x ((subgoal, game state) pairs one-hot encoded)
+	# Predicts the associated y-value (plan length) for a batch of x and a)
 	# Dropout is not activated
-	def predict_batch(self, x):
-		data_dict = {self.X : x,
+	def predict_batch(self, x, a):
+		data_dict = {self.X : x, self.input_action : a,
 		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
@@ -710,13 +704,13 @@ class DQNetwork:
 	# Dropout is activated
 	# Returns the absolute errors abs(Q_target - Q_val) to update the priority scores of
 	# the experience replay
-	def train(self, X, Y, sample_weights=None, num_its = 1):
+	def train(self, X, A, Y, sample_weights=None, num_its = 1):
 		# If sample_weights is None, use a weight of 1 for each sample
 		if sample_weights is None:
 			num_samples = X.shape[0]
 			sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
-		data_dict = {self.X : X,
+		data_dict = {self.X : X, self.input_action : A,
 		 self.Q_target : Y, self.sample_weights : sample_weights,
 		 self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
@@ -736,13 +730,13 @@ class DQNetwork:
 
 	# Calculate Training Loss and store it as a log
 	# Dropout is not activated
-	def save_logs(self, X, Y, it):
+	def save_logs(self, X, A, Y, it):
 		# Use sample_weights = 1 for every sample in X
 		num_samples = X.shape[0]
 		sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
 		# Training Loss
-		data_dict_train = {self.X : X,
+		data_dict_train = {self.X : X, self.input_action : A,
 		 self.sample_weights : sample_weights,
 		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
