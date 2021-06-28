@@ -118,7 +118,7 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 6 # Index of the first repetition
+ini_rep_model = 10 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
