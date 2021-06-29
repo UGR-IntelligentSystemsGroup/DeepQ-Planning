@@ -105,7 +105,7 @@ games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
 # VER SI CUANDO USO MENOS DE 200 NIVELES LOS NIVELES SE ESCOGEN AL AZAR CON LA MISMA SEMILLA O CAMBIA PARA CADA REPETICIÓN!!!
-datasets_sizes_for_training_BoulderDash = [25] # [10,25,50,100,200] # 200 # 100
+datasets_sizes_for_training_BoulderDash = [10] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
@@ -118,7 +118,7 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 1 # Index of the first repetition
+ini_rep_model = 6 # Index of the first repetition
 repetitions_per_model = 1 # 15 # Each model is trained this number of times
 
 # Test level indexes
