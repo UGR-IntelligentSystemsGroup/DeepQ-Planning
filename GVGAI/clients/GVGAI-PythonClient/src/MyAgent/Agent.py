@@ -307,13 +307,17 @@ class Agent(AbstractPlayer):
 
 		else: # Test
 
+            # Maximum number of actions allowed to complete a test level
+            # If this number is reached, the agent automatically loses the level
+            self.max_actions_per_test_lv = 2000
+
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
 			# "random" -> select a random one (corresponds with the random model)
 			# "greedy" -> plans to every subgoal and selects the one with the shortest plan
 			# Automatically changed by the scripts!
 			self.goal_selection_mode="best"
 
-			# Create Learning Model unles goal selection model is random
+			# Create Learning Model unless goal selection model is random
 
 			if self.goal_selection_mode == "best":
 				# DQNetwork
@@ -404,16 +408,13 @@ class Agent(AbstractPlayer):
 		self.is_training = not sso.isValidation # It's the opposite to sso.isValidation
 
 		# If it's validation/test phase, count the number of actions used
-		# to beat the current level and the number of incorrect subgoals
-		# (not eligible) the agent selects
+		# to beat the current level
 		if self.EXECUTION_MODE == 'test' and not self.is_training:
-			self.num_actions_lv = 0
-			self.num_incorrect_subgoals = 0
+			self.num_actions_lv = 0 # Number of actions used to complete the current level
 
-			# Measure the goal selection + planning times
-			self.total_time_planning_curr_lv = 0
-			self.total_time_goal_selec_curr_lv = 0
-
+			# Measure the action selection time
+			self.total_time_act_selec_curr_lv = 0 # This time is also used to measure action selection time for DQL model
+			
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -767,178 +768,28 @@ class Agent(AbstractPlayer):
 			return next_action
 
 		else: # Execution mode = test
-			pass
+            
+            # Check if the agent has reached the maximum allowed number of actions
+            # Then, the agent escapes the lv (it loses the lv)
+            if self.num_actions_lv == self.max_actions_per_test_lv:
+                return 'ACTION_ESCAPE'
+            
+            # Check if the agent can act at the current game state, i.e., execute an action.
+            # If it can't, the agent returns 'ACTION_NIL'
+            if not self.can_act(sso):
+                return 'ACTION_NIL'
 
+            # Obtain the best action (the one with the highest Q-value) and measure action selection time by the DQN
+            start = time.time()
+            next_action = self.get_best_action(sso)
+            end = time.time()
+            
+            self.total_time_act_selec_curr_lv += end-start # Add the action selection time to the total time per this level
+            
+            # Return the best action and count the number of actions used
+            self.num_actions_lv += 1
+            return next_action
 
-
-
-		# OLD
-
-		"""
-		# Check if the agent can act at the current game state, i.e., execute an action.
-		# If it can't, the agent returns 'ACTION_NIL'
-		if not self.can_act(sso):
-			return 'ACTION_NIL'
-
-		# If the plan is empty, get a new one
-		if len(self.action_list) == 0:
-			# Get eligible subgoals at the current state
-			subgoals = self.get_subgoals_positions(sso)
-
-			# Make sure no subgoal is at the agent's position
-			avatar_position = (int(sso.avatarPosition[0] // sso.blockSize),
-								 int(sso.avatarPosition[1] // sso.blockSize))
-			
-			if avatar_position in subgoals:
-				subgoals.remove(avatar_position)
-
-			# Choose a random subgoal if the agent is randomly exploring
-			if self.EXECUTION_MODE=="create_dataset":
-				# Choose a random subgoal until one is attainable (search_plan returns a non-empty plan)
-				while len(subgoals) > 0 and len(self.action_list) == 0: 
-					ind_subgoal = random.randint(0, len(subgoals) - 1)
-
-					chosen_subgoal = subgoals[ind_subgoal]
-					del subgoals[ind_subgoal] # Delete the chosen subgoal from the list
-
-					# If the game is IceAndFire, check how many types of boots the agent has
-					if self.game_playing == 'IceAndFire': 
-						boots_resources = self.get_boots_resources(sso)
-					else:
-						boots_resources = []
-
-					# Obtain the plan
-					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
-					
-					# Collect samples for the experience replay
-					self.add_samples_to_memory(sso, chosen_subgoal, len(self.action_list))
-					self.total_num_samples += 1
-
-					# Show the number of samples collected periodically
-					print("New sample")
-
-					if self.total_num_samples % 10 == 0:
-						print("n_total_samples:", self.total_num_samples)
-						print("n_unique_samples:", len(self.memory))
-
-				# If there is no plan, it means that at the current game state no subgoal is attainable ->
-				# the agent escapes the level (loses the game)
-				if len(self.action_list) == 0:
-					return 'ACTION_ESCAPE'
-
-			# Use the Learning model to select a subgoal if the agent is in test/validation phase
-			else:
-				ordered_subgoals = False # If true, get_best_subgoals has already been called
-
-				# Keep selecting subgoal until one is attainable from the current state of the game
-				while len(subgoals) > 0 and len(self.action_list) == 0:
-
-					# Select the subgoal using either the learning model or randomly (random model)
-					if self.goal_selection_mode == "best": # Use the model to select the best subgoal
-
-						# Order subgoals by their predicted Q_values
-						if not ordered_subgoals: # Only do it once
-							ordered_subgoals = True
-
-							# Measure goal selection time
-							start = time.time()
-
-							subgoals = self.get_best_subgoals(sso, subgoals)
-
-							end = time.time()
-
-							if not self.is_training:
-								self.total_time_goal_selec_curr_lv += end-start
-
-						# Get the first subgoal (the one with the smallest Q_value)
-						chosen_subgoal = subgoals[0]
-
-					elif self.goal_selection_mode == "random": # Select subgoals randomly
-						chosen_subgoal = subgoals[random.randint(0, len(subgoals) - 1)]
-
-					# goal selection mode = greedy
-					else: # Plan to every subgoal and select the one of the shortest plan
-
-						# Order subgoals by their plan lengths
-						if not ordered_subgoals: # Only do it once
-							ordered_subgoals = True
-
-							# Measure planning times
-							start = time.time()
-
-							old_subgoals = subgoals
-							subgoals = self.order_subgoals_by_plan_length(sso, subgoals)
-
-							end = time.time()
-
-							if not self.is_training:
-								self.total_time_planning_curr_lv += end-start
-
-						# Get the first subgoal (the one with the smallest plan length)
-						if len(subgoals) > 0:
-							chosen_subgoal = subgoals[0]
-						else: # If there is no valid subgoal, choose any subgoal
-							chosen_subgoal = old_subgoals[0]
-
-					# Remove the selected subgoal from the list of eligible subgoals
-					if len(subgoals) > 0:
-						subgoals.remove(chosen_subgoal)
-
-					# If the game is IceAndFire, check how many types of boots the agent has
-					if self.game_playing == 'IceAndFire': 
-						boots_resources = self.get_boots_resources(sso)
-					else:
-						boots_resources = []
-
-					# Obtain the plan
-
-					start = time.time()
-
-					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
-
-					end = time.time()
-
-					# Measure planning time unless the goal selection mode is greedy, because in that case
-					# we have already planned for each subgoal
-					# (we could actually obtain a list of plans for each possible subgoal in that case but
-					# to simplify the code we plan for each subgoal again (even though it's not needed) and
-					# don't add the planning time)
-					if not self.is_training and self.goal_selection_mode != "greedy":
-						self.total_time_planning_curr_lv += end-start
-
-					# If there is no valid plan to the chosen subgoal, increment the number of
-					# non-eligible subgoals selected
-					if len(self.action_list) == 0:
-						self.num_incorrect_subgoals += 1 
-
-				# If none of the subgoals is attainable, the agent is at a dead end ->
-				# the agent loses the game and escapes the level
-				if len(self.action_list) == 0:
-					self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
-					return 'ACTION_ESCAPE'
-
-		# Save dataset and exit the program if the experience replay is the right size
-		if self.EXECUTION_MODE == 'create_dataset':
-			if self.total_num_samples >= self.num_total_samples_for_saving_dataset or \
-				len(self.memory) >= self.num_unique_samples_for_saving_dataset:
-			
-				self.save_dataset(self.dataset_save_path, self.datasets_sizes_file_path)
-
-				# Exit the program with success code
-				sys.exit()
-
-		# Execute Plan
-
-		# If a plan has been found, return the first action
-		if len(self.action_list) > 0:
-			if not self.is_training: # Count the number of actions used to complete the level
-				self.num_actions_lv += 1
-
-			return self.action_list.pop(0)
-		else:
-			print("\n\nEMPTY PLAN\n\n")
-			return 'ACTION_NIL'
-		"""
 
 	def add_samples_to_memory(self, sso, chosen_action, obtained_reward=0):
 		"""
@@ -1211,7 +1062,63 @@ class Agent(AbstractPlayer):
 		else:
 			return True 
 
+    def get_best_action(self, sso):
+        """
+        Returns a list of the best action to execute, the one with the highest predicted Q-value, in the current
+        state sso.
+        """
+        
+        # Obtain one-hot encoding for current state sso
+        one_hot_grid = self.encode_game_state(sso.observationGrid)
+        
+		# Repeat the one_hot_grid four times
+		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(self.POSSIBLE_ACTIONS), axis=0)
+		
+		# Obtain an array representing each possible action
+		action_array = np.array([ [1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1] ])
 
+		# Get the Q-value for each possible action
+		Q_values = self.model.predict_batch(one_hot_grid_array, action_array)
+
+		# Order the actions according to their Q_values
+
+		# Order this list according to the first element (Q_values), big first small last
+		sorted_zip_list = sorted(zip(Q_values, self.POSSIBLE_ACTIONS), reverse=True)
+
+		# Obtain the action with the highest Q_value
+		best_action = sorted_zip_list[0][1]
+
+		#print("----------------")
+		#print("Q_values:", Q_values)
+		#print("Best action:",  best_action)
+		#print("----------------")
+
+		return best_action
+
+
+    def get_sso_hash(self, sso):
+        """
+        Obtains the hash of the current state of the game. It only takes into account the
+        observation matrix.
+        """
+        
+        obs_matrix = []
+		obs = sso.observationGrid
+		X_MAX = sso.observationGridNum
+		Y_MAX = sso.observationGridMaxRow
+
+		for y in range(Y_MAX):
+			for x in range(X_MAX):
+				observation = obs[x][y][0]
+
+				if observation is None:
+					obs_matrix.append(-1)
+				else:
+					obs_matrix.append(observation.itype)
+        
+        return hash(tuple(obs_matrix))
+        
+        
 	def get_sso_subgoal_hash(self, sso, chosen_subgoal):
 		"""
 		Given the current state of the game and the chosen subgoal, it returns a hash. 
@@ -1739,10 +1646,10 @@ class Agent(AbstractPlayer):
 
 		if self.EXECUTION_MODE == 'test' and not self.is_training:
 
-			# Check if the player hasn't been able to complete the level (timeout) or has died
-			if sso.gameWinner == "PLAYER_LOSES":
+			# Check if the player hasn't been able to complete the level (timeout), has died or has reached the maximum number of allowed actions
+			if sso.gameWinner == "PLAYER_LOSES" or self.num_actions_lv == self.max_actions_per_test_lv:
 				print("\n\nThe player has lost\n\n")
-				self.num_incorrect_subgoals = -1 # This represents the agent has lost the game
+				self.num_actions_lv = -1 # This represents the agent has lost the game (or hasn't been able to complete it)
 
 			# Calculate average time per subgoal in the current level
 			# mean_time_curr_level = self.total_time_curr_lv / self.num_calls_planner
@@ -1752,10 +1659,9 @@ class Agent(AbstractPlayer):
 			test_output_file = "test_output.txt"
 
 			with open(test_output_file, "a") as file:
-				if self.goal_selection_mode == "best":
-					file.write("{}-{} | {} | {} | {} | {} | {}\n".format(self.network_name, self.num_train_its_model,
-					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
-					 self.total_time_planning_curr_lv, self.total_time_goal_selec_curr_lv))
+				if self.goal_selection_mode == "best": # DQL model
+					file.write("{}-{} | {} | {} | {} \n".format(self.network_name, self.num_train_its_model,
+					 self.game_playing, self.num_actions_lv, self.total_time_act_selec_curr_lv))
 				else:
 					file.write("{} | {} | {} | {} | {}\n".format(self.network_name,
 					 self.game_playing, self.num_incorrect_subgoals, self.num_actions_lv,
