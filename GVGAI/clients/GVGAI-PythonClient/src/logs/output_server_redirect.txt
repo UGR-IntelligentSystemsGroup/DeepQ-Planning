@@ -1,4 +1,1 @@
 [GAME] Game idx:11 game name boulderdash
-[PHASE] Starting First Phase of Training in 3 levels.
-[TRAINING] Result (1->win; 0->lose): level:0, Player0:1, Player0-Score:44.0, timesteps:316
-[TRAINING] Result (1->win; 0->lose): level:1, Player0:1, Player0-Score:44.0, timesteps:318

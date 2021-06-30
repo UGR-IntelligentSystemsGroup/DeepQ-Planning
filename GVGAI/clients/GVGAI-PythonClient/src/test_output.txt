@@ -1,0 +1,19 @@
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.771324396133423 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 2.9577763080596924 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.745027542114258 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 2.9338433742523193 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.666300058364868 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 2.898712635040283 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.686873435974121 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 2.9548850059509277 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.596508264541626 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 2.893049955368042 
+DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1_lvs=200-500000 | BoulderDash | -1 | 3.500340700149536 
+
+-----------------------------------------------------------------------------------
+
+
+
+Nuevo
+
+
