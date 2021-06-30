@@ -77,7 +77,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing='BoulderDash'
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -99,14 +99,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="create_dataset"
+		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=200
+		self.dataset_size_for_training=1
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-1e-06_BoulderDash_1"
+		self.network_name="DQN_prueba_DQL_ACTION_USE_alfa-1e-05_BoulderDash_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -229,10 +229,10 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=1e-06
+		self.learning_rate=1e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=500000
+		self.num_train_its=50000
 		self.batch_size=32
 		self.use_BN=True
 		
@@ -369,14 +369,14 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=500000
+				self.num_train_its_model=50000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
 
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=1
+			self.num_test_levels=2
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -600,22 +600,28 @@ class Agent(AbstractPlayer):
 						np.random.shuffle(self.memory)
 
 				#Memory samples are of the form (s,a,r,s')
-				batch_S = np.array([each[0] for each in batch]) 
+				batch_S = np.array([each[0][0] for each in batch]) 
+				batch_O = np.array([each[0][1] for each in batch]) # Player orientation for each state s
 				batch_A = [each[1] for each in batch] 
 				batch_R = np.array([each[2] for each in batch]) 
-				batch_next_S = np.array([each[3] for each in batch]) 
+				batch_next_S = np.array([each[3][0] for each in batch]) 
+				batch_next_O = np.array([each[3][1] for each in batch]) # Player orientation for each next state s'
 				
 				# One-hot encode actions in batch_A
 				batch_A = self.encode_action_batch(batch_A)
 
+				# One-hot encode orientations in batch_O and batch_next_O
+				batch_O = self.encode_avatar_orientation_batch(batch_O)
+				batch_next_O = self.encode_avatar_orientation_batch(batch_next_O) # Por aquí
+
 				# Calculate Q_targets
 				Q_targets = []
 				
-				for r, next_s in zip(batch_R, batch_next_S):
+				for r, next_s, next_o in zip(batch_R, batch_next_S, batch_next_O):
 					# Modify the reward when the current state is terminal (the next
 					# state s is None)
 					
-					Q_target = r + self.gamma*self.get_max_Q_value(next_s)
+					Q_target = r + self.gamma*self.get_max_Q_value(next_s, next_o)
 					Q_targets.append(Q_target)
 
 				# Clip the Q-targets to [-200,200]
@@ -626,9 +632,9 @@ class Agent(AbstractPlayer):
 				# Execute one training step
 				# absolute_errors is used to update the priority scores of the PER	
 				if self.use_PER:			
-					absolute_errors = self.model.train(batch_S, batch_A, Q_targets, sample_weights, num_its = self.num_repetitions_each_train_call)
+					absolute_errors = self.model.train(batch_S, batch_O, batch_A, Q_targets, sample_weights, num_its = self.num_repetitions_each_train_call)
 				else: # If we are not using PER, don't pass sample_weights
-					self.model.train(batch_S, batch_A, Q_targets, num_its = self.num_repetitions_each_train_call)
+					self.model.train(batch_S, batch_O, batch_A, Q_targets, num_its = self.num_repetitions_each_train_call)
 
 				# Update the priority scores of the PER
 				if self.use_PER:
@@ -640,7 +646,7 @@ class Agent(AbstractPlayer):
 
 				# Save Logs every 1000 training its
 				if curr_it % 1000 == 0 and curr_it > 0:
-					self.model.save_logs(batch_S, batch_A, Q_targets, curr_it)
+					self.model.save_logs(batch_S, batch_O, batch_A, Q_targets, curr_it)
 
 				# Save the model each X training its along with the weights tree (if we are using PER)
 				if curr_it % self.num_its_each_model_save == 0 and curr_it > 0:	
@@ -825,8 +831,6 @@ class Agent(AbstractPlayer):
 
 		avatar_orientation = dict_avatar_orientation[tuple(sso.avatarOrientation)]
 
-
-
 		return avatar_orientation
 
 
@@ -878,24 +882,62 @@ class Agent(AbstractPlayer):
 			self.mem_sample = [(one_hot_grid, avatar_orientation), chosen_action] # (s,a,_,_)
 
 
+	def encode_avatar_orientation(self, orientation):
+		"""
+		Encodes a single orientation from string to one-hot.
+		
+		Example: "UP" -> [1,0,0,0]
+		"""
+
+		if orientation is None:
+			return [0,0,0,0]
+
+		orientation_encoding_dict = {"UP" : 0, "RIGHT" : 1, "DOWN" : 2, "LEFT" : 3}
+
+		encoded_orientation = [0,0,0,0]
+		encoded_orientation[orientation_encoding_dict[orientation]] = 1
+			
+		return encoded_orientation
+
+
+	def encode_avatar_orientation_batch(self, orientation_batch):
+		"""
+		Receives a list of orientations @orientation_batch, represented as a vector of strings,
+		and returns that same vector of orientations but each orientation encoded as a one-hot vector.
+		
+		Example: ["UP", "RIGHT"] -> np.array([ [1,0,0,0], [0,1,0,0] ] )
+		"""
+
+		orientation_batch_encoded = []
+		
+		for curr_orientation in orientation_batch:
+			encoded_orientation = self.encode_avatar_orientation(curr_orientation)
+
+			orientation_batch_encoded.append(encoded_orientation)
+		
+		orientation_batch_encoded = np.array(orientation_batch_encoded).reshape((-1,4))
+		
+		return orientation_batch_encoded
+
+
 	def encode_action_batch(self, action_batch):
 		"""
 		Receives a list of actions @action_batch, represented as a vector of strings,
 		and returns that same vector of actions but each action encoded as a one-hot vector.
 		
-		Example: ["ACTION_UP", "ACTION_RIGHT"] -> np.array([ [1,0,0,0], [0,1,0,0] ] )
+		Example: ["ACTION_UP", "ACTION_RIGHT"] -> np.array([ [1,0,0,0,0], [0,1,0,0,0] ] )
 		"""
-		action_encoding_dict = {"ACTION_UP" : 0, "ACTION_RIGHT" : 1, "ACTION_DOWN" : 2, "ACTION_LEFT" : 3}
+		action_encoding_dict = {"ACTION_UP" : 0, "ACTION_RIGHT" : 1, "ACTION_DOWN" : 2, "ACTION_LEFT" : 3, "ACTION_USE" : 4}
 		
 		action_batch_encoded = []
 		
 		for curr_action in action_batch:
-			encoded_action = [0,0,0,0]
+			encoded_action = [0,0,0,0,0]
 			encoded_action[action_encoding_dict[curr_action]] = 1
 			
 			action_batch_encoded.append(encoded_action)
 		
-		action_batch_encoded = np.array(action_batch_encoded).reshape((-1,4))
+		action_batch_encoded = np.array(action_batch_encoded).reshape((-1,5))
 		
 		return action_batch_encoded
 
@@ -1109,17 +1151,23 @@ class Agent(AbstractPlayer):
 		state sso.
 		"""
 		
+		# Obtain the current player orientation and one-hot encode it
+		player_orientation = np.array(self.encode_avatar_orientation(self.get_avatar_orientation(sso)))
+
 		# Obtain one-hot encoding for current state sso
 		one_hot_grid = self.encode_game_state(sso.observationGrid)
 		
-		# Repeat the one_hot_grid four times
+		# Repeat the one_hot_grid five times
 		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(self.POSSIBLE_ACTIONS), axis=0)
 		
+		# Repeat the orientation five times
+		orientation_array = np.repeat(player_orientation[np.newaxis, :], len(self.POSSIBLE_ACTIONS), axis=0)
+
 		# Obtain an array representing each possible action
-		action_array = np.array([ [1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1] ])
+		action_array = np.array([ [1,0,0,0,0], [0,1,0,0,0], [0,0,1,0,0], [0,0,0,1,0], [0,0,0,0,1] ])
 
 		# Get the Q-value for each possible action
-		Q_values = self.model.predict_batch(one_hot_grid_array, action_array)
+		Q_values = self.model.predict_batch(one_hot_grid_array, orientation_array, action_array)
 
 		# Order the actions according to their Q_values
 
@@ -1493,7 +1541,7 @@ class Agent(AbstractPlayer):
 
 		return ordered_subgoals
 
-	def get_max_Q_value(self, one_hot_grid):
+	def get_max_Q_value(self, one_hot_grid, player_orientation):
 		"""
 		This method is used to compute the Q-target. It calculates the maximum Q-value associated
 		with the state given by one_hot_grid.
@@ -1505,21 +1553,24 @@ class Agent(AbstractPlayer):
 		if one_hot_grid is None:
 			return 0
 
-		# Repeat the one_hot_grid four times
+		# Repeat the one_hot_grid five times
 		one_hot_grid_array = np.repeat(one_hot_grid[np.newaxis, :, :, :], len(self.POSSIBLE_ACTIONS), axis=0)
 		
+		# Repeat the player orientation five times
+		orientation_array = np.repeat(player_orientation[np.newaxis, :], len(self.POSSIBLE_ACTIONS), axis=0)
+
 		# Obtain an array representing each possible action
-		action_array = np.array([ [1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1] ])
+		action_array = np.array([ [1,0,0,0,0], [0,1,0,0,0], [0,0,1,0,0], [0,0,0,1,0], [0,0,0,0,1] ])
 
 		# Get the action with the maximum Q_val as predicted by the DQN Network
-		Q_values_DQN = self.model.predict_batch(one_hot_grid_array, action_array)
+		Q_values_DQN = self.model.predict_batch(one_hot_grid_array, orientation_array, action_array)
 		best_action_ind = np.argmax(Q_values_DQN)
 		
-		best_action = [0,0,0,0]
+		best_action = [0,0,0,0,0]
 		best_action[best_action_ind] = 1
 
 		# Get the max Q_value associated with the best goal, using the Target Network
-		max_Q_val = self.target_network.predict(one_hot_grid, np.array(best_action))
+		max_Q_val = self.target_network.predict(one_hot_grid, player_orientation, np.array(best_action))
 
 		return max_Q_val
 
@@ -1674,11 +1725,11 @@ class Agent(AbstractPlayer):
 
 				if sso.gameWinner == "PLAYER_LOSES":
 					print("Incomplete mem_sample in result method - Player Loses")
-					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.LOSE_REWARD, None]
+					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.LOSE_REWARD, (None, None)]
 
 				else:
 					print("Incomplete mem_sample in result method - Player Wins")
-					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.WIN_REWARD, None]
+					final_mem_sample = [self.mem_sample[0], self.mem_sample[1], self.WIN_REWARD, (None, None)]
 
 				# Add the final mem_sample of the level to the experience replay
 				self.memory.append(final_mem_sample)

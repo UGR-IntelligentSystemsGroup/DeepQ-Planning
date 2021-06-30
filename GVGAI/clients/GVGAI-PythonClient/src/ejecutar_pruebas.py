@@ -92,8 +92,7 @@ fc_num_unis = [[128,1,1,1]]
 
 # Training params
 tau=[10000] # 10000 # Update period of the target network
-# CAMBIAR
-alfa = [0.000001] # 0.00001 # Learning rate
+alfa = [0.00001] # 0.00001 # Learning rate
 gamma = [0.7] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
@@ -106,12 +105,12 @@ games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
 # CAMBIAR>>>>
-datasets_sizes_for_training_BoulderDash = [200] # [10,25,50,100,200] # 200 # 100
+datasets_sizes_for_training_BoulderDash = [1] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
 # CAMBIAR
-num_its_BoulderDash = [500000] # 1200000
+num_its_BoulderDash = [50000] # 1200000
 num_its_IceAndFire = [10000000] # 5000000
 num_its_Catapults = [20000000] # 30000000
 
@@ -468,7 +467,7 @@ try:
 				#				format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 				#				curr_alfa, curr_num_its, curr_game, curr_rep)
 
-				curr_model_name = "DQN_prueba_DQL_train_test_same_testing_on_lv_1_alfa-{}_{}_{}".format(curr_alfa, curr_game, curr_rep)
+				curr_model_name = "DQN_prueba_DQL_ACTION_USE_alfa-{}_{}_{}".format(curr_alfa, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 

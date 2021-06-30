@@ -73,8 +73,11 @@ class DQNetwork:
 
 			self.X = tf.placeholder(tf.float32, X_shape, name="X") # type tf.float32 is needed for the rest of operations
 			
+			# Player orientation (is part of the state s)
+			self.player_orientation = tf.placeholder(tf.float32, [None, 4], name="player_orientation")
+
 			# Action a
-			self.input_action = tf.placeholder(tf.float32, [None, 4], name="input_action")
+			self.input_action = tf.placeholder(tf.float32, [None, 5], name="input_action")
 
 			# Q_target = R(s,a) + gamma * min Q(s', a') (s' next state after s)
 			self.Q_target = tf.placeholder(tf.float32, [None, 1], name="Q_target")
@@ -521,8 +524,8 @@ class DQNetwork:
 			# Flatten output of conv layers
 			self.flatten = tf.contrib.layers.flatten(self.conv20)
 
-			# Concatenate input action "a"
-			self.flatten = tf.concat([self.flatten, self.input_action], 1)
+			# Concatenate player orientation and input action "a"
+			self.flatten = tf.concat([self.flatten, self.player_orientation, self.input_action], 1)
 			
 			# Fully connected layer 1
 
@@ -672,18 +675,21 @@ class DQNetwork:
 
 	# Predicts the associated y-value for a (s,a ) pair)
 	# Dropout is not activated
-	def predict(self, x, a):
+	def predict(self, x, orientation, a):
 		# Shape of a one-element batch
 		x_shape = [1]
 		x_shape.extend(self.sample_size) # e.g.: [1, 13, 26, 9]
 		
-		# Reshape x so that it has the shape of a one-element batch and can be fed into the placeholder
+		# Reshape the one-hot-matrix so that it has the shape of a one-element batch and can be fed into the placeholder
 		x_resh = np.reshape(x, x_shape)
 		
 		# Reshape input action so that it has the shape of a one-element batch
-		a_resh = np.reshape(a, [1, 4])
+		a_resh = np.reshape(a, [1, 5])
 
-		data_dict = {self.X : x_resh, self.input_action : a_resh,
+		# Reshape player orientation so that it has the shape of a one-element batch
+		orient_resh = np.reshape(orientation, [1, 4])
+
+		data_dict = {self.X : x_resh, self.player_orientation : orient_resh, self.input_action : a_resh,
 		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
@@ -692,8 +698,8 @@ class DQNetwork:
 
 	# Predicts the associated y-value (plan length) for a batch of x and a)
 	# Dropout is not activated
-	def predict_batch(self, x, a):
-		data_dict = {self.X : x, self.input_action : a,
+	def predict_batch(self, x, orientation, a):
+		data_dict = {self.X : x, self.player_orientation : orientation, self.input_action : a,
 		 self.is_training : False, self.dropout_placeholder : 0.0}
 
 		prediction = self.sess.run(self.Q_val, feed_dict=data_dict)
@@ -704,13 +710,13 @@ class DQNetwork:
 	# Dropout is activated
 	# Returns the absolute errors abs(Q_target - Q_val) to update the priority scores of
 	# the experience replay
-	def train(self, X, A, Y, sample_weights=None, num_its = 1):
+	def train(self, X, Orientation, A, Y, sample_weights=None, num_its = 1):
 		# If sample_weights is None, use a weight of 1 for each sample
 		if sample_weights is None:
 			num_samples = X.shape[0]
 			sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
-		data_dict = {self.X : X, self.input_action : A,
+		data_dict = {self.X : X, self.player_orientation : Orientation, self.input_action : A,
 		 self.Q_target : Y, self.sample_weights : sample_weights,
 		 self.is_training : True, self.dropout_placeholder : self.dropout_prob}
 
@@ -730,13 +736,13 @@ class DQNetwork:
 
 	# Calculate Training Loss and store it as a log
 	# Dropout is not activated
-	def save_logs(self, X, A, Y, it):
+	def save_logs(self, X, Orientation, A, Y, it):
 		# Use sample_weights = 1 for every sample in X
 		num_samples = X.shape[0]
 		sample_weights = np.repeat(1,num_samples).reshape((num_samples,1))
 
 		# Training Loss
-		data_dict_train = {self.X : X, self.input_action : A,
+		data_dict_train = {self.X : X, self.player_orientation : Orientation, self.input_action : A,
 		 self.sample_weights : sample_weights,
 		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
