@@ -105,7 +105,7 @@ games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
 # VER SI CUANDO USO MENOS DE 200 NIVELES LOS NIVELES SE ESCOGEN AL AZAR CON LA MISMA SEMILLA O CAMBIA PARA CADA REPETICIÓN!!!
-datasets_sizes_for_training_BoulderDash = [10] # [10,25,50,100,200] # 200 # 100
+datasets_sizes_for_training_BoulderDash = [10,25,50,100,200] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
@@ -118,8 +118,8 @@ num_its_resume_training = 0 # For a value different than 0, load the checkpoint 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 6 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+ini_rep_model = 1 # Index of the first repetition
+repetitions_per_model = 10 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -138,10 +138,10 @@ test_it_interval = 100000 # Cambiar # Only test last num of its # 100000
 # Cambiar self.num_its_each_model_save en Agent.py!!!
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
-skip_train = False
+skip_train = True
 
 # If True, only training is performed.
-skip_test = True
+skip_test = False
 
 # <Script variables>
 
