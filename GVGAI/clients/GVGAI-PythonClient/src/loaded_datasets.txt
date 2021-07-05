@@ -1,1 +1,1 @@
-SavedDatasets/dataset_BoulderDash_70.dat
+SavedDatasets/dataset_BoulderDash_0.dat

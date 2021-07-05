@@ -92,8 +92,11 @@ fc_num_unis = [[128,1,1,1]]
 
 # Training params
 tau=[10000] # 10000 # Update period of the target network
+# CAMBIAR
 alfa = [0.00001] # 0.00001 # Learning rate
-gamma = [0.7] # 0.7 # Discount rate for rewards
+# CAMBIAR
+# gamma=0.99 es el learning rate usado en el paper original DQN
+gamma = [0.99] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
 batch_size = [32] # 32
 
@@ -105,15 +108,16 @@ games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
 # CAMBIAR>>>>
-datasets_sizes_for_training_BoulderDash = [1] # [10,25,50,100,200] # 200 # 100
+datasets_sizes_for_training_BoulderDash = [200] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
 # Number of iterations for training
 # CAMBIAR
-num_its_BoulderDash = [50000] # 1200000
+num_its_BoulderDash = [10000000] # 1200000
 num_its_IceAndFire = [10000000] # 5000000
 num_its_Catapults = [20000000] # 30000000
 
+# CAMBIAR
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
 # Times for PER and random sampling are equal!!!
@@ -128,12 +132,11 @@ repetitions_per_model = 1 # 15 # Each model is trained this number of times
 # The need to be grouped in pairs (or as a one-element tuple)
 # test_level_indexes = [(5,6),(7,8),(9,10)]
 # test_level_indexes = [(0,1),(2,3),(4,)] # Use this one for validation
-# test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
-test_all_its = False # Cambiar
+test_all_its = True # Cambiar
 test_it_interval = 100000 # Cambiar # Only test last num of its # 100000
 # Cambiar self.num_its_each_model_save en Agent.py!!!
 
@@ -141,7 +144,7 @@ test_it_interval = 100000 # Cambiar # Only test last num of its # 100000
 skip_train = False
 
 # If True, only training is performed.
-skip_test = False
+skip_test = True
 
 # <Script variables>
 
@@ -467,7 +470,7 @@ try:
 				#				format(curr_fc_num_unis[0], curr_fc_num_unis[1], curr_gamma,
 				#				curr_alfa, curr_num_its, curr_game, curr_rep)
 
-				curr_model_name = "DQN_prueba_DQL_ACTION_USE_alfa-{}_{}_{}".format(curr_alfa, curr_game, curr_rep)
+				curr_model_name = "DQN_DQL_Results_ESWA_r-5_5000-samples-per-train-lv_gamma-{}_alfa-{}_{}_{}".format(curr_gamma, curr_alfa, curr_game, curr_rep)
 
 			print("\n\nCurrent model: {} - Current repetition: {}\n".format(curr_model_name, curr_rep))
 
@@ -537,7 +540,7 @@ try:
 					array_its_to_test = [curr_num_its]
 				else:
 					array_its_to_test = [i for i in range(test_it_interval, curr_num_its+1, test_it_interval)]
-
+					
 				# Obtain the test results of the model for each number of its
 				for array_its_to_test_curr_elem in array_its_to_test:
 

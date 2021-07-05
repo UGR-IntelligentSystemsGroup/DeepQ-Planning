@@ -1,2 +1,2311 @@
+>>> SIN LOOP DETECTION -> NO ES CAPAZ DE RESOLVER NINGUNA VEZ EL NIVEL SIMPLE (EL MISMO EN EL QUE FUE ENTRENADO)
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 0.7531342506408691 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 0.7455368041992188 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 0.7413637638092041 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 0.7732105255126953 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 0.8088173866271973 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 0.7305982112884521 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 0.7339847087860107 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 0.7342283725738525 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 0.7435257434844971 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 0.7294254302978516 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 0.7731022834777832 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 0.72735595703125 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 0.7182619571685791 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 0.7319836616516113 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 0.8294634819030762 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 0.7294678688049316 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | -1 | 0.7721209526062012 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 0.7264735698699951 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 0.7462174892425537 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 0.7220146656036377 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 0.7471680641174316 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 0.7561855316162109 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 0.7475175857543945 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 0.7393033504486084 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 0.7495028972625732 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 0.7368803024291992 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 0.7767322063446045 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 0.7332959175109863 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 0.7382040023803711 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 0.7441880702972412 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 0.8284683227539062 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | -1 | 0.7396185398101807 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | -1 | 0.7466561794281006 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 0.7446441650390625 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 0.7606041431427002 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 0.7408313751220703 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | -1 | 0.7209064960479736 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | -1 | 0.7719783782958984 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | -1 | 0.7726988792419434 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | -1 | 0.726048469543457 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | -1 | 0.8362126350402832 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | -1 | 0.7366878986358643 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 0.7297587394714355 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 0.7520697116851807 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 0.7276597023010254 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 0.7375068664550781 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 0.8598887920379639 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 0.7379856109619141 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | -1 | 0.7740159034729004 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 0.7311394214630127 
+
+-----------------------------------------------------------------------------------
+
+
+>>> Con Loop Detection (max. num actions = 500) -> La mayoría de las veces no puede resolver el nivel pero en algunos
+    casos sí lo resuelve (como con 2600000 its)
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | 494 | 1.3114306926727295 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.3324966430664062 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.3065717220306396 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.318620204925537 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.485140085220337 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.41965913772583 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4234237670898438 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.4098389148712158 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.426281452178955 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.4656577110290527 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.4456374645233154 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.487356424331665 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.4274351596832275 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.4075005054473877 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.4548311233520508 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.4866535663604736 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | -1 | 1.4873566627502441 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.4908316135406494 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.5349650382995605 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.5144705772399902 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 1.495056390762329 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.5243983268737793 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | 448 | 1.498077392578125 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.4772534370422363 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | 239 | 1.1538372039794922 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | 49 | 0.8581027984619141 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | 71 | 0.883833646774292 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | 67 | 0.8834314346313477 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | 65 | 0.9054715633392334 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | 67 | 0.8908874988555908 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | 61 | 0.8717749118804932 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | 70 | 0.8839988708496094 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | 62 | 0.9421188831329346 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | 430 | 1.4206821918487549 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | 71 | 0.8744745254516602 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | 74 | 0.883880615234375 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 283 | 1.1951267719268799 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | -1 | 1.5145885944366455 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | -1 | 1.514418601989746 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | -1 | 1.5326707363128662 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | 139 | 1.0247411727905273 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 81 | 0.9342565536499023 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | 76 | 0.9523649215698242 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 1.4353587627410889 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 1.4902629852294922 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 1.515308141708374 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 1.5142028331756592 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.5435068607330322 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | -1 | 1.4179966449737549 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 1.3628411293029785 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+------ NUEVO (alfa=2e-05)
+
+
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 5.632042646408081 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.2471096515655518 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.239811897277832 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.3754546642303467 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.438140630722046 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.383080005645752 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.3842601776123047 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.3319103717803955 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.2612755298614502 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.5164875984191895 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.46366286277771 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.4222586154937744 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | 79 | 0.8327600955963135 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.3980076313018799 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | 83 | 0.8450801372528076 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | 306 | 1.2571868896484375 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 116 | 0.9602031707763672 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | 50 | 0.826906681060791 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | 75 | 0.8665225505828857 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | 102 | 0.9320845603942871 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 354 | 1.3626353740692139 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.550379753112793 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.5600826740264893 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 1.3577384948730469 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.4326763153076172 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.383408546447754 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.3584258556365967 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.3946094512939453 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.487886905670166 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4312224388122559 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.4147076606750488 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.4530670642852783 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.5646519660949707 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.567021131515503 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.5420255661010742 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | 73 | 0.9486138820648193 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | 472 | 1.4661662578582764 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | 58 | 0.8693375587463379 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.6079111099243164 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 116 | 0.9618592262268066 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | 48 | 0.8251087665557861 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | 72 | 0.8569433689117432 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.5406110286712646 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 308 | 1.2354447841644287 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.4645094871520996 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | 68 | 0.9130351543426514 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.4687063694000244 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.5280005931854248 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_train_y_test_en_lv_simple_gamma-0.99_alfa-2e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.5384743213653564 
+
+-----------------------------------------------------------------------------------
+
+
+
+>>> NO GEM REWARD -> Es capaz de resolver el nivel a veces pero no de manera consistente
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | 413 | 1.3627283573150635 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.4647769927978516 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.4842278957366943 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.4713575839996338 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.4486210346221924 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.4352757930755615 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4335472583770752 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.454228162765503 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.4167389869689941 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.4606432914733887 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.4335203170776367 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.4606571197509766 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.4846699237823486 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.4621696472167969 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.3993053436279297 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.4563534259796143 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 442 | 1.397141695022583 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.4239037036895752 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.5536744594573975 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.4529955387115479 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 49 | 0.8584532737731934 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.4311907291412354 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.5031263828277588 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.463930606842041 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.4649085998535156 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.4460272789001465 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 1.6274635791778564 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.4712634086608887 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 1.6019930839538574 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 1.5609757900238037 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | 132 | 0.9864497184753418 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | 136 | 1.0005309581756592 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | 490 | 1.4906890392303467 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.464015007019043 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 1.4468374252319336 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | 270 | 1.2171525955200195 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 241 | 1.1771419048309326 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | -1 | 1.493682861328125 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | 239 | 1.1944146156311035 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | 81 | 0.9377877712249756 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | 107 | 0.9598157405853271 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 348 | 1.297482967376709 
+
+-----------------------------------------------------------------------------------
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 1.992997407913208 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 2.0470969676971436 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 2.189563751220703 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 2.112240791320801 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 2.0162179470062256 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.8713583946228027 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | -1 | 2.036710739135742 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 1.874253273010254 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+>>>> Reward = 20 -> Es capaz de resolver los niveles entre its = 3.3M e its=4.6M
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 1.2885663509368896 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.3160340785980225 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.378974199295044 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.3535046577453613 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.345243215560913 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.446408748626709 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4088420867919922 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.354583501815796 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.3654720783233643 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | 205 | 1.0366699695587158 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.377209186553955 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.5144014358520508 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.5311508178710938 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.493361473083496 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.4931879043579102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.4358181953430176 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 469 | 1.4705116748809814 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.5383095741271973 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.499664068222046 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | 126 | 0.9390237331390381 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 125 | 0.9183783531188965 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | 241 | 1.2040235996246338 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | 234 | 1.123286485671997 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.5243520736694336 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.3961665630340576 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.5500483512878418 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | 364 | 1.2815208435058594 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | 273 | 1.1691219806671143 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | 264 | 1.1918888092041016 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 1.5145196914672852 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 1.4826960563659668 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | 193 | 1.0950090885162354 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | 92 | 0.8966808319091797 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | 89 | 0.9078114032745361 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | 108 | 0.9761435985565186 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | 93 | 0.9482107162475586 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 75 | 0.9120118618011475 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | 193 | 1.115438461303711 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | 236 | 1.162484884262085 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | 204 | 1.111811637878418 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | 393 | 1.516310691833496 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 230 | 1.0821192264556885 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | 84 | 0.9445302486419678 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | 173 | 1.105611801147461 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | 460 | 1.5021283626556396 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | 145 | 0.9809293746948242 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 1.5377697944641113 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.5293302536010742 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | 295 | 1.2918636798858643 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-20_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | 439 | 1.5477967262268066 
+
+-----------------------------------------------------------------------------------
+
+
+
+>>> Reward=200 alfa=5e-06 -> Casi no puede resolver ningún nivel
+
+
+
+alfa=5e-06DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-100000 | BoulderDash | 478 | 1.283273458480835 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-200000 | BoulderDash | 282 | 1.0852210521697998 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.4661071300506592 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.4801397323608398 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.4180548191070557 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.4074394702911377 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.487429141998291 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.4200918674468994 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.4039580821990967 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.3852417469024658 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.4563860893249512 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.4087765216827393 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.4236559867858887 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.437523365020752 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.4257805347442627 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.488861083984375 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1700000 | BoulderDash | -1 | 1.3980951309204102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.4750945568084717 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.4513099193572998 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.4516897201538086 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 1.39729642868042 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.455859661102295 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.449310541152954 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.514409065246582 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.4841604232788086 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.5199158191680908 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 1.3455467224121094 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.5130667686462402 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 1.6328752040863037 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 1.5802128314971924 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 1.657233715057373 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3200000 | BoulderDash | -1 | 1.4848623275756836 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3300000 | BoulderDash | -1 | 1.5310280323028564 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.3541104793548584 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 1.563180923461914 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 1.5899531841278076 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3700000 | BoulderDash | -1 | 1.5195400714874268 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3800000 | BoulderDash | -1 | 1.5228800773620605 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-3900000 | BoulderDash | -1 | 1.6332862377166748 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4000000 | BoulderDash | -1 | 1.4976894855499268 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4100000 | BoulderDash | -1 | 1.4736974239349365 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4200000 | BoulderDash | -1 | 1.5673837661743164 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 1.6267597675323486 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 1.4673113822937012 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 1.534358024597168 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 1.5729808807373047 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4700000 | BoulderDash | 62 | 0.8471183776855469 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.4847264289855957 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-4900000 | BoulderDash | -1 | 1.4027605056762695 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_train_y_test_en_lv_simple_gamma-0.99_alfa-5e-06_BoulderDash_1_lvs=1-5000000 | BoulderDash | 195 | 1.1711227893829346 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+>>> Reward = 5 -> Mejores resultados hasta la fecha! (resuelve siempre el nivel
+entre its=3.7M e its=5M (mejor num its alrededor de 4M))
+
+
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 1.2850732803344727 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.450878620147705 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.483419418334961 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.3457651138305664 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.458120584487915 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.3956377506256104 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4359564781188965 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.4788649082183838 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.3369343280792236 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.278665542602539 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.4072747230529785 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.4668445587158203 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | 356 | 1.266850233078003 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | 458 | 1.4265410900115967 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.4586174488067627 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.5229730606079102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | -1 | 1.406874656677246 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.5270748138427734 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.4330930709838867 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.385711908340454 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 1.3833842277526855 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.481041669845581 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.4045097827911377 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.422666072845459 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.4964823722839355 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.4390461444854736 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | 149 | 0.9787092208862305 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.359037160873413 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | 241 | 1.079082727432251 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | 156 | 0.9518575668334961 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 1.3092272281646729 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | 54 | 0.8757128715515137 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | 78 | 0.8803949356079102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | 64 | 0.8611383438110352 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | 99 | 0.9291706085205078 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 1.5172374248504639 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 68 | 0.8519701957702637 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | 70 | 0.8694756031036377 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | 67 | 0.8572671413421631 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | 75 | 0.9493215084075928 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | 77 | 0.9970414638519287 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 144 | 1.0498006343841553 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | 101 | 1.036313772201538 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | 258 | 1.2150859832763672 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | 115 | 1.0304479598999023 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | 228 | 1.1973340511322021 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | 187 | 1.1278326511383057 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | 216 | 1.1991784572601318 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | 159 | 1.0865511894226074 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-5_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | 313 | 1.3070919513702393 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+>>> Reward = 1 (alfa=1e-05) -> Resultados parecidos a reward=5, pero necesita menos iteraciones para el entrenamiento
+    Me quedo con reward = 1
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 1.3791451454162598 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | 316 | 1.2041184902191162 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.3928358554840088 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | -1 | 1.3546116352081299 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.3777709007263184 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | 253 | 1.1836421489715576 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.4087283611297607 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.4709277153015137 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | 84 | 0.8795156478881836 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | 76 | 0.8969864845275879 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | 59 | 0.8536245822906494 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | 130 | 0.9509947299957275 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | 49 | 0.8444623947143555 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | 76 | 0.8733396530151367 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | 178 | 1.0123529434204102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.4008278846740723 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 126 | 0.9653542041778564 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.4426319599151611 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | 212 | 1.0963046550750732 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | 79 | 0.9261202812194824 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 60 | 0.855125904083252 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | 64 | 0.9024124145507812 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | 112 | 0.9261865615844727 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | 62 | 0.8538846969604492 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | 58 | 0.8575162887573242 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | 115 | 0.9803249835968018 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | 66 | 0.8613436222076416 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | 80 | 0.899651050567627 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | 275 | 1.1746463775634766 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | 425 | 1.386887788772583 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | 321 | 1.2184507846832275 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | 109 | 0.9182796478271484 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | 122 | 0.9766428470611572 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.3867499828338623 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 1.5247373580932617 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 1.3601551055908203 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | -1 | 1.3794562816619873 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | 97 | 0.9140665531158447 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | -1 | 1.5720820426940918 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | -1 | 1.4852445125579834 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | -1 | 1.4886879920959473 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 110 | 0.9294686317443848 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | 264 | 1.1639986038208008 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 1.4777727127075195 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 1.4857473373413086 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | 134 | 0.9764010906219482 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | 71 | 0.9021093845367432 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | 55 | 0.8771209716796875 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | 339 | 1.275496482849121 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | 104 | 0.9730095863342285 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+>>> r=1, NO BN between layers -> Empeoran mucho los resultados al quitar BN
+
+
+
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | 236 | 1.065870761871338 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.511375904083252 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | -1 | 1.4898669719696045 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | 335 | 1.2200474739074707 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.5258798599243164 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.5813484191894531 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | 304 | 1.1899845600128174 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | -1 | 1.5398919582366943 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.6174757480621338 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.4006965160369873 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.4455440044403076 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.4837055206298828 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | 68 | 0.8711683750152588 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.5488789081573486 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.498598575592041 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | -1 | 1.5881400108337402 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 80 | 0.8851397037506104 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.5606417655944824 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.3653192520141602 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | 69 | 0.868098258972168 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 1.5705478191375732 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.5092520713806152 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.4994525909423828 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.436429500579834 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.492363691329956 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | 438 | 1.3688359260559082 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 1.4997069835662842 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.445979356765747 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 1.5528717041015625 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | 144 | 1.0108046531677246 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 1.4628777503967285 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | -1 | 1.465965747833252 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | -1 | 1.5172288417816162 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.5510895252227783 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 1.564608097076416 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 1.4380860328674316 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 173 | 1.0340752601623535 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | 144 | 1.0583767890930176 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | 139 | 1.0015554428100586 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | 255 | 1.1772828102111816 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | -1 | 1.4863507747650146 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | -1 | 1.4559013843536377 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 1.458238124847412 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 1.4826664924621582 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | 413 | 1.3365569114685059 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 1.4487802982330322 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 1.5700652599334717 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.4832758903503418 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | -1 | 1.484304666519165 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_NO_BN_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 1.5297369956970215 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+>>> r=1, Extra FC Layer -> Empeoran los resultados (funciona mejor con solo una capa fc)
+
+
+
+
+
+
+
+
+
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | 459 | 1.419137716293335 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | 409 | 1.3873169422149658 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | 373 | 1.3012428283691406 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | 445 | 1.4492170810699463 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.6338727474212646 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.724942922592163 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | -1 | 1.5249159336090088 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | 449 | 1.4695236682891846 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | 63 | 0.8926138877868652 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.636920690536499 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | -1 | 1.682997465133667 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | -1 | 1.5151159763336182 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.4775981903076172 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.4985394477844238 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.667083501815796 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | 96 | 0.947972297668457 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | 389 | 1.2545671463012695 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | 135 | 0.9296138286590576 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.4088850021362305 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | -1 | 1.4052910804748535 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | 316 | 1.2347826957702637 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | 209 | 1.0116689205169678 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | 49 | 0.7684617042541504 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | 311 | 1.1762158870697021 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.5661742687225342 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | 311 | 1.2006192207336426 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 1.5960769653320312 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.5281424522399902 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 1.521888256072998 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 1.5091683864593506 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | 237 | 1.159069299697876 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | -1 | 1.4869663715362549 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | -1 | 1.5633187294006348 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.4682214260101318 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | 63 | 0.9052441120147705 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | 60 | 0.9084255695343018 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | 112 | 0.9816961288452148 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | 95 | 0.948549747467041 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | 413 | 1.5043065547943115 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | 159 | 1.0891742706298828 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | 59 | 0.8929486274719238 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | 107 | 0.9887611865997314 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 1.4160947799682617 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | 64 | 0.8721015453338623 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 1.4194791316986084 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | 196 | 0.9934067726135254 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | 106 | 0.9474408626556396 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.54830002784729 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | 476 | 1.5291218757629395 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_EXTRA_LAYER_train_y_test_en_lv_simple_gamma-0.99_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 1.5039587020874023 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+>>>> reward=1, gamma=1 -> los resultados son mucho peores que usando gamma=0.99!!!
+
+
+
+
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-100000 | BoulderDash | -1 | 1.4027354717254639 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-200000 | BoulderDash | -1 | 1.4102649688720703 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-300000 | BoulderDash | 278 | 1.1879165172576904 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-400000 | BoulderDash | 325 | 1.3089725971221924 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-500000 | BoulderDash | -1 | 1.4366333484649658 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-600000 | BoulderDash | -1 | 1.5981683731079102 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-700000 | BoulderDash | 76 | 0.9281609058380127 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-800000 | BoulderDash | 98 | 0.9330580234527588 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-900000 | BoulderDash | -1 | 1.4518866539001465 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1000000 | BoulderDash | -1 | 1.6204402446746826 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1100000 | BoulderDash | 154 | 0.979417085647583 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1200000 | BoulderDash | 60 | 0.7964348793029785 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1300000 | BoulderDash | -1 | 1.3835113048553467 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1400000 | BoulderDash | -1 | 1.6374268531799316 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1500000 | BoulderDash | -1 | 1.5055160522460938 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1600000 | BoulderDash | 118 | 0.9917676448822021 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1700000 | BoulderDash | -1 | 1.5310096740722656 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1800000 | BoulderDash | -1 | 1.5253560543060303 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-1900000 | BoulderDash | -1 | 1.596269130706787 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2000000 | BoulderDash | 459 | 1.4379916191101074 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2100000 | BoulderDash | -1 | 1.5605838298797607 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2200000 | BoulderDash | -1 | 1.5617108345031738 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2300000 | BoulderDash | -1 | 1.5052766799926758 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2400000 | BoulderDash | -1 | 1.5603373050689697 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2500000 | BoulderDash | -1 | 1.4930367469787598 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2600000 | BoulderDash | -1 | 1.6636784076690674 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2700000 | BoulderDash | -1 | 1.481248140335083 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2800000 | BoulderDash | -1 | 1.6078526973724365 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-2900000 | BoulderDash | -1 | 1.626357078552246 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3000000 | BoulderDash | -1 | 1.5690834522247314 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3100000 | BoulderDash | -1 | 1.4066920280456543 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3200000 | BoulderDash | -1 | 1.449204921722412 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3300000 | BoulderDash | -1 | 1.529057264328003 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3400000 | BoulderDash | -1 | 1.5271718502044678 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3500000 | BoulderDash | -1 | 1.5643680095672607 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3600000 | BoulderDash | -1 | 1.51688551902771 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3700000 | BoulderDash | -1 | 1.5824298858642578 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3800000 | BoulderDash | -1 | 1.4095804691314697 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-3900000 | BoulderDash | -1 | 1.5745530128479004 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4000000 | BoulderDash | -1 | 1.6204895973205566 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4100000 | BoulderDash | -1 | 1.4711215496063232 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4200000 | BoulderDash | -1 | 1.4946684837341309 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4300000 | BoulderDash | -1 | 1.4122557640075684 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4400000 | BoulderDash | -1 | 1.6767888069152832 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4500000 | BoulderDash | -1 | 1.508110523223877 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4600000 | BoulderDash | -1 | 1.4431312084197998 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4700000 | BoulderDash | -1 | 1.5608973503112793 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4800000 | BoulderDash | -1 | 1.5978610515594482 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-4900000 | BoulderDash | 62 | 0.929084300994873 
+
+-----------------------------------------------------------------------------------
+
+DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1_lvs=1-5000000 | BoulderDash | -1 | 1.4940447807312012 
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+>>>>>>>>>>>> Pruebas sobre el dataset completo
+
+
+
+
+
+
 
 

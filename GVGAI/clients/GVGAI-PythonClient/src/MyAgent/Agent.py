@@ -29,8 +29,10 @@ class Agent(AbstractPlayer):
 	POSSIBLE_ACTIONS = ["ACTION_UP", "ACTION_RIGHT", "ACTION_DOWN", "ACTION_LEFT", "ACTION_USE"]
 	
 	# Rewards
-	WIN_REWARD = 200
-	LOSE_REWARD = -200
+
+	# CAMBIAR
+	WIN_REWARD = 200 # 200
+	LOSE_REWARD = -200 # -200
 	ACTION_REWARD = -1
 	
 	# BoulderDash rewards
@@ -38,29 +40,52 @@ class Agent(AbstractPlayer):
 
 	def __init__(self):
 		
+		# QUITAR
+		# Code to visualize mem samples and check if they are correct
 		"""
-		load_path = 'SavedDatasets/dataset_BoulderDash_120.dat'
+		load_path = 'SavedDatasets/dataset_BoulderDash_0.dat'
 
 		with open(load_path, 'rb') as file:
 			curr_dataset = pickle.load(file)
 
 		curr_sample = curr_dataset[0]
 
-		curr_state = curr_sample[2]
+		# Mem samples are of the form (s,a,r,s'), where s and s' are a tuple 
 
-		one_hot_grid_subgoals =  []
+		curr_state = curr_sample[0][0]
+		curr_orient = curr_sample[0][1]
+		action = curr_sample[1]
+		reward = curr_sample[2]
+		next_state = curr_sample[3][0]
+		next_orient = curr_sample[3][1]
+
+		print("Curr state: ")
 
 		for i in range(curr_state.shape[0]):
 			for j in range(curr_state.shape[1]):
-				if curr_state[i][j][4] == 1:
-					print(1, end =" ")
-					#one_hot_grid_subgoals.append((j, i))
-				else:
-					print(0, end =" ")
+				if 1 in curr_state[i][j]:
+					itype = np.where(curr_state[i][j] == 1)[0][0]
+					print(itype+1, end=" ")
+				else: # No object in that tile
+					print(0, end=" ")
 			print("\n")
 
-		#print("Subgoals guardados:", curr_sample[3])
-		#print("Subgoals del one-hot-grid:", one_hot_grid_subgoals)
+		print("Curr Orient: ", curr_orient)
+		print("Action: ", action)
+		print("Reward: ", reward)
+		print("Next state: ")
+
+		for i in range(next_state.shape[0]):
+			for j in range(next_state.shape[1]):
+				if 1 in next_state[i][j]:
+					itype = np.where(next_state[i][j] == 1)[0][0]
+					print(itype+1, end=" ")
+				else: # No object in that tile
+					print(0, end=" ")
+			print("\n")
+
+
+		print("Next orient:", next_orient)
 
 		sys.exit()
 		"""
@@ -77,7 +102,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing="BoulderDash"
+		self.game_playing='BoulderDash'
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -99,14 +124,14 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="test"
+		self.EXECUTION_MODE="create_dataset"
 
 		# Size of the dataset to train the model on
 		self.dataset_size_for_training=1
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_DQL_ACTION_USE_alfa-1e-05_BoulderDash_1"
+		self.network_name="DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
@@ -232,7 +257,7 @@ class Agent(AbstractPlayer):
 		self.learning_rate=1e-05
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=50000
+		self.num_train_its=5000000
 		self.batch_size=32
 		self.use_BN=True
 		
@@ -241,7 +266,7 @@ class Agent(AbstractPlayer):
 		# default max_tau was 250
 		self.max_tau=10000
 		# Discount rate for Deep Q-Learning
-		self.gamma=0.7
+		self.gamma=1
 
 		# Sample size. It depends on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 7], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -266,7 +291,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=13
+			id_dataset=96
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -274,8 +299,9 @@ class Agent(AbstractPlayer):
 			# Size of the experience replay to save. It is saved when the total number of samples collected reaches
 			# 'self.num_total_samples_for_saving_dataset' or when the unique number of samples (len(self.memory)) reaches
 			# 'self.num_unique_samples_for_saving_dataset'
-			self.num_total_samples_for_saving_dataset = 1000
-			self.num_unique_samples_for_saving_dataset = 500
+			# CAMBIAR
+			self.num_total_samples_for_saving_dataset = 8000 # 1000
+			self.num_unique_samples_for_saving_dataset = 5000 # 500
 
 		elif self.EXECUTION_MODE == 'train':
 			# Name of the saved model file (without the number of dataset size part)
@@ -291,7 +317,7 @@ class Agent(AbstractPlayer):
 			self.datasets_folder = 'SavedDatasets'
 
 			# Period for saving the trained model -> the model is saved every X training iterations
-			self.num_its_each_model_save = 10000000 # Only save final model # 100000 # <Cambiar>
+			self.num_its_each_model_save = 100000 # Only save final model # 100000 # <Cambiar>
 
 			# If true, PER is used. Otherwise, random sampling is used.
 			self.use_PER=True
@@ -303,13 +329,14 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=0
+			self.num_train_its_model_to_load_train=2800000
 
 		else: # Test
 
 			# Maximum number of actions allowed to complete a test level
 			# If this number is reached, the agent automatically loses the level
-			self.max_actions_per_test_lv = 2000
+			# CAMBIAR
+			self.max_actions_per_test_lv = 2000 # 2000
 
 			# Goal Selection Mode: "best" -> select the best one using the trained model,
 			# "random" -> select a random one (corresponds with the random model)
@@ -369,14 +396,15 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=50000
+				self.num_train_its_model=5000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
 
+
 			# Number of test levels the agent is playing. If it's 1, the agent exits after playing only the first test level
 			# Automatically changed by ejecutar_pruebas.py!
-			self.num_test_levels=2
+			self.num_test_levels=1
 
 			# If True, the agent has already finished the first test level and is playing the second one
 			self.playing_second_test_level = False
@@ -417,7 +445,9 @@ class Agent(AbstractPlayer):
 
 			# Measure the action selection time
 			self.total_time_act_selec_curr_lv = 0 # This time is also used to measure action selection time for DQL model
-			
+
+			# Loop detection
+			self.visited_states_dict = dict()
 
 	def act(self, sso, elapsedTimer):
 		"""
@@ -436,7 +466,9 @@ class Agent(AbstractPlayer):
 
 		if self.EXECUTION_MODE == 'train':
 			# Load dataset of current size
-			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed)
+			# CAMBIAR
+			# self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed)
+			self.load_dataset(self.datasets_folder, self.game_playing, num_levels=self.dataset_size_for_training, seed=self.level_seed, max_samples_per_level=5000)
 
 			# Shuffle dataset (only if we are using random sampling)
 			# DO NOT USE random.shuffle (it does not work well with numpy arrays)
@@ -612,15 +644,21 @@ class Agent(AbstractPlayer):
 
 				# One-hot encode orientations in batch_O and batch_next_O
 				batch_O = self.encode_avatar_orientation_batch(batch_O)
-				batch_next_O = self.encode_avatar_orientation_batch(batch_next_O) # Por aquí
+				batch_next_O = self.encode_avatar_orientation_batch(batch_next_O)
 
 				# Calculate Q_targets
 				Q_targets = []
 				
 				for r, next_s, next_o in zip(batch_R, batch_next_S, batch_next_O):
-					# Modify the reward when the current state is terminal (the next
-					# state s is None)
-					
+					# CAMBIAR
+					# Don't take into account gem rewards
+					if r == self.BD_GEM_REWARD:
+						r = self.ACTION_REWARD
+
+					# Reduce win_reward
+					if r == 200:
+						r = 5 # CAMBIAR
+
 					Q_target = r + self.gamma*self.get_max_Q_value(next_s, next_o)
 					Q_targets.append(Q_target)
 
@@ -687,6 +725,7 @@ class Agent(AbstractPlayer):
 		# <Play the game (EXECUTION_MODE == 'create_dataset' or 'test')>
 
 		if self.EXECUTION_MODE=="create_dataset": 
+
 			# <Check if the memory is large enough to save it>
 			if self.total_num_samples >= self.num_total_samples_for_saving_dataset or \
 			len(self.memory) >= self.num_unique_samples_for_saving_dataset:
@@ -695,6 +734,16 @@ class Agent(AbstractPlayer):
 
 				# Exit the program with success code
 				sys.exit()
+
+			# Check if the agent can act at the current game state, i.e., execute an action.
+			# If it can't, the agent returns 'ACTION_NIL'
+			if not self.can_act(sso):
+				self.game_score_last_state = sso.gameScore # Save the current game score
+
+				# QUITAR
+				print(">>>> CAN'T ACT")
+
+				return 'ACTION_NIL'
 
 			# < Obtain next action to execute >
 			next_action = None
@@ -753,7 +802,7 @@ class Agent(AbstractPlayer):
 
 					# Obtain the plan
 					self.action_list = self.search_plan(sso, chosen_subgoal, boots_resources)
-					
+
 					# Obtain first action of the plan
 					next_action = self.action_list.pop(0)
 			
@@ -807,12 +856,42 @@ class Agent(AbstractPlayer):
 				self.num_actions_lv += 1
 				return 'ACTION_NIL'
 
-			# Obtain the best action (the one with the highest Q-value) and measure action selection time by the DQN
-			start = time.time()
-			next_action = self.get_best_action(sso)
-			end = time.time()
-			
-			self.total_time_act_selec_curr_lv += end-start # Add the action selection time to the total time per this level
+
+			# <Check if the current state has already been visited>
+
+			# Obtain current state-orientation hash
+			curr_state_orient_hash = self.get_sso_orientation_hash(sso)
+
+			# Check if the state_orient pair is new or not
+			if curr_state_orient_hash in self.visited_states_dict: # State already visited -> Loop
+				times_visited_curr_state = self.visited_states_dict[curr_state_orient_hash]
+
+				# Check if every possible action has been tried at the current state
+				if times_visited_curr_state >= len(self.POSSIBLE_ACTIONS):
+					# Then, simply take a random action
+					next_action = random.choice(self.POSSIBLE_ACTIONS)
+
+				else: # There are still actions left to try in the current state
+					start = time.time()
+					next_action = self.get_best_action(sso, index=times_visited_curr_state) # If the curr example has been visited i times, take the i-th best action
+					end = time.time()
+
+					self.total_time_act_selec_curr_lv += end-start # Add the action selection time to the total time per this level
+
+				# Add +1 to the number of times this state has already been visited
+				self.visited_states_dict[curr_state_orient_hash] += 1
+
+			else: # New state -> not in a loop
+				# Add the current hash to the dict (mark the state as visited once)
+				self.visited_states_dict[curr_state_orient_hash] = 1
+
+				# < Obtain the best action (the one with the highest Q-value) and measure action selection time by the DQN >
+				start = time.time()
+				next_action = self.get_best_action(sso, index=0)
+				end = time.time()
+				
+				self.total_time_act_selec_curr_lv += end-start # Add the action selection time to the total time per this level
+
 			
 			# Check if current action is ACTION_USE
 			if next_action == 'ACTION_USE':
@@ -1145,10 +1224,15 @@ class Agent(AbstractPlayer):
 		else:
 			return True 
 
-	def get_best_action(self, sso):
+
+	def get_best_action(self, sso, index=0):
 		"""
 		Returns a list of the best action to execute, the one with the highest predicted Q-value, in the current
 		state sso.
+
+		@index If index is 0 (the default option), this method returns the best action (the one with the highest
+			   Q-value). If index is equal to i, then this method returns the i-th (starting from 0) best
+			   action. index has to be in [0,4]
 		"""
 		
 		# Obtain the current player orientation and one-hot encode it
@@ -1175,17 +1259,18 @@ class Agent(AbstractPlayer):
 		sorted_zip_list = sorted(zip(Q_values, self.POSSIBLE_ACTIONS), reverse=True)
 
 		# Obtain the action with the highest Q_value
-		best_action = sorted_zip_list[0][1]
+		best_action = sorted_zip_list[index][1]
 
-		#print("----------------")
-		#print("Q_values:", Q_values)
-		#print("Best action:",  best_action)
-		#print("----------------")
+		# QUITAR
+		print("\n----------------")
+		print("Q_values:", Q_values)
+		print("Best action (index={}):".format(index),  best_action)
+		print("----------------\n")
 
 		return best_action
 
 
-	def get_sso_hash(self, sso):
+	def get_sso_orientation_hash(self, sso):
 		"""
 		Obtains the hash of the current state of the game. It only takes into account the
 		observation matrix.
@@ -1205,7 +1290,9 @@ class Agent(AbstractPlayer):
 				else:
 					obs_matrix.append(observation.itype)
 		
-		return hash(tuple(obs_matrix))
+		avatar_orientation = self.get_avatar_orientation(sso)
+
+		return hash((tuple(obs_matrix), avatar_orientation))
 		
 		
 	def get_sso_subgoal_hash(self, sso, chosen_subgoal):
@@ -1306,7 +1393,7 @@ class Agent(AbstractPlayer):
 		else:
 			encode_dict = encode_dict_catapults
 
-		one_hot_length = len(encode_dict.keys()) # Subgoal is not represented in the one-hot matrix
+		one_hot_length = len(encode_dict.keys()) # Subgoal is not represented in the one-hot matrix for DQL model
 
 		num_cols = len(obs_grid)
 		num_rows = len(obs_grid[0])
@@ -1571,6 +1658,12 @@ class Agent(AbstractPlayer):
 
 		# Get the max Q_value associated with the best goal, using the Target Network
 		max_Q_val = self.target_network.predict(one_hot_grid, player_orientation, np.array(best_action))
+
+		"""print("\n-----------------")
+		print("Q vals DQN:", Q_values_DQN)
+		print("Best action DQN:", np.array(best_action))
+		print("Q val target best action:", max_Q_val)
+		print("-----------------\n")"""
 
 		return max_Q_val
 
