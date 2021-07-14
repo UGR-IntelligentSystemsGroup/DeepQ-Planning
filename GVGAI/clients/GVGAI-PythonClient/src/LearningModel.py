@@ -644,16 +644,16 @@ class DQNetwork:
 			  self.Q_target_sum = tf.summary.scalar('Q_target', tf.reduce_mean(self.Q_target))
 	  
 			  # QUITAR
-			  self.action_up_sum = tf.summary.scalar('ACTION_UP', self.input_action[0,0])
-			  self.action_right_sum = tf.summary.scalar('ACTION_RIGHT', self.input_action[0,1])
-			  self.action_down_sum = tf.summary.scalar('ACTION_DOWN', self.input_action[0,2])
-			  self.action_left_sum = tf.summary.scalar('ACTION_LEFT', self.input_action[0,3])
-			  self.action_use_sum = tf.summary.scalar('ACTION_USE', self.input_action[0,4])
+			  #self.action_up_sum = tf.summary.scalar('ACTION_UP', self.input_action[0,0])
+			  #self.action_right_sum = tf.summary.scalar('ACTION_RIGHT', self.input_action[0,1])
+			  #self.action_down_sum = tf.summary.scalar('ACTION_DOWN', self.input_action[0,2])
+			  #self.action_left_sum = tf.summary.scalar('ACTION_LEFT', self.input_action[0,3])
+			  #self.action_use_sum = tf.summary.scalar('ACTION_USE', self.input_action[0,4])
 
-			  self.orient_up_sum = tf.summary.scalar('ORIENT_UP', self.player_orientation[0,0])
-			  self.orient_right_sum = tf.summary.scalar('ORIENT_RIGHT', self.player_orientation[0,1])
-			  self.orient_down_sum = tf.summary.scalar('ORIENT_DOWN', self.player_orientation[0,2])
-			  self.orient_left_sum = tf.summary.scalar('ORIENT_LFFT', self.player_orientation[0,3])
+			  #self.orient_up_sum = tf.summary.scalar('ORIENT_UP', self.player_orientation[0,0])
+			  #self.orient_right_sum = tf.summary.scalar('ORIENT_RIGHT', self.player_orientation[0,1])
+			  #self.orient_down_sum = tf.summary.scalar('ORIENT_DOWN', self.player_orientation[0,2])
+			  #self.orient_left_sum = tf.summary.scalar('ORIENT_LFFT', self.player_orientation[0,3])
 
 
 			  self.writer = tf.summary.FileWriter("DQNetworkLogs/" + writer_name)
@@ -759,14 +759,15 @@ class DQNetwork:
 		 self.sample_weights : sample_weights,
 		 self.Q_target : Y, self.is_training : True, self.dropout_placeholder : 0.0}
 
-		# CAMBIAR
-		"""train_loss_log, Q_val_log, Q_target_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
+		train_loss_log, Q_val_log, Q_target_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
 		 self.Q_target_sum], feed_dict=data_dict_train)
 
 		self.writer.add_summary(train_loss_log, it)
 		self.writer.add_summary(Q_val_log, it)
-		self.writer.add_summary(Q_target_log, it)"""
+		self.writer.add_summary(Q_target_log, it)
 
+		# Quitar
+		"""
 		train_loss_log, Q_val_log, Q_target_log, action_up_log, action_right_log, action_down_log, action_left_log, \
 		 action_use_log, orient_up_log, orient_right_log, orient_down_log, orient_left_log = self.sess.run([self.train_loss_sum, self.Q_val_sum,
 		 self.Q_target_sum, self.action_up_sum, self.action_right_sum, self.action_down_sum, self.action_left_sum,
@@ -784,7 +785,7 @@ class DQNetwork:
 		self.writer.add_summary(orient_up_log, it)
 		self.writer.add_summary(orient_right_log, it)
 		self.writer.add_summary(orient_down_log, it)
-		self.writer.add_summary(orient_left_log, it)
+		self.writer.add_summary(orient_left_log, it)"""
 
 	# Saves the model variables in the file given by 'path', so that it can be loaded next time
 	def save_model(self, path = "./SavedModels/DQmodel.ckpt", num_it = None):

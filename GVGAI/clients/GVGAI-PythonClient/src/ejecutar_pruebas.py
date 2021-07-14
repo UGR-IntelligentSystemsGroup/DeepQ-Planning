@@ -92,9 +92,8 @@ fc_num_unis = [[128,1,1,1]]
 
 # Training params
 tau=[10000] # 10000 # Update period of the target network
-# CAMBIAR
-alfa = [0.00001] # 0.00001 # Learning rate
-# CAMBIAR
+# Cambiar
+alfa = [0.000005] # 0.00001 # Learning rate
 # gamma=0.99 es el learning rate usado en el paper original DQN
 gamma = [0.99] # 0.7 # Discount rate for rewards
 dropout = [0.0] # Dropout value
@@ -107,7 +106,6 @@ use_BN = [True] # If True, Batch Normalization is applied after each conv layer 
 games_to_play = ['BoulderDash']
 
 # For each size, a different model is trained and tested on this number of levels
-# CAMBIAR>>>>
 datasets_sizes_for_training_BoulderDash = [200] # [10,25,50,100,200] # 200 # 100
 datasets_sizes_for_training_IceAndFire = [200] # 100
 datasets_sizes_for_training_Catapults = [400] # 200
@@ -117,14 +115,13 @@ num_its_BoulderDash = [10000000] # 1200000
 num_its_IceAndFire = [10000000] # 5000000
 num_its_Catapults = [20000000] # 30000000
 
-# CAMBIAR
 num_its_resume_training = 0 # For a value different than 0, load the checkpoint and resume training
 
 # Times for PER and random sampling are equal!!!
 use_PER = [True] # If False, random sampling is used instead of Prioritized Experience Replay
 
-ini_rep_model = 1 # Index of the first repetition
-repetitions_per_model = 1 # 15 # Each model is trained this number of times
+ini_rep_model = 6 # Index of the first repetition
+repetitions_per_model = 5 # 15 # Each model is trained this number of times
 
 # Test level indexes
 # If script_execution_mode == "test" these are the indexes of the levels to use
@@ -137,14 +134,14 @@ test_level_indexes = [(0,1),(2,3),(4,5),(6,7),(8,9),(10,)]
 # If False, each saved model is only tested at the end of the training
 # If True, each saved model is tested every "test_it_interval" training its
 test_all_its = True # Cambiar
-test_it_interval = 100000 # Cambiar # Only test last num of its # 100000
+test_it_interval = 500000 # Cambiar # Only test last num of its # 100000
 # Cambiar self.num_its_each_model_save en Agent.py!!!
 
 # If True, the train phase is skipped (we assume the model has already been trained and saved)
-skip_train = False
+skip_train = True
 
 # If True, only training is performed.
-skip_test = True
+skip_test = False
 
 # <Script variables>
 

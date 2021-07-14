@@ -102,7 +102,7 @@ class Agent(AbstractPlayer):
 
 		# Attributes different for every game
 		# Game in {'BoulderDash', 'IceAndFire', 'Catapults'}
-		self.game_playing='BoulderDash'
+		self.game_playing="BoulderDash"
 
 		# Config file in {'config/boulderdash.yaml', 'config/ice-and-fire.yaml', 'config/catapults.yaml'}
 		if self.game_playing == 'BoulderDash':
@@ -124,21 +124,21 @@ class Agent(AbstractPlayer):
 		# - 'test' -> It loads the trained model and tests it on the validation levels, obtaining the metrics.
 
 
-		self.EXECUTION_MODE="create_dataset"
+		self.EXECUTION_MODE="test"
 
 		# Size of the dataset to train the model on
-		self.dataset_size_for_training=1
+		self.dataset_size_for_training=200
 
 		# Name of the DQNetwork. Also used for creating the name of file to save and load the model from
 		# Add the name of the game being played!!!
-		self.network_name="DQN_prueba_DQL_ACTION_USE_no_gem_reward_r-1_train_y_test_en_lv_simple_gamma-1_alfa-1e-05_BoulderDash_1"
+		self.network_name="DQN_DQL_Results_ESWA_r-5_5000-samples-per-train-lv_gamma-0.99_alfa-5e-06_BoulderDash_10"
 		self.network_name=self.network_name + "_lvs={}".format(self.dataset_size_for_training)
 
 		# Name of the saved model file to load (without the number of training steps part)
 		self.model_load_path = "./SavedModels/" + self.network_name + ".ckpt"
 
 		# Seed for selecting which levels to train the model on
-		self.level_seed=57824
+		self.level_seed=318032
 
 		# <Model Hyperparameters>
 		# Automatically changed by ejecutar_pruebas.py!
@@ -254,10 +254,10 @@ class Agent(AbstractPlayer):
 		self.fc_num_unis=[128, 1, 1, 1]
 
 		# Training params
-		self.learning_rate=1e-05
+		self.learning_rate=5e-06
 		# Don't use dropout?
 		self.dropout_prob=0.0
-		self.num_train_its=5000000
+		self.num_train_its=10000000
 		self.batch_size=32
 		self.use_BN=True
 		
@@ -266,7 +266,7 @@ class Agent(AbstractPlayer):
 		# default max_tau was 250
 		self.max_tau=10000
 		# Discount rate for Deep Q-Learning
-		self.gamma=1
+		self.gamma=0.99
 
 		# Sample size. It depends on the game being played. The format is (rows, cols, number of observations + 1)
 		# Sizes: BoulderDash=[13, 26, 7], IceAndFire=[14, 16, 10] , Catapults=[16, 16, 9]
@@ -291,7 +291,7 @@ class Agent(AbstractPlayer):
 			self.sample_hashes = set() # Hashes of unique samples already collected
 
 			# Path of the file to save the experience replay to
-			id_dataset=96
+			id_dataset=78
 			self.dataset_save_path = 'SavedDatasets/' + 'dataset_{}_{}.dat'.format(self.game_playing, id_dataset)
 			# Path of the file which contains the number of samples of each saved dataset
 			self.datasets_sizes_file_path = 'SavedDatasets/Datasets Sizes.txt'
@@ -329,7 +329,7 @@ class Agent(AbstractPlayer):
 
 			# If it does not equal 0, then the model with the corresponding num its is loaded
 			# (instead of creating a new one) and training resumes
-			self.num_train_its_model_to_load_train=2800000
+			self.num_train_its_model_to_load_train=8500000
 
 		else: # Test
 
@@ -396,7 +396,7 @@ class Agent(AbstractPlayer):
 
 				# Number training its of the model to load
 				# Automatically changed by ejecutar_pruebas.py!
-				self.num_train_its_model=5000000
+				self.num_train_its_model=10000000
 
 				# <Load the already-trained model in order to test performance>
 				self.model.load_model(path = self.model_load_path, num_it = self.num_train_its_model)
