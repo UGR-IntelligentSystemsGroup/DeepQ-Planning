@@ -1,12 +1,12 @@
 # PlanningWithSubgoals
 
-This project implements a planning-based agent which learns to select goals using Deep Q-Learning. We have applied it to play videogames included in the [GVGAI][http://www.gvgai.net/] framework. For more information about the project, please refer to the following [Workshop Publication][https://drive.google.com/file/d/1GV-fPLIFe1nHtM56OA3SPpAfENkmjOKv/view]. A paper with a more recent version of our work has been accepted for the [CAEPIA][https://caepia20-21.uma.es/] Conference and will be linked here once published.
+This project implements a planning-based agent which learns to select goals using Deep Q-Learning. We have applied it to play videogames included in the [GVGAI](http://www.gvgai.net/) framework. For more information about the project, please refer to the following [Workshop Publication](https://drive.google.com/file/d/1GV-fPLIFe1nHtM56OA3SPpAfENkmjOKv/view). A paper with a more recent version of our work has been accepted for the [CAEPIA](https://caepia20-21.uma.es/) Conference and will be linked here once published.
 
 This project has been partially funded by the Spanish MICINN R\&D Project Ref. RTI2018-098460-B-I00.
 
 ## Requirements
 
-Here we detail our code requirements. Our code has been implemented in Python using the [Anaconda][https://www.anaconda.com/] 4.7.12 distribution, on a local machine running the [OpenJDK][https://openjdk.java.net/] version 11.0.6 and Ubuntu 18.04.3 x86_64 as the OS. [TensorFlow][https://www.tensorflow.org/] 1.10 has been our library of choice to implement the Machine Learning models, such as Deep Q-Learning. For installing the correct Python version, libraries and dependencies, we recommend installing Anaconda and then importing the following [conda environment](../../blob/DQP-allgames/env_setup/environment.yml).
+Here we detail our code requirements. Our code has been implemented in Python using the [Anaconda](https://www.anaconda.com/) 4.7.12 distribution, on a local machine running the [OpenJDK](https://openjdk.java.net/) version 11.0.6 and Ubuntu 18.04.3 x86_64 as the OS. [TensorFlow](https://www.tensorflow.org/) 1.10 has been our library of choice to implement the Machine Learning models, such as Deep Q-Learning. For installing the correct Python version, libraries and dependencies, we recommend installing Anaconda and then importing the following [conda environment](../../blob/DQP-allgames/env_setup/environment.yml).
 
 ## Code Structure
 
