@@ -1,6 +1,6 @@
 # PlanningWithSubgoals
 
-This project implements a planning-based agent which learns to select goals using Deep Q-Learning. We have applied it to play videogames included in the [GVGAI](http://www.gvgai.net/) framework. For more information about the project, please refer to the following [conference publication](https://link.springer.com/chapter/10.1007/978-3-030-85713-4_3). A more complete and recent version of our work has been accepted for publication at the Journal Expert Systems with Applications. Once it is published, it will be linked here.
+This project implements a planning-based agent which learns to select goals using Deep Q-Learning. We have applied it to play videogames included in the [GVGAI](http://www.gvgai.net/) framework. For more information about the project, please refer to the following [conference publication](https://link.springer.com/chapter/10.1007/978-3-030-85713-4_3) and [journal publication](https://www.sciencedirect.com/science/article/abs/pii/S0957417422006376).
 
 This code has been uploaded to CodeOcean as the following [capsule](https://doi.org/10.24433/CO.0078557.v1). Before downloading and executing our code, please take a look at it, as it will probably help you understand how our code works.
 
